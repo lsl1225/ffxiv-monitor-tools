@@ -46,27 +46,15 @@ export class JobsEventEmitter extends EventEmitter<EventMap> {
       this.emit('player', ev);
     });
 
-    // addOverlayListener('EnmityTargetData', (ev) => {
-    //   this.processEnmityTargetData(ev);
-    // });
-
-    // addOverlayListener('onInCombatChangedEvent', (ev) => {
-    //   this.emit('battle/in-combat', {
-    //     game: ev.detail.inGameCombat,
-    //     act: ev.detail.inACTCombat,
-    //   });
-    // });
-
     addOverlayListener('ChangeZone', (ev) => {
       this.emit('zone/change', ev.zoneID, ev.zoneName);
     });
 
     addOverlayListener('LogLine', (ev) => {
-      if(ev.line[0] === "33" && ev.line[3] === "40000010") {
+      if (ev.line[0] === "33" && ev.line[3] === "40000010") {
         this.emit('battle/wipe');
-        return;
       }
-      this.processLogLine(ev);
+      else this.processLogLine(ev);
     });
 
     addOverlayListener('PartyChanged', (e) => {

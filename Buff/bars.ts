@@ -20,16 +20,6 @@ import { BuffOptions } from './buff_options';
 import { Player } from './player';
 import { computeBackgroundColorFrom } from './utils';
 
-// // text on the pull countdown.
-// const kPullText = {
-//   en: 'Pull',
-//   de: 'Start',
-//   fr: 'Attaque',
-//   ja: 'タゲ取る',
-//   cn: '开怪',
-//   ko: '풀링',
-// };
-
 type JobDomObjects = {
   damageUp?: HTMLElement;
   buffsList?: WidgetList;
@@ -328,39 +318,6 @@ export class Bars {
 
       return barsContainer
     }
-
-  // addPullCountdownBar(): TimerBar {
-  //   const barsLayoutContainer = document.getElementById('jobs');
-  //   if (!barsLayoutContainer)
-  //     throw new UnreachableCode();
-  //
-  //   const pullCountdownContainer = document.createElement('div');
-  //   pullCountdownContainer.id = 'pull-bar';
-  //   // Pull counter not affected by opacity option.
-  //   barsLayoutContainer.appendChild(pullCountdownContainer);
-  //   const pullCountdown = TimerBar.create({
-  //     righttext: 'remain',
-  //     // FIXME: create function check parameters with `if (param)` so when
-  //     // we using 0 here, it will just ignore it.
-  //     // should be fixed in the future.
-  //     // hideafter: 0,
-  //     fg: 'rgb(255, 120, 120)',
-  //     lefttext: kPullText[this.options.DisplayLanguage] || kPullText['en'],
-  //   });
-  //   pullCountdown.hideafter = 0;
-  //   pullCountdownContainer.appendChild(pullCountdown);
-  //   pullCountdown.width = window.getComputedStyle(pullCountdownContainer).width;
-  //   pullCountdown.height = window.getComputedStyle(pullCountdownContainer).height;
-  //   pullCountdown.classList.add('lang-' + this.options.DisplayLanguage);
-  //
-  //   // reset pull bar when in combat (game)
-  //   this.ee.on('battle/in-combat', (ev) => {
-  //     if (ev.game)
-  //       this._setPullCountdown(0);
-  //   });
-  //
-  //   return pullCountdown;
-  // }
 
   addCPBar(): ResourceBar {
     const barsContainer = document.getElementById('bars');

@@ -434,12 +434,6 @@ export const normalizeLogLine = <Fields extends NetAnyFields>(
 
 export const isPvPZone = (zoneId: number): boolean => {
   return false;
-  // const zoneInfo = ZoneInfo[zoneId];
-  // if (!zoneInfo)
-  //   return false;
-  // if (zoneInfo.contentType === ContentType.Pvp || zoneId === ZoneId.WolvesDenPier)
-  //   return true;
-  // return false;
 };
 
 export const getQueryVariable = (variable: string): string => {

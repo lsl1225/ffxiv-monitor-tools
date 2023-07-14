@@ -1,20 +1,20 @@
 import UserConfig from "cactbot/resources/user_config";
-import defaultOptions, {BuffOptions} from "./buff_options";
-import {JobsEventEmitter} from "./event_emitter";
-import {Player} from "./player";
+import defaultOptions, { BuffOptions } from "./buff_options";
+import { JobsEventEmitter } from "./event_emitter";
+import { Player } from "./player";
 import PartyTracker from "cactbot/resources/party";
-import {Bars} from "./bars";
-import {ComponentManager} from "./components";
+import { Bars } from "./bars";
+import { ComponentManager } from "./components";
 
 import './defaults.css';
 import './buff.css';
-import {getQueryVariable, loadConfig} from "./utils";
+import { getQueryVariable, loadConfig } from "./utils";
 
 let emit: JobsEventEmitter;
 // let play: Player;
 
 UserConfig.getUserConfigLocation('buff', defaultOptions, () => {
-    let options = {...defaultOptions};
+    let options = { ...defaultOptions };
     // 配置文件改写
     options = rewriteOption(options)
 
@@ -27,12 +27,12 @@ UserConfig.getUserConfigLocation('buff', defaultOptions, () => {
     const emitter = new JobsEventEmitter();
     const partyTracker = new PartyTracker();
     const player = new Player(emitter, partyTracker, is5x);
-    const bars = new Bars(options, {emitter, player});
+    const bars = new Bars(options, { emitter, player });
 
     emit = emitter
     // play = player
 
-    new ComponentManager({bars, emitter, options, partyTracker, player, is5x});
+    new ComponentManager({ bars, emitter, options, partyTracker, player, is5x });
 
     let menuDiv = document.getElementById("menu");
     if (!menuDiv) {
@@ -55,7 +55,7 @@ UserConfig.getUserConfigLocation('buff', defaultOptions, () => {
         btn2.addEventListener("click", function () {
             let iTop = (1080 - 30 - 470) / 2;
             let iLeft = (1920 - 10 - 670) / 2;
-            window.open("./settings.html", "_blank", "width=720,height=570,top="+iTop+",left="+iLeft)
+            window.open("./settings.html", "_blank", "width=720,height=570,top=" + iTop + ",left=" + iLeft)
         })
         menuDiv.append(btn2)
 
@@ -125,11 +125,12 @@ function rewriteOption(options: BuffOptions): BuffOptions {
 
 function Test() {
     if (emit == null) {
-        return
+        console.error('Cannot start testing due to emit is null!');
+        return;
     }
     let send = function (num: number, line: string) {
         setTimeout(() => {
-            emit.processLogLine({type: 'LogLine', line: line.split('|'), rawLine: line})
+            emit.processLogLine({ type: 'LogLine', line: line.split('|'), rawLine: line })
         }, num * 1000);
     }
 
@@ -147,13 +148,4 @@ function Test() {
 
     send(11, '26|2022-01-01T20:53:08.2050000+08:00|4a1|义结金兰：攻击|15.00|1039A1D9|水貂桑|1039A1D9|水貂桑|00|135119|135119||bc8a82a5f86070b6bc9f7779c3b3dc44');
     send(12, '21|2022-01-01T21:05:39.9490000+08:00|1039A1D9|水貂桑|8D2|攻其不备|4000031F|木人|1E710103|6F5B0000|5050E|27E0000|0|0|0|0|0|0|0|0|0|0|0|0|7400000|7400000|0|10000|0|1000|-603.1267|-762.9036|25.02|2.283125|101284|101284|10000|10000|0|1000|-604.7668|-761.4396|25|2.377449|00012569|0|f3ed8ae8ed410d18480c8edddb9ef49d');
-    // send(13, '26|2022-01-01T23:55:26.2570000+08:00|4b1|狂风蚀箭|30.00|1039A1D9|水貂桑|4000031F|木人|28|7400000|135871||634a843a26af69a2b1be9f15c63fedba');
-    // send(13, '26|2022-01-01T23:55:28.7110000+08:00|4b0|烈毒咬箭|30.00|1039A1D9|水貂桑|4000031F|木人|28|7400000|135871||f186f35dad45a7f1e42b098e9e4fcef6');
-
-    // send(8, '26|2020-09-20T22:04:03.9440000+08:00|511|鼓励|20.00|1039A1D9|水貂桑|1039A1D9|水貂桑|05|52289|52289||140096ff8fe52cfc344ee31759a6b422');
-    // send(10, '26|2020-09-20T22:04:07.9110000+08:00|511|鼓励|20.00|1039A1D9|水貂桑|1039A1D9|水貂桑|04|52289|52289||369bee40aab7cfa72bc77aacd0165e89');
-    // send(12, '26|2020-09-20T22:04:07.9110000+08:00|511|鼓励|20.00|1039A1D9|水貂桑|1039A1D9|水貂桑|03|52289|52289||369bee40aab7cfa72bc77aacd0165e89');
-    // send(14, '26|2020-09-20T22:04:07.9110000+08:00|511|鼓励|20.00|1039A1D9|水貂桑|1039A1D9|水貂桑|02|52289|52289||369bee40aab7cfa72bc77aacd0165e89');
-    // send(16, '26|2020-09-20T22:04:07.9110000+08:00|511|鼓励|20.00|1039A1D9|水貂桑|1039A1D9|水貂桑|01|52289|52289||369bee40aab7cfa72bc77aacd0165e89');
-    // send(18, '30|2020-09-20T22:04:24.0480000+08:00|511|鼓励|0.00|1039A1D9|水貂桑|1039A1D9|水貂桑|01|76590|52289||91727e97f2e91e3b4823830ea6a35adb');
 }
