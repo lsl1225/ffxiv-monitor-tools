@@ -9,7 +9,7 @@
     "build": "cross-env NODE_OPTIONS=\"--loader ts-node/esm\" TS_NODE_PROJECT=\"tsconfig-for-webpack.json\" webpack --progress --config webpack/webpack.prod.ts",
     "start": "cross-env NODE_OPTIONS=\"--loader ts-node/esm\" TS_NODE_PROJECT=\"tsconfig-for-webpack.json\" webpack serve --config webpack/webpack.dev.ts"
   },
-  "author": "Jiacheng",
+  "author": "Jiacheng & lsl1225",
   "license": "ISC",
   "dependencies": {
     "@fast-csv/parse": "^4.3.6",
