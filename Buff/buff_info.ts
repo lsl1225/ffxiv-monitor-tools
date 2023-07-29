@@ -5,7 +5,6 @@ import {kAbility} from "./constants";
 const potionImage = "../resources/images/000000.png";
 // 骑士
 const fightOrFlightImage = "../resources/images/000166.png"; // 战逃反应
-const requiescatImage = "../resources/images/002513.png"; // 安魂
 // 枪刃
 const noMercyImage = "../resources/images/003402.png"; // 无情
 // 学者
@@ -19,8 +18,6 @@ const theBoleImage = "../resources/images/003112.png"; // 世界树
 const theEwerImage = "../resources/images/003114.png"; // 河流神
 const theSpearImage = "../resources/images/003111.png"; // 战争神
 const theSpireImage = "../resources/images/003115.png"; // 建筑神
-const ladyOfCrownsImage = "../resources/images/003146.png"; // 富贵
-const lordOfCrownsImage = "../resources/images/003147.png"; // 领主
 // 武僧
 const riddleOfFireImage = "../resources/images/002541.png"; // 红莲
 const brotherhoodImage = "../resources/images/002542.png"; // 义结金兰
@@ -41,7 +38,6 @@ const radiantFinaleImage = "../resources/images/002622.png"; // 最终乐章
 const devilmentImage = "../resources/images/003471.png"; // 探戈
 const technicalFinishImage = "../resources/images/003474.png"; // 技巧舞步
 // 召唤
-const devotionImage = "../resources/images/002688.png"; // 灵护
 const searingLightImage = "../resources/images/002752.png"; // 灼热之光
 // 赤魔
 const emboldenImage = "../resources/images/003218.png"; // 鼓励
@@ -319,18 +315,6 @@ export class BuffInfoList {
             magicUp: 10,
         },
         // 忍者
-        // trick: { // 背刺
-        //     activeAbility: [kAbility.TrickAttack],
-        //     partyOnly: true,
-        //     durationSeconds: 15,
-        //     icon: trickAttackImage,
-        //     borderColor: '#ff8400',
-        //     sortKey: 0,
-        //     cooldown: 60,
-        //     target: 'boss',
-        //     physicalUp: 10,
-        //     magicUp: 10,
-        // },
         mug: { // 夺取
             activeAbility: [aEffectId.Mug],
             partyOnly: true,
@@ -462,155 +446,6 @@ export class BuffInfoList {
             target: 'you',
             physicalUp: 5,
             magicUp: 5,
-            tts: '鼓励',
-        },
-    }
-
-    // 5.x版本
-    static buffInfoV5: { [s: string]: Omit<BuffInfo, 'name'> } = {
-        // 骑士
-        // 26|2020-09-20T03:31:40.6740000+08:00|558|安魂祈祷|12.00|1039A1D9|水貂桑|1039A1D9|水貂桑|FF9C|114648|114648||35703e9553d4bf19abcbcd58e0da5257
-        requiescat: {
-            gainEffect: [aEffectId.Requiescat],
-            loseEffect: [aEffectId.Requiescat],
-            useEffectDuration: true,
-            icon: requiescatImage,
-            borderColor: '#2e70f5',
-            sortKey: 0,
-            cooldown: 60,
-            target: 'you',
-            physicalUp: 0,
-            magicUp: 50,
-        },
-        // 占星
-        ladyOfCrowns: { // 王冠之贵妇
-            gainEffect: [EffectId.LadyOfCrowns],
-            loseEffect: [EffectId.LadyOfCrowns],
-            useEffectDuration: true,
-            icon: ladyOfCrownsImage,
-            borderColor: '#9e5599',
-            sortKey: 0,
-            target: 'you',
-            meleeUp: 4,
-            rangedUp: 5,
-            tts: '远卡',
-        },
-        lordOfCrowns: { // 王冠之领主
-            gainEffect: [EffectId.LordOfCrowns],
-            loseEffect: [EffectId.LordOfCrowns],
-            useEffectDuration: true,
-            icon: lordOfCrownsImage,
-            borderColor: '#9a2222',
-            sortKey: 0,
-            target: 'you',
-            meleeUp: 8,
-            rangedUp: 4,
-            tts: '近卡',
-        },
-        // 武僧
-        riddleOfFire: { // 红莲
-            gainEffect: [aEffectId.RiddleOfFire],
-            loseEffect: [aEffectId.RiddleOfFire],
-            useEffectDuration: true,
-            icon: riddleOfFireImage,
-            borderColor: '#dc625a',
-            sortKey: 0,
-            cooldown: 90,
-            target: 'you',
-            physicalUp: 25,
-            magicUp: 25,
-        },
-        brotherhood: { // 义结金兰：斗气/攻击
-            gainEffect: [EffectId.Brotherhood],
-            loseEffect: [EffectId.Brotherhood],
-            useEffectDuration: true,
-            icon: brotherhoodImage,
-            borderColor: '#994200',
-            sortKey: 0,
-            cooldown: 90,
-            target: 'you',
-            physicalUp: 5,
-            magicUp: 5,
-            tts: '桃园',
-        },
-        // 龙骑
-        lanceCharge: { // 猛枪
-            gainEffect: [EffectId.LanceCharge],
-            loseEffect: [EffectId.LanceCharge],
-            useEffectDuration: true,
-            icon: lanceChargeImage,
-            borderColor: '#831819',
-            sortKey: 0,
-            cooldown: 90,
-            target: 'you',
-            physicalUp: 15,
-            magicUp: 15,
-        },
-        litany: { //战斗连祷
-            gainEffect: [EffectId.BattleLitany],
-            loseEffect: [EffectId.BattleLitany],
-            useEffectDuration: true,
-            icon: battleLitanyImage,
-            borderColor: '#009999',
-            sortKey: 0,
-            cooldown: 180,
-            target: 'you',
-            physicalUp: 5,
-            magicUp: 5,
-            tts: '连祷',
-        },
-        // 诗人
-        raging: { // 猛者 26|2020-09-20T03:48:12.5040000+08:00|7d|猛者强击|20.00|1039A1D9|水貂桑|1039A1D9|水貂桑|00|111340|111340||7f5d92a566794a793b65f97686f3699f
-            gainEffect: [EffectId.RagingStrikes],
-            loseEffect: [EffectId.RagingStrikes],
-            useEffectDuration: true,
-            icon: ragingStrikesImage,
-            borderColor: '#db6509',
-            sortKey: 0,
-            cooldown: 80,
-            target: 'you',
-            physicalUp: 10,
-            magicUp: 10,
-        },
-        // 召唤
-        devotion: { // 灵护
-            gainEffect: [EffectId.Devotion],
-            loseEffect: [EffectId.Devotion],
-            useEffectDuration: true,
-            icon: devotionImage,
-            borderColor: '#ffbf00',
-            sortKey: 0,
-            cooldown: 180,
-            target: 'you',
-            physicalUp: 5,
-            magicUp: 5,
-            tts: '灵护',
-        },
-        // 赤魔
-        emboldenIsMe: { // 鼓励(自己给自己) 4d7
-            gainEffect: [EffectId.EmboldenSelf],
-            loseEffect: [EffectId.EmboldenSelf],
-            useEffectDuration: true,
-            icon: emboldenImage,
-            borderColor: '#bcbce3',
-            sortKey: 0,
-            cooldown: 120,
-            target: 'you',
-            physicalUpCount: {'05': 0, '04': 0, '03': 0, '02': 0, '01': 0}, // 物理增伤
-            magicUpCount: {'05': 10, '04': 8, '03': 6, '02': 4, '01': 2}, // 魔法增伤
-            tts: '鼓励',
-        },
-        emboldenToMe: { // 鼓励(从赤魔得到) 511
-            gainEffect: [EffectId.Embolden],
-            loseEffect: [EffectId.Embolden],
-            useEffectDuration: true,
-            icon: emboldenImage,
-            borderColor: '#bcbce3',
-            sortKey: 0,
-            cooldown: 120,
-            target: 'you',
-            physicalUpCount: {'05': 10, '04': 8, '03': 6, '02': 4, '01': 2}, // 物理增伤
-            magicUpCount: {'05': 0, '04': 0, '03': 0, '02': 0, '01': 0}, // 魔法增伤
             tts: '鼓励',
         },
     }

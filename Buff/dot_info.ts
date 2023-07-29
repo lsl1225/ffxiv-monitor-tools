@@ -25,9 +25,8 @@ const stormbiteImage = '../resources/images/002614.png';
 const causticBiteImage = '../resources/images/002613.png';
 // 黑魔
 const thunderIiiImage = '../resources/images/000459.png';
-// 召唤
-const bioIIIImage = '../resources/images/002689.png';
-const miasmaIIIImage = '../resources/images/002690.png';
+// 青魔
+const songOfTormentImage = '../resources/images/003254.png';
 
 // https://xivapi.com/docs/Icons 图标来源
 const aEffectId = {
@@ -36,8 +35,7 @@ const aEffectId = {
     'CombustIII': '759', // 占星 焚灼
     'Demolish': 'F6',// 武僧 破碎拳
     'ChaosThrust': '76', // 龙骑 樱花怒放
-    'BioIII': '4BE', // 剧毒菌
-    'MiasmaIII': '4BF', // 瘴暍
+    'SongOfTorment': '6B2', // 青魔 苦闷之歌
 } as const;
 
 export interface DotInfo {
@@ -191,24 +189,15 @@ export class DotInfoList {
             attackType: 'magic',
             tts: true,
         },
-        // 召唤
-        bioIII: {
-            gainEffect: [aEffectId.BioIII],
-            loseEffect: [aEffectId.BioIII],
-            icon: bioIIIImage,
-            borderColor: '#e3e02d',
+        // 青魔
+        songOfTorment: {
+            gainEffect: [aEffectId.SongOfTorment],
+            loseEffect: [aEffectId.SongOfTorment],
+            icon: songOfTormentImage,
+            borderColor: '#93d5fd',
             sortKey: 0,
             attackType: 'magic',
             tts: true,
-        },
-        miasmaIII: {
-            gainEffect: [aEffectId.MiasmaIII],
-            loseEffect: [aEffectId.MiasmaIII],
-            icon: miasmaIIIImage,
-            borderColor: '#97abe0',
-            sortKey: 0,
-            attackType: 'magic',
-            tts: false,
         },
     }
 }

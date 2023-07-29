@@ -26,19 +26,14 @@ export class ComponentManager {
     // misc variables
     contentType?: number;
     inPvPZone?: boolean;
-    is5x: boolean;
-
     component?: BaseComponent;
 
-    constructor(private o: ComponentInterface) {
-        this.o.is5x;
-
+    constructor(o: ComponentInterface) {
         this.bars = o.bars;
         this.ee = o.emitter;
         this.options = o.options;
         this.partyTracker = o.partyTracker;
         this.player = o.player;
-        this.is5x = o.is5x;
         this.contentType = undefined;
 
         this.setupListeners();
@@ -72,7 +67,6 @@ export class ComponentManager {
                     this.player.job,
                     this.bars.o.buffsList,
                     this.partyTracker,
-                    this.is5x,
                 );
             }
             if (this.bars.o.dotsList) {

@@ -6,10 +6,10 @@ import { NetMatches } from 'cactbot/types/net_matches';
 import Util from 'cactbot/resources/util';
 
 import { BuffOptions } from './buff_options';
-import {buffsCalculation, findCountBuff, makeAuraTimerIcon, updateCountBuff} from './utils';
-import {callOverlayHandler} from "cactbot/resources/overlay_plugin_api";
-import {BuffInfo,BuffInfoList} from "./buff_info";
-import {Job} from "cactbot/types/job";
+import { buffsCalculation, findCountBuff, makeAuraTimerIcon, updateCountBuff } from './utils';
+import { callOverlayHandler } from "cactbot/resources/overlay_plugin_api";
+import { BuffInfo, BuffInfoList } from "./buff_info";
+import { Job } from "cactbot/types/job";
 
 
 export interface Aura {
@@ -119,10 +119,10 @@ export class Buff {
   bigBuffAutoWidth(seconds: number): number {
     let body = document.getElementsByTagName('body')
     if (!body || !body[0])
-      return seconds * (this.options.BigBuffBarMaxWidth/30)
+      return seconds * (this.options.BigBuffBarMaxWidth / 30)
 
     let width = body[0].clientWidth - this.options.BigBuffIconWidth - (this.options.DotIconWidth + this.options.DotBorderSize) - 5;
-    let c = (width > this.options.BigBuffBarMaxWidth)? this.options.BigBuffBarMaxWidth/30: width/30;
+    let c = (width > this.options.BigBuffBarMaxWidth) ? this.options.BigBuffBarMaxWidth / 30 : width / 30;
     return seconds * c
   }
 
@@ -142,9 +142,9 @@ export class Buff {
       for (const e of this.info.gainEffect) {
         if (e === EffectId.Medicated && seconds >= 120) {
           return {
-            addCallback(): void {},
-            removeCallback(): void {},
-            addTimeout: null,  removeTimeout: null
+            addCallback(): void { },
+            removeCallback(): void { },
+            addTimeout: null, removeTimeout: null
           };
         }
       }
@@ -188,7 +188,7 @@ export class Buff {
 
         // 语音播报
         if (this.options.BigBuffNoticeTTSOn == true && this.info.tts != null && this.info.tts != '') {
-          callOverlayHandler({call: 'cactbotSay',text: this.info.tts});
+          callOverlayHandler({ call: 'cactbotSay', text: this.info.tts });
         }
 
         if (seconds > 0) {
@@ -260,12 +260,11 @@ export class BuffTracker {
   cooldownAbilityMap: { [s: string]: BuffInfo[] };
 
   constructor(
-      private options: BuffOptions,
-      private playerName: string,
-      private playerJob: Job,
-      private buffsListDiv: WidgetList,
-      private partyTracker: PartyTracker,
-      private is5x: boolean,
+    private options: BuffOptions,
+    private playerName: string,
+    private playerJob: Job,
+    private buffsListDiv: WidgetList,
+    private partyTracker: PartyTracker,
   ) {
     this.options = options;
     this.playerName = playerName;
@@ -276,13 +275,6 @@ export class BuffTracker {
     this.partyTracker = partyTracker;
 
     this.buffInfo = BuffInfoList.buffInfo;
-    // Abilities that are different in 5.x.
-    const v5x = BuffInfoList.buffInfoV5;
-
-    if (this.is5x) {
-      for (const [key, entry] of Object.entries(v5x))
-        this.buffInfo[key] = entry;
-    }
 
     this.gainEffectMap = {};
     this.loseEffectMap = {};
@@ -448,7 +440,7 @@ export class BuffTracker {
       buff.onCooldown(seconds, source);
   }
 
-  onLoseBigBuff(target = 'unknown',name: string): void {
+  onLoseBigBuff(target = 'unknown', name: string): void {
     name = target + "=>" + name // 针对对boss技能. 保证不同boss分开倒计时.
     this.buffs[name]?.onLose();
   }

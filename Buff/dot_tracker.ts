@@ -1,10 +1,10 @@
-import {BuffOptions} from "./buff_options";
-import {Player} from "./player";
+import { BuffOptions } from "./buff_options";
+import { Player } from "./player";
 import WidgetList from "./widget_list";
-import {DotInfo, DotInfoList} from "./dot_info";
-import {NetMatches} from "cactbot/types/net_matches";
+import { DotInfo, DotInfoList } from "./dot_info";
+import { NetMatches } from "cactbot/types/net_matches";
 import { makeAuraDotTimerIcon } from "./utils";
-import {callOverlayHandler} from "cactbot/resources/overlay_plugin_api";
+import { callOverlayHandler } from "cactbot/resources/overlay_plugin_api";
 
 export interface Aura {
     addCallback: () => void;
@@ -63,7 +63,7 @@ export class Dot {
                 }
             },
             noticeCallback: () => {
-                callOverlayHandler({call: 'cactbotSay', text: this.options.DotNoticeTTS});
+                callOverlayHandler({ call: 'cactbotSay', text: this.options.DotNoticeTTS });
             },
 
             addCallback: () => {
@@ -89,7 +89,7 @@ export class Dot {
                 if (seconds > 0) {
                     // 设置定时通知
                     if (
-                        this.options.DotNoticeTTSOn && this.info.tts  &&
+                        this.options.DotNoticeTTSOn && this.info.tts &&
                         this.options.DotNoticeLessThanSecond > 0 &&
                         this.options.DotNoticeTTS !== ""
                     ) {
@@ -206,6 +206,9 @@ export class DotTracker {
                     break;
                 case 'thunderIII':
                     dot.tts = this.options.TTSThunderIii;
+                    break;
+                case 'songOfTorment':
+                    dot.tts = this.options.TTSSongOfTorment;
                     break;
                 default:
                     break;

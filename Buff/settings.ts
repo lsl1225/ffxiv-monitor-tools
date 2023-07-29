@@ -67,6 +67,9 @@ if (config.TTSStormbite) {
 if (config.TTSThunderIii) {
     (document.getElementById("TTSThunderIii") as HTMLInputElement).checked = true;
 }
+if (config.TTSSongOfTorment) {
+    (document.getElementById("TTSSongOfTorment") as HTMLInputElement).checked = true;
+}
 
 function save() {
     let options = defaultUserConfig;
@@ -98,6 +101,7 @@ function save() {
     options.TTSDeathsDesign = (document.getElementById("TTSDeathsDesign") as HTMLInputElement).checked;
     options.TTSStormbite = (document.getElementById("TTSStormbite") as HTMLInputElement).checked;
     options.TTSThunderIii = (document.getElementById("TTSThunderIii") as HTMLInputElement).checked;
+    options.TTSSongOfTorment = (document.getElementById("TTSSongOfTorment") as HTMLInputElement).checked;
 
     try {
         setConfig(options);

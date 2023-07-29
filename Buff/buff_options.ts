@@ -1,7 +1,7 @@
 import UserConfig from 'cactbot/resources/user_config';
 import { BaseOptions } from 'cactbot/types/data';
 import { Job } from 'cactbot/types/job';
-import {BuffInfo} from "./buff_info";
+import { BuffInfo } from "./buff_info";
 
 export interface UserConfigOptions {
   Scale: number;
@@ -23,6 +23,7 @@ export interface UserConfigOptions {
   TTSDeathsDesign: boolean; // 镰刀-死亡之影
   TTSStormbite: boolean; // 诗人-狂风蚀箭
   TTSThunderIii: boolean; // 黑魔-暴雷
+  TTSSongOfTorment: boolean; // 青魔-苦闷之歌
 }
 
 export const defaultUserConfig: UserConfigOptions = {
@@ -44,6 +45,7 @@ export const defaultUserConfig: UserConfigOptions = {
   TTSDeathsDesign: true, // 镰刀-死亡之影
   TTSStormbite: true, // 诗人-狂风蚀箭
   TTSThunderIii: true, // 黑魔-暴雷
+  TTSSongOfTorment: true, // 青魔-苦闷之歌
 }
 
 export interface JobsNonConfigOptions {
@@ -94,6 +96,7 @@ export interface JobsNonConfigOptions {
   TTSDeathsDesign: boolean; // 镰刀-死亡之影
   TTSStormbite: boolean; // 诗人-狂风蚀箭
   TTSThunderIii: boolean; // 黑魔-暴雷
+  TTSSongOfTorment: boolean; // 青魔-苦闷之歌
 }
 
 export interface JobsConfigOptions {
@@ -166,6 +169,7 @@ const defaultJobsNonConfigOptions: JobsNonConfigOptions = {
   TTSDeathsDesign: true, // 镰刀-死亡之影
   TTSStormbite: true, // 诗人-狂风蚀箭
   TTSThunderIii: true, // 黑魔-暴雷
+  TTSSongOfTorment: true, // 青魔-苦闷之歌
 };
 
 // See user/jobs-example.js for documentation.
@@ -196,7 +200,7 @@ const defaultJobsConfigOptions: JobsConfigOptions = {
   BlmLowMPThreshold: 2399,
 };
 
-export interface BuffOptions extends BaseOptions, JobsConfigOptions, JobsNonConfigOptions {}
+export interface BuffOptions extends BaseOptions, JobsConfigOptions, JobsNonConfigOptions { }
 
 const Options: BuffOptions = {
   ...UserConfig.getDefaultBaseOptions(),
