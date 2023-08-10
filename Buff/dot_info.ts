@@ -25,8 +25,8 @@ const stormbiteImage = '../resources/images/002614.png';
 const causticBiteImage = '../resources/images/002613.png';
 // 黑魔
 const thunderIiiImage = '../resources/images/000459.png';
-// 青魔
-const songOfTormentImage = '../resources/images/003254.png';
+// 青魔 003254 苦闷之歌 003357 月下彼岸花
+const bleedingDoTImage = '../resources/images/003254.png';
 
 // https://xivapi.com/docs/Icons 图标来源
 const aEffectId = {
@@ -35,7 +35,7 @@ const aEffectId = {
     'CombustIII': '759', // 占星 焚灼
     'Demolish': 'F6',// 武僧 破碎拳
     'ChaosThrust': '76', // 龙骑 樱花怒放
-    'SongOfTorment': '6B2', // 青魔 苦闷之歌
+    'BleedingDoT': '6B2', // 青魔 苦闷之歌/月下彼岸花
 } as const;
 
 export interface DotInfo {
@@ -190,10 +190,10 @@ export class DotInfoList {
             tts: true,
         },
         // 青魔
-        songOfTorment: {
-            gainEffect: [aEffectId.SongOfTorment],
-            loseEffect: [aEffectId.SongOfTorment],
-            icon: songOfTormentImage,
+        bleedingDoT: {
+            gainEffect: [aEffectId.BleedingDoT],
+            loseEffect: [aEffectId.BleedingDoT],
+            icon: bleedingDoTImage,
             borderColor: '#93d5fd',
             sortKey: 0,
             attackType: 'magic',

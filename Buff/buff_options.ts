@@ -23,7 +23,7 @@ export interface UserConfigOptions {
   TTSDeathsDesign: boolean; // 镰刀-死亡之影
   TTSStormbite: boolean; // 诗人-狂风蚀箭
   TTSThunderIii: boolean; // 黑魔-暴雷
-  TTSSongOfTorment: boolean; // 青魔-苦闷之歌
+  TTSBleedingDoT: boolean; // 青魔-苦闷之歌/月下彼岸花
 }
 
 export const defaultUserConfig: UserConfigOptions = {
@@ -45,7 +45,7 @@ export const defaultUserConfig: UserConfigOptions = {
   TTSDeathsDesign: true, // 镰刀-死亡之影
   TTSStormbite: true, // 诗人-狂风蚀箭
   TTSThunderIii: true, // 黑魔-暴雷
-  TTSSongOfTorment: true, // 青魔-苦闷之歌
+  TTSBleedingDoT: true, // 青魔-苦闷之歌/月下彼岸花
 }
 
 export interface JobsNonConfigOptions {
@@ -96,7 +96,7 @@ export interface JobsNonConfigOptions {
   TTSDeathsDesign: boolean; // 镰刀-死亡之影
   TTSStormbite: boolean; // 诗人-狂风蚀箭
   TTSThunderIii: boolean; // 黑魔-暴雷
-  TTSSongOfTorment: boolean; // 青魔-苦闷之歌
+  TTSBleedingDoT: boolean; // 青魔-苦闷之歌/月下彼岸花
 }
 
 export interface JobsConfigOptions {
@@ -169,7 +169,7 @@ const defaultJobsNonConfigOptions: JobsNonConfigOptions = {
   TTSDeathsDesign: true, // 镰刀-死亡之影
   TTSStormbite: true, // 诗人-狂风蚀箭
   TTSThunderIii: true, // 黑魔-暴雷
-  TTSSongOfTorment: true, // 青魔-苦闷之歌
+  TTSBleedingDoT: true, // 青魔-苦闷之歌/月下彼岸花
 };
 
 // See user/jobs-example.js for documentation.

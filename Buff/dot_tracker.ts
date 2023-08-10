@@ -207,8 +207,8 @@ export class DotTracker {
                 case 'thunderIII':
                     dot.tts = this.options.TTSThunderIii;
                     break;
-                case 'songOfTorment':
-                    dot.tts = this.options.TTSSongOfTorment;
+                case 'bleedingDoT':
+                    dot.tts = this.options.TTSBleedingDoT;
                     break;
                 default:
                     break;
@@ -283,10 +283,6 @@ export class DotTracker {
             let seconds = parseFloat(matches?.duration ?? '0');
             if (b.name == 'surgingTempest') { // case: 可能由于buff的计算方式不同，战士的倒计时多2秒
                 seconds += 2
-            }
-            // 排除60s月下彼岸花
-            if (b.name == 'songOfTorment') {
-                if (seconds == 60) break;
             }
             this.onBigDot(matches?.targetId, b.name, seconds, b, matches?.source);
         }

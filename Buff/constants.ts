@@ -277,7 +277,7 @@ export const kAbility = {
   Embolden: '1D60',
   Manafication: '1D61',
   // BLU
-  SongOfTorment: '2C7A',
+  BleedingDoT: '2C7A',
   OffGuard: '2C93',
   PeculiarLight: '2C9D',
   AetherialSpark: '5AF1',
