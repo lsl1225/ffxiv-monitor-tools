@@ -73,8 +73,8 @@ export class DotInfoList {
         },
         // 白魔
         dia: {
-            gainEffect: [aEffectId.Dia],
-            loseEffect: [aEffectId.Dia],
+            gainEffect: [aEffectId.Dia, Effect_id.Aero, Effect_id.AeroIi, Effect_id.AeroIii],
+            loseEffect: [aEffectId.Dia, Effect_id.Aero, Effect_id.AeroIi, Effect_id.AeroIii],
             icon: diaImage,
             borderColor: '#3eb9fa',
             sortKey: 0,
@@ -93,8 +93,8 @@ export class DotInfoList {
         },
         // 占星
         combustIII: {
-            gainEffect: [aEffectId.CombustIII],
-            loseEffect: [aEffectId.CombustIII],
+            gainEffect: [aEffectId.CombustIII, Effect_id.Combust, Effect_id.CombustIi],
+            loseEffect: [aEffectId.CombustIII, Effect_id.Combust, Effect_id.CombustIi],
             icon: combustIIIImage,
             borderColor: '#62daf8',
             sortKey: 0,
@@ -103,8 +103,8 @@ export class DotInfoList {
         },
         // 贤者
         eukrasianDosisIii: {
-            gainEffect: [Effect_id.EukrasianDosisIii],
-            loseEffect: [Effect_id.EukrasianDosisIii],
+            gainEffect: [Effect_id.EukrasianDosisIii, Effect_id.EukrasianDosis, Effect_id.EukrasianDosisIi],
+            loseEffect: [Effect_id.EukrasianDosisIii, Effect_id.EukrasianDosis, Effect_id.EukrasianDosisIi],
             icon: eukrasianDosisIiiImage,
             borderColor: '#c4acf6',
             sortKey: 0,
