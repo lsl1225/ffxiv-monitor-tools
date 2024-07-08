@@ -1,29 +1,29 @@
-import UserConfig from 'cactbot/resources/user_config';
-import { BaseOptions } from 'cactbot/types/data';
-import { Job } from 'cactbot/types/job';
-import { BuffInfo } from "./buff_info";
+import UserConfig from 'cactbot/resources/user_config'
+import { BaseOptions } from 'cactbot/types/data'
+import { Job } from 'cactbot/types/job'
+import { BuffInfo } from './buff_info'
 
 export interface UserConfigOptions {
-  Scale: number;
+  Scale: number
 
-  BigBuffNoticeTTSOn: boolean;
-  DotNoticeLessThanSecond: number;
-  DotNoticeTTSOn: boolean;
-  DotNoticeTTS: string;
+  BigBuffNoticeTTSOn: boolean
+  DotNoticeLessThanSecond: number
+  DotNoticeTTSOn: boolean
+  DotNoticeTTS: string
 
-  TTSGoringBlade: boolean; // 骑士-沥血剑
-  TTSSurgingTempest: boolean; // 战士-红斩
-  TTSDia: boolean; // 白魔-天辉
-  TTSBiolysis: boolean; // 学者-蛊毒法
-  TTSCombustIII: boolean; // 占星-焚灼
-  TTSEukrasianDosisIii: boolean; // 贤者-均衡注药
-  TTSDemolish: boolean; // 武僧-破碎拳
-  TTSChaoticSpring: boolean; // 龙骑-樱花
-  TTSHiganbana: boolean; // 武士-彼岸花
-  TTSDeathsDesign: boolean; // 镰刀-死亡之影
-  TTSStormbite: boolean; // 诗人-狂风蚀箭
-  TTSThunderIii: boolean; // 黑魔-暴雷
-  TTSBleedingDoT: boolean; // 青魔-苦闷之歌/月下彼岸花
+  TTSGoringBlade: boolean // 骑士-沥血剑
+  TTSSurgingTempest: boolean // 战士-红斩
+  TTSDia: boolean // 白魔-天辉
+  TTSBiolysis: boolean // 学者-蛊毒法
+  TTSCombustIII: boolean // 占星-焚灼
+  TTSEukrasianDosisIii: boolean // 贤者-均衡注药
+  TTSDemolish: boolean // 武僧-破碎拳
+  TTSChaoticSpring: boolean // 龙骑-樱花
+  TTSHiganbana: boolean // 武士-彼岸花
+  TTSDeathsDesign: boolean // 镰刀-死亡之影
+  TTSStormbite: boolean // 诗人-狂风蚀箭
+  TTSThunderIii: boolean // 黑魔-暴雷
+  TTSBleedingDoT: boolean // 青魔-苦闷之歌/月下彼岸花
 }
 
 export const defaultUserConfig: UserConfigOptions = {
@@ -31,7 +31,7 @@ export const defaultUserConfig: UserConfigOptions = {
   BigBuffNoticeTTSOn: true,
   DotNoticeLessThanSecond: 7,
   DotNoticeTTSOn: true,
-  DotNoticeTTS: "续DoT", // 提醒语音
+  DotNoticeTTS: '续DoT', // 提醒语音
 
   TTSGoringBlade: false, // 骑士-沥血剑
   TTSSurgingTempest: true, // 战士-红斩
@@ -49,76 +49,76 @@ export const defaultUserConfig: UserConfigOptions = {
 }
 
 export interface JobsNonConfigOptions {
-  JustBuffTracker: boolean;
-  LowerOpacityOutOfCombat: boolean;
-  OpacityOutOfCombat: number;
-  PlayCountdownSound: boolean;
-  HideWellFedAboveSeconds: number;
-  ShowMPTickerOutOfCombat: boolean;
-  MidHealthThresholdPercent: number;
-  LowHealthThresholdPercent: number;
-  BigBuffShowCooldownSeconds: number;
+  JustBuffTracker: boolean
+  LowerOpacityOutOfCombat: boolean
+  OpacityOutOfCombat: number
+  PlayCountdownSound: boolean
+  HideWellFedAboveSeconds: number
+  ShowMPTickerOutOfCombat: boolean
+  MidHealthThresholdPercent: number
+  LowHealthThresholdPercent: number
+  BigBuffShowCooldownSeconds: number
 
-  Scale: number;
-  PhysicalFontSize: number;
-  MagicFontSize: number;
+  Scale: number
+  PhysicalFontSize: number
+  MagicFontSize: number
 
-  BigBuffIconWidth: number;
-  BigBuffIconHeight: number;
-  BigBuffBarHeight: number;
-  BigBuffBorderSize: number;
-  BigBuffBarMaxWidth: number;
-  BigBuffNoticeTTSOn: boolean;
+  BigBuffIconWidth: number
+  BigBuffIconHeight: number
+  BigBuffBarHeight: number
+  BigBuffBorderSize: number
+  BigBuffBarMaxWidth: number
+  BigBuffNoticeTTSOn: boolean
 
-  DotIconWidth: number;
-  DotIconHeight: number;
-  DotBarHeight: number;
-  DotBorderSize: number;
-  DotNoticeLessThanSecond: number;
-  DotNoticeTTSOn: boolean;
-  DotNoticeTTS: string;
+  DotIconWidth: number
+  DotIconHeight: number
+  DotBarHeight: number
+  DotBorderSize: number
+  DotNoticeLessThanSecond: number
+  DotNoticeTTSOn: boolean
+  DotNoticeTTS: string
 
-  GpAlarmPoint: number;
-  GpAlarmSoundVolume: number;
-  NotifyExpiredProcsInCombat: number;
-  NotifyExpiredProcsInCombatSound: 'disabled' | 'expired' | 'threshold';
-  CompactView: boolean;
+  GpAlarmPoint: number
+  GpAlarmSoundVolume: number
+  NotifyExpiredProcsInCombat: number
+  NotifyExpiredProcsInCombatSound: 'disabled' | 'expired' | 'threshold'
+  CompactView: boolean
 
-  TTSGoringBlade: boolean; // 骑士-沥血剑
-  TTSSurgingTempest: boolean; // 战士-红斩
-  TTSDia: boolean; // 白魔-天辉
-  TTSBiolysis: boolean; // 学者-蛊毒法
-  TTSCombustIII: boolean; // 占星-焚灼
-  TTSEukrasianDosisIii: boolean; // 贤者-均衡注药
-  TTSDemolish: boolean; // 武僧-破碎拳
-  TTSChaoticSpring: boolean; // 龙骑-樱花
-  TTSHiganbana: boolean; // 武士-彼岸花
-  TTSDeathsDesign: boolean; // 镰刀-死亡之影
-  TTSStormbite: boolean; // 诗人-狂风蚀箭
-  TTSThunderIii: boolean; // 黑魔-暴雷
-  TTSBleedingDoT: boolean; // 青魔-苦闷之歌/月下彼岸花
+  TTSGoringBlade: boolean // 骑士-沥血剑
+  TTSSurgingTempest: boolean // 战士-红斩
+  TTSDia: boolean // 白魔-天辉
+  TTSBiolysis: boolean // 学者-蛊毒法
+  TTSCombustIII: boolean // 占星-焚灼
+  TTSEukrasianDosisIii: boolean // 贤者-均衡注药
+  TTSDemolish: boolean // 武僧-破碎拳
+  TTSChaoticSpring: boolean // 龙骑-樱花
+  TTSHiganbana: boolean // 武士-彼岸花
+  TTSDeathsDesign: boolean // 镰刀-死亡之影
+  TTSStormbite: boolean // 诗人-狂风蚀箭
+  TTSThunderIii: boolean // 黑魔-暴雷
+  TTSBleedingDoT: boolean // 青魔-苦闷之歌/月下彼岸花
 }
 
 export interface JobsConfigOptions {
-  ShowHPNumber: Job[];
-  ShowMPNumber: Job[];
-  ShowMPTicker: Job[];
+  ShowHPNumber: Job[]
+  ShowMPNumber: Job[]
+  ShowMPTicker: Job[]
 
-  MaxLevel: number;
+  MaxLevel: number
 
   PerBuffOptions: {
-    [s: string]: Partial<BuffInfo>;
-  };
+    [s: string]: Partial<BuffInfo>
+  }
 
-  FarThresholdOffence: number;
-  PldMediumMPThreshold: number;
-  PldLowMPThreshold: number;
-  DrkMediumMPThreshold: number;
-  DrkLowMPThreshold: number;
+  FarThresholdOffence: number
+  PldMediumMPThreshold: number
+  PldLowMPThreshold: number
+  DrkMediumMPThreshold: number
+  DrkLowMPThreshold: number
   /**  One more fire IV and then despair. */
-  BlmMediumMPThreshold: number;
+  BlmMediumMPThreshold: number
   /** Should cast despair. */
-  BlmLowMPThreshold: number;
+  BlmLowMPThreshold: number
 }
 
 const defaultJobsNonConfigOptions: JobsNonConfigOptions = {
@@ -149,7 +149,7 @@ const defaultJobsNonConfigOptions: JobsNonConfigOptions = {
   DotBorderSize: 1,
   DotNoticeLessThanSecond: 7, // <0 取消提醒, >0 剩余n秒时提醒
   DotNoticeTTSOn: true,
-  DotNoticeTTS: "续DoT", // 提醒语音
+  DotNoticeTTS: '续DoT', // 提醒语音
 
   GpAlarmPoint: 0,
   GpAlarmSoundVolume: 0.8,
@@ -170,7 +170,7 @@ const defaultJobsNonConfigOptions: JobsNonConfigOptions = {
   TTSStormbite: true, // 诗人-狂风蚀箭
   TTSThunderIii: true, // 黑魔-暴雷
   TTSBleedingDoT: true, // 青魔-苦闷之歌/月下彼岸花
-};
+}
 
 // See user/jobs-example.js for documentation.
 const defaultJobsConfigOptions: JobsConfigOptions = {
@@ -198,14 +198,17 @@ const defaultJobsConfigOptions: JobsConfigOptions = {
   BlmMediumMPThreshold: 3999,
   // Should cast despair.
   BlmLowMPThreshold: 2399,
-};
+}
 
-export interface BuffOptions extends BaseOptions, JobsConfigOptions, JobsNonConfigOptions { }
+export interface BuffOptions
+  extends BaseOptions,
+    JobsConfigOptions,
+    JobsNonConfigOptions {}
 
 const Options: BuffOptions = {
   ...UserConfig.getDefaultBaseOptions(),
   ...defaultJobsNonConfigOptions,
   ...defaultJobsConfigOptions,
-};
+}
 
-export default Options;
+export default Options

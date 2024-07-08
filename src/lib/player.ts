@@ -3,6 +3,7 @@ import { isEqual } from 'lodash';
 
 import logDefinitions from 'cactbot/resources/netlog_defs';
 import PartyTracker from 'cactbot/resources/party';
+import ZoneInfo from 'cactbot/resources/zone_info';
 import { EventResponses as OverlayEventResponses, JobDetail } from 'cactbot/types/event';
 import { Job } from 'cactbot/types/job';
 import { NetFields } from 'cactbot/types/net_fields';
@@ -28,6 +29,7 @@ export type SpeedBuffs = {
 export type GainCallback = (id: string, matches: PartialFieldMatches<'GainsEffect'>) => void;
 export type LoseCallback = (id: string, matches: PartialFieldMatches<'LosesEffect'>) => void;
 export type AbilityCallback = (id: string, matches: PartialFieldMatches<'Ability'>) => void;
+export type ZoneChangeCallback = (id: number, name: string, info?: typeof ZoneInfo[number]) => void;
 
 export interface EventMap {
   // triggered when data of current player is updated
@@ -150,14 +152,17 @@ export class Player extends PlayerBase {
   partyTracker: PartyTracker;
   combo: ComboTracker;
 
-  constructor(jobsEmitter: JobsEventEmitter, partyTracker: PartyTracker, private is5x: boolean) {
+  constructor(
+    jobsEmitter: JobsEventEmitter,
+    partyTracker: PartyTracker,
+  ) {
     super();
     this.ee = new EventEmitter();
     this.jobsEmitter = jobsEmitter;
     this.partyTracker = partyTracker;
 
     // setup combo tracker
-    this.combo = ComboTracker.setup(this.is5x, this);
+    this.combo = ComboTracker.setup(this);
 
     // setup event emitter
     this.jobsEmitter.on('player', (ev) => this.processPlayerChangedEvent(ev));
@@ -230,6 +235,14 @@ export class Player extends PlayerBase {
     };
     this.on('action/you', wrapper);
     this.once('job', () => this.off('action/you', wrapper));
+  }
+
+  onZoneChange(callback: ZoneChangeCallback): void {
+    const wrapper: ZoneChangeCallback = (id, name, info) => {
+      callback(id, name, info);
+    };
+    this.ee.on('zone/change', wrapper);
+    this.once('job', () => this.ee.off('zone/change', wrapper));
   }
 
   onJobDetailUpdate<JobKey extends keyof JobDetail>(
@@ -403,7 +416,7 @@ export class Player extends PlayerBase {
       case logDefinitions.GainsEffect.type: {
         const matches = normalizeLogLine(line, logDefinitions.GainsEffect.fields);
         const effectId = matches.effectId?.toUpperCase();
-        if (!effectId)
+        if (effectId === undefined)
           break;
 
         if (matches.targetId?.toUpperCase() === this.idHex)
@@ -414,7 +427,7 @@ export class Player extends PlayerBase {
       case logDefinitions.LosesEffect.type: {
         const matches = normalizeLogLine(line, logDefinitions.LosesEffect.fields);
         const effectId = matches.effectId?.toUpperCase();
-        if (!effectId)
+        if (effectId === undefined)
           break;
 
         if (matches.targetId?.toUpperCase() === this.idHex)
@@ -427,16 +440,18 @@ export class Player extends PlayerBase {
         const matches = normalizeLogLine(line, logDefinitions.Ability.fields);
         const sourceId = matches.sourceId?.toUpperCase();
         const id = matches.id;
-        if (!id)
+        if (id === undefined)
           break;
 
         this.emit('action', id, matches);
 
-        if (sourceId && sourceId === this.idHex)
+        if (sourceId === undefined)
+          break;
+        if (sourceId === this.idHex)
           this.emit('action/you', id, matches);
-        else if (sourceId && this.partyTracker.inParty(matches.source ?? ''))
+        else if (this.partyTracker.inParty(matches.source ?? ''))
           this.emit('action/party', id, matches);
-        else if (sourceId && sourceId.startsWith('1')) // starts with '1' is a player
+        else if (sourceId.startsWith('1')) // starts with '1' is a player
           this.emit('action/other', id, matches);
         break;
       }

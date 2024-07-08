@@ -1,38 +1,23 @@
-import ContentType from 'cactbot/resources/content_type';
-import { Job } from 'cactbot/types/job';
+import ContentType from 'cactbot/resources/content_type'
+import { Job } from 'cactbot/types/job'
 
-export const kMeleeWithMpJobs: Job[] = ['PLD', 'DRK'];
+export const kMeleeWithMpJobs: Job[] = ['PLD', 'DRK']
 
-export const kMPNormalRate = 0.06;
-export const kMPCombatRate = 0.02;
-export const kMPUI1Rate = 0.30;
-export const kMPUI2Rate = 0.45;
-export const kMPUI3Rate = 0.60;
-export const kMPTickInterval = 3.0;
+export const kMPNormalRate = 0.06
+export const kMPCombatRate = 0.02
+export const kMPUI1Rate = 0.3
+export const kMPUI2Rate = 0.45
+export const kMPUI3Rate = 0.6
+export const kMPTickInterval = 3.0
 
-/**
- * DoT ticks on every "Eorzea minute",
- * and it is known that 1 "Eorzea day" equals to 70 "Earth minutes",
- * so 1 "Eorzea minute" is equal to `70 * 60 / (1 * 24 * 60)` = `2.9166667`
- */
-export const kDoTTickInterval = 70 * 60 / (1 * 24 * 60);
-
-export const kComboDelay = 30;
-export const kComboDelay5x = 15;
+export const kComboDelay = 30
 
 export const kWellFedContentTypes: number[] = [
   ContentType.Dungeons,
   ContentType.Trials,
   ContentType.Raids,
   ContentType.UltimateRaids,
-];
-
-// this object holds effect id that is different from the patch 6.x
-// or removed in patch 6.x. In order to support CN/KR that is still
-// in patch 5.x, we move them here.
-export const patch5xEffectId = {
-  FurtherRuin5x: '4BC',
-};
+]
 
 export const kAbility = {
   // LB
@@ -79,7 +64,12 @@ export const kAbility = {
   Confiteor: '404B',
   Clemency: 'DD5',
   FightOrFlight: '14',
+  SpiritsWithin: '1D',
+  Expiacion: '6493',
+  BladeofFaith: '6494',
+  BladeofTruth: '6495',
   BladeOfValor: '6496',
+  Atonement: '404C',
   // WAR
   HeavySwing: '1F',
   Maim: '25',
@@ -88,7 +78,10 @@ export const kAbility = {
   Overpower: '29',
   MythrilTempest: '404E',
   Tomahawk: '2E',
+  Berserk: '26',
   InnerRelease: '1CDD',
+  Upheaval: '1CDB',
+  Orogeny: '6498',
   // DRK
   HardSlash: 'E21',
   SyphonStrike: 'E27',
@@ -134,9 +127,13 @@ export const kAbility = {
   AspectedBenefic: 'E0B',
   AspectedHelios: 'E11',
   Draw: 'E06',
+  MinorArcana: '1D13',
   Divination: '40A8',
   // SGE
   Rhizomata: '5EF5',
+  Phlegma: '5EE1',
+  Phlegma2: '5EF3',
+  Phlegma3: '5EF9',
   // MNK
   DragonKick: '4A',
   TwinSnakes: '3D',
@@ -175,6 +172,7 @@ export const kAbility = {
   RabbitMedium: '8E0',
   Bunshin: '406D',
   Hide: '8C5',
+  Mug: '8C8',
   // SAM
   Hakaze: '1D35',
   Jinpu: '1D36',
@@ -194,12 +192,22 @@ export const kAbility = {
   HissatsuSenei: '4061',
   Fuko: '64B4',
   // RPR
+  Slice: '5F35',
+  WaxingSlice: '5F36',
+  InfernalSlice: '5F37',
+  SpinningScythe: '5F38',
+  NightmareScythe: '5F39',
+  Gluttony: '5F49',
+  SoulSlice: '5F3C',
+  SoulScythe: '5F3D',
   ArcaneCircle: '5F55',
   // BRD
   BattleVoice: '76',
   MagesBallad: '72',
   ArmysPaeon: '74',
   theWanderersMinuet: 'DE7',
+  EmpyrealArrow: 'DE6',
+  RadiantFinale: '64B9',
   // MCH
   SplitShot: 'B32',
   SlugShot: 'B34',
@@ -215,6 +223,8 @@ export const kAbility = {
   WildFire: 'B3E',
   HeatBlast: '1CF2',
   AutoCrossbow: '4071',
+  ChainSaw: '64BC',
+  Scattergun: '64BA',
   // DNC
   Cascade: '3E75',
   Fountain: '3E76',
@@ -236,19 +246,12 @@ export const kAbility = {
   // SMN
   EnergyDrain: '407C',
   EnergySiphon: '407E',
-  SearingLight: '64F2',
+  SearingLight60: '64F2',
+  SearingLight: '64C9',
+  Aethercharge: '64C8',
+  DreadwyrmTrance: 'DFD',
   SummonBahamut: '1D03',
   SummonPhoenix: '64E7',
-  // 5.x
-  Miasma: 'A8',
-  Miasma3: '1D01',
-  BioSmn: 'A4',
-  BioSmn2: 'B2',
-  Bio3: '1D00',
-  Tridisaster: 'DFC',
-  DreadwyrmTrance: 'DFD',
-  FirebirdTrance: '40A5',
-  Devotion: '1D1A',
   // RDM
   Verstone: '1D57',
   Verfire: '1D56',
@@ -276,158 +279,65 @@ export const kAbility = {
   EnchantedReprise: '4090',
   Embolden: '1D60',
   Manafication: '1D61',
+  Fleche: '1D5D',
+  ContreSixte: '1D5F',
   // BLU
-  BleedingDoT: '2C7A',
+  SongOfTorment: '2C7A',
   OffGuard: '2C93',
   PeculiarLight: '2C9D',
   AetherialSpark: '5AF1',
   Nightbloom: '5AFA',
   // Role Action
   LucidDreaming: '1D8A',
-} as const;
+} as const
 
 // Combo actions for every jobs, this would apply to ComboTracker when
 // it is initialized, for determining whether the current action is in combo.
 export const kComboActions: string[][] = [
   // PLD
-  [
-    kAbility.FastBlade,
-    kAbility.RiotBlade,
-    kAbility.GoringBlade,
-  ],
+  [kAbility.FastBlade, kAbility.RiotBlade, kAbility.GoringBlade],
+  [kAbility.FastBlade, kAbility.RiotBlade, kAbility.RoyalAuthority],
+  [kAbility.FastBlade, kAbility.RiotBlade, kAbility.RageOfHalone],
+  [kAbility.TotalEclipse, kAbility.Prominence],
   // WAR
-  [
-    kAbility.HeavySwing,
-    kAbility.Maim,
-    kAbility.StormsEye,
-  ],
-  [
-    kAbility.HeavySwing,
-    kAbility.Maim,
-    kAbility.StormsPath,
-  ],
-  [
-    kAbility.Overpower,
-    kAbility.MythrilTempest,
-  ],
+  [kAbility.HeavySwing, kAbility.Maim, kAbility.StormsEye],
+  [kAbility.HeavySwing, kAbility.Maim, kAbility.StormsPath],
+  [kAbility.Overpower, kAbility.MythrilTempest],
   // DRK
-  [
-    kAbility.HardSlash,
-    kAbility.SyphonStrike,
-    kAbility.Souleater,
-  ],
-  [
-    kAbility.Unleash,
-    kAbility.StalwartSoul,
-  ],
+  [kAbility.HardSlash, kAbility.SyphonStrike, kAbility.Souleater],
+  [kAbility.Unleash, kAbility.StalwartSoul],
   // GNB
-  [
-    kAbility.KeenEdge,
-    kAbility.BrutalShell,
-    kAbility.SolidBarrel,
-  ],
-  [
-    kAbility.DemonSlice,
-    kAbility.DemonSlaughter,
-  ],
+  [kAbility.KeenEdge, kAbility.BrutalShell, kAbility.SolidBarrel],
+  [kAbility.DemonSlice, kAbility.DemonSlaughter],
   // DRG
-  [
-    kAbility.TrueThrust,
-    kAbility.Disembowel,
-    kAbility.ChaosThrust,
-  ],
-  [
-    kAbility.RaidenThrust,
-    kAbility.Disembowel,
-    kAbility.ChaosThrust,
-  ],
-  [
-    kAbility.DoomSpike,
-    kAbility.SonicThrust,
-    kAbility.CoerthanTorment,
-  ],
-  [
-    kAbility.DraconianFury,
-    kAbility.SonicThrust,
-    kAbility.CoerthanTorment,
-  ],
+  [kAbility.TrueThrust, kAbility.Disembowel, kAbility.ChaosThrust],
+  [kAbility.RaidenThrust, kAbility.Disembowel, kAbility.ChaosThrust],
+  [kAbility.DoomSpike, kAbility.SonicThrust, kAbility.CoerthanTorment],
+  [kAbility.DraconianFury, kAbility.SonicThrust, kAbility.CoerthanTorment],
   // NIN
-  [
-    kAbility.SpinningEdge,
-    kAbility.GustSlash,
-    kAbility.AeolianEdge,
-  ],
-  [
-    kAbility.SpinningEdge,
-    kAbility.GustSlash,
-    kAbility.ArmorCrush,
-  ],
-  [
-    kAbility.DeathBlossom,
-    kAbility.HakkeMujinsatsu,
-  ],
+  [kAbility.SpinningEdge, kAbility.GustSlash, kAbility.AeolianEdge],
+  [kAbility.SpinningEdge, kAbility.GustSlash, kAbility.ArmorCrush],
+  [kAbility.DeathBlossom, kAbility.HakkeMujinsatsu],
   // SAM
-  [
-    kAbility.Hakaze,
-    kAbility.Jinpu,
-    kAbility.Gekko,
-  ],
-  [
-    kAbility.Hakaze,
-    kAbility.Shifu,
-    kAbility.Kasha,
-  ],
-  [
-    kAbility.Hakaze,
-    kAbility.Yukikaze,
-  ],
-  [
-    kAbility.Fuga,
-    kAbility.Mangetsu,
-  ],
-  [
-    kAbility.Fuga,
-    kAbility.Oka,
-  ],
-  [
-    kAbility.Fuko,
-    kAbility.Mangetsu,
-  ],
-  [
-    kAbility.Fuko,
-    kAbility.Oka,
-  ],
+  [kAbility.Hakaze, kAbility.Jinpu, kAbility.Gekko],
+  [kAbility.Hakaze, kAbility.Shifu, kAbility.Kasha],
+  [kAbility.Hakaze, kAbility.Yukikaze],
+  [kAbility.Fuga, kAbility.Mangetsu],
+  [kAbility.Fuga, kAbility.Oka],
+  [kAbility.Fuko, kAbility.Mangetsu],
+  [kAbility.Fuko, kAbility.Oka],
+  // RPR
+  [kAbility.Slice, kAbility.WaxingSlice, kAbility.InfernalSlice],
+  [kAbility.SpinningScythe, kAbility.NightmareScythe],
   // MCH
-  [
-    kAbility.SplitShot,
-    kAbility.SlugShot,
-    kAbility.CleanShot,
-  ],
-  [
-    kAbility.HeatedSplitShot,
-    kAbility.SlugShot,
-    kAbility.CleanShot,
-  ],
-  [
-    kAbility.HeatedSplitShot,
-    kAbility.HeatedSlugShot,
-    kAbility.CleanShot,
-  ],
-  [
-    kAbility.HeatedSplitShot,
-    kAbility.HeatedSlugShot,
-    kAbility.HeatedCleanShot,
-  ],
+  [kAbility.SplitShot, kAbility.SlugShot, kAbility.CleanShot],
+  [kAbility.HeatedSplitShot, kAbility.SlugShot, kAbility.CleanShot],
+  [kAbility.HeatedSplitShot, kAbility.HeatedSlugShot, kAbility.CleanShot],
+  [kAbility.HeatedSplitShot, kAbility.HeatedSlugShot, kAbility.HeatedCleanShot],
   // DNC
-  [
-    kAbility.Cascade,
-    kAbility.Fountain,
-  ],
-  [
-    kAbility.Windmill,
-    kAbility.Bladeshower,
-  ],
-];
+  [kAbility.Cascade, kAbility.Fountain],
+  [kAbility.Windmill, kAbility.Bladeshower],
+]
 
 // Full skill names of abilities that break combos.
 // TODO: it's sad to have to duplicate combo abilities here to catch out-of-order usage.
@@ -437,13 +347,8 @@ export const kComboBreakers = [
   kAbility.RiotBlade,
   kAbility.RageOfHalone,
   kAbility.RoyalAuthority,
-  kAbility.GoringBlade,
   kAbility.TotalEclipse,
   kAbility.Prominence,
-  kAbility.HolySpirit,
-  kAbility.HolyCircle,
-  kAbility.Clemency,
-  kAbility.Confiteor,
   kAbility.ShieldBash,
   // WAR
   kAbility.HeavySwing,
@@ -492,6 +397,12 @@ export const kComboBreakers = [
   kAbility.Oka,
   kAbility.MeikyoShisui,
   kAbility.Fuko,
+  // RPR
+  kAbility.Slice,
+  kAbility.WaxingSlice,
+  kAbility.InfernalSlice,
+  kAbility.SpinningScythe,
+  kAbility.NightmareScythe,
   // MCH
   kAbility.SplitShot,
   kAbility.SlugShot,
@@ -500,52 +411,21 @@ export const kComboBreakers = [
   kAbility.HeatedSlugShot,
   kAbility.HeatedCleanShot,
   kAbility.SpreadShot,
+  kAbility.Scattergun,
   // DNC
   kAbility.Cascade,
   kAbility.Fountain,
   kAbility.Windmill,
   kAbility.Bladeshower,
-];
+]
 
-export const kComboBreakers5x = [
-  ...kComboBreakers,
-  // LB
-  kAbility.ShieldWall,
-  kAbility.Stronghold,
-  kAbility.LastBastion,
-  kAbility.LandWaker,
-  kAbility.DarkForce,
-  kAbility.GunmetalSoul,
-  kAbility.HealingWind,
-  kAbility.BreathoftheEarth,
-  kAbility.PulseofLife,
-  kAbility.AngelFeathers,
-  kAbility.AstralStasis,
-  kAbility.Braver,
-  kAbility.Bladedance,
-  kAbility.FinalHeaven,
-  kAbility.Chimatsuri,
-  kAbility.DragonsongDive,
-  kAbility.DoomoftheLiving,
-  kAbility.BigShot,
-  kAbility.Desperado,
-  kAbility.SagittariusArrow,
-  kAbility.SatelliteBeam,
-  kAbility.CrimsonLotus,
-  kAbility.Skyshard,
-  kAbility.Starstorm,
-  kAbility.Meteor,
-  kAbility.Teraflare,
-  kAbility.VermilionScourge,
-  // Ranged
-  kAbility.ShieldLob,
-  kAbility.Tomahawk,
-  kAbility.Unmend,
-  kAbility.LightningShot,
-  kAbility.PiercingTalon,
-  kAbility.ThrowingDagger,
-  kAbility.Enpi,
-];
+export const kComboBreakers630 = [...kComboBreakers, kAbility.Atonement]
+
+export const kComboBreakers620 = [
+  ...kComboBreakers630,
+  kAbility.GoringBlade,
+  kAbility.Confiteor,
+]
 
 // [level][Sub][Div]
 // FIXME: Due to 6.0 data downscale, seems all parameter between lv50-80 has been changed
@@ -642,4 +522,14 @@ export const kLevelMod = [
   [396, 1900],
   [398, 1900],
   [400, 1900], // lv90, determined
-] as const;
+  [402, 2780],
+  [404, 2780],
+  [406, 2780],
+  [408, 2780],
+  [410, 2780],
+  [412, 2780],
+  [414, 2780],
+  [416, 2780],
+  [418, 2780],
+  [420, 2780], // lv100, determined
+] as const

@@ -4,7 +4,7 @@ import TimerBar from 'cactbot/resources/timerbar';
 import TimerBox from 'cactbot/resources/timerbox';
 import Util from 'cactbot/resources/util';
 import {isPhysicalJob} from './utils';
-import WidgetList, {Toward} from './widget_list';
+import WidgetList, {Toward} from '../widget_list';
 import { Job } from 'cactbot/types/job';
 
 import {
@@ -16,7 +16,7 @@ import {
   kMPUI3Rate,
 } from './constants';
 import { JobsEventEmitter } from './event_emitter';
-import { BuffOptions } from './buff_options';
+import { BuffOptions } from '../buff_options';
 import { Player } from './player';
 import { computeBackgroundColorFrom } from './utils';
 

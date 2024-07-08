@@ -12,10 +12,10 @@ import { CactbotBaseRegExp } from 'cactbot/types/net_trigger';
 
 import { kLevelMod, kMeleeWithMpJobs } from './constants';
 import { SpeedBuffs } from './player';
-import {BuffInfo} from "./buff_info";
-import widget_list from './widget_list';
-import {DotInfo} from "./dot_info";
-import {defaultUserConfig, UserConfigOptions} from "./buff_options";
+import {BuffInfo} from "../buff_info";
+import widget_list from '../widget_list';
+import {DotInfo} from "../dot_info";
+import {defaultUserConfig, UserConfigOptions} from "../buff_options";
 
 const getLocaleRegex = (locale: string, regexes: {
   'en': RegExp;

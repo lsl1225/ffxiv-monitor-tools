@@ -1,11 +1,11 @@
 import PartyTracker from 'cactbot/resources/party';
 import { JobDetail } from 'cactbot/types/event';
-import { Bars } from '../bars';
-import { ComboTracker } from '../combo_tracker';
-import { kComboDelay, kComboDelay5x } from '../constants';
-import { JobsEventEmitter, PartialFieldMatches } from '../event_emitter';
+import { Bars } from '../lib/bars';
+import { ComboTracker } from '../lib/combo_tracker';
+import { kComboDelay } from '../lib/constants';
+import { JobsEventEmitter, PartialFieldMatches } from '../lib/event_emitter';
 import { BuffOptions } from '../buff_options';
-import { Player } from '../player';
+import { Player } from '../lib/player';
 
 export type ShouldShow = {
   buffList?: boolean;
@@ -23,7 +23,6 @@ export interface ComponentInterface {
   options: BuffOptions;
   partyTracker: PartyTracker;
   player: Player;
-  is5x: boolean;
 }
 
 export class BaseComponent implements ComponentInterface {
@@ -32,7 +31,6 @@ export class BaseComponent implements ComponentInterface {
   options: BuffOptions;
   partyTracker: PartyTracker;
   player: Player;
-  is5x: boolean;
 
   inCombat: boolean;
   comboDuration: number;
@@ -43,8 +41,7 @@ export class BaseComponent implements ComponentInterface {
     this.options = o.options;
     this.partyTracker = o.partyTracker;
     this.player = o.player;
-    this.is5x = o.is5x;
-    this.comboDuration = o.is5x ? kComboDelay5x : kComboDelay;
+    this.comboDuration = kComboDelay;
 
     this.inCombat = false;
 
