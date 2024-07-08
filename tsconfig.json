@@ -21,10 +21,7 @@
   },
   "include": [
     "./webpack",
-    "./buff",
-    "./cactbot/types",
-    "./cactbot/util",
-    "./cactbot/resources",
+    "src"
   ],
   "exclude": [
     "./eslint",
