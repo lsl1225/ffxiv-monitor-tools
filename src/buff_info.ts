@@ -38,6 +38,8 @@ const technicalFinishImage = '../resources/images/003474.png' // 技巧舞步
 const searingLightImage = '../resources/images/002752.png' // 灼热之光
 // 赤魔
 const emboldenImage = '../resources/images/003218.png' // 鼓励
+// Pictomancer
+const starryMuseImage = '../resources/images/003826_hr1.png' // Starry Muse
 
 const aEffectId = {
   Requiescat: '558', // 安魂祈祷
@@ -417,6 +419,7 @@ export class BuffInfoList {
       magicUp: 3,
       tts: '灼热',
     },
+    // 赤魔
     emboldenIsMe: {
       // 鼓励(自己给自己) 4d7
       gainEffect: [EffectId.EmboldenSelf],
@@ -444,6 +447,21 @@ export class BuffInfoList {
       physicalUp: 5,
       magicUp: 5,
       tts: '鼓励',
+    },
+    // Pictomancer
+    starryMuse: {
+      // Starry Muse
+      gainEffect: [EffectId.StarryMuse],
+      loseEffect: [EffectId.StarryMuse],
+      useEffectDuration: true,
+      icon: starryMuseImage,
+      borderColor: '#bcbce3',
+      sortKey: 0,
+      cooldown: 120,
+      target: 'you',
+      physicalUp: 5,
+      magicUp: 5,
+      tts: 'muse',
     },
   }
 }
