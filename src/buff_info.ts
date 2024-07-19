@@ -1,7 +1,5 @@
 import EffectId from 'cactbot/resources/effect_id'
 
-import { kAbility } from './lib/constants'
-
 const potionImage = '../resources/images/000000.png'
 // 骑士
 const fightOrFlightImage = '../resources/images/000166.png' // 战逃反应
@@ -9,21 +7,15 @@ const fightOrFlightImage = '../resources/images/000166.png' // 战逃反应
 const chainStratagemImage = '../resources/images/002815.png' // 连环计
 // 占星
 const divinationImage = '../resources/images/003553.png' // 占卜
-const astrodyneImage = '../resources/images/003558.png' // 宏图
-const theArrowImage = '../resources/images/003113.png' // 放浪神
 const theBalanceImage = '../resources/images/003110.png' // 太阳神
-const theBoleImage = '../resources/images/003112.png' // 世界树
-const theEwerImage = '../resources/images/003114.png' // 河流神
 const theSpearImage = '../resources/images/003111.png' // 战争神
-const theSpireImage = '../resources/images/003115.png' // 建筑神
 // 武僧
 const riddleOfFireImage = '../resources/images/002541.png' // 红莲
 const brotherhoodImage = '../resources/images/002542.png' // 义结金兰
 // 龙骑
 const battleLitanyImage = '../resources/images/002585.png' // 战斗连祷
 const leftEyeImage = '../resources/images/002587.png' // 左眼
-//忍者
-// const trickAttackImage = "../resources/images/000618.png"; // 背刺
+// 忍者
 const mugImage = '../resources/images/000613.png' // 夺取
 // 钐镰客
 const arcaneCircleImage = '../resources/images/003633.png' // 秘环
@@ -40,14 +32,6 @@ const searingLightImage = '../resources/images/002752.png' // 灼热之光
 const emboldenImage = '../resources/images/003218.png' // 鼓励
 // Pictomancer
 const starryMuseImage = '../resources/images/003826_hr1.png' // Starry Muse
-
-const aEffectId = {
-  Requiescat: '558', // 安魂祈祷
-  RiddleOfFire: '49D', // 红莲极意
-  RightEye: '5AD', // 巨龙右眼
-  RadiantFinale: 'B94', // 最终乐章
-  Mug: '8C8', // 夺取(能力技)
-} as const
 
 export interface BuffInfo {
   name: string
@@ -70,9 +54,9 @@ export interface BuffInfo {
   partyOnly?: boolean
 
   target?: 'you' | 'boss' // 赋给自己? true:给自己, false:给boss
-  physicalUp?: number //物理增伤百分比
+  physicalUp?: number // 物理增伤百分比
   magicUp?: number // 魔法增伤百分比
-  physicalUpCount?: { [s: string]: number } //物理增伤百分比
+  physicalUpCount?: { [s: string]: number } // 物理增伤百分比
   magicUpCount?: { [s: string]: number } // 魔法增伤百分比
   meleeUp?: number // 近战增伤比
   rangedUp?: number // 远程增伤
@@ -115,7 +99,7 @@ export class BuffInfoList {
     // 26|2020-09-20T17:11:46.0110000+08:00|4c5|连环计|15.00|1039A1D9|水貂桑|4000031F|木人|00|7400000|46919||cef9177cfc401552bc4e8155d546096e
     chain: {
       // 连环计
-      activeAbility: [kAbility.ChainStratagem],
+      activeAbility: [EffectId.ChainStratagem],
       partyOnly: true,
       durationSeconds: 15,
       icon: chainStratagemImage,
@@ -142,32 +126,6 @@ export class BuffInfoList {
       magicUp: 6,
       tts: '占卜',
     },
-    astrodyne: {
-      // 宏图
-      gainEffect: [EffectId.HarmonyOfMind],
-      loseEffect: [EffectId.HarmonyOfMind],
-      useEffectDuration: true,
-      icon: astrodyneImage,
-      borderColor: '#413952',
-      sortKey: 0,
-      cooldown: 120,
-      target: 'you',
-      physicalUp: 5, // 物理增伤
-      magicUp: 5, // 魔法增伤
-    },
-    arrow: {
-      // 放浪神之箭
-      gainEffect: [EffectId.TheArrow],
-      loseEffect: [EffectId.TheArrow],
-      useEffectDuration: true,
-      icon: theArrowImage,
-      borderColor: '#37ccee',
-      sortKey: 0,
-      target: 'you',
-      meleeUp: 6,
-      rangedUp: 3,
-      tts: '近卡',
-    },
     balance: {
       // 太阳神之衡
       gainEffect: [EffectId.TheBalance],
@@ -178,34 +136,8 @@ export class BuffInfoList {
       sortKey: 0,
       target: 'you',
       meleeUp: 6,
-      rangedUp: 3,
+      rangedUp: 6,
       tts: '近卡',
-    },
-    bole: {
-      // 世界树之干
-      gainEffect: [EffectId.TheBole],
-      loseEffect: [EffectId.TheBole],
-      useEffectDuration: true,
-      icon: theBoleImage,
-      borderColor: '#22dd77',
-      sortKey: 0,
-      target: 'you',
-      meleeUp: 3,
-      rangedUp: 6,
-      tts: '远卡',
-    },
-    ewer: {
-      // 河流神之瓶
-      gainEffect: [EffectId.TheEwer],
-      loseEffect: [EffectId.TheEwer],
-      useEffectDuration: true,
-      icon: theEwerImage,
-      borderColor: '#66ccdd',
-      sortKey: 0,
-      target: 'you',
-      meleeUp: 3,
-      rangedUp: 6,
-      tts: '远卡',
     },
     spear: {
       // 战争神之枪
@@ -217,27 +149,14 @@ export class BuffInfoList {
       sortKey: 0,
       target: 'you',
       meleeUp: 6,
-      rangedUp: 3,
-      tts: '近卡',
-    },
-    spire: {
-      // 建筑神之塔
-      gainEffect: [EffectId.TheSpire],
-      loseEffect: [EffectId.TheSpire],
-      useEffectDuration: true,
-      icon: theSpireImage,
-      borderColor: '#ddd044',
-      sortKey: 0,
-      target: 'you',
-      meleeUp: 3,
       rangedUp: 6,
-      tts: '远卡',
+      tts: '近卡',
     },
     // 武僧
     riddleOfFire: {
       // 红莲
-      gainEffect: [aEffectId.RiddleOfFire],
-      loseEffect: [aEffectId.RiddleOfFire],
+      gainEffect: [EffectId.FiresRumination],
+      loseEffect: [EffectId.FiresRumination],
       useEffectDuration: true,
       icon: riddleOfFireImage,
       borderColor: '#dc625a',
@@ -263,7 +182,7 @@ export class BuffInfoList {
     },
     // 龙骑
     litany: {
-      //战斗连祷
+      // 战斗连祷
       gainEffect: [EffectId.BattleLitany],
       loseEffect: [EffectId.BattleLitany],
       useEffectDuration: true,
@@ -292,8 +211,8 @@ export class BuffInfoList {
     },
     righteye: {
       // 巨龙右眼 单人+双人
-      gainEffect: [EffectId.RightEye, aEffectId.RightEye],
-      loseEffect: [EffectId.RightEye, aEffectId.RightEye],
+      gainEffect: [EffectId.RightEye],
+      loseEffect: [EffectId.RightEye],
       useEffectDuration: true,
       icon: leftEyeImage,
       borderColor: '#fa5437',
@@ -306,7 +225,7 @@ export class BuffInfoList {
     // 忍者
     mug: {
       // 夺取
-      activeAbility: [aEffectId.Mug],
+      activeAbility: [EffectId.Mug],
       partyOnly: true,
       durationSeconds: 20,
       icon: mugImage,
@@ -363,8 +282,8 @@ export class BuffInfoList {
     },
     radiantFinale: {
       // 终章
-      gainEffect: [aEffectId.RadiantFinale],
-      loseEffect: [aEffectId.RadiantFinale],
+      gainEffect: [EffectId.RadiantFinale],
+      loseEffect: [EffectId.RadiantFinale],
       useEffectDuration: true,
       icon: radiantFinaleImage,
       borderColor: '#fdf55a',
