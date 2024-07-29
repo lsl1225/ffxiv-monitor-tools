@@ -62,7 +62,7 @@
     "markdown-magic": "^2.6.1",
     "markdownlint-cli": "^0.20.0",
     "mini-css-extract-plugin": "^1.6.2",
-    "mocha": "^8.4.0",
+    "mocha": "^10.7.0",
     "node-fetch": "^2.7.0",
     "postcss": "^8.4.39",
     "proxy-agent": "^6.4.0",
