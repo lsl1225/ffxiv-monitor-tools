@@ -372,7 +372,7 @@ export const makeAuraTimerIcon = (
   div.appendChild(icon);
 
   const barDiv = document.createElement('div');
-  barDiv.style.position = 'absolute'; //绝对位置
+  barDiv.style.position = 'absolute'; // 绝对位置
   barDiv.style.left = iconWidth.toString(); // 图标位置
   barDiv.style.fontSize = '50%'; // 字体大小
   div.appendChild(barDiv);
