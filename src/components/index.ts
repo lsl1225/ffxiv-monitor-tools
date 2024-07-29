@@ -105,14 +105,13 @@ export class ComponentManager {
     this.player.on('effect/gain', (id, matches) => {
       // mob id starts with '4'
       if (matches.targetId?.startsWith('4')) {
-        this.buffTracker?.onYouGainEffect(id, matches)
+        this.buffTracker?.onUseAbility(id, matches)
         this.dotTracker?.onYouGainEffect(id, matches)
       }
     })
     this.player.on('effect/lose', (id, matches) => {
       // mob id starts with '4'
       if (matches.targetId?.startsWith('4')) {
-        this.buffTracker?.onYouLoseEffect(id, matches)
         this.dotTracker?.onYouLoseEffect(id, matches)
       }
     })

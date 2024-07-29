@@ -462,22 +462,14 @@ export class BuffTracker {
     name: string,
     matches: Partial<NetMatches['GainsEffect']>
   ): void {
-    const effect = this.gainEffectMap[name]
-    if (effect) {
-      this.onGainEffect(effect, matches)
-    } else {
-      this.onUseAbility(name, matches)
-    }
+    this.onGainEffect(this.gainEffectMap[name], matches)
   }
 
   onYouLoseEffect(
     name: string,
     matches: Partial<NetMatches['LosesEffect']>
   ): void {
-    this.onLoseEffect(
-      this.loseEffectMap[name] ?? this.cooldownAbilityMap[name],
-      matches
-    )
+    this.onLoseEffect(this.loseEffectMap[name], matches)
   }
 
   onBigBuff(
