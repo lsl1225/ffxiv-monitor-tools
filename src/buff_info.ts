@@ -14,6 +14,7 @@ const riddleOfFireImage = '../resources/images/002541.png' // 红莲
 const brotherhoodImage = '../resources/images/002542.png' // 义结金兰
 // 龙骑
 const battleLitanyImage = '../resources/images/002585.png' // 战斗连祷
+const lanceChargeImage = '../resources/images/000309.png' // 猛枪
 // 忍者
 const mugImage = '../resources/images/000613.png' // 夺取
 // 钐镰客
@@ -31,6 +32,12 @@ const searingLightImage = '../resources/images/002752.png' // 灼热之光
 const emboldenImage = '../resources/images/003218.png' // 鼓励
 // Pictomancer
 const starryMuseImage = '../resources/images/003826_hr1.png' // Starry Muse
+
+// FIXME: cactbot自带的effectId生成存在重复值问题，会将存在的值跳过
+// https://github.com/OverlayPlugin/cactbot/issues/280
+const collisionEffectIds= {
+  LanceCharge: '748'
+}
 
 export interface BuffInfo {
   name: string
@@ -193,6 +200,19 @@ export class BuffInfoList {
       physicalUp: 5,
       magicUp: 5,
       tts: '连祷',
+    },
+    lanceCharge: {
+      // 猛枪
+      gainEffect: [collisionEffectIds.LanceCharge],
+      loseEffect: [collisionEffectIds.LanceCharge],
+      useEffectDuration: true,
+      icon: lanceChargeImage,
+      borderColor: '#831819',
+      sortKey: 0,
+      cooldown: 60,
+      target: 'you',
+      physicalUp: 10,
+      magicUp: 10,
     },
     // 忍者
     mug: {
