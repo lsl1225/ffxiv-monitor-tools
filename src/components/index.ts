@@ -87,14 +87,6 @@ export class ComponentManager {
       this._onPartyWipe()
     })
 
-    // 自己放的能力技
-    this.player.on('action/you', (id, matches) => {
-      this.buffTracker?.onUseAbility(id, matches)
-    })
-    this.player.on('action/party', (id, matches) => {
-      this.buffTracker?.onUseAbility(id, matches)
-    })
-
     // 获得的buff (自己)
     this.player.on(
       // 给自己添加的
@@ -112,13 +104,17 @@ export class ComponentManager {
     // 使用的技能
     this.player.on('effect/gain', (id, matches) => {
       // mob id starts with '4'
-      if (matches.targetId?.startsWith('4'))
+      if (matches.targetId?.startsWith('4')) {
+        this.buffTracker?.onYouGainEffect(id, matches)
         this.dotTracker?.onYouGainEffect(id, matches)
+      }
     })
     this.player.on('effect/lose', (id, matches) => {
       // mob id starts with '4'
-      if (matches.targetId?.startsWith('4'))
+      if (matches.targetId?.startsWith('4')) {
+        this.buffTracker?.onYouLoseEffect(id, matches)
         this.dotTracker?.onYouLoseEffect(id, matches)
+      }
     })
 
     this.ee.on('zone/change', (id, _name) => {

@@ -14,7 +14,6 @@ const riddleOfFireImage = '../resources/images/002541.png' // 红莲
 const brotherhoodImage = '../resources/images/002542.png' // 义结金兰
 // 龙骑
 const battleLitanyImage = '../resources/images/002585.png' // 战斗连祷
-const leftEyeImage = '../resources/images/002587.png' // 左眼
 // 忍者
 const mugImage = '../resources/images/000613.png' // 夺取
 // 钐镰客
