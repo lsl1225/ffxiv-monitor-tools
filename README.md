@@ -8,11 +8,10 @@ FFXIV 团辅、DoT监控工具
 ![image](buff_show.gif)
 
 ### 使用方式：
-- 注意：本分支未上传构建文件，请自行构建，若有需要未来可能会上传
 1. 在源代码根目录下运行 `npm install`
 2. 使用 `npm run build` 构建
 3. 在ACT中添加新的自定悬浮窗（数据统计）.
-4. 在悬浮窗路径中填写：`源代码所在路径\ffxiv-monitor-tools\dist\src\buff.html` 或 `https://lsl1225.github.io/ffxiv-monitor-tools/src/buff.html`
+4. 在悬浮窗路径中填写: `源代码所在路径\ffxiv-monitor-tools\dist\src\buff.html` 或使用本仓库构建好的地址: `https://lsl1225.github.io/ffxiv-monitor-tools/src/buff.html`
 
 ### DOT提示说明
 - DOT的剩余TTS提示目前仅针对以下职业技能有效: `诗人:狂风蚀箭`, `白魔:天辉`, `学者:蛊毒法`, `占星:焚灼`, `武士:彼岸花`, `黑魔:暴雷`, `召唤:剧毒菌`
