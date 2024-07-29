@@ -136,7 +136,7 @@ export class BuffInfoList {
       sortKey: 0,
       target: 'you',
       meleeUp: 6,
-      rangedUp: 6,
+      rangedUp: 3,
       tts: '近卡',
     },
     spear: {
@@ -148,9 +148,9 @@ export class BuffInfoList {
       borderColor: '#4477dd',
       sortKey: 0,
       target: 'you',
-      meleeUp: 6,
+      meleeUp: 3,
       rangedUp: 6,
-      tts: '近卡',
+      tts: '远卡',
     },
     // 武僧
     riddleOfFire: {
@@ -194,33 +194,6 @@ export class BuffInfoList {
       physicalUp: 5,
       magicUp: 5,
       tts: '连祷',
-    },
-    lefteye: {
-      // 巨龙左眼
-      gainEffect: [EffectId.LeftEye],
-      loseEffect: [EffectId.LeftEye],
-      useEffectDuration: true,
-      icon: leftEyeImage,
-      borderColor: '#f85d48',
-      sortKey: 0,
-      cooldown: 120,
-      target: 'you',
-      physicalUp: 5,
-      magicUp: 5,
-      tts: '左眼',
-    },
-    righteye: {
-      // 巨龙右眼 单人+双人
-      gainEffect: [EffectId.RightEye],
-      loseEffect: [EffectId.RightEye],
-      useEffectDuration: true,
-      icon: leftEyeImage,
-      borderColor: '#fa5437',
-      sortKey: 0,
-      cooldown: 120,
-      target: 'you',
-      physicalUp: 10,
-      magicUp: 10,
     },
     // 忍者
     mug: {
