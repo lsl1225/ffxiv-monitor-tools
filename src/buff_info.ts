@@ -33,11 +33,8 @@ const emboldenImage = '../resources/images/003218.png' // 鼓励
 // Pictomancer
 const starryMuseImage = '../resources/images/003826_hr1.png' // Starry Muse
 
-// FIXME: cactbot自带的effectId生成存在重复值问题，会将存在的值跳过
+// cactbot自带的effectId生成存在重复值问题，会将存在的值跳过
 // https://github.com/OverlayPlugin/cactbot/issues/280
-const collisionEffectIds= {
-  LanceCharge: '748'
-}
 
 export interface BuffInfo {
   name: string
@@ -105,7 +102,7 @@ export class BuffInfoList {
     // 26|2020-09-20T17:11:46.0110000+08:00|4c5|连环计|15.00|1039A1D9|水貂桑|4000031F|木人|00|7400000|46919||cef9177cfc401552bc4e8155d546096e
     chain: {
       // 连环计
-      activeAbility: [EffectId.ChainStratagem],
+      activeAbility: [EffectId.ChainStratagem_4C5],
       partyOnly: true,
       durationSeconds: 15,
       icon: chainStratagemImage,
@@ -120,8 +117,8 @@ export class BuffInfoList {
     // 占星
     divination: {
       // 占卜
-      gainEffect: [EffectId.Divination],
-      loseEffect: [EffectId.Divination],
+      gainEffect: [EffectId.Divination_756],
+      loseEffect: [EffectId.Divination_756],
       useEffectDuration: true,
       icon: divinationImage,
       borderColor: '#e8c353',
@@ -134,8 +131,8 @@ export class BuffInfoList {
     },
     balance: {
       // 太阳神之衡
-      gainEffect: [EffectId.TheBalance],
-      loseEffect: [EffectId.TheBalance],
+      gainEffect: [EffectId.TheBalance_33D],
+      loseEffect: [EffectId.TheBalance_33D],
       useEffectDuration: true,
       icon: theBalanceImage,
       borderColor: '#ff5900',
@@ -147,8 +144,8 @@ export class BuffInfoList {
     },
     spear: {
       // 战争神之枪
-      gainEffect: [EffectId.TheSpear],
-      loseEffect: [EffectId.TheSpear],
+      gainEffect: [EffectId.TheSpear_340],
+      loseEffect: [EffectId.TheSpear_340],
       useEffectDuration: true,
       icon: theSpearImage,
       borderColor: '#4477dd',
@@ -174,8 +171,8 @@ export class BuffInfoList {
     },
     brotherhood: {
       // 义结金兰：斗气/攻击
-      gainEffect: [EffectId.Brotherhood],
-      loseEffect: [EffectId.Brotherhood],
+      gainEffect: [EffectId.Brotherhood_4A1],
+      loseEffect: [EffectId.Brotherhood_4A1],
       useEffectDuration: true,
       icon: brotherhoodImage,
       borderColor: '#994200',
@@ -189,8 +186,8 @@ export class BuffInfoList {
     // 龙骑
     litany: {
       // 战斗连祷
-      gainEffect: [EffectId.BattleLitany],
-      loseEffect: [EffectId.BattleLitany],
+      gainEffect: [EffectId.BattleLitany_312],
+      loseEffect: [EffectId.BattleLitany_312],
       useEffectDuration: true,
       icon: battleLitanyImage,
       borderColor: '#009999',
@@ -203,8 +200,8 @@ export class BuffInfoList {
     },
     lanceCharge: {
       // 猛枪
-      gainEffect: [collisionEffectIds.LanceCharge],
-      loseEffect: [collisionEffectIds.LanceCharge],
+      gainEffect: [EffectId.LanceCharge_748],
+      loseEffect: [EffectId.LanceCharge_748],
       useEffectDuration: true,
       icon: lanceChargeImage,
       borderColor: '#831819',
@@ -274,8 +271,8 @@ export class BuffInfoList {
     },
     radiantFinale: {
       // 终章
-      gainEffect: [EffectId.RadiantFinale],
-      loseEffect: [EffectId.RadiantFinale],
+      gainEffect: [EffectId.RadiantFinale_AA2],
+      loseEffect: [EffectId.RadiantFinale_AA2],
       useEffectDuration: true,
       icon: radiantFinaleImage,
       borderColor: '#fdf55a',
@@ -303,8 +300,8 @@ export class BuffInfoList {
     },
     technicalFinish: {
       // 技巧舞步结束
-      gainEffect: [EffectId.TechnicalFinish],
-      loseEffect: [EffectId.TechnicalFinish],
+      gainEffect: [EffectId.TechnicalFinish_71E],
+      loseEffect: [EffectId.TechnicalFinish_71E],
       useEffectDuration: true,
       icon: technicalFinishImage,
       borderColor: '#E0757C',
@@ -333,8 +330,8 @@ export class BuffInfoList {
     // 赤魔
     emboldenIsMe: {
       // 鼓励(自己给自己) 4d7
-      gainEffect: [EffectId.EmboldenSelf],
-      loseEffect: [EffectId.EmboldenSelf],
+      gainEffect: [EffectId.Embolden_4D7],
+      loseEffect: [EffectId.Embolden_4D7],
       useEffectDuration: true,
       icon: emboldenImage,
       borderColor: '#bcbce3',
@@ -347,8 +344,8 @@ export class BuffInfoList {
     },
     emboldenToMe: {
       // 鼓励(从赤魔得到) 511
-      gainEffect: [EffectId.Embolden],
-      loseEffect: [EffectId.Embolden],
+      gainEffect: [EffectId.Embolden_511],
+      loseEffect: [EffectId.Embolden_511],
       useEffectDuration: true,
       icon: emboldenImage,
       borderColor: '#bcbce3',

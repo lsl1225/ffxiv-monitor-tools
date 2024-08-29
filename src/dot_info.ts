@@ -1,4 +1,6 @@
 import Effect_id from 'cactbot/resources/effect_id'
+
+// https://xivapi.com/docs/Icons 图标来源
 // 战士
 const surgingTempestImage = '../resources/images/000264.png' // 红斩
 // 骑士
@@ -27,16 +29,6 @@ const causticBiteImage = '../resources/images/002613.png'
 const thunderIiiImage = '../resources/images/000459.png'
 // 青魔 003254 苦闷之歌 003357 月下彼岸花
 const bleedingDoTImage = '../resources/images/003254.png'
-
-// https://xivapi.com/docs/Icons 图标来源
-const aEffectId = {
-  Dia: '74F', // 白魔 天辉
-  Biolysis: '767', // 学者 蛊毒法
-  CombustIII: '759', // 占星 焚灼
-  Demolish: 'F6', // 武僧 破碎拳
-  ChaosThrust: '76', // 龙骑 樱花怒放
-  BleedingDoT: '6B2', // 青魔 苦闷之歌/月下彼岸花
-} as const
 
 export interface DotInfo {
   name: string
@@ -74,13 +66,13 @@ export class DotInfoList {
     // 白魔
     dia: {
       gainEffect: [
-        aEffectId.Dia,
+        Effect_id.Dia_74F,
         Effect_id.Aero,
         Effect_id.AeroIi,
         Effect_id.AeroIii,
       ],
       loseEffect: [
-        aEffectId.Dia,
+        Effect_id.Dia_74F,
         Effect_id.Aero,
         Effect_id.AeroIi,
         Effect_id.AeroIii,
@@ -93,8 +85,8 @@ export class DotInfoList {
     },
     // 学者
     biolysis: {
-      gainEffect: [aEffectId.Biolysis],
-      loseEffect: [aEffectId.Biolysis],
+      gainEffect: [Effect_id.Biolysis_767],
+      loseEffect: [Effect_id.Biolysis_767],
       icon: biolysisImage,
       borderColor: '#2e1fc4',
       sortKey: 0,
@@ -104,14 +96,14 @@ export class DotInfoList {
     // 占星
     combustIII: {
       gainEffect: [
-        aEffectId.CombustIII,
         Effect_id.Combust,
         Effect_id.CombustIi,
+        Effect_id.CombustIii_759,
       ],
       loseEffect: [
-        aEffectId.CombustIII,
         Effect_id.Combust,
         Effect_id.CombustIi,
+        Effect_id.CombustIii_759,
       ],
       icon: combustIIIImage,
       borderColor: '#62daf8',
@@ -122,14 +114,14 @@ export class DotInfoList {
     // 贤者
     eukrasianDosisIii: {
       gainEffect: [
-        Effect_id.EukrasianDosisIii,
         Effect_id.EukrasianDosis,
         Effect_id.EukrasianDosisIi,
+        Effect_id.EukrasianDosisIii_A38,
       ],
       loseEffect: [
-        Effect_id.EukrasianDosisIii,
         Effect_id.EukrasianDosis,
         Effect_id.EukrasianDosisIi,
+        Effect_id.EukrasianDosisIii_A38,
       ],
       icon: eukrasianDosisIiiImage,
       borderColor: '#c4acf6',
@@ -139,8 +131,8 @@ export class DotInfoList {
     },
     // 武僧
     demolish: {
-      gainEffect: [aEffectId.Demolish],
-      loseEffect: [aEffectId.Demolish],
+      gainEffect: [Effect_id.Demolish_F6],
+      loseEffect: [Effect_id.Demolish_F6],
       icon: demolishIiiImage,
       borderColor: '#f5cc19',
       sortKey: 0,
@@ -149,8 +141,8 @@ export class DotInfoList {
     },
     // 龙骑
     chaosThrust: {
-      gainEffect: [aEffectId.ChaosThrust],
-      loseEffect: [aEffectId.ChaosThrust],
+      gainEffect: [Effect_id.ChaosThrust_76],
+      loseEffect: [Effect_id.ChaosThrust_76],
       icon: chaosThrustIiiImage,
       borderColor: '#83598c',
       sortKey: 0,
@@ -168,15 +160,15 @@ export class DotInfoList {
     },
     // 武士
     higanbana: {
-      gainEffect: [Effect_id.Higanbana],
-      loseEffect: [Effect_id.Higanbana],
+      gainEffect: [Effect_id.Higanbana_4CC],
+      loseEffect: [Effect_id.Higanbana_4CC],
       icon: higanbanaImage,
       borderColor: '#d9542a',
       sortKey: 0,
       attackType: 'physical',
       tts: true,
     },
-    // 镰刀   DeathsDesign
+    // 镰刀 DeathsDesign
     deathsDesign: {
       gainEffect: [Effect_id.DeathsDesign],
       loseEffect: [Effect_id.DeathsDesign],
@@ -188,8 +180,8 @@ export class DotInfoList {
     },
     // 诗人
     stormbite: {
-      gainEffect: [Effect_id.Stormbite],
-      loseEffect: [Effect_id.Stormbite],
+      gainEffect: [Effect_id.Stormbite_4B1],
+      loseEffect: [Effect_id.Stormbite_4B1],
       icon: stormbiteImage,
       borderColor: '#3df6fd',
       sortKey: 0,
@@ -197,8 +189,8 @@ export class DotInfoList {
       tts: true,
     },
     causticBite: {
-      gainEffect: [Effect_id.CausticBite],
-      loseEffect: [Effect_id.CausticBite],
+      gainEffect: [Effect_id.CausticBite_4B0],
+      loseEffect: [Effect_id.CausticBite_4B0],
       icon: causticBiteImage,
       borderColor: '#e053bb',
       sortKey: 0,
@@ -207,8 +199,16 @@ export class DotInfoList {
     },
     // 黑魔
     thunderIII: {
-      gainEffect: [Effect_id.ThunderIii],
-      loseEffect: [Effect_id.ThunderIii],
+      gainEffect: [
+        Effect_id.ThunderIi_A2,
+        Effect_id.ThunderIii,
+        Effect_id.ThunderIv,
+      ],
+      loseEffect: [
+        Effect_id.ThunderIi_A2,
+        Effect_id.ThunderIii,
+        Effect_id.ThunderIv,
+      ],
       icon: thunderIiiImage,
       borderColor: '#93d5fd',
       sortKey: 0,
@@ -217,8 +217,8 @@ export class DotInfoList {
     },
     // 青魔
     bleedingDoT: {
-      gainEffect: [aEffectId.BleedingDoT],
-      loseEffect: [aEffectId.BleedingDoT],
+      gainEffect: [Effect_id.Bleeding_6B2],
+      loseEffect: [Effect_id.Bleeding_6B2],
       icon: bleedingDoTImage,
       borderColor: '#93d5fd',
       sortKey: 0,
