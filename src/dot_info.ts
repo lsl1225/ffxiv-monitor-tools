@@ -203,11 +203,13 @@ export class DotInfoList {
         Effect_id.ThunderIi_A2,
         Effect_id.ThunderIii,
         Effect_id.ThunderIv,
+        Effect_id.HighThunder_F1F,
       ],
       loseEffect: [
         Effect_id.ThunderIi_A2,
         Effect_id.ThunderIii,
         Effect_id.ThunderIv,
+        Effect_id.HighThunder_F1F,
       ],
       icon: thunderIiiImage,
       borderColor: '#93d5fd',
