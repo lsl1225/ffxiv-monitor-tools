@@ -214,7 +214,7 @@ export class BuffInfoList {
     // 忍者
     mug: {
       // 夺取
-      activeAbility: [EffectId.Mug],
+      activeAbility: [EffectId.Mug, EffectId.Dokumori],
       partyOnly: true,
       durationSeconds: 20,
       icon: mugImage,
