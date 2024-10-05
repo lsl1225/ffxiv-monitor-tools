@@ -369,7 +369,7 @@ export class BuffInfoList {
       target: 'you',
       physicalUp: 5,
       magicUp: 5,
-      tts: 'muse',
+      tts: '星空',
     },
   }
 }
