@@ -3,6 +3,8 @@ import EffectId from 'cactbot/resources/effect_id'
 const potionImage = '../resources/images/000000.png'
 // 骑士
 const fightOrFlightImage = '../resources/images/000166.png' // 战逃反应
+// 枪刃
+const noMercyImage = "../resources/images/003402.png"; // 无情
 // 学者
 const chainStratagemImage = '../resources/images/002815.png' // 连环计
 // 占星
@@ -98,6 +100,19 @@ export class BuffInfoList {
     // 战士
     // 黑骑
     // 枪刃
+    noMercy: {
+      // 无情
+      gainEffect: [EffectId.NoMercy_727],
+      loseEffect: [EffectId.NoMercy_727],
+      useEffectDuration: true,
+      icon: noMercyImage,
+      borderColor: '#345ec4',
+      sortKey: 0,
+      cooldown: 60,
+      target: 'you',
+      physicalUp: 20,
+      magicUp: 20,
+    },
     // 学者
     // 26|2020-09-20T17:11:46.0110000+08:00|4c5|连环计|15.00|1039A1D9|水貂桑|4000031F|木人|00|7400000|46919||cef9177cfc401552bc4e8155d546096e
     chain: {
@@ -131,8 +146,8 @@ export class BuffInfoList {
     },
     balance: {
       // 太阳神之衡
-      gainEffect: [EffectId.TheBalance_33D],
-      loseEffect: [EffectId.TheBalance_33D],
+      gainEffect: [EffectId.TheBalance_33D, EffectId.TheBalance_F2F],
+      loseEffect: [EffectId.TheBalance_33D, EffectId.TheBalance_F2F],
       useEffectDuration: true,
       icon: theBalanceImage,
       borderColor: '#ff5900',
@@ -144,8 +159,8 @@ export class BuffInfoList {
     },
     spear: {
       // 战争神之枪
-      gainEffect: [EffectId.TheSpear_340],
-      loseEffect: [EffectId.TheSpear_340],
+      gainEffect: [EffectId.TheSpear_340, EffectId.TheSpear_F31],
+      loseEffect: [EffectId.TheSpear_340, EffectId.TheSpear_F31],
       useEffectDuration: true,
       icon: theSpearImage,
       borderColor: '#4477dd',
@@ -158,8 +173,8 @@ export class BuffInfoList {
     // 武僧
     riddleOfFire: {
       // 红莲
-      gainEffect: [EffectId.FiresRumination],
-      loseEffect: [EffectId.FiresRumination],
+      gainEffect: [EffectId.FiresRumination, EffectId.RiddleOfFire_49D],
+      loseEffect: [EffectId.FiresRumination, EffectId.RiddleOfFire_49D],
       useEffectDuration: true,
       icon: riddleOfFireImage,
       borderColor: '#dc625a',
@@ -271,8 +286,8 @@ export class BuffInfoList {
     },
     radiantFinale: {
       // 终章
-      gainEffect: [EffectId.RadiantFinale_AA2],
-      loseEffect: [EffectId.RadiantFinale_AA2],
+      gainEffect: [EffectId.RadiantFinale_AA2, EffectId.RadiantFinale_B94],
+      loseEffect: [EffectId.RadiantFinale_AA2, EffectId.RadiantFinale_B94],
       useEffectDuration: true,
       icon: radiantFinaleImage,
       borderColor: '#fdf55a',
