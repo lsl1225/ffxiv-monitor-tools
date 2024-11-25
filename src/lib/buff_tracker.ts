@@ -371,18 +371,13 @@ export class BuffTracker {
       if ('stack' in b && b.stack !== parseInt(matches?.count ?? '0')) return
 
       this.onBigBuff(
-        matches?.targetId,
+        matches?.sourceId,
         b.name,
         seconds,
         b,
         matches?.source,
         'active'
       )
-
-      // if (b.durationSeconds)
-      //   seconds = b.durationSeconds + 1;
-      //
-      // this.onBigBuff(b.name, seconds, b, matches?.source, 'cooldown');
     }
   }
 
@@ -437,16 +432,13 @@ export class BuffTracker {
       }
 
       this.onBigBuff(
-        matches?.targetId,
+        matches?.sourceId,
         b.name,
         seconds,
         b,
         matches?.source,
         'active'
       )
-      // Some cooldowns (like potions) have no cooldownAbility, so also track them here.
-      // if (!b.cooldownAbility)
-      //   this.onBigBuff(b.name, seconds, b, matches?.source, 'cooldown');
     }
   }
 
@@ -486,8 +478,9 @@ export class BuffTracker {
 
     let list = this.buffsListDiv
     let buff = this.buffs[name]
-    if (!buff)
+    if (!buff) {
       buff = this.buffs[name] = new Buff(name, info, list, this.options)
+    }
 
     if (option === 'active' && seconds > 0) buff.onGain(seconds)
     else if (option === 'cooldown') buff.onCooldown(seconds, source)
