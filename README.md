@@ -10,7 +10,7 @@ FFXIV监控工具
 ### 使用方式：
 - 依赖ACT插件: cacbot + ngld.
 - 添加新的自定悬浮窗.
-- 在悬浮窗路径中填写：`https://jiacheng-z.github.io/FFXIV-Monitor-Tools/Buff/buff.html`
+- 在悬浮窗路径中填写：`https://lsl1225.github.io/ffxiv-monitor-tools/src/buff.html`
 
 ### DOT提示说明
 - DOT的剩余TTS提示目前仅针对以下职业技能有效: `诗人:狂风蚀箭`, `白魔:天辉`, `学者:蛊毒法`, `占星:焚灼`, `武士:彼岸花`, `黑魔:暴雷`, `召唤:剧毒菌`
@@ -24,7 +24,7 @@ FFXIV监控工具
 
 样例: 
 
-开启秒数参考+关闭TTS+DOT样式修改: `https://jiacheng-z.github.io/FFXIV-Monitor-Tools/Buff/buff.html?brdsec=1&tts=0&dotstyle=44,32`
+开启秒数参考+关闭TTS+DOT样式修改: `https://lsl1225.github.io/ffxiv-monitor-tools/src/buff.html?brdsec=1&tts=0&dotstyle=44,32`
 
 参数:
 - 开关类:
