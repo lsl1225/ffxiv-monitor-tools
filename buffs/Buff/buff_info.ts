@@ -1,35 +1,25 @@
 import EffectId from "../cactbot/resources/effect_id";
 
-import {kAbility} from "./constants";
+import { kAbility } from "./constants";
 
 const potionImage = "../resources/images/000000.png";
 // 骑士
 const fightOrFlightImage = "../resources/images/000166.png"; // 战逃反应
-// const requiescatImage = "../resources/images/002513.png"; // 安魂
 // 枪刃
 const noMercyImage = "../resources/images/003402.png"; // 无情
 // 学者
 const chainStratagemImage = "../resources/images/002815.png"; // 连环计
 // 占星
 const divinationImage = "../resources/images/003553.png"; // 占卜
-// const astrodyneImage = "../resources/images/003558.png"; // 宏图
-// const theArrowImage = "../resources/images/003113.png"; // 放浪神
 const theBalanceImage = "../resources/images/003110.png"; // 太阳神
-// const theBoleImage = "../resources/images/003112.png"; // 世界树
-// const theEwerImage = "../resources/images/003114.png"; // 河流神
 const theSpearImage = "../resources/images/003111.png"; // 战争神
-// const theSpireImage = "../resources/images/003115.png"; // 建筑神
-// const ladyOfCrownsImage = "../resources/images/003146.png"; // 富贵
-// const lordOfCrownsImage = "../resources/images/003147.png"; // 领主
 // 武僧
 const riddleOfFireImage = "../resources/images/002541.png"; // 红莲
 const brotherhoodImage = "../resources/images/002542.png"; // 义结金兰
 // 龙骑
 const lanceChargeImage = "../resources/images/000309.png"; // 猛枪
 const battleLitanyImage = "../resources/images/002585.png"; // 战斗连祷
-// const leftEyeImage = "../resources/images/002587.png"; // 左眼
 //忍者
-// const trickAttackImage = "../resources/images/000618.png"; // 背刺
 const mugImage = "../resources/images/000613.png"; // 夺取
 const dokumoriImage = "../resources/images/dokumori.png"; // 夺取
 
@@ -43,7 +33,6 @@ const radiantFinaleImage = "../resources/images/002622.png"; // 最终乐章
 const devilmentImage = "../resources/images/003471.png"; // 探戈
 const technicalFinishImage = "../resources/images/003474.png"; // 技巧舞步
 // 召唤
-// const devotionImage = "../resources/images/002688.png"; // 灵护
 const searingLightImage = "../resources/images/002752.png"; // 灼热之光
 // 赤魔
 const emboldenImage = "../resources/images/003218.png"; // 鼓励
@@ -69,11 +58,11 @@ export interface BuffInfo {
     stack?: number;
     partyOnly?: boolean;
 
-    target?: 'you' | 'boss' ; // 赋给自己? true:给自己, false:给boss
+    target?: 'you' | 'boss'; // 赋给自己? true:给自己, false:给boss
     physicalUp?: number; //物理增伤百分比
     magicUp?: number; // 魔法增伤百分比
     physicalUpCount?: { [s: string]: number }; //物理增伤百分比
-    magicUpCount?:  { [s: string]: number }; // 魔法增伤百分比
+    magicUpCount?: { [s: string]: number }; // 魔法增伤百分比
     meleeUp?: number; // 近战增伤比
     rangedUp?: number; // 远程增伤
     tts?: string; // tts播报
@@ -81,7 +70,8 @@ export interface BuffInfo {
 
 export class BuffInfoList {
     static buffInfo: { [s: string]: Omit<BuffInfo, 'name'> } = {
-        potion: { // 强化药  26|2020-09-20T03:24:38.9810000+08:00|31|强化药|30.00|1039A1D9|水貂桑|1039A1D9|水貂桑|28D6|111340|111340||63c01dd83f9942aec827298ddef1519b
+        // 强化药
+        potion: {
             gainEffect: [EffectId.Medicated],
             loseEffect: [EffectId.Medicated],
             useEffectDuration: true,
@@ -94,7 +84,6 @@ export class BuffInfoList {
             magicUp: 8,
         },
         // 骑士
-        // 26|2020-09-20T03:16:28.1830000+08:00|4c|战逃反应|25.00|1039A1D9|水貂桑|1039A1D9|水貂桑|00|114648|114648||944a97734ac0fe2928b2e92739402f83
         fightOrFlight: {
             gainEffect: [EffectId.FightOrFlight],
             loseEffect: [EffectId.FightOrFlight],
@@ -123,7 +112,6 @@ export class BuffInfoList {
             magicUp: 20,
         },
         // 学者
-        // 26|2020-09-20T17:11:46.0110000+08:00|4c5|连环计|15.00|1039A1D9|水貂桑|4000031F|木人|00|7400000|46919||cef9177cfc401552bc4e8155d546096e
         chain: { // 连环计
             activeAbility: [kAbility.ChainStratagem],
             partyOnly: true,
@@ -151,33 +139,9 @@ export class BuffInfoList {
             magicUp: 6,
             tts: '占卜',
         },
-        // astrodyne: { // 宏图
-        //     gainEffect: [EffectId.HarmonyOfMind],
-        //     loseEffect: [EffectId.HarmonyOfMind],
-        //     useEffectDuration: true,
-        //     icon: astrodyneImage,
-        //     borderColor: '#413952',
-        //     sortKey: 0,
-        //     cooldown: 120,
-        //     target: 'you',
-        //     physicalUp: 5, // 物理增伤
-        //     magicUp: 5, // 魔法增伤
-        // },
-        // arrow: { // 放浪神之箭
-        //     gainEffect: [EffectId.TheArrow_75C],
-        //     loseEffect: [EffectId.TheArrow_75C],
-        //     useEffectDuration: true,
-        //     icon: theArrowImage,
-        //     borderColor: '#37ccee',
-        //     sortKey: 0,
-        //     target: 'you',
-        //     meleeUp: 6,
-        //     rangedUp: 3,
-        //     tts: '近卡',
-        // },
         balance: { // 太阳神之衡
-            gainEffect: [EffectId.TheBalance_F2F],
-            loseEffect: [EffectId.TheBalance_F2F],
+            gainEffect: [EffectId.TheBalance_F2F, EffectId.TheBalance_33D],
+            loseEffect: [EffectId.TheBalance_F2F, EffectId.TheBalance_33D],
             useEffectDuration: true,
             icon: theBalanceImage,
             borderColor: '#ff5900',
@@ -187,33 +151,9 @@ export class BuffInfoList {
             rangedUp: 3,
             tts: '近卡',
         },
-        // bole: { // 世界树之干
-        //     gainEffect: [EffectId.TheBole_75B],
-        //     loseEffect: [EffectId.TheBole_75B],
-        //     useEffectDuration: true,
-        //     icon: theBoleImage,
-        //     borderColor: '#22dd77',
-        //     sortKey: 0,
-        //     target: 'you',
-        //     meleeUp: 3,
-        //     rangedUp: 6,
-        //     tts: '远卡',
-        // },
-        // ewer: { // 河流神之瓶
-        //     gainEffect: [EffectId.TheEwer_75E],
-        //     loseEffect: [EffectId.TheEwer_75E],
-        //     useEffectDuration: true,
-        //     icon: theEwerImage,
-        //     borderColor: '#66ccdd',
-        //     sortKey: 0,
-        //     target: 'you',
-        //     meleeUp: 3,
-        //     rangedUp: 6,
-        //     tts: '远卡',
-        // },
         spear: { // 战争神之枪
-            gainEffect: [EffectId.TheSpear_F31],
-            loseEffect: [EffectId.TheSpear_F31],
+            gainEffect: [EffectId.TheSpear_F31, EffectId.TheSpear_340],
+            loseEffect: [EffectId.TheSpear_F31, EffectId.TheSpear_340],
             useEffectDuration: true,
             icon: theSpearImage,
             borderColor: '#4477dd',
@@ -223,22 +163,10 @@ export class BuffInfoList {
             rangedUp: 6,
             tts: '远卡',
         },
-        // spire: { // 建筑神之塔
-        //     gainEffect: [EffectId.TheSpire_75F],
-        //     loseEffect: [EffectId.TheSpire_75F],
-        //     useEffectDuration: true,
-        //     icon: theSpireImage,
-        //     borderColor: '#ddd044',
-        //     sortKey: 0,
-        //     target: 'you',
-        //     meleeUp: 3,
-        //     rangedUp: 6,
-        //     tts: '远卡',
-        // },
         // 武僧
         riddleOfFire: { // 红莲
-            gainEffect: [EffectId.RiddleOfFire_49D],
-            loseEffect: [EffectId.RiddleOfFire_49D],
+            gainEffect: [EffectId.FiresRumination, EffectId.RiddleOfFire_49D],
+            loseEffect: [EffectId.FiresRumination, EffectId.RiddleOfFire_49D],
             useEffectDuration: true,
             icon: riddleOfFireImage,
             borderColor: '#dc625a',
@@ -287,44 +215,7 @@ export class BuffInfoList {
             magicUp: 5,
             tts: '连祷',
         },
-        // lefteye: { // 巨龙左眼
-        //     gainEffect: [EffectId.LeftEye_5AE],
-        //     loseEffect: [EffectId.LeftEye_5AE],
-        //     useEffectDuration: true,
-        //     icon: leftEyeImage,
-        //     borderColor: '#f85d48',
-        //     sortKey: 0,
-        //     cooldown: 120,
-        //     target: 'you',
-        //     physicalUp: 5,
-        //     magicUp: 5,
-        //     tts: '左眼',
-        // },
-        // righteye: { // 巨龙右眼 单人+双人
-        //     gainEffect: [EffectId.RightEye_776, EffectId.RightEye_5AD],
-        //     loseEffect: [EffectId.RightEye_776, EffectId.RightEye_5AD],
-        //     useEffectDuration: true,
-        //     icon: leftEyeImage,
-        //     borderColor: '#fa5437',
-        //     sortKey: 0,
-        //     cooldown: 120,
-        //     target: 'you',
-        //     physicalUp: 10,
-        //     magicUp: 10,
-        // },
         // 忍者
-        // trick: { // 背刺
-        //     activeAbility: [kAbility.TrickAttack],
-        //     partyOnly: true,
-        //     durationSeconds: 15,
-        //     icon: trickAttackImage,
-        //     borderColor: '#ff8400',
-        //     sortKey: 0,
-        //     cooldown: 60,
-        //     target: 'boss',
-        //     physicalUp: 10,
-        //     magicUp: 10,
-        // },
         mug: { // 夺取
             activeAbility: [kAbility.Mug],
             partyOnly: true,
@@ -366,7 +257,7 @@ export class BuffInfoList {
             tts: '秘环',
         },
         // 诗人
-        raging: { // 猛者 26|2020-09-20T03:48:12.5040000+08:00|7d|猛者强击|20.00|1039A1D9|水貂桑|1039A1D9|水貂桑|00|111340|111340||7f5d92a566794a793b65f97686f3699f
+        raging: { // 猛者
             gainEffect: [EffectId.RagingStrikes],
             loseEffect: [EffectId.RagingStrikes],
             useEffectDuration: true,
@@ -392,8 +283,8 @@ export class BuffInfoList {
             tts: '战斗之声',
         },
         radiantFinale: { // 终章
-            gainEffect: [EffectId.RadiantFinale_B94],
-            loseEffect: [EffectId.RadiantFinale_B94],
+            gainEffect: [EffectId.RadiantFinale_AA2, EffectId.RadiantFinale_B94],
+            loseEffect: [EffectId.RadiantFinale_AA2, EffectId.RadiantFinale_B94],
             useEffectDuration: true,
             icon: radiantFinaleImage,
             borderColor: '#fdf55a',
@@ -416,7 +307,7 @@ export class BuffInfoList {
             target: 'you',
             physicalUp: 15,
             magicUp: 15,
-            tts: '贪个',
+            tts: '探戈',
         },
         technicalFinish: { // 技巧舞步结束
             gainEffect: [EffectId.TechnicalFinish_71E],
