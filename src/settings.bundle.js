@@ -1,1 +1,19208 @@
-(()=>{"use strict";var __webpack_modules__={262:(e,t,a)=>{a.d(t,{A:()=>n});const n={targetIsYou:()=>(e,t)=>e.me===t?.target,targetIsNotYou:()=>(e,t)=>e.me!==t?.target,caresAboutAOE:()=>e=>"tank"===e.role||"healer"===e.role||e.CanAddle()||"BLU"===e.job,caresAboutMagical:()=>e=>"tank"===e.role||"healer"===e.role||e.CanAddle()||"BLU"===e.job,caresAboutPhysical:()=>e=>"tank"===e.role||"healer"===e.role||e.CanFeint()||"BLU"===e.job}},946:(e,t,a)=>{a.d(t,{A:()=>n});const n={Companions:12,CustomDeliveries:25,DeepDungeons:21,DisciplesOfTheHand:17,DisciplesOfTheLand:16,Dungeons:2,DutyRoulette:1,Eureka:26,Fates:8,Fishing:34,Gate:35,GoldSaucer:19,GrandCompany:11,Guildhests:3,Levequests:10,MaskedCarnivale:27,OceanFishing:31,OverallCompletion:14,PlayerCommendation:15,Pvp:6,QuestBattles:7,Raids:5,RetainerVentures:18,TheHunt:33,TreasureHunt:9,Trials:4,TribalQuests:13,TripleTriad:32,UltimateRaids:28,VCDungeonFinder:30,WondrousTails:24}},765:(e,t,a)=>{a.d(t,{Hf:()=>r,yJ:()=>o});const n=["en","de","fr","ja","cn","ko"],r=e=>void 0!==e&&n.includes(e),o=e=>({en:"en",de:"de",fr:"fr",ja:"ja",cn:"zh-CN",ko:"ko"}[e])},130:(e,t,a)=>{a.d(t,{A:()=>s,s:()=>r});const n={GameLog:{type:"00",name:"GameLog",source:"FFXIV_ACT_Plugin",messageType:"ChatLog",fields:{type:0,timestamp:1,code:2,name:3,line:4},subFields:{code:{"0039":{name:"message",canAnonymize:!0},"0038":{name:"echo",canAnonymize:!0},"0044":{name:"dialog",canAnonymize:!0},"0839":{name:"message",canAnonymize:!0}}},firstOptionalField:void 0,analysisOptions:{include:"filter",filters:{code:["0044","0839"]}}},ChangeZone:{type:"01",name:"ChangeZone",source:"FFXIV_ACT_Plugin",messageType:"Territory",fields:{type:0,timestamp:1,id:2,name:3},lastInclude:!0,canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"all"}},ChangedPlayer:{type:"02",name:"ChangedPlayer",source:"FFXIV_ACT_Plugin",messageType:"ChangePrimaryPlayer",fields:{type:0,timestamp:1,id:2,name:3},playerIds:{2:3},lastInclude:!0,canAnonymize:!0,firstOptionalField:void 0},AddedCombatant:{type:"03",name:"AddedCombatant",source:"FFXIV_ACT_Plugin",messageType:"AddCombatant",fields:{type:0,timestamp:1,id:2,name:3,job:4,level:5,ownerId:6,worldId:7,world:8,npcNameId:9,npcBaseId:10,currentHp:11,hp:12,currentMp:13,mp:14,x:17,y:18,z:19,heading:20},playerIds:{2:3,6:null},canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"filter",filters:{id:"4.{7}"},combatantIdFields:2}},RemovedCombatant:{type:"04",name:"RemovedCombatant",source:"FFXIV_ACT_Plugin",messageType:"RemoveCombatant",fields:{type:0,timestamp:1,id:2,name:3,job:4,level:5,owner:6,world:8,npcNameId:9,npcBaseId:10,currentHp:11,hp:12,currentMp:13,mp:14,x:17,y:18,z:19,heading:20},playerIds:{2:3,6:null},canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"filter",filters:{id:"4.{7}"},combatantIdFields:2}},PartyList:{type:"11",name:"PartyList",source:"FFXIV_ACT_Plugin",messageType:"PartyList",fields:{type:0,timestamp:1,partyCount:2,id0:3,id1:4,id2:5,id3:6,id4:7,id5:8,id6:9,id7:10,id8:11,id9:12,id10:13,id11:14,id12:15,id13:16,id14:17,id15:18,id16:19,id17:20,id18:21,id19:22,id20:23,id21:24,id22:25,id23:26},playerIds:{3:null,4:null,5:null,6:null,7:null,8:null,9:null,10:null,11:null,12:null,13:null,14:null,15:null,16:null,17:null,18:null,19:null,20:null,21:null,22:null,23:null,24:null,25:null,26:null},firstOptionalField:3,canAnonymize:!0,lastInclude:!0},PlayerStats:{type:"12",name:"PlayerStats",source:"FFXIV_ACT_Plugin",messageType:"PlayerStats",fields:{type:0,timestamp:1,job:2,strength:3,dexterity:4,vitality:5,intelligence:6,mind:7,piety:8,attackPower:9,directHit:10,criticalHit:11,attackMagicPotency:12,healMagicPotency:13,determination:14,skillSpeed:15,spellSpeed:16,tenacity:18,localContentId:19},canAnonymize:!0,lastInclude:!0,firstOptionalField:void 0},StartsUsing:{type:"20",name:"StartsUsing",source:"FFXIV_ACT_Plugin",messageType:"StartsCasting",fields:{type:0,timestamp:1,sourceId:2,source:3,id:4,ability:5,targetId:6,target:7,castTime:8,x:9,y:10,z:11,heading:12},possibleRsvFields:5,blankFields:[6],playerIds:{2:3,6:7},canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"filter",filters:{sourceId:"4.{7}"},combatantIdFields:[2,6]}},Ability:{type:"21",name:"Ability",source:"FFXIV_ACT_Plugin",messageType:"ActionEffect",fields:{type:0,timestamp:1,sourceId:2,source:3,id:4,ability:5,targetId:6,target:7,flags:8,damage:9,targetCurrentHp:24,targetMaxHp:25,targetCurrentMp:26,targetMaxMp:27,targetX:30,targetY:31,targetZ:32,targetHeading:33,currentHp:34,maxHp:35,currentMp:36,maxMp:37,x:40,y:41,z:42,heading:43,sequence:44,targetIndex:45,targetCount:46,ownerId:47,ownerName:48,effectDisplayType:49,actionId:50,actionAnimationId:51,animationLockTime:52,rotationHex:53},possibleRsvFields:5,playerIds:{2:3,6:7,47:48},blankFields:[6,47,48],canAnonymize:!0,firstOptionalField:47,analysisOptions:{include:"filter",filters:{sourceId:"4.{7}"},combatantIdFields:[2,6]}},NetworkAOEAbility:{type:"22",name:"NetworkAOEAbility",source:"FFXIV_ACT_Plugin",messageType:"AOEActionEffect",fields:{type:0,timestamp:1,sourceId:2,source:3,id:4,ability:5,targetId:6,target:7,flags:8,damage:9,targetCurrentHp:24,targetMaxHp:25,targetCurrentMp:26,targetMaxMp:27,targetX:30,targetY:31,targetZ:32,targetHeading:33,currentHp:34,maxHp:35,currentMp:36,maxMp:37,x:40,y:41,z:42,heading:43,sequence:44,targetIndex:45,targetCount:46,ownerId:47,ownerName:48,effectDisplayType:49,actionId:50,actionAnimationId:51,animationLockTime:52,rotationHex:53},possibleRsvFields:5,playerIds:{2:3,6:7,47:48},blankFields:[6,47,48],canAnonymize:!0,firstOptionalField:47,analysisOptions:{include:"filter",filters:{sourceId:"4.{7}"},combatantIdFields:[2,6]}},NetworkCancelAbility:{type:"23",name:"NetworkCancelAbility",source:"FFXIV_ACT_Plugin",messageType:"CancelAction",fields:{type:0,timestamp:1,sourceId:2,source:3,id:4,name:5,reason:6},possibleRsvFields:5,playerIds:{2:3},canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"filter",filters:{sourceId:"4.{7}"},combatantIdFields:2}},NetworkDoT:{type:"24",name:"NetworkDoT",source:"FFXIV_ACT_Plugin",messageType:"DoTHoT",fields:{type:0,timestamp:1,id:2,name:3,which:4,effectId:5,damage:6,currentHp:7,maxHp:8,currentMp:9,maxMp:10,x:13,y:14,z:15,heading:16,sourceId:17,source:18,damageType:19,sourceCurrentHp:20,sourceMaxHp:21,sourceCurrentMp:22,sourceMaxMp:23,sourceX:26,sourceY:27,sourceZ:28,sourceHeading:29},playerIds:{2:3,17:18},canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"filter",filters:{id:"1.{7}",which:"DoT",effectId:"0*?[1-9A-F][0-9A-F]*"},combatantIdFields:[2,17]}},WasDefeated:{type:"25",name:"WasDefeated",source:"FFXIV_ACT_Plugin",messageType:"Death",fields:{type:0,timestamp:1,targetId:2,target:3,sourceId:4,source:5},playerIds:{2:3,4:5},canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"filter",filters:{targetId:"4.{7}"},combatantIdFields:2}},GainsEffect:{type:"26",name:"GainsEffect",source:"FFXIV_ACT_Plugin",messageType:"StatusAdd",fields:{type:0,timestamp:1,effectId:2,effect:3,duration:4,sourceId:5,source:6,targetId:7,target:8,count:9,targetMaxHp:10,sourceMaxHp:11},possibleRsvFields:3,playerIds:{5:6,7:8},canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"filter",filters:[{sourceId:"[E4].{7}",targetId:"1.{7}"},{sourceId:"4.{7}",targetId:"4.{7}"},{effectId:["B9A","808"]}],combatantIdFields:[5,7]}},HeadMarker:{type:"27",name:"HeadMarker",source:"FFXIV_ACT_Plugin",messageType:"TargetIcon",fields:{type:0,timestamp:1,targetId:2,target:3,id:6,data0:7},playerIds:{2:3},possiblePlayerIds:[7],canAnonymize:!0,firstOptionalField:7,analysisOptions:{include:"all",combatantIdFields:2}},NetworkRaidMarker:{type:"28",name:"NetworkRaidMarker",source:"FFXIV_ACT_Plugin",messageType:"WaymarkMarker",fields:{type:0,timestamp:1,operation:2,waymark:3,id:4,name:5,x:6,y:7,z:8},playerIds:{4:5},canAnonymize:!0,firstOptionalField:void 0},NetworkTargetMarker:{type:"29",name:"NetworkTargetMarker",source:"FFXIV_ACT_Plugin",messageType:"SignMarker",fields:{type:0,timestamp:1,operation:2,waymark:3,id:4,name:5,targetId:6,targetName:7},playerIds:{4:5,6:7},firstOptionalField:void 0},LosesEffect:{type:"30",name:"LosesEffect",source:"FFXIV_ACT_Plugin",messageType:"StatusRemove",fields:{type:0,timestamp:1,effectId:2,effect:3,sourceId:5,source:6,targetId:7,target:8,count:9},possibleRsvFields:3,playerIds:{5:6,7:8},canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"filter",filters:[{sourceId:"[E4].{7}",targetId:"1.{7}"},{sourceId:"4.{7}",targetId:"4.{7}"},{effectId:["B9A","808"]}],combatantIdFields:[5,7]}},NetworkGauge:{type:"31",name:"NetworkGauge",source:"FFXIV_ACT_Plugin",messageType:"Gauge",fields:{type:0,timestamp:1,id:2,data0:3,data1:4,data2:5,data3:6},playerIds:{2:null},firstUnknownField:3,canAnonymize:!0,firstOptionalField:void 0},NetworkWorld:{type:"32",name:"NetworkWorld",source:"FFXIV_ACT_Plugin",messageType:"World",fields:{type:0,timestamp:1},isUnknown:!0,firstOptionalField:void 0},ActorControl:{type:"33",name:"ActorControl",source:"FFXIV_ACT_Plugin",messageType:"Director",fields:{type:0,timestamp:1,instance:2,command:3,data0:4,data1:5,data2:6,data3:7},possiblePlayerIds:[4,5,6,7],canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"never"}},NameToggle:{type:"34",name:"NameToggle",source:"FFXIV_ACT_Plugin",messageType:"NameToggle",fields:{type:0,timestamp:1,id:2,name:3,targetId:4,targetName:5,toggle:6},playerIds:{2:3,4:5},canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"never"}},Tether:{type:"35",name:"Tether",source:"FFXIV_ACT_Plugin",messageType:"Tether",fields:{type:0,timestamp:1,sourceId:2,source:3,targetId:4,target:5,id:8},playerIds:{2:3,4:5},canAnonymize:!0,firstUnknownField:9,firstOptionalField:void 0,analysisOptions:{include:"all",combatantIdFields:[2,4]}},LimitBreak:{type:"36",name:"LimitBreak",source:"FFXIV_ACT_Plugin",messageType:"LimitBreak",fields:{type:0,timestamp:1,valueHex:2,bars:3},canAnonymize:!0,firstOptionalField:void 0},NetworkEffectResult:{type:"37",name:"NetworkEffectResult",source:"FFXIV_ACT_Plugin",messageType:"EffectResult",fields:{type:0,timestamp:1,id:2,name:3,sequenceId:4,currentHp:5,maxHp:6,currentMp:7,maxMp:8,currentShield:9,x:11,y:12,z:13,heading:14},playerIds:{2:3},firstUnknownField:22,canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"never"}},StatusEffect:{type:"38",name:"StatusEffect",source:"FFXIV_ACT_Plugin",messageType:"StatusList",fields:{type:0,timestamp:1,targetId:2,target:3,jobLevelData:4,hp:5,maxHp:6,mp:7,maxMp:8,currentShield:9,x:11,y:12,z:13,heading:14,data0:15,data1:16,data2:17,data3:18,data4:19,data5:20},playerIds:{2:3},firstUnknownField:18,canAnonymize:!0,firstOptionalField:18},NetworkUpdateHP:{type:"39",name:"NetworkUpdateHP",source:"FFXIV_ACT_Plugin",messageType:"UpdateHp",fields:{type:0,timestamp:1,id:2,name:3,currentHp:4,maxHp:5,currentMp:6,maxMp:7,x:10,y:11,z:12,heading:13},playerIds:{2:3},canAnonymize:!0,firstOptionalField:void 0},Map:{type:"40",name:"Map",source:"FFXIV_ACT_Plugin",messageType:"ChangeMap",fields:{type:0,timestamp:1,id:2,regionName:3,placeName:4,placeNameSub:5},canAnonymize:!0,firstOptionalField:void 0,lastInclude:!0,analysisOptions:{include:"all"}},SystemLogMessage:{type:"41",name:"SystemLogMessage",source:"FFXIV_ACT_Plugin",messageType:"SystemLogMessage",fields:{type:0,timestamp:1,instance:2,id:3,param0:4,param1:5,param2:6},canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"all"}},StatusList3:{type:"42",name:"StatusList3",source:"FFXIV_ACT_Plugin",messageType:"StatusList3",fields:{type:0,timestamp:1,id:2,name:3},playerIds:{2:3},canAnonymize:!0,firstOptionalField:4,firstUnknownField:4},ParserInfo:{type:"249",name:"ParserInfo",source:"FFXIV_ACT_Plugin",messageType:"Settings",fields:{type:0,timestamp:1},globalInclude:!0,canAnonymize:!0,firstOptionalField:void 0},ProcessInfo:{type:"250",name:"ProcessInfo",source:"FFXIV_ACT_Plugin",messageType:"Process",fields:{type:0,timestamp:1},globalInclude:!0,canAnonymize:!0,firstOptionalField:void 0},Debug:{type:"251",name:"Debug",source:"FFXIV_ACT_Plugin",messageType:"Debug",fields:{type:0,timestamp:1},globalInclude:!0,canAnonymize:!1,firstOptionalField:void 0},PacketDump:{type:"252",name:"PacketDump",source:"FFXIV_ACT_Plugin",messageType:"PacketDump",fields:{type:0,timestamp:1},canAnonymize:!1,firstOptionalField:void 0},Version:{type:"253",name:"Version",source:"FFXIV_ACT_Plugin",messageType:"Version",fields:{type:0,timestamp:1},globalInclude:!0,canAnonymize:!0,firstOptionalField:void 0},Error:{type:"254",name:"Error",source:"FFXIV_ACT_Plugin",messageType:"Error",fields:{type:0,timestamp:1},canAnonymize:!1,firstOptionalField:void 0},None:{type:"[0-9]+",name:"None",source:"FFXIV_ACT_Plugin",messageType:"None",fields:{type:0,timestamp:1},isUnknown:!0,firstOptionalField:void 0,analysisOptions:{include:"never"}},LineRegistration:{type:"256",name:"LineRegistration",source:"OverlayPlugin",messageType:"256",fields:{type:0,timestamp:1,id:2,source:3,name:4,version:5},globalInclude:!0,canAnonymize:!0,firstOptionalField:void 0},MapEffect:{type:"257",name:"MapEffect",source:"OverlayPlugin",messageType:"257",fields:{type:0,timestamp:1,instance:2,flags:3,location:4,data0:5,data1:6},canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"all"}},FateDirector:{type:"258",name:"FateDirector",source:"OverlayPlugin",messageType:"258",fields:{type:0,timestamp:1,category:2,fateId:4,progress:5},canAnonymize:!0,firstOptionalField:void 0},CEDirector:{type:"259",name:"CEDirector",source:"OverlayPlugin",messageType:"259",fields:{type:0,timestamp:1,popTime:2,timeRemaining:3,ceKey:5,numPlayers:6,status:7,progress:9},canAnonymize:!0,firstOptionalField:void 0},InCombat:{type:"260",name:"InCombat",source:"OverlayPlugin",messageType:"260",fields:{type:0,timestamp:1,inACTCombat:2,inGameCombat:3,isACTChanged:4,isGameChanged:5},canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"all"}},CombatantMemory:{type:"261",name:"CombatantMemory",source:"OverlayPlugin",messageType:"261",fields:{type:0,timestamp:1,change:2,id:3},canAnonymize:!0,firstOptionalField:5,repeatingFields:{startingIndex:4,label:"pair",names:["key","value"],sortKeys:!0,primaryKey:"key",possibleKeys:["CurrentWorldID","WorldID","WorldName","BNpcID","BNpcNameID","PartyType","ID","OwnerID","WeaponId","Type","Job","Level","Name","CurrentHP","MaxHP","CurrentMP","MaxMP","PosX","PosY","PosZ","Heading","MonsterType","Status","ModelStatus","AggressionStatus","TargetID","IsTargetable","Radius","Distance","EffectiveDistance","NPCTargetID","CurrentGP","MaxGP","CurrentCP","MaxCP","PCTargetID","IsCasting1","IsCasting2","CastBuffID","CastTargetID","CastGroundTargetX","CastGroundTargetY","CastGroundTargetZ","CastDurationCurrent","CastDurationMax","TransformationId"],keysToAnonymize:{3:"Name",OwnerID:null,TargetID:null,PCTargetID:null,NPCTargetID:null,CastTargetID:null}},analysisOptions:{include:"filter",filters:[{id:"4.{7}",change:"Change",pair:[{key:"ModelStatus",value:".*"}]},{id:"4.{7}",change:"Change",pair:[{key:"WeaponId",value:".*"}]},{id:"4.{7}",change:"Change",pair:[{key:"TransformationId",value:".*"}]}],combatantIdFields:3}},RSVData:{type:"262",name:"RSVData",source:"OverlayPlugin",messageType:"262",fields:{type:0,timestamp:1,locale:2,key:4,value:5},canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"never"}},StartsUsingExtra:{type:"263",name:"StartsUsingExtra",source:"OverlayPlugin",messageType:"263",fields:{type:0,timestamp:1,sourceId:2,id:3,x:4,y:5,z:6,heading:7},playerIds:{2:null},canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"filter",filters:{sourceId:"4.{7}"},combatantIdFields:2}},AbilityExtra:{type:"264",name:"AbilityExtra",source:"OverlayPlugin",messageType:"264",fields:{type:0,timestamp:1,sourceId:2,id:3,globalEffectCounter:4,dataFlag:5,x:6,y:7,z:8,heading:9},blankFields:[6],playerIds:{2:null},canAnonymize:!0,firstOptionalField:void 0},ContentFinderSettings:{type:"265",name:"ContentFinderSettings",source:"OverlayPlugin",messageType:"265",fields:{type:0,timestamp:1,zoneId:2,zoneName:3,inContentFinderContent:4,unrestrictedParty:5,minimalItemLevel:6,silenceEcho:7,explorerMode:8,levelSync:9},canAnonymize:!0,firstOptionalField:void 0},NpcYell:{type:"266",name:"NpcYell",source:"OverlayPlugin",messageType:"266",fields:{type:0,timestamp:1,npcId:2,npcNameId:3,npcYellId:4},canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"all",combatantIdFields:2}},BattleTalk2:{type:"267",name:"BattleTalk2",source:"OverlayPlugin",messageType:"267",fields:{type:0,timestamp:1,npcId:2,instance:3,npcNameId:4,instanceContentTextId:5,displayMs:6},canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"all",combatantIdFields:2}},Countdown:{type:"268",name:"Countdown",source:"OverlayPlugin",messageType:"268",fields:{type:0,timestamp:1,id:2,worldId:3,countdownTime:4,result:5,name:6},playerIds:{2:6},canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"never"}},CountdownCancel:{type:"269",name:"CountdownCancel",source:"OverlayPlugin",messageType:"269",fields:{type:0,timestamp:1,id:2,worldId:3,name:4},playerIds:{2:4},canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"never"}},ActorMove:{type:"270",name:"ActorMove",source:"OverlayPlugin",messageType:"270",fields:{type:0,timestamp:1,id:2,heading:3,x:6,y:7,z:8},playerIds:{2:null},canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"never"}},ActorSetPos:{type:"271",name:"ActorSetPos",source:"OverlayPlugin",messageType:"271",fields:{type:0,timestamp:1,id:2,heading:3,x:6,y:7,z:8},playerIds:{2:null},canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"filter",filters:{id:"4.{7}"},combatantIdFields:2}},SpawnNpcExtra:{type:"272",name:"SpawnNpcExtra",source:"OverlayPlugin",messageType:"272",fields:{type:0,timestamp:1,id:2,parentId:3,tetherId:4,animationState:5},playerIds:{3:null},canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"all",combatantIdFields:[2,3]}},ActorControlExtra:{type:"273",name:"ActorControlExtra",source:"OverlayPlugin",messageType:"273",fields:{type:0,timestamp:1,id:2,category:3,param1:4,param2:5,param3:6,param4:7},playerIds:{2:null},possiblePlayerIds:[4,5,6,7],canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"all",combatantIdFields:2}},ActorControlSelfExtra:{type:"274",name:"ActorControlSelfExtra",source:"OverlayPlugin",messageType:"274",fields:{type:0,timestamp:1,id:2,category:3,param1:4,param2:5,param3:6,param4:7,param5:8,param6:9},playerIds:{2:null},possiblePlayerIds:[4,5,6,7,8,9],canAnonymize:!0,firstOptionalField:void 0,analysisOptions:{include:"all",combatantIdFields:2}}},r={latest:n},o=n;console.assert(o);const s=r.latest},702:(e,t,a)=>{a.d(t,{Ay:()=>T,RJ:()=>f,bU:()=>d});var n=a(130),r=a(174),o=a(605);const s="\\|",i="[^|]*",l=/^\^\^/,c=["ability","name","source","target","line"],f={echo:"0038",dialog:"0044",message:"0839"},d={setAnimState:"003E",publicContentText:"0834",logMsg:"020F",logMsgParams:"0210"},h=(e,t,a)=>{const r=n.s[t][e];void 0===a&&(a=Object.keys(r.fields),"repeatingFields"in r&&a.push(r.repeatingFields.label));const o={},s=r.firstOptionalField;for(const[e,t]of Object.entries(r.fields)){if(!a.includes(e))continue;const n={field:e,optional:void 0!==s&&t>=s};"type"===e&&(n.value=r.type),o[t]=n}return"repeatingFields"in r&&a.includes(r.repeatingFields.label)&&(o[r.repeatingFields.startingIndex]={field:r.repeatingFields.label,optional:void 0!==s&&r.repeatingFields.startingIndex>=s,repeating:!0,repeatingKeys:[...r.repeatingFields.names],sortKeys:r.repeatingFields.sortKeys,primaryKey:r.repeatingFields.primaryKey,possibleKeys:[...r.repeatingFields.possibleKeys]}),o},u=(e,t)=>{if(!0!==e)return!1;if(void 0===t)return!0;if(!Array.isArray(t))return!1;for(const e of t)if("object"!=typeof e)return!1;return!0},m=(e,t,a)=>{e=e??{};const n=[];for(const e in a){const t=a[e];t&&n.push(t.field)}o.A.validateParams(e,t,["capture",...n]);const l=o.A.trueIfUndefined(e.capture),f=Object.keys(a).sort(((e,t)=>parseInt(e)-parseInt(t)));let d;if(l){const t=[];for(const e in a)t.push(e);let n=t.pop();if(void 0===n)d=f[f.length-1]??"0";else{for(;a[n]?.optional&&!((a[n]?.field??"")in e);)n=t.pop();d=n??"0"}}else{d="0";for(const t in a){if("object"!=typeof(a[t]??{}))continue;const n=a[t]?.field;void 0!==n&&n in e&&(d=t)}}const h=parseInt(d),m=Object.keys(e).filter((e=>c.includes(e)));let p=T.flagTranslationsNeeded&&m.length>0?"^^":"^",g=-1;for(const n in a){const c=parseInt(n),f=c-g-1;1===f?p+="\\y{NetField}":f>1&&(p+=`\\y{NetField}{${f}}`),g=c;const d=a[n];if("object"!=typeof d)throw new Error(`${t}: invalid value: ${JSON.stringify(d)}`);const m=d.field,T=d.value?.toString()??i,y=e[m];if(u(a[n]?.repeating,y)){let e=y;const t=a[n]?.sortKeys,c=a[n]?.primaryKey,f=a[n]?.possibleKeys;if(void 0===c||void 0===f)throw new r.O;t&&(f.sort(((e,t)=>e.toLowerCase().localeCompare(t.toLowerCase()))),void 0!==e&&(e=[...e].sort(((e,t)=>{if("object"!=typeof e||void 0===e[c])return console.warn("Invalid argument passed to trigger:",e),0;const a=e[c];if("string"!=typeof a||!f?.includes(a))return console.warn("Invalid argument passed to trigger:",e),0;if("object"!=typeof t||void 0===t[c])return console.warn("Invalid argument passed to trigger:",t),0;const n=t[c];return"string"==typeof n&&f?.includes(n)?a.toLowerCase().localeCompare(n.toLowerCase()):(console.warn("Invalid argument passed to trigger:",t),0)}))));const d=e;f.forEach((e=>{const t=d?.find((t=>c in t&&t[c]===e));let r="";a[n]?.repeatingKeys?.forEach((a=>{let n=t?.[a];void 0!==t&&a in t||(n=a===c?e:i),"string"!=typeof n&&(Array.isArray(n)?(n.length<1||n.some((e=>"string"!=typeof e)))&&(n=i):n=i),r+=o.A.maybeCapture(a!==c&&l,m+e,n,T)+s})),r.length>0&&(p+=`(?:${r})${void 0!==t?"":"?"}`)}))}else a[n]?.repeating||(p+=void 0!==m?o.A.maybeCapture(l,m,y,T)+s:T+s);if(c>=h)break}return o.A.parse(p)},p=(e,t)=>m(t,e,h(e,T.logVersion));class T{static logVersion="latest";static flagTranslationsNeeded=!1;static setFlagTranslationsNeeded(e){T.flagTranslationsNeeded=e}static doesNetRegexNeedTranslation(e){console.assert(T.flagTranslationsNeeded);const t="string"==typeof e?e:e.source;return!!l.exec(t)}static startsUsing(e){return p("StartsUsing",e)}static ability(e){return m(e,"Ability",{...h("Ability",T.logVersion),0:{field:"type",value:"2[12]",optional:!1}})}static abilityFull(e){return this.ability(e)}static headMarker(e){return p("HeadMarker",e)}static addedCombatant(e){return m(e,"AddedCombatant",h("AddedCombatant",T.logVersion))}static addedCombatantFull(e){return T.addedCombatant(e)}static removingCombatant(e){return p("RemovedCombatant",e)}static gainsEffect(e){return p("GainsEffect",e)}static statusEffectExplicit(e){return p("StatusEffect",e)}static losesEffect(e){return p("LosesEffect",e)}static tether(e){return p("Tether",e)}static wasDefeated(e){return p("WasDefeated",e)}static networkDoT(e){return p("NetworkDoT",e)}static echo(e){return void 0===e&&(e={}),o.A.validateParams(e,"Echo",["type","timestamp","code","name","line","capture"]),T.gameLog({...e,code:f.echo})}static dialog(e){return void 0===e&&(e={}),o.A.validateParams(e,"Dialog",["type","timestamp","code","name","line","capture"]),T.gameLog({...e,code:f.dialog})}static message(e){return void 0===e&&(e={}),o.A.validateParams(e,"Message",["type","timestamp","code","name","line","capture"]),T.gameLog({...e,code:f.message})}static gameLog(e){return p("GameLog",e)}static gameNameLog(e){return T.gameLog(e)}static statChange(e){return p("PlayerStats",e)}static changeZone(e){return p("ChangeZone",e)}static network6d(e){return p("ActorControl",e)}static nameToggle(e){return p("NameToggle",e)}static map(e){return p("Map",e)}static systemLogMessage(e){return p("SystemLogMessage",e)}static mapEffect(e){return p("MapEffect",e)}static fateDirector(e){return p("FateDirector",e)}static ceDirector(e){return p("CEDirector",e)}static inCombat(e){return p("InCombat",e)}static combatantMemory(e){return p("CombatantMemory",e)}static startsUsingExtra(e){return p("StartsUsingExtra",e)}static abilityExtra(e){return p("AbilityExtra",e)}static contentFinderSettings(e){return p("ContentFinderSettings",e)}static npcYell(e){return p("NpcYell",e)}static battleTalk2(e){return p("BattleTalk2",e)}static countdown(e){return p("Countdown",e)}static countdownCancel(e){return p("CountdownCancel",e)}static actorMove(e){return p("ActorMove",e)}static actorSetPos(e){return p("ActorSetPos",e)}static spawnNpcExtra(e){return p("SpawnNpcExtra",e)}static actorControlExtra(e){return p("ActorControlExtra",e)}static actorControlSelfExtra(e){return p("ActorControlSelfExtra",e)}}T.network6d({command:["40000010","4000000F"]}),T.echo({line:"cactbot wipe.*?"}),T.echo({line:"end"})},174:(e,t,a)=>{a.d(t,{O:()=>n});class n extends Error{constructor(){super("This code shouldn't be reached")}}},468:(e,t,a)=>{a.d(t,{A:()=>r});const n=function(e){const t=e.toString();return{en:t,de:t,fr:t,ja:t,cn:t,ko:t}},r={aoe:{en:"aoe",de:"AoE",fr:"AoE",ja:"全体攻撃",cn:"AoE",ko:"전체 공격"},bigAoe:{en:"big aoe!",de:"Große AoE!",fr:"Grosse AoE !",ja:"強力な全体攻撃",cn:"大AoE伤害！",ko:"강한 전체 공격!"},bleedAoe:{en:"AoE + Bleed",de:"AoE + Blutung",fr:"AoE + Saignement",ja:"全体攻撃 + DoT",cn:"AOE + 流血",ko:"전체 공격 + 도트"},tankBuster:{en:"Tank Buster",de:"Tank buster",fr:"Tank buster",ja:"タンク強攻撃",cn:"坦克死刑",ko:"탱버"},miniBuster:{en:"Mini Buster",de:"Kleiner Tankbuster",fr:"Mini Buster",ja:"タンク攻撃",cn:"小死刑",ko:"약한 탱버"},tankBusterOnPlayer:{en:"Tank Buster on ${player}",de:"Tank buster auf ${player}",fr:"Tank buster sur ${player}",ja:"${player}に強攻撃",cn:"死刑 点 ${player}",ko:'"${player}" 탱버'},tankBusterOnYou:{en:"Tank Buster on YOU",de:"Tank buster auf DIR",fr:"Tank buster sur VOUS",ja:"自分に強攻撃",cn:"死刑点名",ko:"탱버 대상자"},tankBusters:{en:"Tank Busters",de:"Tank busters",fr:"Tank busters",ja:"タンク強攻撃",cn:"坦克死刑",ko:"탱버"},tetherBusters:{en:"Tank Tethers",de:"Tank-Verbindungen",fr:"Liens Tank",ja:"タンク線取り",cn:"坦克截线",ko:"탱커가 선 가로채기"},avoidTetherBusters:{en:"Avoid Tank Tethers",de:"Vermeide Tank Verbindungen",fr:"Évitez les liens des Tanks",ja:"タンクの線を避けて",cn:"远离坦克连线",ko:"탱커 선 피하기"},tankCleave:{en:"Tank cleave",de:"Tank Cleave",fr:"Tank cleave",ja:"タンク範囲攻撃",cn:"范围死刑",ko:"광역 탱버"},tankBusterCleaves:{en:"Tank Buster Cleaves",de:"Tankbuster Cleaves",fr:"Tankbuster cleaves",ja:"MT・ST同時範囲攻撃",cn:"坦克范围死刑",ko:"동시 광역 탱버"},tankBusterCleavesOnYou:{en:"Tank Cleaves on YOU",de:"Tank Cleaves auf DIR",fr:"Tank cleaves sur VOUS",ja:"MT・ST同時範囲攻撃(自分対象)",cn:"坦克范围死刑点名",ko:"광역 탱버 대상자"},avoidTankCleave:{en:"Avoid tank cleave",de:"Tank Cleave ausweichen",fr:"Évitez le tank cleave",ja:"タンク範囲攻撃を避ける",cn:"远离范围死刑",ko:"광역 탱버 피하기"},avoidTankCleaves:{en:"Avoid Tank Cleaves",de:"Tankbuster Cleaves ausweichen",fr:"Évitez les cleaves (tankbusters)",ja:"範囲攻撃を避けて",cn:"远离坦克范围死刑",ko:"광역 탱버 피하기"},tankCleaveOnYou:{en:"Tank cleave on YOU",de:"Tank Cleave aud DIR",fr:"Tank cleave sur VOUS",ja:"自分に範囲攻撃",cn:"范围死刑点名",ko:"나에게 광역 탱버"},sharedTankbuster:{en:"Shared Tank Buster",de:"Geteilter Tankbuster",fr:"Partagez le Tank buster",ja:"タンク頭割り",cn:"分摊死刑",ko:"쉐어 탱버"},sharedTankbusterOnYou:{en:"Shared Tank Buster on YOU",de:"geteilter Tankbuster auf DIR",fr:"Tank buster à partager sur VOUS",ja:"自分にタンク頭割り",cn:"分摊死刑点名",ko:"쉐어 탱버 대상자"},sharedTankbusterOnPlayer:{en:"Shared Tank Buster on ${player}",de:"geteilter Tankbuster on ${player}",fr:"Tank buster à partager sur ${player}",ja:"${player} にタンク頭割り",cn:"分摊死刑点 ${player}",ko:'"${player}" 쉐어 탱버'},tankSwap:{en:"Tank Swap!",de:"Tankwechsel!",fr:"Tank swap !",ja:"タンクスイッチ!",cn:"换T！",ko:"탱 교대"},spread:{en:"Spread",de:"Verteilen",fr:"Dispersez-vous",ja:"散開",cn:"分散",ko:"산개"},defamationOnYou:{en:"Defamation on YOU",de:"Ehrenstrafe aud DIR",fr:"Diffamation sur VOUS",ja:"自分に巨大な爆発",cn:"大圈点名",ko:"광역징 대상자"},protean:{en:"Protean",de:"Himmelsrichtungen",fr:"Positions",ja:"基本散会",cn:"八方分散",ko:"8방향 산개"},stackMarker:{en:"Stack",de:"Sammeln",fr:"Packez-vous",ja:"頭割り",cn:"分摊",ko:"쉐어뎀"},getTogether:{en:"Stack",de:"Sammeln",fr:"Packez-vous",ja:"集合",cn:"集合",ko:"모이기"},healerGroups:{en:"Healer Groups",de:"Heiler-Gruppen",fr:"Groupes sur les heals",ja:"ヒラに頭割り",cn:"治疗分摊组",ko:"힐러 그룹 쉐어"},stackOnYou:{en:"Stack on YOU",de:"Auf DIR sammeln",fr:"Package sur VOUS",ja:"自分に頭割り",cn:"集合点名",ko:"쉐어징 대상자"},stackOnPlayer:{en:"Stack on ${player}",de:"Auf ${player} sammeln",fr:"Packez-vous sur ${player}",ja:"${player}に頭割り",cn:"靠近 ${player}分摊",ko:'"${player}" 쉐어징'},stackPartner:{en:"Stack With Partner",de:"Mit Partner stacken",fr:"Packez-vous avec votre partenaire",ja:"ペア",cn:"与搭档分摊",ko:"파트너와 쉐어"},stackMiddle:{en:"Stack in middle",de:"In der Mitte sammeln",fr:"Packez-vous au milieu",ja:"中央で頭割り",cn:"中间集合",ko:"중앙에서 쉐어"},baitPuddles:{en:"Bait puddles",de:"Flächen Ködern",fr:"Attirez les flaques",ja:"AOE誘導",cn:"诱导圈圈",ko:"장판 유도"},stacks:{en:"Stacks",de:"Sammeln",fr:"Package",ja:"頭割り",cn:"分摊",ko:"쉐어"},doritoStack:{en:"Dorito Stack",de:"Mit Marker sammeln",fr:"Packez les marques",ja:"マーカー同士で頭割り",cn:"点名集合",ko:"징끼리 모이기"},spreadThenStack:{en:"Spread => Stack",de:"Verteilen => Sammeln",fr:"Dispersion => Package",ja:"散開 => 頭割り",cn:"分散 => 集合",ko:"산개 => 집합"},stackThenSpread:{en:"Stack => Spread",de:"Sammeln => Verteilen",fr:"Package => Dispersion",ja:"頭割り => 散開",cn:"集合 => 分散",ko:"집합 => 산개"},drawIn:{en:"Draw In",de:"Einzug",fr:"Attraction",ja:"吸込み",cn:"吸引",ko:"끌어당김"},knockback:{en:"Knockback",de:"Rückstoß",fr:"Poussée",ja:"ノックバック",cn:"击退",ko:"넉백"},knockbackOnYou:{en:"Knockback on YOU",de:"Rückstoß auf DIR",fr:"Poussée sur VOUS",ja:"自分にノックバック",cn:"击退点名",ko:"넉백징 대상자"},knockbackOnPlayer:{en:"Knockback on ${player}",de:"Rückstoß auf ${player}",fr:"Poussée sur ${player}",ja:"${player}にノックバック",cn:"击退点名${player}",ko:'"${player}" 넉백징'},lookTowardsBoss:{en:"Look Towards Boss",de:"Anschauen Boss",fr:"Regardez le boss",ja:"ボスを見る",cn:"面向Boss",ko:"쳐다보기"},lookAway:{en:"Look Away",de:"Wegschauen",fr:"Regardez ailleurs",ja:"ボスを見ない",cn:"背对Boss",ko:"뒤돌기"},lookAwayFromPlayer:{en:"Look Away from ${player}",de:"Schau weg von ${player}",fr:"Ne regardez pas ${player}",ja:"${player}を見ない",cn:"背对${player}",ko:"${player}에게서 뒤돌기"},lookAwayFromTarget:{en:"Look Away from ${name}",de:"Schau weg von ${name}",fr:"Ne regardez pas ${name}",ja:"${name}を見ない",cn:"背对${name}",ko:"${name}에게서 뒤돌기"},getBehind:{en:"Get Behind",de:"Hinter ihn",fr:"Passez derrière",ja:"背面へ",cn:"去背后",ko:"보스 뒤로"},goFrontOrSides:{en:"Go Front / Sides",de:"Gehe nach Vorne/ zu den Seiten",fr:"Allez Devant / Côtés",ja:"前／横へ",cn:"去前侧方",ko:"보스 후방 피하기"},goFront:{en:"Go Front",de:"Geh nach vorn",fr:"Allez Devant",ja:"前へ",cn:"去前面",ko:"앞으로"},getUnder:{en:"Get Under",de:"Unter ihn",fr:"En dessous",ja:"ボスに貼り付く",cn:"去脚下",ko:"보스 아래로"},in:{en:"In",de:"Rein",fr:"Intérieur",ja:"中へ",cn:"靠近",ko:"안으로"},out:{en:"Out",de:"Raus",fr:"Extérieur",ja:"外へ",cn:"远离",ko:"밖으로"},outOfMelee:{en:"Out of melee",de:"Raus aus Nahkampf",fr:"Sortez de la mêlée",ja:"近接の範囲から離れる",cn:"离开近战距离",ko:"근접범위 밖으로"},inThenOut:{en:"In => out",de:"Rein, dann raus",fr:"Intérieur, puis extérieur",ja:"中 => 外",cn:"先靠近，再远离",ko:"안으로 => 밖으로"},outThenIn:{en:"Out => in",de:"Raus, dann rein",fr:"Extérieur, puis intérieur",ja:"外 => 中",cn:"先远离，再靠近",ko:"밖으로 => 안으로"},backThenFront:{en:"Back => Front",de:"Nach Hinten, danach nach Vorne",fr:"Derrière puis devant",ja:"後ろ => 前",cn:"后 => 前",ko:"뒤로 => 앞으로"},frontThenBack:{en:"Front => Back",de:"Nach Vorne, danach nach Hinten",fr:"Devant puis derrière",ja:"前 => 後ろ",cn:"前 => 后",ko:"앞으로 => 뒤로"},goIntoMiddle:{en:"Get Middle",de:"in die Mitte gehen",fr:"Allez au milieu",ja:"中へ",cn:"去中间",ko:"중앙으로"},front:{en:"Front",de:"Vorne",fr:"Devant",ja:"前",cn:"前",ko:"앞"},back:{en:"Back",de:"Hinten",fr:"Derrière",ja:"後ろ",cn:"后",ko:"뒤"},right:{en:"Right",de:"Rechts",fr:"À droite",ja:"右へ",cn:"右",ko:"오른쪽"},left:{en:"Left",de:"Links",fr:"À gauche",ja:"左へ",cn:"左",ko:"왼쪽"},getLeftAndWest:{en:"<= Get Left/West",de:"<= Nach Links/Westen",fr:"<= Allez à Gauche/Ouest",ja:"<= 左/西へ",cn:"<= 去左/西边",ko:"<= 왼쪽/서쪽"},getRightAndEast:{en:"Get Right/East =>",de:"Nach Rechts/Osten =>",fr:"Allez à Droite/Est =>",ja:"右/東へ =>",cn:"去右/东边 =>",ko:"오른쪽/동쪽 =>"},leftThenRight:{en:"Left => Right",de:"Links => Rechts",fr:"À gauche => À droite",ja:"左 => 右",cn:"左 => 右",ko:"왼쪽 => 오른쪽"},rightThenLeft:{en:"Right => Left",de:"Rechts => Links",fr:"À droite => À gauche",ja:"右 => 左",cn:"右 => 左",ko:"오른쪽 => 왼쪽"},goFrontBack:{en:"Go Front/Back",de:"Geh nach Vorne/Hinten",fr:"Allez Devant/Derrière",ja:"縦へ",cn:"去前后",ko:"앞/뒤로"},sides:{en:"Sides",de:"Seiten",fr:"Côtés",ja:"横へ",cn:"去侧面",ko:"양옆으로"},middle:{en:"Middle",de:"Mitte",fr:"Milieu",ja:"中へ",cn:"中间",ko:"중앙"},clockwise:{en:"Clockwise",de:"Im Uhrzeigersinn",fr:"Sens horaire",ja:"時針回り",cn:"顺时针",ko:"시계방향"},counterclockwise:{en:"Counter-clock",de:"Gegen den Uhrzeigersinn",fr:"Anti-horaire",ja:"反時針回り",cn:"逆时针",ko:"반시계방향"},killAdds:{en:"Kill adds",de:"Adds besiegen",fr:"Tuez les adds",ja:"雑魚から倒して",cn:"击杀小怪",ko:"쫄 잡기"},killExtraAdd:{en:"Kill Extra Add",de:"Add besiegen",fr:"Tuez l'add",ja:"雑魚から倒して",cn:"击杀小怪",ko:"쫄 잡기"},awayFromFront:{en:"Away From Front",de:"Weg von Vorne",fr:"Éloignez-vous du devant",ja:"前方から離れる",cn:"远离正面",ko:"보스 전방 피하기"},sleepTarget:{en:"Sleep ${name}",de:"Schlaf auf ${name}",fr:"Sommeil sur ${name}",ja:"${name} にスリプル",cn:"催眠 ${name}",ko:"${name} 슬리플"},stunTarget:{en:"Stun ${name}",de:"Betäubung auf ${name}",fr:"Étourdissez ${name}",ja:"${name} にスタン",cn:"眩晕 ${name}",ko:"${name}기절"},interruptTarget:{en:"interrupt ${name}",de:"unterbreche ${name}",fr:"Interrompez ${name}",ja:"${name} に沈黙",cn:"打断${name}",ko:"${name}기술 시전 끊기"},preyOnYou:{en:"Prey on YOU",de:"Marker auf DIR",fr:"Marquage sur VOUS",ja:"自分に捕食",cn:"掠食点名",ko:"홍옥징 대상자"},preyOnPlayer:{en:"Prey on ${player}",de:"Marker auf ${player}",fr:"Marquage sur ${player}",ja:"${player}に捕食",cn:"掠食点名${player}",ko:'"${player}" 홍옥징'},awayFromGroup:{en:"Away from Group",de:"Weg von der Gruppe",fr:"Éloignez-vous du groupe",ja:"外へ",cn:"远离人群",ko:"다른 사람들과 떨어지기"},awayFromPlayer:{en:"Away from ${player}",de:"Weg von ${player}",fr:"Éloignez-vous de ${player}",ja:"${player}から離れる",cn:"远离${player}",ko:'"${player}"에게서 멀어지기'},meteorOnYou:{en:"Meteor on YOU",de:"Meteor auf DIR",fr:"Météore sur VOUS",ja:"自分にメテオ",cn:"陨石点名",ko:"나에게 메테오징"},stopMoving:{en:"Stop Moving!",de:"Bewegung stoppen!",fr:"Ne bougez pas !",ja:"移動禁止！",cn:"停止移动！",ko:"이동 멈추기!"},stopEverything:{en:"Stop Everything!",de:"Stoppe Alles!",fr:"Arrêtez tout !",ja:"行動禁止！",cn:"停止行动！",ko:"행동 멈추기!"},moveAway:{en:"Move!",de:"Bewegen!",fr:"Bougez !",ja:"避けて！",cn:"快躲开！",ko:"이동하기!"},moveAround:{en:"Move!",de:"Bewegen!",fr:"Bougez !",ja:"動く！",cn:"快动！",ko:"움직이기!"},breakChains:{en:"Break chains",de:"Kette zerbrechen",fr:"Brisez les chaines",ja:"線を切る",cn:"拉断连线",ko:"선 끊기"},moveChainsTogether:{en:"Move chains together",de:"Ketten zusammen bewegen",fr:"Bougez les chaines ensemble",ja:"線同士で一緒に移動",cn:"连线一起移动",ko:"선 붙어서 같이 움직이기"},earthshakerOnYou:{en:"Earth Shaker on YOU",de:"Erdstoß auf DIR",fr:"Marque de terre sur VOUS",ja:"自分にアースシェイカー",cn:"大地摇动点名",ko:"어스징 대상자"},wakeUp:{en:"WAKE UP",de:"AUFWACHEN",fr:"RÉVEILLE-TOI",ja:"目を覚まして！",cn:"醒醒！动一动！！",ko:"일어나세요!"},closeTethersWithPlayer:{en:"Close Tethers (${player})",de:"Nahe Verbindungen (${player})",fr:"Liens proches avec (${player})",ja:"${player}に近づく",cn:"靠近连线 (${player})",ko:"상대와 가까이 붙기 (${player})"},farTethersWithPlayer:{en:"Far Tethers (${player})",de:"Entfernte Verbindungen (${player})",fr:"Liens éloignés avec (${player})",ja:" (${player})から離れる",cn:"远离连线 (${player})",ko:"상대와 떨어지기 (${player})"},getTowers:{en:"Get Towers",de:"Türme nehmen",fr:"Allez dans les tours",ja:"塔を踏む",cn:"踩塔",ko:"기둥 들어가기"},unknown:{en:"???",de:"???",fr:"???",ja:"???",cn:"???",ko:"???"},cardinals:{en:"Cardinals",de:"Kardinal",fr:"Cardinaux",ja:"十字回避",cn:"去正点",ko:"십자방향으로"},intercards:{en:"Intercards",de:"Interkardinal",fr:"Intercardinal",ja:"斜めへ",cn:"去斜角",ko:"대각선 쪽으로"},north:{en:"North",de:"Norden",fr:"Nord",ja:"北",cn:"上(北)",ko:"북쪽"},south:{en:"South",de:"Süden",fr:"Sud",ja:"南",cn:"下(南)",ko:"남쪽"},east:{en:"East",de:"Osten",fr:"Est",ja:"東",cn:"右(东)",ko:"동쪽"},west:{en:"West",de:"Westen",fr:"Ouest",ja:"西",cn:"左(西)",ko:"서쪽"},northwest:{en:"Northwest",de:"Nordwesten",fr:"Nord-Ouest",ja:"北西",cn:"左上(西北)",ko:"북서쪽"},northeast:{en:"Northeast",de:"Nordosten",fr:"Nord-Est",ja:"北東",cn:"右上(东北)",ko:"북동쪽"},southwest:{en:"Southwest",de:"Südwesten",fr:"Sud-Ouest",ja:"南西",cn:"左下(西南)",ko:"남서쪽"},southeast:{en:"Southeast",de:"Südosten",fr:"Sud-Est",ja:"南東",cn:"右下(东南)",ko:"남동쪽"},dirN:{en:"N",de:"N",fr:"N",ja:"北",cn:"上(北)",ko:"북"},dirS:{en:"S",de:"S",fr:"S",ja:"南",cn:"下(南)",ko:"남"},dirE:{en:"E",de:"O",fr:"E",ja:"東",cn:"右(东)",ko:"동"},dirW:{en:"W",de:"W",fr:"O",ja:"西",cn:"左(西)",ko:"서"},dirNW:{en:"NW",de:"NW",fr:"NO",ja:"北西",cn:"左上(西北)",ko:"북서"},dirNE:{en:"NE",de:"NO",fr:"NE",ja:"北東",cn:"右上(东北)",ko:"북동"},dirSW:{en:"SW",de:"SW",fr:"SO",ja:"南西",cn:"左下(西南)",ko:"남서"},dirSE:{en:"SE",de:"SO",fr:"SE",ja:"南東",cn:"右下(东南)",ko:"남동"},dirNNE:{en:"NNE",de:"NNO",fr:"NNE",ja:"北北東(1時)",cn:"上偏右(北偏东)",ko:"1시"},dirENE:{en:"ENE",de:"ONO",fr:"ENE",ja:"東北東(2時)",cn:"右偏上(东偏北)",ko:"2시"},dirESE:{en:"ESE",de:"OSO",fr:"ESE",ja:"東南東(4時)",cn:"右偏下(东偏南)",ko:"4시"},dirSSE:{en:"SSE",de:"SSO",fr:"SSE",ja:"南南東(5時)",cn:"下偏右(南偏东)",ko:"5시"},dirSSW:{en:"SSW",de:"SSW",fr:"SSO",ja:"南南西(7時)",cn:"下偏左(南偏西)",ko:"7시"},dirWSW:{en:"WSW",de:"WSW",fr:"OSO",ja:"西南西(8時)",cn:"左偏下(西偏南)",ko:"8시"},dirWNW:{en:"WNW",de:"WNW",fr:"ONO",ja:"西北西(10時)",cn:"左偏上(西偏北)",ko:"10시"},dirNNW:{en:"NNW",de:"NNW",fr:"NNO",ja:"北北西(11時)",cn:"上偏左(北偏西)",ko:"11시"},tank:{en:"Tank",de:"Tank",fr:"Tank",ja:"タンク",cn:"坦克",ko:"탱"},healer:{en:"Healer",de:"Heiler",fr:"Healer",ja:"ヒーラー",cn:"治疗",ko:"힐"},dps:{en:"DPS",de:"DPS",fr:"DPS",ja:"DPS",cn:"DPS",ko:"딜러"},next:{en:" => ",de:" => ",fr:" => ",ja:" => ",cn:" => ",ko:" => "},num0:n(0),num1:n(1),num2:n(2),num3:n(3),num4:n(4),num5:n(5),num6:n(6),num7:n(7),num8:n(8),num9:n(9)}},181:(e,t,a)=>{a.d(t,{M9:()=>u,tK:()=>g});let n=!1,r=null,o=null,s=[],i=0;const l={},c={},f=(e,t)=>{o?s?s.push(e):o.send(JSON.stringify(e)):s?s.push([e,t]):window.OverlayPluginApi.callHandler(JSON.stringify(e),t)},d=e=>{y();const t=c[e.type];t?.forEach((t=>{try{t(e)}catch(e){console.error(e)}}))},h=d,u=(e,t)=>{y(),c[e]||(c[e]=[],s||f({call:"subscribe",events:[e]})),c[e]?.push(t)},m=(e,t)=>{if(y(),c[e]){const a=c[e],n=a?.indexOf(t);void 0!==n&&n>-1&&a?.splice(n,1)}},p=e=>{y();const t={...e,rseq:0};let a;return o?(t.rseq=i++,a=new Promise(((e,a)=>{l[t.rseq]={resolve:e,reject:a}})),f(t)):a=new Promise(((e,a)=>{f(t,(t=>{if(null===t)return void e(t);const n=JSON.parse(t);n.$error?a(n):e(n)}))})),a},T={},g=e=>{y();const t=e.call;return(T[t]??p)(e)},y=()=>{if(!n){if("undefined"!=typeof window){if(r=new URLSearchParams(window.location.search).get("OVERLAY_WS"),null!==r){const e=function(t){o=new WebSocket(t),o.addEventListener("error",(e=>{console.error(e)})),o.addEventListener("open",(()=>{console.log("Connected!");const e=s??[];s=null,f({call:"subscribe",events:Object.keys(c)});for(const t of e)Array.isArray(t)||f(t)})),o.addEventListener("message",(e=>{try{if("string"!=typeof e.data)return void console.error("Invalid message data received: ",e);const t=JSON.parse(e.data),a=void 0!==t?.rseq?l[t.rseq]:void 0;void 0!==t.rseq&&a?(t.$error?a.reject(t):a.resolve(t),delete l[t.rseq]):d(t)}catch(t){return void console.error("Invalid message received: ",e)}})),o.addEventListener("close",(()=>{s=null,console.log("Trying to reconnect..."),window.setTimeout((()=>{e(t)}),300)}))};e(r)}else{const e=function(){if(!window.OverlayPluginApi?.ready)return void window.setTimeout(e,300);const t=s??[];s=null,window.__OverlayCallback=d,f({call:"subscribe",events:Object.keys(c)});for(const e of t)Array.isArray(e)&&f(e[0],e[1])};e()}window.addOverlayListener=u,window.removeOverlayListener=m,window.callOverlayHandler=g,window.dispatchOverlayEvent=h}n=!0}}},605:(e,t,a)=>{a.d(t,{A:()=>c});var n=a(130),r=a(174);const o="[^:]*",s=["effect","ability"],i=(e,t)=>{if(!0!==e)return!1;if(void 0===t)return!0;if(!Array.isArray(t))return!1;for(const e of t)if("object"!=typeof e)return!1;return!0},l=(e,t)=>((e,t,a)=>{e=e??{};const l=[];for(const e in a){const t=a[e];t&&l.push(t.field)}c.validateParams(e,t,["capture",...l]);const f=c.trueIfUndefined(e.capture),d=Object.keys(a).sort(((e,t)=>parseInt(e)-parseInt(t)));let h;if(f){const t=[];for(const e in a)t.push(e);let n=t.pop();if(void 0===n)h=d[d.length-1]??"0";else{for(;a[n]?.optional&&!((a[n]?.field??"")in e);)n=t.pop();h=n??"0"}}else{h="0";for(const t in a){if("object"!=typeof(a[t]??{}))continue;const n=a[t]?.field;void 0!==n&&n in e&&(h=t)}}const u=parseInt(h),m=`(?:${n.A.Ability.messageType}|${n.A.NetworkAOEAbility.messageType})`,p="Ability"!==t?n.A[t].messageType:m,T=parseInt(n.A[t].type).toString(16).toUpperCase(),g=T.length<2?`00${T}`.slice(-2):T,y="Ability"!==t?g:"(?:15|16)";let k="";k+=f?`(?<timestamp>\\y{Timestamp}) ${p} (?<type>${y})`:`\\y{Timestamp} ${p} ${y}`;let x=1;for(const n in a){const l=a[n];if(void 0===l)continue;const d=l.field;if("timestamp"===d||"type"===d)continue;const h=parseInt(n),m=h-x-1;if(1===m?k+=`:${o}`:m>1&&(k+=`(?::${o}){${m}}`),x=h,k+=":","object"!=typeof l)throw new Error(`${t}: invalid value: ${JSON.stringify(l)}`);const p=void 0!==d&&s.includes(d)?"(?:[^:]|: )*?":o,T=l.value?.toString()??p,g=e[d];if(i(a[n]?.repeating,g)){const e="(?:$|:)";let t=g;const s=a[n]?.sortKeys,i=a[n]?.primaryKey,l=a[n]?.possibleKeys;if(void 0===i||void 0===l)throw new r.O;s&&(l.sort(((e,t)=>e.toLowerCase().localeCompare(t.toLowerCase()))),void 0!==t&&(t=[...t].sort(((e,t)=>{if("object"!=typeof e||void 0===e[i])return console.warn("Invalid argument passed to trigger:",e),0;const a=e[i];if("string"!=typeof a||!l?.includes(a))return console.warn("Invalid argument passed to trigger:",e),0;if("object"!=typeof t||void 0===t[i])return console.warn("Invalid argument passed to trigger:",t),0;const n=t[i];return"string"==typeof n&&l?.includes(n)?a.toLowerCase().localeCompare(n.toLowerCase()):(console.warn("Invalid argument passed to trigger:",t),0)}))));const h=t;l.forEach((t=>{const r=h?.find((e=>i in e&&e[i]===t));let s="";a[n]?.repeatingKeys?.forEach((a=>{let n=r?.[a];void 0!==r&&a in r||(n=a===i?t:o),"string"!=typeof n&&(Array.isArray(n)?(n.length<1||n.some((e=>"string"!=typeof e)))&&(n=o):n=o),s+=c.maybeCapture(a!==i&&f,d+t,n,T)+e})),s.length>0&&(k+=`(?:${s})${void 0!==r?"":"?"}`)}))}else a[n]?.repeating||(k+=void 0!==d?c.maybeCapture(f,d,g,T):g);if(h>=u)break}return k+="(?:$|:)",c.parse(k)})(t,e,((e,t,a)=>{const r=n.s[t][e];void 0===a&&(a=Object.keys(r.fields),"repeatingFields"in r&&a.push(r.repeatingFields.label));const o={},s=r.firstOptionalField;for(const[e,t]of Object.entries(r.fields)){if(!a.includes(e))continue;const n={field:e,optional:void 0!==s&&t>=s};"type"===e&&(n.value=r.type),o[t]=n}return"repeatingFields"in r&&a.includes(r.repeatingFields.label)&&(o[r.repeatingFields.startingIndex]={field:r.repeatingFields.label,optional:void 0!==s&&r.repeatingFields.startingIndex>=s,repeating:!0,repeatingKeys:[...r.repeatingFields.names],sortKeys:r.repeatingFields.sortKeys,primaryKey:r.repeatingFields.primaryKey,possibleKeys:[...r.repeatingFields.possibleKeys]}),o})(e,c.logVersion));class c{static logVersion="latest";static startsUsing(e){return l("StartsUsing",e)}static ability(e){return l("Ability",e)}static abilityFull(e){return this.ability(e)}static headMarker(e){return l("HeadMarker",e)}static addedCombatant(e){return l("AddedCombatant",e)}static addedCombatantFull(e){return this.addedCombatant(e)}static removingCombatant(e){return l("RemovedCombatant",e)}static gainsEffect(e){return l("GainsEffect",e)}static statusEffectExplicit(e){return l("StatusEffect",e)}static losesEffect(e){return l("LosesEffect",e)}static tether(e){return l("Tether",e)}static wasDefeated(e){return l("WasDefeated",e)}static networkDoT(e){return l("NetworkDoT",e)}static echo(e){return void 0===e&&(e={}),c.validateParams(e,"echo",["type","timestamp","code","name","line","capture"]),e.code="0038",c.gameLog(e)}static dialog(e){return void 0===e&&(e={}),c.validateParams(e,"dialog",["type","timestamp","code","name","line","capture"]),e.code="0044",c.gameLog(e)}static message(e){return void 0===e&&(e={}),c.validateParams(e,"message",["type","timestamp","code","name","line","capture"]),e.code="0839",c.gameLog(e)}static gameLog(e){return l("GameLog",e)}static gameNameLog(e){return c.gameLog(e)}static statChange(e){return l("PlayerStats",e)}static changeZone(e){return l("ChangeZone",e)}static network6d(e){return l("ActorControl",e)}static nameToggle(e){return l("NameToggle",e)}static map(e){return l("Map",e)}static systemLogMessage(e){return l("SystemLogMessage",e)}static mapEffect(e){return l("MapEffect",e)}static fateDirector(e){return l("FateDirector",e)}static ceDirector(e){return l("CEDirector",e)}static inCombat(e){return l("InCombat",e)}static combatantMemory(e){return l("CombatantMemory",e)}static startsUsingExtra(e){return l("StartsUsingExtra",e)}static abilityExtra(e){return l("AbilityExtra",e)}static contentFinderSettings(e){return l("ContentFinderSettings",e)}static npcYell(e){return l("NpcYell",e)}static battleTalk2(e){return l("BattleTalk2",e)}static countdown(e){return l("Countdown",e)}static countdownCancel(e){return l("CountdownCancel",e)}static actorMove(e){return l("ActorMove",e)}static actorSetPos(e){return l("ActorSetPos",e)}static spawnNpcExtra(e){return l("SpawnNpcExtra",e)}static actorControlExtra(e){return l("ActorControlExtra",e)}static actorControlSelfExtra(e){return l("ActorControlSelfExtra",e)}static maybeCapture(e,t,a,n){return void 0===a&&(a=n??o),a=c.anyOf(a),e?c.namedCapture(t,a):a}static optional(e){return`(?:${e})?`}static namedCapture(e,t){return e.includes(">")&&console.error(`"${e}" contains ">".`),e.includes("<")&&console.error(`"${e}" contains ">".`),`(?<${e}>${t})`}static anyOf(...e){let t=[];const[a]=e;return t=1===e.length?"string"==typeof a||a instanceof RegExp?[a]:Array.isArray(a)?a:[]:e,(e=>{const[t]=e;return void 0!==t&&1===e.length?`${t instanceof RegExp?t.source:t}`:`(?:${e.map((e=>e instanceof RegExp?e.source:e)).join("|")})`})(t)}static parse(e){const t={Timestamp:"^.{14}",NetTimestamp:".{33}",NetField:"(?:[^|]*\\|)",LogType:"[0-9A-Fa-f]{2}",AbilityCode:"[0-9A-Fa-f]{1,8}",ObjectId:"[0-9A-F]{8}",Name:"(?:[^\\s:|]+(?: [^\\s:|]+)?|)",Float:"-?[0-9]+(?:[.,][0-9]+)?(?:E-?[0-9]+)?"};let a="i";return e instanceof RegExp&&(a+=(e.global?"g":"")+(e.multiline?"m":""),e=e.source),e=e.replace(/\\y\{(.*?)\}/g,((e,a)=>t[a]||e)),new RegExp(e,a)}static parseGlobal(e){const t=c.parse(e);let a="gi";return e instanceof RegExp&&(a+=e.multiline?"m":""),new RegExp(t.source,a)}static trueIfUndefined(e){return void 0===e||!!e}static validateParams(e,t,a){if(null===e)return;if("object"!=typeof e)return;const n=Object.keys(e);for(const e of n)if(!a.includes(e))throw new Error(`${t}: invalid parameter '${e}'.  Valid params: ${JSON.stringify(a)}`)}}},546:(e,t,a)=>{a.d(t,{x1:()=>m});var n=a(468);const r={info:"infoText",alert:"alertText",alarm:"alarmText"},o=e=>{if(!(e in r))throw new Error(`Invalid severity: ${e}.`);return r[e]},s=e=>e?o(e):"infoText",i=e=>e?o(e):"alertText",l=e=>e?o(e):"alarmText",c=e=>{if(e.target!==e.source&&""!==e.target)return e.target},f=e=>e?.source,d=function(e,t,a,n){const r={};return e!==a?(r[e]=t,r[a]=n):r[e]=(e,a,r)=>t(e,a,r)??n(e,a,r),r},h=e=>void 0!==e&&!e.startsWith("4"),u=(e,t)=>(a,n,r)=>(r.responseOutputStrings={text:t},{[e]:(e,t,a)=>a.text?.()}),m={tankBuster:(e,t)=>{const a={noTarget:n.A.tankBuster,busterOnYou:n.A.tankBusterOnYou,busterOnTarget:n.A.tankBusterOnPlayer},r=d(i(e),((e,t,a)=>{const n=c(t);if(void 0===n){if("tank"!==e.role&&"healer"!==e.role)return;return a.noTarget?.()}if(n===e.me)return a.busterOnYou?.()}),s(t),((e,t,a)=>{const n=c(t);if(void 0===n){if("tank"===e.role||"healer"===e.role)return;return a.noTarget?.()}if(n!==e.me)return a.busterOnTarget?.({player:e.party.member(n)})}));return(e,t,n)=>(n.responseOutputStrings=a,r)},tankBusterSwap:(e,t)=>{const a={noTarget:n.A.tankBuster,tankSwap:n.A.tankSwap,busterOnYou:n.A.tankBusterOnYou,busterOnTarget:n.A.tankBusterOnPlayer},r=d(l(t),((e,t,a)=>{const n=c(t);if("tank"===e.role&&n!==e.me)return a.tankSwap?.()}),i(e),((e,t,a)=>{const n=c(t);if("tank"!==e.role||n===e.me)return n===e.me?a.busterOnYou?.():void 0===n?a.noTarget?.():a.busterOnTarget?.({player:e.party.member(n)})}));return(e,t,n)=>(n.responseOutputStrings=a,r)},tankCleave:e=>(t,a,r)=>(r.responseOutputStrings={cleaveOnYou:n.A.tankCleaveOnYou,cleaveNoTarget:n.A.tankCleave,avoidCleave:n.A.avoidTankCleave},{[s(e)]:(e,t,a)=>c(t)===e.me?a.cleaveOnYou?.():"tank"===e.role||"BLU"===e.job?a.cleaveNoTarget?.():a.avoidCleave?.()}),sharedTankBuster:(e,t)=>{const a={sharedTankbusterOnYou:n.A.sharedTankbusterOnYou,sharedTankbusterOnTarget:n.A.sharedTankbusterOnPlayer,sharedTankbuster:n.A.sharedTankbuster,avoidCleave:n.A.avoidTankCleave},r=d(i(e),((e,t,a)=>{const n=c(t);if(void 0===n){if("tank"!==e.role&&"healer"!==e.role)return;return a.sharedTankbuster?.()}return n===e.me?a.sharedTankbusterOnYou?.():"tank"===e.role||"healer"===e.role?a.sharedTankbusterOnTarget?.({player:e.party.member(n)}):void 0}),s(t),((e,t,a)=>{const n=c(t);if(void 0===n){if("tank"===e.role||"healer"===e.role)return;return a.avoidCleave?.()}if(n!==e.me&&"tank"!==e.role&&"healer"!==e.role)return a.avoidCleave?.()}));return(e,t,n)=>(n.responseOutputStrings=a,r)},miniBuster:e=>u(s(e),n.A.miniBuster),aoe:e=>u(s(e),n.A.aoe),bigAoe:e=>u(s(e),n.A.bigAoe),bleedAoe:e=>u(s(e),n.A.bleedAoe),spread:e=>u(s(e),n.A.spread),stackMarker:e=>u(i(e),n.A.stackMarker),getTogether:e=>u(i(e),n.A.getTogether),stackMarkerOn:e=>(t,a,r)=>(r.responseOutputStrings={stackOnYou:n.A.stackOnYou,stackOnTarget:n.A.stackOnPlayer,stackMarker:n.A.stackMarker},{[i(e)]:(e,t,a)=>{const n=c(t);return n===e.me?a.stackOnYou?.():void 0===n?a.stackMarker?.():a.stackOnTarget?.({player:e.party.member(n)})}}),stackMiddle:e=>u(s(e),n.A.stackMiddle),doritoStack:e=>u(i(e),n.A.doritoStack),spreadThenStack:e=>u(i(e),n.A.spreadThenStack),stackThenSpread:e=>u(i(e),n.A.stackThenSpread),knockback:e=>u(i(e),n.A.knockback),knockbackOn:(e,t)=>{const a={knockback:n.A.knockback,knockbackOnYou:n.A.knockbackOnYou,knockbackOnTarget:n.A.knockbackOnPlayer},r=d(s(e),((e,t,a)=>{if(c(t)===e.me)return a.knockbackOnYou?.()}),s(t),((e,t,a)=>{const n=c(t);return void 0===n?a.knockback?.():n!==e.me?a.knockbackOnTarget?.({player:e.party.member(n)}):void 0}));return(e,t,n)=>(n.responseOutputStrings=a,r)},drawIn:e=>u(s(e),n.A.drawIn),lookTowards:e=>u(s(e),n.A.lookTowardsBoss),lookAway:e=>u(s(e),n.A.lookAway),lookAwayFromTarget:e=>(t,a,r)=>(r.responseOutputStrings={lookAway:n.A.lookAway,lookAwayFrom:n.A.lookAwayFromTarget},{[i(e)]:(e,t,a)=>{const n=c(t);if(n===e.me)return;if(void 0===n)return a.lookAway?.();const r=h(t?.targetId)?e.party.member(n):n;return a.lookAwayFrom?.({name:r})}}),lookAwayFromSource:e=>(t,a,r)=>(r.responseOutputStrings={lookAwayFrom:n.A.lookAwayFromTarget},{[i(e)]:(e,t,a)=>{const n=f(t);if(n===e.me)return;const r=h(t?.sourceId)?e.party.member(n):n;return a.lookAwayFrom?.({name:r})}}),getBehind:e=>u(i(e),n.A.getBehind),goFrontOrSides:e=>u(i(e),n.A.goFrontOrSides),getUnder:e=>u(s(e),n.A.getUnder),getIn:e=>u(i(e),n.A.in),getOut:e=>u(i(e),n.A.out),outOfMelee:e=>u(s(e),n.A.outOfMelee),getInThenOut:e=>u(s(e),n.A.inThenOut),getOutThenIn:e=>u(s(e),n.A.outThenIn),getBackThenFront:e=>u(s(e),n.A.backThenFront),getFrontThenBack:e=>u(s(e),n.A.frontThenBack),goFront:e=>u(i(e),n.A.goFront),goMiddle:e=>u(i(e),n.A.goIntoMiddle),goRight:e=>u(i(e),n.A.right),goLeft:e=>u(i(e),n.A.left),goWest:e=>u(i(e),n.A.getLeftAndWest),goEast:e=>u(i(e),n.A.getRightAndEast),goLeftThenRight:e=>u(i(e),n.A.leftThenRight),goRightThenLeft:e=>u(i(e),n.A.rightThenLeft),goFrontBack:e=>u(i(e),n.A.goFrontBack),goSides:e=>u(i(e),n.A.sides),killAdds:e=>u(s(e),n.A.killAdds),killExtraAdd:e=>u(s(e),n.A.killExtraAdd),awayFromFront:e=>u(i(e),n.A.awayFromFront),sleep:e=>(t,a,r)=>(r.responseOutputStrings={sleep:n.A.sleepTarget},{[i(e)]:(e,t,a)=>{const n=f(t);return a.sleep?.({name:n})}}),stunOrInterruptIfPossible:e=>(t,a,r)=>(r.responseOutputStrings={stun:n.A.stunTarget,interrupt:n.A.interruptTarget},{[i(e)]:(e,t,a)=>{const n=f(t);return e.CanSilence()?a.interrupt?.({name:n}):e.CanStun()?a.stun?.({name:n}):void 0}}),stun:e=>(t,a,r)=>(r.responseOutputStrings={stun:n.A.stunTarget},{[i(e)]:(e,t,a)=>{const n=f(t);return a.stun?.({name:n})}}),stunIfPossible:e=>(t,a,r)=>(r.responseOutputStrings={stun:n.A.stunTarget},{[i(e)]:(e,t,a)=>{const n=f(t);if(e.CanStun())return a.stun?.({name:n})}}),interrupt:e=>(t,a,r)=>(r.responseOutputStrings={interrupt:n.A.interruptTarget},{[i(e)]:(e,t,a)=>{const n=f(t);return a.interrupt?.({name:n})}}),interruptIfPossible:e=>(t,a,r)=>(r.responseOutputStrings={interrupt:n.A.interruptTarget},{[i(e)]:(e,t,a)=>{const n=f(t);if(e.CanSilence())return a.interrupt?.({name:n})}}),preyOn:(e,t)=>{const a={preyOnYou:n.A.preyOnYou,preyOnTarget:n.A.preyOnPlayer},r=d(i(e),((e,t,a)=>{const n=c(t);if(e.me===n)return a.preyOnYou?.()}),s(t),((e,t,a)=>{const n=c(t),r=void 0===n?a.unknown?.():e.party.member(n);if(n!==e.me)return a.preyOnTarget?.({player:r})}));return(e,t,n)=>(n.responseOutputStrings=a,r)},awayFrom:e=>(t,a,r)=>(r.responseOutputStrings={awayFromGroup:n.A.awayFromGroup,awayFromTarget:n.A.awayFromPlayer,unknown:n.A.unknown},{[i(e)]:(e,t,a)=>{const n=c(t);if(e.me===n)return a.awayFromGroup?.();const r=void 0===n?a.unknown?.():e.party.member(n);return a.awayFromTarget?.({player:r})}}),meteorOnYou:e=>u(l(e),n.A.meteorOnYou),stopMoving:e=>u(l(e),n.A.stopMoving),stopEverything:e=>u(l(e),n.A.stopEverything),moveAway:e=>u(s(e),n.A.moveAway),moveAround:e=>u(s(e),n.A.moveAround),breakChains:e=>u(s(e),n.A.breakChains),moveChainsTogether:e=>u(s(e),n.A.moveChainsTogether),earthshaker:e=>(t,a,r)=>(r.responseOutputStrings={earthshaker:n.A.earthshakerOnYou},{[i(e)]:(e,t,a)=>{if(c(t)===e.me)return a.earthshaker?.()}}),wakeUp:e=>u(l(e),n.A.wakeUp),getTowers:e=>u(s(e),n.A.getTowers)},p=m;console.assert(p)},380:(__unused_webpack___webpack_module__,__webpack_exports__,__webpack_require__)=>{__webpack_require__.d(__webpack_exports__,{A:()=>__WEBPACK_DEFAULT_EXPORT__});var _languages_js__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(765),_not_reached_js__WEBPACK_IMPORTED_MODULE_1__=__webpack_require__(174),_overlay_plugin_api_js__WEBPACK_IMPORTED_MODULE_2__=__webpack_require__(181),_conditions_js__WEBPACK_IMPORTED_MODULE_3__=__webpack_require__(262),_content_type_js__WEBPACK_IMPORTED_MODULE_4__=__webpack_require__(946),_netregexes_js__WEBPACK_IMPORTED_MODULE_5__=__webpack_require__(702),_regexes_js__WEBPACK_IMPORTED_MODULE_6__=__webpack_require__(605),_responses_js__WEBPACK_IMPORTED_MODULE_7__=__webpack_require__(546),_outputs_js__WEBPACK_IMPORTED_MODULE_8__=__webpack_require__(468),_util_js__WEBPACK_IMPORTED_MODULE_9__=__webpack_require__(268),_zone_id_js__WEBPACK_IMPORTED_MODULE_10__=__webpack_require__(660),_zone_info_js__WEBPACK_IMPORTED_MODULE_11__=__webpack_require__(53);const Conditions=_conditions_js__WEBPACK_IMPORTED_MODULE_3__.A,ContentType=_content_type_js__WEBPACK_IMPORTED_MODULE_4__.A,NetRegexes=_netregexes_js__WEBPACK_IMPORTED_MODULE_5__.Ay,Regexes=_regexes_js__WEBPACK_IMPORTED_MODULE_6__.A,Responses=_responses_js__WEBPACK_IMPORTED_MODULE_7__.x1,Outputs=_outputs_js__WEBPACK_IMPORTED_MODULE_8__.A,Util=_util_js__WEBPACK_IMPORTED_MODULE_9__.A,Directions=_util_js__WEBPACK_IMPORTED_MODULE_9__.H,ZoneId=_zone_id_js__WEBPACK_IMPORTED_MODULE_10__.A,ZoneInfo=_zone_info_js__WEBPACK_IMPORTED_MODULE_11__.A;console.assert(Conditions),console.assert(ContentType),console.assert(NetRegexes),console.assert(Regexes),console.assert(Responses),console.assert(Outputs),console.assert(Util),console.assert(Directions),console.assert(ZoneId),console.assert(ZoneInfo);class UserConfig{optionTemplates={};userFileCallbacks={};savedConfig={};getDefaultBaseOptions(){return{ParserLanguage:"en",ShortLocale:"en",DisplayLanguage:"en",TextAlertsEnabled:!0,SoundAlertsEnabled:!0,SpokenAlertsEnabled:!1,GroupSpokenAlertsEnabled:!1,SystemInfo:{cactbotVersion:"0.0.0.0",overlayPluginVersion:"0.0.0.0",ffxivPluginVersion:"0.0.0.0",actVersion:"0.0.0.0",gameRegion:"International"},Debug:!1}}evalUserFile(content,options){const Options=options;console.assert(Options),eval(content)}registerOptions(e,t,a){this.optionTemplates[e]=t,a&&(this.userFileCallbacks[e]=a)}sortUserFiles(e){const t={};for(const a of e)t[a]=a.toUpperCase().split(/[/\\]/);return e.sort(((e,a)=>{const n=t[e],r=t[a];if(void 0===n||void 0===r)throw new _not_reached_js__WEBPACK_IMPORTED_MODULE_1__.O;const o=Math.max(n.length,r.length);for(let e=0;e<o;++e){const t=n[e],a=r[e];if(void 0===t||void 0===a)throw new _not_reached_js__WEBPACK_IMPORTED_MODULE_1__.O;const o=n.length-1===e,s=r.length-1===e;if(o&&s){const e=t.replace(/\.[^\.]*$/,""),n=a.replace(/\.[^\.]*$/,""),r=e.localeCompare(n);return r||t.localeCompare(a)}if(!o&&!s){const e=t.localeCompare(a);if(e)return e}if(n.length-1<=e)return 1;if(r.length-1<=e)return-1}return 0}))}filterUserFiles(e,t,a){const n=a.toLowerCase(),r=t.toLowerCase();return e.filter((e=>{const t=e.toLowerCase();return!!t.endsWith(n)&&(t===`${r}${n}`||!(!t.startsWith(`${r}/`)&&!t.startsWith(`${r}\\`)))}))}getUserConfigLocation(e,t,a){let n=!1;const r=()=>{n||(n=!0,window.location.reload())};(0,_overlay_plugin_api_js__WEBPACK_IMPORTED_MODULE_2__.M9)("onUserFileChanged",(()=>{r()})),(0,_overlay_plugin_api_js__WEBPACK_IMPORTED_MODULE_2__.M9)("onForceReload",(()=>{r()})),this.loadUserFiles(e,t,a)}loadUserFiles(e,t,a,n=!0){const r=(0,_overlay_plugin_api_js__WEBPACK_IMPORTED_MODULE_2__.tK)({call:"cactbotLoadData",overlay:"options"}),o=async o=>{const s=`${o.detail.userLocation.replace(/[/\\]*$/,"")}\\`,i=o.detail.localUserFiles;if(t.SystemInfo={cactbotVersion:o.detail.cactbotVersion,overlayPluginVersion:o.detail.overlayPluginVersion,ffxivPluginVersion:o.detail.ffxivPluginVersion,actVersion:o.detail.actVersion,gameRegion:o.detail.gameRegion},o.detail.language&&(t.ParserLanguage=o.detail.language,t.ShortLocale=o.detail.language,t.DisplayLanguage=o.detail.language),o.detail.parserLanguage&&(t.ParserLanguage=o.detail.parserLanguage,t.Language=o.detail.parserLanguage),o.detail.systemLocale){t.SystemLocale=o.detail.systemLocale;let e=o.detail.systemLocale.slice(0,2);"zh"===e&&(e="cn"),(0,_languages_js__WEBPACK_IMPORTED_MODULE_0__.Hf)(e)?t.ShortLocale=e:t.ShortLocale=t.ParserLanguage}const l=o.detail.displayLanguage;(0,_languages_js__WEBPACK_IMPORTED_MODULE_0__.Hf)(l)?t.DisplayLanguage=l:t.DisplayLanguage=t.ParserLanguage||"en",document.documentElement.classList.add(`lang-${t.DisplayLanguage}`),document.documentElement.lang=(0,_languages_js__WEBPACK_IMPORTED_MODULE_0__.yJ)(t.DisplayLanguage),this.addUnlockText(t.DisplayLanguage),this.savedConfig=(await r)?.data??{};const c=this.optionTemplates[e];if(void 0!==c){const a=this.savedConfig[e]??{};this.processOptions(t,t,a,c.options),c.processExtraOptions&&c.processExtraOptions(t,a)}const f=void 0!==t.Debug&&!1!==t.Debug?e=>console.log(e):()=>{},d={raidboss:["Triggers"]};d[e]=d[e]||[];const h={};if(i){const a=this.sortUserFiles(Object.keys(i)),r=this.filterUserFiles(a,e,".js"),l=n?this.filterUserFiles(a,e,".css"):[];for(const a of r)try{f(`local user file: ${s}${a}`),this.evalUserFile(i[a]??"",t);for(const n of d[e]??[]){const e=h[n];null!=e&&e!==t[n]&&console.log(`*** WARNING: ${s}${a} overwrites Options.${n} from previous files.`),h[n]=t[n]}this.userFileCallbacks[e]?.(a,i,t,s)}catch(o){console.log("*** ERROR IN USER FILE ***"),console.log(o)}void 0!==t.Skin&&this.handleSkin(t.Skin);for(const e of l){f(`local user file: ${s}${e}`);const t=document.createElement("style"),a=i[e];void 0!==a&&(t.innerText=a);const n=document.getElementsByTagName("head")[0];n&&n.appendChild(t)}}a(),(0,_overlay_plugin_api_js__WEBPACK_IMPORTED_MODULE_2__.tK)({call:"cactbotRequestState"})};(0,_overlay_plugin_api_js__WEBPACK_IMPORTED_MODULE_2__.tK)({call:"cactbotLoadUser",source:location.href,overlayName:e}).then((e=>{"loading"===document.readyState?document.addEventListener("DOMContentLoaded",(()=>{o(e)})):o(e)}))}handleSkin(e){if(!e||"default"===e)return;const t=`skins/${e}/${e}.css`;this.appendCSSLink(t)}appendJSLink(e){const t=document.createElement("script");t.setAttribute("type","text/javascript"),t.setAttribute("src",e),t.setAttribute("async","false");const a=document.getElementsByTagName("head")[0];a&&a.appendChild(t)}appendCSSLink(e){const t=document.createElement("link");t.setAttribute("rel","stylesheet"),t.setAttribute("type","text/css"),t.setAttribute("href",e);const a=document.getElementsByTagName("head")[0];a&&a.appendChild(t)}processOptions(e,t,a,n){if(void 0!==n)for(const r of n){let n;n="function"==typeof r.default?r.default(e):r.default;let o=!0;if("object"==typeof a&&!Array.isArray(a)&&r.id in a){const e=a[r.id];void 0!==e&&""!==e&&(n=e,o=!1)}if(r.setterFunc){const a=r.setterFunc(n,e,o);void 0!==a&&(t[r.id]=a)}else"integer"===r.type?"number"==typeof n?t[r.id]=Math.floor(n):"string"==typeof n&&(t[r.id]=parseInt(n)):"float"===r.type?"number"==typeof n?t[r.id]=n:"string"==typeof n&&(t[r.id]=parseFloat(n)):t[r.id]=n}}addUnlockText(e){const t={en:"🔓 Unlocked (lock overlay before using)",de:"🔓 Entsperrt (Sperre das Overlay vor der Nutzung)",fr:"🔓 Débloqué (Bloquez l'overlay avant utilisation)",ja:"🔓 ロック解除 (オーバーレイを使用する前にロックしてください)",cn:"🔓 已解除锁定 (你需要将此悬浮窗锁定后方可使用)",ko:"🔓 위치 잠금 해제됨 (사용하기 전에 위치 잠금을 설정하세요)"},a="cactbot-unlocked-text";let n=document.getElementById(a);n||(n=document.createElement("div"),n.id=a,n.classList.add("text"),n.style.display="none",document.body.append(n)),n.innerHTML=t[e]||t.en}}const __WEBPACK_DEFAULT_EXPORT__=new UserConfig;"undefined"!=typeof document&&document.addEventListener("onOverlayStateUpdate",(e=>{const t=document.documentElement.classList;e.detail.isLocked?t.remove("resize-handle","unlocked"):t.add("resize-handle","unlocked")}))},268:(e,t,a)=>{a.d(t,{A:()=>M,H:()=>P});var n=a(702),r=a(468),o=a(181);const s={NONE:0,GLA:1,PGL:2,MRD:3,LNC:4,ARC:5,CNJ:6,THM:7,CRP:8,BSM:9,ARM:10,GSM:11,LTW:12,WVR:13,ALC:14,CUL:15,MIN:16,BTN:17,FSH:18,PLD:19,MNK:20,WAR:21,DRG:22,BRD:23,WHM:24,BLM:25,ACN:26,SMN:27,SCH:28,ROG:29,NIN:30,MCH:31,DRK:32,AST:33,SAM:34,RDM:35,BLU:36,GNB:37,DNC:38,RPR:39,SGE:40,VPR:41,PCT:42},i=Object.keys(s),l=["tank","healer","dps","crafter","gatherer","none"],c=["GLA","PLD","MRD","WAR","DRK","GNB"],f=["CNJ","WHM","SCH","AST","SGE"],d=["PGL","MNK","LNC","DRG","ROG","NIN","SAM","RPR","VPR"],h=["ARC","BRD","DNC","MCH"],u=["BLU","RDM","BLM","SMN","ACN","THM","PCT"],m=[...d,...h,...u],p=["CRP","BSM","ARM","GSM","LTW","WVR","ALC","CUL"],T=["MIN","BTN","FSH"],g=["BLU",...c,...d],y=["BLU",...c,...h],k=[...u,...f],x=[...d],A=[...u],b=["BLU","BRD",...f],S=(()=>{const e=(e,t,a)=>{t.forEach((t=>e.set(t,a)))},t=new Map([["NONE","none"]]);return e(t,c,"tank"),e(t,f,"healer"),e(t,m,"dps"),e(t,p,"crafter"),e(t,T,"gatherer"),t})(),F=[],w=(e,t)=>new Promise(((a,n)=>{const r=e.delay??1e3,s={call:"getCombatants"};e.ids&&(s.ids=e.ids),e.names&&(s.names=e.names),e.props&&(s.props=e.props);const i={cancel:!1,start:Date.now()};F.push(i);const l=()=>{((e,t)=>!!t.cancel||void 0!==e.maxDuration&&Date.now()-t.start>e.maxDuration)(e,i)?n(new Error("cancelled")):(0,o.tK)(s).then((e=>{i.cancel?n(new Error("was cancelled")):t(e)?a():window.setTimeout(l,r)}))};window.setTimeout(l,r)}));let R,E;const C=["dirN","dirNE","dirE","dirSE","dirS","dirSW","dirW","dirNW"],V=["dirN","dirE","dirS","dirW"],j=["dirNE","dirSE","dirSW","dirNW"],v={dirN:r.A.dirN,dirNNE:r.A.dirNNE,dirNE:r.A.dirNE,dirENE:r.A.dirENE,dirE:r.A.dirE,dirESE:r.A.dirESE,dirSE:r.A.dirSE,dirSSE:r.A.dirSSE,dirS:r.A.dirS,dirSSW:r.A.dirSSW,dirSW:r.A.dirSW,dirWSW:r.A.dirWSW,dirW:r.A.dirW,dirWNW:r.A.dirWNW,dirNW:r.A.dirNW,dirNNW:r.A.dirNNW,unknown:r.A.unknown},z={dirN:r.A.dirN,dirNE:r.A.dirNE,dirE:r.A.dirE,dirSE:r.A.dirSE,dirS:r.A.dirS,dirSW:r.A.dirSW,dirW:r.A.dirW,dirNW:r.A.dirNW,unknown:r.A.unknown},L={dirN:r.A.dirN,dirE:r.A.dirE,dirS:r.A.dirS,dirW:r.A.dirW,unknown:r.A.unknown},_={dirNE:r.A.dirNE,dirSE:r.A.dirSE,dirSW:r.A.dirSW,dirNW:r.A.dirNW,unknown:r.A.unknown},D=(e,t,a,n)=>(e-=a,t-=n,Math.round(4-4*Math.atan2(e,t)/Math.PI)%8),B=(e,t,a,n)=>(e-=a,t-=n,Math.round(2-2*Math.atan2(e,t)/Math.PI)%4),Y=e=>(Math.round(4-4*e/Math.PI)%8+8)%8,O=e=>C[e]??"unknown",X=e=>V[e]??"unknown",P={output8Dir:C,output16Dir:["dirN","dirNNE","dirNE","dirENE","dirE","dirESE","dirSE","dirSSE","dirS","dirSSW","dirSW","dirWSW","dirW","dirWNW","dirNW","dirNNW"],outputCardinalDir:V,outputIntercardDir:j,outputStrings16Dir:v,outputStrings8Dir:z,outputStringsCardinalDir:L,outputStringsIntercardDir:_,xyTo16DirNum:(e,t,a,n)=>(e-=a,t-=n,Math.round(8-8*Math.atan2(e,t)/Math.PI)%16),xyTo8DirNum:D,xyTo4DirNum:B,hdgTo8DirNum:Y,hdgTo4DirNum:e=>(Math.round(2-2*e/Math.PI)%4+4)%4,outputFrom8DirNum:O,outputFromCardinalNum:X,combatantStatePosTo8Dir:(e,t,a)=>D(e.PosX,e.PosY,t,a),combatantStatePosTo8DirOutput:(e,t,a)=>{const n=D(e.PosX,e.PosY,t,a);return O(n)},combatantStateHdgTo8Dir:e=>Y(e.Heading),combatantStateHdgTo8DirOutput:e=>{const t=Y(e.Heading);return O(t)},addedCombatantPosTo8Dir:(e,t,a)=>{const n=parseFloat(e.x),r=parseFloat(e.y);return D(n,r,t,a)},addedCombatantPosTo8DirOutput:(e,t,a)=>{const n=parseFloat(e.x),r=parseFloat(e.y),o=D(n,r,t,a);return O(o)},addedCombatantHdgTo8Dir:e=>{const t=parseFloat(e.heading);return Y(t)},addedCombatantHdgTo8DirOutput:e=>{const t=parseFloat(e.heading),a=Y(t);return O(a)},xyTo8DirOutput:(e,t,a,n)=>{const r=D(e,t,a,n);return O(r)},xyToCardinalDirOutput:(e,t,a,n)=>{const r=B(e,t,a,n);return X(r)},xyToIntercardDirOutput:(e,t,a,n)=>{const r=((e,t,a,n)=>(e-=a,t-=n,Math.round(2-2*(Math.PI/4+Math.atan2(e,t))/Math.PI)%4))(e,t,a,n);return(e=>j[e]??"unknown")(r)}},M={jobEnumToJob:e=>i.find((t=>s[t]===e))??"NONE",jobToJobEnum:e=>s[e],jobToRole:e=>S.get(e)??"none",getAllRoles:()=>l,isTankJob:e=>c.includes(e),isHealerJob:e=>f.includes(e),isMeleeDpsJob:e=>d.includes(e),isRangedDpsJob:e=>h.includes(e),isCasterDpsJob:e=>u.includes(e),isDpsJob:e=>m.includes(e),isCraftingJob:e=>p.includes(e),isGatheringJob:e=>T.includes(e),isCombatJob:e=>!p.includes(e)&&!T.includes(e),canStun:e=>g.includes(e),canSilence:e=>y.includes(e),canSleep:e=>k.includes(e),canCleanse:e=>b.includes(e),canFeint:e=>x.includes(e),canAddle:e=>A.includes(e),watchCombatant:(e,t)=>R?R(e,t):w(e,t),clearWatchCombatants:()=>{void 0!==E?E():(()=>{for(;F.length>0;){const e=F.pop();e&&(e.cancel=!0)}})()},setWatchCombatantOverride:(e,t)=>{R=e,E=t},gameLogCodes:n.RJ,actorControlType:n.bU,shortName:(e,t)=>{if("string"!=typeof e)return void 0!==e&&console.error("called ShortNamify with non-string"),"???";const a=t[e];if(void 0!==a)return a;const n=e.indexOf(" ");return n<0?e:e.slice(0,n)}}},660:(e,t,a)=>{a.d(t,{A:()=>n});const n={ABloodyReunion:560,AFatherFirst:1210,AFrostyReception:1010,AHunterTrue:1216,APathUnveiled:1015,ARelicRebornTheChimera:368,ARelicRebornTheHydra:369,ARequiemForHeroes:830,ASleepDisturbed:914,ASpectacleForTheAges:533,AacLightHeavyweightM1:1225,AacLightHeavyweightM1Savage:1226,AacLightHeavyweightM2:1227,AacLightHeavyweightM2Savage:1228,AacLightHeavyweightM3:1229,AacLightHeavyweightM3Savage:1230,AacLightHeavyweightM4:1231,AacLightHeavyweightM4Savage:1232,AbyssosTheEighthCircle:1087,AbyssosTheEighthCircleSavage:1088,AbyssosTheFifthCircle:1081,AbyssosTheFifthCircleSavage:1082,AbyssosTheSeventhCircle:1085,AbyssosTheSeventhCircleSavage:1086,AbyssosTheSixthCircle:1083,AbyssosTheSixthCircleSavage:1084,AccrueEnmityFromMultipleTargets:540,Aglaia:1054,AirForceOne:832,AkadaemiaAnyder:841,AlaMhigo:1146,AlaMhigo63:689,AlexanderTheArmOfTheFather:444,AlexanderTheArmOfTheFatherSavage:451,AlexanderTheArmOfTheSon:522,AlexanderTheArmOfTheSonSavage:531,AlexanderTheBreathOfTheCreator:581,AlexanderTheBreathOfTheCreatorSavage:585,AlexanderTheBurdenOfTheFather:445,AlexanderTheBurdenOfTheFatherSavage:452,AlexanderTheBurdenOfTheSon:523,AlexanderTheBurdenOfTheSonSavage:532,AlexanderTheCuffOfTheFather:443,AlexanderTheCuffOfTheFatherSavage:450,AlexanderTheCuffOfTheSon:521,AlexanderTheCuffOfTheSonSavage:530,AlexanderTheEyesOfTheCreator:580,AlexanderTheEyesOfTheCreatorSavage:584,AlexanderTheFistOfTheFather:442,AlexanderTheFistOfTheFatherSavage:449,AlexanderTheFistOfTheSon:520,AlexanderTheFistOfTheSonSavage:529,AlexanderTheHeartOfTheCreator:582,AlexanderTheHeartOfTheCreatorSavage:586,AlexanderTheSoulOfTheCreator:583,AlexanderTheSoulOfTheCreatorSavage:587,Alexandria:1199,AllsWellThatEndsInTheWell:220,AloaloIsland:1176,AlphascapeV10:798,AlphascapeV10Savage:802,AlphascapeV20:799,AlphascapeV20Savage:803,AlphascapeV30:800,AlphascapeV30Savage:804,AlphascapeV40:801,AlphascapeV40Savage:805,AlzadaalsLegacy:1050,Amaurot:838,AmdaporKeep:167,AmdaporKeepHard:189,AmhAraeng:815,AnAntidoteForAnarchy:1215,AnUnforeseenBargain:1120,AnabaseiosTheEleventhCircle:1151,AnabaseiosTheEleventhCircleSavage:1152,AnabaseiosTheNinthCircle:1147,AnabaseiosTheNinthCircleSavage:1148,AnabaseiosTheTenthCircle:1149,AnabaseiosTheTenthCircleSavage:1150,AnabaseiosTheTwelfthCircle:1153,AnabaseiosTheTwelfthCircleSavage:1154,AnamnesisAnyder:898,AnnoyTheVoid:222,AnotherAloaloIsland:1179,AnotherAloaloIslandSavage:1180,AnotherMountRokkon:1155,AnotherMountRokkonSavage:1156,AnotherSildihnSubterrane:1075,AnotherSildihnSubterraneSavage:1076,AsTheHeartBids:894,AsTheHeavensBurn:1012,AsphodelosTheFirstCircle:1002,AsphodelosTheFirstCircleSavage:1003,AsphodelosTheFourthCircle:1008,AsphodelosTheFourthCircleSavage:1009,AsphodelosTheSecondCircle:1004,AsphodelosTheSecondCircleSavage:1005,AsphodelosTheThirdCircle:1006,AsphodelosTheThirdCircleSavage:1007,AssistAlliesInDefeatingATarget:544,Astragalos:729,AvoidAreaOfEffectAttacks:537,AzysLla:402,BaelsarsWall:1114,BaelsarsWall62:615,BardamsMettle:1143,BardamsMettle63:623,BasicTrainingEnemyParties:214,BasicTrainingEnemyStrongholds:215,BattleInTheBigKeep:396,BattleOnTheBigBridge:366,BloodOnTheDeck:708,Blunderville:1165,BrayfloxsLongstop:1041,BrayfloxsLongstopHard:362,CapeWestwind:1049,CastrumAbania:1145,CastrumAbania63:661,CastrumFluminis:778,CastrumMarinum:934,CastrumMarinumExtreme:935,CastrumMeridianum:1043,CenoteJaJaGural:1209,CentralShroud:148,CentralThanalan:141,ChocoboRaceCostaDelSol:389,ChocoboRaceSagoliiRoad:390,ChocoboRaceTranquilPaths:391,ChocoboRaceTutorial:417,CinderDrift:897,CinderDriftExtreme:912,CoerthasCentralHighlands:155,CoerthasWesternHighlands:397,ComingClean:860,ContainmentBayP1T6:576,ContainmentBayP1T6Extreme:577,ContainmentBayP1T6Unreal:1121,ContainmentBayS1T7:517,ContainmentBayS1T7Extreme:524,ContainmentBayS1T7Unreal:1090,ContainmentBayZ1T9:637,ContainmentBayZ1T9Extreme:638,ContainmentBayZ1T9Unreal:1157,CopperbellMines:1038,CopperbellMinesHard:349,CrystallineConflictCustomMatchCloudNine:1060,CrystallineConflictCustomMatchTheClockworkCastletown:1117,CrystallineConflictCustomMatchThePalaistra:1058,CrystallineConflictCustomMatchTheRedSands:1139,CrystallineConflictCustomMatchTheVolcanicHeart:1059,CuriousGorgeMeetsHisMatch:717,CuttersCry:170,DarkAsTheNightSky:713,DeathUntoDawn:977,DefeatAnOccupiedTarget:545,DeltascapeV10:691,DeltascapeV10Savage:695,DeltascapeV20:692,DeltascapeV20Savage:696,DeltascapeV30:693,DeltascapeV30Savage:697,DeltascapeV40:694,DeltascapeV40Savage:698,DelubrumReginae:936,DelubrumReginaeSavage:937,Devastation:1052,DohnMheg:821,DomaCastle:1144,DomaCastle63:660,DragonSound:714,DragonsongsRepriseUltimate:968,DreamsOfANewDay:1214,DunScaith:627,DzemaelDarkhold:171,EastShroud:152,EasternLaNoscea:137,EasternThanalan:145,EdensGateDescent:850,EdensGateDescentSavage:854,EdensGateInundation:851,EdensGateInundationSavage:855,EdensGateResurrection:849,EdensGateResurrectionSavage:853,EdensGateSepulture:852,EdensGateSepultureSavage:856,EdensPromiseAnamorphosis:944,EdensPromiseAnamorphosisSavage:948,EdensPromiseEternity:945,EdensPromiseEternitySavage:949,EdensPromiseLitany:943,EdensPromiseLitanySavage:947,EdensPromiseUmbra:942,EdensPromiseUmbraSavage:946,EdensVerseFulmination:902,EdensVerseFulminationSavage:906,EdensVerseFuror:903,EdensVerseFurorSavage:907,EdensVerseIconoclasm:904,EdensVerseIconoclasmSavage:908,EdensVerseRefulgence:905,EdensVerseRefulgenceSavage:909,Elpis:961,Emanation:719,EmanationExtreme:720,EmissaryOfTheDawn:769,Endwalker:1013,EngageMultipleTargets:541,Eulmore:820,Euphrosyne:1118,EurekaOrthosFloors11_20:1100,EurekaOrthosFloors1_10:1099,EurekaOrthosFloors21_30:1101,EurekaOrthosFloors31_40:1102,EurekaOrthosFloors41_50:1103,EurekaOrthosFloors51_60:1104,EurekaOrthosFloors61_70:1105,EurekaOrthosFloors71_80:1106,EurekaOrthosFloors81_90:1107,EurekaOrthosFloors91_100:1108,EverMarchHeavensward:1018,Everkeep:1200,EverkeepExtreme:1201,ExecuteAComboInBattle:539,ExecuteAComboToIncreaseEnmity:538,ExecuteARangedAttackToIncreaseEnmity:542,FadedMemories:932,FangsOfTheViper:1235,FinalExercise:552,FitForAQueen:955,FlickingSticksAndTakingNames:219,ForlornGlory:1051,Foundation:418,FourPlayerMahjongQuickMatchKuitanDisabled:831,Garlemald:958,GenerationalBonding:1115,Halatali:162,HalataliHard:360,HaukkeManor:1040,HaukkeManorHard:350,HealAnAlly:549,HealMultipleAllies:550,HeavenOnHighFloors11_20:771,HeavenOnHighFloors1_10:770,HeavenOnHighFloors21_30:772,HeavenOnHighFloors31_40:782,HeavenOnHighFloors41_50:773,HeavenOnHighFloors51_60:783,HeavenOnHighFloors61_70:774,HeavenOnHighFloors71_80:784,HeavenOnHighFloors81_90:775,HeavenOnHighFloors91_100:785,HellsKier:810,HellsKierExtreme:811,HellsLid:742,HeritageFound:1191,HeroOnTheHalfShell:216,HeroesAndPretenders:1218,HiddenGorge:791,HolminsterSwitch:837,HullbreakerIsle:361,HullbreakerIsleHard:557,Idyllshire:478,Ihuykatumu:1167,IlMheg:816,InFromTheCold:1011,InThalsName:705,InteractWithTheBattlefield:548,InterdimensionalRift:690,ItsProbablyATrap:665,Kholusia:814,Kozamauka:1188,KtisisHyperboreia:974,Kugane:628,KuganeCastle:662,KuganeOhashi:806,Labyrinthos:956,LaidToRest:1017,Lakeland:813,LapisManalis:1097,LegendOfTheNotSoHiddenTemple:859,LifeEphemeralPathEternal:1023,LimsaLominsaLowerDecks:129,LimsaLominsaUpperDecks:128,LivingMemory:1192,LongLiveTheQueen:298,LovmMasterTournament:506,LovmPlayerBattleNonRp:591,LovmPlayerBattleRp:589,LovmTournament:590,LowerLaNoscea:135,MalikahsWell:836,MareLamentorum:959,MatchAll:null,MatoyasRelict:933,MatsubaMayhem:710,MemoriaMiseraExtreme:913,MemoryOfEmbers:1166,MessengerOfTheWinds:834,MiddleLaNoscea:134,MindOverManor:1233,Mist:136,MorDhona:156,MoreThanAFeeler:221,MountOrdeals:1095,MountOrdealsExtreme:1096,MountRokkon:1137,MtGulg:822,Naadam:688,Neverreap:420,NewGridania:132,NorthShroud:154,NorthernThanalan:147,NyelbertsLament:876,OldGridania:133,OldSharlayan:962,OneLifeForOneWorld:592,OnsalHakairDanshigNaadam:888,Origenics:1208,OurCompromise:716,OurUnsungHeroes:722,OuterLaNoscea:180,Paglthan:938,PharosSirius:160,PharosSiriusHard:510,PullingPoisonPosies:191,RadzAtHan:963,RaisingTheSword:706,ReturnOfTheBull:403,RhalgrsReach:635,SagesFocus:1022,SaintMociannesArboretum:511,SaintMociannesArboretumHard:788,Sastasha:1036,SastashaHard:387,SealRockSeize:431,Shaaloani:1190,ShadowAndClaw:223,ShisuiOfTheVioletTides:616,SigmascapeV10:748,SigmascapeV10Savage:752,SigmascapeV20:749,SigmascapeV20Savage:753,SigmascapeV30:750,SigmascapeV30Savage:754,SigmascapeV40:751,SigmascapeV40Savage:755,Smileton:976,Snowcloak:1062,Snowcloak61:371,SohmAl:1064,SohmAl61:441,SohmAlHard:617,SohrKhai:1112,SohrKhai62:555,SolemnTrinity:300,SolutionNine:1186,SomewhereOnlySheKnows:1234,SouthShroud:153,SouthernThanalan:146,SpecialEventI:353,SpecialEventIi:354,StingingBack:192,StormsCrown:1071,StormsCrownExtreme:1072,SyrcusTower:372,TakingAStand:1211,TenderValley:1203,Thaleia:1178,Thavnair:957,TheAbyssalFracture:1168,TheAbyssalFractureExtreme:1169,TheAery:1065,TheAery61:435,TheAetherfont:1126,TheAetherochemicalResearchFacility:1110,TheAetherochemicalResearchFacility62:438,TheAitiascope:978,TheAkhAfahAmphitheatreExtreme:378,TheAkhAfahAmphitheatreHard:377,TheAkhAfahAmphitheatreUnreal:930,TheAntitower:1111,TheAntitower62:516,TheAquapolis:558,TheAurumVale:172,TheAzimSteppe:622,TheBattleOnBekko:711,TheBindingCoilOfBahamutTurn1:241,TheBindingCoilOfBahamutTurn2:242,TheBindingCoilOfBahamutTurn3:243,TheBindingCoilOfBahamutTurn4:244,TheBindingCoilOfBahamutTurn5:245,TheBorderlandRuinsSecure:376,TheBowlOfEmbers:1045,TheBowlOfEmbersExtreme:295,TheBowlOfEmbersHard:292,TheBozjaIncident:911,TheBozjanSouthernFront:920,TheBurn:1173,TheBurn64:789,TheCalamityRetold:790,TheCarteneauFlatsHeliodrome:633,TheChrysalis:426,TheChurningMists:400,TheClockworkCastletown:1116,TheCloudDeck:950,TheCloudDeckExtreme:951,TheCopiedFactory:882,TheCrownOfTheImmaculate:846,TheCrownOfTheImmaculateExtreme:848,TheCrystarium:819,TheDancingPlague:845,TheDancingPlagueExtreme:858,TheDarkInside:992,TheDeadEnds:973,TheDiadem:929,TheDiademEasy:512,TheDiademHard:515,TheDiademHuntingGrounds:625,TheDiademHuntingGroundsEasy:624,TheDiademTrialsOfTheFury:630,TheDiademTrialsOfTheMatron:656,TheDomanEnclave:759,TheDragonsNeck:142,TheDravanianForelands:398,TheDravanianHinterlands:399,TheDrownedCityOfSkalla:1172,TheDrownedCityOfSkalla64:731,TheDungeonsOfLyheGhiah:879,TheDuskVigil:434,TheDyingGasp:847,TheEpicOfAlexanderUltimate:887,TheExcitatron6000:1e3,TheFaceOfTrueEvil:709,TheFeatOfTheBrotherhood:1212,TheFellCourtOfTroia:1070,TheFieldsOfGloryShatter:554,TheFinalCoilOfBahamutTurn1:193,TheFinalCoilOfBahamutTurn2:194,TheFinalCoilOfBahamutTurn3:195,TheFinalCoilOfBahamutTurn4:196,TheFinalDay:997,TheFinalStepsOfFaith:559,TheForbiddenLandEurekaAnemos:732,TheForbiddenLandEurekaHydatos:827,TheForbiddenLandEurekaPagos:763,TheForbiddenLandEurekaPyros:795,TheFractalContinuum:430,TheFractalContinuumHard:743,TheFringes:612,TheGameIsAfoot:1177,TheGhimlytDark:1174,TheGhimlytDark64:793,TheGiftOfMercy:1019,TheGildedAraya:1136,TheGrandCosmos:884,TheGreatGubalLibrary:1109,TheGreatGubalLibrary62:416,TheGreatGubalLibraryHard:578,TheGreatHunt:761,TheGreatHuntExtreme:762,TheGreatShipVylbrand:954,TheHardenedHeart:873,TheHarvestBegins:1020,TheHauntedManor:571,TheHeartOfTheProblem:718,TheHeroesGauntlet:916,TheHiddenCanalsOfUznair:725,TheHowlingEye:1047,TheHowlingEyeExtreme:297,TheHowlingEyeHard:294,TheHuntersLegacy:875,TheInterphos:1202,TheJadeStoa:746,TheJadeStoaExtreme:758,TheKeeperOfTheLake:1063,TheKeeperOfTheLake61:150,TheKillingArt:1021,TheLabyrinthOfTheAncients:174,TheLimitlessBlueExtreme:447,TheLimitlessBlueHard:436,TheLochs:621,TheLostAndTheFound:874,TheLostCanalsOfUznair:712,TheLostCityOfAmdapor:363,TheLostCityOfAmdaporHard:519,TheLunarSubterrane:1164,TheMaskedCarnivale:796,TheMightiestShield:1217,TheMinstrelsBalladEndsingersAria:998,TheMinstrelsBalladHadessElegy:885,TheMinstrelsBalladHydaelynsCall:996,TheMinstrelsBalladNidhoggsRage:566,TheMinstrelsBalladShinryusDomain:730,TheMinstrelsBalladThordansReign:448,TheMinstrelsBalladTsukuyomisPain:779,TheMinstrelsBalladUltimasBane:348,TheMinstrelsBalladZodiarksFall:993,TheMothercrystal:995,TheNavel:1046,TheNavelExtreme:296,TheNavelHard:293,TheNavelUnreal:953,TheOmegaProtocolUltimate:1122,TheOrbonneMonastery:826,TheOrphansAndTheBrokenBlade:715,ThePalaceOfTheDeadFloors101_110:598,ThePalaceOfTheDeadFloors111_120:599,ThePalaceOfTheDeadFloors11_20:562,ThePalaceOfTheDeadFloors121_130:600,ThePalaceOfTheDeadFloors131_140:601,ThePalaceOfTheDeadFloors141_150:602,ThePalaceOfTheDeadFloors151_160:603,ThePalaceOfTheDeadFloors161_170:604,ThePalaceOfTheDeadFloors171_180:605,ThePalaceOfTheDeadFloors181_190:606,ThePalaceOfTheDeadFloors191_200:607,ThePalaceOfTheDeadFloors1_10:561,ThePalaceOfTheDeadFloors21_30:563,ThePalaceOfTheDeadFloors31_40:564,ThePalaceOfTheDeadFloors41_50:565,ThePalaceOfTheDeadFloors51_60:593,ThePalaceOfTheDeadFloors61_70:594,ThePalaceOfTheDeadFloors71_80:595,ThePalaceOfTheDeadFloors81_90:596,ThePalaceOfTheDeadFloors91_100:597,ThePeaks:620,ThePhantomsFeast:994,ThePillars:419,ThePoolOfTribute:674,ThePoolOfTributeExtreme:677,ThePortaDecumana:1048,ThePraetorium:1044,TheProtectorAndTheDestroyer:1213,ThePuppetsBunker:917,TheQitanaRavel:823,TheRaktikaGreatwood:817,TheRedSands:1138,TheResonant:684,TheRidoranaLighthouse:776,TheRoyalCityOfRabanastre:734,TheRoyalMenagerie:679,TheRubySea:613,TheSeaOfClouds:401,TheSeatOfSacrifice:922,TheSeatOfSacrificeExtreme:923,TheSecondCoilOfBahamutSavageTurn1:380,TheSecondCoilOfBahamutSavageTurn2:381,TheSecondCoilOfBahamutSavageTurn3:382,TheSecondCoilOfBahamutSavageTurn4:383,TheSecondCoilOfBahamutTurn1:355,TheSecondCoilOfBahamutTurn2:356,TheSecondCoilOfBahamutTurn3:357,TheSecondCoilOfBahamutTurn4:358,TheShiftingAltarsOfUznair:794,TheShiftingGymnasionAgonon:1123,TheShiftingOubliettesOfLyheGhiah:924,TheSildihnSubterrane:1069,TheSingularityReactor:437,TheSingularityReactorUnreal:1175,TheSirensongSea:1142,TheSirensongSea63:626,TheSkydeepCenote:1194,TheStepsOfFaith:1068,TheStepsOfFaith61:143,TheStigmaDreamscape:986,TheStoneVigil:1042,TheStoneVigilHard:365,TheStrayboroughDeadwalk:1204,TheStrikingTreeExtreme:375,TheStrikingTreeHard:374,TheSunkenTempleOfQarn:163,TheSunkenTempleOfQarnHard:367,TheSwallowsCompass:768,TheTamTaraDeepcroft:1037,TheTamTaraDeepcroftHard:373,TheTempest:818,TheTempleOfTheFist:663,TheThousandMawsOfTotoRak:1039,TheTowerAtParadigmsBreach:966,TheTowerOfBabil:969,TheTowerOfZot:952,TheTripleTriadBattlehall:579,TheTwinning:840,TheUnendingCoilOfBahamutUltimate:733,TheValentionesCeremony:741,TheVault:1066,TheVault61:421,TheVoidArk:508,TheVoidcastDais:1140,TheVoidcastDaisExtreme:1141,TheWanderersPalace:159,TheWanderersPalaceHard:188,TheWeaponsRefrainUltimate:777,TheWeepingCityOfMhach:556,TheWhorleaterExtreme:359,TheWhorleaterHard:281,TheWhorleaterUnreal:972,TheWillOfTheMoon:797,TheWorldOfDarkness:151,TheWreathOfSnakes:824,TheWreathOfSnakesExtreme:825,ThokAstThokExtreme:446,ThokAstThokHard:432,ThornmarchExtreme:364,ThornmarchHard:1067,ThornmarchHard61:207,ToCalmerSeas:1016,TripleTriadInvitationalParlor:941,TripleTriadOpenTournament:940,Tuliyollal:1185,UldahStepsOfNald:130,UldahStepsOfThal:131,UltimaThule:960,UltimasBaneUnreal:1035,UnderTheArmor:190,UpperLaNoscea:139,Urqopacha:1187,UrthsFount:394,Vanaspati:970,Vanguard:1198,VengeanceOfTheViper:1236,VowsOfVirtueDeedsOfCruelty:893,WardUp:299,WesternLaNoscea:138,WesternThanalan:140,WhenClansCollide:723,WhereEverythingBegins:1091,WithHeartAndSteel:707,WolvesDenPier:250,WorqorLarDor:1195,WorqorLarDorExtreme:1196,WorqorZormor:1193,WorthyOfHisBack:1014,Xelphatol:1113,Xelphatol62:572,YakTel:1189,Yanxia:614,Zadnor:975}},53:(e,t,a)=>{a.d(t,{A:()=>n});const n={128:{exVersion:0,name:{cn:"利姆萨·罗敏萨上层甲板",de:"Obere Decks",en:"Limsa Lominsa Upper Decks",fr:"Limsa Lominsa - Le Tillac",ja:"リムサ・ロミンサ：上甲板層",ko:"림사 로민사 상층 갑판"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:14},129:{exVersion:0,name:{cn:"利姆萨·罗敏萨下层甲板",de:"Untere Decks",en:"Limsa Lominsa Lower Decks",fr:"Limsa Lominsa - L'Entrepont",ja:"リムサ・ロミンサ：下甲板層",ko:"림사 로민사 하층 갑판"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:15},130:{exVersion:0,name:{cn:"乌尔达哈现世回廊",de:"Nald-Kreuzgang",en:"Ul'dah - Steps of Nald",fr:"Ul'dah - Faubourg de Nald",ja:"ウルダハ：ナル回廊",ko:"울다하 날 회랑"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:7},131:{exVersion:0,name:{cn:"乌尔达哈来生回廊",de:"Thal-Kreuzgang",en:"Ul'dah - Steps of Thal",fr:"Ul'dah - Faubourg de Thal",ja:"ウルダハ：ザル回廊",ko:"울다하 달 회랑"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:8},132:{exVersion:0,name:{cn:"格里达尼亚新街",de:"Neu-Gridania",en:"New Gridania",fr:"Nouvelle Gridania",ja:"グリダニア：新市街",ko:"그리다니아 신시가지"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:1},133:{exVersion:0,name:{cn:"格里达尼亚旧街",de:"Alt-Gridania",en:"Old Gridania",fr:"Vieille Gridania",ja:"グリダニア：旧市街",ko:"그리다니아 구시가지"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:2},134:{exVersion:0,name:{cn:"中拉诺西亚",de:"Zentrales La Noscea",en:"Middle La Noscea",fr:"Noscea centrale",ja:"中央ラノシア",ko:"중부 라노시아"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:16},135:{exVersion:0,name:{cn:"拉诺西亚低地",de:"Unteres La Noscea",en:"Lower La Noscea",fr:"Basse-Noscea",ja:"低地ラノシア",ko:"저지 라노시아"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:17},136:{exVersion:0,name:{cn:"海雾村",de:"Dorf des Nebels",en:"Mist",fr:"Brumée",ja:"ミスト・ヴィレッジ",ko:"안갯빛 마을"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:14},137:{exVersion:0,name:{cn:"东拉诺西亚",de:"Östliches La Noscea",en:"Eastern La Noscea",fr:"Noscea orientale",ja:"東ラノシア",ko:"동부 라노시아"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:18},138:{exVersion:0,name:{cn:"西拉诺西亚",de:"Westliches La Noscea",en:"Western La Noscea",fr:"Noscea occidentale",ja:"西ラノシア",ko:"서부 라노시아"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:19},139:{exVersion:0,name:{cn:"拉诺西亚高地",de:"Oberes La Noscea",en:"Upper La Noscea",fr:"Haute-Noscea",ja:"高地ラノシア",ko:"고지 라노시아"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:20},140:{exVersion:0,name:{cn:"西萨纳兰",de:"Westliches Thanalan",en:"Western Thanalan",fr:"Thanalan occidental",ja:"西ザナラーン",ko:"서부 다날란"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:9},141:{exVersion:0,name:{cn:"中萨纳兰",de:"Zentrales Thanalan",en:"Central Thanalan",fr:"Thanalan central",ja:"中央ザナラーン",ko:"중부 다날란"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:10},142:{contentType:4,exVersion:0,name:{cn:"艾玛吉娜杯斗技大会决赛",de:"Das Drachenhals-Kolosseum",en:"The Dragon's Neck",fr:"Le Col du dragon",ja:"アマジナ杯闘技会決勝戦",ko:"아마지나배 투기대회 결승전"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},143:{contentType:4,exVersion:0,name:{cn:"(6.1)皇都伊修加德保卫战",de:"(6.1)Der Schicksalsweg",en:"(6.1)The Steps of Faith",fr:"(6.1)Le Siège de la sainte Cité d'Ishgard",ja:"(6.1)皇都イシュガルド防衛戦",ko:"(6.1)성도 이슈가르드 방어전"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:28},145:{exVersion:0,name:{cn:"东萨纳兰",de:"Östliches Thanalan",en:"Eastern Thanalan",fr:"Thanalan oriental",ja:"東ザナラーン",ko:"동부 다날란"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:11},146:{exVersion:0,name:{cn:"南萨纳兰",de:"Südliches Thanalan",en:"Southern Thanalan",fr:"Thanalan méridional",ja:"南ザナラーン",ko:"남부 다날란"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:12},147:{exVersion:0,name:{cn:"北萨纳兰",de:"Nördliches Thanalan",en:"Northern Thanalan",fr:"Thanalan septentrional",ja:"北ザナラーン",ko:"북부 다날란"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:13},148:{exVersion:0,name:{cn:"黑衣森林中央林区",de:"Tiefer Wald",en:"Central Shroud",fr:"Forêt centrale",ja:"黒衣森：中央森林",ko:"검은장막 숲 중부삼림"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:3},150:{contentType:2,exVersion:0,name:{cn:"(6.1)幻龙残骸密约之塔",de:"(6.1)Hüter des Sees",en:"(6.1)The Keeper of the Lake",fr:"(6.1)Le Gardien du lac",ja:"(6.1)幻龍残骸 黙約の塔",ko:"(6.1)묵약의 탑"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:74},151:{contentType:5,exVersion:0,name:{cn:"水晶塔 暗之世界",de:"Die Welt der Dunkelheit",en:"The World of Darkness",fr:"La Tour de Cristal - Monde des Ténèbres",ja:"クリスタルタワー：闇の世界",ko:"크리스탈 타워: 어둠의 세계"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},152:{exVersion:0,name:{cn:"黑衣森林东部林区",de:"Ostwald",en:"East Shroud",fr:"Forêt de l'est",ja:"黒衣森：東部森林",ko:"검은장막 숲 동부삼림"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:4},153:{exVersion:0,name:{cn:"黑衣森林南部林区",de:"Südwald",en:"South Shroud",fr:"Forêt du sud",ja:"黒衣森：南部森林",ko:"검은장막 숲 남부삼림"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:5},154:{exVersion:0,name:{cn:"黑衣森林北部林区",de:"Nordwald",en:"North Shroud",fr:"Forêt du nord",ja:"黒衣森：北部森林",ko:"검은장막 숲 북부삼림"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:6},155:{exVersion:0,name:{cn:"库尔札斯中央高地",de:"Zentrales Hochland von Coerthas",en:"Coerthas Central Highlands",fr:"Hautes terres du Coerthas central",ja:"クルザス中央高地",ko:"커르다스 중앙고지"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:21},156:{exVersion:0,name:{cn:"摩杜纳",de:"Mor Dhona",en:"Mor Dhona",fr:"Mor Dhona",ja:"モードゥナ",ko:"모르도나"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:22},159:{contentType:2,exVersion:0,name:{cn:"神灵圣域放浪神古神殿",de:"Palast des Wanderers",en:"The Wanderer's Palace",fr:"Le Palais du Vagabond",ja:"旅神聖域 ワンダラーパレス",ko:"방랑자의 궁전"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},160:{contentType:2,exVersion:0,name:{cn:"领航明灯天狼星灯塔",de:"Pharos Sirius",en:"Pharos Sirius",fr:"Le Phare de Sirius",ja:"怪鳥巨塔 シリウス大灯台",ko:"시리우스 대등대"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:28},162:{contentType:2,exVersion:0,name:{cn:"魔兽领域日影地修炼所",de:"Halatali",en:"Halatali",fr:"Halatali",ja:"魔獣領域 ハラタリ修練所",ko:"할라탈리 수련장"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},163:{contentType:2,exVersion:0,name:{cn:"古代遗迹喀恩埋没圣堂",de:"Versunkener Tempel von Qarn",en:"The Sunken Temple of Qarn",fr:"Le Temple enseveli de Qarn",ja:"遺跡探索 カルン埋没寺院",ko:"카른의 무너진 사원"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},167:{contentType:2,exVersion:0,name:{cn:"邪教驻地无限城古堡",de:"Die Ruinen von Amdapor",en:"Amdapor Keep",fr:"Le Château d'Amdapor",ja:"邪教排撃 古城アムダプール",ko:"옛 암다포르 성"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:28},170:{contentType:2,exVersion:0,name:{cn:"流沙迷宫樵鸣洞",de:"Sägerschrei",en:"Cutter's Cry",fr:"Le Gouffre hurlant",ja:"流砂迷宮 カッターズクライ",ko:"나무꾼의 비명"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},171:{contentType:2,exVersion:0,name:{cn:"山中战线泽梅尔要塞",de:"Die Feste Dzemael",en:"Dzemael Darkhold",fr:"La Forteresse de Dzemael",ja:"掃討作戦 ゼーメル要塞",ko:"제멜 요새"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},172:{contentType:2,exVersion:0,name:{cn:"毒雾洞窟黄金谷",de:"Goldklamm",en:"The Aurum Vale",fr:"Le Val d'Aurum",ja:"霧中行軍 オーラムヴェイル",ko:"금빛 골짜기"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},174:{contentType:5,exVersion:0,name:{cn:"水晶塔 古代人迷宫",de:"Kristallturm - Das Labyrinth der Alten",en:"The Labyrinth of the Ancients",fr:"La Tour de Cristal - Dédale antique",ja:"クリスタルタワー：古代の民の迷宮",ko:"크리스탈 타워: 고대인의 미궁"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},180:{exVersion:0,name:{cn:"拉诺西亚外地",de:"Äußeres La Noscea",en:"Outer La Noscea",fr:"Noscea extérieure",ja:"外地ラノシア",ko:"외지 라노시아"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:24},188:{contentType:2,exVersion:0,name:{cn:"武装圣域放浪神古神殿",de:"Palast des Wanderers (schwer)",en:"The Wanderer's Palace (Hard)",fr:"Le Palais du Vagabond (brutal)",ja:"武装聖域 ワンダラーパレス (Hard)",ko:"방랑자의 궁전(어려움)"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:40},189:{contentType:2,exVersion:0,name:{cn:"邪念妖地无限城古堡",de:"Die Ruinen von Amdapor (schwer)",en:"Amdapor Keep (Hard)",fr:"Le Château d'Amdapor (brutal)",ja:"邪念排撃 古城アムダプール (Hard)",ko:"옛 암다포르 성(어려움)"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:40},190:{contentType:3,exVersion:0,name:{cn:"讨伐彷徨死灵！",de:"Bockmanns Gefolge",en:"Under the Armor",fr:"Chasse au fantôme fantoche",ja:"彷徨う死霊を討て！",ko:"방황하는 사령을 쓰러뜨려라!"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:3},191:{contentType:3,exVersion:0,name:{cn:"驱除剧毒妖花！",de:"Unkraut jäten",en:"Pulling Poison Posies",fr:"Opération fleurs du mal",ja:"有毒妖花を駆除せよ！",ko:"독성 요괴꽃을 제거하라!"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:4},192:{contentType:3,exVersion:0,name:{cn:"消灭恶徒团伙寄生蜂团！",de:"Ins Wespennest stechen",en:"Stinging Back",fr:"Expédition punitive contre les Ventrerouge",ja:"無法者「似我蜂団」を撃滅せよ！",ko:"무법자 집단 '나나니단'을 섬멸하라!"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:5},193:{contentType:5,exVersion:0,name:{cn:"巴哈姆特大迷宫 真源之章1",de:"Verschlungene Schatten 3 - 1",en:"The Final Coil of Bahamut - Turn 1",fr:"L'Abîme de Bahamut I",ja:"大迷宮バハムート：真成編1",ko:"대미궁 바하무트: 진성편 1"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},194:{contentType:5,exVersion:0,name:{cn:"巴哈姆特大迷宫 真源之章2",de:"Verschlungene Schatten 3 - 2",en:"The Final Coil of Bahamut - Turn 2",fr:"L'Abîme de Bahamut II",ja:"大迷宮バハムート：真成編2",ko:"대미궁 바하무트: 진성편 2"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},195:{contentType:5,exVersion:0,name:{cn:"巴哈姆特大迷宫 真源之章3",de:"Verschlungene Schatten 3 - 3",en:"The Final Coil of Bahamut - Turn 3",fr:"L'Abîme de Bahamut III",ja:"大迷宮バハムート：真成編3",ko:"대미궁 바하무트: 진성편 3"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},196:{contentType:5,exVersion:0,name:{cn:"巴哈姆特大迷宫 真源之章4",de:"Verschlungene Schatten 3 - 4",en:"The Final Coil of Bahamut - Turn 4",fr:"L'Abîme de Bahamut IV",ja:"大迷宮バハムート：真成編4",ko:"대미궁 바하무트: 진성편 4"},offsetX:-448,offsetY:0,sizeFactor:200,weatherRate:44},207:{contentType:4,exVersion:0,name:{cn:"(6.1)莫古力贤王歼灭战",de:"(6.1)Königliche Konfrontation (schwer)",en:"(6.1)Thornmarch (Hard)",fr:"(6.1)La Lisière de ronces (brutal)",ja:"(6.1)善王モグル・モグXII世討滅戦",ko:"(6.1)선왕 모그루 모그 XII세 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:30},214:{contentType:3,exVersion:0,name:{cn:"完成集团战训练！",de:"Einer für alle, alle für einen",en:"Basic Training: Enemy Parties",fr:"Entraînement : groupes d'ennemis",ja:"集団戦訓練をくぐり抜けろ！",ko:"집단전 훈련을 완수하라!"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:16},215:{contentType:3,exVersion:0,name:{cn:"突破所有关门，讨伐最深处的敌人！",de:"Sturmkommando",en:"Basic Training: Enemy Strongholds",fr:"Entraînement : in­fil­tra­tion en base ennemie",ja:"全関門を突破し、最深部の敵を討て！",ko:"관문을 돌파하고 최심부의 적을 쓰러뜨려라!"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:9},216:{contentType:3,exVersion:0,name:{cn:"捕获金币龟！",de:"Gil oder Leben",en:"Hero on the Half Shell",fr:"Reconquête d'une carapace escamotée",ja:"ギルガメを捕獲せよ！",ko:"길거북을 사로잡아라!"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:10},219:{contentType:3,exVersion:0,name:{cn:"击溃哥布林炸弹军团！",de:"Bombige Goblins",en:"Flicking Sticks and Taking Names",fr:"Les Gobelins bombardiers",ja:"爆弾魔ゴブリン軍団を撃滅せよ！",ko:"폭탄광 고블린 군단을 섬멸하라!"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:3},220:{contentType:3,exVersion:0,name:{cn:"讨伐梦幻之布拉奇希奥！",de:"Briaxio ausschalten",en:"All's Well that Ends in the Well",fr:"Briaxio à bras raccourcis",ja:"夢幻のブラキシオを討て！",ko:"몽환의 브라크시오를 쓰러뜨려라!"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:5},221:{contentType:3,exVersion:0,name:{cn:"讨伐污染源头魔界花！",de:"Tödliches Rankenspiel",en:"More than a Feeler",fr:"Sus au morbol pollueur",ja:"汚染源モルボルを討て！",ko:"오염원 몰볼을 쓰러뜨려라!"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:20},222:{contentType:3,exVersion:0,name:{cn:"讨伐坑道中出现的妖异！",de:"Gefahr aus dem Nichts",en:"Annoy the Void",fr:"Buso l'immolateur",ja:"坑道に現れた妖異ブソを討て！",ko:"갱도에 나타난 요마 부소를 쓰러뜨려라!"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:17},223:{contentType:3,exVersion:0,name:{cn:"注意无敌的眷属，讨伐大型妖异！",de:"Kampf gegen Schatten",en:"Shadow and Claw",fr:"Ombres et griffes",ja:"無敵の眷属を従えし、大型妖異を討て！",ko:"무적의 부하를 조종하는 요마를 쓰러뜨려라!"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:21},241:{contentType:5,exVersion:0,name:{cn:"巴哈姆特大迷宫 邂逅之章1",de:"Verschlungene Schatten 1",en:"The Binding Coil of Bahamut - Turn 1",fr:"Le Labyrinthe de Bahamut I",ja:"大迷宮バハムート：邂逅編1",ko:"대미궁 바하무트: 해후편 1"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},242:{contentType:5,exVersion:0,name:{cn:"巴哈姆特大迷宫 邂逅之章2",de:"Verschlungene Schatten 2",en:"The Binding Coil of Bahamut - Turn 2",fr:"Le Labyrinthe de Bahamut II",ja:"大迷宮バハムート：邂逅編2",ko:"대미궁 바하무트: 해후편 2"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},243:{contentType:5,exVersion:0,name:{cn:"巴哈姆特大迷宫 邂逅之章3",de:"Verschlungene Schatten 3",en:"The Binding Coil of Bahamut - Turn 3",fr:"Le Labyrinthe de Bahamut III",ja:"大迷宮バハムート：邂逅編3",ko:"대미궁 바하무트: 해후편 3"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},244:{contentType:5,exVersion:0,name:{cn:"巴哈姆特大迷宫 邂逅之章4",de:"Verschlungene Schatten 4",en:"The Binding Coil of Bahamut - Turn 4",fr:"Le Labyrinthe de Bahamut IV",ja:"大迷宮バハムート：邂逅編4",ko:"대미궁 바하무트: 해후편 4"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},245:{contentType:5,exVersion:0,name:{cn:"巴哈姆特大迷宫 邂逅之章5",de:"Verschlungene Schatten 5",en:"The Binding Coil of Bahamut - Turn 5",fr:"Le Labyrinthe de Bahamut V",ja:"大迷宮バハムート：邂逅編5",ko:"대미궁 바하무트: 해후편 5"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},250:{exVersion:0,name:{cn:"狼狱停船场",de:"Wolfshöhlen-Pier",en:"Wolves' Den Pier",fr:"Jetée de l'Antre des loups",ja:"ウルヴズジェイル係船場",ko:"늑대우리 부두"},offsetX:-77,offsetY:0,sizeFactor:400,weatherRate:29},281:{contentType:4,exVersion:0,name:{cn:"利维亚桑歼灭战",de:"Götterdämmerung - Leviathan",en:"The Whorleater (Hard)",fr:"Le Briseur de marées (brutal)",ja:"真リヴァイアサン討滅戦",ko:"진 리바이어선 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:38},292:{contentType:4,exVersion:0,name:{cn:"伊弗利特歼灭战",de:"Götterdämmerung - Ifrit",en:"The Bowl of Embers (Hard)",fr:"Le Cratère des tisons (brutal)",ja:"真イフリート討滅戦",ko:"진 이프리트 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:25},293:{contentType:4,exVersion:0,name:{cn:"泰坦歼灭战",de:"Götterdämmerung - Titan",en:"The Navel (Hard)",fr:"Le Nombril (brutal)",ja:"真タイタン討滅戦",ko:"진 타이탄 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:23},294:{contentType:4,exVersion:0,name:{cn:"迦楼罗歼灭战",de:"Götterdämmerung - Garuda",en:"The Howling Eye (Hard)",fr:"Hurlœil (brutal)",ja:"真ガルーダ討滅戦",ko:"진 가루다 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:26},295:{contentType:4,exVersion:0,name:{cn:"伊弗利特歼殛战",de:"Zenit der Götter - Ifrit",en:"The Bowl of Embers (Extreme)",fr:"Le Cratère des tisons (extrême)",ja:"極イフリート討滅戦",ko:"극 이프리트 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:25},296:{contentType:4,exVersion:0,name:{cn:"泰坦歼殛战",de:"Zenit der Götter - Titan",en:"The Navel (Extreme)",fr:"Le Nombril (extrême)",ja:"極タイタン討滅戦",ko:"극 타이탄 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:23},297:{contentType:4,exVersion:0,name:{cn:"迦楼罗歼殛战",de:"Zenit der Götter - Garuda",en:"The Howling Eye (Extreme)",fr:"Hurlœil (extrême)",ja:"極ガルーダ討滅戦",ko:"극 가루다 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:26},298:{contentType:3,exVersion:0,name:{cn:"讨伐爆弹怪的女王！",de:"Miss Bombastic",en:"Long Live the Queen",fr:"Longue vie à la Reine",ja:"ボムを率いる「ボムクイーン」を討て！",ko:"봄을 거느린 '봄 여왕'을 쓰러뜨려라!"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:21},299:{contentType:3,exVersion:0,name:{cn:"歼灭特殊阵型的妖异！",de:"Unzertrennlich",en:"Ward Up",fr:"Quintettes infernaux",ja:"不気味な陣形を組む妖異をせん滅せよ！",ko:"불길한 진형을 짜는 요마를 섬멸하라!"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:22},300:{contentType:3,exVersion:0,name:{cn:"制止三方混战的巨人族，守住遗物！",de:"Wuchtige Dreifaltigkeit",en:"Solemn Trinity",fr:"Trinité sinistre",ja:"三つ巴の巨人族を制し、遺物を守れ！",ko:"세 거인족을 제압하여 유물을 지켜내라!"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:22},348:{contentType:4,exVersion:0,name:{cn:"究极神兵假想作战",de:"Heldenlied von Ultima",en:"The Minstrel's Ballad: Ultima's Bane",fr:"Le fléau d'Ultima",ja:"究極幻想 アルテマウェポン破壊作戦",ko:"궁극의 환상 알테마 웨폰 파괴작전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:31},349:{contentType:2,exVersion:0,name:{cn:"骚乱坑道铜铃铜山",de:"Kupferglocken-Mine (schwer)",en:"Copperbell Mines (Hard)",fr:"Les Mines de Clochecuivre (brutal)",ja:"騒乱坑道 カッパーベル銅山 (Hard)",ko:"구리종 광산(어려움)"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},350:{contentType:2,exVersion:0,name:{cn:"恶灵府邸静语庄园",de:"Haukke-Herrenhaus (schwer)",en:"Haukke Manor (Hard)",fr:"Le Manoir des Haukke (brutal)",ja:"妖異屋敷 ハウケタ御用邸 (Hard)",ko:"하우케타 별궁(어려움)"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},353:{contentType:4,exVersion:2,name:{cn:"活动挑战2",de:"Event-Inhalt 1",en:"Special Event I",fr:"Défi spécial I",ja:"イベント用コンテンツ：1",ko:"이벤트용 임무: 1"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},354:{contentType:4,exVersion:3,name:{cn:"活动挑战3",de:"Event-Inhalt 2",en:"Special Event II",fr:"Défi spécial II",ja:"イベント用コンテンツ：2",ko:"이벤트용 임무: 2"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:103},355:{contentType:5,exVersion:0,name:{cn:"巴哈姆特大迷宫 入侵之章1",de:"Verschlungene Schatten 2 - 1",en:"The Second Coil of Bahamut - Turn 1",fr:"Les Méandres de Bahamut I",ja:"大迷宮バハムート：侵攻編1",ko:"대미궁 바하무트: 침공편 1"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},356:{contentType:5,exVersion:0,name:{cn:"巴哈姆特大迷宫 入侵之章2",de:"Verschlungene Schatten 2 - 2",en:"The Second Coil of Bahamut - Turn 2",fr:"Les Méandres de Bahamut II",ja:"大迷宮バハムート：侵攻編2",ko:"대미궁 바하무트: 침공편 2"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:28},357:{contentType:5,exVersion:0,name:{cn:"巴哈姆特大迷宫 入侵之章3",de:"Verschlungene Schatten 2 - 3",en:"The Second Coil of Bahamut - Turn 3",fr:"Les Méandres de Bahamut III",ja:"大迷宮バハムート：侵攻編3",ko:"대미궁 바하무트: 침공편 3"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},358:{contentType:5,exVersion:0,name:{cn:"巴哈姆特大迷宫 入侵之章4",de:"Verschlungene Schatten 2 - 4",en:"The Second Coil of Bahamut - Turn 4",fr:"Les Méandres de Bahamut IV",ja:"大迷宮バハムート：侵攻編4",ko:"대미궁 바하무트: 침공편 4"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},359:{contentType:4,exVersion:0,name:{cn:"利维亚桑歼殛战",de:"Zenit der Götter - Leviathan",en:"The Whorleater (Extreme)",fr:"Le Briseur de marées (extrême)",ja:"極リヴァイアサン討滅戦",ko:"극 리바이어선 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:38},360:{contentType:2,exVersion:0,name:{cn:"剑斗领域日影地修炼所",de:"Halatali (schwer)",en:"Halatali (Hard)",fr:"Halatali (brutal)",ja:"剣闘領域 ハラタリ修練所 (Hard)",ko:"할라탈리 수련장(어려움)"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},361:{contentType:2,exVersion:0,name:{cn:"财宝传说破舰岛",de:"Schiffbrecher-Insel",en:"Hullbreaker Isle",fr:"L'Île de Crèvecarène",ja:"財宝伝説 ハルブレーカー・アイル",ko:"난파선의 섬"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},362:{contentType:2,exVersion:0,name:{cn:"纷争要地布雷福洛克斯野营地",de:"Brüllvolx' Langrast (schwer)",en:"Brayflox's Longstop (Hard)",fr:"Le Bivouac de Brayflox (brutal)",ja:"盟友支援 ブレイフロクスの野営地 (Hard)",ko:"브레이플록스의 야영지(어려움)"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:37},363:{contentType:2,exVersion:0,name:{cn:"腐坏遗迹无限城市街古迹",de:"Historisches Amdapor",en:"The Lost City of Amdapor",fr:"Les Vestiges de la cité d'Amdapor",ja:"腐敗遺跡 古アムダプール市街",ko:"옛 암다포르 시가지"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:40},364:{contentType:4,exVersion:0,name:{cn:"莫古力贤王歼殛战",de:"Königliche Konfrontation (extrem)",en:"Thornmarch (Extreme)",fr:"La Lisière de ronces (extrême)",ja:"極王モグル・モグXII世討滅戦",ko:"극왕 모그루 모그 XII세 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:30},365:{contentType:2,exVersion:0,name:{cn:"激战城塞石卫塔",de:"Steinerne Wacht (schwer)",en:"The Stone Vigil (Hard)",fr:"Le Vigile de Pierre (brutal)",ja:"城塞奪回 ストーンヴィジル (Hard)",ko:"돌방패 경계초소(어려움)"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:42},366:{contentType:4,exVersion:0,name:{cn:"大桥上的决斗",de:"Duell auf der großen Brücke",en:"Battle on the Big Bridge",fr:"Affrontement sur le grand pont",ja:"ギルガメッシュ討伐戦",ko:"길가메시 토벌전"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},367:{contentType:2,exVersion:0,name:{cn:"苏醒遗迹喀恩埋没圣堂",de:"Versunkener Tempel von Qarn (schwer)",en:"The Sunken Temple of Qarn (Hard)",fr:"Le Temple enseveli de Qarn (brutal)",ja:"遺跡救援 カルン埋没寺院 (Hard)",ko:"카른의 무너진 사원(어려움)"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:41},368:{contentType:4,exVersion:0,name:{cn:"死化奇美拉讨伐战",de:"Kampf gegen die Dhorme-Chimära",en:"A Relic Reborn: the Chimera",fr:"La chimère dhorme du Coerthas",ja:"ドルムキマイラ討伐戦",ko:"도름 키마이라 토벌전"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:21},369:{contentType:4,exVersion:0,name:{cn:"海德拉讨伐战",de:"Kampf gegen die Hydra",en:"A Relic Reborn: the Hydra",fr:"L'hydre d'Halatali",ja:"ハイドラ討伐戦",ko:"하이드라 토벌전"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},371:{contentType:2,exVersion:0,name:{cn:"(6.1)凛冽洞天披雪大冰壁",de:"(6.1)Das Schneekleid",en:"(6.1)Snowcloak",fr:"(6.1)Manteneige",ja:"(6.1)氷結潜窟 スノークローク大氷壁",ko:"(6.1)얼음외투 대빙벽"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:42},372:{contentType:5,exVersion:0,name:{cn:"水晶塔 希尔科斯塔",de:"Kristallturm - Der Syrcus-Turm",en:"Syrcus Tower",fr:"La Tour de Cristal - Tour de Syrcus",ja:"クリスタルタワー：シルクスの塔",ko:"크리스탈 타워: 시르쿠스 탑"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},373:{contentType:2,exVersion:0,name:{cn:"惨剧灵殿塔姆·塔拉墓园",de:"Totenacker Tam-Tara (schwer)",en:"The Tam–Tara Deepcroft (Hard)",fr:"L'Hypogée de Tam-Tara (brutal)",ja:"惨劇霊殿 タムタラの墓所 (Hard)",ko:"탐타라 묘소(어려움)"},offsetX:0,offsetY:0,sizeFactor:300,weatherRate:0},374:{contentType:4,exVersion:0,name:{cn:"拉姆歼灭战",de:"Götterdämmerung - Ramuh",en:"The Striking Tree (Hard)",fr:"L'Arbre du jugement (brutal)",ja:"真ラムウ討滅戦",ko:"진 라무 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:43},375:{contentType:4,exVersion:0,name:{cn:"拉姆歼殛战",de:"Zenit der Götter - Ramuh",en:"The Striking Tree (Extreme)",fr:"L'Arbre du jugement (extrême)",ja:"極ラムウ討滅戦",ko:"극 라무 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:43},376:{contentType:6,exVersion:0,name:{cn:"周边遗迹群（阵地战）",de:"Äußere Ruinen (Sicherung)",en:"The Borderland Ruins (Secure)",fr:"Les Ruines frontalières (annexion)",ja:"外縁遺跡群 (制圧戦)",ko:"외곽 유적지대(제압전)"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},377:{contentType:4,exVersion:0,name:{cn:"希瓦歼灭战",de:"Götterdämmerung - Shiva",en:"The Akh Afah Amphitheatre (Hard)",fr:"L'Amphithéâtre d'Akh Afah (brutal)",ja:"真シヴァ討滅戦",ko:"진 시바 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:46},378:{contentType:4,exVersion:0,name:{cn:"希瓦歼殛战",de:"Zenit der Götter - Shiva",en:"The Akh Afah Amphitheatre (Extreme)",fr:"L'Amphithéâtre d'Akh Afah (extrême)",ja:"極シヴァ討滅戦",ko:"극 시바 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:46},380:{contentType:5,exVersion:0,name:{cn:"巴哈姆特零式大迷宫 入侵之章1",de:"Verschlungene Schatten 2 - 1 (episch)",en:"The Second Coil of Bahamut (Savage) - Turn 1",fr:"Les Méandres de Bahamut I (sadique)",ja:"大迷宮バハムート零式：侵攻編1",ko:"대미궁 바하무트: 침공편(영웅) 1"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},381:{contentType:5,exVersion:0,name:{cn:"巴哈姆特零式大迷宫 入侵之章2",de:"Verschlungene Schatten 2 - 2 (episch)",en:"The Second Coil of Bahamut (Savage) - Turn 2",fr:"Les Méandres de Bahamut II (sadique)",ja:"大迷宮バハムート零式：侵攻編2",ko:"대미궁 바하무트: 침공편(영웅) 2"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:28},382:{contentType:5,exVersion:0,name:{cn:"巴哈姆特零式大迷宫 入侵之章3",de:"Verschlungene Schatten 2 - 3 (episch)",en:"The Second Coil of Bahamut (Savage) - Turn 3",fr:"Les Méandres de Bahamut III (sadique)",ja:"大迷宮バハムート零式：侵攻編3",ko:"대미궁 바하무트: 침공편(영웅) 3"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},383:{contentType:5,exVersion:0,name:{cn:"巴哈姆特零式大迷宫 入侵之章4",de:"Verschlungene Schatten 2 - 4 (episch)",en:"The Second Coil of Bahamut (Savage) - Turn 4",fr:"Les Méandres de Bahamut IV (sadique)",ja:"大迷宮バハムート零式：侵攻編4",ko:"대미궁 바하무트: 침공편(영웅) 4"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},387:{contentType:2,exVersion:0,name:{cn:"逆转要害沙斯塔夏溶洞",de:"Sastasha (schwer)",en:"Sastasha (Hard)",fr:"Sastasha (brutal)",ja:"逆襲要害 サスタシャ浸食洞 (Hard)",ko:"사스타샤 침식 동굴(어려움)"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},389:{contentType:19,exVersion:0,name:{cn:"陆行鸟竞赛：太阳海岸",de:"Chocobo-Rennen: Sonnenküste",en:"Chocobo Race: Costa del Sol",fr:"Course de chocobos : Costa del Sol",ja:"チョコボレース：コスタ・デル・ソル",ko:"초코보 경주: 코스타 델 솔"},offsetX:-472,offsetY:-424,sizeFactor:100,weatherRate:0},390:{contentType:19,exVersion:0,name:{cn:"陆行鸟竞赛：荒野大道",de:"Chocobo-Rennen: Sagolii-Straße",en:"Chocobo Race: Sagolii Road",fr:"Course de chocobos : Route de Sagolii",ja:"チョコボレース：サゴリーロード",ko:"초코보 경주: 사골리 사막"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},391:{contentType:19,exVersion:0,name:{cn:"陆行鸟竞赛：恬静小路",de:"Chocobo-Rennen: Pfad der Seelenruhe",en:"Chocobo Race: Tranquil Paths",fr:"Course de chocobos : Sentes tranquilles",ja:"チョコボレース：トランキルパス",ko:"초코보 경주: 고요한 야영지"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},394:{contentType:4,exVersion:0,name:{cn:"奥丁歼灭战",de:"Jenseits Urths Quelle",en:"Urth's Fount",fr:"La Fontaine d'Urth",ja:"闘神オーディン討滅戦",ko:"투신 오딘 토벌전"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:45},396:{contentType:4,exVersion:0,name:{cn:"无限城的死斗",de:"Revanche in den Ruinen",en:"Battle in the Big Keep",fr:"Revanche au vieux château",ja:"真ギルガメッシュ討滅戦",ko:"진 길가메시 토벌전"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:28},397:{exVersion:1,name:{cn:"库尔札斯西部高地",de:"Westliches Hochland von Coerthas",en:"Coerthas Western Highlands",fr:"Hautes terres du Coerthas occidental",ja:"クルザス西部高地",ko:"커르다스 서부고지"},offsetX:0,offsetY:0,sizeFactor:95,weatherRate:49},398:{exVersion:1,name:{cn:"龙堡参天高地",de:"Dravanisches Vorland",en:"The Dravanian Forelands",fr:"Avant-pays dravanien",ja:"高地ドラヴァニア",ko:"고지 드라바니아"},offsetX:0,offsetY:0,sizeFactor:95,weatherRate:50},399:{exVersion:1,name:{cn:"龙堡内陆低地",de:"Dravanisches Hinterland",en:"The Dravanian Hinterlands",fr:"Arrière-pays dravanien",ja:"低地ドラヴァニア",ko:"저지 드라바니아"},offsetX:0,offsetY:0,sizeFactor:95,weatherRate:51},400:{exVersion:1,name:{cn:"翻云雾海",de:"Wallende Nebel",en:"The Churning Mists",fr:"L'Écume des cieux de Dravania",ja:"ドラヴァニア雲海",ko:"드라바니아 구름바다"},offsetX:0,offsetY:0,sizeFactor:95,weatherRate:52},401:{exVersion:1,name:{cn:"阿巴拉提亚云海",de:"Abalathisches Wolkenmeer",en:"The Sea of Clouds",fr:"L'Écume des cieux d'Abalathia",ja:"アバラシア雲海",ko:"아발라시아 구름바다"},offsetX:0,offsetY:0,sizeFactor:95,weatherRate:53},402:{exVersion:1,name:{cn:"魔大陆阿济兹拉",de:"Azys Lla",en:"Azys Lla",fr:"Azys Lla",ja:"アジス・ラー",ko:"아지스 라"},offsetX:0,offsetY:0,sizeFactor:95,weatherRate:54},403:{contentType:7,exVersion:2,name:{cn:"英雄归来",de:"Verrat der Qalyana",en:"Return of the Bull",fr:"Retour au bercail",ja:"英雄の帰還",ko:"영웅의 귀환"},offsetX:-250,offsetY:128,sizeFactor:200,weatherRate:0},416:{contentType:2,exVersion:1,name:{cn:"(6.2)学识宝库迦巴勒幻想图书馆",de:"(6.2)Große Gubal-Bibliothek",en:"(6.2)The Great Gubal Library",fr:"(6.2)La Grande bibliothèque de Gubal",ja:"(6.2)禁書回収 グブラ幻想図書館",ko:"(6.2)구브라 환상도서관"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},417:{contentType:19,exVersion:0,name:{cn:"陆行鸟竞赛：竞赛教学",de:"Chocobo-Rennen: Übungsbahn",en:"Chocobo Race: Tutorial",fr:"Course d'appentissage",ja:"チョコボレース：チュートリアル",ko:"초코보 경주: 튜토리얼"},offsetX:0,offsetY:-690,sizeFactor:100,weatherRate:0},418:{exVersion:1,name:{cn:"伊修加德基础层",de:"Fundamente",en:"Foundation",fr:"Ishgard - L'Assise",ja:"イシュガルド：下層",ko:"이슈가르드 하층"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:47},419:{exVersion:1,name:{cn:"伊修加德砥柱层",de:"Strebewerk",en:"The Pillars",fr:"Ishgard - Les Contreforts",ja:"イシュガルド：上層",ko:"이슈가르드 상층"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:48},420:{contentType:2,exVersion:1,name:{cn:"空中神域不获岛",de:"Nimmerreich",en:"Neverreap",fr:"Nalloncques",ja:"神域浮島 ネバーリープ",ko:"거두지 않는 섬"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},421:{contentType:2,exVersion:1,name:{cn:"(6.1)圣教中枢伊修加德教皇厅",de:"(6.1)Erzbasilika",en:"(6.1)The Vault",fr:"(6.1)La Voûte",ja:"(6.1)強硬突入 イシュガルド教皇庁",ko:"(6.1)이슈가르드 교황청"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},426:{contentType:4,exVersion:0,name:{cn:"那布里亚勒斯讨伐战",de:"Chrysalis",en:"The Chrysalis",fr:"La Chrysalide",ja:"アシエン・ナプリアレス討伐戦",ko:"아씨엔 나브리알레스 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},430:{contentType:2,exVersion:1,name:{cn:"博物战舰无限回廊",de:"Die Fraktal-Kontinuum",en:"The Fractal Continuum",fr:"Le Continuum fractal",ja:"博物戦艦 フラクタル・コンティニアム",ko:"무한연속 박물함"},offsetX:0,offsetY:-213,sizeFactor:200,weatherRate:0},431:{contentType:6,exVersion:0,name:{cn:"尘封秘岩（争夺战）",de:"Robbenholm (Eroberung)",en:"Seal Rock (Seize)",fr:"Le Rocher des tréfonds (invasion)",ja:"シールロック (争奪戦)",ko:"봉인된 바위섬(쟁탈전)"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:59},432:{contentType:4,exVersion:1,name:{cn:"罗波那歼灭战",de:"Götterdämmerung - Ravana",en:"Thok ast Thok (Hard)",fr:"Thok ast Thok (brutal)",ja:"真ラーヴァナ討滅戦",ko:"진 라바나 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:57},434:{contentType:2,exVersion:1,name:{cn:"冰雪废堡暮卫塔",de:"Abendrot-Wacht",en:"The Dusk Vigil",fr:"Le Vigile du Crépuscule",ja:"廃砦捜索 ダスクヴィジル",ko:"어스름 요새"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:42},435:{contentType:2,exVersion:1,name:{cn:"(6.1)邪龙王座龙巢神殿",de:"(6.1)Nest des Drachen",en:"(6.1)The Aery",fr:"(6.1)L'Aire",ja:"(6.1)邪竜血戦 ドラゴンズエアリー",ko:"(6.1)용의 둥지"},offsetX:-40,offsetY:55,sizeFactor:200,weatherRate:28},436:{contentType:4,exVersion:1,name:{cn:"俾斯麦歼灭战",de:"Götterdämmerung - Bismarck",en:"The Limitless Blue (Hard)",fr:"L'Immensité bleue (brutal)",ja:"真ビスマルク討滅戦",ko:"진 비스마르크 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:28},437:{contentType:4,exVersion:1,name:{cn:"圆桌骑士歼灭战",de:"Singularitäts-Reaktor",en:"The Singularity Reactor",fr:"Le Réacteur de singularité",ja:"ナイツ・オブ・ラウンド討滅戦",ko:"나이츠 오브 라운드 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:56},438:{contentType:2,exVersion:1,name:{cn:"(6.2)血战苍穹魔科学研究所",de:"(6.2)Ätherochemisches For<SoftHyphen/>schungs<SoftHyphen/>labor",en:"(6.2)The Aetherochemical Research Facility",fr:"(6.2)Le Laboratoire de magismologie",ja:"(6.2)蒼天聖戦 魔科学研究所",ko:"(6.2)마과학 연구소"},offsetX:-18,offsetY:149,sizeFactor:200,weatherRate:0},441:{contentType:2,exVersion:1,name:{cn:"(6.1)天山绝顶索姆阿尔灵峰",de:"(6.1)Sohm Al",en:"(6.1)Sohm Al",fr:"(6.1)Sohm Al",ja:"(6.1)霊峰踏破 ソーム・アル",ko:"(6.1)솜 알"},offsetX:185,offsetY:51,sizeFactor:200,weatherRate:0},442:{contentType:5,exVersion:1,name:{cn:"亚历山大机神城 启动之章1",de:"Alexander - Faust des Vaters",en:"Alexander - The Fist of the Father",fr:"Alexander - Le Poing du Père",ja:"機工城アレキサンダー：起動編1",ko:"기공성 알렉산더: 기동편 1"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},443:{contentType:5,exVersion:1,name:{cn:"亚历山大机神城 启动之章2",de:"Alexander - Elle des Vaters",en:"Alexander - The Cuff of the Father",fr:"Alexander - Le Poignet du Père",ja:"機工城アレキサンダー：起動編2",ko:"기공성 알렉산더: 기동편 2"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},444:{contentType:5,exVersion:1,name:{cn:"亚历山大机神城 启动之章3",de:"Alexander - Arm des Vaters",en:"Alexander - The Arm of the Father",fr:"Alexander - Le Bras du Père",ja:"機工城アレキサンダー：起動編3",ko:"기공성 알렉산더: 기동편 3"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},445:{contentType:5,exVersion:1,name:{cn:"亚历山大机神城 启动之章4",de:"Alexander - Last des Vaters",en:"Alexander - The Burden of the Father",fr:"Alexander - Le Fardeau du Père",ja:"機工城アレキサンダー：起動編4",ko:"기공성 알렉산더: 기동편 4"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},446:{contentType:4,exVersion:1,name:{cn:"罗波那歼殛战",de:"Zenit der Götter - Ravana",en:"Thok ast Thok (Extreme)",fr:"Thok ast Thok (extrême)",ja:"極ラーヴァナ討滅戦",ko:"극 라바나 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:57},447:{contentType:4,exVersion:1,name:{cn:"俾斯麦歼殛战",de:"Zenit der Götter - Bismarck",en:"The Limitless Blue (Extreme)",fr:"L'Immensité bleue (extrême)",ja:"極ビスマルク討滅戦",ko:"극 비스마르크 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:28},448:{contentType:4,exVersion:1,name:{cn:"圆桌骑士幻想歼灭战",de:"Heldenlied von Thordans Fall",en:"The Minstrel's Ballad: Thordan's Reign",fr:"Le règne de Thordan",ja:"蒼天幻想 ナイツ・オブ・ラウンド討滅戦",ko:"극 나이츠 오브 라운드 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:56},449:{contentType:5,exVersion:1,name:{cn:"亚历山大零式机神城 启动之章1",de:"Alexander - Faust des Vaters (episch)",en:"Alexander - The Fist of the Father (Savage)",fr:"Alexander - Le Poing du Père (sadique)",ja:"機工城アレキサンダー零式：起動編1",ko:"기공성 알렉산더: 기동편(영웅) 1"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},450:{contentType:5,exVersion:1,name:{cn:"亚历山大零式机神城 启动之章2",de:"Alexander - Elle des Vaters (episch)",en:"Alexander - The Cuff of the Father (Savage)",fr:"Alexander - Le Poignet du Père (sadique)",ja:"機工城アレキサンダー零式：起動編2",ko:"기공성 알렉산더: 기동편(영웅) 2"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},451:{contentType:5,exVersion:1,name:{cn:"亚历山大零式机神城 启动之章3",de:"Alexander - Arm des Vaters (episch)",en:"Alexander - The Arm of the Father (Savage)",fr:"Alexander - Le Bras du Père (sadique)",ja:"機工城アレキサンダー零式：起動編3",ko:"기공성 알렉산더: 기동편(영웅) 3"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},452:{contentType:5,exVersion:1,name:{cn:"亚历山大零式机神城 启动之章4",de:"Alexander - Last des Vaters (episch)",en:"Alexander - The Burden of the Father (Savage)",fr:"Alexander - Le Fardeau du Père (sadique)",ja:"機工城アレキサンダー零式：起動編4",ko:"기공성 알렉산더: 기동편(영웅) 4"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},478:{exVersion:1,name:{cn:"田园郡",de:"Frohehalde",en:"Idyllshire",fr:"Idyllée",ja:"イディルシャイア",ko:"이딜샤이어"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:55},506:{contentType:19,exVersion:0,name:{cn:"萌宠之王：大赛对战（人机对战）",de:"Kampf der Trabanten: Turnier (gegen Arenameister)",en:"LoVM: Master Tournament",fr:"Bataille de tournoi contre l'ordinateur",ja:"LoVM：大会対戦 (CPU対戦)",ko:"꼬마 친구 공방전: 대회 대결(인공 지능 대결)"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},508:{contentType:5,exVersion:1,name:{cn:"魔航船虚无方舟",de:"Die Nichts-Arche",en:"The Void Ark",fr:"L'Arche du néant",ja:"魔航船ヴォイドアーク",ko:"보이드의 방주"},offsetX:289,offsetY:0,sizeFactor:200,weatherRate:37},510:{contentType:2,exVersion:1,name:{cn:"地脉灵灯天狼星灯塔",de:"Pharos Sirius (schwer)",en:"Pharos Sirius (Hard)",fr:"Le Phare de Sirius (brutal)",ja:"制圧巨塔 シリウス大灯台 (Hard)",ko:"시리우스 대등대(어려움)"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:28},511:{contentType:2,exVersion:1,name:{cn:"草木庭园圣茉夏娜植物园",de:"Sankt Mocianne-Arboretum",en:"Saint Mocianne's Arboretum",fr:"L'Arboretum Sainte-Mocianne",ja:"草木庭園 聖モシャーヌ植物園",ko:"성 모샨 식물원"},offsetX:40,offsetY:6,sizeFactor:200,weatherRate:0},512:{contentType:23,exVersion:1,name:{cn:"云冠群岛白昼探索",de:"Das Diadem (leicht)",en:"The Diadem (Easy)",fr:"Le Diadème (facile)",ja:"雲海探索 ディアデム諸島 (Easy)",ko:"디아뎀 제도(쉬움)"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:60},515:{contentType:23,exVersion:1,name:{cn:"云冠群岛夜晚探索",de:"Das Diadem (schwer)",en:"The Diadem (Hard)",fr:"Le Diadème (brutal)",ja:"雲海探索 ディアデム諸島 (Hard)",ko:"디아뎀 제도(어려움)"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:62},516:{contentType:2,exVersion:1,name:{cn:"(6.2)星海空间颠倒塔",de:"(6.2)Antiturm",en:"(6.2)The Antitower",fr:"(6.2)L'Antitour",ja:"(6.2)星海観測 逆さの塔",ko:"(6.2)거꾸로 선 탑"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},517:{contentType:4,exVersion:1,name:{cn:"萨菲洛特歼灭战",de:"Götterdämmerung - Sephirot",en:"Containment Bay S1T7",fr:"Unité de contention S1P7",ja:"魔神セフィロト討滅戦",ko:"마신 세피로트 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:66},519:{contentType:2,exVersion:1,name:{cn:"神圣遗迹无限城市街古迹",de:"Historisches Amdapor (schwer)",en:"The Lost City of Amdapor (Hard)",fr:"Les Vestiges de la cité d'Amdapor (brutal)",ja:"神聖遺跡 古アムダプール市街 (Hard)",ko:"옛 암다포르 시가지(어려움)"},offsetX:64,offsetY:315,sizeFactor:200,weatherRate:63},520:{contentType:5,exVersion:1,name:{cn:"亚历山大机神城 律动之章1",de:"Alexander - Faust des Sohnes",en:"Alexander - The Fist of the Son",fr:"Alexander - Le Poing du Fils",ja:"機工城アレキサンダー：律動編1",ko:"기공성 알렉산더: 율동편 1"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},521:{contentType:5,exVersion:1,name:{cn:"亚历山大机神城 律动之章2",de:"Alexander - Elle des Sohnes",en:"Alexander - The Cuff of the Son",fr:"Alexander - Le Poignet du Fils",ja:"機工城アレキサンダー：律動編2",ko:"기공성 알렉산더: 율동편 2"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},522:{contentType:5,exVersion:1,name:{cn:"亚历山大机神城 律动之章3",de:"Alexander - Arm des Sohnes",en:"Alexander - The Arm of the Son",fr:"Alexander - Le Bras du Fils",ja:"機工城アレキサンダー：律動編3",ko:"기공성 알렉산더: 율동편 3"},offsetX:-110,offsetY:-170,sizeFactor:200,weatherRate:0},523:{contentType:5,exVersion:1,name:{cn:"亚历山大机神城 律动之章4",de:"Alexander - Last des Sohnes",en:"Alexander - The Burden of the Son",fr:"Alexander - Le Fardeau du Fils",ja:"機工城アレキサンダー：律動編4",ko:"기공성 알렉산더: 율동편 4"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},524:{contentType:4,exVersion:1,name:{cn:"萨菲洛特歼殛战",de:"Zenit der Götter - Sephirot",en:"Containment Bay S1T7 (Extreme)",fr:"Unité de contention S1P7 (extrême)",ja:"極魔神セフィロト討滅戦",ko:"극 마신 세피로트 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:66},529:{contentType:5,exVersion:1,name:{cn:"亚历山大零式机神城 律动之章1",de:"Alexander - Faust des Sohnes (episch)",en:"Alexander - The Fist of the Son (Savage)",fr:"Alexander - Le Poing du Fils (sadique)",ja:"機工城アレキサンダー零式：律動編1",ko:"기공성 알렉산더: 율동편(영웅) 1"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},530:{contentType:5,exVersion:1,name:{cn:"亚历山大零式机神城 律动之章2",de:"Alexander - Elle des Sohnes (episch)",en:"Alexander - The Cuff of the Son (Savage)",fr:"Alexander - Le Poignet du Fils (sadique)",ja:"機工城アレキサンダー零式：律動編2",ko:"기공성 알렉산더: 율동편(영웅) 2"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},531:{contentType:5,exVersion:1,name:{cn:"亚历山大零式机神城 律动之章3",de:"Alexander - Arm des Sohnes (episch)",en:"Alexander - The Arm of the Son (Savage)",fr:"Alexander - Le Bras du Fils (sadique)",ja:"機工城アレキサンダー零式：律動編3",ko:"기공성 알렉산더: 율동편(영웅) 3"},offsetX:-110,offsetY:-170,sizeFactor:200,weatherRate:0},532:{contentType:5,exVersion:1,name:{cn:"亚历山大零式机神城 律动之章4",de:"Alexander - Last des Sohnes (episch)",en:"Alexander - The Burden of the Son (Savage)",fr:"Alexander - Le Fardeau du Fils (sadique)",ja:"機工城アレキサンダー零式：律動編4",ko:"기공성 알렉산더: 율동편(영웅) 4"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},533:{contentType:7,exVersion:1,name:{cn:"四国联合军演",de:"Truppenübung der Eorzäischen Allianz",en:"A Spectacle for the Ages",fr:"La grande manœuvre éorzéenne",ja:"四国合同演習",ko:"4개국 합동 훈련"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},537:{contentType:20,exVersion:0,name:{cn:"躲避范围攻击",de:"Flächenangriffen ausweichen",en:"Avoid Area of Effect Attacks",fr:"Éviter les attaques à aire d'effet",ja:"範囲攻撃を避けよう！",ko:"범위 공격을 피하자!"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},538:{contentType:20,exVersion:0,name:{cn:"掌握仇恨连击",de:"Mit Kombos Feindseligkeit auf sich ziehen",en:"Execute a Combo to Increase Enmity",fr:"Générer de l'inimitié avec un combo",ja:"コンボで敵視を集めよう！",ko:"콤보를 이어 적개심을 끌자!"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},539:{contentType:20,exVersion:0,name:{cn:"控制敌人的仇恨",de:"Kombos im Kampf einsetzen",en:"Execute a Combo in Battle",fr:"Effectuer le combo en combat",ja:"実戦でコンボに挑戦しよう！",ko:"실전에서 콤보를 사용해보자!"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},540:{contentType:20,exVersion:0,name:{cn:"控制多个敌人的仇恨",de:"Feindseligkeit mehrerer Gegner auf sich ziehen",en:"Accrue Enmity from Multiple Targets",fr:"Attirer l'inimitié de plusieurs ennemis sur soi",ja:"複数の敵から敵視を集めよう！",ko:"다수의 적에게서 적개심을 끌자!"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},541:{contentType:20,exVersion:0,name:{cn:"实战控制多个敌人的仇恨",de:"Gegen mehrere Gegner auf einmal kämpfen",en:"Engage Multiple Targets",fr:"Affronter plusieurs ennemis",ja:"実戦で複数の敵と戦ってみよう！",ko:"실전에서 다수의 적과 싸워보자!"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},542:{contentType:20,exVersion:0,name:{cn:"控制远处敌人的仇恨",de:"Aus der Ferne Feindseligkeit auf sich ziehen",en:"Execute a Ranged Attack to Increase Enmity",fr:"Générer de l'inimitié à distance",ja:"遠距離から敵視を集めよう！",ko:"멀리서 적개심을 끌자!"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},543:{contentType:20,exVersion:0,name:{cn:"留心增援的敌人",de:"Feindliche Verstärkung aufhalten",en:"Engage Enemy Reinforcements",fr:"Faire face à des renforts ennemis",ja:"敵の増援に対応しよう！",ko:"적 지원군에 대처하자!"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},544:{contentType:20,exVersion:0,name:{cn:"配合防护职业打倒单个敌人",de:"Gegner gemeinsam besiegen",en:"Assist Allies in Defeating a Target",fr:"Vaincre un ennemi en assistant des alliés",ja:"味方と協力して敵を倒そう！",ko:"파티원과 협력하여 적을 물리치자!"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},545:{contentType:20,exVersion:0,name:{cn:"配合防护职业打倒多个敌人",de:"Den Gegner eines Verbündeten besiegen",en:"Defeat an Occupied Target",fr:"Vaincre un ennemi occupé par un allié",ja:"味方が引きつけている敵を倒そう！",ko:"파티원과 같은 적을 공격하자!"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},546:{contentType:20,exVersion:0,name:{cn:"躲避范围攻击的同时进行战斗",de:"Angriffen ausweichen",en:"Avoid Engaged Targets",fr:"Combattre en évitant les attaques ennemies",ja:"敵の攻撃を避けながら戦おう！",ko:"적의 공격을 피하면서 싸우자!"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},548:{contentType:20,exVersion:0,name:{cn:"灵活运用场地机关",de:"Mit dem Gelände interagieren",en:"Interact with the Battlefield",fr:"Interagir avec le décor en combat",ja:"ギミックを活用して戦おう！",ko:"특수 장치를 활용하며 싸우자!"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},549:{contentType:20,exVersion:0,name:{cn:"治疗防护职业",de:"Verbündete heilen",en:"Heal an Ally",fr:"Soigner un allié",ja:"味方を回復しよう！",ko:"파티원을 회복시키자!"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},550:{contentType:20,exVersion:0,name:{cn:"治疗小队队员",de:"Mehrere Verbündete heilen",en:"Heal Multiple Allies",fr:"Soigner plusieurs alliés",ja:"複数の味方を回復しよう！",ko:"다수의 파티원을 회복시키자!"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},552:{contentType:20,exVersion:0,name:{cn:"最终训练",de:"Letzte Übung",en:"Final Exercise",fr:"Exercice final",ja:"最終訓練！",ko:"마지막 훈련!"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},554:{contentType:6,exVersion:0,name:{cn:"荣誉野（碎冰战）",de:"Feld der Ehre (Zersplitterung)",en:"The Fields of Glory (Shatter)",fr:"Les Champs de la Gloire (brise-glace)",ja:"フィールド・オブ・グローリー (砕氷戦)",ko:"영광의 평원(쇄빙전)"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:67},555:{contentType:2,exVersion:1,name:{cn:"(6.2)天龙宫殿忆罪宫",de:"(6.2)Sohr Khai",en:"(6.2)Sohr Khai",fr:"(6.2)Sohr Khai",ja:"(6.2)天竜宮殿 ソール・カイ",ko:"(6.2)소르 카이"},offsetX:370,offsetY:0,sizeFactor:200,weatherRate:0},556:{contentType:5,exVersion:1,name:{cn:"禁忌城邦玛哈",de:"Die Stadt der Tränen",en:"The Weeping City of Mhach",fr:"La Cité défendue de Mhach",ja:"禁忌都市マハ",ko:"금기도시 마하"},offsetX:-40,offsetY:-40,sizeFactor:200,weatherRate:0},557:{contentType:2,exVersion:1,name:{cn:"黑涡传说破舰岛",de:"Schiffbrecher-Insel (schwer)",en:"Hullbreaker Isle (Hard)",fr:"L'Île de Crèvecarène (brutal)",ja:"黒渦伝説 ハルブレーカー・アイル (Hard)",ko:"난파선의 섬(어려움)"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:68},558:{contentType:9,exVersion:0,name:{cn:"水城宝物库",de:"Aquapolis",en:"The Aquapolis",fr:"L'Aquapole",ja:"宝物庫 アクアポリス",ko:"보물고 아쿠아폴리스"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},559:{contentType:4,exVersion:1,name:{cn:"尼德霍格征龙战",de:"Der letzte Schicksalsweg",en:"The Final Steps of Faith",fr:"La Dernière avancée de la Foi",ja:"ニーズヘッグ征竜戦",ko:"니드호그 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:28},560:{contentType:7,exVersion:1,name:{cn:"雷古拉·范·休著斯追击战",de:"Blutiges Wieder­sehen",en:"A Bloody Reunion",fr:"Course-poursuite dans le laboratoire",ja:"レグラ・ヴァン・ヒュドルス追撃戦",ko:"레굴라 반 히드루스 추격전"},offsetX:-18,offsetY:149,sizeFactor:200,weatherRate:0},561:{contentType:21,exVersion:0,name:{cn:"死者宫殿 地下1～10层",de:"Palast der Toten (Ebenen 1-10)",en:"The Palace of the Dead (Floors 1-10)",fr:"Le Palais des morts (sous-sols 1-10)",ja:"死者の宮殿 B1～B10",ko:"망자의 궁전 B1~B10"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},562:{contentType:21,exVersion:0,name:{cn:"死者宫殿 地下11～20层",de:"Palast der Toten (Ebenen 11-20)",en:"The Palace of the Dead (Floors 11-20)",fr:"Le Palais des morts (sous-sols 11-20)",ja:"死者の宮殿 B11～B20",ko:"망자의 궁전 B11~B20"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},563:{contentType:21,exVersion:0,name:{cn:"死者宫殿 地下21～30层",de:"Palast der Toten (Ebenen 21-30)",en:"The Palace of the Dead (Floors 21-30)",fr:"Le Palais des morts (sous-sols 21-30)",ja:"死者の宮殿 B21～B30",ko:"망자의 궁전 B21~B30"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},564:{contentType:21,exVersion:0,name:{cn:"死者宫殿 地下31～40层",de:"Palast der Toten (Ebenen 31-40)",en:"The Palace of the Dead (Floors 31-40)",fr:"Le Palais des morts (sous-sols 31-40)",ja:"死者の宮殿 B31～B40",ko:"망자의 궁전 B31~B40"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},565:{contentType:21,exVersion:1,name:{cn:"死者宫殿 地下41～50层",de:"Palast der Toten (Ebenen 41-50)",en:"The Palace of the Dead (Floors 41-50)",fr:"Le Palais des morts (sous-sols 41-50)",ja:"死者の宮殿 B41～B50",ko:"망자의 궁전 B41~B50"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},566:{contentType:4,exVersion:1,name:{cn:"尼德霍格传奇征龙战",de:"Das Lied von Nidhoggs letztem Ruf",en:"The Minstrel's Ballad: Nidhogg's Rage",fr:"L'ire de Nidhogg",ja:"極ニーズヘッグ征竜戦",ko:"극 니드호그 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:28},571:{contentType:22,exVersion:0,name:{cn:"亡灵府邸闹鬼庄园",de:"Das Geisterschloss",en:"The Haunted Manor",fr:"Le Manoir hanté",ja:"亡霊屋敷 ホーンテッドマナー",ko:"유령의 집"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},572:{contentType:2,exVersion:1,name:{cn:"(6.2)险峻峡谷塞尔法特尔溪谷",de:"(6.2)Xelphatol",en:"(6.2)Xelphatol",fr:"(6.2)Xelphatol",ja:"(6.2)峻厳渓谷 ゼルファトル",ko:"(6.2)젤파톨"},offsetX:-148,offsetY:35,sizeFactor:200,weatherRate:40},576:{contentType:4,exVersion:1,name:{cn:"索菲娅歼灭战",de:"Götterdämmerung - Sophia",en:"Containment Bay P1T6",fr:"Unité de contention P1P6",ja:"女神ソフィア討滅戦",ko:"여신 소피아 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:69},577:{contentType:4,exVersion:1,name:{cn:"索菲娅歼殛战",de:"Zenit der Götter - Sophia",en:"Containment Bay P1T6 (Extreme)",fr:"Unité de contention P1P6 (extrême)",ja:"極女神ソフィア討滅戦",ko:"극 여신 소피아 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:69},578:{contentType:2,exVersion:1,name:{cn:"秘本宝库迦巴勒幻想图书馆",de:"Große Gubal-Bibliothek (schwer)",en:"The Great Gubal Library (Hard)",fr:"La Grande bibliothèque de Gubal (brutal)",ja:"稀書回収 グブラ幻想図書館 (Hard)",ko:"구브라 환상도서관(어려움)"},offsetX:116,offsetY:0,sizeFactor:200,weatherRate:0},579:{contentType:19,exVersion:0,name:{cn:"九宫幻卡：幻卡对局室",de:"Triple Triad: Weltensalon",en:"The Triple Triad Battlehall",fr:"Arène Triple Triade",ja:"トリプルトライアド：カードバトルルーム",ko:"트리플 트라이어드: 카드 대결장"},offsetX:0,offsetY:0,sizeFactor:800,weatherRate:0},580:{contentType:5,exVersion:1,name:{cn:"亚历山大机神城 天动之章1",de:"Alexander - Augen des Schöpfers",en:"Alexander - The Eyes of the Creator",fr:"Alexander - Les Yeux du Créateur",ja:"機工城アレキサンダー：天動編1",ko:"기공성 알렉산더: 천동편 1"},offsetX:75,offsetY:14,sizeFactor:200,weatherRate:0},581:{contentType:5,exVersion:1,name:{cn:"亚历山大机神城 天动之章2",de:"Alexander - Atem des Schöpfers",en:"Alexander - The Breath of the Creator",fr:"Alexander - Le Souffle du Créateur",ja:"機工城アレキサンダー：天動編2",ko:"기공성 알렉산더: 천동편 2"},offsetX:0,offsetY:-80,sizeFactor:200,weatherRate:0},582:{contentType:5,exVersion:1,name:{cn:"亚历山大机神城 天动之章3",de:"Alexander - Herz des Schöpfers",en:"Alexander - The Heart of the Creator",fr:"Alexander - Le Cœur du Créateur",ja:"機工城アレキサンダー：天動編3",ko:"기공성 알렉산더: 천동편 3"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},583:{contentType:5,exVersion:1,name:{cn:"亚历山大机神城 天动之章4",de:"Alexander - Seele des Schöpfers",en:"Alexander - The Soul of the Creator",fr:"Alexander - L'Âme du Créateur",ja:"機工城アレキサンダー：天動編4",ko:"기공성 알렉산더: 천동편 4"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},584:{contentType:5,exVersion:1,name:{cn:"亚历山大零式机神城 天动之章1",de:"Alexander - Augen des Schöpfers (episch)",en:"Alexander - The Eyes of the Creator (Savage)",fr:"Alexander - Les Yeux du Créateur (sadique)",ja:"機工城アレキサンダー零式：天動編1",ko:"기공성 알렉산더: 천동편(영웅) 1"},offsetX:75,offsetY:14,sizeFactor:200,weatherRate:0},585:{contentType:5,exVersion:1,name:{cn:"亚历山大零式机神城 天动之章2",de:"Alexander - Atem des Schöpfers (episch)",en:"Alexander - The Breath of the Creator (Savage)",fr:"Alexander - Le Souffle du Créateur (sadique)",ja:"機工城アレキサンダー零式：天動編2",ko:"기공성 알렉산더: 천동편(영웅) 2"},offsetX:0,offsetY:-80,sizeFactor:200,weatherRate:0},586:{contentType:5,exVersion:1,name:{cn:"亚历山大零式机神城 天动之章3",de:"Alexander - Herz des Schöpfers (episch)",en:"Alexander - The Heart of the Creator (Savage)",fr:"Alexander - Le Cœur du Créateur (sadique)",ja:"機工城アレキサンダー零式：天動編3",ko:"기공성 알렉산더: 천동편(영웅) 3"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},587:{contentType:5,exVersion:1,name:{cn:"亚历山大零式机神城 天动之章4",de:"Alexander - Seele des Schöpfers (episch)",en:"Alexander - The Soul of the Creator (Savage)",fr:"Alexander - L'Âme du Créateur (sadique)",ja:"機工城アレキサンダー零式：天動編4",ko:"기공성 알렉산더: 천동편(영웅) 4"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},589:{contentType:19,exVersion:0,name:{cn:"萌宠之王：玩家对战（绩点赛）",de:"Kampf der Trabanten: Gegen Spieler (um RP)",en:"LoVM: Player Battle (RP)",fr:"Bataille simple contre un joueur (avec PR)",ja:"LoVM：プレイヤー対戦 (RP変動あり)",ko:"꼬마 친구 공방전: 플레이어 대결(RP 변동 있음)"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},590:{contentType:19,exVersion:0,name:{cn:"萌宠之王：大赛对战（玩家对战）",de:"Kampf der Trabanten: Turnier (gegen Spieler)",en:"LoVM: Tournament",fr:"Bataille de tournoi contre des joueurs",ja:"LoVM：大会対戦 (プレイヤー対戦）",ko:"꼬마 친구 공방전: 대회 대결(플레이어 대결)"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},591:{contentType:19,exVersion:0,name:{cn:"萌宠之王：玩家对战（无绩点赛）",de:"Kampf der Trabanten: Gegen Spieler (ohne RP)",en:"LoVM: Player Battle (Non-RP)",fr:"Bataille simple contre un joueur (sans PR)",ja:"LoVM：プレイヤー対戦 (RP変動なし)",ko:"꼬마 친구 공방전: 플레이어 대결(RP 변동 없음)"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},592:{contentType:7,exVersion:1,name:{cn:"纠缠不清的宿命",de:"Weltenübergreifendes Schicksal",en:"One Life for One World",fr:"Destins entrecroisés",ja:"絡み合う宿命",ko:"뒤얽히는 숙명"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:28},593:{contentType:21,exVersion:1,name:{cn:"死者宫殿 地下51～60层",de:"Palast der Toten (Ebenen 51 - 60)",en:"The Palace of the Dead (Floors 51-60)",fr:"Le Palais des morts (sous-sols 51-60)",ja:"死者の宮殿 B51～B60",ko:"망자의 궁전 B51~B60"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},594:{contentType:21,exVersion:1,name:{cn:"死者宫殿 地下61～70层",de:"Palast der Toten (Ebenen 61 - 70)",en:"The Palace of the Dead (Floors 61-70)",fr:"Le Palais des morts (sous-sols 61-70)",ja:"死者の宮殿 B61～B70",ko:"망자의 궁전 B61~B70"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},595:{contentType:21,exVersion:1,name:{cn:"死者宫殿 地下71～80层",de:"Palast der Toten (Ebenen 71 - 80)",en:"The Palace of the Dead (Floors 71-80)",fr:"Le Palais des morts (sous-sols 71-80)",ja:"死者の宮殿 B71～B80",ko:"망자의 궁전 B71~B80"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},596:{contentType:21,exVersion:1,name:{cn:"死者宫殿 地下81～90层",de:"Palast der Toten (Ebenen 81 - 90)",en:"The Palace of the Dead (Floors 81-90)",fr:"Le Palais des morts (sous-sols 81-90)",ja:"死者の宮殿 B81～B90",ko:"망자의 궁전 B81~B90"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},597:{contentType:21,exVersion:1,name:{cn:"死者宫殿 地下91～100层",de:"Palast der Toten (Ebenen 91 - 100)",en:"The Palace of the Dead (Floors 91-100)",fr:"Le Palais des morts (sous-sols 91-100)",ja:"死者の宮殿 B91～B100",ko:"망자의 궁전 B91~B100"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},598:{contentType:21,exVersion:1,name:{cn:"死者宫殿 地下101～110层",de:"Palast der Toten (Ebenen 101 - 110)",en:"The Palace of the Dead (Floors 101-110)",fr:"Le Palais des morts (sous-sols 101-110)",ja:"死者の宮殿 B101～B110",ko:"망자의 궁전 B101~B110"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},599:{contentType:21,exVersion:1,name:{cn:"死者宫殿 地下111～120层",de:"Palast der Toten (Ebenen 111 - 120)",en:"The Palace of the Dead (Floors 111-120)",fr:"Le Palais des morts (sous-sols 111-120)",ja:"死者の宮殿 B111～B120",ko:"망자의 궁전 B111~B120"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},600:{contentType:21,exVersion:1,name:{cn:"死者宫殿 地下121～130层",de:"Palast der Toten (Ebenen 121 - 130)",en:"The Palace of the Dead (Floors 121-130)",fr:"Le Palais des morts (sous-sols 121-130)",ja:"死者の宮殿 B121～B130",ko:"망자의 궁전 B121~B130"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},601:{contentType:21,exVersion:1,name:{cn:"死者宫殿 地下131～140层",de:"Palast der Toten (Ebenen 131 - 140)",en:"The Palace of the Dead (Floors 131-140)",fr:"Le Palais des morts (sous-sols 131-140)",ja:"死者の宮殿 B131～B140",ko:"망자의 궁전 B131~B140"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},602:{contentType:21,exVersion:1,name:{cn:"死者宫殿 地下141～150层",de:"Palast der Toten (Ebenen 141 - 150)",en:"The Palace of the Dead (Floors 141-150)",fr:"Le Palais des morts (sous-sols 141-150)",ja:"死者の宮殿 B141～B150",ko:"망자의 궁전 B141~B150"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},603:{contentType:21,exVersion:1,name:{cn:"死者宫殿 地下151～160层",de:"Palast der Toten (Ebenen 151 - 160)",en:"The Palace of the Dead (Floors 151-160)",fr:"Le Palais des morts (sous-sols 151-160)",ja:"死者の宮殿 B151～B160",ko:"망자의 궁전 B151~B160"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},604:{contentType:21,exVersion:1,name:{cn:"死者宫殿 地下161～170层",de:"Palast der Toten (Ebenen 161 - 170)",en:"The Palace of the Dead (Floors 161-170)",fr:"Le Palais des morts (sous-sols 161-170)",ja:"死者の宮殿 B161～B170",ko:"망자의 궁전 B161~B170"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},605:{contentType:21,exVersion:1,name:{cn:"死者宫殿 地下171～180层",de:"Palast der Toten (Ebenen 171 - 180)",en:"The Palace of the Dead (Floors 171-180)",fr:"Le Palais des morts (sous-sols 171-180)",ja:"死者の宮殿 B171～B180",ko:"망자의 궁전 B171~B180"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},606:{contentType:21,exVersion:1,name:{cn:"死者宫殿 地下181～190层",de:"Palast der Toten (Ebenen 181 - 190)",en:"The Palace of the Dead (Floors 181-190)",fr:"Le Palais des morts (sous-sols 181-190)",ja:"死者の宮殿 B181～B190",ko:"망자의 궁전 B181~B190"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},607:{contentType:21,exVersion:1,name:{cn:"死者宫殿 地下191～200层",de:"Palast der Toten (Ebenen 191 - 200)",en:"The Palace of the Dead (Floors 191-200)",fr:"Le Palais des morts (sous-sols 191-200)",ja:"死者の宮殿 B191～B200",ko:"망자의 궁전 B191~B200"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},612:{exVersion:2,name:{cn:"基拉巴尼亚边区",de:"Abanisches Grenzland",en:"The Fringes",fr:"Les Marges",ja:"ギラバニア辺境地帯",ko:"기라바니아 변방지대"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:79},613:{exVersion:2,name:{cn:"红玉海",de:"Rubinsee",en:"The Ruby Sea",fr:"Mer de Rubis",ja:"紅玉海",ko:"홍옥해"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:83},614:{exVersion:2,name:{cn:"延夏",de:"Yanxia",en:"Yanxia",fr:"Yanxia",ja:"ヤンサ",ko:"얀샤"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:84},615:{contentType:2,exVersion:1,name:{cn:"(6.2)坚牢铁壁巴埃萨长城",de:"(6.2)Baelsar-Wall",en:"(6.2)Baelsar's Wall",fr:"(6.2)La Muraille de Baelsar",ja:"(6.2)巨大防壁 バエサルの長城",ko:"(6.2)바일사르 장성"},offsetX:182,offsetY:32,sizeFactor:200,weatherRate:40},616:{contentType:2,exVersion:2,name:{cn:"海底宫殿紫水宫",de:"Shisui",en:"Shisui of the Violet Tides",fr:"Le Palais aux Marées violettes",ja:"海底宮殿 紫水宮",ko:"시스이 궁"},offsetX:0,offsetY:35,sizeFactor:200,weatherRate:0},617:{contentType:2,exVersion:1,name:{cn:"天山深境索姆阿尔灵峰",de:"Sohm Al (schwer)",en:"Sohm Al (Hard)",fr:"Sohm Al (brutal)",ja:"霊峰浄化 ソーム・アル (Hard)",ko:"솜 알(어려움)"},offsetX:128,offsetY:-32,sizeFactor:200,weatherRate:28},620:{exVersion:2,name:{cn:"基拉巴尼亚山区",de:"Die Zinnen",en:"The Peaks",fr:"Les Pics",ja:"ギラバニア山岳地帯",ko:"기라바니아 산악지대"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:80},621:{exVersion:2,name:{cn:"基拉巴尼亚湖区",de:"Das Fenn",en:"The Lochs",fr:"Les Lacs",ja:"ギラバニア湖畔地帯",ko:"기라바니아 호반지대"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:81},622:{exVersion:2,name:{cn:"太阳神草原",de:"Azim-Steppe",en:"The Azim Steppe",fr:"Steppe d'Azim",ja:"アジムステップ",ko:"아짐 대초원"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:85},623:{contentType:2,exVersion:2,name:{cn:"(6.3)试炼行路巴儿达木霸道",de:"(6.3)Bardams Probe",en:"(6.3)Bardam's Mettle",fr:"(6.3)La Force de Bardam",ja:"(6.3)伝統試練 バルダム覇道",ko:"(6.3)바르담 패도"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},624:{contentType:23,exVersion:1,name:{cn:"云冠群岛白昼探索（狩猎专用）",de:"Das Diadem - Jagdgründe (leicht)",en:"The Diadem Hunting Grounds (Easy)",fr:"Le Diadème : terrains de chasse (facile)",ja:"雲海探索 ディアデム諸島：狩猟限定 (Easy)",ko:"디아뎀 제도: 전투 한정(쉬움)"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:60},625:{contentType:23,exVersion:1,name:{cn:"云冠群岛黄昏探索（狩猎专用）",de:"Das Diadem - Jagdgründe",en:"The Diadem Hunting Grounds",fr:"Le Diadème : terrains de chasse",ja:"雲海探索 ディアデム諸島：狩猟限定",ko:"디아뎀 제도: 전투 한정"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:61},626:{contentType:2,exVersion:2,name:{cn:"(6.3)漂流海域妖歌海",de:"(6.3)Sirenen-See",en:"(6.3)The Sirensong Sea",fr:"(6.3)La Mer du Chant des sirènes",ja:"(6.3)漂流海域 セイレーン海",ko:"(6.3)세이렌 해"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:36},627:{contentType:5,exVersion:1,name:{cn:"影之国",de:"Dun Scaith",en:"Dun Scaith",fr:"Dun Scaith",ja:"影の国ダン・スカー",ko:"둔 스카"},offsetX:-350,offsetY:-400,sizeFactor:200,weatherRate:58},628:{exVersion:2,name:{cn:"黄金港",de:"Kugane",en:"Kugane",fr:"Kugane",ja:"クガネ",ko:"쿠가네"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:82},630:{contentType:23,exVersion:0,name:{cn:"云冠群岛战争神猎场",de:"Das Diadem - Halones Prüfung",en:"The Diadem - Trials of the Fury",fr:"Le Diadème - Épreuves de Halone",ja:"雲海探索 ディアデム諸島 (狩猟)",ko:"디아뎀 제도: 전투"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},633:{contentType:7,exVersion:1,name:{cn:"加尔提诺平原遭遇战",de:"Heliodrom",en:"The Carteneau Flats: Heliodrome",fr:"Rixe à l'Héliodrome",ja:"カルテノー平原遭遇戦",ko:"카르테노 평원 조우전"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},635:{exVersion:2,name:{cn:"神拳痕",de:"Rhalgrs Wacht",en:"Rhalgr's Reach",fr:"L'Étendue de Rhalgr",ja:"ラールガーズリーチ",ko:"랄거의 손길"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:78},637:{contentType:4,exVersion:1,name:{cn:"祖尔宛歼灭战",de:"Götterdämmerung - Zurvan",en:"Containment Bay Z1T9",fr:"Unité de contention Z1P9",ja:"鬼神ズルワーン討滅戦",ko:"귀신 주르반 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:75},638:{contentType:4,exVersion:1,name:{cn:"祖尔宛歼殛战",de:"Zenit der Götter - Zurvan",en:"Containment Bay Z1T9 (Extreme)",fr:"Unité de contention Z1P9 (extrême)",ja:"極鬼神ズルワーン討滅戦",ko:"극 귀신 주르반 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:75},656:{contentType:23,exVersion:1,name:{cn:"云冠群岛丰饶神福地",de:"Das Diadem - Nophicas Prüfung",en:"The Diadem - Trials of the Matron",fr:"Le Diadème - Épreuves de Nophica",ja:"雲海探索 ディアデム諸島 (採集)",ko:"디아뎀 제도: 채집"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:71},660:{contentType:2,exVersion:2,name:{cn:"(6.3)解放决战多玛王城",de:"(6.3)Burg Doma",en:"(6.3)Doma Castle",fr:"(6.3)Le Château de Doma",ja:"(6.3)解放決戦 ドマ城",ko:"(6.3)도마 성"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},661:{contentType:2,exVersion:2,name:{cn:"(6.3)巨炮要塞帝国白山堡",de:"(6.3)Castrum Abania",en:"(6.3)Castrum Abania",fr:"(6.3)Castrum Abania",ja:"(6.3)巨砲要塞 カストルム・アバニア",ko:"(6.3)카스트룸 아바니아"},offsetX:72,offsetY:-186,sizeFactor:200,weatherRate:0},662:{contentType:2,exVersion:2,name:{cn:"恶党孤城黄金阁",de:"Schloss Kugane",en:"Kugane Castle",fr:"Le Château de Kugane",ja:"悪党成敗 クガネ城",ko:"쿠가네 성"},offsetX:70,offsetY:33,sizeFactor:200,weatherRate:0},663:{contentType:2,exVersion:2,name:{cn:"修行古刹星导寺",de:"Tempel der Faust",en:"The Temple of the Fist",fr:"Le Temple du Poing",ja:"壊神修行 星導山寺院",ko:"성도산 사원"},offsetX:-427,offsetY:-314,sizeFactor:200,weatherRate:0},665:{contentType:7,exVersion:2,name:{cn:"鱼道现身！",de:"Ein zweifelhaftes Angebot",en:"It's Probably a Trap",fr:"Un drôle de Namazu",ja:"ギョドウ現る！",ko:"교도 등장!"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},674:{contentType:4,exVersion:2,name:{cn:"须佐之男歼灭战",de:"Götterdämmerung - Susano",en:"The Pool of Tribute",fr:"La Crique aux tributs",ja:"スサノオ討滅戦",ko:"스사노오 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:77},677:{contentType:4,exVersion:2,name:{cn:"须佐之男歼殛战",de:"Zenit der Götter - Susano",en:"The Pool of Tribute (Extreme)",fr:"La Crique aux tributs (extrême)",ja:"極スサノオ討滅戦",ko:"극 스사노오 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:77},679:{contentType:4,exVersion:2,name:{cn:"神龙歼灭战",de:"Königliche Menagerie",en:"The Royal Menagerie",fr:"La Ménagerie royale",ja:"神龍討滅戦",ko:"신룡 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:76},684:{contentType:7,exVersion:2,name:{cn:"于里昂热的秘策",de:"Wege zur Transzendenz",en:"The Resonant",fr:"La ruse d'Urianger",ja:"ウリエンジェの秘策",ko:"위리앙제의 비책"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},688:{contentType:7,exVersion:2,name:{cn:"那达慕",de:"Naadam",en:"Naadam",fr:"La grande bataille du Naadam",ja:"終節の合戦",ko:"계절끝 합전"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},689:{contentType:2,exVersion:2,name:{cn:"(6.3)鏖战红莲阿拉米格",de:"(6.3)Ala Mhigo",en:"(6.3)Ala Mhigo",fr:"(6.3)Ala Mhigo",ja:"(6.3)紅蓮決戦 アラミゴ",ko:"(6.3)알라미고"},offsetX:292,offsetY:-163,sizeFactor:200,weatherRate:0},690:{contentType:7,exVersion:2,name:{cn:"时空狭缝外缘",de:"Interdimensionaler Riss",en:"Interdimensional Rift",fr:"Fissure interdimensionnelle",ja:"次元の狭間：外縁",ko:"차원의 틈: 외곽"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:88},691:{contentType:5,exVersion:2,name:{cn:"欧米茄时空狭缝 德尔塔幻境1",de:"Deltametrie 1.0",en:"Deltascape V1.0",fr:"Deltastice v1.0",ja:"次元の狭間オメガ：デルタ編1",ko:"차원의 틈 오메가: 델타편 1"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:88},692:{contentType:5,exVersion:2,name:{cn:"欧米茄时空狭缝 德尔塔幻境2",de:"Deltametrie 2.0",en:"Deltascape V2.0",fr:"Deltastice v2.0",ja:"次元の狭間オメガ：デルタ編2",ko:"차원의 틈 오메가: 델타편 2"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:88},693:{contentType:5,exVersion:2,name:{cn:"欧米茄时空狭缝 德尔塔幻境3",de:"Deltametrie 3.0",en:"Deltascape V3.0",fr:"Deltastice v3.0",ja:"次元の狭間オメガ：デルタ編3",ko:"차원의 틈 오메가: 델타편 3"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:88},694:{contentType:5,exVersion:2,name:{cn:"欧米茄时空狭缝 德尔塔幻境4",de:"Deltametrie 4.0",en:"Deltascape V4.0",fr:"Deltastice v4.0",ja:"次元の狭間オメガ：デルタ編4",ko:"차원의 틈 오메가: 델타편 4"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:88},695:{contentType:5,exVersion:2,name:{cn:"欧米茄零式时空狭缝 德尔塔幻境1",de:"Deltametrie 1.0 (episch)",en:"Deltascape V1.0 (Savage)",fr:"Deltastice v1.0 (sadique)",ja:"次元の狭間オメガ零式：デルタ編1",ko:"차원의 틈 오메가: 델타편(영웅) 1"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:88},696:{contentType:5,exVersion:2,name:{cn:"欧米茄零式时空狭缝 德尔塔幻境2",de:"Deltametrie 2.0 (episch)",en:"Deltascape V2.0 (Savage)",fr:"Deltastice v2.0 (sadique)",ja:"次元の狭間オメガ零式：デルタ編2",ko:"차원의 틈 오메가: 델타편(영웅) 2"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:88},697:{contentType:5,exVersion:2,name:{cn:"欧米茄零式时空狭缝 德尔塔幻境3",de:"Deltametrie 3.0 (episch)",en:"Deltascape V3.0 (Savage)",fr:"Deltastice v3.0 (sadique)",ja:"次元の狭間オメガ零式：デルタ編3",ko:"차원의 틈 오메가: 델타편(영웅) 3"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:88},698:{contentType:5,exVersion:2,name:{cn:"欧米茄零式时空狭缝 德尔塔幻境4",de:"Deltametrie 4.0 (episch)",en:"Deltascape V4.0 (Savage)",fr:"Deltastice v4.0 (sadique)",ja:"次元の狭間オメガ零式：デルタ編4",ko:"차원의 틈 오메가: 델타편(영웅) 4"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:88},705:{contentType:7,exVersion:2,name:{cn:"大会开始",de:"Thal zu Ehren",en:"In Thal's Name",fr:"Le tournoi commémoratif du sultanat",ja:"ウル王杯闘技会の始まり",ko:"울다하 왕실배 투기대회"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:8},706:{contentType:7,exVersion:2,name:{cn:"为了更强",de:"Die hohe Kunst des Schwertkampfs",en:"Raising the Sword",fr:"La finale des champions",ja:"さらなる剣術の高みへ",ko:"더 높은 검술의 경지로"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:8},707:{contentType:7,exVersion:2,name:{cn:"抗争之力",de:"Die Kraft des Widerstands",en:"With Heart and Steel",fr:"Transmigration démoniaque",ja:"抗う力",ko:"맞서는 힘"},offsetX:298,offsetY:350,sizeFactor:200,weatherRate:37},708:{contentType:7,exVersion:2,name:{cn:"海都路人身首异",de:"Mord ist sein Hobby",en:"Blood on the Deck",fr:"La légende de Musosai : l'assassin de Limsa Lominsa",ja:"海都を震わす人斬りの宴！",ko:"해양도시를 흔드는 살인자의 연회!"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},709:{contentType:7,exVersion:2,name:{cn:"极恶之人木枯",de:"Der Inbegriff des Bösen",en:"The Face of True Evil",fr:"L'abominable Kogarashi",ja:"極悪人コガラシ",ko:"극악무도한 코가라시"},offsetX:0,offsetY:0,sizeFactor:95,weatherRate:49},710:{contentType:7,exVersion:2,name:{cn:"松叶门外之变",de:"Vorfall auf dem Matsuba-Platz",en:"Matsuba Mayhem",fr:"Règlement de compte au square Matsuba",ja:"松葉門外の変",ko:"마츠바 사변"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:82},711:{contentType:7,exVersion:2,name:{cn:"决战龟甲岛",de:"Ent­schei­dungs­schlacht auf Bekko",en:"The Battle on Bekko",fr:"L'af­fron­te­ment de deux justices",ja:"ベッコウ島の決闘",ko:"베코우 섬의 결투"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:83},712:{contentType:9,exVersion:2,name:{cn:"运河宝物库",de:"Kanäle von Uznair",en:"The Lost Canals of Uznair",fr:"Les Canaux perdus d'Uznair",ja:"宝物庫 ウズネアカナル",ko:"보물고 우즈네어 운하"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},713:{contentType:7,exVersion:2,name:{cn:"漆黑的巨龙",de:"Der tobende Drache",en:"Dark as the Night Sky",fr:"Aussi sombre que la nuit",ja:"漆黒の巨竜",ko:"칠흑의 거룡"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:85},714:{contentType:7,exVersion:2,name:{cn:"红血之龙骑士",de:"Der Rubin-Drachenreiter",en:"Dragon Sound",fr:"Le Dragon écarlate",ja:"紅の竜騎士",ko:"붉은 용기사"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},715:{contentType:7,exVersion:2,name:{cn:"遥远的憧憬",de:"Probe des Meisters",en:"The Orphans and the Broken Blade",fr:"L'aspiration refoulée",ja:"あと三度、遥かな憧憬",ko:"앞으로 세 번, 아득한 동경"},offsetX:0,offsetY:0,sizeFactor:95,weatherRate:86},716:{contentType:7,exVersion:2,name:{cn:"再次相见",de:"Aus der Tiefe des Herzens",en:"Our Compromise",fr:"La dernière séparation",ja:"あと一度、君に会えたら",ko:"앞으로 한 번, 너와 만날 수 있다면"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:28},717:{contentType:7,exVersion:2,name:{cn:"原初的战士",de:"Die Urkraft in ihr",en:"Curious Gorge Meets His Match",fr:"L'épreuve de force",ja:"原初的な彼女",ko:"원초적 그녀"},offsetX:-77,offsetY:0,sizeFactor:400,weatherRate:0},718:{contentType:7,exVersion:2,name:{cn:"燃烧吧高吉",de:"Kriegerische Leidenschaft",en:"The Heart of the Problem",fr:"Passion guerrière",ja:"燃えよゴージ！",ko:"불타올라라, 산골짜기!"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:85},719:{contentType:4,exVersion:2,name:{cn:"吉祥天女歼灭战",de:"Götterdämmerung - Lakshmi",en:"Emanation",fr:"Émanation",ja:"ラクシュミ討滅戦",ko:"락슈미 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:87},720:{contentType:4,exVersion:2,name:{cn:"吉祥天女歼殛战",de:"Zenit der Götter - Lakshmi",en:"Emanation (Extreme)",fr:"Émanation (extrême)",ja:"極ラクシュミ討滅戦",ko:"극 락슈미 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:87},722:{contentType:7,exVersion:2,name:{cn:"穿越时空的夙愿",de:"Ein Wunsch aus alten Zeiten",en:"Our Unsung Heroes",fr:"L'espoir en héritage",ja:"時をかける願い",ko:"시간을 뛰어넘은 염원"},offsetX:-175,offsetY:-297,sizeFactor:200,weatherRate:63},723:{contentType:7,exVersion:2,name:{cn:"影隐忍法贴",de:"Aus dem Verborgenen",en:"When Clans Collide",fr:"La bataille des clans",ja:"影隠忍法帖",ko:"그림자 인법첩"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:85},725:{contentType:9,exVersion:2,name:{cn:"运河宝物库深层",de:"Vergessene Kanäle von Uznair",en:"The Hidden Canals of Uznair",fr:"Les Canaux cachés d'Uznair",ja:"宝物庫 ウズネアカナル深層",ko:"보물고 우즈네어 운하 심층"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},729:{contentType:6,exVersion:0,name:{cn:"距骨研究所（机动战）",de:"Astragalos",en:"Astragalos",fr:"Astragalos (machinerie)",ja:"アストラガロス (機工戦)",ko:"아스트라갈로스(기공전)"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},730:{contentType:4,exVersion:2,name:{cn:"神龙梦幻歼灭战",de:"Heldenlied von Shinryu",en:"The Minstrel's Ballad: Shinryu's Domain",fr:"Le domaine de Shinryu",ja:"極神龍討滅戦",ko:"극 신룡 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:76},731:{contentType:2,exVersion:2,name:{cn:"(6.4)沉没神殿斯卡拉遗迹",de:"(6.4)Die versunkene Stadt Skalla",en:"(6.4)The Drowned City of Skalla",fr:"(6.4)La Cité engloutie de Skalla",ja:"(6.4)水没遺構 スカラ",ko:"(6.4)스칼라 유적"},offsetX:185,offsetY:5,sizeFactor:200,weatherRate:0},732:{contentType:26,exVersion:2,name:{cn:"禁地优雷卡 常风之地",de:"Eureka Anemos",en:"The Forbidden Land, Eureka Anemos",fr:"Eurêka Anemos",ja:"禁断の地 エウレカ：アネモス編",ko:"금단의 땅 에우레카: 아네모스편"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:91},733:{contentType:28,exVersion:2,name:{cn:"巴哈姆特绝境战",de:"Endlose Schatten von Bahamut (fatal)",en:"The Unending Coil of Bahamut (Ultimate)",fr:"L'Abîme infini de Bahamut (fatal)",ja:"絶バハムート討滅戦",ko:"절 바하무트 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},734:{contentType:5,exVersion:2,name:{cn:"失落之都拉巴纳斯塔",de:"Rabanastre",en:"The Royal City of Rabanastre",fr:"La Cité royale de Rabanastre",ja:"失われた都 ラバナスタ",ko:"왕도 라바나스터"},offsetX:300,offsetY:-100,sizeFactor:200,weatherRate:0},741:{contentType:22,exVersion:0,name:{cn:"良缘仪式",de:"Valentionzeremonie",en:"The Valentione's Ceremony",fr:"La Cérémonie de la Valention",ja:"ヴァレンティオンセレモニー",ko:"발렌티온 예식장"},offsetX:0,offsetY:125,sizeFactor:400,weatherRate:0},742:{contentType:2,exVersion:2,name:{cn:"红玉火山狱之盖",de:"Höllenspund",en:"Hells' Lid",fr:"Le Couvercle des enfers",ja:"紅玉火山 獄之蓋",ko:"지옥뚜껑"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},743:{contentType:2,exVersion:2,name:{cn:"疯狂战舰无限回廊",de:"Die Fraktal-Kontinuum (schwer)",en:"The Fractal Continuum (Hard)",fr:"Le Continuum fractal (brutal)",ja:"暴走戦艦 フラクタル・コンティニアム (Hard)",ko:"무한연속 박물함(어려움)"},offsetX:0,offsetY:350,sizeFactor:200,weatherRate:0},746:{contentType:4,exVersion:2,name:{cn:"白虎镇魂战",de:"Seelentanz - Byakko",en:"The Jade Stoa",fr:"La Clairière de Jade",ja:"白虎征魂戦",ko:"백호 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:93},748:{contentType:5,exVersion:2,name:{cn:"欧米茄时空狭缝 西格玛幻境1",de:"Sigmametrie 1.0",en:"Sigmascape V1.0",fr:"Sigmastice v1.0",ja:"次元の狭間オメガ：シグマ編1",ko:"차원의 틈 오메가: 시그마편 1"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:92},749:{contentType:5,exVersion:2,name:{cn:"欧米茄时空狭缝 西格玛幻境2",de:"Sigmametrie 2.0",en:"Sigmascape V2.0",fr:"Sigmastice v2.0",ja:"次元の狭間オメガ：シグマ編2",ko:"차원의 틈 오메가: 시그마편 2"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:92},750:{contentType:5,exVersion:2,name:{cn:"欧米茄时空狭缝 西格玛幻境3",de:"Sigmametrie 3.0",en:"Sigmascape V3.0",fr:"Sigmastice v3.0",ja:"次元の狭間オメガ：シグマ編3",ko:"차원의 틈 오메가: 시그마편 3"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:92},751:{contentType:5,exVersion:2,name:{cn:"欧米茄时空狭缝 西格玛幻境4",de:"Sigmametrie 4.0",en:"Sigmascape V4.0",fr:"Sigmastice v4.0",ja:"次元の狭間オメガ：シグマ編4",ko:"차원의 틈 오메가: 시그마편 4"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:92},752:{contentType:5,exVersion:2,name:{cn:"欧米茄零式时空狭缝 西格玛幻境1",de:"Sigmametrie 1.0 (episch)",en:"Sigmascape V1.0 (Savage)",fr:"Sigmastice v1.0 (sadique)",ja:"次元の狭間オメガ零式：シグマ編1",ko:"차원의 틈 오메가: 시그마편(영웅) 1"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:92},753:{contentType:5,exVersion:2,name:{cn:"欧米茄零式时空狭缝 西格玛幻境2",de:"Sigmametrie 2.0 (episch)",en:"Sigmascape V2.0 (Savage)",fr:"Sigmastice v2.0 (sadique)",ja:"次元の狭間オメガ零式：シグマ編2",ko:"차원의 틈 오메가: 시그마편(영웅) 2"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:92},754:{contentType:5,exVersion:2,name:{cn:"欧米茄零式时空狭缝 西格玛幻境3",de:"Sigmametrie 3.0 (episch)",en:"Sigmascape V3.0 (Savage)",fr:"Sigmastice v3.0 (sadique)",ja:"次元の狭間オメガ零式：シグマ編3",ko:"차원의 틈 오메가: 시그마편(영웅) 3"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:92},755:{contentType:5,exVersion:2,name:{cn:"欧米茄零式时空狭缝 西格玛幻境4",de:"Sigmametrie 4.0 (episch)",en:"Sigmascape V4.0 (Savage)",fr:"Sigmastice v4.0 (sadique)",ja:"次元の狭間オメガ零式：シグマ編4",ko:"차원의 틈 오메가: 시그마편(영웅) 4"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:92},758:{contentType:4,exVersion:2,name:{cn:"白虎诗魂战",de:"Seelensturm - Byakko",en:"The Jade Stoa (Extreme)",fr:"La Clairière de Jade (extrême)",ja:"極白虎征魂戦",ko:"극 백호 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:93},759:{exVersion:2,name:{cn:"多玛飞地",de:"Domanische Enklave",en:"The Doman Enclave",fr:"Quartier enclavé de Doma",ja:"ドマ町人地",ko:"도마 도읍지"},offsetX:23,offsetY:34,sizeFactor:400,weatherRate:84},761:{contentType:4,exVersion:2,name:{cn:"火龙狩猎战",de:"Jagd auf Rathalos",en:"The Great Hunt",fr:"Chasse au Rathalos",ja:"リオレウス狩猟戦",ko:"리오레우스 수렵전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},762:{contentType:4,exVersion:2,name:{cn:"火龙上位狩猎战",de:"Jagd auf Rathalos (schwer)",en:"The Great Hunt (Extreme)",fr:"Chasse au Rathalos (extrême)",ja:"極リオレウス狩猟戦",ko:"극 리오레우스 수렵전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},763:{contentType:26,exVersion:2,name:{cn:"禁地优雷卡 恒冰之地",de:"Eureka Pagos",en:"The Forbidden Land, Eureka Pagos",fr:"Eurêka Pagos",ja:"禁断の地 エウレカ：パゴス編",ko:"금단의 땅 에우레카: 파고스편"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:94},768:{contentType:2,exVersion:2,name:{cn:"风水灵庙岩燕庙",de:"Kompass der Schwalbe",en:"The Swallow's Compass",fr:"Le Compas de l'Hirondelle",ja:"風水霊殿 ガンエン廟",ko:"강엔 종묘"},offsetX:240,offsetY:0,sizeFactor:200,weatherRate:0},769:{contentType:7,exVersion:2,name:{cn:"拂晓的少年",de:"Der Knabe der Morgenröte",en:"Emissary of the Dawn",fr:"Voyage en terre hostile",ja:"「暁」の少年",ko:"'새벽'의 소년"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},770:{contentType:21,exVersion:2,name:{cn:"天之御柱 1～10层",de:"Himmelssäule (Ebenen 1-10)",en:"Heaven-on-High  (Floors 1-10)",fr:"Le Pilier des Cieux (étages 1-10)",ja:"アメノミハシラ 1～10層",ko:"천궁탑 1~10층"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},771:{contentType:21,exVersion:2,name:{cn:"天之御柱 11～20层",de:"Himmelssäule (Ebenen 11-20)",en:"Heaven-on-High  (Floors 11-20)",fr:"Le Pilier des Cieux (étages 11-20)",ja:"アメノミハシラ 11～20層",ko:"천궁탑 11~20층"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},772:{contentType:21,exVersion:2,name:{cn:"天之御柱 21～30层",de:"Himmelssäule (Ebenen 21-30)",en:"Heaven-on-High  (Floors 21-30)",fr:"Le Pilier des Cieux (étages 21-30)",ja:"アメノミハシラ 21～30層",ko:"천궁탑 21~30층"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},773:{contentType:21,exVersion:2,name:{cn:"天之御柱 41～50层",de:"Himmelssäule (Ebenen 41-50)",en:"Heaven-on-High  (Floors 41-50)",fr:"Le Pilier des Cieux (étages 41-50)",ja:"アメノミハシラ 41～50層",ko:"천궁탑 41~50층"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},774:{contentType:21,exVersion:2,name:{cn:"天之御柱 61～70层",de:"Himmelssäule (Ebenen 61-70)",en:"Heaven-on-High  (Floors 61-70)",fr:"Le Pilier des Cieux (étages 61-70)",ja:"アメノミハシラ 61～70層",ko:"천궁탑 61~70층"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},775:{contentType:21,exVersion:2,name:{cn:"天之御柱 81～90层",de:"Himmelssäule (Ebenen 81-90)",en:"Heaven-on-High  (Floors 81-90)",fr:"Le Pilier des Cieux (étages 81-90)",ja:"アメノミハシラ 81～90層",ko:"천궁탑 81~90층"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},776:{contentType:5,exVersion:2,name:{cn:"封闭圣塔黎铎拉纳大灯塔",de:"Richtfeuer von Ridorana",en:"The Ridorana Lighthouse",fr:"Le Phare de Ridorana",ja:"封じられた聖塔 リドルアナ",ko:"대등대 리도르아나"},offsetX:202,offsetY:-92,sizeFactor:200,weatherRate:0},777:{contentType:28,exVersion:2,name:{cn:"究极神兵绝境战",de:"Heldenlied von Ultima (fatal)",en:"The Weapon's Refrain (Ultimate)",fr:"La Fantasmagorie d'Ultima (fatal)",ja:"絶アルテマウェポン破壊作戦",ko:"절 알테마 웨폰 파괴작전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:26},778:{contentType:4,exVersion:2,name:{cn:"月读歼灭战",de:"Götterdämmerung - Tsukuyomi",en:"Castrum Fluminis",fr:"Castrum Fluminis",ja:"ツクヨミ討滅戦",ko:"츠쿠요미 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},779:{contentType:4,exVersion:2,name:{cn:"月读幽夜歼灭战",de:"Zenit der Götter - Tsukuyomi",en:"The Minstrel's Ballad: Tsukuyomi's Pain",fr:"Castrum Fluminis (extrême)",ja:"極ツクヨミ討滅戦",ko:"극 츠쿠요미 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},782:{contentType:21,exVersion:2,name:{cn:"天之御柱 31～40层",de:"Himmelssäule (Ebenen 31-40)",en:"Heaven-on-High  (Floors 31-40)",fr:"Le Pilier des Cieux (étages 31-40)",ja:"アメノミハシラ 31～40層",ko:"천궁탑 31~40층"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},783:{contentType:21,exVersion:2,name:{cn:"天之御柱 51～60层",de:"Himmelssäule (Ebenen 51-60)",en:"Heaven-on-High  (Floors 51-60)",fr:"Le Pilier des Cieux (étages 51-60)",ja:"アメノミハシラ 51～60層",ko:"천궁탑 51~60층"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},784:{contentType:21,exVersion:2,name:{cn:"天之御柱 71～80层",de:"Himmelssäule (Ebenen 71-80)",en:"Heaven-on-High  (Floors 71-80)",fr:"Le Pilier des Cieux (étages 71-80)",ja:"アメノミハシラ 71～80層",ko:"천궁탑 71~80층"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},785:{contentType:21,exVersion:2,name:{cn:"天之御柱 91～100层",de:"Himmelssäule (Ebenen 91-100)",en:"Heaven-on-High  (Floors 91-100)",fr:"Le Pilier des Cieux (étages 91-100)",ja:"アメノミハシラ 91～100層",ko:"천궁탑 91~100층"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},788:{contentType:2,exVersion:2,name:{cn:"污染庭园圣茉夏娜植物园",de:"Sankt Mocianne-Arboretum (schwer)",en:"Saint Mocianne's Arboretum (Hard)",fr:"L'Arboretum Sainte-Mocianne (brutal)",ja:"草木汚染 聖モシャーヌ植物園 (Hard)",ko:"성 모샨 식물원(어려움)"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},789:{contentType:2,exVersion:2,name:{cn:"(6.4)死亡大地终末焦土",de:"(6.4)Das Kargland",en:"(6.4)The Burn",fr:"(6.4)L'Escarre",ja:"(6.4)永久焦土 ザ・バーン",ko:"(6.4)영구 초토지대"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:97},790:{contentType:22,exVersion:0,name:{cn:"灾厄重现军事演习",de:"Gedenkschlacht der Eorzäischen Allianz",en:"The Calamity Retold",fr:"Les grandes manœuvres commémoratives",ja:"新生祭軍事演習",ko:"신생제 군사훈련"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:95},791:{contentType:6,exVersion:0,name:{cn:"隐塞（机动战）",de:"Verborgene Schlucht",en:"Hidden Gorge",fr:"Gorge dérobée (machinerie)",ja:"ヒドゥンゴージ (機工戦)",ko:"숨겨진 보루(기공전)"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},792:{contentType:19,exVersion:0,name:{cn:"虚景跳跳乐大挑战",de:"Kaktor-Kletterwand",en:"Leap of Faith",fr:"Haute voltige",ja:"挑戦！ ジャンピングアスレチック",ko:"뛰어라! 점핑 운동회"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},793:{contentType:2,exVersion:2,name:{cn:"(6.4)国境防线基姆利特暗区",de:"(6.4)Die Ghimlyt-Finsternis",en:"(6.4)The Ghimlyt Dark",fr:"(6.4)Les Ténèbres de Ghimlyt",ja:"(6.4)境界戦線 ギムリトダーク",ko:"(6.4)김리트 황야"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},794:{contentType:9,exVersion:2,name:{cn:"运河宝物库神殿",de:"Glücksaltäre von Uznair",en:"The Shifting Altars of Uznair",fr:"Le Temple sacré d'Uznair",ja:"宝物庫 ウズネアカナル祭殿",ko:"보물고 우즈네어 운하 제전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},795:{contentType:26,exVersion:2,name:{cn:"禁地优雷卡 涌火之地",de:"Eureka Pyros",en:"The Forbidden Land, Eureka Pyros",fr:"Eurêka Pyros",ja:"禁断の地 エウレカ：ピューロス編",ko:"금단의 땅 에우레카: 피로스편"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:96},796:{contentType:27,exVersion:0,name:{cn:"出道战",de:"Debüt in der Himmlischen Arena",en:"All's Well That Starts Well",fr:"Début du spectacle",ja:"デビューマッチ",ko:"데뷔전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},797:{contentType:7,exVersion:2,name:{cn:"楔石洞",de:"Der Wille der Mondgöttin",en:"The Will of the Moon",fr:"Ralliement dans la steppe",ja:"楔石の虚",ko:"쐐기돌 동굴"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},798:{contentType:5,exVersion:2,name:{cn:"欧米茄时空狭缝 阿尔法幻境1",de:"Alphametrie 1.0",en:"Alphascape V1.0",fr:"Alphastice v1.0",ja:"次元の狭間オメガ：アルファ編1",ko:"차원의 틈 오메가: 알파편 1"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:92},799:{contentType:5,exVersion:2,name:{cn:"欧米茄时空狭缝 阿尔法幻境2",de:"Alphametrie 2.0",en:"Alphascape V2.0",fr:"Alphastice v2.0",ja:"次元の狭間オメガ：アルファ編2",ko:"차원의 틈 오메가: 알파편 2"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:92},800:{contentType:5,exVersion:2,name:{cn:"欧米茄时空狭缝 阿尔法幻境3",de:"Alphametrie 3.0",en:"Alphascape V3.0",fr:"Alphastice v3.0",ja:"次元の狭間オメガ：アルファ編3",ko:"차원의 틈 오메가: 알파편 3"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:92},801:{contentType:5,exVersion:2,name:{cn:"欧米茄时空狭缝 阿尔法幻境4",de:"Alphametrie 4.0",en:"Alphascape V4.0",fr:"Alphastice v4.0",ja:"次元の狭間オメガ：アルファ編4",ko:"차원의 틈 오메가: 알파편 4"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:92},802:{contentType:5,exVersion:2,name:{cn:"欧米茄零式时空狭缝 阿尔法幻境1",de:"Alphametrie 1.0 (episch)",en:"Alphascape V1.0 (Savage)",fr:"Alphastice v1.0 (sadique)",ja:"次元の狭間オメガ零式：アルファ編1",ko:"차원의 틈 오메가: 알파편(영웅) 1"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:92},803:{contentType:5,exVersion:2,name:{cn:"欧米茄零式时空狭缝 阿尔法幻境2",de:"Alphametrie 2.0 (episch)",en:"Alphascape V2.0 (Savage)",fr:"Alphastice v2.0 (sadique)",ja:"次元の狭間オメガ零式：アルファ編2",ko:"차원의 틈 오메가: 알파편(영웅) 2"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:92},804:{contentType:5,exVersion:2,name:{cn:"欧米茄零式时空狭缝 阿尔法幻境3",de:"Alphametrie 3.0 (episch)",en:"Alphascape V3.0 (Savage)",fr:"Alphastice v3.0 (sadique)",ja:"次元の狭間オメガ零式：アルファ編3",ko:"차원의 틈 오메가: 알파편(영웅) 3"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:92},805:{contentType:5,exVersion:2,name:{cn:"欧米茄零式时空狭缝 阿尔法幻境4",de:"Alphametrie 4.0 (episch)",en:"Alphascape V4.0 (Savage)",fr:"Alphastice v4.0 (sadique)",ja:"次元の狭間オメガ零式：アルファ編4",ko:"차원의 틈 오메가: 알파편(영웅) 4"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:92},806:{contentType:4,exVersion:2,name:{cn:"保镖歼灭战",de:"Duell auf der Kugane-Brücke",en:"Kugane Ohashi",fr:"Le Pont Ohashi",ja:"真ヨウジンボウ討滅戦",ko:"진 요우진보 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},810:{contentType:4,exVersion:2,name:{cn:"朱雀镇魂战",de:"Seelentanz - Suzaku",en:"Hells' Kier",fr:"Le Nid des Lamentations",ja:"朱雀征魂戦",ko:"주작 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:98},811:{contentType:4,exVersion:2,name:{cn:"朱雀诗魂战",de:"Seelensturm - Suzaku",en:"Hells' Kier (Extreme)",fr:"Le Nid des Lamentations (extrême)",ja:"極朱雀征魂戦",ko:"극 주작 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:98},813:{exVersion:3,name:{cn:"雷克兰德",de:"Seenland",en:"Lakeland",fr:"Grand-Lac",ja:"レイクランド",ko:"레이크랜드"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:106},814:{exVersion:3,name:{cn:"珂露西亚岛",de:"Kholusia",en:"Kholusia",fr:"Kholusia",ja:"コルシア島",ko:"콜루시아 섬"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:107},815:{exVersion:3,name:{cn:"安穆·艾兰",de:"Amh Araeng",en:"Amh Araeng",fr:"Amh Araeng",ja:"アム・アレーン",ko:"아므 아랭"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:108},816:{exVersion:3,name:{cn:"伊尔美格",de:"Il Mheg",en:"Il Mheg",fr:"Il Mheg",ja:"イル・メグ",ko:"일 메그"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:109},817:{exVersion:3,name:{cn:"拉凯提卡大森林",de:"Der Große Wald Rak'tika",en:"The Rak'tika Greatwood",fr:"Rak'tika",ja:"ラケティカ大森林",ko:"라케티카 대삼림"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:110},818:{exVersion:3,name:{cn:"黑风海",de:"Tempest",en:"The Tempest",fr:"La Tempête",ja:"テンペスト",ko:"템페스트"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:111},819:{exVersion:3,name:{cn:"水晶都",de:"Crystarium",en:"The Crystarium",fr:"Cristarium",ja:"クリスタリウム",ko:"크리스타리움"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:112},820:{exVersion:3,name:{cn:"游末邦",de:"Eulmore",en:"Eulmore",fr:"Eulmore",ja:"ユールモア",ko:"율모어"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:113},821:{contentType:2,exVersion:3,name:{cn:"水妖幻园多恩美格禁园",de:"Dohn Mheg",en:"Dohn Mheg",fr:"Dohn Mheg",ja:"水妖幻園 ドォーヌ・メグ",ko:"도느 메그"},offsetX:0,offsetY:200,sizeFactor:200,weatherRate:0},822:{contentType:2,exVersion:3,name:{cn:"伪造天界格鲁格火山",de:"Der Gulg",en:"Mt. Gulg",fr:"Mont Gulg",ja:"偽造天界 グルグ火山",ko:"굴그 화산"},offsetX:-188,offsetY:0,sizeFactor:200,weatherRate:102},823:{contentType:2,exVersion:3,name:{cn:"文明古迹奇坦那神影洞",de:"Irrungen der Qitari",en:"The Qitana Ravel",fr:"L'Enchevêtrement des Qitari",ja:"古跡探索 キタンナ神影洞",ko:"키타나 신굴"},offsetX:0,offsetY:-274,sizeFactor:200,weatherRate:102},824:{contentType:4,exVersion:2,name:{cn:"青龙镇魂战",de:"Seelentanz - Seiryu",en:"The Wreath of Snakes",fr:"L'Îlot des Amertumes",ja:"青龍征魂戦",ko:"청룡 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:99},825:{contentType:4,exVersion:2,name:{cn:"青龙诗魂战",de:"Seelensturm - Seiryu",en:"The Wreath of Snakes (Extreme)",fr:"L'Îlot des Amertumes (extrême)",ja:"極青龍征魂戦",ko:"극 청룡 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:99},826:{contentType:5,exVersion:2,name:{cn:"乐欲之所瓯博讷修道院",de:"Kloster von Orbonne",en:"The Orbonne Monastery",fr:"Le Monastère d'Orbonne",ja:"楽欲の僧院 オーボンヌ",ko:"오본느 수도원"},offsetX:-545,offsetY:-663,sizeFactor:200,weatherRate:0},827:{contentType:26,exVersion:2,name:{cn:"禁地优雷卡 丰水之地",de:"Eureka Hydatos",en:"The Forbidden Land, Eureka Hydatos",fr:"Eurêka Hydatos",ja:"禁断の地 エウレカ：ヒュダトス編",ko:"금단의 땅 에우레카: 히다토스편"},offsetX:0,offsetY:475,sizeFactor:100,weatherRate:100},830:{contentType:7,exVersion:2,name:{cn:"英雄挽歌",de:"Requiem der Helden",en:"A Requiem for Heroes",fr:"Un requiem pour les héros",ja:"英雄への鎮魂歌",ko:"영웅을 위한 진혼가"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},831:{contentType:19,exVersion:0,name:{cn:"多玛方城战：东风战4人亲友桌（不带食断）",de:"4-Spieler-Mahjong (schnelle Partie, Kuitan deaktiviert)",en:"Four-player Mahjong (Quick Match, Kuitan Disabled)",fr:"Mahjong domien : 4 joueurs (partie rapide sans kuitan)",ja:"ドマ式麻雀：東風戦4人セット卓（クイタン無し）",ko:"작패유희: 동풍전 4인용 탁자(부르기 단요구 없음)"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},832:{contentType:19,exVersion:0,name:{cn:"空军装甲驾驶员",de:"Luftwaffe, Feuer frei!",en:"Air Force One",fr:"As de l'air",ja:"出撃！ エアフォースパイロット",ko:"출격! 에어포스 조종사"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},834:{contentType:7,exVersion:0,name:{cn:"风之使者",de:"Durch den Sturm und zurück",en:"Messenger of the Winds",fr:"La Messagère du vent",ja:"来訪せし風の御使",ko:"바람의 어사"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:101},836:{contentType:2,exVersion:3,name:{cn:"避暑离宫马利卡大井",de:"Malikahs Brunnen",en:"Malikah's Well",fr:"Le Puits de Malikah",ja:"爽涼離宮 マリカの大井戸",ko:"말리카 큰우물"},offsetX:-65,offsetY:-30,sizeFactor:200,weatherRate:102},837:{contentType:2,exVersion:3,name:{cn:"遇袭集落水滩村",de:"Holminster",en:"Holminster Switch",fr:"Holminster",ja:"殺戮郷村 ホルミンスター",ko:"홀민스터"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:102},838:{contentType:2,exVersion:3,name:{cn:"末日暗影亚马乌罗提",de:"Amaurot",en:"Amaurot",fr:"Amaurote",ja:"終末幻想 アーモロート",ko:"아모로트"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:105},840:{contentType:2,exVersion:3,name:{cn:"异界遗构希尔科斯孪晶塔",de:"Der Kristallzwilling",en:"The Twinning",fr:"La Macle de Syrcus",ja:"異界遺構 シルクス・ツイニング",ko:"쌍둥이 시르쿠스"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},841:{contentType:2,exVersion:3,name:{cn:"创造机构阿尼德罗学院",de:"Akadaemia Anyder",en:"Akadaemia Anyder",fr:"Akadaemia Anydre",ja:"創造機関 アナイダアカデミア",ko:"애나이더 아카데미아"},offsetX:0,offsetY:30,sizeFactor:200,weatherRate:0},845:{contentType:4,exVersion:3,name:{cn:"缇坦妮雅歼灭战",de:"Offenbarung - Titania",en:"The Dancing Plague",fr:"La Valse du Monarque",ja:"ティターニア討滅戦",ko:"티타니아 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:103},846:{contentType:4,exVersion:3,name:{cn:"无瑕灵君歼灭战",de:"Offenbarung - Innozenz",en:"The Crown of the Immaculate",fr:"La Couronne de l'Immaculé",ja:"イノセンス討滅戦",ko:"이노센스 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:104},847:{contentType:4,exVersion:3,name:{cn:"哈迪斯歼灭战",de:"Offenbarung - Hades",en:"The Dying Gasp",fr:"Le Râle de l'Agonie",ja:"ハーデス討滅戦",ko:"하데스 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:105},848:{contentType:4,exVersion:3,name:{cn:"无瑕灵君歼殛战",de:"Letzte Läuterung - Innozenz",en:"The Crown of the Immaculate (Extreme)",fr:"La Couronne de l'Immaculé (extrême)",ja:"極イノセンス討滅戦",ko:"극 이노센스 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:104},849:{contentType:5,exVersion:3,name:{cn:"伊甸希望乐园 觉醒之章1",de:"Edens Erwachen - Auferstehung",en:"Eden's Gate: Resurrection",fr:"L'Éveil d'Éden - Résurrection",ja:"希望の園エデン：覚醒編1",ko:"희망의 낙원 에덴: 각성편 1"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},850:{contentType:5,exVersion:3,name:{cn:"伊甸希望乐园 觉醒之章2",de:"Edens Erwachen - Niederkunft",en:"Eden's Gate: Descent",fr:"L'Éveil d'Éden - Descente",ja:"希望の園エデン：覚醒編2",ko:"희망의 낙원 에덴: 각성편 2"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},851:{contentType:5,exVersion:3,name:{cn:"伊甸希望乐园 觉醒之章3",de:"Edens Erwachen - Überflutung",en:"Eden's Gate: Inundation",fr:"L'Éveil d'Éden - Déluge",ja:"希望の園エデン：覚醒編3",ko:"희망의 낙원 에덴: 각성편 3"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:38},852:{contentType:5,exVersion:3,name:{cn:"伊甸希望乐园 觉醒之章4",de:"Edens Erwachen - Beerdigung",en:"Eden's Gate: Sepulture",fr:"L'Éveil d'Éden - Inhumation",ja:"希望の園エデン：覚醒編4",ko:"희망의 낙원 에덴: 각성편 4"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:23},853:{contentType:5,exVersion:3,name:{cn:"伊甸零式希望乐园 觉醒之章1",de:"Edens Erwachen - Auferstehung (episch)",en:"Eden's Gate: Resurrection (Savage)",fr:"L'Éveil d'Éden - Résurrection (sadique)",ja:"希望の園エデン零式：覚醒編1",ko:"희망의 낙원 에덴: 각성편(영웅) 1"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},854:{contentType:5,exVersion:3,name:{cn:"伊甸零式希望乐园 觉醒之章2",de:"Edens Erwachen - Niederkunft (episch)",en:"Eden's Gate: Descent (Savage)",fr:"L'Éveil d'Éden - Descente (sadique)",ja:"希望の園エデン零式：覚醒編2",ko:"희망의 낙원 에덴: 각성편(영웅) 2"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},855:{contentType:5,exVersion:3,name:{cn:"伊甸零式希望乐园 觉醒之章3",de:"Edens Erwachen - Überflutung (episch)",en:"Eden's Gate: Inundation (Savage)",fr:"L'Éveil d'Éden - Déluge (sadique)",ja:"希望の園エデン零式：覚醒編3",ko:"희망의 낙원 에덴: 각성편(영웅) 3"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:38},856:{contentType:5,exVersion:3,name:{cn:"伊甸零式希望乐园 觉醒之章4",de:"Edens Erwachen - Beerdigung (episch)",en:"Eden's Gate: Sepulture (Savage)",fr:"L'Éveil d'Éden - Inhumation (sadique)",ja:"希望の園エデン零式：覚醒編4",ko:"희망의 낙원 에덴: 각성편(영웅) 4"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:23},858:{contentType:4,exVersion:3,name:{cn:"缇坦妮雅歼殛战",de:"Letzte Läuterung - Titania",en:"The Dancing Plague (Extreme)",fr:"La Valse du Monarque (extrême)",ja:"極ティターニア討滅戦",ko:"극 티타니아 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:103},859:{contentType:7,exVersion:3,name:{cn:"机关、诅咒、剧毒与……",de:"Der Beichtstuhl von Toupasa dem Älteren",en:"Legend of the Not-so-hidden Temple",fr:"Le Confessionnal de Toupasa l'ancien",ja:"仕掛けと呪いと毒と",ko:"함정과 저주와 독"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:102},860:{contentType:7,exVersion:3,name:{cn:"废都拿巴示艾兰",de:"Vater und Bruder",en:"Coming Clean",fr:"Sur les rails de Nabaath Areng",ja:"廃都ナバスアレン",ko:"나바스아렝 폐허"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:102},873:{contentType:7,exVersion:3,name:{cn:"摇摆的天平",de:"Ob Mitleid oder Hass",en:"The Hardened Heart",fr:"Naissance d'un bourreau",ja:"揺れる天秤",ko:"흔들리는 천칭"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},874:{contentType:7,exVersion:3,name:{cn:"古代大再生魔法",de:"Alter Zauber",en:"The Lost and the Found",fr:"Magie ancestrale",ja:"古の大再生魔法",ko:"고대의 대재생 마법"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:110},875:{contentType:7,exVersion:3,name:{cn:"勇敢的猎人",de:"Der Legende auf der Spur",en:"The Hunter's Legacy",fr:"La chasseuse de légende",ja:"勇気の狩人",ko:"용기 있는 사냥꾼"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:63},876:{contentType:7,exVersion:3,name:{cn:"奈贝尔特的后悔",de:"Ein großes Opfer",en:"Nyelbert's Lament",fr:"Une cupidité bien généreuse",ja:"ナイルベルトの後悔",ko:"나일베르트의 후회"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},879:{contentType:9,exVersion:3,name:{cn:"梦羽宝境",de:"Verliese von Lyhe Ghiah",en:"The Dungeons of Lyhe Ghiah",fr:"Le Donjon hypogéen du Lyhe Ghiah",ja:"宝物庫 リェー・ギア・ダンジョン",ko:"보물고 리예 기아 지하미궁"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},882:{contentType:5,exVersion:3,name:{cn:"复制工厂废墟",de:"Die kopierte Fabrik",en:"The Copied Factory",fr:"La réplique de l'usine désaffectée",ja:"複製サレタ工場廃墟",ko:"복제된 공장 폐허"},offsetX:610,offsetY:70,sizeFactor:200,weatherRate:0},884:{contentType:2,exVersion:3,name:{cn:"魔法宫殿宇宙宫",de:"Chateau Cosmea",en:"The Grand Cosmos",fr:"Le Cosmos coruscant",ja:"魔法宮殿 グラン・コスモス",ko:"그랑 코스모스"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},885:{contentType:4,exVersion:3,name:{cn:"哈迪斯孤念歼灭战",de:"Letzte Läuterung - Hades",en:"The Minstrel's Ballad: Hades's Elegy",fr:"Le Râle de l'Agonie (extrême)",ja:"極ハーデス討滅戦",ko:"극 하데스 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:105},887:{contentType:28,exVersion:3,name:{cn:"亚历山大绝境战",de:"Alexander (fatal)",en:"The Epic of Alexander (Ultimate)",fr:"L'Odyssée d'Alexander (fatal)",ja:"絶アレキサンダー討滅戦",ko:"절 알렉산더 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},888:{contentType:6,exVersion:0,name:{cn:"昂萨哈凯尔（竞争战）",de:"Onsal Hakair (Danshig Naadam)",en:"Onsal Hakair (Danshig Naadam)",fr:"Onsal Hakair (Danshig Naadam)",ja:"オンサル・ハカイル (終節戦)",ko:"온살 하카이르(계절끝 합전)"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:117},893:{contentType:7,exVersion:3,name:{cn:"纯白誓约、漆黑密约",de:"Der Wolf und der Drachenreiter",en:"Vows of Virtue, Deeds of Cruelty",fr:"Vœux de vertu, actes de cruauté",ja:"白き誓約、黒き密約",ko:"하얀 서약, 검은 밀약"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},894:{contentType:7,exVersion:3,name:{cn:"我心依旧",de:"Trubel im Traumland",en:"As the Heart Bids",fr:"À l'écoute de soi",ja:"この心が望むがままに",ko:"이 마음이 원하는 대로"},offsetX:-12,offsetY:50,sizeFactor:400,weatherRate:40},897:{contentType:4,exVersion:3,name:{cn:"红宝石神兵破坏作战",de:"Rubinfeuer - Entfesselung",en:"Cinder Drift",fr:"Les Nuées de Brandons",ja:"ルビーウェポン破壊作戦",ko:"루비 웨폰 파괴작전"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:28},898:{contentType:2,exVersion:3,name:{cn:"黑风海底阿尼德罗追忆馆",de:"Anamnesis Anyder",en:"Anamnesis Anyder",fr:"Anamnesis Anydre",ja:"黒風海底 アニドラス・アナムネーシス",ko:"애니드라스 아남네시스"},offsetX:100,offsetY:-390,sizeFactor:200,weatherRate:0},900:{contentType:16,exVersion:0,name:{cn:"出海垂钓",de:"Auf großer Fahrt",en:"Ocean Fishing",fr:"Pêche en mer",ja:"オーシャンフィッシング",ko:"먼바다 낚시"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:14},902:{contentType:5,exVersion:3,name:{cn:"伊甸希望乐园 共鸣之章1",de:"Edens Resonanz - Entladung",en:"Eden's Verse: Fulmination",fr:"Les Accords d'Éden - Fulmination",ja:"希望の園エデン：共鳴編1",ko:"희망의 낙원 에덴: 공명편 1"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},903:{contentType:5,exVersion:3,name:{cn:"伊甸希望乐园 共鸣之章2",de:"Edens Resonanz - Raserei",en:"Eden's Verse: Furor",fr:"Les Accords d'Éden - Fureur",ja:"希望の園エデン：共鳴編2",ko:"희망의 낙원 에덴: 공명편 2"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},904:{contentType:5,exVersion:3,name:{cn:"伊甸希望乐园 共鸣之章3",de:"Edens Resonanz - Bildersturm",en:"Eden's Verse: Iconoclasm",fr:"Les Accords d'Éden - Iconoclasme",ja:"希望の園エデン：共鳴編3",ko:"희망의 낙원 에덴: 공명편 3"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},905:{contentType:5,exVersion:3,name:{cn:"伊甸希望乐园 共鸣之章4",de:"Edens Resonanz - Erstarrung",en:"Eden's Verse: Refulgence",fr:"Les Accords d'Éden - Éclat",ja:"希望の園エデン：共鳴編4",ko:"희망의 낙원 에덴: 공명편 4"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:46},906:{contentType:5,exVersion:3,name:{cn:"伊甸零式希望乐园 共鸣之章1",de:"Edens Resonanz - Entladung (episch)",en:"Eden's Verse: Fulmination (Savage)",fr:"Les Accords d'Éden - Fulmination (sadique)",ja:"希望の園エデン零式：共鳴編1",ko:"희망의 낙원 에덴: 공명편(영웅) 1"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},907:{contentType:5,exVersion:3,name:{cn:"伊甸零式希望乐园 共鸣之章2",de:"Edens Resonanz - Raserei (episch)",en:"Eden's Verse: Furor (Savage)",fr:"Les Accords d'Éden - Fureur (sadique)",ja:"希望の園エデン零式：共鳴編2",ko:"희망의 낙원 에덴: 공명편(영웅) 2"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},908:{contentType:5,exVersion:3,name:{cn:"伊甸零式希望乐园 共鸣之章3",de:"Edens Resonanz - Bildersturm (episch)",en:"Eden's Verse: Iconoclasm (Savage)",fr:"Les Accords d'Éden - Iconoclasme (sadique)",ja:"希望の園エデン零式：共鳴編3",ko:"희망의 낙원 에덴: 공명편(영웅) 3"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},909:{contentType:5,exVersion:3,name:{cn:"伊甸零式希望乐园 共鸣之章4",de:"Edens Resonanz - Erstarrung (episch)",en:"Eden's Verse: Refulgence (Savage)",fr:"Les Accords d'Éden - Éclat (sadique)",ja:"希望の園エデン零式：共鳴編4",ko:"희망의 낙원 에덴: 공명편(영웅) 4"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:46},911:{contentType:7,exVersion:3,name:{cn:"博兹雅堡垒蒸发事件",de:"Der Bozja-Vorfall",en:"The Bozja Incident",fr:"Prélude à la catastrophe",ja:"シタデル・ボズヤ蒸発事変",ko:"보즈야 사건"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:123},912:{contentType:4,exVersion:3,name:{cn:"红宝石神兵狂想作战",de:"Rubinfeuer - Trauma",en:"Cinder Drift (Extreme)",fr:"Les Nuées de Brandons (extrême)",ja:"極ルビーウェポン破壊作戦",ko:"극 루비 웨폰 파괴작전"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:28},913:{contentType:4,exVersion:3,name:{cn:"博兹雅堡垒追忆战",de:"Memoria Misera (extrem)",en:"Memoria Misera (Extreme)",fr:"Memoria Misera (extrême)",ja:"極シタデル・ボズヤ追憶戦",ko:"극 보즈야 추억전"},offsetX:-35,offsetY:683,sizeFactor:400,weatherRate:123},914:{contentType:7,exVersion:3,name:{cn:"英雄无法安息",de:"Von schlafenden Helden",en:"A Sleep Disturbed",fr:"L'épreuve ronka",ja:"汝、英雄の眠り妨げるは",ko:"그대, 영웅의 잠을 방해하는가"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},916:{contentType:2,exVersion:3,name:{cn:"暗影决战诺弗兰特",de:"Schlacht um Norvrandt",en:"The Heroes' Gauntlet",fr:"La Traversée de Norvrandt",ja:"漆黒決戦 ノルヴラント",ko:"노르브란트"},offsetX:626,offsetY:-611,sizeFactor:200,weatherRate:125},917:{contentType:5,exVersion:3,name:{cn:"人偶军事基地",de:"Die Puppenfestung",en:"The Puppets' Bunker",fr:"La base militaire des Pantins",ja:"人形タチノ軍事基地",ko:"인형들의 군사 기지"},offsetX:290,offsetY:-190,sizeFactor:200,weatherRate:0},920:{contentType:29,exVersion:3,name:{cn:"南方博兹雅战线",de:"Bozja-Südfront",en:"The Bozjan Southern Front",fr:"Front sud de Bozja",ja:"南方ボズヤ戦線",ko:"남부 보즈야 전선"},offsetX:-127,offsetY:-424,sizeFactor:100,weatherRate:124},922:{contentType:4,exVersion:3,name:{cn:"光之战士歼灭战",de:"Krieger des Lichts",en:"The Seat of Sacrifice",fr:"Le Trône du Sacrifice",ja:"ウォーリア・オブ・ライト討滅戦",ko:"빛의 전사 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:125},923:{contentType:4,exVersion:3,name:{cn:"光之战士幻耀歼灭战",de:"Krieger des Lichts (extrem)",en:"The Seat of Sacrifice (Extreme)",fr:"Le Trône du Sacrifice (extrême)",ja:"極ウォーリア・オブ・ライト討滅戦",ko:"극 빛의 전사 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:126},924:{contentType:9,exVersion:3,name:{cn:"梦羽宝殿",de:"Das Karussell von Lyhe Ghiah",en:"The Shifting Oubliettes of Lyhe Ghiah",fr:"Le Jardin secret du Lyhe Ghiah",ja:"宝物庫 リェー・ギア・ダンジョン祭殿",ko:"보물고 리예 기아 지하미궁 제전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},925:{contentType:7,exVersion:3,name:{cn:"飞翔吧，前往维尔利特！",de:"Luftangriff auf Werlyt",en:"Sleep Now in Sapphire",fr:"Sur la mer de saphir",ja:"飛べ！ ウェルリトへ ",ko:"날아라! 웰리트를 향하여"},offsetX:15,offsetY:-610,sizeFactor:400,weatherRate:0},929:{contentType:16,exVersion:1,name:{cn:"天上福地云冠群岛",de:"Das Diadem - Erschließung",en:"The Diadem",fr:"Le Diadème",ja:"雲海採集 ディアデム諸島",ko:"디아뎀 제도"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:68},930:{contentType:4,exVersion:3,name:{cn:"希瓦幻巧战",de:"Traumprüfung - Shiva",en:"The Akh Afah Amphitheatre (Unreal)",fr:"L'Amphithéâtre d'Akh Afah (irréel)",ja:"幻シヴァ討滅戦",ko:"환 시바 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:46},932:{contentType:7,exVersion:3,name:{cn:"褪色的记忆",de:"Verblasste Erinnerungen",en:"Faded Memories",fr:"Souvenir périssable",ja:"色あせた記憶",ko:"빛바랜 기억"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:114},933:{contentType:2,exVersion:3,name:{cn:"魔术工房玛托雅工作室",de:"Matoyas Atelier",en:"Matoya's Relict",fr:"L'Atelier abandonné de Matoya",ja:"魔術工房 マトーヤのアトリエ",ko:"마토야의 공방"},offsetX:0,offsetY:-75,sizeFactor:200,weatherRate:0},934:{contentType:4,exVersion:3,name:{cn:"绿宝石神兵破坏作战",de:"Smaragdsturm - Entfesselung",en:"Castrum Marinum",fr:"Castrum Marinum",ja:"エメラルドウェポン破壊作戦",ko:"에메랄드 웨폰 파괴작전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},935:{contentType:4,exVersion:3,name:{cn:"绿宝石神兵狂想作战",de:"Smaragdsturm - Trauma",en:"Castrum Marinum (Extreme)",fr:"Castrum Marinum (extrême)",ja:"極エメラルドウェポン破壊作戦",ko:"극 에메랄드 웨폰 파괴작전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},936:{contentType:29,exVersion:3,name:{cn:"女王古殿",de:"Delubrum Reginae",en:"Delubrum Reginae",fr:"Delubrum Reginae",ja:"グンヒルド・ディルーブラム",ko:"군힐드 사원"},offsetX:0,offsetY:-378,sizeFactor:200,weatherRate:0},937:{contentType:29,exVersion:3,name:{cn:"零式女王古殿",de:"Delubrum Reginae (episch)",en:"Delubrum Reginae (Savage)",fr:"Delubrum Reginae (sadique)",ja:"グンヒルド・ディルーブラム零式",ko:"군힐드 사원(영웅)"},offsetX:0,offsetY:-378,sizeFactor:200,weatherRate:0},938:{contentType:2,exVersion:3,name:{cn:"黄金平原帕戈尔赞草原",de:"Die Goldene Ebene von Paglth'an",en:"Paglth'an",fr:"La grande prairie de Paglth'an",ja:"黄金平原 パガルザン",ko:"파글단"},offsetX:415,offsetY:-110,sizeFactor:200,weatherRate:0},940:{contentType:19,exVersion:0,name:{cn:"九宫幻卡：官方锦标赛",de:"Triple Triad: Manderville-Turnier",en:"Triple Triad Open Tournament",fr:"Tournoi officiel de Triple Triade",ja:"トリプルトライアド：オフィシャルトーナメント",ko:"트리플 트라이어드: 공식 토너먼트"},offsetX:0,offsetY:0,sizeFactor:800,weatherRate:0},941:{contentType:19,exVersion:0,name:{cn:"九宫幻卡：锦标赛对局室",de:"Triple Triad: Privatturnier",en:"Triple Triad Invitational Parlor",fr:"Salle de tournoi libre de Triple Triade",ja:"トリプルトライアド：カスタムトーナメントルーム",ko:"트리플 트라이어드: 친선 토너먼트"},offsetX:0,offsetY:0,sizeFactor:800,weatherRate:0},942:{contentType:5,exVersion:3,name:{cn:"伊甸希望乐园 再生之章1",de:"Edens Verheißung - Umbra",en:"Eden's Promise: Umbra",fr:"La Promesse d'Éden - Nuée",ja:"希望の園エデン：再生編1",ko:"희망의 낙원 에덴: 재생편 1"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},943:{contentType:5,exVersion:3,name:{cn:"伊甸希望乐园 再生之章2",de:"Edens Verheißung - Litanei",en:"Eden's Promise: Litany",fr:"La Promesse d'Éden - Litanie",ja:"希望の園エデン：再生編2",ko:"희망의 낙원 에덴: 재생편 2"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},944:{contentType:5,exVersion:3,name:{cn:"伊甸希望乐园 再生之章3",de:"Edens Verheißung - Anamorphose",en:"Eden's Promise: Anamorphosis",fr:"La Promesse d'Éden - Anamorphose",ja:"希望の園エデン：再生編3",ko:"희망의 낙원 에덴: 재생편 3"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},945:{contentType:5,exVersion:3,name:{cn:"伊甸希望乐园 再生之章4",de:"Edens Verheißung - Ewigkeit",en:"Eden's Promise: Eternity",fr:"La Promesse d'Éden - Éternité",ja:"希望の園エデン：再生編4",ko:"희망의 낙원 에덴: 재생편 4"},offsetX:-71,offsetY:23,sizeFactor:400,weatherRate:0},946:{contentType:5,exVersion:3,name:{cn:"伊甸零式希望乐园 再生之章1",de:"Edens Verheißung - Umbra (episch)",en:"Eden's Promise: Umbra (Savage)",fr:"La Promesse d'Éden - Nuée (sadique)",ja:"希望の園エデン零式：再生編1",ko:"희망의 낙원 에덴: 재생편(영웅) 1"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},947:{contentType:5,exVersion:3,name:{cn:"伊甸零式希望乐园 再生之章2",de:"Edens Verheißung - Litanei (episch)",en:"Eden's Promise: Litany (Savage)",fr:"La Promesse d'Éden - Litanie (sadique)",ja:"希望の園エデン零式：再生編2",ko:"희망의 낙원 에덴: 재생편(영웅) 2"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},948:{contentType:5,exVersion:3,name:{cn:"伊甸零式希望乐园 再生之章3",de:"Edens Verheißung - Anamorphose (episch)",en:"Eden's Promise: Anamorphosis (Savage)",fr:"La Promesse d'Éden - Anamorphose (sadique)",ja:"希望の園エデン零式：再生編3",ko:"희망의 낙원 에덴: 재생편(영웅) 3"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},949:{contentType:5,exVersion:3,name:{cn:"伊甸零式希望乐园 再生之章4",de:"Edens Verheißung - Ewigkeit (episch)",en:"Eden's Promise: Eternity (Savage)",fr:"La Promesse d'Éden - Éternité (sadique)",ja:"希望の園エデン零式：再生編4",ko:"희망의 낙원 에덴: 재생편(영웅) 4"},offsetX:0,offsetY:75,sizeFactor:400,weatherRate:0},950:{contentType:4,exVersion:3,name:{cn:"钻石神兵捕获作战",de:"Diamantblitz - Entfesselung",en:"The Cloud Deck",fr:"Le Tillac des Cirrus",ja:"ダイヤウェポン捕獲作戦",ko:"다이아몬드 웨폰 포획작전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},951:{contentType:4,exVersion:3,name:{cn:"钻石神兵狂想作战",de:"Diamantblitz - Trauma",en:"The Cloud Deck (Extreme)",fr:"Le Tillac des Cirrus (extrême)",ja:"極ダイヤウェポン捕獲作戦",ko:"극 다이아몬드 웨폰 포획작전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},952:{contentType:2,exVersion:4,name:{cn:"异形楼阁佐特塔",de:"Der Turm von Zot",en:"The Tower of Zot",fr:"La tour de Zott",ja:"異形楼閣 ゾットの塔",ko:"조트 탑"},offsetX:-50,offsetY:-50,sizeFactor:200,weatherRate:0},953:{contentType:4,exVersion:3,name:{cn:"泰坦幻巧战",de:"Traumprüfung - Titan",en:"The Navel (Unreal)",fr:"Le Nombril (irréel)",ja:"幻タイタン討滅戦",ko:"환 타이탄 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:23},954:{contentType:7,exVersion:3,name:{cn:"威尔布兰德扬帆起航",de:"Gute Winde für Vylbrand",en:"The Great Ship Vylbrand",fr:"Un navire nommé Vylbrand",ja:"バイルブランドの船出",ko:"바일브랜드 출항"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:23},955:{contentType:7,exVersion:3,name:{cn:"神佑女王",de:"Hinab in die Ruinen",en:"Fit for a Queen",fr:"Que les Dieux gardent la Reine",ja:"ゴッド・セイブ・ザ・クイーン",ko:"갓 세이브 더 퀸"},offsetX:0,offsetY:-750,sizeFactor:200,weatherRate:0},956:{exVersion:4,name:{cn:"迷津",de:"Labyrinthos",en:"Labyrinthos",fr:"Le Labyrinthos",ja:"ラヴィリンソス",ko:"라비린토스"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:131},957:{exVersion:4,name:{cn:"萨维奈岛",de:"Thavnair",en:"Thavnair",fr:"Thavnair",ja:"サベネア島",ko:"사베네어 섬"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:132},958:{exVersion:4,name:{cn:"加雷马",de:"Garlemald",en:"Garlemald",fr:"Garlemald",ja:"ガレマルド",ko:"갈레말드"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:133},959:{exVersion:4,name:{cn:"叹息海",de:"Mare Lamentorum",en:"Mare Lamentorum",fr:"Mare Lamentorum",ja:"嘆きの海",ko:"비탄의 바다"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:135},960:{exVersion:4,name:{cn:"天外天垓",de:"Ultima Thule",en:"Ultima Thule",fr:"Ultima Thulé",ja:"ウルティマ・トゥーレ",ko:"울티마 툴레"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:136},961:{exVersion:4,name:{cn:"厄尔庇斯",de:"Elpis",en:"Elpis",fr:"Elpis",ja:"エルピス",ko:"엘피스"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:134},962:{exVersion:4,name:{cn:"旧萨雷安",de:"Alt-Sharlayan",en:"Old Sharlayan",fr:"Vieille Sharlayan",ja:"オールド・シャーレアン",ko:"올드 샬레이안"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:137},963:{exVersion:4,name:{cn:"拉札罕",de:"Radz-at-Han",en:"Radz-at-Han",fr:"Radz-at-Han",ja:"ラザハン",ko:"라자한"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:138},966:{contentType:5,exVersion:3,name:{cn:"希望之炮台：“塔”",de:"Der Turm, Paradigmenbrecher",en:"The Tower at Paradigm's Breach",fr:"La tour de la Contingence",ja:"希望ノ砲台：「塔」",ko:"희망의 포대: '탑'"},offsetX:808,offsetY:-772,sizeFactor:200,weatherRate:0},968:{contentType:28,exVersion:4,name:{cn:"幻想龙诗绝境战",de:"Drachenkrieg (fatal)",en:"Dragonsong's Reprise (Ultimate)",fr:"La Guerre du chant des dragons (fatal)",ja:"絶竜詩戦争",ko:"절 용시전쟁"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},969:{contentType:2,exVersion:4,name:{cn:"魔导神门巴别塔",de:"Der Turm von Babil",en:"The Tower of Babil",fr:"La tour de Babil",ja:"魔導神門 バブイルの塔",ko:"바브일 탑"},offsetX:270,offsetY:-300,sizeFactor:200,weatherRate:28},970:{contentType:2,exVersion:4,name:{cn:"末日树海万相森国",de:"Vanaspati",en:"Vanaspati",fr:"Vanaspati",ja:"終末樹海 ヴァナスパティ",ko:"바나스파티"},offsetX:280,offsetY:8,sizeFactor:200,weatherRate:141},972:{contentType:4,exVersion:3,name:{cn:"利维亚桑幻巧战",de:"Traumprüfung - Leviathan",en:"The <Emphasis>Whorleater</Emphasis> (Unreal)",fr:"Le Briseur de marées (irréel)",ja:"幻リヴァイアサン討滅戦",ko:"환 리바이어선 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:38},973:{contentType:2,exVersion:4,name:{cn:"最终幻想末世终迹",de:"Das Sternengrab",en:"The Dead Ends",fr:"L'Issue aux Impasses",ja:"最終幻想 レムナント",ko:"잔해별"},offsetX:-310,offsetY:15,sizeFactor:200,weatherRate:144},974:{contentType:2,exVersion:4,name:{cn:"创造环境极北造物院",de:"Ktisis Hyperboreia",en:"Ktisis Hyperboreia",fr:"L'Hyperborée",ja:"創造環境 ヒュペルボレア造物院",ko:"휘페르보레아 조물원"},offsetX:40,offsetY:-150,sizeFactor:200,weatherRate:0},975:{contentType:29,exVersion:3,name:{cn:"扎杜诺尔高原",de:"Zadnor-Hochebene",en:"Zadnor",fr:"Hauts plateaux de Zadnor",ja:"ザトゥノル高原",ko:"자트노르 고원"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:130},976:{contentType:2,exVersion:4,name:{cn:"乐园都市笑笑镇",de:"Smileton",en:"Smileton",fr:"Risette-sur-lune",ja:"楽園都市 スマイルトン",ko:"스마일턴"},offsetX:-22,offsetY:-42,sizeFactor:200,weatherRate:0},977:{contentType:7,exVersion:3,name:{cn:"死斗至黎明",de:"Kampf im Morgengrauen",en:"Death Unto Dawn",fr:"Aube meurtrière",ja:"黎明の死闘",ko:"여명의 사투"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:114},978:{contentType:2,exVersion:4,name:{cn:"星海深幽寻因星晶镜",de:"Das Aitiaskop",en:"The Aitiascope",fr:"Le Prisme de l'Aitia",ja:"星海潜航 アイティオン星晶鏡",ko:"아이티온 별현미경"},offsetX:8,offsetY:-501,sizeFactor:200,weatherRate:0},986:{contentType:2,exVersion:4,name:{cn:"电脑梦境斯提格玛四",de:"Stigma-Holometrie",en:"The Stigma Dreamscape",fr:"Rêve électrique de Stigma-4",ja:"電脳夢想 スティグマ・フォー",ko:"스티그마-4"},offsetX:144,offsetY:-14,sizeFactor:200,weatherRate:140},992:{contentType:4,exVersion:4,name:{cn:"佐迪亚克歼灭战",de:"Prophetie - Zodiark",en:"The Dark Inside",fr:"Le Cratère des Martyrs",ja:"ゾディアーク討滅戦",ko:"조디아크 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:139},993:{contentType:4,exVersion:4,name:{cn:"佐迪亚克暝暗歼灭战",de:"Eschatos - Zodiark",en:"The Minstrel's Ballad: Zodiark's Fall",fr:"Le Cratère des Martyrs (extrême)",ja:"極ゾディアーク討滅戦",ko:"극 조디아크 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:139},994:{contentType:22,exVersion:0,name:{cn:"滑稽灵殿闹鬼盛宴",de:"Lustiges Bankett",en:"The Phantoms' Feast",fr:"Le banquet cauchemardesque",ja:"道化饗宴 ホーンテッドフィースト",ko:"유령의 연회"},offsetX:20,offsetY:10,sizeFactor:200,weatherRate:0},995:{contentType:4,exVersion:4,name:{cn:"海德林歼灭战",de:"Prophetie - Hydaelyn",en:"The Mothercrystal",fr:"Le Cristal-mère",ja:"ハイデリン討滅戦",ko:"하이델린 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:139},996:{contentType:4,exVersion:4,name:{cn:"海德林晖光歼灭战",de:"Eschatos - Hydaelyn",en:"The Minstrel's Ballad: Hydaelyn's Call",fr:"Le Cristal-mère (extrême)",ja:"極ハイデリン討滅戦",ko:"극 하이델린 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:139},997:{contentType:4,exVersion:4,name:{cn:"终结之战",de:"Prophetie - Endsängerin",en:"The Final Day",fr:"Le Répons final",ja:"終焉の戦い",ko:"종언의 결전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:116},998:{contentType:4,exVersion:4,name:{cn:"终极之战",de:"Eschatos - Endsängerin",en:"The Minstrel's Ballad: Endsinger's Aria",fr:"Le Répons final (extrême)",ja:"終極の戦い",ko:"종극의 결전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:146},1e3:{contentType:9,exVersion:4,name:{cn:"惊奇百宝城",de:"Euphoratron",en:"The Excitatron 6000",fr:"Le Ludodrome",ja:"宝物庫 エキサイトロン",ko:"보물고 익사이트론"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},1002:{contentType:5,exVersion:4,name:{cn:"万魔殿 边境之狱1",de:"Asphodelos - Erster Kreis",en:"Asphodelos: The First Circle",fr:"Les Limbes du Pandæmonium - Parvis",ja:"万魔殿パンデモニウム：辺獄編1",ko:"마의 전당 판데모니움: 변옥편 1"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1003:{contentType:5,exVersion:4,name:{cn:"零式万魔殿 边境之狱1",de:"Asphodelos - Erster Kreis (episch)",en:"Asphodelos: The First Circle (Savage)",fr:"Les Limbes du Pandæmonium - Parvis (sadique)",ja:"万魔殿パンデモニウム零式：辺獄編1",ko:"마의 전당 판데모니움: 변옥편(영웅) 1"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1004:{contentType:5,exVersion:4,name:{cn:"万魔殿 边境之狱2",de:"Asphodelos - Zweiter Kreis",en:"Asphodelos: The Second Circle",fr:"Les Limbes du Pandæmonium - Cloaque",ja:"万魔殿パンデモニウム：辺獄編2",ko:"마의 전당 판데모니움: 변옥편 2"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1005:{contentType:5,exVersion:4,name:{cn:"零式万魔殿 边境之狱2",de:"Asphodelos - Zweiter Kreis (episch)",en:"Asphodelos: The Second Circle (Savage)",fr:"Les Limbes du Pandæmonium - Cloaque (sadique)",ja:"万魔殿パンデモニウム零式：辺獄編2",ko:"마의 전당 판데모니움: 변옥편(영웅) 2"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1006:{contentType:5,exVersion:4,name:{cn:"万魔殿 边境之狱3",de:"Asphodelos - Dritter Kreis",en:"Asphodelos: The Third Circle",fr:"Les Limbes du Pandæmonium - Fournaise",ja:"万魔殿パンデモニウム：辺獄編3",ko:"마의 전당 판데모니움: 변옥편 3"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1007:{contentType:5,exVersion:4,name:{cn:"零式万魔殿 边境之狱3",de:"Asphodelos - Dritter Kreis (episch)",en:"Asphodelos: The Third Circle (Savage)",fr:"Les Limbes du Pandæmonium - Fournaise (sadique)",ja:"万魔殿パンデモニウム零式：辺獄編3",ko:"마의 전당 판데모니움: 변옥편(영웅) 3"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1008:{contentType:5,exVersion:4,name:{cn:"万魔殿 边境之狱4",de:"Asphodelos - Vierter Kreis",en:"Asphodelos: The Fourth Circle",fr:"Les Limbes du Pandæmonium - Abîme",ja:"万魔殿パンデモニウム：辺獄編4",ko:"마의 전당 판데모니움: 변옥편 4"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1009:{contentType:5,exVersion:4,name:{cn:"零式万魔殿 边境之狱4",de:"Asphodelos - Vierter Kreis (episch)",en:"Asphodelos: The Fourth Circle (Savage)",fr:"Les Limbes du Pandæmonium - Abîme (sadique)",ja:"万魔殿パンデモニウム零式：辺獄編4",ko:"마의 전당 판데모니움: 변옥편(영웅) 4"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1010:{contentType:7,exVersion:4,name:{cn:"踏破风雪",de:"Ein frostiger Empfang",en:"A Frosty Reception",fr:"Un accueil glacial",ja:"霜雪を踏みしめて",ko:"눈서리를 밟고"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},1011:{contentType:7,exVersion:4,name:{cn:"无尽寒夜",de:"In fremder Haut",en:"In from the Cold",fr:"Le voleur de corps",ja:"寒夜のこと",ko:"어느 추운 밤에"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:27},1012:{contentType:7,exVersion:4,name:{cn:"扩散的末日",de:"Rote Himmel, roter Schnee",en:"As the Heavens Burn",fr:"L'arène des neiges",ja:"拡がる終末",ko:"퍼져가는 종말"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:141},1013:{contentType:7,exVersion:4,name:{cn:"晓月之终途",de:"Endschreiter",en:"Endwalker",fr:"Arpenteur des finitudes",ja:"暁月のフィナーレ",ko:"효월의 종언"},offsetX:-100,offsetY:-100,sizeFactor:100,weatherRate:143},1014:{contentType:7,exVersion:4,name:{cn:"上一任阿谢姆的教导",de:" Es reimt sich auf Gebell",en:"Worthy of His Back",fr:"Le défi de l'ancienne Azem",ja:"前代アゼムの手ほどき",ko:"선대 아젬과의 대련"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:134},1015:{contentType:7,exVersion:4,name:{cn:"未来之路",de:"Offen für neue Wege",en:"A Path Unveiled",fr:"Des esprits et des hommes",ja:"開かれた道の先へ",ko:"열린 길 저편으로"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:3},1016:{contentType:7,exVersion:4,name:{cn:"驶向融合的巨轮",de:"Im Hafen des Friedens",en:"To Calmer Seas",fr:"Cap sur la paix",ja:"融和への船出",ko:"화합을 향한 출항"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},1017:{contentType:7,exVersion:4,name:{cn:"英魂安息",de:"Domanisches Begräbnis",en:"Laid to Rest",fr:"Des adieux domiens",ja:"ドマの弔い",ko:"도마의 추도"},offsetX:240,offsetY:0,sizeFactor:200,weatherRate:0},1018:{contentType:7,exVersion:4,name:{cn:"仰望苍穹，不断迈进",de:"Der Weg zur Erneuerung",en:"Ever March Heavensward",fr:"La voie du renouveau",ja:"蒼天を仰ぎ、歩み続ける",ko:"창천을 보며 나아가자"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:114},1019:{contentType:7,exVersion:4,name:{cn:"目送生者前行",de:"Trauer und Hoffnung",en:"The Gift of Mercy",fr:"Acceptation",ja:"僕たちは還り、君を見送ろう",ko:"우리는 돌아가 그대를 보내리"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},1020:{contentType:7,exVersion:4,name:{cn:"大镰的意义",de:"Die Bedeutung der Sense",en:"The Harvest Begins",fr:"La vraie puissance de la faux",ja:"大鎌の意味",ko:"큰낫의 의미"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},1021:{contentType:7,exVersion:4,name:{cn:"暗杀道",de:"Die Kunst des Tötens",en:"The Killing Art",fr:"La voie du néant",ja:"暗殺道",ko:"암살의 길"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:42},1022:{contentType:7,exVersion:4,name:{cn:"贤者的短杖",de:"Des Weisen wundersames Werkzeug",en:"Sage's Focus",fr:"Les armes du sage",ja:"賢者の短杖",ko:"현자의 짧은 지팡이"},offsetX:40,offsetY:6,sizeFactor:200,weatherRate:0},1023:{contentType:7,exVersion:4,name:{cn:"生命瞬逝，术道恒久",de:"Das Leben ist kurz, die Kunst ist lang",en:"Life Ephemeral, Path Eternal",fr:"Existences éphémères et savoir éternel",ja:"人命は儚く、術のみちは永久に",ko:"생명은 덧없으나 기술은 영원하리"},offsetX:0,offsetY:0,sizeFactor:95,weatherRate:50},1035:{contentType:4,exVersion:4,name:{cn:"究极神兵幻巧战",de:"Traumprüfung - Ultima",en:"Ultima's Bane (Unreal)",fr:"Le fléau d'Ultima (irréel)",ja:"幻アルテマウェポン破壊作戦"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:31},1036:{contentType:2,exVersion:0,name:{cn:"天然要害沙斯塔夏溶洞",de:"Sastasha",en:"Sastasha",fr:"Sastasha",ja:"天然要害 サスタシャ浸食洞",ko:"사스타샤 침식 동굴"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},1037:{contentType:2,exVersion:0,name:{cn:"地下灵殿塔姆·塔拉墓园",de:"Totenacker Tam-Tara",en:"The Tam–Tara Deepcroft",fr:"L'Hypogée de Tam-Tara",ja:"地下霊殿 タムタラの墓所",ko:"탐타라 묘소"},offsetX:0,offsetY:0,sizeFactor:300,weatherRate:0},1038:{contentType:2,exVersion:0,name:{cn:"封锁坑道铜铃铜山",de:"Kupferglocken-Mine",en:"Copperbell Mines",fr:"Les Mines de Clochecuivre",ja:"封鎖坑道 カッパーベル銅山",ko:"구리종 광산"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},1039:{contentType:2,exVersion:0,name:{cn:"监狱废墟托托·拉克千狱",de:"Tausend Löcher von Toto-Rak",en:"The Thousand Maws of Toto–Rak",fr:"Les Mille Gueules de Toto-Rak",ja:"監獄廃墟 トトラクの千獄",ko:"토토라크 감옥"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},1040:{contentType:2,exVersion:0,name:{cn:"名门府邸静语庄园",de:"Haukke-Herrenhaus",en:"Haukke Manor",fr:"Le Manoir des Haukke",ja:"名門屋敷 ハウケタ御用邸",ko:"하우케타 별궁"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},1041:{contentType:2,exVersion:0,name:{cn:"休养胜地布雷福洛克斯野营地",de:"Brüllvolx' Langrast",en:"Brayflox's Longstop",fr:"Le Bivouac de Brayflox",ja:"奪還支援 ブレイフロクスの野営地",ko:"브레이플록스의 야영지"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},1042:{contentType:2,exVersion:0,name:{cn:"对龙城塞石卫塔",de:"Steinerne Wacht",en:"The Stone Vigil",fr:"Le Vigile de Pierre",ja:"城塞攻略 ストーンヴィジル",ko:"돌방패 경계초소"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:27},1043:{contentType:2,exVersion:0,name:{cn:"神兵要塞帝国南方堡",de:"Castrum Meridianum - Außenbereich",en:"Castrum Meridianum",fr:"Castrum Meridianum",ja:"外郭攻略 カストルム・メリディアヌム",ko:"카스트룸 메리디아눔"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},1044:{contentType:2,exVersion:0,name:{cn:"最终决战天幕魔导城",de:"Castrum Meridianum - Praetorium",en:"The Praetorium",fr:"Le Praetorium",ja:"最終決戦 魔導城プラエトリウム",ko:"마도성 프라이토리움"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},1045:{contentType:4,exVersion:0,name:{cn:"伊弗利特讨伐战",de:"Das Grab der Lohe",en:"The Bowl of Embers",fr:"Le Cratère des tisons",ja:"イフリート討伐戦",ko:"이프리트 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:25},1046:{contentType:4,exVersion:0,name:{cn:"泰坦讨伐战",de:"Der Nabel",en:"The Navel",fr:"Le Nombril",ja:"タイタン討伐戦",ko:"타이탄 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:23},1047:{contentType:4,exVersion:0,name:{cn:"迦楼罗讨伐战",de:"Das Tosende Auge",en:"The Howling Eye",fr:"Hurlœil",ja:"ガルーダ討伐戦",ko:"가루다 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:26},1048:{contentType:4,exVersion:0,name:{cn:"究极神兵破坏作战",de:"Porta Decumana",en:"The Porta Decumana",fr:"Porta Decumana",ja:"アルテマウェポン破壊作戦",ko:"알테마 웨폰 파괴작전"},offsetX:772,offsetY:600,sizeFactor:400,weatherRate:0},1049:{contentType:7,exVersion:0,name:{cn:"里塔提恩强攻战",de:"Kap Westwind",en:"Cape Westwind",fr:"Le Cap Vendouest",ja:"リットアティン強襲戦",ko:"리트아틴 강습전"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},1050:{contentType:2,exVersion:4,name:{cn:"近东秘宝阿尔扎达尔海底遗迹群",de:"Alzadaals Vermächtnis",en:"Alzadaal's Legacy",fr:"Le legs d'Alzadaal",ja:"近東秘宝 アルザダール海底遺跡群",ko:"알자달 해저 유적"},offsetX:15,offsetY:0,sizeFactor:200,weatherRate:0},1051:{contentType:7,exVersion:4,name:{cn:"涅尔瓦的帝国",de:"Nervas Reich",en:"Forlorn Glory",fr:"Nerva, le patriote",ja:"ネルウァの帝国",ko:"네르바의 제국"},offsetX:-230,offsetY:-250,sizeFactor:200,weatherRate:28},1052:{contentType:7,exVersion:0,name:{cn:"拉哈布雷亚讨伐战",de:"Das Antlitz der Kaltblütigkeit",en:"Devastation",fr:"Le Praetorium en flammes",ja:"アシエン・ラハブレア討伐戦",ko:"아씨엔 라하브레아 토벌전"},offsetX:704,offsetY:-480,sizeFactor:400,weatherRate:0},1054:{contentType:5,exVersion:4,name:{cn:"灿烂神域阿格莱亚",de:"Aglaia",en:"Aglaia",fr:"Domaine divin - Aglaé",ja:"輝ける神域 アグライア",ko:"찬란한 신역 아글라이아"},offsetX:-80,offsetY:-550,sizeFactor:200,weatherRate:147},1058:{contentType:6,exVersion:0,name:{cn:"水晶冲突（角力学校：自定赛）",de:"Crystalline Conflict: Die Palästra (Schaukampf)",en:"Crystalline Conflict (Custom Match - The Palaistra)",fr:"Crystalline Conflict (partie personnalisée - Le Palestre)",ja:"クリスタルコンフリクト(パライストラ：カスタムマッチ)",ko:"크리스탈라인 컨플릭트(팔라이스트라: 친선 경기)"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},1059:{contentType:6,exVersion:0,name:{cn:"水晶冲突（火山之心：自定赛）",de:"Crystalline Conflict: Das Herz des Vulkans (Schaukampf)",en:"Crystalline Conflict (Custom Match - The Volcanic Heart)",fr:"Crystalline Conflict (partie personnalisée - Le Cœur volcanique)",ja:"クリスタルコンフリクト(ヴォルカニック・ハート：カスタムマッチ)",ko:"크리스탈라인 컨플릭트(화산심장: 친선 경기)"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},1060:{contentType:6,exVersion:0,name:{cn:"水晶冲突（九霄云上：自定赛）",de:"Crystalline Conflict: Wolke Sieben (Schaukampf)",en:"Crystalline Conflict (Custom Match - Cloud Nine)",fr:"Crystalline Conflict (partie personnalisée - Le Petit Nuage)",ja:"クリスタルコンフリクト(クラウドナイン：カスタムマッチ)",ko:"크리스탈라인 컨플릭트(절정의 구름: 친선 경기)"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},1062:{contentType:2,exVersion:0,name:{cn:"凛冽洞天披雪大冰壁",de:"Das Schneekleid",en:"Snowcloak",fr:"Manteneige",ja:"氷結潜窟 スノークローク大氷壁",ko:"얼음외투 대빙벽"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:42},1063:{contentType:2,exVersion:0,name:{cn:"幻龙残骸密约之塔",de:"Hüter des Sees",en:"The Keeper of the Lake",fr:"Le Gardien du lac",ja:"幻龍残骸 黙約の塔",ko:"묵약의 탑"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:74},1064:{contentType:2,exVersion:1,name:{cn:"天山绝顶索姆阿尔灵峰",de:"Sohm Al",en:"Sohm Al",fr:"Sohm Al",ja:"霊峰踏破 ソーム・アル",ko:"솜 알"},offsetX:185,offsetY:51,sizeFactor:200,weatherRate:0},1065:{contentType:2,exVersion:1,name:{cn:"邪龙王座龙巢神殿",de:"Nest des Drachen",en:"The Aery",fr:"L'Aire",ja:"邪竜血戦 ドラゴンズエアリー",ko:"용의 둥지"},offsetX:-40,offsetY:55,sizeFactor:200,weatherRate:28},1066:{contentType:2,exVersion:1,name:{cn:"圣教中枢伊修加德教皇厅",de:"Erzbasilika",en:"The Vault",fr:"La Voûte",ja:"強硬突入 イシュガルド教皇庁",ko:"이슈가르드 교황청"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},1067:{contentType:4,exVersion:0,name:{cn:"莫古力贤王歼灭战",de:"Königliche Konfrontation (schwer)",en:"Thornmarch (Hard)",fr:"La Lisière de ronces (brutal)",ja:"善王モグル・モグXII世討滅戦",ko:"선왕 모그루 모그 XII세 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:30},1068:{contentType:7,exVersion:0,name:{cn:"皇都伊修加德保卫战",de:"Der Schicksalsweg",en:"The Steps of Faith",fr:"Le Siège de la sainte Cité d'Ishgard",ja:"皇都イシュガルド防衛戦",ko:"성도 이슈가르드 방어전"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:28},1069:{contentType:30,exVersion:4,name:{cn:"多变迷宫 希拉狄哈水道",de:"Die Unterstadt von Sil'dih",en:"The Sil'dihn Subterrane",fr:"Les canalisations sildiennes - Donjon à embranchements",ja:"ヴァリアントダンジョン シラディハ水道",ko:"변형 던전: 실디하 지하수도"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},1070:{contentType:2,exVersion:4,name:{cn:"异界孤城特罗亚宫廷",de:"Der Schwarze Hof von Troia",en:"The Fell Court of Troia",fr:"Le Château de Troïa",ja:"異界孤城 トロイアコート",ko:"트로이아 궁정"},offsetX:-76,offsetY:-180,sizeFactor:200,weatherRate:149},1071:{contentType:4,exVersion:4,name:{cn:"巴尔巴莉希娅歼灭战",de:"Prophetie - Barbarizia",en:"Storm's Crown",fr:"La Toison des tempêtes",ja:"バルバリシア討滅戦",ko:"바르바리차 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:149},1072:{contentType:4,exVersion:4,name:{cn:"巴尔巴莉希娅歼殛战",de:"Eschatos - Barbarizia",en:"Storm's Crown (Extreme)",fr:"La Toison des tempêtes (extrême)",ja:"極バルバリシア討滅戦",ko:"극 바르바리차 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:149},1075:{contentType:30,exVersion:4,name:{cn:"异闻迷宫 异闻希拉狄哈水道",de:"Die kuriose Unterstadt von Sil'dih",en:"Another Sil'dihn Subterrane",fr:"Les canalisations sildiennes annexes - Donjon alternatif",ja:"アナザーダンジョン 異聞シラディハ水道",ko:"파생 던전: 번외 실디하 지하수도"},offsetX:335,offsetY:100,sizeFactor:200,weatherRate:0},1076:{contentType:30,exVersion:4,name:{cn:"异闻迷宫 零式异闻希拉狄哈水道",de:"Die kuriose Unterstadt von Sil'dih (episch)",en:"Another Sil'dihn Subterrane (Savage)",fr:"Les canalisations sildiennes annexes - Donjon alternatif (sadique)",ja:"アナザーダンジョン 異聞シラディハ水道 零式",ko:"파생 던전: 번외 실디하 지하수도(영웅)"},offsetX:335,offsetY:100,sizeFactor:200,weatherRate:0},1081:{contentType:5,exVersion:4,name:{cn:"万魔殿 炼净之狱1",de:"Abyssos - Fünfter Kreis",en:"Abyssos: The Fifth Circle",fr:"Le Purgatoire du Pandæmonium - Cages",ja:"万魔殿パンデモニウム：煉獄編1",ko:"마의 전당 판데모니움: 연옥편 1"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1082:{contentType:5,exVersion:4,name:{cn:"零式万魔殿 炼净之狱1",de:"Abyssos - Fünfter Kreis (episch)",en:"Abyssos: The Fifth Circle (Savage)",fr:"Le Purgatoire du Pandæmonium - Cages (sadique)",ja:"万魔殿パンデモニウム零式：煉獄編1",ko:"마의 전당 판데모니움: 연옥편(영웅) 1"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1083:{contentType:5,exVersion:4,name:{cn:"万魔殿 炼净之狱2",de:"Abyssos - Sechster Kreis",en:"Abyssos: The Sixth Circle",fr:"Le Purgatoire du Pandæmonium - Croisements",ja:"万魔殿パンデモニウム：煉獄編2",ko:"마의 전당 판데모니움: 연옥편 2"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1084:{contentType:5,exVersion:4,name:{cn:"零式万魔殿 炼净之狱2",de:"Abyssos - Sechster Kreis (episch)",en:"Abyssos: The Sixth Circle (Savage)",fr:"Le Purgatoire du Pandæmonium - Croisements (sadique)",ja:"万魔殿パンデモニウム零式：煉獄編2",ko:"마의 전당 판데모니움: 연옥편(영웅) 2"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1085:{contentType:5,exVersion:4,name:{cn:"万魔殿 炼净之狱3",de:"Abyssos - Siebter Kreis",en:"Abyssos: The Seventh Circle",fr:"Le Purgatoire du Pandæmonium - Racines",ja:"万魔殿パンデモニウム：煉獄編3",ko:"마의 전당 판데모니움: 연옥편 3"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1086:{contentType:5,exVersion:4,name:{cn:"零式万魔殿 炼净之狱3",de:"Abyssos - Siebter Kreis (episch)",en:"Abyssos: The Seventh Circle (Savage)",fr:"Le Purgatoire du Pandæmonium - Racines (sadique)",ja:"万魔殿パンデモニウム零式：煉獄編3",ko:"마의 전당 판데모니움: 연옥편(영웅) 3"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1087:{contentType:5,exVersion:4,name:{cn:"万魔殿 炼净之狱4",de:"Abyssos - Achter Kreis",en:"Abyssos: The Eighth Circle",fr:"Le Purgatoire du Pandæmonium - Hérédité",ja:"万魔殿パンデモニウム：煉獄編4",ko:"마의 전당 판데모니움: 연옥편 4"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1088:{contentType:5,exVersion:4,name:{cn:"零式万魔殿 炼净之狱4",de:"Abyssos - Achter Kreis (episch)",en:"Abyssos: The Eighth Circle (Savage)",fr:"Le Purgatoire du Pandæmonium - Hérédité (sadique)",ja:"万魔殿パンデモニウム零式：煉獄編4",ko:"마의 전당 판데모니움: 연옥편(영웅) 4"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1090:{contentType:4,exVersion:4,name:{cn:"萨菲洛特幻巧战",de:"Traumprüfung - Sephirot",en:"Containment Bay S1T7 (Unreal)",fr:"Unité de contention S1P7 (irréel)",ja:"幻魔神セフィロト討滅戦"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:66},1091:{contentType:7,exVersion:4,name:{cn:"失传的力量",de:"Wo alles seinen Anfang nimmt",en:"Where Everything Begins",fr:"Au commencement était Zero",ja:"失われた力",ko:"잃어버린 힘"},offsetX:143,offsetY:-64,sizeFactor:200,weatherRate:149},1095:{contentType:4,exVersion:4,name:{cn:"卢比坎特歼灭战",de:"Prophetie - Rubicante",en:"Mount Ordeals",fr:"Le Mont du Supplice",ja:"ルビカンテ討滅戦",ko:"루비칸테 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},1096:{contentType:4,exVersion:4,name:{cn:"卢比坎特歼殛战",de:"Eschatos - Rubicante",en:"Mount Ordeals (Extreme)",fr:"Le Mont du Supplice (extrême)",ja:"極ルビカンテ討滅戦",ko:"극 루비칸테 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},1097:{contentType:2,exVersion:4,name:{cn:"雪山奥窟冥魂石洞",de:"Lapis Manalis",en:"Lapis Manalis",fr:"Lapis Manalis",ja:"雪山冥洞 ラピス・マナリス",ko:"라피스 마날리스"},offsetX:-46,offsetY:570,sizeFactor:200,weatherRate:42},1099:{contentType:21,exVersion:4,name:{cn:"正统优雷卡 地下1～10层",de:"Eureka Orthos (Ebenen 1-10)",en:"Eureka Orthos (Floors 1-10)",fr:"Eurêka Orthos (sous-sols 1-10)",ja:"オルト・エウレカ B1～B10",ko:"에우레카 오르토스 B1~B10"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},1100:{contentType:21,exVersion:4,name:{cn:"正统优雷卡 地下11～20层",de:"Eureka Orthos (Ebenen 11-20)",en:"Eureka Orthos (Floors 11-20)",fr:"Eurêka Orthos (sous-sols 11-20)",ja:"オルト・エウレカ B11～B20",ko:"에우레카 오르토스 B11~B20"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},1101:{contentType:21,exVersion:4,name:{cn:"正统优雷卡 地下21～30层",de:"Eureka Orthos (Ebenen 21-30)",en:"Eureka Orthos (Floors 21-30)",fr:"Eurêka Orthos (sous-sols 21-30)",ja:"オルト・エウレカ B21～B30",ko:"에우레카 오르토스 B21~B30"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},1102:{contentType:21,exVersion:4,name:{cn:"正统优雷卡 地下31～40层",de:"Eureka Orthos (Ebenen 31-40)",en:"Eureka Orthos (Floors 31-40)",fr:"Eurêka Orthos (sous-sols 31-40)",ja:"オルト・エウレカ B31～B40",ko:"에우레카 오르토스 B31~B40"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},1103:{contentType:21,exVersion:4,name:{cn:"正统优雷卡 地下41～50层",de:"Eureka Orthos (Ebenen 41-50)",en:"Eureka Orthos (Floors 41-50)",fr:"Eurêka Orthos (sous-sols 41-50)",ja:"オルト・エウレカ B41～B50",ko:"에우레카 오르토스 B41~B50"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},1104:{contentType:21,exVersion:4,name:{cn:"正统优雷卡 地下51～60层",de:"Eureka Orthos (Ebenen 51-60)",en:"Eureka Orthos (Floors 51-60)",fr:"Eurêka Orthos (sous-sols 51-60)",ja:"オルト・エウレカ B51～B60",ko:"에우레카 오르토스 B51~B60"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},1105:{contentType:21,exVersion:4,name:{cn:"正统优雷卡 地下61～70层",de:"Eureka Orthos (Ebenen 61-70)",en:"Eureka Orthos (Floors 61-70)",fr:"Eurêka Orthos (sous-sols 61-70)",ja:"オルト・エウレカ B61～B70",ko:"에우레카 오르토스 B61~B70"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},1106:{contentType:21,exVersion:4,name:{cn:"正统优雷卡 地下71～80层",de:"Eureka Orthos (Ebenen 71-80)",en:"Eureka Orthos (Floors 71-80)",fr:"Eurêka Orthos (sous-sols 71-80)",ja:"オルト・エウレカ B71～B80",ko:"에우레카 오르토스 B71~B80"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},1107:{contentType:21,exVersion:4,name:{cn:"正统优雷卡 地下81～90层",de:"Eureka Orthos (Ebenen 81-90)",en:"Eureka Orthos (Floors 81-90)",fr:"Eurêka Orthos (sous-sols 81-90)",ja:"オルト・エウレカ B81～B90",ko:"에우레카 오르토스 B81~B90"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},1108:{contentType:21,exVersion:4,name:{cn:"正统优雷卡 地下91～100层",de:"Eureka Orthos (Ebenen 91-100)",en:"Eureka Orthos (Floors 91-100)",fr:"Eurêka Orthos (sous-sols 91-100)",ja:"オルト・エウレカ B91～B100",ko:"에우레카 오르토스 B91~B100"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},1109:{contentType:2,exVersion:1,name:{cn:"学识宝库迦巴勒幻想图书馆",de:"Große Gubal-Bibliothek",en:"The Great Gubal Library",fr:"La Grande bibliothèque de Gubal",ja:"禁書回収 グブラ幻想図書館",ko:"구브라 환상도서관"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},1110:{contentType:2,exVersion:1,name:{cn:"血战苍穹魔科学研究所",de:"Ätherochemisches For­schungs­labor",en:"The Aetherochemical Research Facility",fr:"Le Laboratoire de magismologie",ja:"蒼天聖戦 魔科学研究所",ko:"마과학 연구소"},offsetX:-18,offsetY:149,sizeFactor:200,weatherRate:0},1111:{contentType:2,exVersion:1,name:{cn:"星海空间颠倒塔",de:"Antiturm",en:"The Antitower",fr:"L'Antitour",ja:"星海観測 逆さの塔",ko:"거꾸로 선 탑"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},1112:{contentType:2,exVersion:1,name:{cn:"天龙宫殿忆罪宫",de:"Sohr Khai",en:"Sohr Khai",fr:"Sohr Khai",ja:"天竜宮殿 ソール・カイ",ko:"소르 카이"},offsetX:370,offsetY:0,sizeFactor:200,weatherRate:0},1113:{contentType:2,exVersion:1,name:{cn:"险峻峡谷塞尔法特尔溪谷",de:"Xelphatol",en:"Xelphatol",fr:"Xelphatol",ja:"峻厳渓谷 ゼルファトル",ko:"젤파톨"},offsetX:-148,offsetY:35,sizeFactor:200,weatherRate:40},1114:{contentType:2,exVersion:1,name:{cn:"坚牢铁壁巴埃萨长城",de:"Baelsar-Wall",en:"Baelsar's Wall",fr:"La Muraille de Baelsar",ja:"巨大防壁 バエサルの長城",ko:"바일사르 장성"},offsetX:182,offsetY:32,sizeFactor:200,weatherRate:40},1115:{contentType:7,exVersion:4,name:{cn:"充满活力的父子",de:"Väterliche Liebe",en:"Generational Bonding",fr:"Tel gentilhomme, tel gentilhomme",ja:"はつらつとした親子",ko:"은밀한 음모"},offsetX:-230,offsetY:-250,sizeFactor:200,weatherRate:28},1116:{contentType:6,exVersion:0,name:{cn:"机关大殿",de:"Die Mechanische Menagerie",en:"The Clockwork Castletown",fr:"Le Traquenard oriental",ja:"東方絡繰御殿",ko:"동방 꼭두각시 어전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},1117:{contentType:6,exVersion:0,name:{cn:"水晶冲突（机关大殿：自定赛）",de:"Crystalline Conflict: Die Mechanische Menagerie (Schaukampf)",en:"Crystalline Conflict (Custom Match - The Clockwork Castletown)",fr:"Crys. Conflict (partie perso. - Le Traquenard oriental)",ja:"クリスタルコンフリクト(東方絡繰御殿：カスタムマッチ)",ko:"크리스탈라인 컨플릭트(동방 꼭두각시 어전: 친선 경기)"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},1118:{contentType:5,exVersion:4,name:{cn:"喜悦神域欧芙洛绪涅",de:"Euphrosyne",en:"Euphrosyne",fr:"Domaine divin - Euphrosyne",ja:"喜びの神域 エウプロシュネ",ko:"환희의 신역 에우프로시네"},offsetX:0,offsetY:480,sizeFactor:200,weatherRate:147},1120:{contentType:7,exVersion:4,name:{cn:"未料想过的交易",de:"Der Wert einer Buuds",en:"An Unforeseen Bargain",fr:"Pour une bouchée de pain",ja:"パンひとつと引き換えに",ko:"빵 하나와 바꾸어"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:58},1121:{contentType:4,exVersion:4,name:{cn:"索菲娅幻巧战",de:"Traumprüfung - Sophia",en:"Containment Bay P1T6 (Unreal)",fr:"Unité de contention P1P6 (irréel)",ja:"幻女神ソフィア討滅戦"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:69},1122:{contentType:28,exVersion:4,name:{cn:"欧米茄绝境验证战",de:"Omega (fatal)",en:"The Omega Protocol (Ultimate)",fr:"Le Protocole Oméga (fatal)",ja:"絶オメガ検証戦",ko:"절 오메가 검증전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:150},1123:{contentType:9,exVersion:4,name:{cn:"厄尔庇斯育体宝殿",de:"Gymnasion Agonon",en:"The Shifting Gymnasion Agonon",fr:"Elpis Gymnasion",ja:"宝物庫 エルピス・ギュムナシオン祭殿",ko:"보물고 엘피스 김나시온 제전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},1126:{contentType:2,exVersion:4,name:{cn:"间歇灵泉哈姆岛",de:"Ätherborn",en:"The Aetherfont",fr:"L'île de Haam",ja:"星霊間欠 ハーム島",ko:"함 섬"},offsetX:368,offsetY:-277,sizeFactor:200,weatherRate:0},1136:{contentType:4,exVersion:4,name:{cn:"阿修罗歼灭战",de:"Prophetie - Asura",en:"The Gilded Araya",fr:"Le temple doré d'Araya",ja:"アスラ討滅戦",ko:"아수라 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:114},1137:{contentType:30,exVersion:4,name:{cn:"多变迷宫 六根山",de:"Der Rokkon",en:"Mount Rokkon",fr:"Le mont Rokkon - Donjon à embranchements",ja:"ヴァリアントダンジョン 六根山",ko:"변형 던전: 육근산"},offsetX:-145,offsetY:-820,sizeFactor:200,weatherRate:0},1138:{contentType:6,exVersion:0,name:{cn:"赤土红沙",de:"Die Roten Sande",en:"The Red Sands",fr:"Les Sables sanglants",ja:"レッド・サンズ",ko:"붉은 사막"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},1139:{contentType:6,exVersion:0,name:{cn:"水晶冲突（赤土红沙：自定赛）",de:"Crystalline Conflict: Die Roten Sande (Schaukampf)",en:"Crystalline Conflict (Custom Match - The Red Sands)",fr:"Crystalline Conflict (partie personnalisée - Les Sables sanglants)",ja:"クリスタルコンフリクト(レッド・サンズ：カスタムマッチ)",ko:"크리스탈라인 컨플릭트(붉은 사막: 친선 경기)"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:0},1140:{contentType:4,exVersion:4,name:{cn:"高贝扎歼灭战",de:"Prophetie - Golbez",en:"The Voidcast Dais",fr:"La Chaire de l'Exilée",ja:"ゴルベーザ討滅戦",ko:"골베자 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:149},1141:{contentType:4,exVersion:4,name:{cn:"高贝扎歼殛战",de:"Eschatos - Golbez",en:"The Voidcast Dais (Extreme)",fr:"La Chaire de l'Exilée (extrême)",ja:"極ゴルベーザ討滅戦",ko:"극 골베자 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:149},1142:{contentType:2,exVersion:2,name:{cn:"漂流海域妖歌海",de:"Sirenen-See",en:"The Sirensong Sea",fr:"La Mer du Chant des sirènes",ja:"漂流海域 セイレーン海",ko:"세이렌 해"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:36},1143:{contentType:2,exVersion:2,name:{cn:"试炼行路巴儿达木霸道",de:"Bardams Probe",en:"Bardam's Mettle",fr:"La Force de Bardam",ja:"伝統試練 バルダム覇道",ko:"바르담 패도"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},1144:{contentType:2,exVersion:2,name:{cn:"解放决战多玛王城",de:"Burg Doma",en:"Doma Castle",fr:"Le Château de Doma",ja:"解放決戦 ドマ城",ko:"도마 성"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},1145:{contentType:2,exVersion:2,name:{cn:"巨炮要塞帝国白山堡",de:"Castrum Abania",en:"Castrum Abania",fr:"Castrum Abania",ja:"巨砲要塞 カストルム・アバニア",ko:"카스트룸 아바니아"},offsetX:72,offsetY:-186,sizeFactor:200,weatherRate:0},1146:{contentType:2,exVersion:2,name:{cn:"鏖战红莲阿拉米格",de:"Ala Mhigo",en:"Ala Mhigo",fr:"Ala Mhigo",ja:"紅蓮決戦 アラミゴ",ko:"알라미고"},offsetX:292,offsetY:-163,sizeFactor:200,weatherRate:0},1147:{contentType:5,exVersion:4,name:{cn:"万魔殿 荒天之狱1",de:"Anabaseios - Neunter Kreis",en:"Anabaseios: The Ninth Circle",fr:"Le Paradis du Pandæmonium - Métempsycose",ja:"万魔殿パンデモニウム：天獄編1",ko:"마의 전당 판데모니움: 천옥편 1"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},1148:{contentType:5,exVersion:4,name:{cn:"零式万魔殿 荒天之狱1",de:"Anabaseios - Neunter Kreis (episch)",en:"Anabaseios: The Ninth Circle (Savage)",fr:"Le Paradis du Pandæmonium - Métempsycose (sadique)",ja:"万魔殿パンデモニウム零式：天獄編1",ko:"마의 전당 판데모니움: 천옥편(영웅) 1"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},1149:{contentType:5,exVersion:4,name:{cn:"万魔殿 荒天之狱2",de:"Anabaseios - Zehnter Kreis",en:"Anabaseios: The Tenth Circle",fr:"Le Paradis du Pandæmonium - Monochrome",ja:"万魔殿パンデモニウム：天獄編2",ko:"마의 전당 판데모니움: 천옥편 2"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1150:{contentType:5,exVersion:4,name:{cn:"零式万魔殿 荒天之狱2",de:"Anabaseios - Zehnter Kreis (episch)",en:"Anabaseios: The Tenth Circle (Savage)",fr:"Le Paradis du Pandæmonium - Monochrome (sadique)",ja:"万魔殿パンデモニウム零式：天獄編2",ko:"마의 전당 판데모니움: 천옥편(영웅) 2"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1151:{contentType:5,exVersion:4,name:{cn:"万魔殿 荒天之狱3",de:"Anabaseios - Elfter Kreis",en:"Anabaseios: The Eleventh Circle",fr:"Le Paradis du Pandæmonium - Tribunal",ja:"万魔殿パンデモニウム：天獄編3",ko:"마의 전당 판데모니움: 천옥편 3"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1152:{contentType:5,exVersion:4,name:{cn:"零式万魔殿 荒天之狱3",de:"Anabaseios - Elfter Kreis (episch)",en:"Anabaseios: The Eleventh Circle (Savage)",fr:"Le Paradis du Pandæmonium - Tribunal (sadique)",ja:"万魔殿パンデモニウム零式：天獄編3",ko:"마의 전당 판데모니움: 천옥편(영웅) 3"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1153:{contentType:5,exVersion:4,name:{cn:"万魔殿 荒天之狱4",de:"Anabaseios - Zwölfter Kreis",en:"Anabaseios: The Twelfth Circle",fr:"Le Paradis du Pandæmonium - Apothéose",ja:"万魔殿パンデモニウム：天獄編4",ko:"마의 전당 판데모니움: 천옥편 4"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1154:{contentType:5,exVersion:4,name:{cn:"零式万魔殿 荒天之狱4",de:"Anabaseios - Zwölfter Kreis (episch)",en:"Anabaseios: The Twelfth Circle (Savage)",fr:"Le Paradis du Pandæmonium - Apothéose (sadique)",ja:"万魔殿パンデモニウム零式：天獄編4",ko:"마의 전당 판데모니움: 천옥편(영웅) 4"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:145},1155:{contentType:30,exVersion:4,name:{cn:"异闻迷宫 异闻六根山",de:"Der kuriose Rokkon",en:"Another Mount Rokkon",fr:"Le mont Rokkon annexe - Donjon alternatif",ja:"アナザーダンジョン 異聞六根山",ko:"파생 던전: 번외 육근산"},offsetX:0,offsetY:40,sizeFactor:200,weatherRate:74},1156:{contentType:30,exVersion:4,name:{cn:"异闻迷宫 零式异闻六根山",de:"Der kuriose Rokkon (episch)",en:"Another Mount Rokkon (Savage)",fr:"Le mont Rokkon annexe - Donjon alternatif (sadique)",ja:"アナザーダンジョン 異聞六根山 零式",ko:"파생 던전: 번외 육근산(영웅)"},offsetX:0,offsetY:40,sizeFactor:200,weatherRate:74},1157:{contentType:4,exVersion:4,name:{cn:"祖尔宛幻巧战",de:"Traumprüfung - Zurvan",en:"Containment Bay Z1T9 (Unreal)",fr:"Unité de contention Z1P9 (irréel)",ja:"幻鬼神ズルワーン討滅戦"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:75},1164:{contentType:2,exVersion:4,name:{cn:"异界深渊月面地下溪谷",de:"Monduntergrund",en:"The Lunar Subterrane",fr:"Le Souterrain lunaire",ja:"深淵潜行 月の地下渓谷",ko:"달의 지하계곡"},offsetX:440,offsetY:130,sizeFactor:200,weatherRate:149},1165:{contentType:19,exVersion:0,name:{cn:"金碟巨豆中心",de:"Stolperville",en:"Blunderville",fr:"Blunderville",ja:"ブランダーヴィル",ko:"블런더빌"},offsetX:-200,offsetY:-133,sizeFactor:200,weatherRate:0},1166:{contentType:7,exVersion:0,name:{cn:"纵使前路狱火焰毒",de:"Der Pfad der Flammen",en:"Memory of Embers",fr:"Flammes primordiales",ja:"炎影の旅路"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:155},1167:{contentType:2,exVersion:5,name:{de:"Ihuykatumu",en:"Ihuykatumu",fr:"La Remontée de l'Ihuykatumu",ja:"濁流遡上 イフイカ・トゥム"},offsetX:-44,offsetY:-88,sizeFactor:200,weatherRate:0},1168:{contentType:4,exVersion:4,name:{cn:"泽罗姆斯歼灭战",de:"Prophetie - Zeromus",en:"The Abyssal Fracture",fr:"La Fracture abyssale",ja:"ゼロムス討滅戦",ko:"제로무스 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:149},1169:{contentType:4,exVersion:4,name:{cn:"泽罗姆斯歼殛战",de:"Eschatos - Zeromus",en:"The Abyssal Fracture (Extreme)",fr:"La Fracture abyssale (extrême)",ja:"極ゼロムス討滅戦",ko:"극 제로무스 토벌전"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:149},1172:{contentType:2,exVersion:2,name:{cn:"沉没神殿斯卡拉遗迹",de:"Die versunkene Stadt Skalla",en:"The Drowned City of Skalla",fr:"La Cité engloutie de Skalla",ja:"水没遺構 スカラ",ko:"스칼라 유적"},offsetX:185,offsetY:5,sizeFactor:200,weatherRate:0},1173:{contentType:2,exVersion:2,name:{cn:"死亡大地终末焦土",de:"Das Kargland",en:"The Burn",fr:"L'Escarre",ja:"永久焦土 ザ・バーン",ko:"영구 초토지대"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:97},1174:{contentType:2,exVersion:2,name:{cn:"国境防线基姆利特暗区",de:"Die Ghimlyt-Finsternis",en:"The Ghimlyt Dark",fr:"Les Ténèbres de Ghimlyt",ja:"境界戦線 ギムリトダーク",ko:"김리트 황야"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},1175:{contentType:4,exVersion:4,name:{cn:"圆桌骑士幻巧战",de:"Traumprüfung - Singularitäts-Reaktor",en:"The Singularity Reactor (Unreal)",fr:"Le Réacteur de singularité (irréel)",ja:"幻ナイツ・オブ・ラウンド討滅戦",ko:"환 나이츠 오브 라운드 토벌전"},offsetX:0,offsetY:0,sizeFactor:400,weatherRate:56},1176:{contentType:30,exVersion:4,name:{cn:"多变迷宫 阿罗阿罗岛",de:"Aloalo",en:"Aloalo Island",fr:"L'île d'Aloalo - Donjon à embranchements",ja:"ヴァリアントダンジョン アロアロ島",ko:"변형 던전: 알로알로 섬"},offsetX:0,offsetY:-785,sizeFactor:200,weatherRate:0},1177:{contentType:7,exVersion:4,name:{cn:"那双眼中映出的是",de:"Die Jagd ist eröffnet",en:"The Game Is Afoot",fr:"Par-delà l'horizon",ja:"その瞳が見据えるもの",ko:"그 눈동자가 바라보는 것"},offsetX:368,offsetY:-277,sizeFactor:200,weatherRate:0},1178:{contentType:5,exVersion:4,name:{cn:"荣华神域塔利亚",de:"Thaleia",en:"Thaleia",fr:"Domaine divin - Thalie",ja:"華めく神域 タレイア",ko:"번영의 신역 탈레이아"},offsetX:800,offsetY:783,sizeFactor:200,weatherRate:147},1179:{contentType:30,exVersion:4,name:{cn:"异闻迷宫 异闻阿罗阿罗岛",de:"Kurioses Aloalo",en:"Another Aloalo Island",fr:"L'île d'Aloalo annexe - Donjon alternatif",ja:"アナザーダンジョン 異聞アロアロ島",ko:"파생 던전: 번외 알로알로 섬"},offsetX:0,offsetY:-60,sizeFactor:200,weatherRate:0},1180:{contentType:30,exVersion:4,name:{cn:"异闻迷宫 零式异闻阿罗阿罗岛",de:"Kurioses Aloalo (episch)",en:"Another Aloalo Island (Savage)",fr:"L'île d'Aloalo annexe - Donjon alternatif (sadique)",ja:"アナザーダンジョン 異聞アロアロ島 零式",ko:"파생 던전: 번외 알로알로 섬(영웅)"},offsetX:0,offsetY:-60,sizeFactor:200,weatherRate:0},1185:{exVersion:5,name:{de:"Tuliyollal",en:"Tuliyollal",fr:"Tuliyollal",ja:"トライヨラ"},offsetX:50,offsetY:-70,sizeFactor:180,weatherRate:159},1186:{exVersion:5,name:{de:"Lösung Neun",en:"Solution Nine",fr:"Solution Neuf",ja:"ソリューション・ナイン"},offsetX:0,offsetY:90,sizeFactor:180,weatherRate:163},1187:{exVersion:5,name:{de:"Urqopacha",en:"Urqopacha",fr:"Urqopacha",ja:"オルコ・パチャ"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:160},1188:{exVersion:5,name:{de:"Kozama'uka",en:"Kozama'uka",fr:"Kozama'uka",ja:"コザマル・カ"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:161},1189:{exVersion:5,name:{de:"Yak T'el",en:"Yak T'el",fr:"Yak T'el",ja:"ヤクテル樹海"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:162},1190:{exVersion:5,name:{de:"Shaaloani",en:"Shaaloani",fr:"Shaaloani",ja:"シャーローニ荒野"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:164},1191:{exVersion:5,name:{de:"Ewiges Erbe",en:"Heritage Found",fr:"L'Hoirie recouvrée",ja:"ヘリテージファウンド"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:165},1192:{exVersion:5,name:{de:"Lebende Erinnerung",en:"Living Memory",fr:"La Mémoire vivante",ja:"リビング・メモリー"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:166},1193:{contentType:2,exVersion:5,name:{de:"Worqor Zormor",en:"Worqor Zormor",fr:"Worqor Zormor",ja:"山嶺登頂 ウォーコー・ゾーモー"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},1194:{contentType:2,exVersion:5,name:{de:"Himmelstiefer Cenote",en:"The Skydeep Cenote",fr:"Le cénote des Cieux infinis",ja:"遺産踏査 天深きセノーテ"},offsetX:0,offsetY:144,sizeFactor:200,weatherRate:0},1195:{contentType:4,exVersion:5,name:{de:"Zel Tajaal - Valigarmanda",en:"Worqor Lar Dor",fr:"Worqor Lar Dor",ja:"ヴァリガルマンダ討滅戦"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},1196:{contentType:4,exVersion:5,name:{de:"Gok Tajaal - Valigarmanda",en:"Worqor Lar Dor (Extreme)",fr:"Worqor Lar Dor (extrême)",ja:"極ヴァリガルマンダ討滅戦"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},1198:{contentType:2,exVersion:5,name:{de:"Der Außenposten",en:"Vanguard",fr:"L'Avant-garde",ja:"外征前哨 ヴァンガード"},offsetX:0,offsetY:-20,sizeFactor:200,weatherRate:0},1199:{contentType:2,exVersion:5,name:{de:"Alexandria",en:"Alexandria",fr:"Alexandrie",ja:"記憶幻想 アレクサンドリア"},offsetX:29,offsetY:-95,sizeFactor:200,weatherRate:157},1200:{contentType:4,exVersion:5,name:{de:"Zel Tajaal - Zoraal Ja",en:"Everkeep",fr:"Le Pinacle de l'Éternité",ja:"ゾラージャ討滅戦"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:158},1201:{contentType:4,exVersion:5,name:{de:"Gok Tajaal - Zoraal Ja",en:"Everkeep (Extreme)",fr:"Le Pinacle de l'Éternité (extrême)",ja:"極ゾラージャ討滅戦"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:158},1202:{contentType:4,exVersion:5,name:{de:"Zel Tajaal - Ewige Königin",en:"The Interphos",fr:"Interphos",ja:"エターナルクイーン討滅戦"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:157},1203:{contentType:2,exVersion:5,name:{de:"Kaktorsenke",en:"Tender Valley",fr:"La Vallée des Pampas",ja:"荒野秘境 サボテンダーバレー"},offsetX:130,offsetY:-348,sizeFactor:200,weatherRate:0},1204:{contentType:2,exVersion:5,name:{de:"Mahrlingen-Promenade",en:"The Strayborough Deadwalk",fr:"Le Parc-aux-Errants",ja:"悪夢遊園 ストレイバロー"},offsetX:0,offsetY:-150,sizeFactor:200,weatherRate:150},1208:{contentType:2,exVersion:5,name:{de:"Origenik",en:"Origenics",fr:"L'Origenèse",ja:"魂魄工廠 オリジェニクス"},offsetX:-30,offsetY:-63,sizeFactor:200,weatherRate:156},1209:{contentType:9,exVersion:5,name:{de:"Cenote Ja Ja Gural",en:"Cenote Ja Ja Gural",fr:"Cénote Ja Ja Gural",ja:"宝物庫 セノーテ・ジャジャグラル"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},1210:{contentType:7,exVersion:5,name:{de:"Des Vaters viele Sorgen",en:"A Father First",fr:"L'Aurarque et le père",ja:"王として、父として"},offsetX:0,offsetY:-19,sizeFactor:400,weatherRate:0},1211:{contentType:7,exVersion:5,name:{de:"Mit scharfer Axt und leichtem Lächeln",en:"Taking a Stand",fr:"Préserver la paix",ja:"笑顔を護るための戦い"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},1212:{contentType:7,exVersion:5,name:{de:"Von Schuld und Sühne",en:"The Feat of the Brotherhood",fr:"L'épreuve de l'amitié",ja:"友の試練"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},1213:{contentType:7,exVersion:5,name:{de:"Schützer des Volkes, Schlächter des Volkes",en:"The Protector and the Destroyer",fr:"Protecteurs et destructeurs",ja:"護る者、壊す者"},offsetX:0,offsetY:90,sizeFactor:180,weatherRate:0},1214:{contentType:7,exVersion:5,name:{de:"Neue Bande der Freund­schaft",en:"Dreams of a New Day",fr:"Rêves éveillés",ja:"寝ても覚めても"},offsetX:0,offsetY:0,sizeFactor:95,weatherRate:0},1215:{contentType:7,exVersion:5,name:{de:"Heilkunst gegen Hexerei",en:"An Antidote for Anarchy",fr:"Les deux faces du scorpion",ja:"毒と癒やしの頂上決戦"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},1216:{contentType:7,exVersion:5,name:{de:"Krönender Abschuss",en:"A Hunter True",fr:"Chasseuse à lunettes... chasseuse honnête",ja:"一端の狩人"},offsetX:0,offsetY:0,sizeFactor:200,weatherRate:0},1217:{contentType:7,exVersion:5,name:{de:"Der mächtigste Schild",en:"The Mightiest Shield",fr:"Mauvais cru pour Chalteaufite",ja:"打倒！ シャルトフィット盗賊団"},offsetX:-250,offsetY:128,sizeFactor:200,weatherRate:36},1218:{contentType:7,exVersion:5,name:{de:"Ein Mythos in Trümmern",en:"Heroes and Pretenders",fr:"Le château de cartes s'effondre",ja:"祭器と作られた虚像"},offsetX:-693,offsetY:-46,sizeFactor:400,weatherRate:0},1225:{contentType:5,exVersion:5,name:{de:"Arkadion - Halbschwergewicht R1",en:"AAC Light-heavyweight M1",fr:"Poids mi-lourds CCA - match 1",ja:"至天の座アルカディア：ライトヘビー級1"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},1226:{contentType:5,exVersion:5,name:{de:"Arkadion - Halbschwergewicht R1 (episch)",en:"AAC Light-heavyweight M1 (Savage)",fr:"Poids mi-lourds CCA - match 1 (sadique)",ja:"至天の座アルカディア零式：ライトヘビー級1"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},1227:{contentType:5,exVersion:5,name:{de:"Arkadion - Halbschwergewicht R2",en:"AAC Light-heavyweight M2",fr:"Poids mi-lourds CCA - match 2",ja:"至天の座アルカディア：ライトヘビー級2"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},1228:{contentType:5,exVersion:5,name:{de:"Arkadion - Halbschwergewicht R2 (episch)",en:"AAC Light-heavyweight M2 (Savage)",fr:"Poids mi-lourds CCA - match 2 (sadique)",ja:"至天の座アルカディア零式：ライトヘビー級2"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},1229:{contentType:5,exVersion:5,name:{de:"Arkadion - Halbschwergewicht R3",en:"AAC Light-heavyweight M3",fr:"Poids mi-lourds CCA - match 3",ja:"至天の座アルカディア：ライトヘビー級3"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},1230:{contentType:5,exVersion:5,name:{de:"Arkadion - Halbschwergewicht R3 (episch)",en:"AAC Light-heavyweight M3 (Savage)",fr:"Poids mi-lourds CCA - match 3 (sadique)",ja:"至天の座アルカディア零式：ライトヘビー級3"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},1231:{contentType:5,exVersion:5,name:{de:"Arkadion - Halbschwergewicht R4",en:"AAC Light-heavyweight M4",fr:"Poids mi-lourds CCA - match 4",ja:"至天の座アルカディア：ライトヘビー級4"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},1232:{contentType:5,exVersion:5,name:{de:"Arkadion - Halbschwergewicht R4 (episch)",en:"AAC Light-heavyweight M4 (Savage)",fr:"Poids mi-lourds CCA - match 4 (sadique)",ja:"至天の座アルカディア零式：ライトヘビー級4"},offsetX:-100,offsetY:-100,sizeFactor:400,weatherRate:0},1233:{contentType:7,exVersion:5,name:{de:"Nächtliche Ruhestörung",en:"Mind over Manor",fr:"Tapage nocturne",ja:"旅する画家は森都を征く"},offsetX:32,offsetY:0,sizeFactor:200,weatherRate:0},1234:{contentType:7,exVersion:5,name:{de:"Begegnungen und Abschiede",en:"Somewhere Only She Knows",fr:"L'œuvre de la maturité",ja:"旅する画家は幻想を征く"},offsetX:0,offsetY:286,sizeFactor:200,weatherRate:0},1235:{contentType:7,exVersion:5,name:{de:"Einführung in die Viperologie",en:"Fangs of the Viper",fr:"Le devoir des rôdeurs vipère",ja:"ヴァイパーの使命"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0},1236:{contentType:7,exVersion:5,name:{de:"Der Wille der Natur",en:"Vengeance of the Viper",fr:"Le fléau des Tural vidraal",ja:"トラルヴィドラールを狩る者"},offsetX:0,offsetY:0,sizeFactor:100,weatherRate:0}}}},__webpack_module_cache__={};function __webpack_require__(e){var t=__webpack_module_cache__[e];if(void 0!==t)return t.exports;var a=__webpack_module_cache__[e]={exports:{}};return __webpack_modules__[e](a,a.exports,__webpack_require__),a.exports}__webpack_require__.d=(e,t)=>{for(var a in t)__webpack_require__.o(t,a)&&!__webpack_require__.o(e,a)&&Object.defineProperty(e,a,{enumerable:!0,get:t[a]})},__webpack_require__.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t);var __webpack_exports__={},user_config=__webpack_require__(380);const defaultUserConfig={Scale:125,BigBuffNoticeTTSOn:!0,DotNoticeLessThanSecond:7,DotNoticeTTSOn:!0,DotNoticeTTS:"续DoT",TTSGoringBlade:!1,TTSSurgingTempest:!0,TTSDia:!0,TTSBiolysis:!0,TTSCombustIII:!0,TTSEukrasianDosisIii:!0,TTSDemolish:!1,TTSChaoticSpring:!1,TTSHiganbana:!0,TTSDeathsDesign:!0,TTSStormbite:!0,TTSThunderIii:!0,TTSBleedingDoT:!0},defaultJobsNonConfigOptions={JustBuffTracker:!1,LowerOpacityOutOfCombat:!0,OpacityOutOfCombat:.5,PlayCountdownSound:!0,HideWellFedAboveSeconds:900,ShowMPTickerOutOfCombat:!1,MidHealthThresholdPercent:.8,LowHealthThresholdPercent:.2,BigBuffShowCooldownSeconds:20,Scale:125,PhysicalFontSize:20,MagicFontSize:20,BigBuffIconWidth:32,BigBuffIconHeight:20,BigBuffBarHeight:20,BigBuffBorderSize:0,BigBuffBarMaxWidth:250,BigBuffNoticeTTSOn:!0,DotIconWidth:32,DotIconHeight:25,DotBarHeight:5,DotBorderSize:1,DotNoticeLessThanSecond:7,DotNoticeTTSOn:!0,DotNoticeTTS:"续DoT",GpAlarmPoint:0,GpAlarmSoundVolume:.8,NotifyExpiredProcsInCombat:5,NotifyExpiredProcsInCombatSound:"threshold",CompactView:!1,TTSGoringBlade:!1,TTSSurgingTempest:!0,TTSDia:!0,TTSBiolysis:!0,TTSCombustIII:!0,TTSEukrasianDosisIii:!0,TTSDemolish:!1,TTSChaoticSpring:!1,TTSHiganbana:!0,TTSDeathsDesign:!0,TTSStormbite:!0,TTSThunderIii:!0,TTSBleedingDoT:!0},defaultJobsConfigOptions={ShowHPNumber:["PLD","WAR","DRK","GNB","WHM","SCH","AST","BLU"],ShowMPNumber:["PLD","DRK","WHM","SCH","AST","BLM","BLU"],ShowMPTicker:["BLM"],MaxLevel:80,PerBuffOptions:{standardFinish:{hide:!0}},FarThresholdOffence:24,PldMediumMPThreshold:9400,PldLowMPThreshold:3600,DrkMediumMPThreshold:5999,DrkLowMPThreshold:2999,BlmMediumMPThreshold:3999,BlmLowMPThreshold:2399},Options={...user_config.A.getDefaultBaseOptions(),...defaultJobsNonConfigOptions,...defaultJobsConfigOptions},buff_options=null;var netregexes=__webpack_require__(702),not_reached=__webpack_require__(174);class timerbar_TimerBar extends HTMLElement{rootElement;foregroundElement;backgroundElement;leftTextElement;centerTextElement;rightTextElement;_duration;_start;_width;_height;_bg;_fg;_towardRight;_fill;_leftText;_centerText;_rightText;_hideAfter;_loop;_connected;_hideTimer;static get observedAttributes(){return["duration","value","elapsed","hideafter","lefttext","centertext","righttext","width","height","bg","fg","stylefill","toward","loop"]}static create(e){window.customElements.get("timer-bar")||window.customElements.define("timer-bar",timerbar_TimerBar);const t=document.createElement("timer-bar");return e?("number"==typeof e.duration&&(t.duration=e.duration),"number"==typeof e.value&&(t.value=e.value),"number"==typeof e.elapsed&&(t.elapsed=e.elapsed),"number"==typeof e.hideafter&&(t.hideafter=e.hideafter),"string"==typeof e.lefttext&&(t.lefttext=e.lefttext),"string"==typeof e.centertext&&(t.centertext=e.centertext),"string"==typeof e.righttext&&(t.righttext=e.righttext),"string"==typeof e.width&&(t.width=e.width),"string"==typeof e.height&&(t.height=e.height),"string"==typeof e.bg&&(t.bg=e.bg),"string"==typeof e.fg&&(t.fg=e.fg),"string"==typeof e.stylefill&&(t.stylefill=e.stylefill),"string"==typeof e.toward&&(t.toward=e.toward),"boolean"==typeof e.loop&&(t.loop=e.loop),t):t}set bg(e){null===e?this.removeAttribute("bg"):this.setAttribute("bg",e)}get bg(){return this.getAttribute("bg")}set fg(e){null===e?this.removeAttribute("fg"):this.setAttribute("fg",e)}get fg(){return this.getAttribute("fg")}set width(e){null===e?this.removeAttribute("width"):this.setAttribute("width",e)}get width(){return this.getAttribute("width")}set height(e){null===e?this.removeAttribute("height"):this.setAttribute("height",e)}get height(){return this.getAttribute("height")}set duration(e){null===e?this.removeAttribute("duration"):this.setAttribute("duration",e.toString())}get duration(){const e=this.getAttribute("duration");return null===e?null:parseFloat(e)}set value(e){this.setAttribute("value",e.toString())}get value(){if(!this._start)return this._duration;const e=Date.now()-this._start;return Math.max(0,this._duration-e/1e3)}set elapsed(e){this.setAttribute("elapsed",e.toString())}get elapsed(){return this._start?(Date.now()-this._start)/1e3:0}set toward(e){null===e?this.removeAttribute("toward"):this.setAttribute("toward",e)}get toward(){return this.getAttribute("toward")}set stylefill(e){null===e?this.removeAttribute("stylefill"):this.setAttribute("stylefill",e)}get stylefill(){return this.getAttribute("stylefill")}set hideafter(e){null===e?this.removeAttribute("hideafter"):this.setAttribute("hideafter",e.toString())}get hideafter(){const e=this.getAttribute("hideafter");return null===e?null:parseInt(e)}set lefttext(e){null===e?this.removeAttribute("lefttext"):this.setAttribute("lefttext",e)}get lefttext(){return this.getAttribute("lefttext")}set righttext(e){null===e?this.removeAttribute("righttext"):this.setAttribute("righttext",e)}get righttext(){return this.getAttribute("righttext")}set centertext(e){null===e?this.removeAttribute("centertext"):this.setAttribute("centertext",e)}get centertext(){return this.getAttribute("centertext")}set loop(e){e?this.setAttribute("loop",""):this.removeAttribute("loop")}get loop(){return this.hasAttribute("loop")}constructor(){super();const e=this.attachShadow({mode:"open"});this.init(e),this._connected=!1,this._start=0,this._duration=0,this._width="100%",this._height="100%",this._bg="black",this._fg="yellow",this._towardRight=!1,this._fill=!1,this._leftText="",this._centerText="",this._rightText="",this._hideAfter=-1,this._loop=!1,this._hideTimer=0,this.rootElement=this.shadowRoot?.getElementById("root"),this.foregroundElement=this.shadowRoot?.getElementById("fg"),this.backgroundElement=this.shadowRoot?.getElementById("bg"),this.leftTextElement=this.shadowRoot?.getElementById("lefttext"),this.centerTextElement=this.shadowRoot?.getElementById("centertext"),this.rightTextElement=this.shadowRoot?.getElementById("righttext")}init(e){e.innerHTML='\n      <style>\n        .timerbar-root {\n          position: relative;\n          border: 1px solid black;\n          box-sizing: border-box;\n        }\n        .timerbar-bg {\n          position: absolute;\n          width: 100%;\n          height: 100%;\n          opacity: 0.8;\n        }\n        .timerbar-fg {\n          position: absolute;\n          width: 100%;\n          height: 100%;\n          opacity: 1.0;\n        }\n        .text {\n          position: absolute;\n          font-family: arial;\n          font-weight: bold;\n          color: white;\n          text-shadow: -1px 0 3px black, 0 1px 3px black, 1px 0 3px black, 0 -1px 3px black;\n          will-change: content;\n        }\n        .text-container {\n          position: absolute;\n          left: 0px;\n          top: calc(50% - 1.2ex);\n          width: 100%;\n          height: 100%;\n          overflow: hidden;\n        }\n        .timerbar-lefttext {\n          position: relative;\n          text-align: left;\n          padding: 0px 0.4em 0px 0.4em;\n        }\n        .timerbar-centertext {\n          position: relative;\n          text-align: center;\n          padding: 0px 0.4em 0px 0.4em;\n        }\n        .timerbar-righttext {\n          position: relative;\n          text-align: right;\n          padding: 0px 0.4em 0px 0.4em;\n        }\n        :host-context(.just-a-number) .timerbar-root {\n          border: none;\n        }\n        :host-context(.just-a-number) .timerbar-bg {\n          display: none;\n        }\n        :host-context(.just-a-number) .timerbar-fg {\n          display: none;\n        }\n        /* Korean better visibility CSS */\n        :lang(ko) .text-container {\n          top: calc(50% - 1.5ex);\n          height: calc(100% + 0.3ex);\n        }\n        :lang(ko) .timerbar-righttext {\n          top: 0.3ex;\n        }\n      </style>\n      <div id="root" class="timerbar-root" part="timerbar-root">\n        <div id="bg" class="timerbar-bg" part="timerbar-bg"></div>\n        <div id="fg" class="timerbar-fg" part="timerbar-fg"></div>\n        <div class="text-container" part="text-container">\n          <div id="lefttext" class="text timerbar-lefttext" part="text timerbar-lefttext"></div>\n        </div>\n        <div class="text-container" part="text-container">\n          <div id="centertext" class="text timerbar-centertext" part="text timerbar-centertext"></div>\n        </div>\n        <div class="text-container" part="text-container">\n          <div id="righttext" class="text timerbar-righttext" part="text timerbar-righttext"></div>\n        </div>\n      </div>\n    '}connectedCallback(){this._connected=!0,this.layout(),this.updateText(),this._start?this.advance():this.setvalue(this._duration)}disconnectedCallback(){this._connected=!1}attributeChangedCallback(e,t,a){if("duration"===e)this._duration=Math.max(parseFloat(a),0),this.setvalue(this._duration);else if("value"===e)this.setvalue(Math.max(parseFloat(a),0));else if("elapsed"===e)this.setvalue(this._duration-Math.max(parseFloat(a),0));else if("width"===e)this._width=a,this.layout();else if("height"===e)this._height=a,this.layout();else if("bg"===e)this._bg=a,this.layout();else if("fg"===e)this._fg=a,this.layout();else if("stylefill"===e)this._fill="fill"===a,this.layout();else if("toward"===e)this._towardRight="right"===a,this.layout();else if("lefttext"===e){const e=a!==this._leftText&&this._connected;this._leftText=a,e&&this.updateText()}else if("centertext"===e){const e=a!==this._centerText&&this._connected;this._centerText=a,e&&this.updateText()}else if("righttext"===e){const e=a!==this._rightText&&this._connected;this._rightText=a,e&&this.updateText()}else"hideafter"===e?(this._hideAfter=Math.max(this.hideafter??0,0),0===this.value&&(this._hideAfter>=0?this.hide():this.show())):"loop"===e&&(this._loop=null!==a);this._connected&&this.draw()}layout(){this._connected&&(this.backgroundElement.style.background=this._bg,this.foregroundElement.style.background=this._fg,this.rootElement.style.width=this._width,this.rootElement.style.height=this._height,this._towardRight!==this._fill?(this.foregroundElement.style.left="",this.foregroundElement.style.right="0px",this.foregroundElement.style.transformOrigin="right center"):(this.foregroundElement.style.left="0px",this.foregroundElement.style.right="",this.foregroundElement.style.transformOrigin="left center"))}updateText(){const e=["elapsed","duration","percent","remain"];e.includes(this._leftText)||(this.leftTextElement.innerHTML=this._leftText),e.includes(this._centerText)||(this.centerTextElement.innerHTML=this._centerText),e.includes(this._rightText)||(this.rightTextElement.innerHTML=this._rightText)}draw(){const e=(Date.now()-this._start)/1e3,t=Math.max(0,this._duration-e);let a=this._duration<=0?0:t/this._duration;a=Math.min(1,Math.max(0,a));const n=t?t.toFixed(1):"",r=e.toFixed(1);this._fill&&(a=1-a),this.foregroundElement.style.transform=`scaleX(${a.toFixed(3)})`,""!==this._leftText&&("remain"===this._leftText?this.leftTextElement.innerText=n:"duration"===this._leftText?this.leftTextElement.innerText=`${n} / ${this._duration}`:"percent"===this._leftText?this.leftTextElement.innerText=`${(100*a).toFixed(1)} %`:"elapsed"===this._leftText&&(this.leftTextElement.innerText=r)),""!==this._centerText&&("remain"===this._centerText?this.centerTextElement.innerText=n:"duration"===this._centerText?this.centerTextElement.innerText=`${n} / ${this._duration}`:"percent"===this._centerText?this.centerTextElement.innerText=`${(100*a).toFixed(1)} %`:"elapsed"===this._centerText&&(this.centerTextElement.innerText=r)),""!==this._rightText&&("remain"===this._rightText?this.rightTextElement.innerText=n:"duration"===this._rightText?this.rightTextElement.innerText=`${n} / ${this._duration}`:"percent"===this._rightText?this.rightTextElement.innerText=`${(100*a).toFixed(1)} %`:"elapsed"===this._rightText&&(this.rightTextElement.innerText=r))}applyStyles(e){const t=Object.keys(e).map((t=>`${t}:${e?.[t]??""};`)).join(""),a=this.shadowRoot?.getElementById("lefttext"),n=this.shadowRoot?.getElementById("centertext"),r=this.shadowRoot?.getElementById("righttext");if(!a||!n||!r)throw new not_reached.O;a.style.cssText+=t,n.style.cssText+=t,r.style.cssText+=t}setvalue(e){const t=Math.max(0,this._duration-e);this._start=Date.now()-1e3*t,this._connected&&(this.show(),clearTimeout(this._hideTimer??0),this._hideTimer=null,this.advance())}advance(){if(!this._connected)return;const e=(Date.now()-this._start)/1e3;if(e>=this._duration){if(this._loop&&this._duration>0)return void this.setvalue(this._duration+(this._duration-e)%this._duration);this._duration=0,this._hideAfter>0?this._hideTimer=window.setTimeout(this.hide.bind(this),1e3*this._hideAfter):0===this._hideAfter&&this.hide()}else window.requestAnimationFrame(this.advance.bind(this));this.draw()}show(){this._connected&&(this.rootElement.style.display="block")}hide(){this._connected&&(this.rootElement.style.display="none")}}window.customElements.define("timer-bar",timerbar_TimerBar);class timericon_TimerIcon extends HTMLElement{rootElement;borderBackgroundElement;borderForegroundElement;iconElement;textElement;kBackgroundOpacity;kOuterBorderSize;kAnimateMs;_value;_duration;_width;_height;_borderBg;_borderFg;_scale;_hideAfter;_icon;_zoom;_text;_textColor;_colorBorderSize;_connected;_timer;_hideTimer;startTimeMs;static get observedAttributes(){return["icon","zoom","duration","width","height","bordercolor","bordersize","text","textcolor"]}static create(e){window.customElements.get("timer-icon")||window.customElements.define("timer-icon",timericon_TimerIcon);const t=document.createElement("timer-icon");return e?("string"==typeof e.icon&&(t.icon=e.icon),"number"==typeof e.zoom&&(t.zoom=e.zoom),"number"==typeof e.duration&&(t.duration=e.duration),"string"==typeof e.width&&(t.width=e.width),"string"==typeof e.height&&(t.height=e.height),"string"==typeof e.bordercolor&&(t.bordercolor=e.bordercolor),"string"==typeof e.bordersize&&(t.bordersize=e.bordersize),"string"==typeof e.text&&(t.text=e.text),"string"==typeof e.textcolor&&(t.textcolor=e.textcolor),t):t}set scale(e){null===e?this.removeAttribute("scale"):this.setAttribute("scale",e.toString())}get scale(){const e=this.getAttribute("scale");return null===e?null:parseFloat(e)}set bordercolor(e){null===e?this.removeAttribute("bordercolor"):this.setAttribute("bordercolor",e)}get bordercolor(){return this.getAttribute("bordercolor")}set bordersize(e){null===e?this.removeAttribute("bordersize"):this.setAttribute("bordersize",e)}get bordersize(){return this.getAttribute("bordersize")}set width(e){null===e?this.removeAttribute("width"):this.setAttribute("width",e)}get width(){return this.getAttribute("width")}set height(e){null===e?this.removeAttribute("height"):this.setAttribute("height",e)}get height(){return this.getAttribute("height")}set duration(e){null===e?this.removeAttribute("duration"):this.setAttribute("duration",e.toString())}get duration(){const e=this.getAttribute("duration");return null===e?null:parseFloat(e)}set hideafter(e){null===e?this.removeAttribute("hideafter"):this.setAttribute("hideafter",e.toString())}get hideafter(){const e=this.getAttribute("hideafter");return null===e?null:parseFloat(e)}set icon(e){null===e?this.removeAttribute("icon"):this.setAttribute("icon",e)}get icon(){return this.getAttribute("icon")}set zoom(e){null===e?this.removeAttribute("zoom"):this.setAttribute("zoom",e.toString())}get zoom(){const e=this.getAttribute("zoom");return null===e?null:parseFloat(e)}set text(e){null===e?this.removeAttribute("text"):this.setAttribute("text",e)}get text(){return this.getAttribute("text")}set textcolor(e){null===e?this.removeAttribute("textcolor"):this.setAttribute("textcolor",e)}get textcolor(){return this.getAttribute("textcolor")}constructor(){super();const e=this.attachShadow({mode:"open"});this.init(e),this._connected=!1,this.rootElement=this.shadowRoot?.getElementById("root"),this.borderBackgroundElement=this.shadowRoot?.getElementById("border-bg"),this.borderForegroundElement=this.shadowRoot?.getElementById("border-fg"),this.iconElement=this.shadowRoot?.getElementById("icon"),this.textElement=this.shadowRoot?.getElementById("text"),this.kBackgroundOpacity=.8,this.kOuterBorderSize=1,this.kAnimateMs=100,this._value=0,this._duration=0,this._width=64,this._height=64,this._borderBg="black",this._borderFg="grey",this._scale=1,this._hideAfter=-1,this._icon="",this._zoom=20,this._text="remain",this._textColor="white",this._colorBorderSize=2,this.startTimeMs=0,this._timer=0,this._hideTimer=0,null!==this.duration&&(this._duration=Math.max(this.duration,0)),null!==this.width&&(this._width=Math.max(parseInt(this.width),1)),null!==this.height&&(this._height=Math.max(parseInt(this.height),1)),null!==this.bordercolor&&(this._borderFg=this.bordercolor),null!==this.bordersize&&(this._colorBorderSize=Math.max(parseInt(this.bordersize),0)),null!==this.scale&&(this._scale=Math.max(this.scale,.01)),null!==this.hideafter&&(this._hideAfter=Math.max(this.hideafter,0)),null!==this.icon&&(this._icon=this.icon),null!==this.zoom&&(this._zoom=Math.max(this.zoom,0)),null!==this.text&&(this._text=this.text),null!==this.textcolor&&(this._textColor=this.textcolor)}init(e){e.innerHTML='\n      <style>\n        .text {\n          position: absolute;\n          font-family: arial;\n          text-shadow: -1px 0 3px black, 0 1px 3px black, 1px 0 3px black, 0 -1px 3px black;\n          will-change: content;\n        }\n        #border-bg {\n          position: absolute;\n        }\n        #border-fg {\n          position: absolute;\n        }\n        #icon {\n          position: absolute;\n          will-change: content;\n        }\n        #text {\n          position: absolute;\n          overflow: hidden;\n          word-break: break-all;\n        }\n      </style>\n      <div id="root" style="position: relative">\n        <div id="border-bg"></div>\n        <div id="border-fg"></div>\n        <div id="icon"></div>\n        <div id="text" class="text"></div>\n      </div>\n    '}connectedCallback(){this._connected=!0,this.layout(),this.reset()}disconnectedCallback(){this._connected=!1}attributeChangedCallback(e,t,a){"duration"===e?(this._duration=Math.max(parseFloat(a),0),this.reset()):"width"===e?(this._width=Math.max(parseInt(a),1),this.layout()):"height"===e?(this._height=Math.max(parseInt(a),1),this.layout()):"bordercolor"===e?(this._borderFg=a,this.layout()):"bordersize"===e?(this._colorBorderSize=Math.max(parseInt(a),0),this.layout()):"icon"===e?(this._icon=a,this.layout()):"zoom"===e?(this._zoom=Math.max(parseInt(a),0),this.layout()):"text"===e?this._text=a:"textcolor"===e&&(this._textColor=a),this._connected&&this.draw()}layout(){if(!this._connected)return;const e=this.borderBackgroundElement.style,t=this.borderForegroundElement.style,a=this.iconElement.style,n=this.textElement.style;e.backgroundColor=this._borderBg,e.opacity=this.kBackgroundOpacity.toString(),e.width=(this._width*this._scale).toString(),e.height=(this._height*this._scale).toString();const r=2*this.kOuterBorderSize+2*this._colorBorderSize;t.width=((this._width-r)*this._scale).toString(),t.height=((this._height-r)*this._scale).toString(),t.borderWidth=(this._colorBorderSize*this._scale).toString(),t.borderColor=this._borderFg,t.borderStyle="solid",t.left=(this.kOuterBorderSize*this._scale).toString(),t.top=(this.kOuterBorderSize*this._scale).toString();const o=(2*this.kOuterBorderSize+this._colorBorderSize)*this._scale,s=(2*this.kOuterBorderSize+this._colorBorderSize)*this._scale,i=4*this.kOuterBorderSize+2*this._colorBorderSize,l=(this._width-i)*this._scale,c=(this._height-i)*this._scale,f=Math.ceil(Math.min(l,c)/1.8);a.width=l.toString(),a.height=c.toString(),a.left=o.toString(),a.top=s.toString(),a.backgroundImage=`url('${this._icon}')`,a.backgroundSize=`${Math.min(l,c)+this._zoom*this._scale}px`,a.backgroundPosition="center center",n.top=(s+(c-f)/2).toString(),n.left=o.toString(),n.width=l.toString(),n.height=(f+5).toString(),n.fontSize=f.toString(),n.textAlign="center",n.fontWeight="bold",n.color=this._textColor}draw(){if("remain"===this._text){const e=Math.ceil(this._value);this.textElement.innerText=e>0?e.toString():""}else if("percent"===this._text){let e=this._duration<=0?1:this._value/this._duration;e=Math.min(1,Math.max(0,e)),this.textElement.innerText=(100*e).toFixed(0)}else if("elapsed"===this._text){const e=(this._duration-this._value).toFixed(0);this.textElement.innerText=e}else this.textElement.innerHTML=this._text}reset(){this._connected&&(this.startTimeMs=Date.now(),this.rootElement.style.display="block",clearTimeout(this._hideTimer??0),this._hideTimer=null,clearTimeout(this._timer??0),this._timer=null,this._value=this._duration,this.advance())}advance(){this._value=this._duration+(this.startTimeMs-Date.now())/1e3,this._value<=0?(this._value=0,this._hideAfter>=0&&(this._hideTimer=window.setTimeout((()=>{this.rootElement.style.display="none"}),this._hideAfter))):this._timer=window.setTimeout((()=>{this.advance()}),this.kAnimateMs),this.draw()}}window.customElements.define("timer-icon",timericon_TimerIcon);const parsedLB="00:0839::",networkLB="00\\|[^|]*\\|0839\\|\\|",netRegexLB="\\\\\\|0839\\\\\\|\\[\\^\\|\\]\\*\\\\\\|",paramLB="^",syncKeys={seal:`(?<=${parsedLB}|${networkLB}|${netRegexLB}|${paramLB})([^|:]*) will be sealed off(?: in (?:[0-9]+ seconds)?)?`,unseal:"is no longer sealed",engage:"Engage!"},textKeys={E:"(?<= \\(|\\/)E(?=\\)|\\/)",N:"(?<= \\(|\\/)N(?=\\)|\\/)",S:"(?<= \\(|\\/)S(?=\\)|\\/)",W:"(?<= \\(|\\/)W(?=\\)|\\/)",NE:"(?<= \\(|\\/)NE(?=\\)|\\/)",NW:"(?<= \\(|\\/)NW(?=\\)|\\/)",SE:"(?<= \\(|\\/)SE(?=\\)|\\/)",SW:"(?<= \\(|\\/)SW(?=\\)|\\/)",Tank:"(?<= \\(|\\/)Tanks?(?=\\)|\\/)",Healer:"(?<= \\(|\\/)Healers?(?=\\)|\\/)",DPS:"(?<= \\(|\\/)DPS(?=\\)|\\/)",Number:"--(\\s*\\d+\\s*)--"},common_replacement_commonReplacement={replaceSync:{[syncKeys.seal]:{en:"$1 will be sealed off",de:"Noch 15 Sekunden, bis sich (?:(?:der|die|das) )?(?:Zugang zu(?:[rm]| den)? )?$1 schließt",fr:"Fermeture d(?:e|u|es) (?:l'|la |les? )?$1 dans",ja:"$1の封鎖まであと",cn:"距$1被封锁还有",ko:"15초 후에 $1[이가] 봉쇄됩니다"},[syncKeys.unseal]:{en:"is no longer sealed",de:"öffnet sich (?:wieder|erneut)",fr:"Ouverture ",ja:"の封鎖が解かれた",cn:"的封锁解除了",ko:"의 봉쇄가 해제되었습니다"},[syncKeys.engage]:{en:"Engage!",de:"Start!",fr:"À l'attaque",ja:"戦闘開始！",cn:"战斗开始！",ko:"전투 시작!"}},replaceText:{"--adds spawn--":{de:"--Adds erscheinen--",fr:"--Apparition d'adds--",ja:"--雑魚出現--",cn:"--小怪出现--",ko:"--쫄 소환--"},"--adds targetable--":{de:"--Adds anvisierbar--",fr:"--Adds ciblables--",ja:"--雑魚ターゲット可能--",cn:"--小怪可选中--",ko:"--쫄 타겟 가능--"},"--center--":{de:"--Mitte--",fr:"--Centre--",ja:"--センター--",cn:"--中央--",ko:"--중앙--"},"\\(center\\)":{de:"(Mitte)",fr:"(Centre)",ja:"(センター)",cn:"(中央)",ko:"(중앙)"},"--clones appear--":{de:"--Klone erscheinen--",fr:"--Apparition des clones--",ja:"--幻影出現--",cn:"--幻影出现--",ko:"--분신 소환--"},"--corner--":{de:"--Ecke--",fr:"--Coin--",ja:"--コーナー--",cn:"--角落--",ko:"--구석--"},"--dps burn--":{de:"--DPS burn--",fr:"--Burn dps--",ja:"--火力出せ--",cn:"--转火--",ko:"--딜 체크--"},"--east--":{de:"--Osten--",fr:"--Est--",ja:"--東--",cn:"--东--",ko:"--동쪽--"},"\\(east\\)":{de:"(Osten)",fr:"(Est)",ja:"(東)",cn:"(东)",ko:"(동쪽)"},Enrage:{de:"Finalangriff",fr:"Enrage",ja:"時間切れ",cn:"狂暴",ko:"전멸기"},"--frozen--":{de:"--eingefroren--",fr:"--Gelé--",ja:"--凍結--",cn:"--冻结--",ko:"--빙결--"},"--in--":{de:"--Rein--",fr:"--Intérieur--",ja:"--中--",cn:"--内--",ko:"--안--"},"\\(In\\)":{de:"(Rein)",fr:"(Intérieur)",ja:"(中)",cn:"(内)",ko:"(안)"},"\\(inner\\)":{de:"(innen)",fr:"(intérieur)",ja:"(中)",cn:"(内)",ko:"(안)"},"--jump--":{de:"--Sprung--",fr:"--Saut--",ja:"--ジャンプ--",cn:"--跳--",ko:"--점프--"},"--knockback--":{de:"--Rückstoß--",fr:"--Poussée--",ja:"--ノックバック--",cn:"--击退--",ko:"--넉백--"},"--middle--":{de:"--Mitte--",fr:"--Milieu--",ja:"--中央--",cn:"--中间--",ko:"--중앙--"},"\\(middle\\)":{de:"(Mitte)",fr:"(Milieu)",ja:"(中央)",cn:"(中间)",ko:"(중앙)"},"--north--":{de:"--Norden--",fr:"--Nord--",ja:"--北--",cn:"--北--",ko:"--북쪽--"},"\\(north\\)":{de:"(Norden)",fr:"(Nord)",ja:"(北)",cn:"(北)",ko:"(북쪽)"},"--northeast--":{de:"--Nordosten--",fr:"--Nord-Est--",ja:"--北東--",cn:"--东北--",ko:"--북동--"},"--northwest--":{de:"--Nordwesten--",fr:"--Nord-Ouest--",ja:"--北西--",cn:"--西北--",ko:"--북서--"},"--out--":{de:"--Raus--",fr:"--Extérieur--",ja:"--外--",cn:"--外--",ko:"--밖--"},"\\(Out\\)":{de:"(Raus)",fr:"(Extérieur)",ja:"(外)",cn:"(外)",ko:"(밖)"},"\\(outer\\)":{de:"(außen)",fr:"(extérieur)",ja:"(外)",cn:"(外)",ko:"(밖)"},"\\(outside\\)":{de:"(Draußen)",fr:"(À l'extérieur)",ja:"(外)",cn:"(外面)",ko:"(바깥)"},"--rotate--":{de:"--rotieren--",fr:"--rotation--",ja:"--回転--",cn:"--旋转--",ko:"--회전--"},"--south--":{de:"--Süden--",fr:"--Sud--",ja:"--南--",cn:"--南--",ko:"--남쪽--"},"\\(south\\)":{de:"(Süden)",fr:"(Sud)",ja:"(南)",cn:"(南)",ko:"(남쪽)"},"--southeast--":{de:"--Südosten--",fr:"--Sud-Est--",ja:"--南東--",cn:"--东南--",ko:"--남동--"},"--southwest--":{de:"--Südwesten--",fr:"--Sud-Ouest--",ja:"--南西--",cn:"--西南--",ko:"--남서--"},"--split--":{de:"--teilen--",fr:"--division--",ja:"--分裂--",cn:"--分裂--",ko:"--분열--"},"--stun--":{de:"--Betäubung--",fr:"--Étourdissement--",ja:"--スタン--",cn:"--击晕--",ko:"--기절--"},"--sync--":{de:"--synchronisation--",fr:"--synchronisation--",ja:"--シンク--",cn:"--同步化--",ko:"--동기화--"},"--([0-9]+x )?targetable--":{de:"--$1anvisierbar--",fr:"--$1ciblable--",ja:"--$1ターゲット可能--",cn:"--$1可选中--",ko:"--$1타겟 가능--"},"--teleport--":{de:"--teleportation--",fr:"--téléportation--",ja:"--テレポート--",cn:"--传送--",ko:"--순간 이동--"},"--untargetable--":{de:"--nich anvisierbar--",fr:"--non ciblable--",ja:"--ターゲット不可--",cn:"--无法选中--",ko:"--타겟 불가능--"},"--west--":{de:"--Westen--",fr:"--Ouest--",ja:"--西--",cn:"--西--",ko:"--서쪽--"},[textKeys.E]:{de:"O",fr:"E",ja:"東",cn:"东",ko:"동"},[textKeys.N]:{de:"N",fr:"N",ja:"北",cn:"北",ko:"북"},[textKeys.S]:{de:"S",fr:"S",ja:"南",cn:"南",ko:"남"},[textKeys.W]:{de:"W",fr:"O",ja:"西",cn:"西",ko:"서"},[textKeys.NE]:{de:"NO",fr:"NE",ja:"北東",cn:"东北",ko:"북동"},[textKeys.NW]:{de:"NW",fr:"NO",ja:"北西",cn:"西北",ko:"북서"},[textKeys.SE]:{de:"SO",fr:"SE",ja:"南東",cn:"东南",ko:"남동"},[textKeys.SW]:{de:"SW",fr:"SO",ja:"南西",cn:"西南",ko:"남서"},[textKeys.Tank]:{de:"Tank",fr:"Tank",ja:"タンク",cn:"坦克",ko:"탱커"},[textKeys.Healer]:{de:"Heiler",fr:"Healer",ja:"ヒーラー",cn:"治疗",ko:"힐러"},[textKeys.DPS]:{de:"DPS",fr:"DPS",ja:"DPS",cn:"DPS",ko:"딜러"},[textKeys.Number]:{de:"--$1--",fr:"--$1--",ja:"--$1--",cn:"--$1--",ko:"--$1--"}}},common_replacement_partialCommonTimelineReplacementKeys=[syncKeys.seal,textKeys.E,textKeys.N,textKeys.S,textKeys.W,textKeys.NE,textKeys.NW,textKeys.SE,textKeys.SW,textKeys.Tank,textKeys.Healer,textKeys.DPS],common_replacement_partialCommonTriggerReplacementKeys=[syncKeys.seal];var regexes=__webpack_require__(605);const localeLines={countdownStart:{en:"Battle commencing in (?<time>\\y{Float}) seconds! \\((?<player>.*?)\\)",de:"Noch (?<time>\\y{Float}) Sekunden bis Kampfbeginn! \\((?<player>.*?)\\)",fr:"Début du combat dans (?<time>\\y{Float}) secondes[ ]?! \\((?<player>.*?)\\)",ja:"戦闘開始まで(?<time>\\y{Float})秒！ （(?<player>.*?)）",cn:"距离战斗开始还有(?<time>\\y{Float})秒！ （(?<player>.*?)）",ko:"전투 시작 (?<time>\\y{Float})초 전! \\((?<player>.*?)\\)"},countdownEngage:{en:"Engage!",de:"Start!",fr:"À l'attaque[ ]?!",ja:"戦闘開始！",cn:"战斗开始！",ko:"전투 시작!"},countdownCancel:{en:"Countdown canceled by (?<player>\\y{Name})",de:"(?<player>\\y{Name}) hat den Countdown abgebrochen",fr:"Le compte à rebours a été interrompu par (?<player>\\y{Name})[ ]?\\.",ja:"(?<player>\\y{Name})により、戦闘開始カウントがキャンセルされました。",cn:"(?<player>\\y{Name})取消了战斗开始倒计时。",ko:"(?<player>\\y{Name}) 님이 초읽기를 취소했습니다\\."},areaSeal:{en:"(?<area>.*?) will be sealed off in (?<time>\\y{Float}) seconds!",de:"Noch (?<time>\\y{Float}) Sekunden, bis sich (?<area>.*?) schließt",fr:"Fermeture (?<area>.*?) dans (?<time>\\y{Float}) secondes[ ]?\\.",ja:"(?<area>.*?)の封鎖まであと(?<time>\\y{Float})秒",cn:"距(?<area>.*?)被封锁还有(?<time>\\y{Float})秒",ko:"(?<time>\\y{Float})초 후에 (?<area>.*?)(이|가) 봉쇄됩니다\\."},areaUnseal:{en:"(?<area>.*?) is no longer sealed.",de:"(?<area>.*?) öffnet sich erneut.",fr:"Ouverture (?<area>.*?)[ ]?!",ja:"(?<area>.*?)の封鎖が解かれた……",cn:"(?<area>.*?)的封锁解除了",ko:"(?<area>.*?)의 봉쇄가 해제되었습니다\\."},craftingStart:{en:"You begin synthesizing (?<count>(an?|\\d+) )?(?<recipe>.*)\\.",de:"Du hast begonnen, durch Synthese (?<count>(ein(e|es|em|er)?|\\d+) )?(?<recipe>.*) herzustellen\\.",fr:"Vous commencez à fabriquer (?<count>(une?|\\d+) )?(?<recipe>.*)\\.",ja:"(?<player>\\y{Name})は(?<recipe>.*)(×(?<count>\\d+))?の製作を開始した。",cn:"(?<player>\\y{Name})开始制作“(?<recipe>.*)”(×(?<count>\\d+))?。",ko:"(?<recipe>.*)(×(?<count>\\d+)개)? 제작을 시작합니다\\."},trialCraftingStart:{en:"You begin trial synthesis of (?<recipe>.*)\\.",de:"Du hast mit der Testsynthese von (?<recipe>.*) begonnen\\.",fr:"Vous commencez une synthèse d'essai pour une? (?<recipe>.*)\\.",ja:"(?<player>\\y{Name})は(?<recipe>.*)の製作練習を開始した。",cn:"(?<player>\\y{Name})开始练习制作(?<recipe>.*)。",ko:"(?<recipe>.*) 제작 연습을 시작합니다\\."},craftingFinish:{en:"You synthesize (?<count>(an?|\\d+) )?(?<recipe>.*)()?\\.",de:"Du hast erfolgreich (?<count>(ein(e|es|em|er)?|\\d+) )?(?<recipe>.*)()? hergestellt\\.",fr:"Vous fabriquez (?<count>(une?|\\d+) )?(?<recipe>.*)()?\\.",ja:"(?<player>\\y{Name})は(?<recipe>.*)()?(×(?<count>\\d+))?を完成させた！",cn:"(?<player>\\y{Name})制作“(?<recipe>.*)()?”(×(?<count>\\d+))?成功！",ko:"(?<player>\\y{Name}) 님이 (?<recipe>.*)()?(×(?<count>\\d+)개)?(을|를) 완성했습니다!"},trialCraftingFinish:{en:"Your trial synthesis of (?<recipe>.*) proved a success!",de:"Die Testsynthese von (?<recipe>.*) war erfolgreich!",fr:"Votre synthèse d'essai pour fabriquer (?<recipe>.*) a été couronnée de succès!",ja:"(?<player>\\y{Name})は(?<recipe>.*)の製作練習に成功した！",cn:"(?<player>\\y{Name})练习制作(?<recipe>.*)成功了！",ko:"(?<recipe>.*) 제작 연습에 성공했습니다!"},craftingFail:{en:"Your synthesis fails!",de:"Deine Synthese ist fehlgeschlagen!",fr:"La synthèse échoue\\.{3}",ja:"(?<player>\\y{Name})は製作に失敗した……",cn:"(?<player>\\y{Name})制作失败了……",ko:"제작에 실패했습니다……\\."},trialCraftingFail:{en:"Your trial synthesis of (?<recipe>.*) failed\\.{3}",de:"Die Testsynthese von (?<recipe>.*) ist fehlgeschlagen\\.{3}",fr:"Votre synthèse d'essai pour fabriquer (?<recipe>.*) s'est soldée par un échec\\.{3}",ja:"(?<player>\\y{Name})は(?<recipe>.*)の製作練習に失敗した……",cn:"(?<player>\\y{Name})练习制作(?<recipe>.*)失败了……",ko:"(?<recipe>.*) 제작 연습에 실패했습니다……\\."},craftingCancel:{en:"You cancel the synthesis\\.",de:"Du hast die Synthese abgebrochen\\.",fr:"La synthèse est annulée\\.",ja:"(?<player>\\y{Name})は製作を中止した。",cn:"(?<player>\\y{Name})中止了制作作业。",ko:"제작을 중지했습니다\\."},trialCraftingCancel:{en:"You abandoned trial synthesis\\.",de:"Testsynthese abgebrochen\\.",fr:"Vous avez interrompu la synthèse d'essai\\.",ja:"(?<player>\\y{Name})は製作練習を中止した。",cn:"(?<player>\\y{Name})停止了练习。",ko:"제작 연습을 중지했습니다\\."}};class RegexSet{regexes;netRegexes;get localeRegex(){return this.regexes||(this.regexes=this.buildLocaleRegexes(localeLines,(e=>regexes.A.gameLog({line:`${e}.*?`})))),this.regexes}get localeNetRegex(){return this.netRegexes||(this.netRegexes=this.buildLocaleRegexes(localeLines,(e=>netregexes.Ay.gameLog({line:`${e}[^|]*?`})))),this.netRegexes}buildLocaleRegexes(e,t){return Object.fromEntries(Object.entries(e).map((([e,a])=>[e,this.buildLocaleRegex(a,t)])))}buildLocaleRegex(e,t){const a=t(e.en);return{en:a,de:void 0!==e.de?t(e.de):a,fr:void 0!==e.fr?t(e.fr):a,ja:void 0!==e.ja?t(e.ja):a,cn:void 0!==e.cn?t(e.cn):a,ko:void 0!==e.ko?t(e.ko):a}}}const regexSet=new RegexSet,LocaleRegex=regexSet.localeRegex,translations_LocaleNetRegex=regexSet.localeNetRegex,translateWithReplacements=(e,t,a,n)=>{if(""===e||"[^:]+"===e||"[^|]+"===e)return{text:e,wasTranslated:!0};const r="replaceSync"===t;let o=!1;for(const s of n??[]){if(s.locale&&s.locale!==a)continue;const n=s[t];if(n)for(const[t,a]of Object.entries(n)){const n=r?Regexes.parseGlobal(t):Regexes.parse(t);e.match(n)&&(o=!0),e=e.replace(n,a)}}const s=commonReplacement[t];for(const[n,i]of Object.entries(s??{})){const s=i[a];if(void 0===s)continue;const l=r?Regexes.parseGlobal(n):Regexes.parse(n),c="replaceSync"===t?partialCommonTriggerReplacementKeys:partialCommonTimelineReplacementKeys;if(e.match(l)){let e=!1;for(const t of c)if(Regexes.parseGlobal(t).test(n)){e=!0;break}e||(o=!0)}e=e.replace(l,s)}return{text:e,wasTranslated:o}},translateRegex=(e,t,a)=>"string"==typeof e?translateWithReplacements(e,"replaceSync",t,a).text:translateWithReplacements(e.source,"replaceSync",t,a).text,translateText=(e,t,a)=>translateWithReplacements(e,"replaceText",t,a).text,translateRegexBuildParam=(e,t,a)=>translateRegexBuildParamAnon(e,t,a),translateRegexBuildParamAnon=(e,t,a)=>{let n,r=!0;const o={...e};for(const s of keysThatRequireTranslation){const i=e[s];if("boolean"!=typeof i&&void 0!==i)if("string"==typeof i){const e=translateWithReplacements(i,"replaceSync",t,a);o[s]=e.text,r=r&&e.wasTranslated,e.wasTranslated||(n??=[]).push(s)}else o[s]=i.map((e=>{if("string"!=typeof e)return e;const o=translateWithReplacements(e,"replaceSync",t,a);return r=r&&o.wasTranslated,o.wasTranslated||(n??=[]).push(s),o.text}))}return{params:o,wasTranslated:r,missingFields:n}};var util=__webpack_require__(268),content_type=__webpack_require__(946);const constants_kMeleeWithMpJobs=null,kMPNormalRate=.06,kMPCombatRate=.02,kMPUI1Rate=.3,kMPUI2Rate=.45,kMPUI3Rate=.6,kMPTickInterval=3,kComboDelay=30,kWellFedContentTypes=[content_type.A.Dungeons,content_type.A.Trials,content_type.A.Raids,content_type.A.UltimateRaids],kAbility={ShieldWall:"C5",Stronghold:"C6",LastBastion:"C7",LandWaker:"1090",DarkForce:"1091",GunmetalSoul:"42D1",HealingWind:"CE",BreathoftheEarth:"CF",PulseofLife:"D0",AngelFeathers:"1097",AstralStasis:"1098",Braver:"C8",Bladedance:"C9",FinalHeaven:"CA",Chimatsuri:"1093",DragonsongDive:"1092",DoomoftheLiving:"1EB5",BigShot:"108E",Desperado:"108F",SagittariusArrow:"1094",SatelliteBeam:"1095",CrimsonLotus:"42D2",Skyshard:"CB",Starstorm:"CC",Meteor:"CD",Teraflare:"1096",VermilionScourge:"1EB6",FastBlade:"09",RiotBlade:"0F",GoringBlade:"DD2",RoyalAuthority:"DD3",RageOfHalone:"15",TotalEclipse:"1CD5",Prominence:"4049",ShieldLob:"18",ShieldBash:"10",Requiescat:"1CD7",HolySpirit:"1CD8",HolyCircle:"404A",Confiteor:"404B",Clemency:"DD5",FightOrFlight:"14",SpiritsWithin:"1D",Expiacion:"6493",BladeofFaith:"6494",BladeofTruth:"6495",BladeOfValor:"6496",Atonement:"404C",HeavySwing:"1F",Maim:"25",StormsEye:"2D",StormsPath:"2A",Overpower:"29",MythrilTempest:"404E",Tomahawk:"2E",Berserk:"26",InnerRelease:"1CDD",Upheaval:"1CDB",Orogeny:"6498",HardSlash:"E21",SyphonStrike:"E27",Souleater:"E30",Unleash:"E25",StalwartSoul:"4054",Unmend:"E28",CarveAndSpit:"E3B",Plunge:"E38",AbyssalDrain:"E39",TheBlackestNight:"1CE1",BloodWeapon:"E29",Delirium:"1CDE",LivingShadow:"4058",KeenEdge:"3F09",BrutalShell:"3F0B",SolidBarrel:"3F11",GnashingFang:"3F12",SavageClaw:"3F13",WickedTalon:"3F16",DemonSlice:"3F0D",DemonSlaughter:"3F15",LightningShot:"3F0F",Bloodfest:"3F24",NoMercy:"3F0A",Aero:"79",Aero2:"84",Dia:"4094",Assize:"DF3",Bio:"45C8",Bio2:"45C9",Biolysis:"409C",Adloquium:"B9",ChainStratagem:"1D0C",Aetherflow:"A6",Combust:"E0F",Combust2:"E18",Combust3:"40AA",AspectedBenefic:"E0B",AspectedHelios:"E11",Draw:"E06",MinorArcana:"1D13",Divination:"40A8",Rhizomata:"5EF5",Phlegma:"5EE1",Phlegma2:"5EF3",Phlegma3:"5EF9",DragonKick:"4A",TwinSnakes:"3D",Demolish:"42",Bootshine:"35",FourPointFury:"4059",Brotherhood:"1CE4",TrueThrust:"4B",RaidenThrust:"405F",VorpalThrust:"4E",FullThrust:"54",Disembowel:"57",ChaosThrust:"58",FangAndClaw:"DE2",WheelingThrust:"DE4",DoomSpike:"56",SonicThrust:"1CE5",CoerthanTorment:"405D",PiercingTalon:"5A",HighJump:"405E",Jump:"5C",LanceCharge:"55",DragonSight:"1CE6",BattleLitany:"DE5",DraconianFury:"64AA",SpinningEdge:"8C0",GustSlash:"8C2",AeolianEdge:"8CF",ArmorCrush:"DEB",DeathBlossom:"8CE",HakkeMujinsatsu:"4068",ThrowingDagger:"8C7",TrickAttack:"8D2",RabbitMedium:"8E0",Bunshin:"406D",Hide:"8C5",Mug:"8C8",Hakaze:"1D35",Jinpu:"1D36",Shifu:"1D37",Gekko:"1D39",Kasha:"1D3A",Yukikaze:"1D38",Fuga:"1D3B",Mangetsu:"1D3C",Oka:"1D3D",Enpi:"1D3E",MeikyoShisui:"1D4B",KaeshiHiganbana:"4064",KaeshiGoken:"4065",KaeshiSetsugekka:"4066",HissatsuGuren:"1D48",HissatsuSenei:"4061",Fuko:"64B4",Slice:"5F35",WaxingSlice:"5F36",InfernalSlice:"5F37",SpinningScythe:"5F38",NightmareScythe:"5F39",Gluttony:"5F49",SoulSlice:"5F3C",SoulScythe:"5F3D",ArcaneCircle:"5F55",BattleVoice:"76",MagesBallad:"72",ArmysPaeon:"74",theWanderersMinuet:"DE7",EmpyrealArrow:"DE6",RadiantFinale:"64B9",SplitShot:"B32",SlugShot:"B34",CleanShot:"B39",HeatedSplitShot:"1CF3",HeatedSlugShot:"1CF4",HeatedCleanShot:"1CF5",SpreadShot:"B36",Drill:"4072",Bioblaster:"4073",HotShot:"B38",AirAnchor:"4074",WildFire:"B3E",HeatBlast:"1CF2",AutoCrossbow:"4071",ChainSaw:"64BC",Scattergun:"64BA",Cascade:"3E75",Fountain:"3E76",Windmill:"3E79",Bladeshower:"3E7A",QuadrupleTechnicalFinish:"3F44",TripleTechnicalFinish:"3F43",DoubleTechnicalFinish:"3F42",SingleTechnicalFinish:"3F41",TechnicalFinish:"3E84",StandardStep:"3E7D",TechnicalStep:"3E7E",Flourish:"3E8D",Thunder1:"90",Thunder2:"1D17",Thunder3:"99",Thunder4:"1CFC",EnergyDrain:"407C",EnergySiphon:"407E",SearingLight60:"64F2",SearingLight:"64C9",Aethercharge:"64C8",DreadwyrmTrance:"DFD",SummonBahamut:"1D03",SummonPhoenix:"64E7",Verstone:"1D57",Verfire:"1D56",Veraero:"1D53",Verthunder:"1D51",Verholy:"1D66",Verflare:"1D65",Jolt2:"1D64",Jolt:"1D4F",Impact:"1D62",Scatter:"1D55",Verthunder2:"408C",Veraero2:"408D",Vercure:"1D5A",Verraise:"1D63",Riposte:"1D50",Zwerchhau:"1D58",Redoublement:"1D5C",Moulinet:"1D59",Reprise:"4091",EnchantedRiposte:"1D67",EnchantedZwerchhau:"1D68",EnchantedRedoublement:"1D69",EnchantedMoulinet:"1D6A",EnchantedReprise:"4090",Embolden:"1D60",Manafication:"1D61",Fleche:"1D5D",ContreSixte:"1D5F",SongOfTorment:"2C7A",OffGuard:"2C93",PeculiarLight:"2C9D",AetherialSpark:"5AF1",Nightbloom:"5AFA",LucidDreaming:"1D8A"},kComboActions=[[kAbility.FastBlade,kAbility.RiotBlade,kAbility.GoringBlade],[kAbility.FastBlade,kAbility.RiotBlade,kAbility.RoyalAuthority],[kAbility.FastBlade,kAbility.RiotBlade,kAbility.RageOfHalone],[kAbility.TotalEclipse,kAbility.Prominence],[kAbility.HeavySwing,kAbility.Maim,kAbility.StormsEye],[kAbility.HeavySwing,kAbility.Maim,kAbility.StormsPath],[kAbility.Overpower,kAbility.MythrilTempest],[kAbility.HardSlash,kAbility.SyphonStrike,kAbility.Souleater],[kAbility.Unleash,kAbility.StalwartSoul],[kAbility.KeenEdge,kAbility.BrutalShell,kAbility.SolidBarrel],[kAbility.DemonSlice,kAbility.DemonSlaughter],[kAbility.TrueThrust,kAbility.Disembowel,kAbility.ChaosThrust],[kAbility.RaidenThrust,kAbility.Disembowel,kAbility.ChaosThrust],[kAbility.DoomSpike,kAbility.SonicThrust,kAbility.CoerthanTorment],[kAbility.DraconianFury,kAbility.SonicThrust,kAbility.CoerthanTorment],[kAbility.SpinningEdge,kAbility.GustSlash,kAbility.AeolianEdge],[kAbility.SpinningEdge,kAbility.GustSlash,kAbility.ArmorCrush],[kAbility.DeathBlossom,kAbility.HakkeMujinsatsu],[kAbility.Hakaze,kAbility.Jinpu,kAbility.Gekko],[kAbility.Hakaze,kAbility.Shifu,kAbility.Kasha],[kAbility.Hakaze,kAbility.Yukikaze],[kAbility.Fuga,kAbility.Mangetsu],[kAbility.Fuga,kAbility.Oka],[kAbility.Fuko,kAbility.Mangetsu],[kAbility.Fuko,kAbility.Oka],[kAbility.Slice,kAbility.WaxingSlice,kAbility.InfernalSlice],[kAbility.SpinningScythe,kAbility.NightmareScythe],[kAbility.SplitShot,kAbility.SlugShot,kAbility.CleanShot],[kAbility.HeatedSplitShot,kAbility.SlugShot,kAbility.CleanShot],[kAbility.HeatedSplitShot,kAbility.HeatedSlugShot,kAbility.CleanShot],[kAbility.HeatedSplitShot,kAbility.HeatedSlugShot,kAbility.HeatedCleanShot],[kAbility.Cascade,kAbility.Fountain],[kAbility.Windmill,kAbility.Bladeshower]],kComboBreakers=[kAbility.FastBlade,kAbility.RiotBlade,kAbility.RageOfHalone,kAbility.RoyalAuthority,kAbility.TotalEclipse,kAbility.Prominence,kAbility.ShieldBash,kAbility.HeavySwing,kAbility.Maim,kAbility.StormsEye,kAbility.StormsPath,kAbility.Overpower,kAbility.MythrilTempest,kAbility.HardSlash,kAbility.SyphonStrike,kAbility.Souleater,kAbility.Unleash,kAbility.StalwartSoul,kAbility.KeenEdge,kAbility.BrutalShell,kAbility.SolidBarrel,kAbility.DemonSlice,kAbility.DemonSlaughter,kAbility.TrueThrust,kAbility.VorpalThrust,kAbility.FullThrust,kAbility.Disembowel,kAbility.ChaosThrust,kAbility.DoomSpike,kAbility.SonicThrust,kAbility.CoerthanTorment,kAbility.SpinningEdge,kAbility.GustSlash,kAbility.AeolianEdge,kAbility.ArmorCrush,kAbility.DeathBlossom,kAbility.HakkeMujinsatsu,kAbility.Hakaze,kAbility.Jinpu,kAbility.Gekko,kAbility.Shifu,kAbility.Kasha,kAbility.Yukikaze,kAbility.Fuga,kAbility.Mangetsu,kAbility.Oka,kAbility.MeikyoShisui,kAbility.Fuko,kAbility.Slice,kAbility.WaxingSlice,kAbility.InfernalSlice,kAbility.SpinningScythe,kAbility.NightmareScythe,kAbility.SplitShot,kAbility.SlugShot,kAbility.CleanShot,kAbility.HeatedSplitShot,kAbility.HeatedSlugShot,kAbility.HeatedCleanShot,kAbility.SpreadShot,kAbility.Scattergun,kAbility.Cascade,kAbility.Fountain,kAbility.Windmill,kAbility.Bladeshower],kComboBreakers630=[...kComboBreakers,kAbility.Atonement],kComboBreakers620=[...kComboBreakers630,kAbility.GoringBlade,kAbility.Confiteor],constants_kLevelMod=null,getLocaleRegex=(e,t)=>{var a;return null!==(a=t[e])&&void 0!==a?a:t.en};class RegexesHolder{constructor(e,t){this.StatsRegex=NetRegexes.statChange(),this.YouGainEffectRegex=NetRegexes.gainsEffect({target:t}),this.YouLoseEffectRegex=NetRegexes.losesEffect({target:t}),this.YouUseAbilityRegex=NetRegexes.ability({source:t}),this.AnybodyAbilityRegex=NetRegexes.ability(),this.MobGainsEffectRegex=NetRegexes.gainsEffect({targetId:"4.{7}"}),this.MobLosesEffectRegex=NetRegexes.losesEffect({targetId:"4.{7}"}),this.MobGainsEffectFromYouRegex=NetRegexes.gainsEffect({targetId:"4.{7}",source:t}),this.MobLosesEffectFromYouRegex=NetRegexes.losesEffect({targetId:"4.{7}",source:t}),this.cordialRegex=/20(017FD|F5A3D|F844F|0420F|0317D)/;const a=getLocaleRegex.bind(this,e);this.countdownStartRegex=a(LocaleNetRegex.countdownStart),this.countdownCancelRegex=a(LocaleNetRegex.countdownCancel),this.craftingStartRegexes=[LocaleNetRegex.craftingStart,LocaleNetRegex.trialCraftingStart].map(a),this.craftingFinishRegexes=[LocaleNetRegex.craftingFinish,LocaleNetRegex.trialCraftingFinish].map(a),this.craftingStopRegexes=[LocaleNetRegex.craftingFail,LocaleNetRegex.craftingCancel,LocaleNetRegex.trialCraftingFail,LocaleNetRegex.trialCraftingCancel].map(a)}}const isPhysicalJob=e=>Util.isTankJob(e)||Util.isMeleeDpsJob(e)||Util.isRangedDpsJob(e),doesJobNeedMPBar=e=>Util.isCasterDpsJob(e)||Util.isHealerJob(e)||kMeleeWithMpJobs.includes(e),getLightningStacksByLevel=e=>e<20?1:e<40?2:e<76?3:4,calcGCDFromStat=(e,t,a=2500)=>{if(0===t)return a/1e3;let n=0,r=0;if("BLM"===e.job?n+=e.speedBuffs.circleOfPower?15:0:"WHM"===e.job?n+=e.speedBuffs.presenceOfMind?20:0:"SAM"===e.job&&e.speedBuffs.fuka&&(e.level>77?n+=13:n+=10),"NIN"===e.job)r+=e.speedBuffs.huton?15:0;else if("MNK"===e.job)r+=5*getLightningStacksByLevel(e.level);else if("BRD"===e.job)switch(r+=4*e.speedBuffs.paeonStacks,e.speedBuffs.museStacks){case 1:r+=1;break;case 2:r+=2;break;case 3:r+=4;break;case 4:r+=12}const o=kLevelMod[e.level];if(!o)throw new UnreachableCode;const s=Math.floor(1e3-Math.floor(130*(t-o[0])/o[1]))*a/1e3,i=(100-n)/100,l=(100-r)/100;return Math.floor(100*Math.floor(i*l*s/10)/100)/100},computeBackgroundColorFrom=(e,t)=>{const a=document.createElement("div");t.split(".").forEach((e=>{a.classList.add(e)})),e.appendChild(a);const n=window.getComputedStyle(a).backgroundColor;return e.removeChild(a),n},findCountBuff=(e,t)=>{let a=e.rootElement.getElementsByClassName("buffs");for(let e=0;e<a.length;e++)if(a[e].getAttribute("buffs-name")==t)return a[e];return null},updateCountBuff=(e,t,a)=>{e&&(t&&e.setAttribute("buffs-incr-physical",t.toString()),a&&e.setAttribute("buffs-incr-magic",a.toString()))},buffsCalculation=e=>{let t=e.rootElement.getElementsByClassName("buffs"),a=0,n=0,r=0,o=0;for(let e=0;e<t.length;e++){let s=t[e].getAttribute("buffs-target"),i=t[e].getAttribute("buffs-incr-physical"),l=t[e].getAttribute("buffs-incr-magic");if(void 0===s||void 0===i||void 0===l)continue;let c=Number(i),f=Number(l);"you"===s?(c>0&&(a=a<=0?c:a+c+a*c/100),f>0&&(n=n<=0?f:n+f+n*f/100)):(c>0&&(r+=c),f>0&&(o+=f))}let s=Math.floor(10*(a+r))/10,i=Math.floor(10*(n+o))/10,l=document.getElementById("damage-up-physical");null!=l&&(l.setAttribute("value",s.toString()),l.innerText=s<=0?"":"物: "+s+"%");let c=document.getElementById("damage-up-magic");null!=c&&(c.setAttribute("value",i.toString()),c.innerText=i<=0?"":"魔: "+i+"%")},makeAuraDotTimerIcon=(e,t,a,n,r,o,s,i,l,c,f,d,h,u)=>{const m=document.createElement("div");m.style.opacity=a.toString(),m.className="dots";const p=TimerIcon.create({width:n.toString(),height:r.toString(),bordersize:c.toString(),textcolor:l});m.appendChild(p);const T=document.createElement("div");if(T.style.position="relative",T.style.top=r.toString(),m.appendChild(T),t>=0){const e=TimerBar.create();e.width=n.toString(),e.height=s.toString(),e.fg=d,e.duration=t,T.appendChild(e)}if("physical"===u.attackType){const e=document.getElementById("damage-up-physical");if(null!=e){const t=null==e?void 0:e.getAttribute("value");void 0!==t&&Number(t)>0&&(p.text=t)}}if("magic"===u.attackType){const e=document.getElementById("damage-up-magic");if(null!=e){const t=null==e?void 0:e.getAttribute("value");void 0!==t&&Number(t)>0&&(p.text=t)}}return p.bordercolor=f,p.icon=h,m},makeAuraTimerIcon=(e,t,a,n,r,o,s,i,l,c,f,d,h,u,m)=>{const p=document.createElement("div");p.style.opacity=a.toString(),p.className="buffs",p.setAttribute("buffs-name",e);let T=null!=m.target?m.target:"you",g=null!=m.physicalUp?m.physicalUp:0,y=null!=m.magicUp?m.magicUp:0;p.setAttribute("buffs-target",T),p.setAttribute("buffs-incr-physical",g.toString()),p.setAttribute("buffs-incr-magic",y.toString());const k=TimerIcon.create({width:n.toString(),height:r.toString(),bordersize:c.toString(),textcolor:l});p.appendChild(k);const x=document.createElement("div");if(x.style.position="absolute",x.style.left=n.toString(),x.style.fontSize="50%",p.appendChild(x),t>=0){const e=TimerBar.create();e.width=h.toString(),e.height=s.toString(),e.fg=d,e.duration=t,e.lefttext="remain",x.appendChild(e)}if(i>0){const t=document.createElement("div");t.classList.add("text"),t.style.width=n.toString(),t.style.height=i.toString(),t.style.overflow="hidden",t.style.fontSize=(i-1).toString(),t.style.whiteSpace="pre",t.style.position="relative",t.style.top=r.toString(),t.style.fontFamily="arial",t.style.fontWeight="bold",t.style.color=l,t.style.textShadow="-1px 0 3px black, 0 1px 3px black, 1px 0 3px black, 0 -1px 3px black",t.style.paddingBottom=(i/4).toString(),t.innerText=e,p.appendChild(t)}return o&&(k.text=o),k.bordercolor=f,k.icon=u,p},normalizeLogLine=(e,t)=>new Proxy({},{get(a,n){if("string"==typeof n&&n in t){const a=t[n];if(a)return e[a]}}}),isPvPZone=e=>!1,getQueryVariable=e=>{const t=window.location.search.substring(1);for(const a of t.split("&")){const t=a.split("=");if(t[0]==e)return t[1]?t[1]:""}return""},configNameSpace="buffsConfig",loadConfig=()=>{const e=localStorage.getItem(configNameSpace);return e?JSON.parse(e):defaultUserConfig},setConfig=e=>{localStorage.setItem(configNameSpace,JSON.stringify(e))};let btnDefault=document.getElementById("saveToDefault");btnDefault&&btnDefault.addEventListener("click",(function(){var e;confirm("确定要还原设置?")&&setConfig(defaultUserConfig),null===(e=window.opener)||void 0===e||null===(e=e.location)||void 0===e||e.reload(),location.reload()}));let btnSave=document.getElementById("save");btnSave&&btnSave.addEventListener("click",save);const config=loadConfig();function save(){var e;let t=defaultUserConfig;const a=Number(document.getElementById("scale").value);a>=100&&(t.Scale=a),t.BigBuffNoticeTTSOn=document.getElementById("bigBuffNoticeTTSOn").checked,t.DotNoticeTTSOn=document.getElementById("dotNoticeTTSOn").checked;const n=Number(document.getElementById("dotNoticeLessThanSecond").value);n>0&&(t.DotNoticeLessThanSecond=n);const r=document.getElementById("dotNoticeTTS").value;r&&""!=r&&(t.DotNoticeTTS=r),t.TTSGoringBlade=document.getElementById("TTSGoringBlade").checked,t.TTSSurgingTempest=document.getElementById("TTSSurgingTempest").checked,t.TTSDia=document.getElementById("TTSDia").checked,t.TTSBiolysis=document.getElementById("TTSBiolysis").checked,t.TTSCombustIII=document.getElementById("TTSCombustIII").checked,t.TTSEukrasianDosisIii=document.getElementById("TTSEukrasianDosisIii").checked,t.TTSDemolish=document.getElementById("TTSDemolish").checked,t.TTSChaoticSpring=document.getElementById("TTSChaoticSpring").checked,t.TTSHiganbana=document.getElementById("TTSHiganbana").checked,t.TTSDeathsDesign=document.getElementById("TTSDeathsDesign").checked,t.TTSStormbite=document.getElementById("TTSStormbite").checked,t.TTSThunderIii=document.getElementById("TTSThunderIii").checked,t.TTSBleedingDoT=document.getElementById("TTSBleedingDoT").checked;try{setConfig(t),alert("保存成功")}catch(e){alert(e)}null===(e=window.opener)||void 0===e||null===(e=e.location)||void 0===e||e.reload(),location.reload()}document.getElementById("scale").value=config.Scale.toString(),config.BigBuffNoticeTTSOn&&(document.getElementById("bigBuffNoticeTTSOn").checked=!0),config.DotNoticeTTSOn&&(document.getElementById("dotNoticeTTSOn").checked=!0),document.getElementById("dotNoticeLessThanSecond").value=config.DotNoticeLessThanSecond.toString(),document.getElementById("dotNoticeTTS").value=config.DotNoticeTTS,config.TTSGoringBlade&&(document.getElementById("TTSGoringBlade").checked=!0),config.TTSSurgingTempest&&(document.getElementById("TTSSurgingTempest").checked=!0),config.TTSDia&&(document.getElementById("TTSDia").checked=!0),config.TTSBiolysis&&(document.getElementById("TTSBiolysis").checked=!0),config.TTSCombustIII&&(document.getElementById("TTSCombustIII").checked=!0),config.TTSEukrasianDosisIii&&(document.getElementById("TTSEukrasianDosisIii").checked=!0),config.TTSDemolish&&(document.getElementById("TTSDemolish").checked=!0),config.TTSChaoticSpring&&(document.getElementById("TTSChaoticSpring").checked=!0),config.TTSHiganbana&&(document.getElementById("TTSHiganbana").checked=!0),config.TTSDeathsDesign&&(document.getElementById("TTSDeathsDesign").checked=!0),config.TTSStormbite&&(document.getElementById("TTSStormbite").checked=!0),config.TTSThunderIii&&(document.getElementById("TTSThunderIii").checked=!0),config.TTSBleedingDoT&&(document.getElementById("TTSBleedingDoT").checked=!0)})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ 262:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// For consistency with Responses, Conditions
+// are also functions.
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+    targetIsYou() {
+        return (data, matches) => data.me === matches?.target;
+    },
+    targetIsNotYou() {
+        return (data, matches) => data.me !== matches?.target;
+    },
+    caresAboutAOE() {
+        return (data) => data.role === 'tank' || data.role === 'healer' || data.CanAddle() || data.job === 'BLU';
+    },
+    caresAboutMagical() {
+        return (data) => data.role === 'tank' || data.role === 'healer' || data.CanAddle() || data.job === 'BLU';
+    },
+    caresAboutPhysical() {
+        return (data) => data.role === 'tank' || data.role === 'healer' || data.CanFeint() || data.job === 'BLU';
+    },
+});
+//# sourceMappingURL=conditions.js.map
+
+/***/ }),
+
+/***/ 946:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// Auto-generated from gen_zone_id_and_info.ts
+// DO NOT EDIT THIS FILE DIRECTLY
+const data = {
+    'Companions': 12,
+    'CustomDeliveries': 25,
+    'DeepDungeons': 21,
+    'DisciplesOfTheHand': 17,
+    'DisciplesOfTheLand': 16,
+    'Dungeons': 2,
+    'DutyRoulette': 1,
+    'Eureka': 26,
+    'Fates': 8,
+    'Fishing': 34,
+    'Gate': 35,
+    'GoldSaucer': 19,
+    'GrandCompany': 11,
+    'Guildhests': 3,
+    'Levequests': 10,
+    'MaskedCarnivale': 27,
+    'OceanFishing': 31,
+    'OverallCompletion': 14,
+    'PlayerCommendation': 15,
+    'Pvp': 6,
+    'QuestBattles': 7,
+    'Raids': 5,
+    'RetainerVentures': 18,
+    'TheHunt': 33,
+    'TreasureHunt': 9,
+    'Trials': 4,
+    'TribalQuests': 13,
+    'TripleTriad': 32,
+    'UltimateRaids': 28,
+    'VCDungeonFinder': 30,
+    'WondrousTails': 24,
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (data);
+//# sourceMappingURL=content_type.js.map
+
+/***/ }),
+
+/***/ 765:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Hf: () => (/* binding */ isLang),
+/* harmony export */   yJ: () => (/* binding */ langToLocale)
+/* harmony export */ });
+/* unused harmony exports languages, langMap, browserLanguagesToLang */
+const languages = ['en', 'de', 'fr', 'ja', 'cn', 'ko'];
+const langMap = {
+    en: {
+        en: 'English',
+        de: 'German',
+        fr: 'French',
+        ja: 'Japanese',
+        cn: 'Chinese',
+        ko: 'Korean',
+    },
+    de: {
+        en: 'Englisch',
+        de: 'Deutsch',
+        fr: 'Französisch',
+        ja: 'Japanisch',
+        cn: 'Chinesisch',
+        ko: 'Koreanisch',
+    },
+    fr: {
+        en: 'Anglais',
+        de: 'Allemand',
+        fr: 'Français',
+        ja: 'Japonais',
+        cn: 'Chinois',
+        ko: 'Coréen',
+    },
+    ja: {
+        en: '英語',
+        de: 'ドイツ語',
+        fr: 'フランス語',
+        ja: '日本語',
+        cn: '中国語',
+        ko: '韓国語',
+    },
+    cn: {
+        en: '英文',
+        de: '德文',
+        fr: '法文',
+        ja: '日文',
+        cn: '中文',
+        ko: '韩文',
+    },
+    ko: {
+        en: '영어',
+        de: '독일어',
+        fr: '프랑스어',
+        ja: '일본어',
+        cn: '중국어',
+        ko: '한국어',
+    },
+};
+const isLang = (lang) => {
+    const langStrs = languages;
+    if (lang === undefined)
+        return false;
+    return langStrs.includes(lang);
+};
+const langToLocale = (lang) => {
+    return {
+        en: 'en',
+        de: 'de',
+        fr: 'fr',
+        ja: 'ja',
+        cn: 'zh-CN',
+        ko: 'ko',
+    }[lang];
+};
+const browserLanguagesToLang = (languages) => {
+    const lang = [...navigator.languages, 'en']
+        .map((l) => l.slice(0, 2))
+        // Remap `zh` to `cn` to match cactbot languages
+        .map((l) => l === 'zh' ? 'cn' : l)
+        .filter((l) => languages.includes(l))[0];
+    return isLang(lang) ? lang : 'en';
+};
+//# sourceMappingURL=languages.js.map
+
+/***/ }),
+
+/***/ 130:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   s: () => (/* binding */ logDefinitionsVersions)
+/* harmony export */ });
+// TODO: Maybe bring in a helper library that can compile-time extract these keys instead?
+const combatantMemoryKeys = [
+    'CurrentWorldID',
+    'WorldID',
+    'WorldName',
+    'BNpcID',
+    'BNpcNameID',
+    'PartyType',
+    'ID',
+    'OwnerID',
+    'WeaponId',
+    'Type',
+    'Job',
+    'Level',
+    'Name',
+    'CurrentHP',
+    'MaxHP',
+    'CurrentMP',
+    'MaxMP',
+    'PosX',
+    'PosY',
+    'PosZ',
+    'Heading',
+    'MonsterType',
+    'Status',
+    'ModelStatus',
+    'AggressionStatus',
+    'TargetID',
+    'IsTargetable',
+    'Radius',
+    'Distance',
+    'EffectiveDistance',
+    'NPCTargetID',
+    'CurrentGP',
+    'MaxGP',
+    'CurrentCP',
+    'MaxCP',
+    'PCTargetID',
+    'IsCasting1',
+    'IsCasting2',
+    'CastBuffID',
+    'CastTargetID',
+    'CastGroundTargetX',
+    'CastGroundTargetY',
+    'CastGroundTargetZ',
+    'CastDurationCurrent',
+    'CastDurationMax',
+    'TransformationId',
+];
+const latestLogDefinitions = {
+    GameLog: {
+        type: '00',
+        name: 'GameLog',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'ChatLog',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            code: 2,
+            name: 3,
+            line: 4,
+        },
+        subFields: {
+            code: {
+                '0039': {
+                    name: 'message',
+                    canAnonymize: true,
+                },
+                '0038': {
+                    name: 'echo',
+                    canAnonymize: true,
+                },
+                '0044': {
+                    name: 'dialog',
+                    canAnonymize: true,
+                },
+                '0839': {
+                    name: 'message',
+                    canAnonymize: true,
+                },
+            },
+        },
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'filter',
+            filters: { code: ['0044', '0839'] },
+        },
+    },
+    ChangeZone: {
+        type: '01',
+        name: 'ChangeZone',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'Territory',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            id: 2,
+            name: 3,
+        },
+        lastInclude: true,
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'all',
+        },
+    },
+    ChangedPlayer: {
+        type: '02',
+        name: 'ChangedPlayer',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'ChangePrimaryPlayer',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            id: 2,
+            name: 3,
+        },
+        playerIds: {
+            2: 3,
+        },
+        lastInclude: true,
+        canAnonymize: true,
+        firstOptionalField: undefined,
+    },
+    AddedCombatant: {
+        type: '03',
+        name: 'AddedCombatant',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'AddCombatant',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            id: 2,
+            name: 3,
+            job: 4,
+            level: 5,
+            ownerId: 6,
+            worldId: 7,
+            world: 8,
+            npcNameId: 9,
+            npcBaseId: 10,
+            currentHp: 11,
+            hp: 12,
+            currentMp: 13,
+            mp: 14,
+            // maxTp: 15,
+            // tp: 16,
+            x: 17,
+            y: 18,
+            z: 19,
+            heading: 20,
+        },
+        playerIds: {
+            2: 3,
+            6: null,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'filter',
+            filters: { id: '4.{7}' },
+            combatantIdFields: 2,
+        },
+    },
+    RemovedCombatant: {
+        type: '04',
+        name: 'RemovedCombatant',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'RemoveCombatant',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            id: 2,
+            name: 3,
+            job: 4,
+            level: 5,
+            owner: 6,
+            world: 8,
+            npcNameId: 9,
+            npcBaseId: 10,
+            currentHp: 11,
+            hp: 12,
+            currentMp: 13,
+            mp: 14,
+            // currentTp: 15,
+            // maxTp: 16,
+            x: 17,
+            y: 18,
+            z: 19,
+            heading: 20,
+        },
+        playerIds: {
+            2: 3,
+            6: null,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'filter',
+            filters: { id: '4.{7}' },
+            combatantIdFields: 2,
+        },
+    },
+    PartyList: {
+        type: '11',
+        name: 'PartyList',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'PartyList',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            partyCount: 2,
+            id0: 3,
+            id1: 4,
+            id2: 5,
+            id3: 6,
+            id4: 7,
+            id5: 8,
+            id6: 9,
+            id7: 10,
+            id8: 11,
+            id9: 12,
+            id10: 13,
+            id11: 14,
+            id12: 15,
+            id13: 16,
+            id14: 17,
+            id15: 18,
+            id16: 19,
+            id17: 20,
+            id18: 21,
+            id19: 22,
+            id20: 23,
+            id21: 24,
+            id22: 25,
+            id23: 26,
+        },
+        playerIds: {
+            3: null,
+            4: null,
+            5: null,
+            6: null,
+            7: null,
+            8: null,
+            9: null,
+            10: null,
+            11: null,
+            12: null,
+            13: null,
+            14: null,
+            15: null,
+            16: null,
+            17: null,
+            18: null,
+            19: null,
+            20: null,
+            21: null,
+            22: null,
+            23: null,
+            24: null,
+            25: null,
+            26: null,
+        },
+        firstOptionalField: 3,
+        canAnonymize: true,
+        lastInclude: true,
+    },
+    PlayerStats: {
+        type: '12',
+        name: 'PlayerStats',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'PlayerStats',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            job: 2,
+            strength: 3,
+            dexterity: 4,
+            vitality: 5,
+            intelligence: 6,
+            mind: 7,
+            piety: 8,
+            attackPower: 9,
+            directHit: 10,
+            criticalHit: 11,
+            attackMagicPotency: 12,
+            healMagicPotency: 13,
+            determination: 14,
+            skillSpeed: 15,
+            spellSpeed: 16,
+            tenacity: 18,
+            localContentId: 19,
+        },
+        canAnonymize: true,
+        lastInclude: true,
+        firstOptionalField: undefined,
+    },
+    StartsUsing: {
+        type: '20',
+        name: 'StartsUsing',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'StartsCasting',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            sourceId: 2,
+            source: 3,
+            id: 4,
+            ability: 5,
+            targetId: 6,
+            target: 7,
+            castTime: 8,
+            x: 9,
+            y: 10,
+            z: 11,
+            heading: 12,
+        },
+        possibleRsvFields: 5,
+        blankFields: [6],
+        playerIds: {
+            2: 3,
+            6: 7,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'filter',
+            filters: { sourceId: '4.{7}' },
+            combatantIdFields: [2, 6],
+        },
+    },
+    Ability: {
+        type: '21',
+        name: 'Ability',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'ActionEffect',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            sourceId: 2,
+            source: 3,
+            id: 4,
+            ability: 5,
+            targetId: 6,
+            target: 7,
+            flags: 8,
+            damage: 9,
+            targetCurrentHp: 24,
+            targetMaxHp: 25,
+            targetCurrentMp: 26,
+            targetMaxMp: 27,
+            // targetCurrentTp: 28,
+            // targetMaxTp: 29,
+            targetX: 30,
+            targetY: 31,
+            targetZ: 32,
+            targetHeading: 33,
+            currentHp: 34,
+            maxHp: 35,
+            currentMp: 36,
+            maxMp: 37,
+            // currentTp: 38;
+            // maxTp: 39;
+            x: 40,
+            y: 41,
+            z: 42,
+            heading: 43,
+            sequence: 44,
+            targetIndex: 45,
+            targetCount: 46,
+            ownerId: 47,
+            ownerName: 48,
+            effectDisplayType: 49,
+            actionId: 50,
+            actionAnimationId: 51,
+            animationLockTime: 52,
+            rotationHex: 53,
+        },
+        possibleRsvFields: 5,
+        playerIds: {
+            2: 3,
+            6: 7,
+            47: 48,
+        },
+        blankFields: [6, 47, 48],
+        canAnonymize: true,
+        // @TODO: Set this back to `undefined` after KR/CN have access to the new fields
+        firstOptionalField: 47,
+        analysisOptions: {
+            include: 'filter',
+            filters: { sourceId: '4.{7}' },
+            combatantIdFields: [2, 6],
+        },
+    },
+    NetworkAOEAbility: {
+        type: '22',
+        name: 'NetworkAOEAbility',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'AOEActionEffect',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            sourceId: 2,
+            source: 3,
+            id: 4,
+            ability: 5,
+            targetId: 6,
+            target: 7,
+            flags: 8,
+            damage: 9,
+            targetCurrentHp: 24,
+            targetMaxHp: 25,
+            targetCurrentMp: 26,
+            targetMaxMp: 27,
+            // targetCurrentTp: 28,
+            // targetMaxTp: 29,
+            targetX: 30,
+            targetY: 31,
+            targetZ: 32,
+            targetHeading: 33,
+            currentHp: 34,
+            maxHp: 35,
+            currentMp: 36,
+            maxMp: 37,
+            // currentTp: 38;
+            // maxTp: 39;
+            x: 40,
+            y: 41,
+            z: 42,
+            heading: 43,
+            sequence: 44,
+            targetIndex: 45,
+            targetCount: 46,
+            ownerId: 47,
+            ownerName: 48,
+            effectDisplayType: 49,
+            actionId: 50,
+            actionAnimationId: 51,
+            animationLockTime: 52,
+            rotationHex: 53,
+        },
+        possibleRsvFields: 5,
+        playerIds: {
+            2: 3,
+            6: 7,
+            47: 48,
+        },
+        blankFields: [6, 47, 48],
+        canAnonymize: true,
+        // @TODO: Set this back to `undefined` after KR/CN have access to the new fields
+        firstOptionalField: 47,
+        analysisOptions: {
+            include: 'filter',
+            filters: { sourceId: '4.{7}' },
+            combatantIdFields: [2, 6],
+        },
+    },
+    NetworkCancelAbility: {
+        type: '23',
+        name: 'NetworkCancelAbility',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'CancelAction',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            sourceId: 2,
+            source: 3,
+            id: 4,
+            name: 5,
+            reason: 6,
+        },
+        possibleRsvFields: 5,
+        playerIds: {
+            2: 3,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'filter',
+            filters: { sourceId: '4.{7}' },
+            combatantIdFields: 2,
+        },
+    },
+    NetworkDoT: {
+        type: '24',
+        name: 'NetworkDoT',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'DoTHoT',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            id: 2,
+            name: 3,
+            which: 4,
+            effectId: 5,
+            damage: 6,
+            currentHp: 7,
+            maxHp: 8,
+            currentMp: 9,
+            maxMp: 10,
+            // currentTp: 11,
+            // maxTp: 12,
+            x: 13,
+            y: 14,
+            z: 15,
+            heading: 16,
+            sourceId: 17,
+            source: 18,
+            // An id number lookup into the AttackType table
+            damageType: 19,
+            sourceCurrentHp: 20,
+            sourceMaxHp: 21,
+            sourceCurrentMp: 22,
+            sourceMaxMp: 23,
+            // sourceCurrentTp: 24,
+            // sourceMaxTp: 25,
+            sourceX: 26,
+            sourceY: 27,
+            sourceZ: 28,
+            sourceHeading: 29,
+        },
+        playerIds: {
+            2: 3,
+            17: 18,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'filter',
+            filters: {
+                id: '1.{7}',
+                which: 'DoT',
+                effectId: '0*?[1-9A-F][0-9A-F]*', // non-zero, non-empty, possibly-padded value
+            },
+            combatantIdFields: [2, 17],
+        },
+    },
+    WasDefeated: {
+        type: '25',
+        name: 'WasDefeated',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'Death',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            targetId: 2,
+            target: 3,
+            sourceId: 4,
+            source: 5,
+        },
+        playerIds: {
+            2: 3,
+            4: 5,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'filter',
+            filters: { targetId: '4.{7}' },
+            combatantIdFields: 2, // don't apply to sourceId; an ignored combatant is a valid source
+        },
+    },
+    GainsEffect: {
+        type: '26',
+        name: 'GainsEffect',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'StatusAdd',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            effectId: 2,
+            effect: 3,
+            duration: 4,
+            sourceId: 5,
+            source: 6,
+            targetId: 7,
+            target: 8,
+            count: 9,
+            targetMaxHp: 10,
+            sourceMaxHp: 11,
+        },
+        possibleRsvFields: 3,
+        playerIds: {
+            5: 6,
+            7: 8,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'filter',
+            filters: [
+                {
+                    sourceId: '[E4].{7}',
+                    targetId: '1.{7}',
+                },
+                {
+                    sourceId: '4.{7}',
+                    targetId: '4.{7}',
+                },
+                {
+                    effectId: ['B9A', '808'],
+                },
+            ],
+            combatantIdFields: [5, 7],
+        },
+    },
+    HeadMarker: {
+        type: '27',
+        name: 'HeadMarker',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'TargetIcon',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            targetId: 2,
+            target: 3,
+            id: 6,
+            data0: 7,
+        },
+        playerIds: {
+            2: 3,
+        },
+        possiblePlayerIds: [7],
+        canAnonymize: true,
+        firstOptionalField: 7,
+        analysisOptions: {
+            include: 'all',
+            combatantIdFields: 2,
+        },
+    },
+    NetworkRaidMarker: {
+        type: '28',
+        name: 'NetworkRaidMarker',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'WaymarkMarker',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            operation: 2,
+            waymark: 3,
+            id: 4,
+            name: 5,
+            x: 6,
+            y: 7,
+            z: 8,
+        },
+        playerIds: {
+            4: 5,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+    },
+    NetworkTargetMarker: {
+        type: '29',
+        name: 'NetworkTargetMarker',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'SignMarker',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            operation: 2,
+            waymark: 3,
+            id: 4,
+            name: 5,
+            targetId: 6,
+            targetName: 7,
+        },
+        playerIds: {
+            4: 5,
+            6: 7,
+        },
+        firstOptionalField: undefined,
+    },
+    LosesEffect: {
+        type: '30',
+        name: 'LosesEffect',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'StatusRemove',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            effectId: 2,
+            effect: 3,
+            sourceId: 5,
+            source: 6,
+            targetId: 7,
+            target: 8,
+            count: 9,
+        },
+        possibleRsvFields: 3,
+        playerIds: {
+            5: 6,
+            7: 8,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'filter',
+            filters: [
+                {
+                    sourceId: '[E4].{7}',
+                    targetId: '1.{7}',
+                },
+                {
+                    sourceId: '4.{7}',
+                    targetId: '4.{7}',
+                },
+                {
+                    effectId: ['B9A', '808'],
+                },
+            ],
+            combatantIdFields: [5, 7],
+        },
+    },
+    NetworkGauge: {
+        type: '31',
+        name: 'NetworkGauge',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'Gauge',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            id: 2,
+            data0: 3,
+            data1: 4,
+            data2: 5,
+            data3: 6,
+        },
+        playerIds: {
+            2: null,
+        },
+        // Sometimes this last field looks like a player id.
+        // For safety, anonymize all of the gauge data.
+        firstUnknownField: 3,
+        canAnonymize: true,
+        firstOptionalField: undefined,
+    },
+    NetworkWorld: {
+        type: '32',
+        name: 'NetworkWorld',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'World',
+        fields: {
+            type: 0,
+            timestamp: 1,
+        },
+        isUnknown: true,
+        firstOptionalField: undefined,
+    },
+    ActorControl: {
+        type: '33',
+        name: 'ActorControl',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'Director',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            instance: 2,
+            command: 3,
+            data0: 4,
+            data1: 5,
+            data2: 6,
+            data3: 7,
+        },
+        possiblePlayerIds: [4, 5, 6, 7],
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'never',
+        },
+    },
+    NameToggle: {
+        type: '34',
+        name: 'NameToggle',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'NameToggle',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            id: 2,
+            name: 3,
+            targetId: 4,
+            targetName: 5,
+            toggle: 6,
+        },
+        playerIds: {
+            2: 3,
+            4: 5,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'never',
+        },
+    },
+    Tether: {
+        type: '35',
+        name: 'Tether',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'Tether',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            sourceId: 2,
+            source: 3,
+            targetId: 4,
+            target: 5,
+            id: 8,
+        },
+        playerIds: {
+            2: 3,
+            4: 5,
+        },
+        canAnonymize: true,
+        firstUnknownField: 9,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'all',
+            combatantIdFields: [2, 4],
+        },
+    },
+    LimitBreak: {
+        type: '36',
+        name: 'LimitBreak',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'LimitBreak',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            valueHex: 2,
+            bars: 3,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+    },
+    NetworkEffectResult: {
+        type: '37',
+        name: 'NetworkEffectResult',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'EffectResult',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            id: 2,
+            name: 3,
+            sequenceId: 4,
+            currentHp: 5,
+            maxHp: 6,
+            currentMp: 7,
+            maxMp: 8,
+            currentShield: 9,
+            // Field index 10 is always `0`
+            x: 11,
+            y: 12,
+            z: 13,
+            heading: 14,
+        },
+        playerIds: {
+            2: 3,
+        },
+        firstUnknownField: 22,
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'never',
+        },
+    },
+    StatusEffect: {
+        type: '38',
+        name: 'StatusEffect',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'StatusList',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            targetId: 2,
+            target: 3,
+            jobLevelData: 4,
+            hp: 5,
+            maxHp: 6,
+            mp: 7,
+            maxMp: 8,
+            currentShield: 9,
+            // Field index 10 is always `0`
+            x: 11,
+            y: 12,
+            z: 13,
+            heading: 14,
+            data0: 15,
+            data1: 16,
+            data2: 17,
+            data3: 18,
+            data4: 19,
+            data5: 20,
+            // Variable number of triplets here, but at least one.
+        },
+        playerIds: {
+            2: 3,
+        },
+        firstUnknownField: 18,
+        canAnonymize: true,
+        firstOptionalField: 18,
+    },
+    NetworkUpdateHP: {
+        type: '39',
+        name: 'NetworkUpdateHP',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'UpdateHp',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            id: 2,
+            name: 3,
+            currentHp: 4,
+            maxHp: 5,
+            currentMp: 6,
+            maxMp: 7,
+            // currentTp: 8,
+            // maxTp: 9,
+            x: 10,
+            y: 11,
+            z: 12,
+            heading: 13,
+        },
+        playerIds: {
+            2: 3,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+    },
+    Map: {
+        type: '40',
+        name: 'Map',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'ChangeMap',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            id: 2,
+            regionName: 3,
+            placeName: 4,
+            placeNameSub: 5,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        lastInclude: true,
+        analysisOptions: {
+            include: 'all',
+        },
+    },
+    SystemLogMessage: {
+        type: '41',
+        name: 'SystemLogMessage',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'SystemLogMessage',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            instance: 2,
+            id: 3,
+            param0: 4,
+            param1: 5,
+            param2: 6,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'all',
+        },
+    },
+    StatusList3: {
+        type: '42',
+        name: 'StatusList3',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'StatusList3',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            id: 2,
+            name: 3,
+            // triplets of fields from here (effectId, data, playerId)?
+        },
+        playerIds: {
+            2: 3,
+        },
+        canAnonymize: true,
+        firstOptionalField: 4,
+        firstUnknownField: 4,
+    },
+    ParserInfo: {
+        type: '249',
+        name: 'ParserInfo',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'Settings',
+        fields: {
+            type: 0,
+            timestamp: 1,
+        },
+        globalInclude: true,
+        canAnonymize: true,
+        firstOptionalField: undefined,
+    },
+    ProcessInfo: {
+        type: '250',
+        name: 'ProcessInfo',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'Process',
+        fields: {
+            type: 0,
+            timestamp: 1,
+        },
+        globalInclude: true,
+        canAnonymize: true,
+        firstOptionalField: undefined,
+    },
+    Debug: {
+        type: '251',
+        name: 'Debug',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'Debug',
+        fields: {
+            type: 0,
+            timestamp: 1,
+        },
+        globalInclude: true,
+        canAnonymize: false,
+        firstOptionalField: undefined,
+    },
+    PacketDump: {
+        type: '252',
+        name: 'PacketDump',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'PacketDump',
+        fields: {
+            type: 0,
+            timestamp: 1,
+        },
+        canAnonymize: false,
+        firstOptionalField: undefined,
+    },
+    Version: {
+        type: '253',
+        name: 'Version',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'Version',
+        fields: {
+            type: 0,
+            timestamp: 1,
+        },
+        globalInclude: true,
+        canAnonymize: true,
+        firstOptionalField: undefined,
+    },
+    Error: {
+        type: '254',
+        name: 'Error',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'Error',
+        fields: {
+            type: 0,
+            timestamp: 1,
+        },
+        canAnonymize: false,
+        firstOptionalField: undefined,
+    },
+    None: {
+        type: '[0-9]+',
+        name: 'None',
+        source: 'FFXIV_ACT_Plugin',
+        messageType: 'None',
+        fields: {
+            type: 0,
+            timestamp: 1,
+        },
+        isUnknown: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'never',
+        },
+    },
+    // OverlayPlugin log lines
+    LineRegistration: {
+        type: '256',
+        name: 'LineRegistration',
+        source: 'OverlayPlugin',
+        messageType: '256',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            id: 2,
+            source: 3,
+            name: 4,
+            version: 5,
+        },
+        globalInclude: true,
+        canAnonymize: true,
+        firstOptionalField: undefined,
+    },
+    MapEffect: {
+        type: '257',
+        name: 'MapEffect',
+        source: 'OverlayPlugin',
+        messageType: '257',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            instance: 2,
+            flags: 3,
+            // values for the location field seem to vary between instances
+            // (e.g. a location of '08' in P5S does not appear to be the same location in P5S as in P6S)
+            // but this field does appear to consistently contain position info for the effect rendering
+            location: 4,
+            data0: 5,
+            data1: 6,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'all',
+        },
+    },
+    FateDirector: {
+        type: '258',
+        name: 'FateDirector',
+        source: 'OverlayPlugin',
+        messageType: '258',
+        // fateId and progress are in hex.
+        fields: {
+            type: 0,
+            timestamp: 1,
+            category: 2,
+            // padding0: 3,
+            fateId: 4,
+            progress: 5,
+            // param3: 6,
+            // param4: 7,
+            // param5: 8,
+            // param6: 9,
+            // padding1: 10,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+    },
+    CEDirector: {
+        type: '259',
+        name: 'CEDirector',
+        source: 'OverlayPlugin',
+        messageType: '259',
+        // all fields are in hex
+        fields: {
+            type: 0,
+            timestamp: 1,
+            popTime: 2,
+            timeRemaining: 3,
+            // unknown0: 4,
+            ceKey: 5,
+            numPlayers: 6,
+            status: 7,
+            // unknown1: 8,
+            progress: 9,
+            // unknown2: 10,
+            // unknown3: 11,
+            // unknown4: 12,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+    },
+    InCombat: {
+        type: '260',
+        name: 'InCombat',
+        source: 'OverlayPlugin',
+        messageType: '260',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            inACTCombat: 2,
+            inGameCombat: 3,
+            isACTChanged: 4,
+            isGameChanged: 5,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'all',
+        },
+    },
+    CombatantMemory: {
+        type: '261',
+        name: 'CombatantMemory',
+        source: 'OverlayPlugin',
+        messageType: '261',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            change: 2,
+            id: 3,
+            // from here, pairs of field name/values
+        },
+        canAnonymize: true,
+        firstOptionalField: 5,
+        // doesn't use `playerIds`, as the `id` field must be handled with the 'Name' repeating field
+        repeatingFields: {
+            startingIndex: 4,
+            label: 'pair',
+            names: ['key', 'value'],
+            sortKeys: true,
+            primaryKey: 'key',
+            possibleKeys: combatantMemoryKeys,
+            keysToAnonymize: {
+                // eslint-disable-next-line quote-props
+                3: 'Name',
+                'OwnerID': null,
+                'TargetID': null,
+                'PCTargetID': null,
+                'NPCTargetID': null,
+                'CastTargetID': null,
+            },
+        },
+        analysisOptions: {
+            include: 'filter',
+            // TODO: This is an initial attempt to capture field changes that are relevant to analysis,
+            // but this will likely need to be refined over time
+            filters: [
+                {
+                    id: '4.{7}',
+                    change: 'Change',
+                    pair: [{ key: 'ModelStatus', value: '.*' }],
+                },
+                {
+                    id: '4.{7}',
+                    change: 'Change',
+                    pair: [{ key: 'WeaponId', value: '.*' }],
+                },
+                {
+                    id: '4.{7}',
+                    change: 'Change',
+                    pair: [{ key: 'TransformationId', value: '.*' }],
+                },
+            ],
+            combatantIdFields: 3,
+        },
+    },
+    RSVData: {
+        type: '262',
+        name: 'RSVData',
+        source: 'OverlayPlugin',
+        messageType: '262',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            locale: 2,
+            // unknown0: 3,
+            key: 4,
+            value: 5,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            // RSV substitutions are performed automatically by the filter
+            include: 'never',
+        },
+    },
+    StartsUsingExtra: {
+        type: '263',
+        name: 'StartsUsingExtra',
+        source: 'OverlayPlugin',
+        messageType: '263',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            sourceId: 2,
+            id: 3,
+            x: 4,
+            y: 5,
+            z: 6,
+            heading: 7,
+        },
+        playerIds: {
+            2: null,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'filter',
+            filters: { sourceId: '4.{7}' },
+            combatantIdFields: 2,
+        },
+    },
+    AbilityExtra: {
+        type: '264',
+        name: 'AbilityExtra',
+        source: 'OverlayPlugin',
+        messageType: '264',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            sourceId: 2,
+            id: 3,
+            globalEffectCounter: 4,
+            dataFlag: 5,
+            x: 6,
+            y: 7,
+            z: 8,
+            heading: 9,
+        },
+        blankFields: [6],
+        playerIds: {
+            2: null,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+    },
+    ContentFinderSettings: {
+        type: '265',
+        name: 'ContentFinderSettings',
+        source: 'OverlayPlugin',
+        messageType: '265',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            zoneId: 2,
+            zoneName: 3,
+            inContentFinderContent: 4,
+            unrestrictedParty: 5,
+            minimalItemLevel: 6,
+            silenceEcho: 7,
+            explorerMode: 8,
+            levelSync: 9,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+    },
+    NpcYell: {
+        type: '266',
+        name: 'NpcYell',
+        source: 'OverlayPlugin',
+        messageType: '266',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            npcId: 2,
+            npcNameId: 3,
+            npcYellId: 4,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'all',
+            combatantIdFields: 2,
+        },
+    },
+    BattleTalk2: {
+        type: '267',
+        name: 'BattleTalk2',
+        source: 'OverlayPlugin',
+        messageType: '267',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            npcId: 2,
+            instance: 3,
+            npcNameId: 4,
+            instanceContentTextId: 5,
+            displayMs: 6,
+            // unknown1: 7,
+            // unknown2: 8,
+            // unknown3: 9,
+            // unknown4: 10,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'all',
+            combatantIdFields: 2,
+        },
+    },
+    Countdown: {
+        type: '268',
+        name: 'Countdown',
+        source: 'OverlayPlugin',
+        messageType: '268',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            id: 2,
+            worldId: 3,
+            countdownTime: 4,
+            result: 5,
+            name: 6,
+        },
+        playerIds: {
+            2: 6,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'never',
+        },
+    },
+    CountdownCancel: {
+        type: '269',
+        name: 'CountdownCancel',
+        source: 'OverlayPlugin',
+        messageType: '269',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            id: 2,
+            worldId: 3,
+            name: 4,
+        },
+        playerIds: {
+            2: 4,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'never',
+        },
+    },
+    ActorMove: {
+        type: '270',
+        name: 'ActorMove',
+        source: 'OverlayPlugin',
+        messageType: '270',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            id: 2,
+            heading: 3,
+            // unknown1: 4,
+            // unknown2: 5,
+            x: 6,
+            y: 7,
+            z: 8,
+        },
+        playerIds: {
+            2: null,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            // no real way to filter noise, even if (infrequently) used for triggers
+            include: 'never',
+        },
+    },
+    ActorSetPos: {
+        type: '271',
+        name: 'ActorSetPos',
+        source: 'OverlayPlugin',
+        messageType: '271',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            id: 2,
+            heading: 3,
+            // unknown1: 4,
+            // unknown2: 5,
+            x: 6,
+            y: 7,
+            z: 8,
+        },
+        playerIds: {
+            2: null,
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'filter',
+            filters: { id: '4.{7}' },
+            combatantIdFields: 2,
+        },
+    },
+    SpawnNpcExtra: {
+        type: '272',
+        name: 'SpawnNpcExtra',
+        source: 'OverlayPlugin',
+        messageType: '272',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            id: 2,
+            parentId: 3,
+            tetherId: 4,
+            animationState: 5,
+        },
+        playerIds: {
+            3: null, // `id` is an npc, but parentId could be a tethered player?
+        },
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'all',
+            combatantIdFields: [2, 3],
+        },
+    },
+    ActorControlExtra: {
+        type: '273',
+        name: 'ActorControlExtra',
+        source: 'OverlayPlugin',
+        messageType: '273',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            id: 2,
+            category: 3,
+            param1: 4,
+            param2: 5,
+            param3: 6,
+            param4: 7,
+        },
+        playerIds: {
+            2: null,
+        },
+        possiblePlayerIds: [4, 5, 6, 7],
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'all',
+            combatantIdFields: 2,
+        },
+    },
+    ActorControlSelfExtra: {
+        type: '274',
+        name: 'ActorControlSelfExtra',
+        source: 'OverlayPlugin',
+        messageType: '274',
+        fields: {
+            type: 0,
+            timestamp: 1,
+            id: 2,
+            category: 3,
+            param1: 4,
+            param2: 5,
+            param3: 6,
+            param4: 7,
+            param5: 8,
+            param6: 9,
+        },
+        playerIds: {
+            2: null,
+        },
+        possiblePlayerIds: [4, 5, 6, 7, 8, 9],
+        canAnonymize: true,
+        firstOptionalField: undefined,
+        analysisOptions: {
+            include: 'all',
+            combatantIdFields: 2,
+        },
+    },
+};
+const logDefinitionsVersions = {
+    'latest': latestLogDefinitions,
+};
+// Verify that this has the right type, but export `as const`.
+const assertLogDefinitions = latestLogDefinitions;
+console.assert(assertLogDefinitions);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (logDefinitionsVersions['latest']);
+//# sourceMappingURL=netlog_defs.js.map
+
+/***/ }),
+
+/***/ 702:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Ay: () => (/* binding */ NetRegexes),
+/* harmony export */   RJ: () => (/* binding */ gameLogCodes),
+/* harmony export */   bU: () => (/* binding */ actorControlType)
+/* harmony export */ });
+/* unused harmony exports keysThatRequireTranslation, buildRegex, commonNetRegex, buildNetRegexForTrigger */
+/* harmony import */ var _netlog_defs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(130);
+/* harmony import */ var _not_reached_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(174);
+/* harmony import */ var _regexes_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(605);
+
+
+
+const separator = '\\|';
+const matchDefault = '[^|]*';
+// If NetRegexes.setFlagTranslationsNeeded is set to true, then any
+// regex created that requires a translation will begin with this string
+// and match the magicStringRegex.  This is maybe a bit goofy, but is
+// a pretty straightforward way to mark regexes for translations.
+// If issue #1306 is ever resolved, we can remove this.
+const magicTranslationString = `^^`;
+const magicStringRegex = /^\^\^/;
+// can't simply export this, see https://github.com/OverlayPlugin/cactbot/pull/4957#discussion_r1002590589
+const keysThatRequireTranslationAsConst = [
+    'ability',
+    'name',
+    'source',
+    'target',
+    'line',
+];
+const keysThatRequireTranslation = keysThatRequireTranslationAsConst;
+const gameLogCodes = {
+    echo: '0038',
+    dialog: '0044',
+    message: '0839',
+};
+// See docs/LogGuide.md for more info about these categories
+const actorControlType = {
+    setAnimState: '003E',
+    publicContentText: '0834',
+    logMsg: '020F',
+    logMsgParams: '0210',
+};
+const defaultParams = (type, version, include) => {
+    const logType = _netlog_defs_js__WEBPACK_IMPORTED_MODULE_0__/* .logDefinitionsVersions */ .s[version][type];
+    if (include === undefined) {
+        include = Object.keys(logType.fields);
+        if ('repeatingFields' in logType) {
+            include.push(logType.repeatingFields.label);
+        }
+    }
+    const params = {};
+    const firstOptionalField = logType.firstOptionalField;
+    for (const [prop, index] of Object.entries(logType.fields)) {
+        if (!include.includes(prop))
+            continue;
+        const param = {
+            field: prop,
+            optional: firstOptionalField !== undefined && index >= firstOptionalField,
+        };
+        if (prop === 'type')
+            param.value = logType.type;
+        params[index] = param;
+    }
+    if ('repeatingFields' in logType && include.includes(logType.repeatingFields.label)) {
+        params[logType.repeatingFields.startingIndex] = {
+            field: logType.repeatingFields.label,
+            optional: firstOptionalField !== undefined &&
+                logType.repeatingFields.startingIndex >= firstOptionalField,
+            repeating: true,
+            repeatingKeys: [...logType.repeatingFields.names],
+            sortKeys: logType.repeatingFields.sortKeys,
+            primaryKey: logType.repeatingFields.primaryKey,
+            possibleKeys: [...logType.repeatingFields.possibleKeys],
+        };
+    }
+    return params;
+};
+const isRepeatingField = (repeating, value) => {
+    if (repeating !== true)
+        return false;
+    // Allow excluding the field to match for extraction
+    if (value === undefined)
+        return true;
+    if (!Array.isArray(value))
+        return false;
+    for (const e of value) {
+        if (typeof e !== 'object')
+            return false;
+    }
+    return true;
+};
+const parseHelper = (params, funcName, fields) => {
+    params = params ?? {};
+    const validFields = [];
+    for (const index in fields) {
+        const field = fields[index];
+        if (field)
+            validFields.push(field.field);
+    }
+    _regexes_js__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.validateParams(params, funcName, ['capture', ...validFields]);
+    // Find the last key we care about, so we can shorten the regex if needed.
+    const capture = _regexes_js__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.trueIfUndefined(params.capture);
+    const fieldKeys = Object.keys(fields).sort((a, b) => parseInt(a) - parseInt(b));
+    let maxKeyStr;
+    if (capture) {
+        const keys = [];
+        for (const key in fields)
+            keys.push(key);
+        let tmpKey = keys.pop();
+        if (tmpKey === undefined) {
+            maxKeyStr = fieldKeys[fieldKeys.length - 1] ?? '0';
+        }
+        else {
+            while (fields[tmpKey]?.optional &&
+                !((fields[tmpKey]?.field ?? '') in params))
+                tmpKey = keys.pop();
+            maxKeyStr = tmpKey ?? '0';
+        }
+    }
+    else {
+        maxKeyStr = '0';
+        for (const key in fields) {
+            const value = fields[key] ?? {};
+            if (typeof value !== 'object')
+                continue;
+            const fieldName = fields[key]?.field;
+            if (fieldName !== undefined && fieldName in params)
+                maxKeyStr = key;
+        }
+    }
+    const maxKey = parseInt(maxKeyStr);
+    // For testing, it's useful to know if this is a regex that requires
+    // translation.  We test this by seeing if there are any specified
+    // fields, and if so, inserting a magic string that we can detect.
+    // This lets us differentiate between "regex that should be translated"
+    // e.g. a regex with `target` specified, and "regex that shouldn't"
+    // e.g. a gains effect with just effectId specified.
+    const transParams = Object.keys(params).filter((k) => keysThatRequireTranslation.includes(k));
+    const needsTranslations = NetRegexes.flagTranslationsNeeded && transParams.length > 0;
+    // Build the regex from the fields.
+    let str = needsTranslations ? magicTranslationString : '^';
+    let lastKey = -1;
+    for (const keyStr in fields) {
+        const key = parseInt(keyStr);
+        // Fill in blanks.
+        const missingFields = key - lastKey - 1;
+        if (missingFields === 1)
+            str += '\\y{NetField}';
+        else if (missingFields > 1)
+            str += `\\y{NetField}{${missingFields}}`;
+        lastKey = key;
+        const value = fields[keyStr];
+        if (typeof value !== 'object')
+            throw new Error(`${funcName}: invalid value: ${JSON.stringify(value)}`);
+        const fieldName = value.field;
+        const defaultFieldValue = value.value?.toString() ?? matchDefault;
+        const fieldValue = params[fieldName];
+        if (isRepeatingField(fields[keyStr]?.repeating, fieldValue)) {
+            let repeatingArray = fieldValue;
+            const sortKeys = fields[keyStr]?.sortKeys;
+            const primaryKey = fields[keyStr]?.primaryKey;
+            const possibleKeys = fields[keyStr]?.possibleKeys;
+            // primaryKey is required if this is a repeating field per typedef in netlog_defs.ts
+            // Same with possibleKeys
+            if (primaryKey === undefined || possibleKeys === undefined)
+                throw new _not_reached_js__WEBPACK_IMPORTED_MODULE_1__/* .UnreachableCode */ .O();
+            // Allow sorting if needed
+            if (sortKeys) {
+                // Also sort our valid keys list
+                possibleKeys.sort((left, right) => left.toLowerCase().localeCompare(right.toLowerCase()));
+                if (repeatingArray !== undefined) {
+                    repeatingArray = [...repeatingArray].sort((left, right) => {
+                        // We check the validity of left/right because they're user-supplied
+                        if (typeof left !== 'object' || left[primaryKey] === undefined) {
+                            console.warn('Invalid argument passed to trigger:', left);
+                            return 0;
+                        }
+                        const leftValue = left[primaryKey];
+                        if (typeof leftValue !== 'string' || !possibleKeys?.includes(leftValue)) {
+                            console.warn('Invalid argument passed to trigger:', left);
+                            return 0;
+                        }
+                        if (typeof right !== 'object' || right[primaryKey] === undefined) {
+                            console.warn('Invalid argument passed to trigger:', right);
+                            return 0;
+                        }
+                        const rightValue = right[primaryKey];
+                        if (typeof rightValue !== 'string' || !possibleKeys?.includes(rightValue)) {
+                            console.warn('Invalid argument passed to trigger:', right);
+                            return 0;
+                        }
+                        return leftValue.toLowerCase().localeCompare(rightValue.toLowerCase());
+                    });
+                }
+            }
+            const anonReps = repeatingArray;
+            // Loop over our possible keys
+            // Build a regex that can match any possible key with required values substituted in
+            possibleKeys.forEach((possibleKey) => {
+                const rep = anonReps?.find((rep) => primaryKey in rep && rep[primaryKey] === possibleKey);
+                let fieldRegex = '';
+                // Rather than looping over the keys defined on the object,
+                // loop over the base type def's keys. This enforces the correct order.
+                fields[keyStr]?.repeatingKeys?.forEach((key) => {
+                    let val = rep?.[key];
+                    if (rep === undefined || !(key in rep)) {
+                        // If we don't have a value for this key
+                        // insert a placeholder, unless it's the primary key
+                        if (key === primaryKey)
+                            val = possibleKey;
+                        else
+                            val = matchDefault;
+                    }
+                    if (typeof val !== 'string') {
+                        if (!Array.isArray(val))
+                            val = matchDefault;
+                        else if (val.length < 1)
+                            val = matchDefault;
+                        else if (val.some((v) => typeof v !== 'string'))
+                            val = matchDefault;
+                    }
+                    fieldRegex += _regexes_js__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.maybeCapture(key === primaryKey ? false : capture, 
+                    // All capturing groups are `fieldName` + `possibleKey`, e.g. `pairIsCasting1`
+                    fieldName + possibleKey, val, defaultFieldValue) +
+                        separator;
+                });
+                if (fieldRegex.length > 0) {
+                    str += `(?:${fieldRegex})${rep !== undefined ? '' : '?'}`;
+                }
+            });
+        }
+        else if (fields[keyStr]?.repeating) {
+            // If this is a repeating field but the actual value is empty or otherwise invalid,
+            // don't process further. We can't use `continue` in the above block because that
+            // would skip the early-out break at the end of the loop.
+        }
+        else {
+            if (fieldName !== undefined) {
+                str += _regexes_js__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.maybeCapture(
+                // more accurate type instead of `as` cast
+                // maybe this function needs a refactoring
+                capture, fieldName, fieldValue, defaultFieldValue) +
+                    separator;
+            }
+            else {
+                str += defaultFieldValue + separator;
+            }
+        }
+        // Stop if we're not capturing and don't care about future fields.
+        if (key >= maxKey)
+            break;
+    }
+    return _regexes_js__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.parse(str);
+};
+const buildRegex = (type, params) => {
+    return parseHelper(params, type, defaultParams(type, NetRegexes.logVersion));
+};
+class NetRegexes {
+    static logVersion = 'latest';
+    static flagTranslationsNeeded = false;
+    static setFlagTranslationsNeeded(value) {
+        NetRegexes.flagTranslationsNeeded = value;
+    }
+    static doesNetRegexNeedTranslation(regex) {
+        // Need to `setFlagTranslationsNeeded` before calling this function.
+        console.assert(NetRegexes.flagTranslationsNeeded);
+        const str = typeof regex === 'string' ? regex : regex.source;
+        return !!magicStringRegex.exec(str);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-20-0x14-networkstartscasting
+     */
+    static startsUsing(params) {
+        return buildRegex('StartsUsing', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-21-0x15-networkability
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-22-0x16-networkaoeability
+     */
+    static ability(params) {
+        return parseHelper(params, 'Ability', {
+            ...defaultParams('Ability', NetRegexes.logVersion),
+            // Override type
+            0: { field: 'type', value: '2[12]', optional: false },
+        });
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-21-0x15-networkability
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-22-0x16-networkaoeability
+     *
+     * @deprecated Use `ability` instead
+     */
+    static abilityFull(params) {
+        return this.ability(params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-27-0x1b-networktargeticon-head-marker
+     */
+    static headMarker(params) {
+        return buildRegex('HeadMarker', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-03-0x03-addcombatant
+     */
+    static addedCombatant(params) {
+        return parseHelper(params, 'AddedCombatant', defaultParams('AddedCombatant', NetRegexes.logVersion));
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-03-0x03-addcombatant
+     * @deprecated Use `addedCombatant` instead
+     */
+    static addedCombatantFull(params) {
+        return NetRegexes.addedCombatant(params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-04-0x04-removecombatant
+     */
+    static removingCombatant(params) {
+        return buildRegex('RemovedCombatant', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-26-0x1a-networkbuff
+     */
+    static gainsEffect(params) {
+        return buildRegex('GainsEffect', params);
+    }
+    /**
+     * Prefer gainsEffect over this function unless you really need extra data.
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-38-0x26-networkstatuseffects
+     */
+    static statusEffectExplicit(params) {
+        return buildRegex('StatusEffect', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-30-0x1e-networkbuffremove
+     */
+    static losesEffect(params) {
+        return buildRegex('LosesEffect', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-35-0x23-networktether
+     */
+    static tether(params) {
+        return buildRegex('Tether', params);
+    }
+    /**
+     * 'target' was defeated by 'source'
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-25-0x19-networkdeath
+     */
+    static wasDefeated(params) {
+        return buildRegex('WasDefeated', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-24-0x18-networkdot
+     */
+    static networkDoT(params) {
+        return buildRegex('NetworkDoT', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-00-0x00-logline
+     */
+    static echo(params) {
+        if (typeof params === 'undefined')
+            params = {};
+        _regexes_js__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.validateParams(params, 'Echo', ['type', 'timestamp', 'code', 'name', 'line', 'capture']);
+        return NetRegexes.gameLog({ ...params, code: gameLogCodes.echo });
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-00-0x00-logline
+     */
+    static dialog(params) {
+        if (typeof params === 'undefined')
+            params = {};
+        _regexes_js__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.validateParams(params, 'Dialog', ['type', 'timestamp', 'code', 'name', 'line', 'capture']);
+        return NetRegexes.gameLog({ ...params, code: gameLogCodes.dialog });
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-00-0x00-logline
+     */
+    static message(params) {
+        if (typeof params === 'undefined')
+            params = {};
+        _regexes_js__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A.validateParams(params, 'Message', ['type', 'timestamp', 'code', 'name', 'line', 'capture']);
+        return NetRegexes.gameLog({ ...params, code: gameLogCodes.message });
+    }
+    /**
+     * fields: code, name, line, capture
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-00-0x00-logline
+     */
+    static gameLog(params) {
+        return buildRegex('GameLog', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-00-0x00-logline
+     */
+    static gameNameLog(params) {
+        // Backwards compatability.
+        return NetRegexes.gameLog(params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-12-0x0c-playerstats
+     */
+    static statChange(params) {
+        return buildRegex('PlayerStats', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-01-0x01-changezone
+     */
+    static changeZone(params) {
+        return buildRegex('ChangeZone', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-33-0x21-network6d-actor-control
+     */
+    static network6d(params) {
+        return buildRegex('ActorControl', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-34-0x22-networknametoggle
+     */
+    static nameToggle(params) {
+        return buildRegex('NameToggle', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-40-0x28-map
+     */
+    static map(params) {
+        return buildRegex('Map', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-41-0x29-systemlogmessage
+     */
+    static systemLogMessage(params) {
+        return buildRegex('SystemLogMessage', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-257-0x101-mapeffect
+     */
+    static mapEffect(params) {
+        return buildRegex('MapEffect', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-258-0x102-fatedirector
+     */
+    static fateDirector(params) {
+        return buildRegex('FateDirector', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-259-0x103-cedirector
+     */
+    static ceDirector(params) {
+        return buildRegex('CEDirector', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-260-0x104-incombat
+     */
+    static inCombat(params) {
+        return buildRegex('InCombat', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-261-0x105-combatantmemory
+     */
+    static combatantMemory(params) {
+        return buildRegex('CombatantMemory', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-263-0x107-startsusingextra
+     */
+    static startsUsingExtra(params) {
+        return buildRegex('StartsUsingExtra', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-264-0x108-abilityextra
+     */
+    static abilityExtra(params) {
+        return buildRegex('AbilityExtra', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-265-0x109-contentfindersettings
+     */
+    static contentFinderSettings(params) {
+        return buildRegex('ContentFinderSettings', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-266-0x10a-npcyell
+     */
+    static npcYell(params) {
+        return buildRegex('NpcYell', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-267-0x10b-battletalk2
+     */
+    static battleTalk2(params) {
+        return buildRegex('BattleTalk2', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-268-0x10c-countdown
+     */
+    static countdown(params) {
+        return buildRegex('Countdown', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-269-0x10d-countdowncancel
+     */
+    static countdownCancel(params) {
+        return buildRegex('CountdownCancel', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-270-0x10e-actormove
+     */
+    static actorMove(params) {
+        return buildRegex('ActorMove', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-271-0x10f-actorsetpos
+     */
+    static actorSetPos(params) {
+        return buildRegex('ActorSetPos', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-272-0x110-spawnnpcextra
+     */
+    static spawnNpcExtra(params) {
+        return buildRegex('SpawnNpcExtra', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-273-0x111-actorcontrolextra
+     */
+    static actorControlExtra(params) {
+        return buildRegex('ActorControlExtra', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-274-0x112-actorcontrolselfextra
+     */
+    static actorControlSelfExtra(params) {
+        return buildRegex('ActorControlSelfExtra', params);
+    }
+}
+const commonNetRegex = {
+    // TODO(6.2): remove 40000010 after everybody is on 6.2.
+    // TODO: or maybe keep around for playing old log files??
+    wipe: NetRegexes.network6d({ command: ['40000010', '4000000F'] }),
+    cactbotWipeEcho: NetRegexes.echo({ line: 'cactbot wipe.*?' }),
+    userWipeEcho: NetRegexes.echo({ line: 'end' }),
+};
+const buildNetRegexForTrigger = (type, params) => {
+    if (type === 'Ability')
+        // ts can't narrow T to `Ability` here, need casting.
+        return NetRegexes.ability(params);
+    return buildRegex(type, params);
+};
+//# sourceMappingURL=netregexes.js.map
+
+/***/ }),
+
+/***/ 174:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   O: () => (/* binding */ UnreachableCode)
+/* harmony export */ });
+// Helper Error for TypeScript situations where the programmer thinks they
+// know better than TypeScript that some situation will never occur.
+// The intention here is that the programmer does not expect a particular
+// bit of code to happen, and so has not written careful error handling.
+// If it does occur, at least there will be an error and we can figure out why.
+// This is preferable to casting or disabling TypeScript altogether in order to
+// avoid syntax errors.
+// One common example is a regex, where if the regex matches then all of the
+// (non-optional) regex groups will also be valid, but TypeScript doesn't know.
+class UnreachableCode extends Error {
+    constructor() {
+        super('This code shouldn\'t be reached');
+    }
+}
+//# sourceMappingURL=not_reached.js.map
+
+/***/ }),
+
+/***/ 468:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// Output strings for now require a field for every language, so this is a
+// helper function to generate one for literal numbers.
+const numberToOutputString = function (n) {
+    const str = n.toString();
+    return {
+        en: str,
+        de: str,
+        fr: str,
+        ja: str,
+        cn: str,
+        ko: str,
+    };
+};
+// General guidelines:
+// * property names should closely match English text
+// * use OnPlayer suffix for things with `${player}`
+// * use OnTarget suffix for things with `${name}`
+// * any other parameters (of which there are none, currently) should use consistent suffixes.
+// * the value of each property should be a single object with localized keys
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+    aoe: {
+        en: 'aoe',
+        de: 'AoE',
+        fr: 'AoE',
+        ja: '全体攻撃',
+        cn: 'AoE',
+        ko: '전체 공격',
+    },
+    bigAoe: {
+        en: 'big aoe!',
+        de: 'Große AoE!',
+        fr: 'Grosse AoE !',
+        ja: '強力な全体攻撃',
+        cn: '大AoE伤害！',
+        ko: '강한 전체 공격!',
+    },
+    bleedAoe: {
+        en: 'AoE + Bleed',
+        de: 'AoE + Blutung',
+        fr: 'AoE + Saignement',
+        ja: '全体攻撃 + DoT',
+        cn: 'AOE + 流血',
+        ko: '전체 공격 + 도트',
+    },
+    tankBuster: {
+        en: 'Tank Buster',
+        de: 'Tank buster',
+        fr: 'Tank buster',
+        ja: 'タンク強攻撃',
+        cn: '坦克死刑',
+        ko: '탱버',
+    },
+    miniBuster: {
+        en: 'Mini Buster',
+        de: 'Kleiner Tankbuster',
+        fr: 'Mini Buster',
+        ja: 'タンク攻撃',
+        cn: '小死刑',
+        ko: '약한 탱버',
+    },
+    tankBusterOnPlayer: {
+        en: 'Tank Buster on ${player}',
+        de: 'Tank buster auf ${player}',
+        fr: 'Tank buster sur ${player}',
+        ja: '${player}に強攻撃',
+        cn: '死刑 点 ${player}',
+        ko: '"${player}" 탱버',
+    },
+    tankBusterOnYou: {
+        en: 'Tank Buster on YOU',
+        de: 'Tank buster auf DIR',
+        fr: 'Tank buster sur VOUS',
+        ja: '自分に強攻撃',
+        cn: '死刑点名',
+        ko: '탱버 대상자',
+    },
+    // when there are multiple tankbusters going out
+    tankBusters: {
+        en: 'Tank Busters',
+        de: 'Tank busters',
+        fr: 'Tank busters',
+        ja: 'タンク強攻撃',
+        cn: '坦克死刑',
+        ko: '탱버',
+    },
+    tetherBusters: {
+        en: 'Tank Tethers',
+        de: 'Tank-Verbindungen',
+        fr: 'Liens Tank',
+        ja: 'タンク線取り',
+        cn: '坦克截线',
+        ko: '탱커가 선 가로채기',
+    },
+    avoidTetherBusters: {
+        en: 'Avoid Tank Tethers',
+        de: 'Vermeide Tank Verbindungen',
+        fr: 'Évitez les liens des Tanks',
+        ja: 'タンクの線を避けて',
+        cn: '远离坦克连线',
+        ko: '탱커 선 피하기',
+    },
+    tankCleave: {
+        en: 'Tank cleave',
+        de: 'Tank Cleave',
+        fr: 'Tank cleave',
+        ja: 'タンク範囲攻撃',
+        cn: '范围死刑',
+        ko: '광역 탱버',
+    },
+    tankBusterCleaves: {
+        en: 'Tank Buster Cleaves',
+        de: 'Tankbuster Cleaves',
+        fr: 'Tankbuster cleaves',
+        ja: 'MT・ST同時範囲攻撃',
+        cn: '坦克范围死刑',
+        ko: '동시 광역 탱버',
+    },
+    tankBusterCleavesOnYou: {
+        en: 'Tank Cleaves on YOU',
+        de: 'Tank Cleaves auf DIR',
+        fr: 'Tank cleaves sur VOUS',
+        ja: 'MT・ST同時範囲攻撃(自分対象)',
+        cn: '坦克范围死刑点名',
+        ko: '광역 탱버 대상자',
+    },
+    avoidTankCleave: {
+        en: 'Avoid tank cleave',
+        de: 'Tank Cleave ausweichen',
+        fr: 'Évitez le tank cleave',
+        ja: 'タンク範囲攻撃を避ける',
+        cn: '远离范围死刑',
+        ko: '광역 탱버 피하기',
+    },
+    avoidTankCleaves: {
+        en: 'Avoid Tank Cleaves',
+        de: 'Tankbuster Cleaves ausweichen',
+        fr: 'Évitez les cleaves (tankbusters)',
+        ja: '範囲攻撃を避けて',
+        cn: '远离坦克范围死刑',
+        ko: '광역 탱버 피하기',
+    },
+    tankCleaveOnYou: {
+        en: 'Tank cleave on YOU',
+        de: 'Tank Cleave aud DIR',
+        fr: 'Tank cleave sur VOUS',
+        ja: '自分に範囲攻撃',
+        cn: '范围死刑点名',
+        ko: '나에게 광역 탱버',
+    },
+    sharedTankbuster: {
+        en: 'Shared Tank Buster',
+        de: 'Geteilter Tankbuster',
+        fr: 'Partagez le Tank buster',
+        ja: 'タンク頭割り',
+        cn: '分摊死刑',
+        ko: '쉐어 탱버',
+    },
+    sharedTankbusterOnYou: {
+        en: 'Shared Tank Buster on YOU',
+        de: 'geteilter Tankbuster auf DIR',
+        fr: 'Tank buster à partager sur VOUS',
+        ja: '自分にタンク頭割り',
+        cn: '分摊死刑点名',
+        ko: '쉐어 탱버 대상자',
+    },
+    sharedTankbusterOnPlayer: {
+        en: 'Shared Tank Buster on ${player}',
+        de: 'geteilter Tankbuster on ${player}',
+        fr: 'Tank buster à partager sur ${player}',
+        ja: '${player} にタンク頭割り',
+        cn: '分摊死刑点 ${player}',
+        ko: '"${player}" 쉐어 탱버',
+    },
+    tankSwap: {
+        en: 'Tank Swap!',
+        de: 'Tankwechsel!',
+        fr: 'Tank swap !',
+        ja: 'タンクスイッチ!',
+        cn: '换T！',
+        ko: '탱 교대',
+    },
+    spread: {
+        en: 'Spread',
+        de: 'Verteilen',
+        fr: 'Dispersez-vous',
+        ja: '散開',
+        cn: '分散',
+        ko: '산개',
+    },
+    defamationOnYou: {
+        en: 'Defamation on YOU',
+        de: 'Ehrenstrafe aud DIR',
+        fr: 'Diffamation sur VOUS',
+        ja: '自分に巨大な爆発',
+        cn: '大圈点名',
+        ko: '광역징 대상자',
+    },
+    protean: {
+        en: 'Protean',
+        de: 'Himmelsrichtungen',
+        fr: 'Positions',
+        ja: '基本散会',
+        cn: '八方分散',
+        ko: '8방향 산개',
+    },
+    stackMarker: {
+        // for stack marker situations
+        en: 'Stack',
+        de: 'Sammeln',
+        fr: 'Packez-vous',
+        ja: '頭割り',
+        cn: '分摊',
+        ko: '쉐어뎀',
+    },
+    getTogether: {
+        // for getting together without stack marker
+        en: 'Stack',
+        de: 'Sammeln',
+        fr: 'Packez-vous',
+        ja: '集合',
+        cn: '集合',
+        ko: '모이기',
+    },
+    healerGroups: {
+        en: 'Healer Groups',
+        de: 'Heiler-Gruppen',
+        fr: 'Groupes sur les heals',
+        ja: 'ヒラに頭割り',
+        cn: '双奶分组分摊',
+        ko: '힐러 그룹 쉐어',
+    },
+    stackOnYou: {
+        en: 'Stack on YOU',
+        de: 'Auf DIR sammeln',
+        fr: 'Package sur VOUS',
+        ja: '自分に頭割り',
+        cn: '分摊点名',
+        ko: '쉐어징 대상자',
+    },
+    stackOnPlayer: {
+        en: 'Stack on ${player}',
+        de: 'Auf ${player} sammeln',
+        fr: 'Packez-vous sur ${player}',
+        ja: '${player}に頭割り',
+        cn: '靠近 ${player}分摊',
+        ko: '"${player}" 쉐어징',
+    },
+    stackPartner: {
+        en: 'Stack With Partner',
+        de: 'Mit Partner stacken',
+        fr: 'Packez-vous avec votre partenaire',
+        ja: 'ペア',
+        cn: '与搭档分摊',
+        ko: '파트너와 쉐어',
+    },
+    stackMiddle: {
+        en: 'Stack in middle',
+        de: 'In der Mitte sammeln',
+        fr: 'Packez-vous au milieu',
+        ja: '中央で頭割り',
+        cn: '中间集合',
+        ko: '중앙에서 쉐어',
+    },
+    baitPuddles: {
+        en: 'Bait puddles',
+        de: 'Flächen Ködern',
+        fr: 'Attirez les flaques',
+        ja: 'AOE誘導',
+        cn: '诱导放圈',
+        ko: '장판 유도',
+    },
+    // For general more-than-one-stack-at-a-time situations
+    stacks: {
+        en: 'Stacks',
+        de: 'Sammeln',
+        fr: 'Package',
+        ja: '頭割り',
+        cn: '分摊',
+        ko: '쉐어',
+    },
+    doritoStack: {
+        en: 'Dorito Stack',
+        de: 'Mit Marker sammeln',
+        fr: 'Packez les marques',
+        ja: 'マーカー同士で頭割り',
+        cn: '点名集合',
+        ko: '징끼리 모이기',
+    },
+    spreadThenStack: {
+        en: 'Spread => Stack',
+        de: 'Verteilen => Sammeln',
+        fr: 'Dispersion => Package',
+        ja: '散開 => 頭割り',
+        cn: '分散 => 集合',
+        ko: '산개 => 집합',
+    },
+    stackThenSpread: {
+        en: 'Stack => Spread',
+        de: 'Sammeln => Verteilen',
+        fr: 'Package => Dispersion',
+        ja: '頭割り => 散開',
+        cn: '集合 => 分散',
+        ko: '집합 => 산개',
+    },
+    drawIn: {
+        // Opposite of a knockback.
+        en: 'Draw In',
+        de: 'Einzug',
+        fr: 'Attraction',
+        ja: '吸込み',
+        cn: '吸引',
+        ko: '끌어당김',
+    },
+    knockback: {
+        en: 'Knockback',
+        de: 'Rückstoß',
+        fr: 'Poussée',
+        ja: 'ノックバック',
+        cn: '击退',
+        ko: '넉백',
+    },
+    knockbackOnYou: {
+        en: 'Knockback on YOU',
+        de: 'Rückstoß auf DIR',
+        fr: 'Poussée sur VOUS',
+        ja: '自分にノックバック',
+        cn: '击退点名',
+        ko: '넉백징 대상자',
+    },
+    knockbackOnPlayer: {
+        en: 'Knockback on ${player}',
+        de: 'Rückstoß auf ${player}',
+        fr: 'Poussée sur ${player}',
+        ja: '${player}にノックバック',
+        cn: '击退点名${player}',
+        ko: '"${player}" 넉백징',
+    },
+    lookTowardsBoss: {
+        en: 'Look Towards Boss',
+        de: 'Anschauen Boss',
+        fr: 'Regardez le boss',
+        ja: 'ボスを見る',
+        cn: '面向Boss',
+        ko: '쳐다보기',
+    },
+    lookAway: {
+        en: 'Look Away',
+        de: 'Wegschauen',
+        fr: 'Regardez ailleurs',
+        ja: 'ボスを見ない',
+        cn: '背对Boss',
+        ko: '뒤돌기',
+    },
+    lookAwayFromPlayer: {
+        en: 'Look Away from ${player}',
+        de: 'Schau weg von ${player}',
+        fr: 'Ne regardez pas ${player}',
+        ja: '${player}を見ない',
+        cn: '背对${player}',
+        ko: '${player}에게서 뒤돌기',
+    },
+    lookAwayFromTarget: {
+        en: 'Look Away from ${name}',
+        de: 'Schau weg von ${name}',
+        fr: 'Ne regardez pas ${name}',
+        ja: '${name}を見ない',
+        cn: '背对${name}',
+        ko: '${name}에게서 뒤돌기',
+    },
+    getBehind: {
+        en: 'Get Behind',
+        de: 'Hinter ihn',
+        fr: 'Passez derrière',
+        ja: '背面へ',
+        cn: '去背后',
+        ko: '보스 뒤로',
+    },
+    goFrontOrSides: {
+        en: 'Go Front / Sides',
+        de: 'Gehe nach Vorne/ zu den Seiten',
+        fr: 'Allez Devant / Côtés',
+        ja: '前／横へ',
+        cn: '去前侧方',
+        ko: '보스 후방 피하기',
+    },
+    goFront: {
+        en: 'Go Front',
+        de: 'Geh nach vorn',
+        fr: 'Allez Devant',
+        ja: '前へ',
+        cn: '去前面',
+        ko: '앞으로',
+    },
+    // getUnder is used when you have to get into the bosses hitbox
+    getUnder: {
+        en: 'Get Under',
+        de: 'Unter ihn',
+        fr: 'En dessous',
+        ja: 'ボスに貼り付く',
+        cn: '去脚下',
+        ko: '보스 아래로',
+    },
+    // in is more like "get close but maybe even melee range is fine"
+    in: {
+        en: 'In',
+        de: 'Rein',
+        fr: 'Intérieur',
+        ja: '中へ',
+        cn: '靠近',
+        ko: '안으로',
+    },
+    // out means get far away
+    out: {
+        en: 'Out',
+        de: 'Raus',
+        fr: 'Extérieur',
+        ja: '外へ',
+        cn: '远离',
+        ko: '밖으로',
+    },
+    outOfMelee: {
+        en: 'Out of melee',
+        de: 'Raus aus Nahkampf',
+        fr: 'Sortez de la mêlée',
+        ja: '近接の範囲から離れる',
+        cn: '离开近战距离',
+        ko: '근접범위 밖으로',
+    },
+    // be just outside the boss's target circle
+    outOfHitbox: {
+        en: 'Out of hitbox',
+        fr: 'Extérieur de la hitbox',
+        cn: '离开目标圈',
+        ko: '히트박스 밖으로',
+    },
+    inThenOut: {
+        en: 'In => out',
+        de: 'Rein, dann raus',
+        fr: 'Intérieur, puis extérieur',
+        ja: '中 => 外',
+        cn: '先靠近，再远离',
+        ko: '안으로 => 밖으로',
+    },
+    outThenIn: {
+        en: 'Out => in',
+        de: 'Raus, dann rein',
+        fr: 'Extérieur, puis intérieur',
+        ja: '外 => 中',
+        cn: '先远离，再靠近',
+        ko: '밖으로 => 안으로',
+    },
+    backThenFront: {
+        en: 'Back => Front',
+        de: 'Nach Hinten, danach nach Vorne',
+        fr: 'Derrière puis devant',
+        ja: '後ろ => 前',
+        cn: '后 => 前',
+        ko: '뒤로 => 앞으로',
+    },
+    frontThenBack: {
+        en: 'Front => Back',
+        de: 'Nach Vorne, danach nach Hinten',
+        fr: 'Devant puis derrière',
+        ja: '前 => 後ろ',
+        cn: '前 => 后',
+        ko: '앞으로 => 뒤로',
+    },
+    goIntoMiddle: {
+        en: 'Get Middle',
+        de: 'in die Mitte gehen',
+        fr: 'Allez au milieu',
+        ja: '中へ',
+        cn: '去中间',
+        ko: '중앙으로',
+    },
+    front: {
+        en: 'Front',
+        de: 'Vorne',
+        fr: 'Devant',
+        ja: '前',
+        cn: '前',
+        ko: '앞',
+    },
+    back: {
+        en: 'Back',
+        de: 'Hinten',
+        fr: 'Derrière',
+        ja: '後ろ',
+        cn: '后',
+        ko: '뒤',
+    },
+    right: {
+        en: 'Right',
+        de: 'Rechts',
+        fr: 'À droite',
+        ja: '右へ',
+        cn: '右',
+        ko: '오른쪽',
+    },
+    left: {
+        en: 'Left',
+        de: 'Links',
+        fr: 'À gauche',
+        ja: '左へ',
+        cn: '左',
+        ko: '왼쪽',
+    },
+    getLeftAndWest: {
+        en: '<= Get Left/West',
+        de: '<= Nach Links/Westen',
+        fr: '<= Allez à Gauche/Ouest',
+        ja: '<= 左/西へ',
+        cn: '<= 去左半场',
+        ko: '<= 왼쪽/서쪽',
+    },
+    getRightAndEast: {
+        en: 'Get Right/East =>',
+        de: 'Nach Rechts/Osten =>',
+        fr: 'Allez à Droite/Est =>',
+        ja: '右/東へ =>',
+        cn: '去右半场 =>',
+        ko: '오른쪽/동쪽 =>',
+    },
+    leftThenRight: {
+        en: 'Left => Right',
+        de: 'Links => Rechts',
+        fr: 'À gauche => À droite',
+        ja: '左 => 右',
+        cn: '左 => 右',
+        ko: '왼쪽 => 오른쪽',
+    },
+    rightThenLeft: {
+        en: 'Right => Left',
+        de: 'Rechts => Links',
+        fr: 'À droite => À gauche',
+        ja: '右 => 左',
+        cn: '右 => 左',
+        ko: '오른쪽 => 왼쪽',
+    },
+    goFrontBack: {
+        en: 'Go Front/Back',
+        de: 'Geh nach Vorne/Hinten',
+        fr: 'Allez Devant/Derrière',
+        ja: '縦へ',
+        cn: '去前后',
+        ko: '앞/뒤로',
+    },
+    sides: {
+        en: 'Sides',
+        de: 'Seiten',
+        fr: 'Côtés',
+        ja: '横へ',
+        cn: '去侧面',
+        ko: '양옆으로',
+    },
+    middle: {
+        en: 'Middle',
+        de: 'Mitte',
+        fr: 'Milieu',
+        ja: '中へ',
+        cn: '中间',
+        ko: '중앙',
+    },
+    clockwise: {
+        en: 'Clockwise',
+        de: 'Im Uhrzeigersinn',
+        fr: 'Sens horaire',
+        ja: '時針回り',
+        cn: '顺时针',
+        ko: '시계방향',
+    },
+    counterclockwise: {
+        en: 'Counter-clock',
+        de: 'Gegen den Uhrzeigersinn',
+        fr: 'Anti-horaire',
+        ja: '反時針回り',
+        cn: '逆时针',
+        ko: '반시계방향',
+    },
+    // killAdds is used for adds that will always be available
+    killAdds: {
+        en: 'Kill adds',
+        de: 'Adds besiegen',
+        fr: 'Tuez les adds',
+        ja: '雑魚から倒して',
+        cn: '击杀小怪',
+        ko: '쫄 잡기',
+    },
+    // killExtraAdd is used for adds that appear if a mechanic was not played correctly
+    killExtraAdd: {
+        en: 'Kill Extra Add',
+        de: 'Add besiegen',
+        fr: 'Tuez l\'add',
+        ja: '雑魚から倒して',
+        cn: '击杀小怪',
+        ko: '쫄 잡기',
+    },
+    awayFromFront: {
+        en: 'Away From Front',
+        de: 'Weg von Vorne',
+        fr: 'Éloignez-vous du devant',
+        ja: '前方から離れる',
+        cn: '远离正面',
+        ko: '보스 전방 피하기',
+    },
+    sleepTarget: {
+        en: 'Sleep ${name}',
+        de: 'Schlaf auf ${name}',
+        fr: 'Sommeil sur ${name}',
+        ja: '${name} にスリプル',
+        cn: '催眠 ${name}',
+        ko: '${name} 슬리플',
+    },
+    stunTarget: {
+        en: 'Stun ${name}',
+        de: 'Betäubung auf ${name}',
+        fr: 'Étourdissez ${name}',
+        ja: '${name} にスタン',
+        cn: '眩晕 ${name}',
+        ko: '${name}기절',
+    },
+    interruptTarget: {
+        en: 'interrupt ${name}',
+        de: 'unterbreche ${name}',
+        fr: 'Interrompez ${name}',
+        ja: '${name} に沈黙',
+        cn: '打断${name}',
+        ko: '${name}기술 시전 끊기',
+    },
+    preyOnYou: {
+        en: 'Prey on YOU',
+        de: 'Marker auf DIR',
+        fr: 'Marquage sur VOUS',
+        ja: '自分にマーキング',
+        cn: '猎物点名',
+        ko: '홍옥징 대상자',
+    },
+    preyOnPlayer: {
+        en: 'Prey on ${player}',
+        de: 'Marker auf ${player}',
+        fr: 'Marquage sur ${player}',
+        ja: '${player}にマーキング',
+        cn: '${player} 的猎物点名',
+        ko: '"${player}" 홍옥징',
+    },
+    awayFromGroup: {
+        en: 'Away from Group',
+        de: 'Weg von der Gruppe',
+        fr: 'Éloignez-vous du groupe',
+        ja: '外へ',
+        cn: '远离人群',
+        ko: '다른 사람들과 떨어지기',
+    },
+    awayFromPlayer: {
+        en: 'Away from ${player}',
+        de: 'Weg von ${player}',
+        fr: 'Éloignez-vous de ${player}',
+        ja: '${player}から離れる',
+        cn: '远离${player}',
+        ko: '"${player}"에게서 멀어지기',
+    },
+    meteorOnYou: {
+        en: 'Meteor on YOU',
+        de: 'Meteor auf DIR',
+        fr: 'Météore sur VOUS',
+        ja: '自分にメテオ',
+        cn: '陨石点名',
+        ko: '나에게 메테오징',
+    },
+    stopMoving: {
+        en: 'Stop Moving!',
+        de: 'Bewegung stoppen!',
+        fr: 'Ne bougez pas !',
+        ja: '移動禁止！',
+        cn: '停止移动！',
+        ko: '이동 멈추기!',
+    },
+    stopEverything: {
+        en: 'Stop Everything!',
+        de: 'Stoppe Alles!',
+        fr: 'Arrêtez tout !',
+        ja: '行動禁止！',
+        cn: '停止行动！',
+        ko: '행동 멈추기!',
+    },
+    moveAway: {
+        // move away to dodge aoes
+        en: 'Move!',
+        de: 'Bewegen!',
+        fr: 'Bougez !',
+        ja: '避けて！',
+        cn: '快躲开！',
+        ko: '이동하기!',
+    },
+    moveAround: {
+        // move around (e.g. jumping) to avoid being frozen
+        en: 'Move!',
+        de: 'Bewegen!',
+        fr: 'Bougez !',
+        ja: '動く！',
+        cn: '保持运动！',
+        ko: '움직이기!',
+    },
+    breakChains: {
+        en: 'Break chains',
+        de: 'Kette zerbrechen',
+        fr: 'Brisez les chaines',
+        ja: '線を切る',
+        cn: '拉断连线',
+        ko: '선 끊기',
+    },
+    moveChainsTogether: {
+        en: 'Move chains together',
+        de: 'Ketten zusammen bewegen',
+        fr: 'Bougez les chaines ensemble',
+        ja: '線同士で一緒に移動',
+        cn: '连线一起移动',
+        ko: '선 붙어서 같이 움직이기',
+    },
+    earthshakerOnYou: {
+        en: 'Earth Shaker on YOU',
+        de: 'Erdstoß auf DIR',
+        fr: 'Marque de terre sur VOUS',
+        ja: '自分にアースシェイカー',
+        cn: '大地摇动点名',
+        ko: '어스징 대상자',
+    },
+    wakeUp: {
+        en: 'WAKE UP',
+        de: 'AUFWACHEN',
+        fr: 'RÉVEILLE-TOI',
+        ja: '目を覚まして！',
+        cn: '醒醒！动一动！！',
+        ko: '일어나세요!',
+    },
+    closeTethersWithPlayer: {
+        en: 'Close Tethers (${player})',
+        de: 'Nahe Verbindungen (${player})',
+        fr: 'Liens proches avec (${player})',
+        ja: '${player}に近づく',
+        cn: '近线 (${player})',
+        ko: '상대와 가까이 붙기 (${player})',
+    },
+    farTethersWithPlayer: {
+        en: 'Far Tethers (${player})',
+        de: 'Entfernte Verbindungen (${player})',
+        fr: 'Liens éloignés avec (${player})',
+        ja: ' (${player})から離れる',
+        cn: '远线 (${player})',
+        ko: '상대와 떨어지기 (${player})',
+    },
+    getTowers: {
+        en: 'Get Towers',
+        de: 'Türme nehmen',
+        fr: 'Allez dans les tours',
+        ja: '塔を踏む',
+        cn: '踩塔',
+        ko: '기둥 들어가기',
+    },
+    unknown: {
+        en: '???',
+        de: '???',
+        fr: '???',
+        ja: '???',
+        cn: '???',
+        ko: '???',
+    },
+    cardinals: {
+        en: 'Cardinals',
+        de: 'Kardinal',
+        fr: 'Cardinaux',
+        ja: '十字回避',
+        cn: '去正点',
+        ko: '십자방향으로',
+    },
+    intercards: {
+        en: 'Intercards',
+        de: 'Interkardinal',
+        fr: 'Intercardinal',
+        ja: '斜めへ',
+        cn: '去斜角',
+        ko: '대각선 쪽으로',
+    },
+    north: {
+        en: 'North',
+        de: 'Norden',
+        fr: 'Nord',
+        ja: '北',
+        cn: '上',
+        ko: '북쪽',
+    },
+    south: {
+        en: 'South',
+        de: 'Süden',
+        fr: 'Sud',
+        ja: '南',
+        cn: '下',
+        ko: '남쪽',
+    },
+    east: {
+        en: 'East',
+        de: 'Osten',
+        fr: 'Est',
+        ja: '東',
+        cn: '右',
+        ko: '동쪽',
+    },
+    west: {
+        en: 'West',
+        de: 'Westen',
+        fr: 'Ouest',
+        ja: '西',
+        cn: '左',
+        ko: '서쪽',
+    },
+    northwest: {
+        en: 'Northwest',
+        de: 'Nordwesten',
+        fr: 'Nord-Ouest',
+        ja: '北西',
+        cn: '左上',
+        ko: '북서쪽',
+    },
+    northeast: {
+        en: 'Northeast',
+        de: 'Nordosten',
+        fr: 'Nord-Est',
+        ja: '北東',
+        cn: '右上',
+        ko: '북동쪽',
+    },
+    southwest: {
+        en: 'Southwest',
+        de: 'Südwesten',
+        fr: 'Sud-Ouest',
+        ja: '南西',
+        cn: '左下',
+        ko: '남서쪽',
+    },
+    southeast: {
+        en: 'Southeast',
+        de: 'Südosten',
+        fr: 'Sud-Est',
+        ja: '南東',
+        cn: '右下',
+        ko: '남동쪽',
+    },
+    dirN: {
+        en: 'N',
+        de: 'N',
+        fr: 'N',
+        ja: '北',
+        cn: '上',
+        ko: '북',
+    },
+    dirS: {
+        en: 'S',
+        de: 'S',
+        fr: 'S',
+        ja: '南',
+        cn: '下',
+        ko: '남',
+    },
+    dirE: {
+        en: 'E',
+        de: 'O',
+        fr: 'E',
+        ja: '東',
+        cn: '右',
+        ko: '동',
+    },
+    dirW: {
+        en: 'W',
+        de: 'W',
+        fr: 'O',
+        ja: '西',
+        cn: '左',
+        ko: '서',
+    },
+    dirNW: {
+        en: 'NW',
+        de: 'NW',
+        fr: 'NO',
+        ja: '北西',
+        cn: '左上',
+        ko: '북서',
+    },
+    dirNE: {
+        en: 'NE',
+        de: 'NO',
+        fr: 'NE',
+        ja: '北東',
+        cn: '右上',
+        ko: '북동',
+    },
+    dirSW: {
+        en: 'SW',
+        de: 'SW',
+        fr: 'SO',
+        ja: '南西',
+        cn: '左下',
+        ko: '남서',
+    },
+    dirSE: {
+        en: 'SE',
+        de: 'SO',
+        fr: 'SE',
+        ja: '南東',
+        cn: '右下',
+        ko: '남동',
+    },
+    dirNNE: {
+        en: 'NNE',
+        de: 'NNO',
+        fr: 'NNE',
+        ja: '北北東(1時)',
+        cn: '上偏右',
+        ko: '1시',
+    },
+    dirENE: {
+        en: 'ENE',
+        de: 'ONO',
+        fr: 'ENE',
+        ja: '東北東(2時)',
+        cn: '右偏上',
+        ko: '2시',
+    },
+    dirESE: {
+        en: 'ESE',
+        de: 'OSO',
+        fr: 'ESE',
+        ja: '東南東(4時)',
+        cn: '右偏下',
+        ko: '4시',
+    },
+    dirSSE: {
+        en: 'SSE',
+        de: 'SSO',
+        fr: 'SSE',
+        ja: '南南東(5時)',
+        cn: '下偏右',
+        ko: '5시',
+    },
+    dirSSW: {
+        en: 'SSW',
+        de: 'SSW',
+        fr: 'SSO',
+        ja: '南南西(7時)',
+        cn: '下偏左',
+        ko: '7시',
+    },
+    dirWSW: {
+        en: 'WSW',
+        de: 'WSW',
+        fr: 'OSO',
+        ja: '西南西(8時)',
+        cn: '左偏下',
+        ko: '8시',
+    },
+    dirWNW: {
+        en: 'WNW',
+        de: 'WNW',
+        fr: 'ONO',
+        ja: '西北西(10時)',
+        cn: '左偏上',
+        ko: '10시',
+    },
+    dirNNW: {
+        en: 'NNW',
+        de: 'NNW',
+        fr: 'NNO',
+        ja: '北北西(11時)',
+        cn: '上偏左',
+        ko: '11시',
+    },
+    tank: {
+        en: 'Tank',
+        de: 'Tank',
+        fr: 'Tank',
+        ja: 'タンク',
+        cn: '坦克',
+        ko: '탱',
+    },
+    healer: {
+        en: 'Healer',
+        de: 'Heiler',
+        fr: 'Healer',
+        ja: 'ヒーラー',
+        cn: '治疗',
+        ko: '힐',
+    },
+    dps: {
+        en: 'DPS',
+        de: 'DPS',
+        fr: 'DPS',
+        ja: 'DPS',
+        cn: 'DPS',
+        ko: '딜러',
+    },
+    // for sequenced mechanics
+    next: {
+        en: ' => ',
+        de: ' => ',
+        fr: ' => ',
+        ja: ' => ',
+        cn: ' => ',
+        ko: ' => ',
+    },
+    // for combo mechanics/names
+    and: {
+        en: ' + ',
+        fr: ' + ',
+        cn: ' + ',
+        ko: ' + ',
+    },
+    // for either/or directions or mechanics
+    or: {
+        en: ' / ',
+        fr: ' / ',
+        cn: ' / ',
+        ko: ' / ',
+    },
+    // Literal numbers.
+    num0: numberToOutputString(0),
+    num1: numberToOutputString(1),
+    num2: numberToOutputString(2),
+    num3: numberToOutputString(3),
+    num4: numberToOutputString(4),
+    num5: numberToOutputString(5),
+    num6: numberToOutputString(6),
+    num7: numberToOutputString(7),
+    num8: numberToOutputString(8),
+    num9: numberToOutputString(9),
+});
+//# sourceMappingURL=outputs.js.map
+
+/***/ }),
+
+/***/ 181:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   M9: () => (/* binding */ addOverlayListener),
+/* harmony export */   tK: () => (/* binding */ callOverlayHandler)
+/* harmony export */ });
+/* unused harmony exports dispatchOverlayEvent, removeOverlayListener, setOverlayHandlerOverride, init */
+// OverlayPlugin API setup
+let inited = false;
+let wsUrl = null;
+let ws = null;
+let queue = [];
+let rseqCounter = 0;
+const responsePromises = {};
+const subscribers = {};
+const sendMessage = (msg, cb) => {
+    if (ws) {
+        if (queue)
+            queue.push(msg);
+        else
+            ws.send(JSON.stringify(msg));
+    }
+    else {
+        if (queue)
+            queue.push([msg, cb]);
+        else
+            window.OverlayPluginApi.callHandler(JSON.stringify(msg), cb);
+    }
+};
+const processEvent = (msg) => {
+    init();
+    const subs = subscribers[msg.type];
+    subs?.forEach((sub) => {
+        try {
+            sub(msg);
+        }
+        catch (e) {
+            console.error(e);
+        }
+    });
+};
+const dispatchOverlayEvent = processEvent;
+const addOverlayListener = (event, cb) => {
+    init();
+    if (!subscribers[event]) {
+        subscribers[event] = [];
+        if (!queue) {
+            sendMessage({
+                call: 'subscribe',
+                events: [event],
+            });
+        }
+    }
+    subscribers[event]?.push(cb);
+};
+const removeOverlayListener = (event, cb) => {
+    init();
+    if (subscribers[event]) {
+        const list = subscribers[event];
+        const pos = list?.indexOf(cb);
+        if (pos !== undefined && pos > -1)
+            list?.splice(pos, 1);
+    }
+};
+const callOverlayHandlerInternal = (_msg) => {
+    init();
+    const msg = {
+        ..._msg,
+        rseq: 0,
+    };
+    let p;
+    if (ws) {
+        msg.rseq = rseqCounter++;
+        p = new Promise((resolve, reject) => {
+            responsePromises[msg.rseq] = { resolve: resolve, reject: reject };
+        });
+        sendMessage(msg);
+    }
+    else {
+        p = new Promise((resolve, reject) => {
+            sendMessage(msg, (data) => {
+                if (data === null) {
+                    resolve(data);
+                    return;
+                }
+                const parsed = JSON.parse(data);
+                if (parsed['$error'])
+                    reject(parsed);
+                else
+                    resolve(parsed);
+            });
+        });
+    }
+    return p;
+};
+const callOverlayHandlerOverrideMap = {};
+const callOverlayHandler = (_msg) => {
+    init();
+    // If this `as` is incorrect, then it will not find an override.
+    // TODO: we could also replace this with a type guard.
+    const type = _msg.call;
+    const callFunc = callOverlayHandlerOverrideMap[type] ?? callOverlayHandlerInternal;
+    // The `IOverlayHandler` type guarantees that parameters/return type match
+    // one of the overlay handlers.  The OverrideMap also only stores functions
+    // that match by the discriminating `call` field, and so any overrides
+    // should be correct here.
+    // eslint-disable-next-line max-len
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/no-unsafe-argument
+    return callFunc(_msg);
+};
+const setOverlayHandlerOverride = (type, override) => {
+    if (!override) {
+        delete callOverlayHandlerOverrideMap[type];
+        return;
+    }
+    callOverlayHandlerOverrideMap[type] = override;
+};
+const init = () => {
+    if (inited)
+        return;
+    if (typeof window !== 'undefined') {
+        wsUrl = new URLSearchParams(window.location.search).get('OVERLAY_WS');
+        if (wsUrl !== null) {
+            const connectWs = function (wsUrl) {
+                ws = new WebSocket(wsUrl);
+                ws.addEventListener('error', (e) => {
+                    console.error(e);
+                });
+                ws.addEventListener('open', () => {
+                    console.log('Connected!');
+                    const q = queue ?? [];
+                    queue = null;
+                    sendMessage({
+                        call: 'subscribe',
+                        events: Object.keys(subscribers),
+                    });
+                    for (const msg of q) {
+                        if (!Array.isArray(msg))
+                            sendMessage(msg);
+                    }
+                });
+                ws.addEventListener('message', (_msg) => {
+                    try {
+                        if (typeof _msg.data !== 'string') {
+                            console.error('Invalid message data received: ', _msg);
+                            return;
+                        }
+                        const msg = JSON.parse(_msg.data);
+                        const promiseFuncs = msg?.rseq !== undefined ? responsePromises[msg.rseq] : undefined;
+                        if (msg.rseq !== undefined && promiseFuncs) {
+                            if (msg['$error'])
+                                promiseFuncs.reject(msg);
+                            else
+                                promiseFuncs.resolve(msg);
+                            delete responsePromises[msg.rseq];
+                        }
+                        else {
+                            processEvent(msg);
+                        }
+                    }
+                    catch (e) {
+                        console.error('Invalid message received: ', _msg);
+                        return;
+                    }
+                });
+                ws.addEventListener('close', () => {
+                    queue = null;
+                    console.log('Trying to reconnect...');
+                    // Don't spam the server with retries.
+                    window.setTimeout(() => {
+                        connectWs(wsUrl);
+                    }, 300);
+                });
+            };
+            connectWs(wsUrl);
+        }
+        else {
+            const waitForApi = function () {
+                if (!window.OverlayPluginApi?.ready) {
+                    window.setTimeout(waitForApi, 300);
+                    return;
+                }
+                const q = queue ?? [];
+                queue = null;
+                window.__OverlayCallback = processEvent;
+                sendMessage({
+                    call: 'subscribe',
+                    events: Object.keys(subscribers),
+                });
+                for (const item of q) {
+                    if (Array.isArray(item))
+                        sendMessage(item[0], item[1]);
+                }
+            };
+            waitForApi();
+        }
+        // Here the OverlayPlugin API is registered to the window object,
+        // but this is mainly for backwards compatibility. For cactbot's built-in files,
+        // it is recommended to use the various functions exported in resources/overlay_plugin_api.ts.
+        /* eslint-disable deprecation/deprecation */
+        window.addOverlayListener = addOverlayListener;
+        window.removeOverlayListener = removeOverlayListener;
+        window.callOverlayHandler = callOverlayHandler;
+        window.dispatchOverlayEvent = dispatchOverlayEvent;
+        /* eslint-enable deprecation/deprecation */
+    }
+    inited = true;
+};
+//# sourceMappingURL=overlay_plugin_api.js.map
+
+/***/ }),
+
+/***/ 605:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ Regexes)
+/* harmony export */ });
+/* unused harmony export buildRegex */
+/* harmony import */ var _netlog_defs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(130);
+/* harmony import */ var _not_reached_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(174);
+
+
+const separator = ':';
+const matchDefault = '[^:]*';
+const matchWithColonsDefault = '(?:[^:]|: )*?';
+const fieldsWithPotentialColons = ['effect', 'ability'];
+const defaultParams = (type, version, include) => {
+    const logType = _netlog_defs_js__WEBPACK_IMPORTED_MODULE_0__/* .logDefinitionsVersions */ .s[version][type];
+    if (include === undefined) {
+        include = Object.keys(logType.fields);
+        if ('repeatingFields' in logType) {
+            include.push(logType.repeatingFields.label);
+        }
+    }
+    const params = {};
+    const firstOptionalField = logType.firstOptionalField;
+    for (const [prop, index] of Object.entries(logType.fields)) {
+        if (!include.includes(prop))
+            continue;
+        const param = {
+            field: prop,
+            optional: firstOptionalField !== undefined && index >= firstOptionalField,
+        };
+        if (prop === 'type')
+            param.value = logType.type;
+        params[index] = param;
+    }
+    if ('repeatingFields' in logType && include.includes(logType.repeatingFields.label)) {
+        params[logType.repeatingFields.startingIndex] = {
+            field: logType.repeatingFields.label,
+            optional: firstOptionalField !== undefined &&
+                logType.repeatingFields.startingIndex >= firstOptionalField,
+            repeating: true,
+            repeatingKeys: [...logType.repeatingFields.names],
+            sortKeys: logType.repeatingFields.sortKeys,
+            primaryKey: logType.repeatingFields.primaryKey,
+            possibleKeys: [...logType.repeatingFields.possibleKeys],
+        };
+    }
+    return params;
+};
+const isRepeatingField = (repeating, value) => {
+    if (repeating !== true)
+        return false;
+    // Allow excluding the field to match for extraction
+    if (value === undefined)
+        return true;
+    if (!Array.isArray(value))
+        return false;
+    for (const e of value) {
+        if (typeof e !== 'object')
+            return false;
+    }
+    return true;
+};
+const parseHelper = (params, defKey, fields) => {
+    params = params ?? {};
+    const validFields = [];
+    for (const index in fields) {
+        const field = fields[index];
+        if (field)
+            validFields.push(field.field);
+    }
+    Regexes.validateParams(params, defKey, ['capture', ...validFields]);
+    // Find the last key we care about, so we can shorten the regex if needed.
+    const capture = Regexes.trueIfUndefined(params.capture);
+    const fieldKeys = Object.keys(fields).sort((a, b) => parseInt(a) - parseInt(b));
+    let maxKeyStr;
+    if (capture) {
+        const keys = [];
+        for (const key in fields)
+            keys.push(key);
+        let tmpKey = keys.pop();
+        if (tmpKey === undefined) {
+            maxKeyStr = fieldKeys[fieldKeys.length - 1] ?? '0';
+        }
+        else {
+            while (fields[tmpKey]?.optional &&
+                !((fields[tmpKey]?.field ?? '') in params))
+                tmpKey = keys.pop();
+            maxKeyStr = tmpKey ?? '0';
+        }
+    }
+    else {
+        maxKeyStr = '0';
+        for (const key in fields) {
+            const value = fields[key] ?? {};
+            if (typeof value !== 'object')
+                continue;
+            const fieldName = fields[key]?.field;
+            if (fieldName !== undefined && fieldName in params)
+                maxKeyStr = key;
+        }
+    }
+    const maxKey = parseInt(maxKeyStr);
+    // Special case for Ability to handle aoe and non-aoe.
+    const abilityMessageType = `(?:${_netlog_defs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.Ability.messageType}|${_netlog_defs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.NetworkAOEAbility.messageType})`;
+    const abilityHexCode = '(?:15|16)';
+    // Build the regex from the fields.
+    const prefix = defKey !== 'Ability' ? _netlog_defs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A[defKey].messageType : abilityMessageType;
+    // Hex codes are a minimum of two characters.  Abilities are special because
+    // they need to support both 0x15 and 0x16.
+    const typeAsHex = parseInt(_netlog_defs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A[defKey].type).toString(16).toUpperCase();
+    const defaultHexCode = typeAsHex.length < 2 ? `00${typeAsHex}`.slice(-2) : typeAsHex;
+    const hexCode = defKey !== 'Ability' ? defaultHexCode : abilityHexCode;
+    let str = '';
+    if (capture)
+        str += `(?<timestamp>\\y{Timestamp}) ${prefix} (?<type>${hexCode})`;
+    else
+        str += `\\y{Timestamp} ${prefix} ${hexCode}`;
+    let lastKey = 1;
+    for (const keyStr in fields) {
+        const parseField = fields[keyStr];
+        if (parseField === undefined)
+            continue;
+        const fieldName = parseField.field;
+        // Regex handles these manually above in the `str` initialization.
+        if (fieldName === 'timestamp' || fieldName === 'type')
+            continue;
+        const key = parseInt(keyStr);
+        // Fill in blanks.
+        const missingFields = key - lastKey - 1;
+        if (missingFields === 1)
+            str += `${separator}${matchDefault}`;
+        else if (missingFields > 1)
+            str += `(?:${separator}${matchDefault}){${missingFields}}`;
+        lastKey = key;
+        str += separator;
+        if (typeof parseField !== 'object')
+            throw new Error(`${defKey}: invalid value: ${JSON.stringify(parseField)}`);
+        const fieldDefault = fieldName !== undefined && fieldsWithPotentialColons.includes(fieldName)
+            ? matchWithColonsDefault
+            : matchDefault;
+        const defaultFieldValue = parseField.value?.toString() ?? fieldDefault;
+        const fieldValue = params[fieldName];
+        if (isRepeatingField(fields[keyStr]?.repeating, fieldValue)) {
+            const repeatingFieldsSeparator = '(?:$|:)';
+            let repeatingArray = fieldValue;
+            const sortKeys = fields[keyStr]?.sortKeys;
+            const primaryKey = fields[keyStr]?.primaryKey;
+            const possibleKeys = fields[keyStr]?.possibleKeys;
+            // primaryKey is required if this is a repeating field per typedef in netlog_defs.ts
+            // Same with possibleKeys
+            if (primaryKey === undefined || possibleKeys === undefined)
+                throw new _not_reached_js__WEBPACK_IMPORTED_MODULE_1__/* .UnreachableCode */ .O();
+            // Allow sorting if needed
+            if (sortKeys) {
+                // Also sort our valid keys list
+                possibleKeys.sort((left, right) => left.toLowerCase().localeCompare(right.toLowerCase()));
+                if (repeatingArray !== undefined) {
+                    repeatingArray = [...repeatingArray].sort((left, right) => {
+                        // We check the validity of left/right because they're user-supplied
+                        if (typeof left !== 'object' || left[primaryKey] === undefined) {
+                            console.warn('Invalid argument passed to trigger:', left);
+                            return 0;
+                        }
+                        const leftValue = left[primaryKey];
+                        if (typeof leftValue !== 'string' || !possibleKeys?.includes(leftValue)) {
+                            console.warn('Invalid argument passed to trigger:', left);
+                            return 0;
+                        }
+                        if (typeof right !== 'object' || right[primaryKey] === undefined) {
+                            console.warn('Invalid argument passed to trigger:', right);
+                            return 0;
+                        }
+                        const rightValue = right[primaryKey];
+                        if (typeof rightValue !== 'string' || !possibleKeys?.includes(rightValue)) {
+                            console.warn('Invalid argument passed to trigger:', right);
+                            return 0;
+                        }
+                        return leftValue.toLowerCase().localeCompare(rightValue.toLowerCase());
+                    });
+                }
+            }
+            const anonReps = repeatingArray;
+            // Loop over our possible keys
+            // Build a regex that can match any possible key with required values substituted in
+            possibleKeys.forEach((possibleKey) => {
+                const rep = anonReps?.find((rep) => primaryKey in rep && rep[primaryKey] === possibleKey);
+                let fieldRegex = '';
+                // Rather than looping over the keys defined on the object,
+                // loop over the base type def's keys. This enforces the correct order.
+                fields[keyStr]?.repeatingKeys?.forEach((key) => {
+                    let val = rep?.[key];
+                    if (rep === undefined || !(key in rep)) {
+                        // If we don't have a value for this key
+                        // insert a placeholder, unless it's the primary key
+                        if (key === primaryKey)
+                            val = possibleKey;
+                        else
+                            val = matchDefault;
+                    }
+                    if (typeof val !== 'string') {
+                        if (!Array.isArray(val))
+                            val = matchDefault;
+                        else if (val.length < 1)
+                            val = matchDefault;
+                        else if (val.some((v) => typeof v !== 'string'))
+                            val = matchDefault;
+                    }
+                    fieldRegex += Regexes.maybeCapture(key === primaryKey ? false : capture, 
+                    // All capturing groups are `fieldName` + `possibleKey`, e.g. `pairIsCasting1`
+                    fieldName + possibleKey, val, defaultFieldValue) +
+                        repeatingFieldsSeparator;
+                });
+                if (fieldRegex.length > 0) {
+                    str += `(?:${fieldRegex})${rep !== undefined ? '' : '?'}`;
+                }
+            });
+        }
+        else if (fields[keyStr]?.repeating) {
+            // If this is a repeating field but the actual value is empty or otherwise invalid,
+            // don't process further. We can't use `continue` in the above block because that
+            // would skip the early-out break at the end of the loop.
+        }
+        else {
+            if (fieldName !== undefined) {
+                str += Regexes.maybeCapture(
+                // more accurate type instead of `as` cast
+                // maybe this function needs a refactoring
+                capture, fieldName, fieldValue, defaultFieldValue);
+            }
+            else {
+                // FIXME: handle lint error here
+                // ref: https://github.com/OverlayPlugin/cactbot/pull/274#discussion_r1692439720
+                // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+                str += fieldValue;
+            }
+        }
+        // Stop if we're not capturing and don't care about future fields.
+        if (key >= maxKey)
+            break;
+    }
+    str += '(?:$|:)';
+    return Regexes.parse(str);
+};
+const buildRegex = (type, params) => {
+    return parseHelper(params, type, defaultParams(type, Regexes.logVersion));
+};
+class Regexes {
+    static logVersion = 'latest';
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-20-0x14-networkstartscasting
+     */
+    static startsUsing(params) {
+        return buildRegex('StartsUsing', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-21-0x15-networkability
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-22-0x16-networkaoeability
+     */
+    static ability(params) {
+        return buildRegex('Ability', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-21-0x15-networkability
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-22-0x16-networkaoeability
+     *
+     * @deprecated Use `ability` instead
+     */
+    static abilityFull(params) {
+        return this.ability(params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-27-0x1b-networktargeticon-head-marker
+     */
+    static headMarker(params) {
+        return buildRegex('HeadMarker', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-03-0x03-addcombatant
+     */
+    static addedCombatant(params) {
+        return buildRegex('AddedCombatant', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-03-0x03-addcombatant
+     */
+    static addedCombatantFull(params) {
+        return this.addedCombatant(params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-04-0x04-removecombatant
+     */
+    static removingCombatant(params) {
+        return buildRegex('RemovedCombatant', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-26-0x1a-networkbuff
+     */
+    static gainsEffect(params) {
+        return buildRegex('GainsEffect', params);
+    }
+    /**
+     * Prefer gainsEffect over this function unless you really need extra data.
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-38-0x26-networkstatuseffects
+     */
+    static statusEffectExplicit(params) {
+        return buildRegex('StatusEffect', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-30-0x1e-networkbuffremove
+     */
+    static losesEffect(params) {
+        return buildRegex('LosesEffect', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-35-0x23-networktether
+     */
+    static tether(params) {
+        return buildRegex('Tether', params);
+    }
+    /**
+     * 'target' was defeated by 'source'
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-25-0x19-networkdeath
+     */
+    static wasDefeated(params) {
+        return buildRegex('WasDefeated', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-24-0x18-networkdot
+     */
+    static networkDoT(params) {
+        return buildRegex('NetworkDoT', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-00-0x00-logline
+     */
+    static echo(params) {
+        if (typeof params === 'undefined')
+            params = {};
+        Regexes.validateParams(params, 'echo', ['type', 'timestamp', 'code', 'name', 'line', 'capture']);
+        params.code = '0038';
+        return Regexes.gameLog(params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-00-0x00-logline
+     */
+    static dialog(params) {
+        if (typeof params === 'undefined')
+            params = {};
+        Regexes.validateParams(params, 'dialog', ['type', 'timestamp', 'code', 'name', 'line', 'capture']);
+        params.code = '0044';
+        return Regexes.gameLog(params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-00-0x00-logline
+     */
+    static message(params) {
+        if (typeof params === 'undefined')
+            params = {};
+        Regexes.validateParams(params, 'message', ['type', 'timestamp', 'code', 'name', 'line', 'capture']);
+        params.code = '0839';
+        return Regexes.gameLog(params);
+    }
+    /**
+     * fields: code, name, line, capture
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-00-0x00-logline
+     */
+    static gameLog(params) {
+        return buildRegex('GameLog', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-00-0x00-logline
+     */
+    static gameNameLog(params) {
+        // Backwards compatability.
+        return Regexes.gameLog(params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-12-0x0c-playerstats
+     */
+    static statChange(params) {
+        return buildRegex('PlayerStats', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-01-0x01-changezone
+     */
+    static changeZone(params) {
+        return buildRegex('ChangeZone', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-33-0x21-network6d-actor-control
+     */
+    static network6d(params) {
+        return buildRegex('ActorControl', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-34-0x22-networknametoggle
+     */
+    static nameToggle(params) {
+        return buildRegex('NameToggle', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-40-0x28-map
+     */
+    static map(params) {
+        return buildRegex('Map', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-41-0x29-systemlogmessage
+     */
+    static systemLogMessage(params) {
+        return buildRegex('SystemLogMessage', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-257-0x101-mapeffect
+     */
+    static mapEffect(params) {
+        return buildRegex('MapEffect', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-258-0x102-fatedirector
+     */
+    static fateDirector(params) {
+        return buildRegex('FateDirector', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-259-0x103-cedirector
+     */
+    static ceDirector(params) {
+        return buildRegex('CEDirector', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-260-0x104-incombat
+     */
+    static inCombat(params) {
+        return buildRegex('InCombat', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-261-0x105-combatantmemory
+     */
+    static combatantMemory(params) {
+        return buildRegex('CombatantMemory', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-263-0x107-startsusingextra
+     */
+    static startsUsingExtra(params) {
+        return buildRegex('StartsUsingExtra', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-264-0x108-abilityextra
+     */
+    static abilityExtra(params) {
+        return buildRegex('AbilityExtra', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-265-0x109-contentfindersettings
+     */
+    static contentFinderSettings(params) {
+        return buildRegex('ContentFinderSettings', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-266-0x10a-npcyell
+     */
+    static npcYell(params) {
+        return buildRegex('NpcYell', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-267-0x10b-battletalk2
+     */
+    static battleTalk2(params) {
+        return buildRegex('BattleTalk2', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-268-0x10c-countdown
+     */
+    static countdown(params) {
+        return buildRegex('Countdown', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-269-0x10d-countdowncancel
+     */
+    static countdownCancel(params) {
+        return buildRegex('CountdownCancel', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-270-0x10e-actormove
+     */
+    static actorMove(params) {
+        return buildRegex('ActorMove', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-271-0x10f-actorsetpos
+     */
+    static actorSetPos(params) {
+        return buildRegex('ActorSetPos', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-272-0x110-spawnnpcextra
+     */
+    static spawnNpcExtra(params) {
+        return buildRegex('SpawnNpcExtra', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-273-0x111-actorcontrolextra
+     */
+    static actorControlExtra(params) {
+        return buildRegex('ActorControlExtra', params);
+    }
+    /**
+     * matches: https://github.com/OverlayPlugin/cactbot/blob/main/docs/LogGuide.md#line-274-0x112-actorcontrolselfextra
+     */
+    static actorControlSelfExtra(params) {
+        return buildRegex('ActorControlSelfExtra', params);
+    }
+    /**
+     * Helper function for building named capture group
+     */
+    static maybeCapture(capture, name, value, defaultValue) {
+        if (value === undefined)
+            value = defaultValue ?? matchDefault;
+        value = Regexes.anyOf(value);
+        return capture ? Regexes.namedCapture(name, value) : value;
+    }
+    static optional(str) {
+        return `(?:${str})?`;
+    }
+    // Creates a named regex capture group named |name| for the match |value|.
+    static namedCapture(name, value) {
+        if (name.includes('>'))
+            console.error(`"${name}" contains ">".`);
+        if (name.includes('<'))
+            console.error(`"${name}" contains ">".`);
+        return `(?<${name}>${value})`;
+    }
+    /**
+     * Convenience for turning multiple args into a unioned regular expression.
+     * anyOf(x, y, z) or anyOf([x, y, z]) do the same thing, and return (?:x|y|z).
+     * anyOf(x) or anyOf(x) on its own simplifies to just x.
+     * args may be strings or RegExp, although any additional markers to RegExp
+     * like /insensitive/i are dropped.
+     */
+    static anyOf(...args) {
+        const anyOfArray = (array) => {
+            const [elem] = array;
+            if (elem !== undefined && array.length === 1)
+                return `${elem instanceof RegExp ? elem.source : elem}`;
+            return `(?:${array.map((elem) => elem instanceof RegExp ? elem.source : elem).join('|')})`;
+        };
+        let array = [];
+        const [firstArg] = args;
+        if (args.length === 1) {
+            if (typeof firstArg === 'string' || firstArg instanceof RegExp)
+                array = [firstArg];
+            else if (Array.isArray(firstArg))
+                array = firstArg;
+            else
+                array = [];
+        }
+        else {
+            // TODO: more accurate type instead of `as` cast
+            array = args;
+        }
+        return anyOfArray(array);
+    }
+    static parse(regexpString) {
+        const kCactbotCategories = {
+            Timestamp: '^.{14}',
+            NetTimestamp: '.{33}',
+            NetField: '(?:[^|]*\\|)',
+            LogType: '[0-9A-Fa-f]{2}',
+            AbilityCode: '[0-9A-Fa-f]{1,8}',
+            ObjectId: '[0-9A-F]{8}',
+            // Matches any character name (including empty strings which the FFXIV
+            // ACT plugin can generate when unknown).
+            Name: '(?:[^\\s:|]+(?: [^\\s:|]+)?|)',
+            // Floats can have comma as separator in FFXIV plugin output: https://github.com/ravahn/FFXIV_ACT_Plugin/issues/137
+            Float: '-?[0-9]+(?:[.,][0-9]+)?(?:E-?[0-9]+)?',
+        };
+        // All regexes in cactbot are case insensitive.
+        // This avoids headaches as things like `Vice and Vanity` turns into
+        // `Vice And Vanity`, especially for French and German.  It appears to
+        // have a ~20% regex parsing overhead, but at least they work.
+        let modifiers = 'i';
+        if (regexpString instanceof RegExp) {
+            modifiers += (regexpString.global ? 'g' : '') +
+                (regexpString.multiline ? 'm' : '');
+            regexpString = regexpString.source;
+        }
+        regexpString = regexpString.replace(/\\y\{(.*?)\}/g, (match, group) => {
+            return kCactbotCategories[group] || match;
+        });
+        return new RegExp(regexpString, modifiers);
+    }
+    // Like Regex.Regexes.parse, but force global flag.
+    static parseGlobal(regexpString) {
+        const regex = Regexes.parse(regexpString);
+        let modifiers = 'gi';
+        if (regexpString instanceof RegExp)
+            modifiers += regexpString.multiline ? 'm' : '';
+        return new RegExp(regex.source, modifiers);
+    }
+    static trueIfUndefined(value) {
+        if (typeof value === 'undefined')
+            return true;
+        return !!value;
+    }
+    static validateParams(f, funcName, params) {
+        if (f === null)
+            return;
+        if (typeof f !== 'object')
+            return;
+        const keys = Object.keys(f);
+        for (const key of keys) {
+            if (!params.includes(key)) {
+                throw new Error(`${funcName}: invalid parameter '${key}'.  ` +
+                    `Valid params: ${JSON.stringify(params)}`);
+            }
+        }
+    }
+}
+//# sourceMappingURL=regexes.js.map
+
+/***/ }),
+
+/***/ 546:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   x1: () => (/* binding */ Responses)
+/* harmony export */ });
+/* unused harmony exports severityList, builtInResponseStr, triggerFunctions, triggerTextOutputFunctions, triggerOutputFunctions, severityMap */
+/* harmony import */ var _outputs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(468);
+// This is meant to be used in a trigger as such:
+// {
+//   id: 'Some tankbuster',
+//   regex: Regexes.startsUsing({source: 'Ye Olde Bosse', id: '666'}),
+//   condition: Conditions.caresAboutMagical(data),
+//   response: Responses.tankbuster(),
+// },
+//
+// Note: Breaking out the condition like this lets people override it if they
+// always (or never) want to know about it, rather than hiding the logic inside
+// the tankbuster callback with a "is healer" check.
+//
+// If data.role is used, it should be only to differentiate between alert levels,
+// and not whether a message is sent at all.
+//
+// Although this is not true of `response: ` fields on triggers in general,
+// all responses in this file should either return an object or a single
+// function that sets outputStrings and returns an object without doing
+// anything with data or matches.  See `responses_test.js`.
+
+const severityList = (/* unused pure expression or super */ null && (['info', 'alert', 'alarm']));
+const builtInResponseStr = 'cactbot-builtin-response';
+// All valid trigger fields.
+const triggerFunctions = (/* unused pure expression or super */ null && ([
+    'alarmText',
+    'alertText',
+    'condition',
+    'delaySeconds',
+    'disabled',
+    'durationSeconds',
+    'id',
+    'type',
+    'infoText',
+    'preRun',
+    'promise',
+    'response',
+    'run',
+    'sound',
+    'soundVolume',
+    'suppressSeconds',
+    'tts',
+    'outputStrings',
+]));
+// Trigger fields that can produce text output.
+const triggerTextOutputFunctions = [
+    'alarmText',
+    'alertText',
+    'infoText',
+    'response',
+    'tts',
+];
+// If a trigger has any of these, then it has a visible/audio effect.
+const triggerOutputFunctions = [
+    ...triggerTextOutputFunctions,
+    'sound',
+];
+const severityMap = {
+    'info': 'infoText',
+    'alert': 'alertText',
+    'alarm': 'alarmText',
+};
+const getText = (sev) => {
+    if (!(sev in severityMap))
+        throw new Error(`Invalid severity: ${sev}.`);
+    return severityMap[sev];
+};
+const defaultInfoText = (sev) => {
+    if (!sev)
+        return 'infoText';
+    return getText(sev);
+};
+const defaultAlertText = (sev) => {
+    if (!sev)
+        return 'alertText';
+    return getText(sev);
+};
+const defaultAlarmText = (sev) => {
+    if (!sev)
+        return 'alarmText';
+    return getText(sev);
+};
+const getTarget = (matches) => {
+    // Often tankbusters can be casted by the boss on the boss.
+    // Consider this as "not having a target".
+    if (matches.target === matches.source)
+        return;
+    // In hunts, sometimes there are too many people for the target
+    // to have a name.  Treat this as "no target".
+    if (matches.target === '')
+        return;
+    return matches.target;
+};
+const getSource = (matches) => {
+    return matches?.source;
+};
+// FIXME: make this work for any number of pairs of params
+const combineFuncs = function (text1, func1, text2, func2) {
+    const obj = {};
+    if (text1 !== text2) {
+        obj[text1] = func1;
+        obj[text2] = func2;
+    }
+    else {
+        obj[text1] = (data, matches, output) => {
+            return func1(data, matches, output) ?? func2(data, matches, output);
+        };
+    }
+    return obj;
+};
+const isPlayerId = (id) => {
+    return id !== undefined && !id.startsWith('4');
+};
+// For responses that unconditionally return static text.
+const staticResponse = (field, text) => {
+    return (_data, _matches, output) => {
+        // cactbot-builtin-response
+        output.responseOutputStrings = {
+            text: text,
+        };
+        return {
+            [field]: (_data, _matches, output) => output.text?.(),
+        };
+    };
+};
+const Responses = {
+    tankBuster: (targetSev, otherSev) => {
+        const outputStrings = {
+            noTarget: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.tankBuster,
+            busterOnYou: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.tankBusterOnYou,
+            busterOnTarget: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.tankBusterOnPlayer,
+        };
+        const targetFunc = (data, matches, output) => {
+            const target = getTarget(matches);
+            if (target === undefined) {
+                if (data.role !== 'tank' && data.role !== 'healer')
+                    return;
+                return output.noTarget?.();
+            }
+            if (target === data.me)
+                return output.busterOnYou?.();
+        };
+        const otherFunc = (data, matches, output) => {
+            const target = getTarget(matches);
+            if (target === undefined) {
+                if (data.role === 'tank' || data.role === 'healer')
+                    return;
+                return output.noTarget?.();
+            }
+            if (target === data.me)
+                return;
+            return output.busterOnTarget?.({ player: data.party.member(target) });
+        };
+        const combined = combineFuncs(defaultAlertText(targetSev), targetFunc, defaultInfoText(otherSev), otherFunc);
+        return (_data, _matches, output) => {
+            // cactbot-builtin-response
+            output.responseOutputStrings = outputStrings;
+            return combined;
+        };
+    },
+    tankBusterSwap: (busterSev, swapSev) => {
+        const outputStrings = {
+            noTarget: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.tankBuster,
+            tankSwap: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.tankSwap,
+            busterOnYou: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.tankBusterOnYou,
+            busterOnTarget: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.tankBusterOnPlayer,
+        };
+        // Note: busterSev and swapSev can be the same priority.
+        const tankSwapFunc = (data, matches, output) => {
+            const target = getTarget(matches);
+            if (data.role === 'tank' && target !== data.me)
+                return output.tankSwap?.();
+        };
+        const busterFunc = (data, matches, output) => {
+            const target = getTarget(matches);
+            if (data.role === 'tank' && target !== data.me)
+                return;
+            if (target === data.me)
+                return output.busterOnYou?.();
+            if (target === undefined)
+                return output.noTarget?.();
+            return output.busterOnTarget?.({ player: data.party.member(target) });
+        };
+        const combined = combineFuncs(defaultAlarmText(swapSev), tankSwapFunc, defaultAlertText(busterSev), busterFunc);
+        return (_data, _matches, output) => {
+            // cactbot-builtin-response
+            output.responseOutputStrings = outputStrings;
+            return combined;
+        };
+    },
+    tankCleave: (sev) => (_data, _matches, output) => {
+        // cactbot-builtin-response
+        output.responseOutputStrings = {
+            cleaveOnYou: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.tankCleaveOnYou,
+            cleaveNoTarget: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.tankCleave,
+            avoidCleave: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.avoidTankCleave,
+        };
+        return {
+            [defaultInfoText(sev)]: (data, matches, output) => {
+                const target = getTarget(matches);
+                if (target === data.me)
+                    return output.cleaveOnYou?.();
+                if (data.role === 'tank' || data.job === 'BLU') {
+                    // targetless tank cleave
+                    // BLU players should always get this generic cleave message.
+                    // We have no robust way to determine whether they have tank Mimicry on,
+                    // and it's really annoying for a BLU tank to be told to avoid cleaves when they can't.
+                    return output.cleaveNoTarget?.();
+                }
+                return output.avoidCleave?.();
+            },
+        };
+    },
+    sharedTankBuster: (targetSev, otherSev) => {
+        const outputStrings = {
+            sharedTankbusterOnYou: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.sharedTankbusterOnYou,
+            sharedTankbusterOnTarget: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.sharedTankbusterOnPlayer,
+            sharedTankbuster: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.sharedTankbuster,
+            avoidCleave: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.avoidTankCleave,
+        };
+        const targetFunc = (data, matches, output) => {
+            const target = getTarget(matches);
+            if (target === undefined) {
+                if (data.role !== 'tank' && data.role !== 'healer')
+                    return;
+                return output.sharedTankbuster?.();
+            }
+            if (target === data.me)
+                return output.sharedTankbusterOnYou?.();
+            if (data.role === 'tank' || data.role === 'healer')
+                return output.sharedTankbusterOnTarget?.({ player: data.party.member(target) });
+        };
+        const otherFunc = (data, matches, output) => {
+            const target = getTarget(matches);
+            if (target === undefined) {
+                if (data.role === 'tank' || data.role === 'healer')
+                    return;
+                return output.avoidCleave?.();
+            }
+            if (target === data.me || data.role === 'tank' || data.role === 'healer')
+                return;
+            return output.avoidCleave?.();
+        };
+        const combined = combineFuncs(defaultAlertText(targetSev), targetFunc, defaultInfoText(otherSev), otherFunc);
+        return (_data, _matches, output) => {
+            // cactbot-builtin-response
+            output.responseOutputStrings = outputStrings;
+            return combined;
+        };
+    },
+    miniBuster: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.miniBuster),
+    aoe: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.aoe),
+    bigAoe: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.bigAoe),
+    bleedAoe: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.bleedAoe),
+    spread: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.spread),
+    // for stack marker situations.
+    stackMarker: (sev) => staticResponse(defaultAlertText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.stackMarker),
+    // for getting together without stack marker
+    getTogether: (sev) => staticResponse(defaultAlertText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.getTogether),
+    stackMarkerOn: (sev) => (_data, _matches, output) => {
+        // cactbot-builtin-response
+        output.responseOutputStrings = {
+            stackOnYou: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.stackOnYou,
+            stackOnTarget: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.stackOnPlayer,
+            stackMarker: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.stackMarker,
+        };
+        return {
+            [defaultAlertText(sev)]: (data, matches, output) => {
+                const target = getTarget(matches);
+                if (target === data.me)
+                    return output.stackOnYou?.();
+                if (target === undefined)
+                    return output.stackMarker?.();
+                return output.stackOnTarget?.({ player: data.party.member(target) });
+            },
+        };
+    },
+    stackMiddle: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.stackMiddle),
+    doritoStack: (sev) => staticResponse(defaultAlertText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.doritoStack),
+    spreadThenStack: (sev) => {
+        return staticResponse(defaultAlertText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.spreadThenStack);
+    },
+    stackThenSpread: (sev) => {
+        return staticResponse(defaultAlertText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.stackThenSpread);
+    },
+    knockback: (sev) => staticResponse(defaultAlertText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.knockback),
+    knockbackOn: (targetSev, otherSev) => {
+        const outputStrings = {
+            knockback: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.knockback,
+            knockbackOnYou: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.knockbackOnYou,
+            knockbackOnTarget: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.knockbackOnPlayer,
+        };
+        const targetFunc = (data, matches, output) => {
+            const target = getTarget(matches);
+            if (target === data.me)
+                return output.knockbackOnYou?.();
+        };
+        const otherFunc = (data, matches, output) => {
+            const target = getTarget(matches);
+            if (target === undefined)
+                return output.knockback?.();
+            if (target !== data.me)
+                return output.knockbackOnTarget?.({ player: data.party.member(target) });
+        };
+        const combined = combineFuncs(defaultInfoText(targetSev), targetFunc, defaultInfoText(otherSev), otherFunc);
+        return (_data, _matches, output) => {
+            // cactbot-builtin-response
+            output.responseOutputStrings = outputStrings;
+            return combined;
+        };
+    },
+    drawIn: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.drawIn),
+    lookTowards: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.lookTowardsBoss),
+    lookAway: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.lookAway),
+    lookAwayFromTarget: (sev) => (_data, _matches, output) => {
+        // cactbot-builtin-response
+        output.responseOutputStrings = {
+            lookAway: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.lookAway,
+            lookAwayFrom: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.lookAwayFromTarget,
+        };
+        return {
+            [defaultAlertText(sev)]: (data, matches, output) => {
+                const target = getTarget(matches);
+                if (target === data.me)
+                    return;
+                if (target === undefined)
+                    return output.lookAway?.();
+                const name = isPlayerId(matches?.targetId) ? data.party.member(target) : target;
+                return output.lookAwayFrom?.({ name: name });
+            },
+        };
+    },
+    lookAwayFromSource: (sev) => (_data, _matches, output) => {
+        // cactbot-builtin-response
+        output.responseOutputStrings = {
+            lookAwayFrom: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.lookAwayFromTarget,
+        };
+        return {
+            [defaultAlertText(sev)]: (data, matches, output) => {
+                const source = getSource(matches);
+                if (source === data.me)
+                    return;
+                const name = isPlayerId(matches?.sourceId) ? data.party.member(source) : source;
+                return output.lookAwayFrom?.({ name: name });
+            },
+        };
+    },
+    getBehind: (sev) => staticResponse(defaultAlertText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.getBehind),
+    goFrontOrSides: (sev) => staticResponse(defaultAlertText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.goFrontOrSides),
+    // .getUnder() is used when you have to get into the bosses hitbox
+    getUnder: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.getUnder),
+    // .getIn() is more like "get close but maybe even melee range is fine"
+    getIn: (sev) => staticResponse(defaultAlertText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.in),
+    // .getOut() means get far away
+    getOut: (sev) => staticResponse(defaultAlertText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.out),
+    outOfMelee: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.outOfMelee),
+    getInThenOut: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.inThenOut),
+    getOutThenIn: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.outThenIn),
+    getBackThenFront: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.backThenFront),
+    getFrontThenBack: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.frontThenBack),
+    goFront: (sev) => staticResponse(defaultAlertText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.goFront),
+    goMiddle: (sev) => staticResponse(defaultAlertText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.goIntoMiddle),
+    goRight: (sev) => staticResponse(defaultAlertText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.right),
+    goLeft: (sev) => staticResponse(defaultAlertText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.left),
+    goWest: (sev) => staticResponse(defaultAlertText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.getLeftAndWest),
+    goEast: (sev) => staticResponse(defaultAlertText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.getRightAndEast),
+    goLeftThenRight: (sev) => staticResponse(defaultAlertText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.leftThenRight),
+    goRightThenLeft: (sev) => staticResponse(defaultAlertText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.rightThenLeft),
+    goFrontBack: (sev) => staticResponse(defaultAlertText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.goFrontBack),
+    goSides: (sev) => staticResponse(defaultAlertText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.sides),
+    // .killAdds() is used for adds that will always be available
+    killAdds: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.killAdds),
+    // .killExtraAdd() is used for adds that appear if a mechanic was not played correctly
+    killExtraAdd: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.killExtraAdd),
+    awayFromFront: (sev) => staticResponse(defaultAlertText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.awayFromFront),
+    sleep: (sev) => (_data, _matches, output) => {
+        // cactbot-builtin-response
+        output.responseOutputStrings = {
+            sleep: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.sleepTarget,
+        };
+        return {
+            [defaultAlertText(sev)]: (_data, matches, output) => {
+                const source = getSource(matches);
+                return output.sleep?.({ name: source });
+            },
+        };
+    },
+    stunOrInterruptIfPossible: (sev) => {
+        return (_data, _matches, output) => {
+            // cactbot-builtin-response
+            output.responseOutputStrings = {
+                stun: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.stunTarget,
+                interrupt: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.interruptTarget,
+            };
+            return {
+                [defaultAlertText(sev)]: (data, matches, output) => {
+                    const source = getSource(matches);
+                    if (data.CanSilence())
+                        return output.interrupt?.({ name: source });
+                    else if (data.CanStun())
+                        return output.stun?.({ name: source });
+                },
+            };
+        };
+    },
+    stun: (sev) => (_data, _matches, output) => {
+        // cactbot-builtin-response
+        output.responseOutputStrings = {
+            stun: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.stunTarget,
+        };
+        return {
+            [defaultAlertText(sev)]: (_data, matches, output) => {
+                const source = getSource(matches);
+                return output.stun?.({ name: source });
+            },
+        };
+    },
+    stunIfPossible: (sev) => (_data, _matches, output) => {
+        // cactbot-builtin-response
+        output.responseOutputStrings = {
+            stun: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.stunTarget,
+        };
+        return {
+            [defaultAlertText(sev)]: (data, matches, output) => {
+                const source = getSource(matches);
+                if (data.CanStun())
+                    return output.stun?.({ name: source });
+            },
+        };
+    },
+    interrupt: (sev) => (_data, _matches, output) => {
+        // cactbot-builtin-response
+        output.responseOutputStrings = {
+            interrupt: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.interruptTarget,
+        };
+        return {
+            [defaultAlertText(sev)]: (_data, matches, output) => {
+                const source = getSource(matches);
+                return output.interrupt?.({ name: source });
+            },
+        };
+    },
+    interruptIfPossible: (sev) => (_data, _matches, output) => {
+        // cactbot-builtin-response
+        output.responseOutputStrings = {
+            interrupt: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.interruptTarget,
+        };
+        return {
+            [defaultAlertText(sev)]: (data, matches, output) => {
+                const source = getSource(matches);
+                if (data.CanSilence())
+                    return output.interrupt?.({ name: source });
+            },
+        };
+    },
+    preyOn: (targetSev, otherSev) => {
+        const outputStrings = {
+            preyOnYou: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.preyOnYou,
+            preyOnTarget: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.preyOnPlayer,
+        };
+        const targetFunc = (data, matches, output) => {
+            const target = getTarget(matches);
+            if (data.me === target)
+                return output.preyOnYou?.();
+        };
+        const otherFunc = (data, matches, output) => {
+            const target = getTarget(matches);
+            const player = target === undefined ? output.unknown?.() : data.party.member(target);
+            if (target !== data.me)
+                return output.preyOnTarget?.({ player: player });
+        };
+        const combined = combineFuncs(defaultAlertText(targetSev), targetFunc, defaultInfoText(otherSev), otherFunc);
+        return (_data, _matches, output) => {
+            // cactbot-builtin-response
+            output.responseOutputStrings = outputStrings;
+            return combined;
+        };
+    },
+    awayFrom: (sev) => (_data, _matches, output) => {
+        // cactbot-builtin-response
+        output.responseOutputStrings = {
+            awayFromGroup: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.awayFromGroup,
+            awayFromTarget: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.awayFromPlayer,
+            unknown: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.unknown,
+        };
+        return {
+            [defaultAlertText(sev)]: (data, matches, output) => {
+                const target = getTarget(matches);
+                if (data.me === target)
+                    return output.awayFromGroup?.();
+                const player = target === undefined ? output.unknown?.() : data.party.member(target);
+                return output.awayFromTarget?.({ player: player });
+            },
+        };
+    },
+    meteorOnYou: (sev) => staticResponse(defaultAlarmText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.meteorOnYou),
+    stopMoving: (sev) => staticResponse(defaultAlarmText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.stopMoving),
+    stopEverything: (sev) => staticResponse(defaultAlarmText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.stopEverything),
+    // move away to dodge aoes
+    moveAway: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.moveAway),
+    // move around (e.g. jumping) to avoid being frozen
+    moveAround: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.moveAround),
+    breakChains: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.breakChains),
+    moveChainsTogether: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.moveChainsTogether),
+    earthshaker: (sev) => (_data, _matches, output) => {
+        // cactbot-builtin-response
+        output.responseOutputStrings = {
+            earthshaker: _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.earthshakerOnYou,
+        };
+        return {
+            [defaultAlertText(sev)]: (data, matches, output) => {
+                const target = getTarget(matches);
+                if (target !== data.me)
+                    return;
+                return output.earthshaker?.();
+            },
+        };
+    },
+    wakeUp: (sev) => staticResponse(defaultAlarmText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.wakeUp),
+    getTowers: (sev) => staticResponse(defaultInfoText(sev), _outputs_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.getTowers),
+};
+// Don't give `Responses` a type in its declaration so that it can be treated as more strict
+// than `ResponsesMap`, but do assert that its type is correct.  This allows callers to know
+// which properties are defined in Responses without having to conditionally check for undefined.
+const responseMapTypeAssertion = Responses;
+// Suppress unused variable warning.
+console.assert(responseMapTypeAssertion);
+//# sourceMappingURL=responses.js.map
+
+/***/ }),
+
+/***/ 380:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _languages_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(765);
+/* harmony import */ var _not_reached_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(174);
+/* harmony import */ var _overlay_plugin_api_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(181);
+/* harmony import */ var _conditions_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(262);
+/* harmony import */ var _content_type_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(946);
+/* harmony import */ var _netregexes_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(702);
+/* harmony import */ var _regexes_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(605);
+/* harmony import */ var _responses_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(546);
+/* harmony import */ var _outputs_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(468);
+/* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(268);
+/* harmony import */ var _zone_id_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(660);
+/* harmony import */ var _zone_info_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(53);
+
+
+
+// TODO:
+// The convention of "import X as _X; const X = _X;" is currently
+// being used as a method to workaround for downstream code
+// that is running via eval(). Because importing statements do not
+// create a variable of the same name, the eval()'d code does not know
+// about the import, and thus throws ReferenceErrors.
+// Used by downstream eval
+
+const Conditions = _conditions_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A;
+
+const ContentType = _content_type_js__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A;
+
+const NetRegexes = _netregexes_js__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Ay;
+
+const Regexes = _regexes_js__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A;
+
+const Responses = _responses_js__WEBPACK_IMPORTED_MODULE_7__/* .Responses */ .x1;
+
+const Outputs = _outputs_js__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .A;
+
+const Util = _util_js__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .A;
+const Directions = _util_js__WEBPACK_IMPORTED_MODULE_9__/* .Directions */ .H;
+
+const ZoneId = _zone_id_js__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .A;
+
+const ZoneInfo = _zone_info_js__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .A;
+// Convince TypeScript and eslint that these are used.  TypeScript doesn't have a great way
+// to disable individual rules, so this is safer than disabling all rules.
+console.assert(Conditions);
+console.assert(ContentType);
+console.assert(NetRegexes);
+console.assert(Regexes);
+console.assert(Responses);
+console.assert(Outputs);
+console.assert(Util);
+console.assert(Directions);
+console.assert(ZoneId);
+console.assert(ZoneInfo);
+class UserConfig {
+    optionTemplates = {};
+    userFileCallbacks = {};
+    savedConfig = {};
+    getDefaultBaseOptions() {
+        return {
+            ParserLanguage: 'en',
+            ShortLocale: 'en',
+            DisplayLanguage: 'en',
+            TextAlertsEnabled: true,
+            SoundAlertsEnabled: true,
+            SpokenAlertsEnabled: false,
+            GroupSpokenAlertsEnabled: false,
+            SystemInfo: {
+                cactbotVersion: '0.0.0.0',
+                overlayPluginVersion: '0.0.0.0',
+                ffxivPluginVersion: '0.0.0.0',
+                actVersion: '0.0.0.0',
+                gameRegion: 'International',
+            },
+            Debug: false,
+        };
+    }
+    evalUserFile(content, options) {
+        const Options = options;
+        console.assert(Options); // Used by eval.
+        // This is the one eval cactbot should ever need, which is for handling user files.
+        // Because user files can be located anywhere on disk and there's backwards compat
+        // issues, it's unlikely that these will be able to be anything but eval forever.
+        //
+        /* eslint-disable no-eval */
+        eval(content);
+        /* eslint-enable no-eval */
+    }
+    registerOptions(overlayName, optionTemplate, userFileCallback) {
+        this.optionTemplates[overlayName] = optionTemplate;
+        if (userFileCallback)
+            this.userFileCallbacks[overlayName] = userFileCallback;
+    }
+    sortUserFiles(keys) {
+        // Helper data structure for subdirectories.
+        const splitKeyMap = {};
+        for (const key of keys)
+            splitKeyMap[key] = key.toUpperCase().split(/[/\\]/);
+        // Sort paths as a depth-first case-insensitive alphabetical subdirectory walk, followed by
+        // all files sorted case-insensitive alphabetically once a subdir has been processed, e.g.
+        //  * a/some.js
+        //  * b/subdir1/z/z/z/nested_file.js
+        //  * b/subdir1/file.js
+        //  * b/subdir2/first.js
+        //  * b/subdir2/second.js
+        //  * b/some_file.js
+        //  * root_file1.js
+        //  * root_file2.js
+        return keys.sort((keyA, keyB) => {
+            const listA = splitKeyMap[keyA];
+            const listB = splitKeyMap[keyB];
+            if (listA === undefined || listB === undefined)
+                throw new _not_reached_js__WEBPACK_IMPORTED_MODULE_1__/* .UnreachableCode */ .O();
+            const maxLen = Math.max(listA.length, listB.length);
+            for (let idx = 0; idx < maxLen; ++idx) {
+                const entryA = listA[idx];
+                const entryB = listB[idx];
+                // In practice, there's always at least one entry.
+                if (entryA === undefined || entryB === undefined)
+                    throw new _not_reached_js__WEBPACK_IMPORTED_MODULE_1__/* .UnreachableCode */ .O();
+                // If both subdirectories or both files, then compare names.
+                const isLastA = listA.length - 1 === idx;
+                const isLastB = listB.length - 1 === idx;
+                if (isLastA && isLastB) {
+                    // If both last, then this is a filename comparison.
+                    // First, compare filename without extension.
+                    const fileA = entryA.replace(/\.[^\.]*$/, '');
+                    const fileB = entryB.replace(/\.[^\.]*$/, '');
+                    const filenameOnlyDiff = fileA.localeCompare(fileB);
+                    if (filenameOnlyDiff)
+                        return filenameOnlyDiff;
+                    // Second, compare including the extension.
+                    // Always return something here, see note below.
+                    return entryA.localeCompare(entryB);
+                }
+                else if (!isLastA && !isLastB) {
+                    // If both not last, this is a subdirectory comparison.
+                    const diff = entryA.localeCompare(entryB);
+                    if (diff)
+                        return diff;
+                }
+                // At this point, if idx is the final for each, we would have returned above.
+                // So, check if either a or b is at the final entry in splitKeyMap.
+                // If so, then there's a mismatch in number of directories, and we know one
+                // the one with a filename should be sorted last.
+                if (listA.length - 1 <= idx) {
+                    // a has fewer subdirectories, so should be sorted last.
+                    return 1;
+                }
+                if (listB.length - 1 <= idx) {
+                    // a has more subdirectories, so should be sorted first.
+                    return -1;
+                }
+            }
+            return 0;
+        });
+    }
+    // Given a set of paths, an overlayName, and an extension, return all paths with
+    // that extension that have `overlayName` either as their entire filename (no subdir)
+    // or are inside a root-level subdirectory named `overlayName`/  The extension should
+    // include the period separator, e.g. ".js".  All comparisons are case insensitive.
+    filterUserFiles(paths, origOverlayName, origExtension) {
+        const extension = origExtension.toLowerCase();
+        const overlayName = origOverlayName.toLowerCase();
+        return paths.filter((origPath) => {
+            const path = origPath.toLowerCase();
+            if (!path.endsWith(extension))
+                return false;
+            if (path === `${overlayName}${extension}`)
+                return true;
+            if (path.startsWith(`${overlayName}/`) || path.startsWith(`${overlayName}\\`))
+                return true;
+            return false;
+        });
+    }
+    getUserConfigLocation(overlayName, options, callback) {
+        let currentlyReloading = false;
+        const reloadOnce = () => {
+            if (currentlyReloading)
+                return;
+            currentlyReloading = true;
+            window.location.reload();
+        };
+        (0,_overlay_plugin_api_js__WEBPACK_IMPORTED_MODULE_2__/* .addOverlayListener */ .M9)('onUserFileChanged', () => {
+            reloadOnce();
+        });
+        (0,_overlay_plugin_api_js__WEBPACK_IMPORTED_MODULE_2__/* .addOverlayListener */ .M9)('onForceReload', () => {
+            reloadOnce();
+        });
+        this.loadUserFiles(overlayName, options, callback);
+    }
+    loadUserFiles(overlayName, options, callback, loadCss = true) {
+        const readOptions = (0,_overlay_plugin_api_js__WEBPACK_IMPORTED_MODULE_2__/* .callOverlayHandler */ .tK)({
+            call: 'cactbotLoadData',
+            overlay: 'options',
+        });
+        const loadUser = async (e) => {
+            // The basePath isn't using for anything other than cosmetic printing of full paths,
+            // so replace any slashes here for uniformity.  In case anybody is using cactbot on
+            // Linux (?!?), support any style of slashes elsewhere.
+            const basePath = `${e.detail.userLocation.replace(/[/\\]*$/, '')}\\`;
+            const localFiles = e.detail.localUserFiles;
+            options.SystemInfo = {
+                cactbotVersion: e.detail.cactbotVersion,
+                overlayPluginVersion: e.detail.overlayPluginVersion,
+                ffxivPluginVersion: e.detail.ffxivPluginVersion,
+                actVersion: e.detail.actVersion,
+                gameRegion: e.detail.gameRegion,
+            };
+            // The plugin auto-detects the language, so set this first.
+            // If options files want to override it, they can for testing.
+            // Backward compatibility (language is now separated to three types.)
+            /* eslint-disable deprecation/deprecation */
+            if (e.detail.language) {
+                options.ParserLanguage = e.detail.language;
+                options.ShortLocale = e.detail.language;
+                options.DisplayLanguage = e.detail.language;
+            }
+            /* eslint-enable deprecation/deprecation */
+            // Parser Language
+            if (e.detail.parserLanguage) {
+                options.ParserLanguage = e.detail.parserLanguage;
+                // Backward compatibility, everything "Language" should be changed to "ParserLanguage"
+                options.Language = e.detail.parserLanguage;
+            }
+            // System Language
+            if (e.detail.systemLocale) {
+                options.SystemLocale = e.detail.systemLocale;
+                let shortLocale = e.detail.systemLocale.slice(0, 2);
+                if (shortLocale === 'zh')
+                    shortLocale = 'cn';
+                if ((0,_languages_js__WEBPACK_IMPORTED_MODULE_0__/* .isLang */ .Hf)(shortLocale))
+                    options.ShortLocale = shortLocale;
+                else
+                    options.ShortLocale = options.ParserLanguage;
+            }
+            // User's setting Language
+            const displayLang = e.detail.displayLanguage;
+            if ((0,_languages_js__WEBPACK_IMPORTED_MODULE_0__/* .isLang */ .Hf)(displayLang))
+                options.DisplayLanguage = displayLang;
+            else
+                options.DisplayLanguage = options.ParserLanguage || 'en';
+            // TODO: left for now as backwards compatibility with user css.  Remove this later??
+            document.documentElement.classList.add(`lang-${options.DisplayLanguage}`);
+            document.documentElement.lang = (0,_languages_js__WEBPACK_IMPORTED_MODULE_0__/* .langToLocale */ .yJ)(options.DisplayLanguage);
+            this.addUnlockText(options.DisplayLanguage);
+            // Handle processOptions after default language selection above,
+            // but before css below which may load skin files.
+            // processOptions needs to be called whether or not there are
+            // any userOptions saved, as it sets up the defaults.
+            this.savedConfig = (await readOptions)?.data ?? {};
+            const template = this.optionTemplates[overlayName];
+            if (template !== undefined) {
+                const savedConfig = this.savedConfig[overlayName] ?? {};
+                this.processOptions(options, options, savedConfig, template.options);
+                // For things like raidboss that build extra UI, also give them a chance
+                // to handle anything that has been set on that UI.
+                if (template.processExtraOptions)
+                    template.processExtraOptions(options, savedConfig);
+            }
+            // If the overlay has a "Debug" setting, set to true via the config tool,
+            // then also print out user files that have been loaded.
+            const debug = options.Debug !== undefined && options.Debug !== false;
+            const printUserFile = debug ? (x) => console.log(x) : () => { };
+            // With user files being arbitrary javascript, and having multiple files
+            // in user folders, it's possible for later files to accidentally remove
+            // things that previous files have added.  Warn about this, since most
+            // users are not programmers.
+            const warnOnVariableResetMap = {
+                raidboss: [
+                    'Triggers',
+                ],
+            };
+            warnOnVariableResetMap[overlayName] = warnOnVariableResetMap[overlayName] || [];
+            // The values of each `warnOnVariableResetMap` field are initially set
+            // after the first file, so that if there is only one file, there are
+            // not any warnings.
+            // The fields that a user file sets in Options can be anything (pun not intended)
+            // and so we use `any` here.  The only operation done on this field is a !==
+            // for change detection to see if the the user file has modified it.
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const variableTracker = {};
+            if (localFiles) {
+                // localFiles may be null if there is no valid user directory.
+                const sortedFiles = this.sortUserFiles(Object.keys(localFiles));
+                const jsFiles = this.filterUserFiles(sortedFiles, overlayName, '.js');
+                const cssFiles = loadCss ? this.filterUserFiles(sortedFiles, overlayName, '.css') : [];
+                for (const jsFile of jsFiles) {
+                    try {
+                        printUserFile(`local user file: ${basePath}${jsFile}`);
+                        this.evalUserFile(localFiles[jsFile] ?? '', options);
+                        for (const field of warnOnVariableResetMap[overlayName] ?? []) {
+                            const value = variableTracker[field];
+                            if (value !== null && value !== undefined && value !== options[field]) {
+                                // Ideally users should do something like `Options.Triggers.push([etc]);`
+                                // instead of `Options.Triggers = [etc];`
+                                console.log(`*** WARNING: ${basePath}${jsFile} overwrites Options.${field} from previous files.`);
+                            }
+                            variableTracker[field] = options[field];
+                        }
+                        this.userFileCallbacks[overlayName]?.(jsFile, localFiles, options, basePath);
+                    }
+                    catch (e) {
+                        // Be very visible for users.
+                        console.log('*** ERROR IN USER FILE ***');
+                        console.log(e);
+                    }
+                }
+                // This is a bit awkward to handle skin settings here, but
+                // doing it after user config files and before user css files
+                // allows user css to override skin-specific css as well.
+                if (options.Skin !== undefined)
+                    this.handleSkin(options.Skin);
+                for (const cssFile of cssFiles) {
+                    printUserFile(`local user file: ${basePath}${cssFile}`);
+                    const userCssText = document.createElement('style');
+                    const contents = localFiles[cssFile];
+                    if (contents !== undefined)
+                        userCssText.innerText = contents;
+                    const head = document.getElementsByTagName('head')[0];
+                    if (head)
+                        head.appendChild(userCssText);
+                }
+            }
+            // Post this callback so that the js and css can be executed first.
+            callback();
+            void (0,_overlay_plugin_api_js__WEBPACK_IMPORTED_MODULE_2__/* .callOverlayHandler */ .tK)({ call: 'cactbotRequestState' });
+        };
+        void (0,_overlay_plugin_api_js__WEBPACK_IMPORTED_MODULE_2__/* .callOverlayHandler */ .tK)({
+            call: 'cactbotLoadUser',
+            source: location.href,
+            overlayName: overlayName,
+        }).then((e) => {
+            // Wait for DOMContentLoaded if needed.
+            if (document.readyState !== 'loading') {
+                void loadUser(e);
+                return;
+            }
+            document.addEventListener('DOMContentLoaded', () => {
+                void loadUser(e);
+            });
+        });
+    }
+    handleSkin(skinName) {
+        if (!skinName || skinName === 'default')
+            return;
+        const skinCSSRelativeHref = `skins/${skinName}/${skinName}.css`;
+        this.appendCSSLink(skinCSSRelativeHref);
+    }
+    appendJSLink(src) {
+        const userJS = document.createElement('script');
+        userJS.setAttribute('type', 'text/javascript');
+        userJS.setAttribute('src', src);
+        userJS.setAttribute('async', 'false');
+        const head = document.getElementsByTagName('head')[0];
+        if (head)
+            head.appendChild(userJS);
+    }
+    appendCSSLink(href) {
+        const userCSS = document.createElement('link');
+        userCSS.setAttribute('rel', 'stylesheet');
+        userCSS.setAttribute('type', 'text/css');
+        userCSS.setAttribute('href', href);
+        const head = document.getElementsByTagName('head')[0];
+        if (head)
+            head.appendChild(userCSS);
+    }
+    processOptions(options, output, savedConfig, templateOptions) {
+        // Take options from the template, find them in savedConfig,
+        // and apply them to options. This also handles setting
+        // defaults for anything in the template, even if it does not
+        // exist in savedConfig.
+        // Not all overlays have option templates.
+        if (templateOptions === undefined)
+            return;
+        for (const opt of templateOptions) {
+            // Grab the saved value or the default to set in options.
+            let value;
+            if (typeof opt.default === 'function')
+                value = opt.default(options);
+            else
+                value = opt.default;
+            let isDefault = true;
+            if (typeof savedConfig === 'object' && !Array.isArray(savedConfig)) {
+                if (opt.id in savedConfig) {
+                    const newValue = savedConfig[opt.id];
+                    // Empty strings are always treated as default values.
+                    // This means that the user has entered something and then cleared it.
+                    if (newValue !== undefined && newValue !== '') {
+                        value = newValue;
+                        isDefault = false;
+                    }
+                }
+            }
+            // Options can provide custom logic to turn a value into options settings.
+            // If this doesn't exist, just set the value directly.
+            // Option template ids are identical to field names on Options.
+            if (opt.setterFunc) {
+                const setValue = opt.setterFunc(value, options, isDefault);
+                if (setValue !== undefined)
+                    output[opt.id] = setValue;
+            }
+            else if (opt.type === 'integer') {
+                if (typeof value === 'number')
+                    output[opt.id] = Math.floor(value);
+                else if (typeof value === 'string')
+                    output[opt.id] = parseInt(value);
+            }
+            else if (opt.type === 'float') {
+                if (typeof value === 'number')
+                    output[opt.id] = value;
+                else if (typeof value === 'string')
+                    output[opt.id] = parseFloat(value);
+            }
+            else {
+                output[opt.id] = value;
+            }
+        }
+    }
+    addUnlockText(lang) {
+        const unlockText = {
+            en: '🔓 Unlocked (lock overlay before using)',
+            de: '🔓 Entsperrt (Sperre das Overlay vor der Nutzung)',
+            fr: '🔓 Débloqué (Bloquez l\'overlay avant utilisation)',
+            ja: '🔓 ロック解除 (オーバーレイを使用する前にロックしてください)',
+            cn: '🔓 已解除锁定 (你需要将此悬浮窗锁定后方可使用)',
+            ko: '🔓 위치 잠금 해제됨 (사용하기 전에 위치 잠금을 설정하세요)',
+        };
+        const id = 'cactbot-unlocked-text';
+        let textElem = document.getElementById(id);
+        if (!textElem) {
+            textElem = document.createElement('div');
+            textElem.id = id;
+            textElem.classList.add('text');
+            // Set element display to none in case the page has not included defaults.css.
+            textElem.style.display = 'none';
+            document.body.append(textElem);
+        }
+        textElem.innerHTML = unlockText[lang] || unlockText['en'];
+    }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new UserConfig());
+if (typeof document !== 'undefined') {
+    // This event comes early and is not cached, so set up event listener immediately.
+    document.addEventListener('onOverlayStateUpdate', (e) => {
+        const docClassList = document.documentElement.classList;
+        if (e.detail.isLocked)
+            docClassList.remove('resize-handle', 'unlocked');
+        else
+            docClassList.add('resize-handle', 'unlocked');
+    });
+}
+//# sourceMappingURL=user_config.js.map
+
+/***/ }),
+
+/***/ 268:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   H: () => (/* binding */ Directions)
+/* harmony export */ });
+/* harmony import */ var _netregexes_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(702);
+/* harmony import */ var _outputs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(468);
+/* harmony import */ var _overlay_plugin_api_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(181);
+
+
+
+// TODO: it'd be nice to not repeat job names, but at least Record enforces that all are set.
+const nameToJobEnum = {
+    NONE: 0,
+    GLA: 1,
+    PGL: 2,
+    MRD: 3,
+    LNC: 4,
+    ARC: 5,
+    CNJ: 6,
+    THM: 7,
+    CRP: 8,
+    BSM: 9,
+    ARM: 10,
+    GSM: 11,
+    LTW: 12,
+    WVR: 13,
+    ALC: 14,
+    CUL: 15,
+    MIN: 16,
+    BTN: 17,
+    FSH: 18,
+    PLD: 19,
+    MNK: 20,
+    WAR: 21,
+    DRG: 22,
+    BRD: 23,
+    WHM: 24,
+    BLM: 25,
+    ACN: 26,
+    SMN: 27,
+    SCH: 28,
+    ROG: 29,
+    NIN: 30,
+    MCH: 31,
+    DRK: 32,
+    AST: 33,
+    SAM: 34,
+    RDM: 35,
+    BLU: 36,
+    GNB: 37,
+    DNC: 38,
+    RPR: 39,
+    SGE: 40,
+    VPR: 41,
+    PCT: 42,
+};
+const allJobs = Object.keys(nameToJobEnum);
+const allRoles = ['tank', 'healer', 'dps', 'crafter', 'gatherer', 'none'];
+const tankJobs = ['GLA', 'PLD', 'MRD', 'WAR', 'DRK', 'GNB'];
+const healerJobs = ['CNJ', 'WHM', 'SCH', 'AST', 'SGE'];
+const meleeDpsJobs = ['PGL', 'MNK', 'LNC', 'DRG', 'ROG', 'NIN', 'SAM', 'RPR', 'VPR'];
+const rangedDpsJobs = ['ARC', 'BRD', 'DNC', 'MCH'];
+const casterDpsJobs = ['BLU', 'RDM', 'BLM', 'SMN', 'ACN', 'THM', 'PCT'];
+const dpsJobs = [...meleeDpsJobs, ...rangedDpsJobs, ...casterDpsJobs];
+const craftingJobs = ['CRP', 'BSM', 'ARM', 'GSM', 'LTW', 'WVR', 'ALC', 'CUL'];
+const gatheringJobs = ['MIN', 'BTN', 'FSH'];
+const stunJobs = ['BLU', ...tankJobs, ...meleeDpsJobs];
+const silenceJobs = ['BLU', ...tankJobs, ...rangedDpsJobs];
+const sleepJobs = [...casterDpsJobs, ...healerJobs];
+const feintJobs = [...meleeDpsJobs];
+const addleJobs = [...casterDpsJobs];
+const cleanseJobs = ['BLU', 'BRD', ...healerJobs];
+const jobToRoleMap = (() => {
+    const addToMap = (map, jobs, role) => {
+        jobs.forEach((job) => map.set(job, role));
+    };
+    const map = new Map([['NONE', 'none']]);
+    addToMap(map, tankJobs, 'tank');
+    addToMap(map, healerJobs, 'healer');
+    addToMap(map, dpsJobs, 'dps');
+    addToMap(map, craftingJobs, 'crafter');
+    addToMap(map, gatheringJobs, 'gatherer');
+    return map;
+})();
+const watchCombatantMap = [];
+const shouldCancelWatch = (params, entry) => {
+    if (entry.cancel)
+        return true;
+    if (params.maxDuration !== undefined && Date.now() - entry.start > params.maxDuration)
+        return true;
+    return false;
+};
+const defaultWatchCombatant = (params, func) => {
+    return new Promise((res, rej) => {
+        const delay = params.delay ?? 1000;
+        const call = {
+            call: 'getCombatants',
+        };
+        if (params.ids)
+            call.ids = params.ids;
+        if (params.names)
+            call.names = params.names;
+        if (params.props)
+            call.props = params.props;
+        const entry = {
+            cancel: false,
+            start: Date.now(),
+        };
+        watchCombatantMap.push(entry);
+        const checkFunc = () => {
+            if (shouldCancelWatch(params, entry)) {
+                rej(new Error('cancelled'));
+                return;
+            }
+            void (0,_overlay_plugin_api_js__WEBPACK_IMPORTED_MODULE_2__/* .callOverlayHandler */ .tK)(call).then((response) => {
+                if (entry.cancel) {
+                    rej(new Error('was cancelled'));
+                    return;
+                }
+                if (func(response))
+                    res();
+                else
+                    window.setTimeout(checkFunc, delay);
+            });
+        };
+        window.setTimeout(checkFunc, delay);
+    });
+};
+let watchCombatantOverride;
+let clearCombatantsOverride;
+const defaultClearCombatants = () => {
+    while (watchCombatantMap.length > 0) {
+        const watch = watchCombatantMap.pop();
+        if (watch)
+            watch.cancel = true;
+    }
+};
+const watchCombatant = (params, func) => {
+    if (watchCombatantOverride)
+        return watchCombatantOverride(params, func);
+    return defaultWatchCombatant(params, func);
+};
+const output8Dir = [
+    'dirN',
+    'dirNE',
+    'dirE',
+    'dirSE',
+    'dirS',
+    'dirSW',
+    'dirW',
+    'dirNW',
+];
+const output16Dir = [
+    'dirN',
+    'dirNNE',
+    'dirNE',
+    'dirENE',
+    'dirE',
+    'dirESE',
+    'dirSE',
+    'dirSSE',
+    'dirS',
+    'dirSSW',
+    'dirSW',
+    'dirWSW',
+    'dirW',
+    'dirWNW',
+    'dirNW',
+    'dirNNW',
+];
+const outputCardinalDir = ['dirN', 'dirE', 'dirS', 'dirW'];
+const outputIntercardDir = ['dirNE', 'dirSE', 'dirSW', 'dirNW'];
+const outputStrings16Dir = {
+    dirN: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirN,
+    dirNNE: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirNNE,
+    dirNE: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirNE,
+    dirENE: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirENE,
+    dirE: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirE,
+    dirESE: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirESE,
+    dirSE: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirSE,
+    dirSSE: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirSSE,
+    dirS: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirS,
+    dirSSW: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirSSW,
+    dirSW: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirSW,
+    dirWSW: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirWSW,
+    dirW: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirW,
+    dirWNW: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirWNW,
+    dirNW: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirNW,
+    dirNNW: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirNNW,
+    unknown: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.unknown,
+};
+const outputStrings8Dir = {
+    dirN: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirN,
+    dirNE: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirNE,
+    dirE: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirE,
+    dirSE: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirSE,
+    dirS: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirS,
+    dirSW: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirSW,
+    dirW: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirW,
+    dirNW: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirNW,
+    unknown: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.unknown,
+};
+const outputStringsCardinalDir = {
+    dirN: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirN,
+    dirE: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirE,
+    dirS: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirS,
+    dirW: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirW,
+    unknown: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.unknown,
+};
+const outputStringsIntercardDir = {
+    dirNE: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirNE,
+    dirSE: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirSE,
+    dirSW: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirSW,
+    dirNW: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dirNW,
+    unknown: _outputs_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.unknown,
+};
+// TODO: Accept 'north' as a function input and adjust output accordingly.
+// E.g. Math.round((north + 4) - 4 * Math.atan2(x, y) / Math.PI) % 8;
+// Will need to adjust the output arrays as well though.
+const xyTo16DirNum = (x, y, centerX, centerY) => {
+    // N = 0, NNE = 1, ..., NNW = 15
+    x = x - centerX;
+    y = y - centerY;
+    return Math.round(8 - 8 * Math.atan2(x, y) / Math.PI) % 16;
+};
+const xyTo8DirNum = (x, y, centerX, centerY) => {
+    // N = 0, NE = 1, ..., NW = 7
+    x = x - centerX;
+    y = y - centerY;
+    return Math.round(4 - 4 * Math.atan2(x, y) / Math.PI) % 8;
+};
+const xyTo4DirNum = (x, y, centerX, centerY) => {
+    // N = 0, E = 1, S = 2, W = 3
+    x = x - centerX;
+    y = y - centerY;
+    return Math.round(2 - 2 * Math.atan2(x, y) / Math.PI) % 4;
+};
+const xyTo4DirIntercardNum = (x, y, centerX, centerY) => {
+    // NE = 0, SE = 1, SW = 2, NW = 3
+    x = x - centerX;
+    y = y - centerY;
+    return Math.round(2 - 2 * ((Math.PI / 4) + Math.atan2(x, y)) / Math.PI) % 4;
+};
+const hdgTo8DirNum = (heading) => {
+    // N = 0, NE = 1, ..., NW = 7
+    return (Math.round(4 - 4 * heading / Math.PI) % 8 + 8) % 8;
+};
+const hdgTo4DirNum = (heading) => {
+    // N = 0, E = 1, S = 2, W = 3
+    return (Math.round(2 - heading * 2 / Math.PI) % 4 + 4) % 4;
+};
+const outputFrom8DirNum = (dirNum) => {
+    return output8Dir[dirNum] ?? 'unknown';
+};
+const outputFromCardinalNum = (dirNum) => {
+    return outputCardinalDir[dirNum] ?? 'unknown';
+};
+const outputFromIntercardNum = (dirNum) => {
+    return outputIntercardDir[dirNum] ?? 'unknown';
+};
+const Directions = {
+    output8Dir: output8Dir,
+    output16Dir: output16Dir,
+    outputCardinalDir: outputCardinalDir,
+    outputIntercardDir: outputIntercardDir,
+    outputStrings16Dir: outputStrings16Dir,
+    outputStrings8Dir: outputStrings8Dir,
+    outputStringsCardinalDir: outputStringsCardinalDir,
+    outputStringsIntercardDir: outputStringsIntercardDir,
+    xyTo16DirNum: xyTo16DirNum,
+    xyTo8DirNum: xyTo8DirNum,
+    xyTo4DirNum: xyTo4DirNum,
+    hdgTo8DirNum: hdgTo8DirNum,
+    hdgTo4DirNum: hdgTo4DirNum,
+    outputFrom8DirNum: outputFrom8DirNum,
+    outputFromCardinalNum: outputFromCardinalNum,
+    combatantStatePosTo8Dir: (combatant, centerX, centerY) => {
+        return xyTo8DirNum(combatant.PosX, combatant.PosY, centerX, centerY);
+    },
+    combatantStatePosTo8DirOutput: (combatant, centerX, centerY) => {
+        const dirNum = xyTo8DirNum(combatant.PosX, combatant.PosY, centerX, centerY);
+        return outputFrom8DirNum(dirNum);
+    },
+    combatantStateHdgTo8Dir: (combatant) => {
+        return hdgTo8DirNum(combatant.Heading);
+    },
+    combatantStateHdgTo8DirOutput: (combatant) => {
+        const dirNum = hdgTo8DirNum(combatant.Heading);
+        return outputFrom8DirNum(dirNum);
+    },
+    addedCombatantPosTo8Dir: (combatant, centerX, centerY) => {
+        const x = parseFloat(combatant.x);
+        const y = parseFloat(combatant.y);
+        return xyTo8DirNum(x, y, centerX, centerY);
+    },
+    addedCombatantPosTo8DirOutput: (combatant, centerX, centerY) => {
+        const x = parseFloat(combatant.x);
+        const y = parseFloat(combatant.y);
+        const dirNum = xyTo8DirNum(x, y, centerX, centerY);
+        return outputFrom8DirNum(dirNum);
+    },
+    addedCombatantHdgTo8Dir: (combatant) => {
+        const heading = parseFloat(combatant.heading);
+        return hdgTo8DirNum(heading);
+    },
+    addedCombatantHdgTo8DirOutput: (combatant) => {
+        const heading = parseFloat(combatant.heading);
+        const dirNum = hdgTo8DirNum(heading);
+        return outputFrom8DirNum(dirNum);
+    },
+    xyTo8DirOutput: (x, y, centerX, centerY) => {
+        const dirNum = xyTo8DirNum(x, y, centerX, centerY);
+        return outputFrom8DirNum(dirNum);
+    },
+    xyToCardinalDirOutput: (x, y, centerX, centerY) => {
+        const dirNum = xyTo4DirNum(x, y, centerX, centerY);
+        return outputFromCardinalNum(dirNum);
+    },
+    xyToIntercardDirOutput: (x, y, centerX, centerY) => {
+        const dirNum = xyTo4DirIntercardNum(x, y, centerX, centerY);
+        return outputFromIntercardNum(dirNum);
+    },
+};
+const Util = {
+    jobEnumToJob: (id) => {
+        const job = allJobs.find((job) => nameToJobEnum[job] === id);
+        return job ?? 'NONE';
+    },
+    jobToJobEnum: (job) => nameToJobEnum[job],
+    jobToRole: (job) => {
+        const role = jobToRoleMap.get(job);
+        return role ?? 'none';
+    },
+    getAllRoles: () => allRoles,
+    isTankJob: (job) => tankJobs.includes(job),
+    isHealerJob: (job) => healerJobs.includes(job),
+    isMeleeDpsJob: (job) => meleeDpsJobs.includes(job),
+    isRangedDpsJob: (job) => rangedDpsJobs.includes(job),
+    isCasterDpsJob: (job) => casterDpsJobs.includes(job),
+    isDpsJob: (job) => dpsJobs.includes(job),
+    isCraftingJob: (job) => craftingJobs.includes(job),
+    isGatheringJob: (job) => gatheringJobs.includes(job),
+    isCombatJob: (job) => {
+        return !craftingJobs.includes(job) && !gatheringJobs.includes(job);
+    },
+    canStun: (job) => stunJobs.includes(job),
+    canSilence: (job) => silenceJobs.includes(job),
+    canSleep: (job) => sleepJobs.includes(job),
+    canCleanse: (job) => cleanseJobs.includes(job),
+    canFeint: (job) => feintJobs.includes(job),
+    canAddle: (job) => addleJobs.includes(job),
+    watchCombatant: watchCombatant,
+    clearWatchCombatants: () => {
+        if (clearCombatantsOverride !== undefined)
+            clearCombatantsOverride();
+        else
+            defaultClearCombatants();
+    },
+    setWatchCombatantOverride: (watchFunc, clearFunc) => {
+        watchCombatantOverride = watchFunc;
+        clearCombatantsOverride = clearFunc;
+    },
+    gameLogCodes: _netregexes_js__WEBPACK_IMPORTED_MODULE_0__/* .gameLogCodes */ .RJ,
+    actorControlType: _netregexes_js__WEBPACK_IMPORTED_MODULE_0__/* .actorControlType */ .bU,
+    shortName: (name, playerNicks) => {
+        // TODO: make this unique among the party in case of first name collisions.
+        if (typeof name !== 'string') {
+            if (typeof name !== 'undefined')
+                console.error('called ShortNamify with non-string');
+            return '???';
+        }
+        const nick = playerNicks[name];
+        if (nick !== undefined)
+            return nick;
+        const idx = name.indexOf(' ');
+        return idx < 0 ? name : name.slice(0, idx);
+    },
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Util);
+//# sourceMappingURL=util.js.map
+
+/***/ }),
+
+/***/ 660:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// Auto-generated from gen_zone_id_and_info.ts
+// DO NOT EDIT THIS FILE DIRECTLY
+const data = {
+    'ABloodyReunion': 560,
+    'AFatherFirst': 1210,
+    'AFrostyReception': 1010,
+    'AHunterTrue': 1216,
+    'APathUnveiled': 1015,
+    'ARelicRebornTheChimera': 368,
+    'ARelicRebornTheHydra': 369,
+    'ARequiemForHeroes': 830,
+    'ASleepDisturbed': 914,
+    'ASpectacleForTheAges': 533,
+    'AacLightHeavyweightM1': 1225,
+    'AacLightHeavyweightM1Savage': 1226,
+    'AacLightHeavyweightM2': 1227,
+    'AacLightHeavyweightM2Savage': 1228,
+    'AacLightHeavyweightM3': 1229,
+    'AacLightHeavyweightM3Savage': 1230,
+    'AacLightHeavyweightM4': 1231,
+    'AacLightHeavyweightM4Savage': 1232,
+    'AbyssosTheEighthCircle': 1087,
+    'AbyssosTheEighthCircleSavage': 1088,
+    'AbyssosTheFifthCircle': 1081,
+    'AbyssosTheFifthCircleSavage': 1082,
+    'AbyssosTheSeventhCircle': 1085,
+    'AbyssosTheSeventhCircleSavage': 1086,
+    'AbyssosTheSixthCircle': 1083,
+    'AbyssosTheSixthCircleSavage': 1084,
+    'AccrueEnmityFromMultipleTargets': 540,
+    'Aglaia': 1054,
+    'AirForceOne': 832,
+    'AkadaemiaAnyder': 841,
+    'AlaMhigo': 1146,
+    'AlaMhigo63': 689,
+    'AlexanderTheArmOfTheFather': 444,
+    'AlexanderTheArmOfTheFatherSavage': 451,
+    'AlexanderTheArmOfTheSon': 522,
+    'AlexanderTheArmOfTheSonSavage': 531,
+    'AlexanderTheBreathOfTheCreator': 581,
+    'AlexanderTheBreathOfTheCreatorSavage': 585,
+    'AlexanderTheBurdenOfTheFather': 445,
+    'AlexanderTheBurdenOfTheFatherSavage': 452,
+    'AlexanderTheBurdenOfTheSon': 523,
+    'AlexanderTheBurdenOfTheSonSavage': 532,
+    'AlexanderTheCuffOfTheFather': 443,
+    'AlexanderTheCuffOfTheFatherSavage': 450,
+    'AlexanderTheCuffOfTheSon': 521,
+    'AlexanderTheCuffOfTheSonSavage': 530,
+    'AlexanderTheEyesOfTheCreator': 580,
+    'AlexanderTheEyesOfTheCreatorSavage': 584,
+    'AlexanderTheFistOfTheFather': 442,
+    'AlexanderTheFistOfTheFatherSavage': 449,
+    'AlexanderTheFistOfTheSon': 520,
+    'AlexanderTheFistOfTheSonSavage': 529,
+    'AlexanderTheHeartOfTheCreator': 582,
+    'AlexanderTheHeartOfTheCreatorSavage': 586,
+    'AlexanderTheSoulOfTheCreator': 583,
+    'AlexanderTheSoulOfTheCreatorSavage': 587,
+    'Alexandria': 1199,
+    'AllsWellThatEndsInTheWell': 220,
+    'AloaloIsland': 1176,
+    'AlphascapeV10': 798,
+    'AlphascapeV10Savage': 802,
+    'AlphascapeV20': 799,
+    'AlphascapeV20Savage': 803,
+    'AlphascapeV30': 800,
+    'AlphascapeV30Savage': 804,
+    'AlphascapeV40': 801,
+    'AlphascapeV40Savage': 805,
+    'AlzadaalsLegacy': 1050,
+    'Amaurot': 838,
+    'AmdaporKeep': 167,
+    'AmdaporKeepHard': 189,
+    'AmhAraeng': 815,
+    'AnAntidoteForAnarchy': 1215,
+    'AnUnforeseenBargain': 1120,
+    'AnabaseiosTheEleventhCircle': 1151,
+    'AnabaseiosTheEleventhCircleSavage': 1152,
+    'AnabaseiosTheNinthCircle': 1147,
+    'AnabaseiosTheNinthCircleSavage': 1148,
+    'AnabaseiosTheTenthCircle': 1149,
+    'AnabaseiosTheTenthCircleSavage': 1150,
+    'AnabaseiosTheTwelfthCircle': 1153,
+    'AnabaseiosTheTwelfthCircleSavage': 1154,
+    'AnamnesisAnyder': 898,
+    'AnnoyTheVoid': 222,
+    'AnotherAloaloIsland': 1179,
+    'AnotherAloaloIslandSavage': 1180,
+    'AnotherMountRokkon': 1155,
+    'AnotherMountRokkonSavage': 1156,
+    'AnotherSildihnSubterrane': 1075,
+    'AnotherSildihnSubterraneSavage': 1076,
+    'AsTheHeartBids': 894,
+    'AsTheHeavensBurn': 1012,
+    'AsphodelosTheFirstCircle': 1002,
+    'AsphodelosTheFirstCircleSavage': 1003,
+    'AsphodelosTheFourthCircle': 1008,
+    'AsphodelosTheFourthCircleSavage': 1009,
+    'AsphodelosTheSecondCircle': 1004,
+    'AsphodelosTheSecondCircleSavage': 1005,
+    'AsphodelosTheThirdCircle': 1006,
+    'AsphodelosTheThirdCircleSavage': 1007,
+    'AssistAlliesInDefeatingATarget': 544,
+    'Astragalos': 729,
+    'AvoidAreaOfEffectAttacks': 537,
+    'AzysLla': 402,
+    'BaelsarsWall': 1114,
+    'BaelsarsWall62': 615,
+    'BardamsMettle': 1143,
+    'BardamsMettle63': 623,
+    'BasicTrainingEnemyParties': 214,
+    'BasicTrainingEnemyStrongholds': 215,
+    'BattleInTheBigKeep': 396,
+    'BattleOnTheBigBridge': 366,
+    'BloodOnTheDeck': 708,
+    'Blunderville': 1165,
+    'BrayfloxsLongstop': 1041,
+    'BrayfloxsLongstopHard': 362,
+    'CapeWestwind': 1049,
+    'CastrumAbania': 1145,
+    'CastrumAbania63': 661,
+    'CastrumFluminis': 778,
+    'CastrumMarinum': 934,
+    'CastrumMarinumExtreme': 935,
+    'CastrumMeridianum': 1043,
+    'CenoteJaJaGural': 1209,
+    'CentralShroud': 148,
+    'CentralThanalan': 141,
+    'ChocoboRaceCostaDelSol': 389,
+    'ChocoboRaceSagoliiRoad': 390,
+    'ChocoboRaceTranquilPaths': 391,
+    'ChocoboRaceTutorial': 417,
+    'CinderDrift': 897,
+    'CinderDriftExtreme': 912,
+    'CoerthasCentralHighlands': 155,
+    'CoerthasWesternHighlands': 397,
+    'ComingClean': 860,
+    'ContainmentBayP1T6': 576,
+    'ContainmentBayP1T6Extreme': 577,
+    'ContainmentBayP1T6Unreal': 1121,
+    'ContainmentBayS1T7': 517,
+    'ContainmentBayS1T7Extreme': 524,
+    'ContainmentBayS1T7Unreal': 1090,
+    'ContainmentBayZ1T9': 637,
+    'ContainmentBayZ1T9Extreme': 638,
+    'ContainmentBayZ1T9Unreal': 1157,
+    'CopperbellMines': 1038,
+    'CopperbellMinesHard': 349,
+    'CrystallineConflictCustomMatchCloudNine': 1060,
+    'CrystallineConflictCustomMatchTheClockworkCastletown': 1117,
+    'CrystallineConflictCustomMatchThePalaistra': 1058,
+    'CrystallineConflictCustomMatchTheRedSands': 1139,
+    'CrystallineConflictCustomMatchTheVolcanicHeart': 1059,
+    'CuriousGorgeMeetsHisMatch': 717,
+    'CuttersCry': 170,
+    'DarkAsTheNightSky': 713,
+    'DeathUntoDawn': 977,
+    'DefeatAnOccupiedTarget': 545,
+    'DeltascapeV10': 691,
+    'DeltascapeV10Savage': 695,
+    'DeltascapeV20': 692,
+    'DeltascapeV20Savage': 696,
+    'DeltascapeV30': 693,
+    'DeltascapeV30Savage': 697,
+    'DeltascapeV40': 694,
+    'DeltascapeV40Savage': 698,
+    'DelubrumReginae': 936,
+    'DelubrumReginaeSavage': 937,
+    'Devastation': 1052,
+    'DohnMheg': 821,
+    'DomaCastle': 1144,
+    'DomaCastle63': 660,
+    'DragonSound': 714,
+    'DragonsongsRepriseUltimate': 968,
+    'DreamsOfANewDay': 1214,
+    'DunScaith': 627,
+    'DzemaelDarkhold': 171,
+    'EastShroud': 152,
+    'EasternLaNoscea': 137,
+    'EasternThanalan': 145,
+    'EdensGateDescent': 850,
+    'EdensGateDescentSavage': 854,
+    'EdensGateInundation': 851,
+    'EdensGateInundationSavage': 855,
+    'EdensGateResurrection': 849,
+    'EdensGateResurrectionSavage': 853,
+    'EdensGateSepulture': 852,
+    'EdensGateSepultureSavage': 856,
+    'EdensPromiseAnamorphosis': 944,
+    'EdensPromiseAnamorphosisSavage': 948,
+    'EdensPromiseEternity': 945,
+    'EdensPromiseEternitySavage': 949,
+    'EdensPromiseLitany': 943,
+    'EdensPromiseLitanySavage': 947,
+    'EdensPromiseUmbra': 942,
+    'EdensPromiseUmbraSavage': 946,
+    'EdensVerseFulmination': 902,
+    'EdensVerseFulminationSavage': 906,
+    'EdensVerseFuror': 903,
+    'EdensVerseFurorSavage': 907,
+    'EdensVerseIconoclasm': 904,
+    'EdensVerseIconoclasmSavage': 908,
+    'EdensVerseRefulgence': 905,
+    'EdensVerseRefulgenceSavage': 909,
+    'Elpis': 961,
+    'Emanation': 719,
+    'EmanationExtreme': 720,
+    'EmissaryOfTheDawn': 769,
+    'Endwalker': 1013,
+    'EngageMultipleTargets': 541,
+    'Eulmore': 820,
+    'Euphrosyne': 1118,
+    'EurekaOrthosFloors11_20': 1100,
+    'EurekaOrthosFloors1_10': 1099,
+    'EurekaOrthosFloors21_30': 1101,
+    'EurekaOrthosFloors31_40': 1102,
+    'EurekaOrthosFloors41_50': 1103,
+    'EurekaOrthosFloors51_60': 1104,
+    'EurekaOrthosFloors61_70': 1105,
+    'EurekaOrthosFloors71_80': 1106,
+    'EurekaOrthosFloors81_90': 1107,
+    'EurekaOrthosFloors91_100': 1108,
+    'EverMarchHeavensward': 1018,
+    'Everkeep': 1200,
+    'EverkeepExtreme': 1201,
+    'ExecuteAComboInBattle': 539,
+    'ExecuteAComboToIncreaseEnmity': 538,
+    'ExecuteARangedAttackToIncreaseEnmity': 542,
+    'FadedMemories': 932,
+    'FangsOfTheViper': 1235,
+    'FinalExercise': 552,
+    'FitForAQueen': 955,
+    'FlickingSticksAndTakingNames': 219,
+    'ForlornGlory': 1051,
+    'Foundation': 418,
+    'FourPlayerMahjongQuickMatchKuitanDisabled': 831,
+    'Garlemald': 958,
+    'GenerationalBonding': 1115,
+    'Halatali': 162,
+    'HalataliHard': 360,
+    'HaukkeManor': 1040,
+    'HaukkeManorHard': 350,
+    'HealAnAlly': 549,
+    'HealMultipleAllies': 550,
+    'HeavenOnHighFloors11_20': 771,
+    'HeavenOnHighFloors1_10': 770,
+    'HeavenOnHighFloors21_30': 772,
+    'HeavenOnHighFloors31_40': 782,
+    'HeavenOnHighFloors41_50': 773,
+    'HeavenOnHighFloors51_60': 783,
+    'HeavenOnHighFloors61_70': 774,
+    'HeavenOnHighFloors71_80': 784,
+    'HeavenOnHighFloors81_90': 775,
+    'HeavenOnHighFloors91_100': 785,
+    'HellsKier': 810,
+    'HellsKierExtreme': 811,
+    'HellsLid': 742,
+    'HeritageFound': 1191,
+    'HeroOnTheHalfShell': 216,
+    'HeroesAndPretenders': 1218,
+    'HiddenGorge': 791,
+    'HolminsterSwitch': 837,
+    'HullbreakerIsle': 361,
+    'HullbreakerIsleHard': 557,
+    'Idyllshire': 478,
+    'Ihuykatumu': 1167,
+    'IlMheg': 816,
+    'InFromTheCold': 1011,
+    'InThalsName': 705,
+    'InteractWithTheBattlefield': 548,
+    'InterdimensionalRift': 690,
+    'ItsProbablyATrap': 665,
+    'Kholusia': 814,
+    'Kozamauka': 1188,
+    'KtisisHyperboreia': 974,
+    'Kugane': 628,
+    'KuganeCastle': 662,
+    'KuganeOhashi': 806,
+    'Labyrinthos': 956,
+    'LaidToRest': 1017,
+    'Lakeland': 813,
+    'LapisManalis': 1097,
+    'LegendOfTheNotSoHiddenTemple': 859,
+    'LifeEphemeralPathEternal': 1023,
+    'LimsaLominsaLowerDecks': 129,
+    'LimsaLominsaUpperDecks': 128,
+    'LivingMemory': 1192,
+    'LongLiveTheQueen': 298,
+    'LovmMasterTournament': 506,
+    'LovmPlayerBattleNonRp': 591,
+    'LovmPlayerBattleRp': 589,
+    'LovmTournament': 590,
+    'LowerLaNoscea': 135,
+    'MalikahsWell': 836,
+    'MareLamentorum': 959,
+    'MatchAll': null,
+    'MatoyasRelict': 933,
+    'MatsubaMayhem': 710,
+    'MemoriaMiseraExtreme': 913,
+    'MemoryOfEmbers': 1166,
+    'MessengerOfTheWinds': 834,
+    'MiddleLaNoscea': 134,
+    'MindOverManor': 1233,
+    'Mist': 136,
+    'MorDhona': 156,
+    'MoreThanAFeeler': 221,
+    'MountOrdeals': 1095,
+    'MountOrdealsExtreme': 1096,
+    'MountRokkon': 1137,
+    'MtGulg': 822,
+    'Naadam': 688,
+    'Neverreap': 420,
+    'NewGridania': 132,
+    'NorthShroud': 154,
+    'NorthernThanalan': 147,
+    'NyelbertsLament': 876,
+    'OldGridania': 133,
+    'OldSharlayan': 962,
+    'OneLifeForOneWorld': 592,
+    'OnsalHakairDanshigNaadam': 888,
+    'Origenics': 1208,
+    'OurCompromise': 716,
+    'OurUnsungHeroes': 722,
+    'OuterLaNoscea': 180,
+    'Paglthan': 938,
+    'PharosSirius': 160,
+    'PharosSiriusHard': 510,
+    'PullingPoisonPosies': 191,
+    'RadzAtHan': 963,
+    'RaisingTheSword': 706,
+    'ReturnOfTheBull': 403,
+    'RhalgrsReach': 635,
+    'SagesFocus': 1022,
+    'SaintMociannesArboretum': 511,
+    'SaintMociannesArboretumHard': 788,
+    'Sastasha': 1036,
+    'SastashaHard': 387,
+    'SealRockSeize': 431,
+    'Shaaloani': 1190,
+    'ShadowAndClaw': 223,
+    'ShisuiOfTheVioletTides': 616,
+    'SigmascapeV10': 748,
+    'SigmascapeV10Savage': 752,
+    'SigmascapeV20': 749,
+    'SigmascapeV20Savage': 753,
+    'SigmascapeV30': 750,
+    'SigmascapeV30Savage': 754,
+    'SigmascapeV40': 751,
+    'SigmascapeV40Savage': 755,
+    'Smileton': 976,
+    'Snowcloak': 1062,
+    'Snowcloak61': 371,
+    'SohmAl': 1064,
+    'SohmAl61': 441,
+    'SohmAlHard': 617,
+    'SohrKhai': 1112,
+    'SohrKhai62': 555,
+    'SolemnTrinity': 300,
+    'SolutionNine': 1186,
+    'SomewhereOnlySheKnows': 1234,
+    'SouthShroud': 153,
+    'SouthernThanalan': 146,
+    'SpecialEventI': 353,
+    'SpecialEventIi': 354,
+    'StingingBack': 192,
+    'StormsCrown': 1071,
+    'StormsCrownExtreme': 1072,
+    'SyrcusTower': 372,
+    'TakingAStand': 1211,
+    'TenderValley': 1203,
+    'Thaleia': 1178,
+    'Thavnair': 957,
+    'TheAbyssalFracture': 1168,
+    'TheAbyssalFractureExtreme': 1169,
+    'TheAery': 1065,
+    'TheAery61': 435,
+    'TheAetherfont': 1126,
+    'TheAetherochemicalResearchFacility': 1110,
+    'TheAetherochemicalResearchFacility62': 438,
+    'TheAitiascope': 978,
+    'TheAkhAfahAmphitheatreExtreme': 378,
+    'TheAkhAfahAmphitheatreHard': 377,
+    'TheAkhAfahAmphitheatreUnreal': 930,
+    'TheAntitower': 1111,
+    'TheAntitower62': 516,
+    'TheAquapolis': 558,
+    'TheAurumVale': 172,
+    'TheAzimSteppe': 622,
+    'TheBattleOnBekko': 711,
+    'TheBindingCoilOfBahamutTurn1': 241,
+    'TheBindingCoilOfBahamutTurn2': 242,
+    'TheBindingCoilOfBahamutTurn3': 243,
+    'TheBindingCoilOfBahamutTurn4': 244,
+    'TheBindingCoilOfBahamutTurn5': 245,
+    'TheBorderlandRuinsSecure': 376,
+    'TheBowlOfEmbers': 1045,
+    'TheBowlOfEmbersExtreme': 295,
+    'TheBowlOfEmbersHard': 292,
+    'TheBozjaIncident': 911,
+    'TheBozjanSouthernFront': 920,
+    'TheBurn': 1173,
+    'TheBurn64': 789,
+    'TheCalamityRetold': 790,
+    'TheCarteneauFlatsHeliodrome': 633,
+    'TheChrysalis': 426,
+    'TheChurningMists': 400,
+    'TheClockworkCastletown': 1116,
+    'TheCloudDeck': 950,
+    'TheCloudDeckExtreme': 951,
+    'TheCopiedFactory': 882,
+    'TheCrownOfTheImmaculate': 846,
+    'TheCrownOfTheImmaculateExtreme': 848,
+    'TheCrystarium': 819,
+    'TheDancingPlague': 845,
+    'TheDancingPlagueExtreme': 858,
+    'TheDarkInside': 992,
+    'TheDeadEnds': 973,
+    'TheDiadem': 929,
+    'TheDiademEasy': 512,
+    'TheDiademHard': 515,
+    'TheDiademHuntingGrounds': 625,
+    'TheDiademHuntingGroundsEasy': 624,
+    'TheDiademTrialsOfTheFury': 630,
+    'TheDiademTrialsOfTheMatron': 656,
+    'TheDomanEnclave': 759,
+    'TheDragonsNeck': 142,
+    'TheDravanianForelands': 398,
+    'TheDravanianHinterlands': 399,
+    'TheDrownedCityOfSkalla': 1172,
+    'TheDrownedCityOfSkalla64': 731,
+    'TheDungeonsOfLyheGhiah': 879,
+    'TheDuskVigil': 434,
+    'TheDyingGasp': 847,
+    'TheEpicOfAlexanderUltimate': 887,
+    'TheExcitatron6000': 1000,
+    'TheFaceOfTrueEvil': 709,
+    'TheFeatOfTheBrotherhood': 1212,
+    'TheFellCourtOfTroia': 1070,
+    'TheFieldsOfGloryShatter': 554,
+    'TheFinalCoilOfBahamutTurn1': 193,
+    'TheFinalCoilOfBahamutTurn2': 194,
+    'TheFinalCoilOfBahamutTurn3': 195,
+    'TheFinalCoilOfBahamutTurn4': 196,
+    'TheFinalDay': 997,
+    'TheFinalStepsOfFaith': 559,
+    'TheForbiddenLandEurekaAnemos': 732,
+    'TheForbiddenLandEurekaHydatos': 827,
+    'TheForbiddenLandEurekaPagos': 763,
+    'TheForbiddenLandEurekaPyros': 795,
+    'TheFractalContinuum': 430,
+    'TheFractalContinuumHard': 743,
+    'TheFringes': 612,
+    'TheGameIsAfoot': 1177,
+    'TheGhimlytDark': 1174,
+    'TheGhimlytDark64': 793,
+    'TheGiftOfMercy': 1019,
+    'TheGildedAraya': 1136,
+    'TheGrandCosmos': 884,
+    'TheGreatGubalLibrary': 1109,
+    'TheGreatGubalLibrary62': 416,
+    'TheGreatGubalLibraryHard': 578,
+    'TheGreatHunt': 761,
+    'TheGreatHuntExtreme': 762,
+    'TheGreatShipVylbrand': 954,
+    'TheHardenedHeart': 873,
+    'TheHarvestBegins': 1020,
+    'TheHauntedManor': 571,
+    'TheHeartOfTheProblem': 718,
+    'TheHeroesGauntlet': 916,
+    'TheHiddenCanalsOfUznair': 725,
+    'TheHowlingEye': 1047,
+    'TheHowlingEyeExtreme': 297,
+    'TheHowlingEyeHard': 294,
+    'TheHuntersLegacy': 875,
+    'TheInterphos': 1202,
+    'TheJadeStoa': 746,
+    'TheJadeStoaExtreme': 758,
+    'TheKeeperOfTheLake': 1063,
+    'TheKeeperOfTheLake61': 150,
+    'TheKillingArt': 1021,
+    'TheLabyrinthOfTheAncients': 174,
+    'TheLimitlessBlueExtreme': 447,
+    'TheLimitlessBlueHard': 436,
+    'TheLochs': 621,
+    'TheLostAndTheFound': 874,
+    'TheLostCanalsOfUznair': 712,
+    'TheLostCityOfAmdapor': 363,
+    'TheLostCityOfAmdaporHard': 519,
+    'TheLunarSubterrane': 1164,
+    'TheMaskedCarnivale': 796,
+    'TheMightiestShield': 1217,
+    'TheMinstrelsBalladEndsingersAria': 998,
+    'TheMinstrelsBalladHadessElegy': 885,
+    'TheMinstrelsBalladHydaelynsCall': 996,
+    'TheMinstrelsBalladNidhoggsRage': 566,
+    'TheMinstrelsBalladShinryusDomain': 730,
+    'TheMinstrelsBalladThordansReign': 448,
+    'TheMinstrelsBalladTsukuyomisPain': 779,
+    'TheMinstrelsBalladUltimasBane': 348,
+    'TheMinstrelsBalladZodiarksFall': 993,
+    'TheMothercrystal': 995,
+    'TheNavel': 1046,
+    'TheNavelExtreme': 296,
+    'TheNavelHard': 293,
+    'TheNavelUnreal': 953,
+    'TheOmegaProtocolUltimate': 1122,
+    'TheOrbonneMonastery': 826,
+    'TheOrphansAndTheBrokenBlade': 715,
+    'ThePalaceOfTheDeadFloors101_110': 598,
+    'ThePalaceOfTheDeadFloors111_120': 599,
+    'ThePalaceOfTheDeadFloors11_20': 562,
+    'ThePalaceOfTheDeadFloors121_130': 600,
+    'ThePalaceOfTheDeadFloors131_140': 601,
+    'ThePalaceOfTheDeadFloors141_150': 602,
+    'ThePalaceOfTheDeadFloors151_160': 603,
+    'ThePalaceOfTheDeadFloors161_170': 604,
+    'ThePalaceOfTheDeadFloors171_180': 605,
+    'ThePalaceOfTheDeadFloors181_190': 606,
+    'ThePalaceOfTheDeadFloors191_200': 607,
+    'ThePalaceOfTheDeadFloors1_10': 561,
+    'ThePalaceOfTheDeadFloors21_30': 563,
+    'ThePalaceOfTheDeadFloors31_40': 564,
+    'ThePalaceOfTheDeadFloors41_50': 565,
+    'ThePalaceOfTheDeadFloors51_60': 593,
+    'ThePalaceOfTheDeadFloors61_70': 594,
+    'ThePalaceOfTheDeadFloors71_80': 595,
+    'ThePalaceOfTheDeadFloors81_90': 596,
+    'ThePalaceOfTheDeadFloors91_100': 597,
+    'ThePeaks': 620,
+    'ThePhantomsFeast': 994,
+    'ThePillars': 419,
+    'ThePoolOfTribute': 674,
+    'ThePoolOfTributeExtreme': 677,
+    'ThePortaDecumana': 1048,
+    'ThePraetorium': 1044,
+    'TheProtectorAndTheDestroyer': 1213,
+    'ThePuppetsBunker': 917,
+    'TheQitanaRavel': 823,
+    'TheRaktikaGreatwood': 817,
+    'TheRedSands': 1138,
+    'TheResonant': 684,
+    'TheRidoranaLighthouse': 776,
+    'TheRoyalCityOfRabanastre': 734,
+    'TheRoyalMenagerie': 679,
+    'TheRubySea': 613,
+    'TheSeaOfClouds': 401,
+    'TheSeatOfSacrifice': 922,
+    'TheSeatOfSacrificeExtreme': 923,
+    'TheSecondCoilOfBahamutSavageTurn1': 380,
+    'TheSecondCoilOfBahamutSavageTurn2': 381,
+    'TheSecondCoilOfBahamutSavageTurn3': 382,
+    'TheSecondCoilOfBahamutSavageTurn4': 383,
+    'TheSecondCoilOfBahamutTurn1': 355,
+    'TheSecondCoilOfBahamutTurn2': 356,
+    'TheSecondCoilOfBahamutTurn3': 357,
+    'TheSecondCoilOfBahamutTurn4': 358,
+    'TheShiftingAltarsOfUznair': 794,
+    'TheShiftingGymnasionAgonon': 1123,
+    'TheShiftingOubliettesOfLyheGhiah': 924,
+    'TheSildihnSubterrane': 1069,
+    'TheSingularityReactor': 437,
+    'TheSingularityReactorUnreal': 1175,
+    'TheSirensongSea': 1142,
+    'TheSirensongSea63': 626,
+    'TheSkydeepCenote': 1194,
+    'TheStepsOfFaith': 1068,
+    'TheStepsOfFaith61': 143,
+    'TheStigmaDreamscape': 986,
+    'TheStoneVigil': 1042,
+    'TheStoneVigilHard': 365,
+    'TheStrayboroughDeadwalk': 1204,
+    'TheStrikingTreeExtreme': 375,
+    'TheStrikingTreeHard': 374,
+    'TheSunkenTempleOfQarn': 163,
+    'TheSunkenTempleOfQarnHard': 367,
+    'TheSwallowsCompass': 768,
+    'TheTamTaraDeepcroft': 1037,
+    'TheTamTaraDeepcroftHard': 373,
+    'TheTempest': 818,
+    'TheTempleOfTheFist': 663,
+    'TheThousandMawsOfTotoRak': 1039,
+    'TheTowerAtParadigmsBreach': 966,
+    'TheTowerOfBabil': 969,
+    'TheTowerOfZot': 952,
+    'TheTripleTriadBattlehall': 579,
+    'TheTwinning': 840,
+    'TheUnendingCoilOfBahamutUltimate': 733,
+    'TheValentionesCeremony': 741,
+    'TheVault': 1066,
+    'TheVault61': 421,
+    'TheVoidArk': 508,
+    'TheVoidcastDais': 1140,
+    'TheVoidcastDaisExtreme': 1141,
+    'TheWanderersPalace': 159,
+    'TheWanderersPalaceHard': 188,
+    'TheWeaponsRefrainUltimate': 777,
+    'TheWeepingCityOfMhach': 556,
+    'TheWhorleaterExtreme': 359,
+    'TheWhorleaterHard': 281,
+    'TheWhorleaterUnreal': 972,
+    'TheWillOfTheMoon': 797,
+    'TheWorldOfDarkness': 151,
+    'TheWreathOfSnakes': 824,
+    'TheWreathOfSnakesExtreme': 825,
+    'ThokAstThokExtreme': 446,
+    'ThokAstThokHard': 432,
+    'ThornmarchExtreme': 364,
+    'ThornmarchHard': 1067,
+    'ThornmarchHard61': 207,
+    'ToCalmerSeas': 1016,
+    'TripleTriadInvitationalParlor': 941,
+    'TripleTriadOpenTournament': 940,
+    'Tuliyollal': 1185,
+    'UldahStepsOfNald': 130,
+    'UldahStepsOfThal': 131,
+    'UltimaThule': 960,
+    'UltimasBaneUnreal': 1035,
+    'UnderTheArmor': 190,
+    'UpperLaNoscea': 139,
+    'Urqopacha': 1187,
+    'UrthsFount': 394,
+    'Vanaspati': 970,
+    'Vanguard': 1198,
+    'VengeanceOfTheViper': 1236,
+    'VowsOfVirtueDeedsOfCruelty': 893,
+    'WardUp': 299,
+    'WesternLaNoscea': 138,
+    'WesternThanalan': 140,
+    'WhenClansCollide': 723,
+    'WhereEverythingBegins': 1091,
+    'WithHeartAndSteel': 707,
+    'WolvesDenPier': 250,
+    'WorqorLarDor': 1195,
+    'WorqorLarDorExtreme': 1196,
+    'WorqorZormor': 1193,
+    'WorthyOfHisBack': 1014,
+    'Xelphatol': 1113,
+    'Xelphatol62': 572,
+    'YakTel': 1189,
+    'Yanxia': 614,
+    'Zadnor': 975,
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (data);
+//# sourceMappingURL=zone_id.js.map
+
+/***/ }),
+
+/***/ 53:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// Auto-generated from gen_zone_id_and_info.ts
+// DO NOT EDIT THIS FILE DIRECTLY
+const data = {
+    128: {
+        'exVersion': 0,
+        'name': {
+            'cn': '利姆萨·罗敏萨上层甲板',
+            'de': 'Obere Decks',
+            'en': 'Limsa Lominsa Upper Decks',
+            'fr': 'Limsa Lominsa - Le Tillac',
+            'ja': 'リムサ・ロミンサ：上甲板層',
+            'ko': '림사 로민사 상층 갑판',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 14,
+    },
+    129: {
+        'exVersion': 0,
+        'name': {
+            'cn': '利姆萨·罗敏萨下层甲板',
+            'de': 'Untere Decks',
+            'en': 'Limsa Lominsa Lower Decks',
+            'fr': 'Limsa Lominsa - L\'Entrepont',
+            'ja': 'リムサ・ロミンサ：下甲板層',
+            'ko': '림사 로민사 하층 갑판',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 15,
+    },
+    130: {
+        'exVersion': 0,
+        'name': {
+            'cn': '乌尔达哈现世回廊',
+            'de': 'Nald-Kreuzgang',
+            'en': 'Ul\'dah - Steps of Nald',
+            'fr': 'Ul\'dah - Faubourg de Nald',
+            'ja': 'ウルダハ：ナル回廊',
+            'ko': '울다하 날 회랑',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 7,
+    },
+    131: {
+        'exVersion': 0,
+        'name': {
+            'cn': '乌尔达哈来生回廊',
+            'de': 'Thal-Kreuzgang',
+            'en': 'Ul\'dah - Steps of Thal',
+            'fr': 'Ul\'dah - Faubourg de Thal',
+            'ja': 'ウルダハ：ザル回廊',
+            'ko': '울다하 달 회랑',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 8,
+    },
+    132: {
+        'exVersion': 0,
+        'name': {
+            'cn': '格里达尼亚新街',
+            'de': 'Neu-Gridania',
+            'en': 'New Gridania',
+            'fr': 'Nouvelle Gridania',
+            'ja': 'グリダニア：新市街',
+            'ko': '그리다니아 신시가지',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 1,
+    },
+    133: {
+        'exVersion': 0,
+        'name': {
+            'cn': '格里达尼亚旧街',
+            'de': 'Alt-Gridania',
+            'en': 'Old Gridania',
+            'fr': 'Vieille Gridania',
+            'ja': 'グリダニア：旧市街',
+            'ko': '그리다니아 구시가지',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 2,
+    },
+    134: {
+        'exVersion': 0,
+        'name': {
+            'cn': '中拉诺西亚',
+            'de': 'Zentrales La Noscea',
+            'en': 'Middle La Noscea',
+            'fr': 'Noscea centrale',
+            'ja': '中央ラノシア',
+            'ko': '중부 라노시아',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 16,
+    },
+    135: {
+        'exVersion': 0,
+        'name': {
+            'cn': '拉诺西亚低地',
+            'de': 'Unteres La Noscea',
+            'en': 'Lower La Noscea',
+            'fr': 'Basse-Noscea',
+            'ja': '低地ラノシア',
+            'ko': '저지 라노시아',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 17,
+    },
+    136: {
+        'exVersion': 0,
+        'name': {
+            'cn': '海雾村',
+            'de': 'Dorf des Nebels',
+            'en': 'Mist',
+            'fr': 'Brumée',
+            'ja': 'ミスト・ヴィレッジ',
+            'ko': '안갯빛 마을',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 14,
+    },
+    137: {
+        'exVersion': 0,
+        'name': {
+            'cn': '东拉诺西亚',
+            'de': 'Östliches La Noscea',
+            'en': 'Eastern La Noscea',
+            'fr': 'Noscea orientale',
+            'ja': '東ラノシア',
+            'ko': '동부 라노시아',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 18,
+    },
+    138: {
+        'exVersion': 0,
+        'name': {
+            'cn': '西拉诺西亚',
+            'de': 'Westliches La Noscea',
+            'en': 'Western La Noscea',
+            'fr': 'Noscea occidentale',
+            'ja': '西ラノシア',
+            'ko': '서부 라노시아',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 19,
+    },
+    139: {
+        'exVersion': 0,
+        'name': {
+            'cn': '拉诺西亚高地',
+            'de': 'Oberes La Noscea',
+            'en': 'Upper La Noscea',
+            'fr': 'Haute-Noscea',
+            'ja': '高地ラノシア',
+            'ko': '고지 라노시아',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 20,
+    },
+    140: {
+        'exVersion': 0,
+        'name': {
+            'cn': '西萨纳兰',
+            'de': 'Westliches Thanalan',
+            'en': 'Western Thanalan',
+            'fr': 'Thanalan occidental',
+            'ja': '西ザナラーン',
+            'ko': '서부 다날란',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 9,
+    },
+    141: {
+        'exVersion': 0,
+        'name': {
+            'cn': '中萨纳兰',
+            'de': 'Zentrales Thanalan',
+            'en': 'Central Thanalan',
+            'fr': 'Thanalan central',
+            'ja': '中央ザナラーン',
+            'ko': '중부 다날란',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 10,
+    },
+    142: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '艾玛吉娜杯斗技大会决赛',
+            'de': 'Das Drachenhals-Kolosseum',
+            'en': 'The Dragon\'s Neck',
+            'fr': 'Le Col du dragon',
+            'ja': 'アマジナ杯闘技会決勝戦',
+            'ko': '아마지나배 투기대회 결승전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    143: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '(6.1)皇都伊修加德保卫战',
+            'de': '(6.1)Der Schicksalsweg',
+            'en': '(6.1)The Steps of Faith',
+            'fr': '(6.1)Le Siège de la sainte Cité d\'Ishgard',
+            'ja': '(6.1)皇都イシュガルド防衛戦',
+            'ko': '(6.1)성도 이슈가르드 방어전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 28,
+    },
+    145: {
+        'exVersion': 0,
+        'name': {
+            'cn': '东萨纳兰',
+            'de': 'Östliches Thanalan',
+            'en': 'Eastern Thanalan',
+            'fr': 'Thanalan oriental',
+            'ja': '東ザナラーン',
+            'ko': '동부 다날란',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 11,
+    },
+    146: {
+        'exVersion': 0,
+        'name': {
+            'cn': '南萨纳兰',
+            'de': 'Südliches Thanalan',
+            'en': 'Southern Thanalan',
+            'fr': 'Thanalan méridional',
+            'ja': '南ザナラーン',
+            'ko': '남부 다날란',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 12,
+    },
+    147: {
+        'exVersion': 0,
+        'name': {
+            'cn': '北萨纳兰',
+            'de': 'Nördliches Thanalan',
+            'en': 'Northern Thanalan',
+            'fr': 'Thanalan septentrional',
+            'ja': '北ザナラーン',
+            'ko': '북부 다날란',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 13,
+    },
+    148: {
+        'exVersion': 0,
+        'name': {
+            'cn': '黑衣森林中央林区',
+            'de': 'Tiefer Wald',
+            'en': 'Central Shroud',
+            'fr': 'Forêt centrale',
+            'ja': '黒衣森：中央森林',
+            'ko': '검은장막 숲 중부삼림',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 3,
+    },
+    150: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '(6.1)幻龙残骸密约之塔',
+            'de': '(6.1)Hüter des Sees',
+            'en': '(6.1)The Keeper of the Lake',
+            'fr': '(6.1)Le Gardien du lac',
+            'ja': '(6.1)幻龍残骸 黙約の塔',
+            'ko': '(6.1)묵약의 탑',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 74,
+    },
+    151: {
+        'contentType': 5,
+        'exVersion': 0,
+        'name': {
+            'cn': '水晶塔 暗之世界',
+            'de': 'Die Welt der Dunkelheit',
+            'en': 'The World of Darkness',
+            'fr': 'La Tour de Cristal - Monde des Ténèbres',
+            'ja': 'クリスタルタワー：闇の世界',
+            'ko': '크리스탈 타워: 어둠의 세계',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    152: {
+        'exVersion': 0,
+        'name': {
+            'cn': '黑衣森林东部林区',
+            'de': 'Ostwald',
+            'en': 'East Shroud',
+            'fr': 'Forêt de l\'est',
+            'ja': '黒衣森：東部森林',
+            'ko': '검은장막 숲 동부삼림',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 4,
+    },
+    153: {
+        'exVersion': 0,
+        'name': {
+            'cn': '黑衣森林南部林区',
+            'de': 'Südwald',
+            'en': 'South Shroud',
+            'fr': 'Forêt du sud',
+            'ja': '黒衣森：南部森林',
+            'ko': '검은장막 숲 남부삼림',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 5,
+    },
+    154: {
+        'exVersion': 0,
+        'name': {
+            'cn': '黑衣森林北部林区',
+            'de': 'Nordwald',
+            'en': 'North Shroud',
+            'fr': 'Forêt du nord',
+            'ja': '黒衣森：北部森林',
+            'ko': '검은장막 숲 북부삼림',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 6,
+    },
+    155: {
+        'exVersion': 0,
+        'name': {
+            'cn': '库尔札斯中央高地',
+            'de': 'Zentrales Hochland von Coerthas',
+            'en': 'Coerthas Central Highlands',
+            'fr': 'Hautes terres du Coerthas central',
+            'ja': 'クルザス中央高地',
+            'ko': '커르다스 중앙고지',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 21,
+    },
+    156: {
+        'exVersion': 0,
+        'name': {
+            'cn': '摩杜纳',
+            'de': 'Mor Dhona',
+            'en': 'Mor Dhona',
+            'fr': 'Mor Dhona',
+            'ja': 'モードゥナ',
+            'ko': '모르도나',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 22,
+    },
+    159: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '神灵圣域放浪神古神殿',
+            'de': 'Palast des Wanderers',
+            'en': 'The Wanderer\'s Palace',
+            'fr': 'Le Palais du Vagabond',
+            'ja': '旅神聖域 ワンダラーパレス',
+            'ko': '방랑자의 궁전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    160: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '领航明灯天狼星灯塔',
+            'de': 'Pharos Sirius',
+            'en': 'Pharos Sirius',
+            'fr': 'Le Phare de Sirius',
+            'ja': '怪鳥巨塔 シリウス大灯台',
+            'ko': '시리우스 대등대',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 28,
+    },
+    162: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '魔兽领域日影地修炼所',
+            'de': 'Halatali',
+            'en': 'Halatali',
+            'fr': 'Halatali',
+            'ja': '魔獣領域 ハラタリ修練所',
+            'ko': '할라탈리 수련장',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    163: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '古代遗迹喀恩埋没圣堂',
+            'de': 'Versunkener Tempel von Qarn',
+            'en': 'The Sunken Temple of Qarn',
+            'fr': 'Le Temple enseveli de Qarn',
+            'ja': '遺跡探索 カルン埋没寺院',
+            'ko': '카른의 무너진 사원',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    167: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '邪教驻地无限城古堡',
+            'de': 'Die Ruinen von Amdapor',
+            'en': 'Amdapor Keep',
+            'fr': 'Le Château d\'Amdapor',
+            'ja': '邪教排撃 古城アムダプール',
+            'ko': '옛 암다포르 성',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 28,
+    },
+    170: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '流沙迷宫樵鸣洞',
+            'de': 'Sägerschrei',
+            'en': 'Cutter\'s Cry',
+            'fr': 'Le Gouffre hurlant',
+            'ja': '流砂迷宮 カッターズクライ',
+            'ko': '나무꾼의 비명',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    171: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '山中战线泽梅尔要塞',
+            'de': 'Die Feste Dzemael',
+            'en': 'Dzemael Darkhold',
+            'fr': 'La Forteresse de Dzemael',
+            'ja': '掃討作戦 ゼーメル要塞',
+            'ko': '제멜 요새',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    172: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '毒雾洞窟黄金谷',
+            'de': 'Goldklamm',
+            'en': 'The Aurum Vale',
+            'fr': 'Le Val d\'Aurum',
+            'ja': '霧中行軍 オーラムヴェイル',
+            'ko': '금빛 골짜기',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    174: {
+        'contentType': 5,
+        'exVersion': 0,
+        'name': {
+            'cn': '水晶塔 古代人迷宫',
+            'de': 'Kristallturm - Das Labyrinth der Alten',
+            'en': 'The Labyrinth of the Ancients',
+            'fr': 'La Tour de Cristal - Dédale antique',
+            'ja': 'クリスタルタワー：古代の民の迷宮',
+            'ko': '크리스탈 타워: 고대인의 미궁',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    180: {
+        'exVersion': 0,
+        'name': {
+            'cn': '拉诺西亚外地',
+            'de': 'Äußeres La Noscea',
+            'en': 'Outer La Noscea',
+            'fr': 'Noscea extérieure',
+            'ja': '外地ラノシア',
+            'ko': '외지 라노시아',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 24,
+    },
+    188: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '武装圣域放浪神古神殿',
+            'de': 'Palast des Wanderers (schwer)',
+            'en': 'The Wanderer\'s Palace (Hard)',
+            'fr': 'Le Palais du Vagabond (brutal)',
+            'ja': '武装聖域 ワンダラーパレス (Hard)',
+            'ko': '방랑자의 궁전(어려움)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 40,
+    },
+    189: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '邪念妖地无限城古堡',
+            'de': 'Die Ruinen von Amdapor (schwer)',
+            'en': 'Amdapor Keep (Hard)',
+            'fr': 'Le Château d\'Amdapor (brutal)',
+            'ja': '邪念排撃 古城アムダプール (Hard)',
+            'ko': '옛 암다포르 성(어려움)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 40,
+    },
+    190: {
+        'contentType': 3,
+        'exVersion': 0,
+        'name': {
+            'cn': '讨伐彷徨死灵！',
+            'de': 'Bockmanns Gefolge',
+            'en': 'Under the Armor',
+            'fr': 'Chasse au fantôme fantoche',
+            'ja': '彷徨う死霊を討て！',
+            'ko': '방황하는 사령을 쓰러뜨려라!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 3,
+    },
+    191: {
+        'contentType': 3,
+        'exVersion': 0,
+        'name': {
+            'cn': '驱除剧毒妖花！',
+            'de': 'Unkraut jäten',
+            'en': 'Pulling Poison Posies',
+            'fr': 'Opération fleurs du mal',
+            'ja': '有毒妖花を駆除せよ！',
+            'ko': '독성 요괴꽃을 제거하라!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 4,
+    },
+    192: {
+        'contentType': 3,
+        'exVersion': 0,
+        'name': {
+            'cn': '消灭恶徒团伙寄生蜂团！',
+            'de': 'Ins Wespennest stechen',
+            'en': 'Stinging Back',
+            'fr': 'Expédition punitive contre les Ventrerouge',
+            'ja': '無法者「似我蜂団」を撃滅せよ！',
+            'ko': '무법자 집단 \'나나니단\'을 섬멸하라!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 5,
+    },
+    193: {
+        'contentType': 5,
+        'exVersion': 0,
+        'name': {
+            'cn': '巴哈姆特大迷宫 真源之章1',
+            'de': 'Verschlungene Schatten 3 - 1',
+            'en': 'The Final Coil of Bahamut - Turn 1',
+            'fr': 'L\'Abîme de Bahamut I',
+            'ja': '大迷宮バハムート：真成編1',
+            'ko': '대미궁 바하무트: 진성편 1',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    194: {
+        'contentType': 5,
+        'exVersion': 0,
+        'name': {
+            'cn': '巴哈姆特大迷宫 真源之章2',
+            'de': 'Verschlungene Schatten 3 - 2',
+            'en': 'The Final Coil of Bahamut - Turn 2',
+            'fr': 'L\'Abîme de Bahamut II',
+            'ja': '大迷宮バハムート：真成編2',
+            'ko': '대미궁 바하무트: 진성편 2',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    195: {
+        'contentType': 5,
+        'exVersion': 0,
+        'name': {
+            'cn': '巴哈姆特大迷宫 真源之章3',
+            'de': 'Verschlungene Schatten 3 - 3',
+            'en': 'The Final Coil of Bahamut - Turn 3',
+            'fr': 'L\'Abîme de Bahamut III',
+            'ja': '大迷宮バハムート：真成編3',
+            'ko': '대미궁 바하무트: 진성편 3',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    196: {
+        'contentType': 5,
+        'exVersion': 0,
+        'name': {
+            'cn': '巴哈姆特大迷宫 真源之章4',
+            'de': 'Verschlungene Schatten 3 - 4',
+            'en': 'The Final Coil of Bahamut - Turn 4',
+            'fr': 'L\'Abîme de Bahamut IV',
+            'ja': '大迷宮バハムート：真成編4',
+            'ko': '대미궁 바하무트: 진성편 4',
+        },
+        'offsetX': -448,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 44,
+    },
+    207: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '(6.1)莫古力贤王歼灭战',
+            'de': '(6.1)Königliche Konfrontation (schwer)',
+            'en': '(6.1)Thornmarch (Hard)',
+            'fr': '(6.1)La Lisière de ronces (brutal)',
+            'ja': '(6.1)善王モグル・モグXII世討滅戦',
+            'ko': '(6.1)선왕 모그루 모그 XII세 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 30,
+    },
+    214: {
+        'contentType': 3,
+        'exVersion': 0,
+        'name': {
+            'cn': '完成集团战训练！',
+            'de': 'Einer für alle, alle für einen',
+            'en': 'Basic Training: Enemy Parties',
+            'fr': 'Entraînement : groupes d\'ennemis',
+            'ja': '集団戦訓練をくぐり抜けろ！',
+            'ko': '집단전 훈련을 완수하라!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 16,
+    },
+    215: {
+        'contentType': 3,
+        'exVersion': 0,
+        'name': {
+            'cn': '突破所有关门，讨伐最深处的敌人！',
+            'de': 'Sturmkommando',
+            'en': 'Basic Training: Enemy Strongholds',
+            'fr': 'Entraînement : in­fil­tra­tion en base ennemie',
+            'ja': '全関門を突破し、最深部の敵を討て！',
+            'ko': '관문을 돌파하고 최심부의 적을 쓰러뜨려라!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 9,
+    },
+    216: {
+        'contentType': 3,
+        'exVersion': 0,
+        'name': {
+            'cn': '捕获金币龟！',
+            'de': 'Gil oder Leben',
+            'en': 'Hero on the Half Shell',
+            'fr': 'Reconquête d\'une carapace escamotée',
+            'ja': 'ギルガメを捕獲せよ！',
+            'ko': '길거북을 사로잡아라!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 10,
+    },
+    219: {
+        'contentType': 3,
+        'exVersion': 0,
+        'name': {
+            'cn': '击溃哥布林炸弹军团！',
+            'de': 'Bombige Goblins',
+            'en': 'Flicking Sticks and Taking Names',
+            'fr': 'Les Gobelins bombardiers',
+            'ja': '爆弾魔ゴブリン軍団を撃滅せよ！',
+            'ko': '폭탄광 고블린 군단을 섬멸하라!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 3,
+    },
+    220: {
+        'contentType': 3,
+        'exVersion': 0,
+        'name': {
+            'cn': '讨伐梦幻之布拉奇希奥！',
+            'de': 'Briaxio ausschalten',
+            'en': 'All\'s Well that Ends in the Well',
+            'fr': 'Briaxio à bras raccourcis',
+            'ja': '夢幻のブラキシオを討て！',
+            'ko': '몽환의 브라크시오를 쓰러뜨려라!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 5,
+    },
+    221: {
+        'contentType': 3,
+        'exVersion': 0,
+        'name': {
+            'cn': '讨伐污染源头魔界花！',
+            'de': 'Tödliches Rankenspiel',
+            'en': 'More than a Feeler',
+            'fr': 'Sus au morbol pollueur',
+            'ja': '汚染源モルボルを討て！',
+            'ko': '오염원 몰볼을 쓰러뜨려라!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 20,
+    },
+    222: {
+        'contentType': 3,
+        'exVersion': 0,
+        'name': {
+            'cn': '讨伐坑道中出现的妖异！',
+            'de': 'Gefahr aus dem Nichts',
+            'en': 'Annoy the Void',
+            'fr': 'Buso l\'immolateur',
+            'ja': '坑道に現れた妖異ブソを討て！',
+            'ko': '갱도에 나타난 요마 부소를 쓰러뜨려라!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 17,
+    },
+    223: {
+        'contentType': 3,
+        'exVersion': 0,
+        'name': {
+            'cn': '注意无敌的眷属，讨伐大型妖异！',
+            'de': 'Kampf gegen Schatten',
+            'en': 'Shadow and Claw',
+            'fr': 'Ombres et griffes',
+            'ja': '無敵の眷属を従えし、大型妖異を討て！',
+            'ko': '무적의 부하를 조종하는 요마를 쓰러뜨려라!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 21,
+    },
+    241: {
+        'contentType': 5,
+        'exVersion': 0,
+        'name': {
+            'cn': '巴哈姆特大迷宫 邂逅之章1',
+            'de': 'Verschlungene Schatten 1',
+            'en': 'The Binding Coil of Bahamut - Turn 1',
+            'fr': 'Le Labyrinthe de Bahamut I',
+            'ja': '大迷宮バハムート：邂逅編1',
+            'ko': '대미궁 바하무트: 해후편 1',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    242: {
+        'contentType': 5,
+        'exVersion': 0,
+        'name': {
+            'cn': '巴哈姆特大迷宫 邂逅之章2',
+            'de': 'Verschlungene Schatten 2',
+            'en': 'The Binding Coil of Bahamut - Turn 2',
+            'fr': 'Le Labyrinthe de Bahamut II',
+            'ja': '大迷宮バハムート：邂逅編2',
+            'ko': '대미궁 바하무트: 해후편 2',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    243: {
+        'contentType': 5,
+        'exVersion': 0,
+        'name': {
+            'cn': '巴哈姆特大迷宫 邂逅之章3',
+            'de': 'Verschlungene Schatten 3',
+            'en': 'The Binding Coil of Bahamut - Turn 3',
+            'fr': 'Le Labyrinthe de Bahamut III',
+            'ja': '大迷宮バハムート：邂逅編3',
+            'ko': '대미궁 바하무트: 해후편 3',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    244: {
+        'contentType': 5,
+        'exVersion': 0,
+        'name': {
+            'cn': '巴哈姆特大迷宫 邂逅之章4',
+            'de': 'Verschlungene Schatten 4',
+            'en': 'The Binding Coil of Bahamut - Turn 4',
+            'fr': 'Le Labyrinthe de Bahamut IV',
+            'ja': '大迷宮バハムート：邂逅編4',
+            'ko': '대미궁 바하무트: 해후편 4',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    245: {
+        'contentType': 5,
+        'exVersion': 0,
+        'name': {
+            'cn': '巴哈姆特大迷宫 邂逅之章5',
+            'de': 'Verschlungene Schatten 5',
+            'en': 'The Binding Coil of Bahamut - Turn 5',
+            'fr': 'Le Labyrinthe de Bahamut V',
+            'ja': '大迷宮バハムート：邂逅編5',
+            'ko': '대미궁 바하무트: 해후편 5',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    250: {
+        'exVersion': 0,
+        'name': {
+            'cn': '狼狱停船场',
+            'de': 'Wolfshöhlen-Pier',
+            'en': 'Wolves\' Den Pier',
+            'fr': 'Jetée de l\'Antre des loups',
+            'ja': 'ウルヴズジェイル係船場',
+            'ko': '늑대우리 부두',
+        },
+        'offsetX': -77,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 29,
+    },
+    281: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '利维亚桑歼灭战',
+            'de': 'Götterdämmerung - Leviathan',
+            'en': 'The Whorleater (Hard)',
+            'fr': 'Le Briseur de marées (brutal)',
+            'ja': '真リヴァイアサン討滅戦',
+            'ko': '진 리바이어선 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 38,
+    },
+    292: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '伊弗利特歼灭战',
+            'de': 'Götterdämmerung - Ifrit',
+            'en': 'The Bowl of Embers (Hard)',
+            'fr': 'Le Cratère des tisons (brutal)',
+            'ja': '真イフリート討滅戦',
+            'ko': '진 이프리트 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 25,
+    },
+    293: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '泰坦歼灭战',
+            'de': 'Götterdämmerung - Titan',
+            'en': 'The Navel (Hard)',
+            'fr': 'Le Nombril (brutal)',
+            'ja': '真タイタン討滅戦',
+            'ko': '진 타이탄 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 23,
+    },
+    294: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '迦楼罗歼灭战',
+            'de': 'Götterdämmerung - Garuda',
+            'en': 'The Howling Eye (Hard)',
+            'fr': 'Hurlœil (brutal)',
+            'ja': '真ガルーダ討滅戦',
+            'ko': '진 가루다 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 26,
+    },
+    295: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '伊弗利特歼殛战',
+            'de': 'Zenit der Götter - Ifrit',
+            'en': 'The Bowl of Embers (Extreme)',
+            'fr': 'Le Cratère des tisons (extrême)',
+            'ja': '極イフリート討滅戦',
+            'ko': '극 이프리트 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 25,
+    },
+    296: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '泰坦歼殛战',
+            'de': 'Zenit der Götter - Titan',
+            'en': 'The Navel (Extreme)',
+            'fr': 'Le Nombril (extrême)',
+            'ja': '極タイタン討滅戦',
+            'ko': '극 타이탄 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 23,
+    },
+    297: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '迦楼罗歼殛战',
+            'de': 'Zenit der Götter - Garuda',
+            'en': 'The Howling Eye (Extreme)',
+            'fr': 'Hurlœil (extrême)',
+            'ja': '極ガルーダ討滅戦',
+            'ko': '극 가루다 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 26,
+    },
+    298: {
+        'contentType': 3,
+        'exVersion': 0,
+        'name': {
+            'cn': '讨伐爆弹怪的女王！',
+            'de': 'Miss Bombastic',
+            'en': 'Long Live the Queen',
+            'fr': 'Longue vie à la Reine',
+            'ja': 'ボムを率いる「ボムクイーン」を討て！',
+            'ko': '봄을 거느린 \'봄 여왕\'을 쓰러뜨려라!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 21,
+    },
+    299: {
+        'contentType': 3,
+        'exVersion': 0,
+        'name': {
+            'cn': '歼灭特殊阵型的妖异！',
+            'de': 'Unzertrennlich',
+            'en': 'Ward Up',
+            'fr': 'Quintettes infernaux',
+            'ja': '不気味な陣形を組む妖異をせん滅せよ！',
+            'ko': '불길한 진형을 짜는 요마를 섬멸하라!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 22,
+    },
+    300: {
+        'contentType': 3,
+        'exVersion': 0,
+        'name': {
+            'cn': '制止三方混战的巨人族，守住遗物！',
+            'de': 'Wuchtige Dreifaltigkeit',
+            'en': 'Solemn Trinity',
+            'fr': 'Trinité sinistre',
+            'ja': '三つ巴の巨人族を制し、遺物を守れ！',
+            'ko': '세 거인족을 제압하여 유물을 지켜내라!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 22,
+    },
+    348: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '究极神兵假想作战',
+            'de': 'Heldenlied von Ultima',
+            'en': 'The Minstrel\'s Ballad: Ultima\'s Bane',
+            'fr': 'Le fléau d\'Ultima',
+            'ja': '究極幻想 アルテマウェポン破壊作戦',
+            'ko': '궁극의 환상 알테마 웨폰 파괴작전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 31,
+    },
+    349: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '骚乱坑道铜铃铜山',
+            'de': 'Kupferglocken-Mine (schwer)',
+            'en': 'Copperbell Mines (Hard)',
+            'fr': 'Les Mines de Clochecuivre (brutal)',
+            'ja': '騒乱坑道 カッパーベル銅山 (Hard)',
+            'ko': '구리종 광산(어려움)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    350: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '恶灵府邸静语庄园',
+            'de': 'Haukke-Herrenhaus (schwer)',
+            'en': 'Haukke Manor (Hard)',
+            'fr': 'Le Manoir des Haukke (brutal)',
+            'ja': '妖異屋敷 ハウケタ御用邸 (Hard)',
+            'ko': '하우케타 별궁(어려움)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    353: {
+        'contentType': 4,
+        'exVersion': 2,
+        'name': {
+            'cn': '活动挑战2',
+            'de': 'Event-Inhalt 1',
+            'en': 'Special Event I',
+            'fr': 'Défi spécial I',
+            'ja': 'イベント用コンテンツ：1',
+            'ko': '이벤트용 임무: 1',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    354: {
+        'contentType': 4,
+        'exVersion': 3,
+        'name': {
+            'cn': '活动挑战3',
+            'de': 'Event-Inhalt 2',
+            'en': 'Special Event II',
+            'fr': 'Défi spécial II',
+            'ja': 'イベント用コンテンツ：2',
+            'ko': '이벤트용 임무: 2',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 103,
+    },
+    355: {
+        'contentType': 5,
+        'exVersion': 0,
+        'name': {
+            'cn': '巴哈姆特大迷宫 入侵之章1',
+            'de': 'Verschlungene Schatten 2 - 1',
+            'en': 'The Second Coil of Bahamut - Turn 1',
+            'fr': 'Les Méandres de Bahamut I',
+            'ja': '大迷宮バハムート：侵攻編1',
+            'ko': '대미궁 바하무트: 침공편 1',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    356: {
+        'contentType': 5,
+        'exVersion': 0,
+        'name': {
+            'cn': '巴哈姆特大迷宫 入侵之章2',
+            'de': 'Verschlungene Schatten 2 - 2',
+            'en': 'The Second Coil of Bahamut - Turn 2',
+            'fr': 'Les Méandres de Bahamut II',
+            'ja': '大迷宮バハムート：侵攻編2',
+            'ko': '대미궁 바하무트: 침공편 2',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 28,
+    },
+    357: {
+        'contentType': 5,
+        'exVersion': 0,
+        'name': {
+            'cn': '巴哈姆特大迷宫 入侵之章3',
+            'de': 'Verschlungene Schatten 2 - 3',
+            'en': 'The Second Coil of Bahamut - Turn 3',
+            'fr': 'Les Méandres de Bahamut III',
+            'ja': '大迷宮バハムート：侵攻編3',
+            'ko': '대미궁 바하무트: 침공편 3',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    358: {
+        'contentType': 5,
+        'exVersion': 0,
+        'name': {
+            'cn': '巴哈姆特大迷宫 入侵之章4',
+            'de': 'Verschlungene Schatten 2 - 4',
+            'en': 'The Second Coil of Bahamut - Turn 4',
+            'fr': 'Les Méandres de Bahamut IV',
+            'ja': '大迷宮バハムート：侵攻編4',
+            'ko': '대미궁 바하무트: 침공편 4',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    359: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '利维亚桑歼殛战',
+            'de': 'Zenit der Götter - Leviathan',
+            'en': 'The Whorleater (Extreme)',
+            'fr': 'Le Briseur de marées (extrême)',
+            'ja': '極リヴァイアサン討滅戦',
+            'ko': '극 리바이어선 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 38,
+    },
+    360: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '剑斗领域日影地修炼所',
+            'de': 'Halatali (schwer)',
+            'en': 'Halatali (Hard)',
+            'fr': 'Halatali (brutal)',
+            'ja': '剣闘領域 ハラタリ修練所 (Hard)',
+            'ko': '할라탈리 수련장(어려움)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    361: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '财宝传说破舰岛',
+            'de': 'Schiffbrecher-Insel',
+            'en': 'Hullbreaker Isle',
+            'fr': 'L\'Île de Crèvecarène',
+            'ja': '財宝伝説 ハルブレーカー・アイル',
+            'ko': '난파선의 섬',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    362: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '纷争要地布雷福洛克斯野营地',
+            'de': 'Brüllvolx\' Langrast (schwer)',
+            'en': 'Brayflox\'s Longstop (Hard)',
+            'fr': 'Le Bivouac de Brayflox (brutal)',
+            'ja': '盟友支援 ブレイフロクスの野営地 (Hard)',
+            'ko': '브레이플록스의 야영지(어려움)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 37,
+    },
+    363: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '腐坏遗迹无限城市街古迹',
+            'de': 'Historisches Amdapor',
+            'en': 'The Lost City of Amdapor',
+            'fr': 'Les Vestiges de la cité d\'Amdapor',
+            'ja': '腐敗遺跡 古アムダプール市街',
+            'ko': '옛 암다포르 시가지',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 40,
+    },
+    364: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '莫古力贤王歼殛战',
+            'de': 'Königliche Konfrontation (extrem)',
+            'en': 'Thornmarch (Extreme)',
+            'fr': 'La Lisière de ronces (extrême)',
+            'ja': '極王モグル・モグXII世討滅戦',
+            'ko': '극왕 모그루 모그 XII세 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 30,
+    },
+    365: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '激战城塞石卫塔',
+            'de': 'Steinerne Wacht (schwer)',
+            'en': 'The Stone Vigil (Hard)',
+            'fr': 'Le Vigile de Pierre (brutal)',
+            'ja': '城塞奪回 ストーンヴィジル (Hard)',
+            'ko': '돌방패 경계초소(어려움)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 42,
+    },
+    366: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '大桥上的决斗',
+            'de': 'Duell auf der großen Brücke',
+            'en': 'Battle on the Big Bridge',
+            'fr': 'Affrontement sur le grand pont',
+            'ja': 'ギルガメッシュ討伐戦',
+            'ko': '길가메시 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    367: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '苏醒遗迹喀恩埋没圣堂',
+            'de': 'Versunkener Tempel von Qarn (schwer)',
+            'en': 'The Sunken Temple of Qarn (Hard)',
+            'fr': 'Le Temple enseveli de Qarn (brutal)',
+            'ja': '遺跡救援 カルン埋没寺院 (Hard)',
+            'ko': '카른의 무너진 사원(어려움)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 41,
+    },
+    368: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '死化奇美拉讨伐战',
+            'de': 'Kampf gegen die Dhorme-Chimära',
+            'en': 'A Relic Reborn: the Chimera',
+            'fr': 'La chimère dhorme du Coerthas',
+            'ja': 'ドルムキマイラ討伐戦',
+            'ko': '도름 키마이라 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 21,
+    },
+    369: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '海德拉讨伐战',
+            'de': 'Kampf gegen die Hydra',
+            'en': 'A Relic Reborn: the Hydra',
+            'fr': 'L\'hydre d\'Halatali',
+            'ja': 'ハイドラ討伐戦',
+            'ko': '하이드라 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    371: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '(6.1)凛冽洞天披雪大冰壁',
+            'de': '(6.1)Das Schneekleid',
+            'en': '(6.1)Snowcloak',
+            'fr': '(6.1)Manteneige',
+            'ja': '(6.1)氷結潜窟 スノークローク大氷壁',
+            'ko': '(6.1)얼음외투 대빙벽',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 42,
+    },
+    372: {
+        'contentType': 5,
+        'exVersion': 0,
+        'name': {
+            'cn': '水晶塔 希尔科斯塔',
+            'de': 'Kristallturm - Der Syrcus-Turm',
+            'en': 'Syrcus Tower',
+            'fr': 'La Tour de Cristal - Tour de Syrcus',
+            'ja': 'クリスタルタワー：シルクスの塔',
+            'ko': '크리스탈 타워: 시르쿠스 탑',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    373: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '惨剧灵殿塔姆·塔拉墓园',
+            'de': 'Totenacker Tam-Tara (schwer)',
+            'en': 'The Tam–Tara Deepcroft (Hard)',
+            'fr': 'L\'Hypogée de Tam-Tara (brutal)',
+            'ja': '惨劇霊殿 タムタラの墓所 (Hard)',
+            'ko': '탐타라 묘소(어려움)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 300,
+        'weatherRate': 0,
+    },
+    374: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '拉姆歼灭战',
+            'de': 'Götterdämmerung - Ramuh',
+            'en': 'The Striking Tree (Hard)',
+            'fr': 'L\'Arbre du jugement (brutal)',
+            'ja': '真ラムウ討滅戦',
+            'ko': '진 라무 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 43,
+    },
+    375: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '拉姆歼殛战',
+            'de': 'Zenit der Götter - Ramuh',
+            'en': 'The Striking Tree (Extreme)',
+            'fr': 'L\'Arbre du jugement (extrême)',
+            'ja': '極ラムウ討滅戦',
+            'ko': '극 라무 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 43,
+    },
+    376: {
+        'contentType': 6,
+        'exVersion': 0,
+        'name': {
+            'cn': '周边遗迹群（阵地战）',
+            'de': 'Äußere Ruinen (Sicherung)',
+            'en': 'The Borderland Ruins (Secure)',
+            'fr': 'Les Ruines frontalières (annexion)',
+            'ja': '外縁遺跡群 (制圧戦)',
+            'ko': '외곽 유적지대(제압전)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    377: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '希瓦歼灭战',
+            'de': 'Götterdämmerung - Shiva',
+            'en': 'The Akh Afah Amphitheatre (Hard)',
+            'fr': 'L\'Amphithéâtre d\'Akh Afah (brutal)',
+            'ja': '真シヴァ討滅戦',
+            'ko': '진 시바 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 46,
+    },
+    378: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '希瓦歼殛战',
+            'de': 'Zenit der Götter - Shiva',
+            'en': 'The Akh Afah Amphitheatre (Extreme)',
+            'fr': 'L\'Amphithéâtre d\'Akh Afah (extrême)',
+            'ja': '極シヴァ討滅戦',
+            'ko': '극 시바 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 46,
+    },
+    380: {
+        'contentType': 5,
+        'exVersion': 0,
+        'name': {
+            'cn': '巴哈姆特零式大迷宫 入侵之章1',
+            'de': 'Verschlungene Schatten 2 - 1 (episch)',
+            'en': 'The Second Coil of Bahamut (Savage) - Turn 1',
+            'fr': 'Les Méandres de Bahamut I (sadique)',
+            'ja': '大迷宮バハムート零式：侵攻編1',
+            'ko': '대미궁 바하무트: 침공편(영웅) 1',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    381: {
+        'contentType': 5,
+        'exVersion': 0,
+        'name': {
+            'cn': '巴哈姆特零式大迷宫 入侵之章2',
+            'de': 'Verschlungene Schatten 2 - 2 (episch)',
+            'en': 'The Second Coil of Bahamut (Savage) - Turn 2',
+            'fr': 'Les Méandres de Bahamut II (sadique)',
+            'ja': '大迷宮バハムート零式：侵攻編2',
+            'ko': '대미궁 바하무트: 침공편(영웅) 2',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 28,
+    },
+    382: {
+        'contentType': 5,
+        'exVersion': 0,
+        'name': {
+            'cn': '巴哈姆特零式大迷宫 入侵之章3',
+            'de': 'Verschlungene Schatten 2 - 3 (episch)',
+            'en': 'The Second Coil of Bahamut (Savage) - Turn 3',
+            'fr': 'Les Méandres de Bahamut III (sadique)',
+            'ja': '大迷宮バハムート零式：侵攻編3',
+            'ko': '대미궁 바하무트: 침공편(영웅) 3',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    383: {
+        'contentType': 5,
+        'exVersion': 0,
+        'name': {
+            'cn': '巴哈姆特零式大迷宫 入侵之章4',
+            'de': 'Verschlungene Schatten 2 - 4 (episch)',
+            'en': 'The Second Coil of Bahamut (Savage) - Turn 4',
+            'fr': 'Les Méandres de Bahamut IV (sadique)',
+            'ja': '大迷宮バハムート零式：侵攻編4',
+            'ko': '대미궁 바하무트: 침공편(영웅) 4',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    387: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '逆转要害沙斯塔夏溶洞',
+            'de': 'Sastasha (schwer)',
+            'en': 'Sastasha (Hard)',
+            'fr': 'Sastasha (brutal)',
+            'ja': '逆襲要害 サスタシャ浸食洞 (Hard)',
+            'ko': '사스타샤 침식 동굴(어려움)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    389: {
+        'contentType': 19,
+        'exVersion': 0,
+        'name': {
+            'cn': '陆行鸟竞赛：太阳海岸',
+            'de': 'Chocobo-Rennen: Sonnenküste',
+            'en': 'Chocobo Race: Costa del Sol',
+            'fr': 'Course de chocobos : Costa del Sol',
+            'ja': 'チョコボレース：コスタ・デル・ソル',
+            'ko': '초코보 경주: 코스타 델 솔',
+        },
+        'offsetX': -472,
+        'offsetY': -424,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    390: {
+        'contentType': 19,
+        'exVersion': 0,
+        'name': {
+            'cn': '陆行鸟竞赛：荒野大道',
+            'de': 'Chocobo-Rennen: Sagolii-Straße',
+            'en': 'Chocobo Race: Sagolii Road',
+            'fr': 'Course de chocobos : Route de Sagolii',
+            'ja': 'チョコボレース：サゴリーロード',
+            'ko': '초코보 경주: 사골리 사막',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    391: {
+        'contentType': 19,
+        'exVersion': 0,
+        'name': {
+            'cn': '陆行鸟竞赛：恬静小路',
+            'de': 'Chocobo-Rennen: Pfad der Seelenruhe',
+            'en': 'Chocobo Race: Tranquil Paths',
+            'fr': 'Course de chocobos : Sentes tranquilles',
+            'ja': 'チョコボレース：トランキルパス',
+            'ko': '초코보 경주: 고요한 야영지',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    394: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '奥丁歼灭战',
+            'de': 'Jenseits Urths Quelle',
+            'en': 'Urth\'s Fount',
+            'fr': 'La Fontaine d\'Urth',
+            'ja': '闘神オーディン討滅戦',
+            'ko': '투신 오딘 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 45,
+    },
+    396: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '无限城的死斗',
+            'de': 'Revanche in den Ruinen',
+            'en': 'Battle in the Big Keep',
+            'fr': 'Revanche au vieux château',
+            'ja': '真ギルガメッシュ討滅戦',
+            'ko': '진 길가메시 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 28,
+    },
+    397: {
+        'exVersion': 1,
+        'name': {
+            'cn': '库尔札斯西部高地',
+            'de': 'Westliches Hochland von Coerthas',
+            'en': 'Coerthas Western Highlands',
+            'fr': 'Hautes terres du Coerthas occidental',
+            'ja': 'クルザス西部高地',
+            'ko': '커르다스 서부고지',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 95,
+        'weatherRate': 49,
+    },
+    398: {
+        'exVersion': 1,
+        'name': {
+            'cn': '龙堡参天高地',
+            'de': 'Dravanisches Vorland',
+            'en': 'The Dravanian Forelands',
+            'fr': 'Avant-pays dravanien',
+            'ja': '高地ドラヴァニア',
+            'ko': '고지 드라바니아',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 95,
+        'weatherRate': 50,
+    },
+    399: {
+        'exVersion': 1,
+        'name': {
+            'cn': '龙堡内陆低地',
+            'de': 'Dravanisches Hinterland',
+            'en': 'The Dravanian Hinterlands',
+            'fr': 'Arrière-pays dravanien',
+            'ja': '低地ドラヴァニア',
+            'ko': '저지 드라바니아',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 95,
+        'weatherRate': 51,
+    },
+    400: {
+        'exVersion': 1,
+        'name': {
+            'cn': '翻云雾海',
+            'de': 'Wallende Nebel',
+            'en': 'The Churning Mists',
+            'fr': 'L\'Écume des cieux de Dravania',
+            'ja': 'ドラヴァニア雲海',
+            'ko': '드라바니아 구름바다',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 95,
+        'weatherRate': 52,
+    },
+    401: {
+        'exVersion': 1,
+        'name': {
+            'cn': '阿巴拉提亚云海',
+            'de': 'Abalathisches Wolkenmeer',
+            'en': 'The Sea of Clouds',
+            'fr': 'L\'Écume des cieux d\'Abalathia',
+            'ja': 'アバラシア雲海',
+            'ko': '아발라시아 구름바다',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 95,
+        'weatherRate': 53,
+    },
+    402: {
+        'exVersion': 1,
+        'name': {
+            'cn': '魔大陆阿济兹拉',
+            'de': 'Azys Lla',
+            'en': 'Azys Lla',
+            'fr': 'Azys Lla',
+            'ja': 'アジス・ラー',
+            'ko': '아지스 라',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 95,
+        'weatherRate': 54,
+    },
+    403: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '英雄归来',
+            'de': 'Verrat der Qalyana',
+            'en': 'Return of the Bull',
+            'fr': 'Retour au bercail',
+            'ja': '英雄の帰還',
+            'ko': '영웅의 귀환',
+        },
+        'offsetX': -250,
+        'offsetY': 128,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    416: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '(6.2)学识宝库迦巴勒幻想图书馆',
+            'de': '(6.2)Große Gubal-Bibliothek',
+            'en': '(6.2)The Great Gubal Library',
+            'fr': '(6.2)La Grande bibliothèque de Gubal',
+            'ja': '(6.2)禁書回収 グブラ幻想図書館',
+            'ko': '(6.2)구브라 환상도서관',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    417: {
+        'contentType': 19,
+        'exVersion': 0,
+        'name': {
+            'cn': '陆行鸟竞赛：竞赛教学',
+            'de': 'Chocobo-Rennen: Übungsbahn',
+            'en': 'Chocobo Race: Tutorial',
+            'fr': 'Course d\'appentissage',
+            'ja': 'チョコボレース：チュートリアル',
+            'ko': '초코보 경주: 튜토리얼',
+        },
+        'offsetX': 0,
+        'offsetY': -690,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    418: {
+        'exVersion': 1,
+        'name': {
+            'cn': '伊修加德基础层',
+            'de': 'Fundamente',
+            'en': 'Foundation',
+            'fr': 'Ishgard - L\'Assise',
+            'ja': 'イシュガルド：下層',
+            'ko': '이슈가르드 하층',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 47,
+    },
+    419: {
+        'exVersion': 1,
+        'name': {
+            'cn': '伊修加德砥柱层',
+            'de': 'Strebewerk',
+            'en': 'The Pillars',
+            'fr': 'Ishgard - Les Contreforts',
+            'ja': 'イシュガルド：上層',
+            'ko': '이슈가르드 상층',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 48,
+    },
+    420: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '空中神域不获岛',
+            'de': 'Nimmerreich',
+            'en': 'Neverreap',
+            'fr': 'Nalloncques',
+            'ja': '神域浮島 ネバーリープ',
+            'ko': '거두지 않는 섬',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    421: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '(6.1)圣教中枢伊修加德教皇厅',
+            'de': '(6.1)Erzbasilika',
+            'en': '(6.1)The Vault',
+            'fr': '(6.1)La Voûte',
+            'ja': '(6.1)強硬突入 イシュガルド教皇庁',
+            'ko': '(6.1)이슈가르드 교황청',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    426: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '那布里亚勒斯讨伐战',
+            'de': 'Chrysalis',
+            'en': 'The Chrysalis',
+            'fr': 'La Chrysalide',
+            'ja': 'アシエン・ナプリアレス討伐戦',
+            'ko': '아씨엔 나브리알레스 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    430: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '博物战舰无限回廊',
+            'de': 'Die Fraktal-Kontinuum',
+            'en': 'The Fractal Continuum',
+            'fr': 'Le Continuum fractal',
+            'ja': '博物戦艦 フラクタル・コンティニアム',
+            'ko': '무한연속 박물함',
+        },
+        'offsetX': 0,
+        'offsetY': -213,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    431: {
+        'contentType': 6,
+        'exVersion': 0,
+        'name': {
+            'cn': '尘封秘岩（争夺战）',
+            'de': 'Robbenholm (Eroberung)',
+            'en': 'Seal Rock (Seize)',
+            'fr': 'Le Rocher des tréfonds (invasion)',
+            'ja': 'シールロック (争奪戦)',
+            'ko': '봉인된 바위섬(쟁탈전)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 59,
+    },
+    432: {
+        'contentType': 4,
+        'exVersion': 1,
+        'name': {
+            'cn': '罗波那歼灭战',
+            'de': 'Götterdämmerung - Ravana',
+            'en': 'Thok ast Thok (Hard)',
+            'fr': 'Thok ast Thok (brutal)',
+            'ja': '真ラーヴァナ討滅戦',
+            'ko': '진 라바나 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 57,
+    },
+    434: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '冰雪废堡暮卫塔',
+            'de': 'Abendrot-Wacht',
+            'en': 'The Dusk Vigil',
+            'fr': 'Le Vigile du Crépuscule',
+            'ja': '廃砦捜索 ダスクヴィジル',
+            'ko': '어스름 요새',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 42,
+    },
+    435: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '(6.1)邪龙王座龙巢神殿',
+            'de': '(6.1)Nest des Drachen',
+            'en': '(6.1)The Aery',
+            'fr': '(6.1)L\'Aire',
+            'ja': '(6.1)邪竜血戦 ドラゴンズエアリー',
+            'ko': '(6.1)용의 둥지',
+        },
+        'offsetX': -40,
+        'offsetY': 55,
+        'sizeFactor': 200,
+        'weatherRate': 28,
+    },
+    436: {
+        'contentType': 4,
+        'exVersion': 1,
+        'name': {
+            'cn': '俾斯麦歼灭战',
+            'de': 'Götterdämmerung - Bismarck',
+            'en': 'The Limitless Blue (Hard)',
+            'fr': 'L\'Immensité bleue (brutal)',
+            'ja': '真ビスマルク討滅戦',
+            'ko': '진 비스마르크 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 28,
+    },
+    437: {
+        'contentType': 4,
+        'exVersion': 1,
+        'name': {
+            'cn': '圆桌骑士歼灭战',
+            'de': 'Singularitäts-Reaktor',
+            'en': 'The Singularity Reactor',
+            'fr': 'Le Réacteur de singularité',
+            'ja': 'ナイツ・オブ・ラウンド討滅戦',
+            'ko': '나이츠 오브 라운드 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 56,
+    },
+    438: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '(6.2)血战苍穹魔科学研究所',
+            'de': '(6.2)Ätherochemisches For<SoftHyphen/>schungs<SoftHyphen/>labor',
+            'en': '(6.2)The Aetherochemical Research Facility',
+            'fr': '(6.2)Le Laboratoire de magismologie',
+            'ja': '(6.2)蒼天聖戦 魔科学研究所',
+            'ko': '(6.2)마과학 연구소',
+        },
+        'offsetX': -18,
+        'offsetY': 149,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    441: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '(6.1)天山绝顶索姆阿尔灵峰',
+            'de': '(6.1)Sohm Al',
+            'en': '(6.1)Sohm Al',
+            'fr': '(6.1)Sohm Al',
+            'ja': '(6.1)霊峰踏破 ソーム・アル',
+            'ko': '(6.1)솜 알',
+        },
+        'offsetX': 185,
+        'offsetY': 51,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    442: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大机神城 启动之章1',
+            'de': 'Alexander - Faust des Vaters',
+            'en': 'Alexander - The Fist of the Father',
+            'fr': 'Alexander - Le Poing du Père',
+            'ja': '機工城アレキサンダー：起動編1',
+            'ko': '기공성 알렉산더: 기동편 1',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    443: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大机神城 启动之章2',
+            'de': 'Alexander - Elle des Vaters',
+            'en': 'Alexander - The Cuff of the Father',
+            'fr': 'Alexander - Le Poignet du Père',
+            'ja': '機工城アレキサンダー：起動編2',
+            'ko': '기공성 알렉산더: 기동편 2',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    444: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大机神城 启动之章3',
+            'de': 'Alexander - Arm des Vaters',
+            'en': 'Alexander - The Arm of the Father',
+            'fr': 'Alexander - Le Bras du Père',
+            'ja': '機工城アレキサンダー：起動編3',
+            'ko': '기공성 알렉산더: 기동편 3',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    445: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大机神城 启动之章4',
+            'de': 'Alexander - Last des Vaters',
+            'en': 'Alexander - The Burden of the Father',
+            'fr': 'Alexander - Le Fardeau du Père',
+            'ja': '機工城アレキサンダー：起動編4',
+            'ko': '기공성 알렉산더: 기동편 4',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    446: {
+        'contentType': 4,
+        'exVersion': 1,
+        'name': {
+            'cn': '罗波那歼殛战',
+            'de': 'Zenit der Götter - Ravana',
+            'en': 'Thok ast Thok (Extreme)',
+            'fr': 'Thok ast Thok (extrême)',
+            'ja': '極ラーヴァナ討滅戦',
+            'ko': '극 라바나 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 57,
+    },
+    447: {
+        'contentType': 4,
+        'exVersion': 1,
+        'name': {
+            'cn': '俾斯麦歼殛战',
+            'de': 'Zenit der Götter - Bismarck',
+            'en': 'The Limitless Blue (Extreme)',
+            'fr': 'L\'Immensité bleue (extrême)',
+            'ja': '極ビスマルク討滅戦',
+            'ko': '극 비스마르크 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 28,
+    },
+    448: {
+        'contentType': 4,
+        'exVersion': 1,
+        'name': {
+            'cn': '圆桌骑士幻想歼灭战',
+            'de': 'Heldenlied von Thordans Fall',
+            'en': 'The Minstrel\'s Ballad: Thordan\'s Reign',
+            'fr': 'Le règne de Thordan',
+            'ja': '蒼天幻想 ナイツ・オブ・ラウンド討滅戦',
+            'ko': '극 나이츠 오브 라운드 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 56,
+    },
+    449: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大零式机神城 启动之章1',
+            'de': 'Alexander - Faust des Vaters (episch)',
+            'en': 'Alexander - The Fist of the Father (Savage)',
+            'fr': 'Alexander - Le Poing du Père (sadique)',
+            'ja': '機工城アレキサンダー零式：起動編1',
+            'ko': '기공성 알렉산더: 기동편(영웅) 1',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    450: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大零式机神城 启动之章2',
+            'de': 'Alexander - Elle des Vaters (episch)',
+            'en': 'Alexander - The Cuff of the Father (Savage)',
+            'fr': 'Alexander - Le Poignet du Père (sadique)',
+            'ja': '機工城アレキサンダー零式：起動編2',
+            'ko': '기공성 알렉산더: 기동편(영웅) 2',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    451: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大零式机神城 启动之章3',
+            'de': 'Alexander - Arm des Vaters (episch)',
+            'en': 'Alexander - The Arm of the Father (Savage)',
+            'fr': 'Alexander - Le Bras du Père (sadique)',
+            'ja': '機工城アレキサンダー零式：起動編3',
+            'ko': '기공성 알렉산더: 기동편(영웅) 3',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    452: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大零式机神城 启动之章4',
+            'de': 'Alexander - Last des Vaters (episch)',
+            'en': 'Alexander - The Burden of the Father (Savage)',
+            'fr': 'Alexander - Le Fardeau du Père (sadique)',
+            'ja': '機工城アレキサンダー零式：起動編4',
+            'ko': '기공성 알렉산더: 기동편(영웅) 4',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    478: {
+        'exVersion': 1,
+        'name': {
+            'cn': '田园郡',
+            'de': 'Frohehalde',
+            'en': 'Idyllshire',
+            'fr': 'Idyllée',
+            'ja': 'イディルシャイア',
+            'ko': '이딜샤이어',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 55,
+    },
+    506: {
+        'contentType': 19,
+        'exVersion': 0,
+        'name': {
+            'cn': '萌宠之王：大赛对战（人机对战）',
+            'de': 'Kampf der Trabanten: Turnier (gegen Arenameister)',
+            'en': 'LoVM: Master Tournament',
+            'fr': 'Bataille de tournoi contre l\'ordinateur',
+            'ja': 'LoVM：大会対戦 (CPU対戦)',
+            'ko': '꼬마 친구 공방전: 대회 대결(인공 지능 대결)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    508: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '魔航船虚无方舟',
+            'de': 'Die Nichts-Arche',
+            'en': 'The Void Ark',
+            'fr': 'L\'Arche du néant',
+            'ja': '魔航船ヴォイドアーク',
+            'ko': '보이드의 방주',
+        },
+        'offsetX': 289,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 37,
+    },
+    510: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '地脉灵灯天狼星灯塔',
+            'de': 'Pharos Sirius (schwer)',
+            'en': 'Pharos Sirius (Hard)',
+            'fr': 'Le Phare de Sirius (brutal)',
+            'ja': '制圧巨塔 シリウス大灯台 (Hard)',
+            'ko': '시리우스 대등대(어려움)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 28,
+    },
+    511: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '草木庭园圣茉夏娜植物园',
+            'de': 'Sankt Mocianne-Arboretum',
+            'en': 'Saint Mocianne\'s Arboretum',
+            'fr': 'L\'Arboretum Sainte-Mocianne',
+            'ja': '草木庭園 聖モシャーヌ植物園',
+            'ko': '성 모샨 식물원',
+        },
+        'offsetX': 40,
+        'offsetY': 6,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    512: {
+        'contentType': 23,
+        'exVersion': 1,
+        'name': {
+            'cn': '云冠群岛白昼探索',
+            'de': 'Das Diadem (leicht)',
+            'en': 'The Diadem (Easy)',
+            'fr': 'Le Diadème (facile)',
+            'ja': '雲海探索 ディアデム諸島 (Easy)',
+            'ko': '디아뎀 제도(쉬움)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 60,
+    },
+    515: {
+        'contentType': 23,
+        'exVersion': 1,
+        'name': {
+            'cn': '云冠群岛夜晚探索',
+            'de': 'Das Diadem (schwer)',
+            'en': 'The Diadem (Hard)',
+            'fr': 'Le Diadème (brutal)',
+            'ja': '雲海探索 ディアデム諸島 (Hard)',
+            'ko': '디아뎀 제도(어려움)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 62,
+    },
+    516: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '(6.2)星海空间颠倒塔',
+            'de': '(6.2)Antiturm',
+            'en': '(6.2)The Antitower',
+            'fr': '(6.2)L\'Antitour',
+            'ja': '(6.2)星海観測 逆さの塔',
+            'ko': '(6.2)거꾸로 선 탑',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    517: {
+        'contentType': 4,
+        'exVersion': 1,
+        'name': {
+            'cn': '萨菲洛特歼灭战',
+            'de': 'Götterdämmerung - Sephirot',
+            'en': 'Containment Bay S1T7',
+            'fr': 'Unité de contention S1P7',
+            'ja': '魔神セフィロト討滅戦',
+            'ko': '마신 세피로트 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 66,
+    },
+    519: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '神圣遗迹无限城市街古迹',
+            'de': 'Historisches Amdapor (schwer)',
+            'en': 'The Lost City of Amdapor (Hard)',
+            'fr': 'Les Vestiges de la cité d\'Amdapor (brutal)',
+            'ja': '神聖遺跡 古アムダプール市街 (Hard)',
+            'ko': '옛 암다포르 시가지(어려움)',
+        },
+        'offsetX': 64,
+        'offsetY': 315,
+        'sizeFactor': 200,
+        'weatherRate': 63,
+    },
+    520: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大机神城 律动之章1',
+            'de': 'Alexander - Faust des Sohnes',
+            'en': 'Alexander - The Fist of the Son',
+            'fr': 'Alexander - Le Poing du Fils',
+            'ja': '機工城アレキサンダー：律動編1',
+            'ko': '기공성 알렉산더: 율동편 1',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    521: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大机神城 律动之章2',
+            'de': 'Alexander - Elle des Sohnes',
+            'en': 'Alexander - The Cuff of the Son',
+            'fr': 'Alexander - Le Poignet du Fils',
+            'ja': '機工城アレキサンダー：律動編2',
+            'ko': '기공성 알렉산더: 율동편 2',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    522: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大机神城 律动之章3',
+            'de': 'Alexander - Arm des Sohnes',
+            'en': 'Alexander - The Arm of the Son',
+            'fr': 'Alexander - Le Bras du Fils',
+            'ja': '機工城アレキサンダー：律動編3',
+            'ko': '기공성 알렉산더: 율동편 3',
+        },
+        'offsetX': -110,
+        'offsetY': -170,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    523: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大机神城 律动之章4',
+            'de': 'Alexander - Last des Sohnes',
+            'en': 'Alexander - The Burden of the Son',
+            'fr': 'Alexander - Le Fardeau du Fils',
+            'ja': '機工城アレキサンダー：律動編4',
+            'ko': '기공성 알렉산더: 율동편 4',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    524: {
+        'contentType': 4,
+        'exVersion': 1,
+        'name': {
+            'cn': '萨菲洛特歼殛战',
+            'de': 'Zenit der Götter - Sephirot',
+            'en': 'Containment Bay S1T7 (Extreme)',
+            'fr': 'Unité de contention S1P7 (extrême)',
+            'ja': '極魔神セフィロト討滅戦',
+            'ko': '극 마신 세피로트 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 66,
+    },
+    529: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大零式机神城 律动之章1',
+            'de': 'Alexander - Faust des Sohnes (episch)',
+            'en': 'Alexander - The Fist of the Son (Savage)',
+            'fr': 'Alexander - Le Poing du Fils (sadique)',
+            'ja': '機工城アレキサンダー零式：律動編1',
+            'ko': '기공성 알렉산더: 율동편(영웅) 1',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    530: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大零式机神城 律动之章2',
+            'de': 'Alexander - Elle des Sohnes (episch)',
+            'en': 'Alexander - The Cuff of the Son (Savage)',
+            'fr': 'Alexander - Le Poignet du Fils (sadique)',
+            'ja': '機工城アレキサンダー零式：律動編2',
+            'ko': '기공성 알렉산더: 율동편(영웅) 2',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    531: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大零式机神城 律动之章3',
+            'de': 'Alexander - Arm des Sohnes (episch)',
+            'en': 'Alexander - The Arm of the Son (Savage)',
+            'fr': 'Alexander - Le Bras du Fils (sadique)',
+            'ja': '機工城アレキサンダー零式：律動編3',
+            'ko': '기공성 알렉산더: 율동편(영웅) 3',
+        },
+        'offsetX': -110,
+        'offsetY': -170,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    532: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大零式机神城 律动之章4',
+            'de': 'Alexander - Last des Sohnes (episch)',
+            'en': 'Alexander - The Burden of the Son (Savage)',
+            'fr': 'Alexander - Le Fardeau du Fils (sadique)',
+            'ja': '機工城アレキサンダー零式：律動編4',
+            'ko': '기공성 알렉산더: 율동편(영웅) 4',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    533: {
+        'contentType': 7,
+        'exVersion': 1,
+        'name': {
+            'cn': '四国联合军演',
+            'de': 'Truppenübung der Eorzäischen Allianz',
+            'en': 'A Spectacle for the Ages',
+            'fr': 'La grande manœuvre éorzéenne',
+            'ja': '四国合同演習',
+            'ko': '4개국 합동 훈련',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    537: {
+        'contentType': 20,
+        'exVersion': 0,
+        'name': {
+            'cn': '躲避范围攻击',
+            'de': 'Flächenangriffen ausweichen',
+            'en': 'Avoid Area of Effect Attacks',
+            'fr': 'Éviter les attaques à aire d\'effet',
+            'ja': '範囲攻撃を避けよう！',
+            'ko': '범위 공격을 피하자!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    538: {
+        'contentType': 20,
+        'exVersion': 0,
+        'name': {
+            'cn': '掌握仇恨连击',
+            'de': 'Mit Kombos Feindseligkeit auf sich ziehen',
+            'en': 'Execute a Combo to Increase Enmity',
+            'fr': 'Générer de l\'inimitié avec un combo',
+            'ja': 'コンボで敵視を集めよう！',
+            'ko': '콤보를 이어 적개심을 끌자!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    539: {
+        'contentType': 20,
+        'exVersion': 0,
+        'name': {
+            'cn': '控制敌人的仇恨',
+            'de': 'Kombos im Kampf einsetzen',
+            'en': 'Execute a Combo in Battle',
+            'fr': 'Effectuer le combo en combat',
+            'ja': '実戦でコンボに挑戦しよう！',
+            'ko': '실전에서 콤보를 사용해보자!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    540: {
+        'contentType': 20,
+        'exVersion': 0,
+        'name': {
+            'cn': '控制多个敌人的仇恨',
+            'de': 'Feindseligkeit mehrerer Gegner auf sich ziehen',
+            'en': 'Accrue Enmity from Multiple Targets',
+            'fr': 'Attirer l\'inimitié de plusieurs ennemis sur soi',
+            'ja': '複数の敵から敵視を集めよう！',
+            'ko': '다수의 적에게서 적개심을 끌자!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    541: {
+        'contentType': 20,
+        'exVersion': 0,
+        'name': {
+            'cn': '实战控制多个敌人的仇恨',
+            'de': 'Gegen mehrere Gegner auf einmal kämpfen',
+            'en': 'Engage Multiple Targets',
+            'fr': 'Affronter plusieurs ennemis',
+            'ja': '実戦で複数の敵と戦ってみよう！',
+            'ko': '실전에서 다수의 적과 싸워보자!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    542: {
+        'contentType': 20,
+        'exVersion': 0,
+        'name': {
+            'cn': '控制远处敌人的仇恨',
+            'de': 'Aus der Ferne Feindseligkeit auf sich ziehen',
+            'en': 'Execute a Ranged Attack to Increase Enmity',
+            'fr': 'Générer de l\'inimitié à distance',
+            'ja': '遠距離から敵視を集めよう！',
+            'ko': '멀리서 적개심을 끌자!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    543: {
+        'contentType': 20,
+        'exVersion': 0,
+        'name': {
+            'cn': '留心增援的敌人',
+            'de': 'Feindliche Verstärkung aufhalten',
+            'en': 'Engage Enemy Reinforcements',
+            'fr': 'Faire face à des renforts ennemis',
+            'ja': '敵の増援に対応しよう！',
+            'ko': '적 지원군에 대처하자!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    544: {
+        'contentType': 20,
+        'exVersion': 0,
+        'name': {
+            'cn': '配合防护职业打倒单个敌人',
+            'de': 'Gegner gemeinsam besiegen',
+            'en': 'Assist Allies in Defeating a Target',
+            'fr': 'Vaincre un ennemi en assistant des alliés',
+            'ja': '味方と協力して敵を倒そう！',
+            'ko': '파티원과 협력하여 적을 물리치자!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    545: {
+        'contentType': 20,
+        'exVersion': 0,
+        'name': {
+            'cn': '配合防护职业打倒多个敌人',
+            'de': 'Den Gegner eines Verbündeten besiegen',
+            'en': 'Defeat an Occupied Target',
+            'fr': 'Vaincre un ennemi occupé par un allié',
+            'ja': '味方が引きつけている敵を倒そう！',
+            'ko': '파티원과 같은 적을 공격하자!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    546: {
+        'contentType': 20,
+        'exVersion': 0,
+        'name': {
+            'cn': '躲避范围攻击的同时进行战斗',
+            'de': 'Angriffen ausweichen',
+            'en': 'Avoid Engaged Targets',
+            'fr': 'Combattre en évitant les attaques ennemies',
+            'ja': '敵の攻撃を避けながら戦おう！',
+            'ko': '적의 공격을 피하면서 싸우자!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    548: {
+        'contentType': 20,
+        'exVersion': 0,
+        'name': {
+            'cn': '灵活运用场地机关',
+            'de': 'Mit dem Gelände interagieren',
+            'en': 'Interact with the Battlefield',
+            'fr': 'Interagir avec le décor en combat',
+            'ja': 'ギミックを活用して戦おう！',
+            'ko': '특수 장치를 활용하며 싸우자!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    549: {
+        'contentType': 20,
+        'exVersion': 0,
+        'name': {
+            'cn': '治疗防护职业',
+            'de': 'Verbündete heilen',
+            'en': 'Heal an Ally',
+            'fr': 'Soigner un allié',
+            'ja': '味方を回復しよう！',
+            'ko': '파티원을 회복시키자!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    550: {
+        'contentType': 20,
+        'exVersion': 0,
+        'name': {
+            'cn': '治疗小队队员',
+            'de': 'Mehrere Verbündete heilen',
+            'en': 'Heal Multiple Allies',
+            'fr': 'Soigner plusieurs alliés',
+            'ja': '複数の味方を回復しよう！',
+            'ko': '다수의 파티원을 회복시키자!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    552: {
+        'contentType': 20,
+        'exVersion': 0,
+        'name': {
+            'cn': '最终训练',
+            'de': 'Letzte Übung',
+            'en': 'Final Exercise',
+            'fr': 'Exercice final',
+            'ja': '最終訓練！',
+            'ko': '마지막 훈련!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    554: {
+        'contentType': 6,
+        'exVersion': 0,
+        'name': {
+            'cn': '荣誉野（碎冰战）',
+            'de': 'Feld der Ehre (Zersplitterung)',
+            'en': 'The Fields of Glory (Shatter)',
+            'fr': 'Les Champs de la Gloire (brise-glace)',
+            'ja': 'フィールド・オブ・グローリー (砕氷戦)',
+            'ko': '영광의 평원(쇄빙전)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 67,
+    },
+    555: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '(6.2)天龙宫殿忆罪宫',
+            'de': '(6.2)Sohr Khai',
+            'en': '(6.2)Sohr Khai',
+            'fr': '(6.2)Sohr Khai',
+            'ja': '(6.2)天竜宮殿 ソール・カイ',
+            'ko': '(6.2)소르 카이',
+        },
+        'offsetX': 370,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    556: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '禁忌城邦玛哈',
+            'de': 'Die Stadt der Tränen',
+            'en': 'The Weeping City of Mhach',
+            'fr': 'La Cité défendue de Mhach',
+            'ja': '禁忌都市マハ',
+            'ko': '금기도시 마하',
+        },
+        'offsetX': -40,
+        'offsetY': -40,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    557: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '黑涡传说破舰岛',
+            'de': 'Schiffbrecher-Insel (schwer)',
+            'en': 'Hullbreaker Isle (Hard)',
+            'fr': 'L\'Île de Crèvecarène (brutal)',
+            'ja': '黒渦伝説 ハルブレーカー・アイル (Hard)',
+            'ko': '난파선의 섬(어려움)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 68,
+    },
+    558: {
+        'contentType': 9,
+        'exVersion': 0,
+        'name': {
+            'cn': '水城宝物库',
+            'de': 'Aquapolis',
+            'en': 'The Aquapolis',
+            'fr': 'L\'Aquapole',
+            'ja': '宝物庫 アクアポリス',
+            'ko': '보물고 아쿠아폴리스',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    559: {
+        'contentType': 4,
+        'exVersion': 1,
+        'name': {
+            'cn': '尼德霍格征龙战',
+            'de': 'Der letzte Schicksalsweg',
+            'en': 'The Final Steps of Faith',
+            'fr': 'La Dernière avancée de la Foi',
+            'ja': 'ニーズヘッグ征竜戦',
+            'ko': '니드호그 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 28,
+    },
+    560: {
+        'contentType': 7,
+        'exVersion': 1,
+        'name': {
+            'cn': '雷古拉·范·休著斯追击战',
+            'de': 'Blutiges Wieder­sehen',
+            'en': 'A Bloody Reunion',
+            'fr': 'Course-poursuite dans le laboratoire',
+            'ja': 'レグラ・ヴァン・ヒュドルス追撃戦',
+            'ko': '레굴라 반 히드루스 추격전',
+        },
+        'offsetX': -18,
+        'offsetY': 149,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    561: {
+        'contentType': 21,
+        'exVersion': 0,
+        'name': {
+            'cn': '死者宫殿 地下1～10层',
+            'de': 'Palast der Toten (Ebenen 1-10)',
+            'en': 'The Palace of the Dead (Floors 1-10)',
+            'fr': 'Le Palais des morts (sous-sols 1-10)',
+            'ja': '死者の宮殿 B1～B10',
+            'ko': '망자의 궁전 B1~B10',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    562: {
+        'contentType': 21,
+        'exVersion': 0,
+        'name': {
+            'cn': '死者宫殿 地下11～20层',
+            'de': 'Palast der Toten (Ebenen 11-20)',
+            'en': 'The Palace of the Dead (Floors 11-20)',
+            'fr': 'Le Palais des morts (sous-sols 11-20)',
+            'ja': '死者の宮殿 B11～B20',
+            'ko': '망자의 궁전 B11~B20',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    563: {
+        'contentType': 21,
+        'exVersion': 0,
+        'name': {
+            'cn': '死者宫殿 地下21～30层',
+            'de': 'Palast der Toten (Ebenen 21-30)',
+            'en': 'The Palace of the Dead (Floors 21-30)',
+            'fr': 'Le Palais des morts (sous-sols 21-30)',
+            'ja': '死者の宮殿 B21～B30',
+            'ko': '망자의 궁전 B21~B30',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    564: {
+        'contentType': 21,
+        'exVersion': 0,
+        'name': {
+            'cn': '死者宫殿 地下31～40层',
+            'de': 'Palast der Toten (Ebenen 31-40)',
+            'en': 'The Palace of the Dead (Floors 31-40)',
+            'fr': 'Le Palais des morts (sous-sols 31-40)',
+            'ja': '死者の宮殿 B31～B40',
+            'ko': '망자의 궁전 B31~B40',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    565: {
+        'contentType': 21,
+        'exVersion': 1,
+        'name': {
+            'cn': '死者宫殿 地下41～50层',
+            'de': 'Palast der Toten (Ebenen 41-50)',
+            'en': 'The Palace of the Dead (Floors 41-50)',
+            'fr': 'Le Palais des morts (sous-sols 41-50)',
+            'ja': '死者の宮殿 B41～B50',
+            'ko': '망자의 궁전 B41~B50',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    566: {
+        'contentType': 4,
+        'exVersion': 1,
+        'name': {
+            'cn': '尼德霍格传奇征龙战',
+            'de': 'Das Lied von Nidhoggs letztem Ruf',
+            'en': 'The Minstrel\'s Ballad: Nidhogg\'s Rage',
+            'fr': 'L\'ire de Nidhogg',
+            'ja': '極ニーズヘッグ征竜戦',
+            'ko': '극 니드호그 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 28,
+    },
+    571: {
+        'contentType': 22,
+        'exVersion': 0,
+        'name': {
+            'cn': '亡灵府邸闹鬼庄园',
+            'de': 'Das Geisterschloss',
+            'en': 'The Haunted Manor',
+            'fr': 'Le Manoir hanté',
+            'ja': '亡霊屋敷 ホーンテッドマナー',
+            'ko': '유령의 집',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    572: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '(6.2)险峻峡谷塞尔法特尔溪谷',
+            'de': '(6.2)Xelphatol',
+            'en': '(6.2)Xelphatol',
+            'fr': '(6.2)Xelphatol',
+            'ja': '(6.2)峻厳渓谷 ゼルファトル',
+            'ko': '(6.2)젤파톨',
+        },
+        'offsetX': -148,
+        'offsetY': 35,
+        'sizeFactor': 200,
+        'weatherRate': 40,
+    },
+    576: {
+        'contentType': 4,
+        'exVersion': 1,
+        'name': {
+            'cn': '索菲娅歼灭战',
+            'de': 'Götterdämmerung - Sophia',
+            'en': 'Containment Bay P1T6',
+            'fr': 'Unité de contention P1P6',
+            'ja': '女神ソフィア討滅戦',
+            'ko': '여신 소피아 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 69,
+    },
+    577: {
+        'contentType': 4,
+        'exVersion': 1,
+        'name': {
+            'cn': '索菲娅歼殛战',
+            'de': 'Zenit der Götter - Sophia',
+            'en': 'Containment Bay P1T6 (Extreme)',
+            'fr': 'Unité de contention P1P6 (extrême)',
+            'ja': '極女神ソフィア討滅戦',
+            'ko': '극 여신 소피아 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 69,
+    },
+    578: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '秘本宝库迦巴勒幻想图书馆',
+            'de': 'Große Gubal-Bibliothek (schwer)',
+            'en': 'The Great Gubal Library (Hard)',
+            'fr': 'La Grande bibliothèque de Gubal (brutal)',
+            'ja': '稀書回収 グブラ幻想図書館 (Hard)',
+            'ko': '구브라 환상도서관(어려움)',
+        },
+        'offsetX': 116,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    579: {
+        'contentType': 19,
+        'exVersion': 0,
+        'name': {
+            'cn': '九宫幻卡：幻卡对局室',
+            'de': 'Triple Triad: Weltensalon',
+            'en': 'The Triple Triad Battlehall',
+            'fr': 'Arène Triple Triade',
+            'ja': 'トリプルトライアド：カードバトルルーム',
+            'ko': '트리플 트라이어드: 카드 대결장',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 800,
+        'weatherRate': 0,
+    },
+    580: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大机神城 天动之章1',
+            'de': 'Alexander - Augen des Schöpfers',
+            'en': 'Alexander - The Eyes of the Creator',
+            'fr': 'Alexander - Les Yeux du Créateur',
+            'ja': '機工城アレキサンダー：天動編1',
+            'ko': '기공성 알렉산더: 천동편 1',
+        },
+        'offsetX': 75,
+        'offsetY': 14,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    581: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大机神城 天动之章2',
+            'de': 'Alexander - Atem des Schöpfers',
+            'en': 'Alexander - The Breath of the Creator',
+            'fr': 'Alexander - Le Souffle du Créateur',
+            'ja': '機工城アレキサンダー：天動編2',
+            'ko': '기공성 알렉산더: 천동편 2',
+        },
+        'offsetX': 0,
+        'offsetY': -80,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    582: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大机神城 天动之章3',
+            'de': 'Alexander - Herz des Schöpfers',
+            'en': 'Alexander - The Heart of the Creator',
+            'fr': 'Alexander - Le Cœur du Créateur',
+            'ja': '機工城アレキサンダー：天動編3',
+            'ko': '기공성 알렉산더: 천동편 3',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    583: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大机神城 天动之章4',
+            'de': 'Alexander - Seele des Schöpfers',
+            'en': 'Alexander - The Soul of the Creator',
+            'fr': 'Alexander - L\'Âme du Créateur',
+            'ja': '機工城アレキサンダー：天動編4',
+            'ko': '기공성 알렉산더: 천동편 4',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    584: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大零式机神城 天动之章1',
+            'de': 'Alexander - Augen des Schöpfers (episch)',
+            'en': 'Alexander - The Eyes of the Creator (Savage)',
+            'fr': 'Alexander - Les Yeux du Créateur (sadique)',
+            'ja': '機工城アレキサンダー零式：天動編1',
+            'ko': '기공성 알렉산더: 천동편(영웅) 1',
+        },
+        'offsetX': 75,
+        'offsetY': 14,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    585: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大零式机神城 天动之章2',
+            'de': 'Alexander - Atem des Schöpfers (episch)',
+            'en': 'Alexander - The Breath of the Creator (Savage)',
+            'fr': 'Alexander - Le Souffle du Créateur (sadique)',
+            'ja': '機工城アレキサンダー零式：天動編2',
+            'ko': '기공성 알렉산더: 천동편(영웅) 2',
+        },
+        'offsetX': 0,
+        'offsetY': -80,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    586: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大零式机神城 天动之章3',
+            'de': 'Alexander - Herz des Schöpfers (episch)',
+            'en': 'Alexander - The Heart of the Creator (Savage)',
+            'fr': 'Alexander - Le Cœur du Créateur (sadique)',
+            'ja': '機工城アレキサンダー零式：天動編3',
+            'ko': '기공성 알렉산더: 천동편(영웅) 3',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    587: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '亚历山大零式机神城 天动之章4',
+            'de': 'Alexander - Seele des Schöpfers (episch)',
+            'en': 'Alexander - The Soul of the Creator (Savage)',
+            'fr': 'Alexander - L\'Âme du Créateur (sadique)',
+            'ja': '機工城アレキサンダー零式：天動編4',
+            'ko': '기공성 알렉산더: 천동편(영웅) 4',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    589: {
+        'contentType': 19,
+        'exVersion': 0,
+        'name': {
+            'cn': '萌宠之王：玩家对战（绩点赛）',
+            'de': 'Kampf der Trabanten: Gegen Spieler (um RP)',
+            'en': 'LoVM: Player Battle (RP)',
+            'fr': 'Bataille simple contre un joueur (avec PR)',
+            'ja': 'LoVM：プレイヤー対戦 (RP変動あり)',
+            'ko': '꼬마 친구 공방전: 플레이어 대결(RP 변동 있음)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    590: {
+        'contentType': 19,
+        'exVersion': 0,
+        'name': {
+            'cn': '萌宠之王：大赛对战（玩家对战）',
+            'de': 'Kampf der Trabanten: Turnier (gegen Spieler)',
+            'en': 'LoVM: Tournament',
+            'fr': 'Bataille de tournoi contre des joueurs',
+            'ja': 'LoVM：大会対戦 (プレイヤー対戦）',
+            'ko': '꼬마 친구 공방전: 대회 대결(플레이어 대결)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    591: {
+        'contentType': 19,
+        'exVersion': 0,
+        'name': {
+            'cn': '萌宠之王：玩家对战（无绩点赛）',
+            'de': 'Kampf der Trabanten: Gegen Spieler (ohne RP)',
+            'en': 'LoVM: Player Battle (Non-RP)',
+            'fr': 'Bataille simple contre un joueur (sans PR)',
+            'ja': 'LoVM：プレイヤー対戦 (RP変動なし)',
+            'ko': '꼬마 친구 공방전: 플레이어 대결(RP 변동 없음)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    592: {
+        'contentType': 7,
+        'exVersion': 1,
+        'name': {
+            'cn': '纠缠不清的宿命',
+            'de': 'Weltenübergreifendes Schicksal',
+            'en': 'One Life for One World',
+            'fr': 'Destins entrecroisés',
+            'ja': '絡み合う宿命',
+            'ko': '뒤얽히는 숙명',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 28,
+    },
+    593: {
+        'contentType': 21,
+        'exVersion': 1,
+        'name': {
+            'cn': '死者宫殿 地下51～60层',
+            'de': 'Palast der Toten (Ebenen 51 - 60)',
+            'en': 'The Palace of the Dead (Floors 51-60)',
+            'fr': 'Le Palais des morts (sous-sols 51-60)',
+            'ja': '死者の宮殿 B51～B60',
+            'ko': '망자의 궁전 B51~B60',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    594: {
+        'contentType': 21,
+        'exVersion': 1,
+        'name': {
+            'cn': '死者宫殿 地下61～70层',
+            'de': 'Palast der Toten (Ebenen 61 - 70)',
+            'en': 'The Palace of the Dead (Floors 61-70)',
+            'fr': 'Le Palais des morts (sous-sols 61-70)',
+            'ja': '死者の宮殿 B61～B70',
+            'ko': '망자의 궁전 B61~B70',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    595: {
+        'contentType': 21,
+        'exVersion': 1,
+        'name': {
+            'cn': '死者宫殿 地下71～80层',
+            'de': 'Palast der Toten (Ebenen 71 - 80)',
+            'en': 'The Palace of the Dead (Floors 71-80)',
+            'fr': 'Le Palais des morts (sous-sols 71-80)',
+            'ja': '死者の宮殿 B71～B80',
+            'ko': '망자의 궁전 B71~B80',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    596: {
+        'contentType': 21,
+        'exVersion': 1,
+        'name': {
+            'cn': '死者宫殿 地下81～90层',
+            'de': 'Palast der Toten (Ebenen 81 - 90)',
+            'en': 'The Palace of the Dead (Floors 81-90)',
+            'fr': 'Le Palais des morts (sous-sols 81-90)',
+            'ja': '死者の宮殿 B81～B90',
+            'ko': '망자의 궁전 B81~B90',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    597: {
+        'contentType': 21,
+        'exVersion': 1,
+        'name': {
+            'cn': '死者宫殿 地下91～100层',
+            'de': 'Palast der Toten (Ebenen 91 - 100)',
+            'en': 'The Palace of the Dead (Floors 91-100)',
+            'fr': 'Le Palais des morts (sous-sols 91-100)',
+            'ja': '死者の宮殿 B91～B100',
+            'ko': '망자의 궁전 B91~B100',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    598: {
+        'contentType': 21,
+        'exVersion': 1,
+        'name': {
+            'cn': '死者宫殿 地下101～110层',
+            'de': 'Palast der Toten (Ebenen 101 - 110)',
+            'en': 'The Palace of the Dead (Floors 101-110)',
+            'fr': 'Le Palais des morts (sous-sols 101-110)',
+            'ja': '死者の宮殿 B101～B110',
+            'ko': '망자의 궁전 B101~B110',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    599: {
+        'contentType': 21,
+        'exVersion': 1,
+        'name': {
+            'cn': '死者宫殿 地下111～120层',
+            'de': 'Palast der Toten (Ebenen 111 - 120)',
+            'en': 'The Palace of the Dead (Floors 111-120)',
+            'fr': 'Le Palais des morts (sous-sols 111-120)',
+            'ja': '死者の宮殿 B111～B120',
+            'ko': '망자의 궁전 B111~B120',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    600: {
+        'contentType': 21,
+        'exVersion': 1,
+        'name': {
+            'cn': '死者宫殿 地下121～130层',
+            'de': 'Palast der Toten (Ebenen 121 - 130)',
+            'en': 'The Palace of the Dead (Floors 121-130)',
+            'fr': 'Le Palais des morts (sous-sols 121-130)',
+            'ja': '死者の宮殿 B121～B130',
+            'ko': '망자의 궁전 B121~B130',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    601: {
+        'contentType': 21,
+        'exVersion': 1,
+        'name': {
+            'cn': '死者宫殿 地下131～140层',
+            'de': 'Palast der Toten (Ebenen 131 - 140)',
+            'en': 'The Palace of the Dead (Floors 131-140)',
+            'fr': 'Le Palais des morts (sous-sols 131-140)',
+            'ja': '死者の宮殿 B131～B140',
+            'ko': '망자의 궁전 B131~B140',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    602: {
+        'contentType': 21,
+        'exVersion': 1,
+        'name': {
+            'cn': '死者宫殿 地下141～150层',
+            'de': 'Palast der Toten (Ebenen 141 - 150)',
+            'en': 'The Palace of the Dead (Floors 141-150)',
+            'fr': 'Le Palais des morts (sous-sols 141-150)',
+            'ja': '死者の宮殿 B141～B150',
+            'ko': '망자의 궁전 B141~B150',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    603: {
+        'contentType': 21,
+        'exVersion': 1,
+        'name': {
+            'cn': '死者宫殿 地下151～160层',
+            'de': 'Palast der Toten (Ebenen 151 - 160)',
+            'en': 'The Palace of the Dead (Floors 151-160)',
+            'fr': 'Le Palais des morts (sous-sols 151-160)',
+            'ja': '死者の宮殿 B151～B160',
+            'ko': '망자의 궁전 B151~B160',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    604: {
+        'contentType': 21,
+        'exVersion': 1,
+        'name': {
+            'cn': '死者宫殿 地下161～170层',
+            'de': 'Palast der Toten (Ebenen 161 - 170)',
+            'en': 'The Palace of the Dead (Floors 161-170)',
+            'fr': 'Le Palais des morts (sous-sols 161-170)',
+            'ja': '死者の宮殿 B161～B170',
+            'ko': '망자의 궁전 B161~B170',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    605: {
+        'contentType': 21,
+        'exVersion': 1,
+        'name': {
+            'cn': '死者宫殿 地下171～180层',
+            'de': 'Palast der Toten (Ebenen 171 - 180)',
+            'en': 'The Palace of the Dead (Floors 171-180)',
+            'fr': 'Le Palais des morts (sous-sols 171-180)',
+            'ja': '死者の宮殿 B171～B180',
+            'ko': '망자의 궁전 B171~B180',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    606: {
+        'contentType': 21,
+        'exVersion': 1,
+        'name': {
+            'cn': '死者宫殿 地下181～190层',
+            'de': 'Palast der Toten (Ebenen 181 - 190)',
+            'en': 'The Palace of the Dead (Floors 181-190)',
+            'fr': 'Le Palais des morts (sous-sols 181-190)',
+            'ja': '死者の宮殿 B181～B190',
+            'ko': '망자의 궁전 B181~B190',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    607: {
+        'contentType': 21,
+        'exVersion': 1,
+        'name': {
+            'cn': '死者宫殿 地下191～200层',
+            'de': 'Palast der Toten (Ebenen 191 - 200)',
+            'en': 'The Palace of the Dead (Floors 191-200)',
+            'fr': 'Le Palais des morts (sous-sols 191-200)',
+            'ja': '死者の宮殿 B191～B200',
+            'ko': '망자의 궁전 B191~B200',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    612: {
+        'exVersion': 2,
+        'name': {
+            'cn': '基拉巴尼亚边区',
+            'de': 'Abanisches Grenzland',
+            'en': 'The Fringes',
+            'fr': 'Les Marges',
+            'ja': 'ギラバニア辺境地帯',
+            'ko': '기라바니아 변방지대',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 79,
+    },
+    613: {
+        'exVersion': 2,
+        'name': {
+            'cn': '红玉海',
+            'de': 'Rubinsee',
+            'en': 'The Ruby Sea',
+            'fr': 'Mer de Rubis',
+            'ja': '紅玉海',
+            'ko': '홍옥해',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 83,
+    },
+    614: {
+        'exVersion': 2,
+        'name': {
+            'cn': '延夏',
+            'de': 'Yanxia',
+            'en': 'Yanxia',
+            'fr': 'Yanxia',
+            'ja': 'ヤンサ',
+            'ko': '얀샤',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 84,
+    },
+    615: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '(6.2)坚牢铁壁巴埃萨长城',
+            'de': '(6.2)Baelsar-Wall',
+            'en': '(6.2)Baelsar\'s Wall',
+            'fr': '(6.2)La Muraille de Baelsar',
+            'ja': '(6.2)巨大防壁 バエサルの長城',
+            'ko': '(6.2)바일사르 장성',
+        },
+        'offsetX': 182,
+        'offsetY': 32,
+        'sizeFactor': 200,
+        'weatherRate': 40,
+    },
+    616: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '海底宫殿紫水宫',
+            'de': 'Shisui',
+            'en': 'Shisui of the Violet Tides',
+            'fr': 'Le Palais aux Marées violettes',
+            'ja': '海底宮殿 紫水宮',
+            'ko': '시스이 궁',
+        },
+        'offsetX': 0,
+        'offsetY': 35,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    617: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '天山深境索姆阿尔灵峰',
+            'de': 'Sohm Al (schwer)',
+            'en': 'Sohm Al (Hard)',
+            'fr': 'Sohm Al (brutal)',
+            'ja': '霊峰浄化 ソーム・アル (Hard)',
+            'ko': '솜 알(어려움)',
+        },
+        'offsetX': 128,
+        'offsetY': -32,
+        'sizeFactor': 200,
+        'weatherRate': 28,
+    },
+    620: {
+        'exVersion': 2,
+        'name': {
+            'cn': '基拉巴尼亚山区',
+            'de': 'Die Zinnen',
+            'en': 'The Peaks',
+            'fr': 'Les Pics',
+            'ja': 'ギラバニア山岳地帯',
+            'ko': '기라바니아 산악지대',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 80,
+    },
+    621: {
+        'exVersion': 2,
+        'name': {
+            'cn': '基拉巴尼亚湖区',
+            'de': 'Das Fenn',
+            'en': 'The Lochs',
+            'fr': 'Les Lacs',
+            'ja': 'ギラバニア湖畔地帯',
+            'ko': '기라바니아 호반지대',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 81,
+    },
+    622: {
+        'exVersion': 2,
+        'name': {
+            'cn': '太阳神草原',
+            'de': 'Azim-Steppe',
+            'en': 'The Azim Steppe',
+            'fr': 'Steppe d\'Azim',
+            'ja': 'アジムステップ',
+            'ko': '아짐 대초원',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 85,
+    },
+    623: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '(6.3)试炼行路巴儿达木霸道',
+            'de': '(6.3)Bardams Probe',
+            'en': '(6.3)Bardam\'s Mettle',
+            'fr': '(6.3)La Force de Bardam',
+            'ja': '(6.3)伝統試練 バルダム覇道',
+            'ko': '(6.3)바르담 패도',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    624: {
+        'contentType': 23,
+        'exVersion': 1,
+        'name': {
+            'cn': '云冠群岛白昼探索（狩猎专用）',
+            'de': 'Das Diadem - Jagdgründe (leicht)',
+            'en': 'The Diadem Hunting Grounds (Easy)',
+            'fr': 'Le Diadème : terrains de chasse (facile)',
+            'ja': '雲海探索 ディアデム諸島：狩猟限定 (Easy)',
+            'ko': '디아뎀 제도: 전투 한정(쉬움)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 60,
+    },
+    625: {
+        'contentType': 23,
+        'exVersion': 1,
+        'name': {
+            'cn': '云冠群岛黄昏探索（狩猎专用）',
+            'de': 'Das Diadem - Jagdgründe',
+            'en': 'The Diadem Hunting Grounds',
+            'fr': 'Le Diadème : terrains de chasse',
+            'ja': '雲海探索 ディアデム諸島：狩猟限定',
+            'ko': '디아뎀 제도: 전투 한정',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 61,
+    },
+    626: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '(6.3)漂流海域妖歌海',
+            'de': '(6.3)Sirenen-See',
+            'en': '(6.3)The Sirensong Sea',
+            'fr': '(6.3)La Mer du Chant des sirènes',
+            'ja': '(6.3)漂流海域 セイレーン海',
+            'ko': '(6.3)세이렌 해',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 36,
+    },
+    627: {
+        'contentType': 5,
+        'exVersion': 1,
+        'name': {
+            'cn': '影之国',
+            'de': 'Dun Scaith',
+            'en': 'Dun Scaith',
+            'fr': 'Dun Scaith',
+            'ja': '影の国ダン・スカー',
+            'ko': '둔 스카',
+        },
+        'offsetX': -350,
+        'offsetY': -400,
+        'sizeFactor': 200,
+        'weatherRate': 58,
+    },
+    628: {
+        'exVersion': 2,
+        'name': {
+            'cn': '黄金港',
+            'de': 'Kugane',
+            'en': 'Kugane',
+            'fr': 'Kugane',
+            'ja': 'クガネ',
+            'ko': '쿠가네',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 82,
+    },
+    630: {
+        'contentType': 23,
+        'exVersion': 0,
+        'name': {
+            'cn': '云冠群岛战争神猎场',
+            'de': 'Das Diadem - Halones Prüfung',
+            'en': 'The Diadem - Trials of the Fury',
+            'fr': 'Le Diadème - Épreuves de Halone',
+            'ja': '雲海探索 ディアデム諸島 (狩猟)',
+            'ko': '디아뎀 제도: 전투',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    633: {
+        'contentType': 7,
+        'exVersion': 1,
+        'name': {
+            'cn': '加尔提诺平原遭遇战',
+            'de': 'Heliodrom',
+            'en': 'The Carteneau Flats: Heliodrome',
+            'fr': 'Rixe à l\'Héliodrome',
+            'ja': 'カルテノー平原遭遇戦',
+            'ko': '카르테노 평원 조우전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    635: {
+        'exVersion': 2,
+        'name': {
+            'cn': '神拳痕',
+            'de': 'Rhalgrs Wacht',
+            'en': 'Rhalgr\'s Reach',
+            'fr': 'L\'Étendue de Rhalgr',
+            'ja': 'ラールガーズリーチ',
+            'ko': '랄거의 손길',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 78,
+    },
+    637: {
+        'contentType': 4,
+        'exVersion': 1,
+        'name': {
+            'cn': '祖尔宛歼灭战',
+            'de': 'Götterdämmerung - Zurvan',
+            'en': 'Containment Bay Z1T9',
+            'fr': 'Unité de contention Z1P9',
+            'ja': '鬼神ズルワーン討滅戦',
+            'ko': '귀신 주르반 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 75,
+    },
+    638: {
+        'contentType': 4,
+        'exVersion': 1,
+        'name': {
+            'cn': '祖尔宛歼殛战',
+            'de': 'Zenit der Götter - Zurvan',
+            'en': 'Containment Bay Z1T9 (Extreme)',
+            'fr': 'Unité de contention Z1P9 (extrême)',
+            'ja': '極鬼神ズルワーン討滅戦',
+            'ko': '극 귀신 주르반 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 75,
+    },
+    656: {
+        'contentType': 23,
+        'exVersion': 1,
+        'name': {
+            'cn': '云冠群岛丰饶神福地',
+            'de': 'Das Diadem - Nophicas Prüfung',
+            'en': 'The Diadem - Trials of the Matron',
+            'fr': 'Le Diadème - Épreuves de Nophica',
+            'ja': '雲海探索 ディアデム諸島 (採集)',
+            'ko': '디아뎀 제도: 채집',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 71,
+    },
+    660: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '(6.3)解放决战多玛王城',
+            'de': '(6.3)Burg Doma',
+            'en': '(6.3)Doma Castle',
+            'fr': '(6.3)Le Château de Doma',
+            'ja': '(6.3)解放決戦 ドマ城',
+            'ko': '(6.3)도마 성',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    661: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '(6.3)巨炮要塞帝国白山堡',
+            'de': '(6.3)Castrum Abania',
+            'en': '(6.3)Castrum Abania',
+            'fr': '(6.3)Castrum Abania',
+            'ja': '(6.3)巨砲要塞 カストルム・アバニア',
+            'ko': '(6.3)카스트룸 아바니아',
+        },
+        'offsetX': 72,
+        'offsetY': -186,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    662: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '恶党孤城黄金阁',
+            'de': 'Schloss Kugane',
+            'en': 'Kugane Castle',
+            'fr': 'Le Château de Kugane',
+            'ja': '悪党成敗 クガネ城',
+            'ko': '쿠가네 성',
+        },
+        'offsetX': 70,
+        'offsetY': 33,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    663: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '修行古刹星导寺',
+            'de': 'Tempel der Faust',
+            'en': 'The Temple of the Fist',
+            'fr': 'Le Temple du Poing',
+            'ja': '壊神修行 星導山寺院',
+            'ko': '성도산 사원',
+        },
+        'offsetX': -427,
+        'offsetY': -314,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    665: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '鱼道现身！',
+            'de': 'Ein zweifelhaftes Angebot',
+            'en': 'It\'s Probably a Trap',
+            'fr': 'Un drôle de Namazu',
+            'ja': 'ギョドウ現る！',
+            'ko': '교도 등장!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    674: {
+        'contentType': 4,
+        'exVersion': 2,
+        'name': {
+            'cn': '须佐之男歼灭战',
+            'de': 'Götterdämmerung - Susano',
+            'en': 'The Pool of Tribute',
+            'fr': 'La Crique aux tributs',
+            'ja': 'スサノオ討滅戦',
+            'ko': '스사노오 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 77,
+    },
+    677: {
+        'contentType': 4,
+        'exVersion': 2,
+        'name': {
+            'cn': '须佐之男歼殛战',
+            'de': 'Zenit der Götter - Susano',
+            'en': 'The Pool of Tribute (Extreme)',
+            'fr': 'La Crique aux tributs (extrême)',
+            'ja': '極スサノオ討滅戦',
+            'ko': '극 스사노오 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 77,
+    },
+    679: {
+        'contentType': 4,
+        'exVersion': 2,
+        'name': {
+            'cn': '神龙歼灭战',
+            'de': 'Königliche Menagerie',
+            'en': 'The Royal Menagerie',
+            'fr': 'La Ménagerie royale',
+            'ja': '神龍討滅戦',
+            'ko': '신룡 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 76,
+    },
+    684: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '于里昂热的秘策',
+            'de': 'Wege zur Transzendenz',
+            'en': 'The Resonant',
+            'fr': 'La ruse d\'Urianger',
+            'ja': 'ウリエンジェの秘策',
+            'ko': '위리앙제의 비책',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    688: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '那达慕',
+            'de': 'Naadam',
+            'en': 'Naadam',
+            'fr': 'La grande bataille du Naadam',
+            'ja': '終節の合戦',
+            'ko': '계절끝 합전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    689: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '(6.3)鏖战红莲阿拉米格',
+            'de': '(6.3)Ala Mhigo',
+            'en': '(6.3)Ala Mhigo',
+            'fr': '(6.3)Ala Mhigo',
+            'ja': '(6.3)紅蓮決戦 アラミゴ',
+            'ko': '(6.3)알라미고',
+        },
+        'offsetX': 292,
+        'offsetY': -163,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    690: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '时空狭缝外缘',
+            'de': 'Interdimensionaler Riss',
+            'en': 'Interdimensional Rift',
+            'fr': 'Fissure interdimensionnelle',
+            'ja': '次元の狭間：外縁',
+            'ko': '차원의 틈: 외곽',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 88,
+    },
+    691: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄时空狭缝 德尔塔幻境1',
+            'de': 'Deltametrie 1.0',
+            'en': 'Deltascape V1.0',
+            'fr': 'Deltastice v1.0',
+            'ja': '次元の狭間オメガ：デルタ編1',
+            'ko': '차원의 틈 오메가: 델타편 1',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 88,
+    },
+    692: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄时空狭缝 德尔塔幻境2',
+            'de': 'Deltametrie 2.0',
+            'en': 'Deltascape V2.0',
+            'fr': 'Deltastice v2.0',
+            'ja': '次元の狭間オメガ：デルタ編2',
+            'ko': '차원의 틈 오메가: 델타편 2',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 88,
+    },
+    693: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄时空狭缝 德尔塔幻境3',
+            'de': 'Deltametrie 3.0',
+            'en': 'Deltascape V3.0',
+            'fr': 'Deltastice v3.0',
+            'ja': '次元の狭間オメガ：デルタ編3',
+            'ko': '차원의 틈 오메가: 델타편 3',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 88,
+    },
+    694: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄时空狭缝 德尔塔幻境4',
+            'de': 'Deltametrie 4.0',
+            'en': 'Deltascape V4.0',
+            'fr': 'Deltastice v4.0',
+            'ja': '次元の狭間オメガ：デルタ編4',
+            'ko': '차원의 틈 오메가: 델타편 4',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 88,
+    },
+    695: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄零式时空狭缝 德尔塔幻境1',
+            'de': 'Deltametrie 1.0 (episch)',
+            'en': 'Deltascape V1.0 (Savage)',
+            'fr': 'Deltastice v1.0 (sadique)',
+            'ja': '次元の狭間オメガ零式：デルタ編1',
+            'ko': '차원의 틈 오메가: 델타편(영웅) 1',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 88,
+    },
+    696: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄零式时空狭缝 德尔塔幻境2',
+            'de': 'Deltametrie 2.0 (episch)',
+            'en': 'Deltascape V2.0 (Savage)',
+            'fr': 'Deltastice v2.0 (sadique)',
+            'ja': '次元の狭間オメガ零式：デルタ編2',
+            'ko': '차원의 틈 오메가: 델타편(영웅) 2',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 88,
+    },
+    697: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄零式时空狭缝 德尔塔幻境3',
+            'de': 'Deltametrie 3.0 (episch)',
+            'en': 'Deltascape V3.0 (Savage)',
+            'fr': 'Deltastice v3.0 (sadique)',
+            'ja': '次元の狭間オメガ零式：デルタ編3',
+            'ko': '차원의 틈 오메가: 델타편(영웅) 3',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 88,
+    },
+    698: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄零式时空狭缝 德尔塔幻境4',
+            'de': 'Deltametrie 4.0 (episch)',
+            'en': 'Deltascape V4.0 (Savage)',
+            'fr': 'Deltastice v4.0 (sadique)',
+            'ja': '次元の狭間オメガ零式：デルタ編4',
+            'ko': '차원의 틈 오메가: 델타편(영웅) 4',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 88,
+    },
+    705: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '大会开始',
+            'de': 'Thal zu Ehren',
+            'en': 'In Thal\'s Name',
+            'fr': 'Le tournoi commémoratif du sultanat',
+            'ja': 'ウル王杯闘技会の始まり',
+            'ko': '울다하 왕실배 투기대회',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 8,
+    },
+    706: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '为了更强',
+            'de': 'Die hohe Kunst des Schwertkampfs',
+            'en': 'Raising the Sword',
+            'fr': 'La finale des champions',
+            'ja': 'さらなる剣術の高みへ',
+            'ko': '더 높은 검술의 경지로',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 8,
+    },
+    707: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '抗争之力',
+            'de': 'Die Kraft des Widerstands',
+            'en': 'With Heart and Steel',
+            'fr': 'Transmigration démoniaque',
+            'ja': '抗う力',
+            'ko': '맞서는 힘',
+        },
+        'offsetX': 298,
+        'offsetY': 350,
+        'sizeFactor': 200,
+        'weatherRate': 37,
+    },
+    708: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '海都路人身首异',
+            'de': 'Mord ist sein Hobby',
+            'en': 'Blood on the Deck',
+            'fr': 'La légende de Musosai : l\'assassin de Limsa Lominsa',
+            'ja': '海都を震わす人斬りの宴！',
+            'ko': '해양도시를 흔드는 살인자의 연회!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    709: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '极恶之人木枯',
+            'de': 'Der Inbegriff des Bösen',
+            'en': 'The Face of True Evil',
+            'fr': 'L\'abominable Kogarashi',
+            'ja': '極悪人コガラシ',
+            'ko': '극악무도한 코가라시',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 95,
+        'weatherRate': 49,
+    },
+    710: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '松叶门外之变',
+            'de': 'Vorfall auf dem Matsuba-Platz',
+            'en': 'Matsuba Mayhem',
+            'fr': 'Règlement de compte au square Matsuba',
+            'ja': '松葉門外の変',
+            'ko': '마츠바 사변',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 82,
+    },
+    711: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '决战龟甲岛',
+            'de': 'Ent­schei­dungs­schlacht auf Bekko',
+            'en': 'The Battle on Bekko',
+            'fr': 'L\'af­fron­te­ment de deux justices',
+            'ja': 'ベッコウ島の決闘',
+            'ko': '베코우 섬의 결투',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 83,
+    },
+    712: {
+        'contentType': 9,
+        'exVersion': 2,
+        'name': {
+            'cn': '运河宝物库',
+            'de': 'Kanäle von Uznair',
+            'en': 'The Lost Canals of Uznair',
+            'fr': 'Les Canaux perdus d\'Uznair',
+            'ja': '宝物庫 ウズネアカナル',
+            'ko': '보물고 우즈네어 운하',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    713: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '漆黑的巨龙',
+            'de': 'Der tobende Drache',
+            'en': 'Dark as the Night Sky',
+            'fr': 'Aussi sombre que la nuit',
+            'ja': '漆黒の巨竜',
+            'ko': '칠흑의 거룡',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 85,
+    },
+    714: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '红血之龙骑士',
+            'de': 'Der Rubin-Drachenreiter',
+            'en': 'Dragon Sound',
+            'fr': 'Le Dragon écarlate',
+            'ja': '紅の竜騎士',
+            'ko': '붉은 용기사',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    715: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '遥远的憧憬',
+            'de': 'Probe des Meisters',
+            'en': 'The Orphans and the Broken Blade',
+            'fr': 'L\'aspiration refoulée',
+            'ja': 'あと三度、遥かな憧憬',
+            'ko': '앞으로 세 번, 아득한 동경',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 95,
+        'weatherRate': 86,
+    },
+    716: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '再次相见',
+            'de': 'Aus der Tiefe des Herzens',
+            'en': 'Our Compromise',
+            'fr': 'La dernière séparation',
+            'ja': 'あと一度、君に会えたら',
+            'ko': '앞으로 한 번, 너와 만날 수 있다면',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 28,
+    },
+    717: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '原初的战士',
+            'de': 'Die Urkraft in ihr',
+            'en': 'Curious Gorge Meets His Match',
+            'fr': 'L\'épreuve de force',
+            'ja': '原初的な彼女',
+            'ko': '원초적 그녀',
+        },
+        'offsetX': -77,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    718: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '燃烧吧高吉',
+            'de': 'Kriegerische Leidenschaft',
+            'en': 'The Heart of the Problem',
+            'fr': 'Passion guerrière',
+            'ja': '燃えよゴージ！',
+            'ko': '불타올라라, 산골짜기!',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 85,
+    },
+    719: {
+        'contentType': 4,
+        'exVersion': 2,
+        'name': {
+            'cn': '吉祥天女歼灭战',
+            'de': 'Götterdämmerung - Lakshmi',
+            'en': 'Emanation',
+            'fr': 'Émanation',
+            'ja': 'ラクシュミ討滅戦',
+            'ko': '락슈미 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 87,
+    },
+    720: {
+        'contentType': 4,
+        'exVersion': 2,
+        'name': {
+            'cn': '吉祥天女歼殛战',
+            'de': 'Zenit der Götter - Lakshmi',
+            'en': 'Emanation (Extreme)',
+            'fr': 'Émanation (extrême)',
+            'ja': '極ラクシュミ討滅戦',
+            'ko': '극 락슈미 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 87,
+    },
+    722: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '穿越时空的夙愿',
+            'de': 'Ein Wunsch aus alten Zeiten',
+            'en': 'Our Unsung Heroes',
+            'fr': 'L\'espoir en héritage',
+            'ja': '時をかける願い',
+            'ko': '시간을 뛰어넘은 염원',
+        },
+        'offsetX': -175,
+        'offsetY': -297,
+        'sizeFactor': 200,
+        'weatherRate': 63,
+    },
+    723: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '影隐忍法贴',
+            'de': 'Aus dem Verborgenen',
+            'en': 'When Clans Collide',
+            'fr': 'La bataille des clans',
+            'ja': '影隠忍法帖',
+            'ko': '그림자 인법첩',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 85,
+    },
+    725: {
+        'contentType': 9,
+        'exVersion': 2,
+        'name': {
+            'cn': '运河宝物库深层',
+            'de': 'Vergessene Kanäle von Uznair',
+            'en': 'The Hidden Canals of Uznair',
+            'fr': 'Les Canaux cachés d\'Uznair',
+            'ja': '宝物庫 ウズネアカナル深層',
+            'ko': '보물고 우즈네어 운하 심층',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    729: {
+        'contentType': 6,
+        'exVersion': 0,
+        'name': {
+            'cn': '距骨研究所（机动战）',
+            'de': 'Astragalos',
+            'en': 'Astragalos',
+            'fr': 'Astragalos (machinerie)',
+            'ja': 'アストラガロス (機工戦)',
+            'ko': '아스트라갈로스(기공전)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    730: {
+        'contentType': 4,
+        'exVersion': 2,
+        'name': {
+            'cn': '神龙梦幻歼灭战',
+            'de': 'Heldenlied von Shinryu',
+            'en': 'The Minstrel\'s Ballad: Shinryu\'s Domain',
+            'fr': 'Le domaine de Shinryu',
+            'ja': '極神龍討滅戦',
+            'ko': '극 신룡 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 76,
+    },
+    731: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '(6.4)沉没神殿斯卡拉遗迹',
+            'de': '(6.4)Die versunkene Stadt Skalla',
+            'en': '(6.4)The Drowned City of Skalla',
+            'fr': '(6.4)La Cité engloutie de Skalla',
+            'ja': '(6.4)水没遺構 スカラ',
+            'ko': '(6.4)스칼라 유적',
+        },
+        'offsetX': 185,
+        'offsetY': 5,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    732: {
+        'contentType': 26,
+        'exVersion': 2,
+        'name': {
+            'cn': '禁地优雷卡 常风之地',
+            'de': 'Eureka Anemos',
+            'en': 'The Forbidden Land, Eureka Anemos',
+            'fr': 'Eurêka Anemos',
+            'ja': '禁断の地 エウレカ：アネモス編',
+            'ko': '금단의 땅 에우레카: 아네모스편',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 91,
+    },
+    733: {
+        'contentType': 28,
+        'exVersion': 2,
+        'name': {
+            'cn': '巴哈姆特绝境战',
+            'de': 'Endlose Schatten von Bahamut (fatal)',
+            'en': 'The Unending Coil of Bahamut (Ultimate)',
+            'fr': 'L\'Abîme infini de Bahamut (fatal)',
+            'ja': '絶バハムート討滅戦',
+            'ko': '절 바하무트 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    734: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '失落之都拉巴纳斯塔',
+            'de': 'Rabanastre',
+            'en': 'The Royal City of Rabanastre',
+            'fr': 'La Cité royale de Rabanastre',
+            'ja': '失われた都 ラバナスタ',
+            'ko': '왕도 라바나스터',
+        },
+        'offsetX': 300,
+        'offsetY': -100,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    741: {
+        'contentType': 22,
+        'exVersion': 0,
+        'name': {
+            'cn': '良缘仪式',
+            'de': 'Valentionzeremonie',
+            'en': 'The Valentione\'s Ceremony',
+            'fr': 'La Cérémonie de la Valention',
+            'ja': 'ヴァレンティオンセレモニー',
+            'ko': '발렌티온 예식장',
+        },
+        'offsetX': 0,
+        'offsetY': 125,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    742: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '红玉火山狱之盖',
+            'de': 'Höllenspund',
+            'en': 'Hells\' Lid',
+            'fr': 'Le Couvercle des enfers',
+            'ja': '紅玉火山 獄之蓋',
+            'ko': '지옥뚜껑',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    743: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '疯狂战舰无限回廊',
+            'de': 'Die Fraktal-Kontinuum (schwer)',
+            'en': 'The Fractal Continuum (Hard)',
+            'fr': 'Le Continuum fractal (brutal)',
+            'ja': '暴走戦艦 フラクタル・コンティニアム (Hard)',
+            'ko': '무한연속 박물함(어려움)',
+        },
+        'offsetX': 0,
+        'offsetY': 350,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    746: {
+        'contentType': 4,
+        'exVersion': 2,
+        'name': {
+            'cn': '白虎镇魂战',
+            'de': 'Seelentanz - Byakko',
+            'en': 'The Jade Stoa',
+            'fr': 'La Clairière de Jade',
+            'ja': '白虎征魂戦',
+            'ko': '백호 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 93,
+    },
+    748: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄时空狭缝 西格玛幻境1',
+            'de': 'Sigmametrie 1.0',
+            'en': 'Sigmascape V1.0',
+            'fr': 'Sigmastice v1.0',
+            'ja': '次元の狭間オメガ：シグマ編1',
+            'ko': '차원의 틈 오메가: 시그마편 1',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 92,
+    },
+    749: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄时空狭缝 西格玛幻境2',
+            'de': 'Sigmametrie 2.0',
+            'en': 'Sigmascape V2.0',
+            'fr': 'Sigmastice v2.0',
+            'ja': '次元の狭間オメガ：シグマ編2',
+            'ko': '차원의 틈 오메가: 시그마편 2',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 92,
+    },
+    750: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄时空狭缝 西格玛幻境3',
+            'de': 'Sigmametrie 3.0',
+            'en': 'Sigmascape V3.0',
+            'fr': 'Sigmastice v3.0',
+            'ja': '次元の狭間オメガ：シグマ編3',
+            'ko': '차원의 틈 오메가: 시그마편 3',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 92,
+    },
+    751: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄时空狭缝 西格玛幻境4',
+            'de': 'Sigmametrie 4.0',
+            'en': 'Sigmascape V4.0',
+            'fr': 'Sigmastice v4.0',
+            'ja': '次元の狭間オメガ：シグマ編4',
+            'ko': '차원의 틈 오메가: 시그마편 4',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 92,
+    },
+    752: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄零式时空狭缝 西格玛幻境1',
+            'de': 'Sigmametrie 1.0 (episch)',
+            'en': 'Sigmascape V1.0 (Savage)',
+            'fr': 'Sigmastice v1.0 (sadique)',
+            'ja': '次元の狭間オメガ零式：シグマ編1',
+            'ko': '차원의 틈 오메가: 시그마편(영웅) 1',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 92,
+    },
+    753: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄零式时空狭缝 西格玛幻境2',
+            'de': 'Sigmametrie 2.0 (episch)',
+            'en': 'Sigmascape V2.0 (Savage)',
+            'fr': 'Sigmastice v2.0 (sadique)',
+            'ja': '次元の狭間オメガ零式：シグマ編2',
+            'ko': '차원의 틈 오메가: 시그마편(영웅) 2',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 92,
+    },
+    754: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄零式时空狭缝 西格玛幻境3',
+            'de': 'Sigmametrie 3.0 (episch)',
+            'en': 'Sigmascape V3.0 (Savage)',
+            'fr': 'Sigmastice v3.0 (sadique)',
+            'ja': '次元の狭間オメガ零式：シグマ編3',
+            'ko': '차원의 틈 오메가: 시그마편(영웅) 3',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 92,
+    },
+    755: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄零式时空狭缝 西格玛幻境4',
+            'de': 'Sigmametrie 4.0 (episch)',
+            'en': 'Sigmascape V4.0 (Savage)',
+            'fr': 'Sigmastice v4.0 (sadique)',
+            'ja': '次元の狭間オメガ零式：シグマ編4',
+            'ko': '차원의 틈 오메가: 시그마편(영웅) 4',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 92,
+    },
+    758: {
+        'contentType': 4,
+        'exVersion': 2,
+        'name': {
+            'cn': '白虎诗魂战',
+            'de': 'Seelensturm - Byakko',
+            'en': 'The Jade Stoa (Extreme)',
+            'fr': 'La Clairière de Jade (extrême)',
+            'ja': '極白虎征魂戦',
+            'ko': '극 백호 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 93,
+    },
+    759: {
+        'exVersion': 2,
+        'name': {
+            'cn': '多玛飞地',
+            'de': 'Domanische Enklave',
+            'en': 'The Doman Enclave',
+            'fr': 'Quartier enclavé de Doma',
+            'ja': 'ドマ町人地',
+            'ko': '도마 도읍지',
+        },
+        'offsetX': 23,
+        'offsetY': 34,
+        'sizeFactor': 400,
+        'weatherRate': 84,
+    },
+    761: {
+        'contentType': 4,
+        'exVersion': 2,
+        'name': {
+            'cn': '火龙狩猎战',
+            'de': 'Jagd auf Rathalos',
+            'en': 'The Great Hunt',
+            'fr': 'Chasse au Rathalos',
+            'ja': 'リオレウス狩猟戦',
+            'ko': '리오레우스 수렵전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    762: {
+        'contentType': 4,
+        'exVersion': 2,
+        'name': {
+            'cn': '火龙上位狩猎战',
+            'de': 'Jagd auf Rathalos (schwer)',
+            'en': 'The Great Hunt (Extreme)',
+            'fr': 'Chasse au Rathalos (extrême)',
+            'ja': '極リオレウス狩猟戦',
+            'ko': '극 리오레우스 수렵전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    763: {
+        'contentType': 26,
+        'exVersion': 2,
+        'name': {
+            'cn': '禁地优雷卡 恒冰之地',
+            'de': 'Eureka Pagos',
+            'en': 'The Forbidden Land, Eureka Pagos',
+            'fr': 'Eurêka Pagos',
+            'ja': '禁断の地 エウレカ：パゴス編',
+            'ko': '금단의 땅 에우레카: 파고스편',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 94,
+    },
+    768: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '风水灵庙岩燕庙',
+            'de': 'Kompass der Schwalbe',
+            'en': 'The Swallow\'s Compass',
+            'fr': 'Le Compas de l\'Hirondelle',
+            'ja': '風水霊殿 ガンエン廟',
+            'ko': '강엔 종묘',
+        },
+        'offsetX': 240,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    769: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '拂晓的少年',
+            'de': 'Der Knabe der Morgenröte',
+            'en': 'Emissary of the Dawn',
+            'fr': 'Voyage en terre hostile',
+            'ja': '「暁」の少年',
+            'ko': '\'새벽\'의 소년',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    770: {
+        'contentType': 21,
+        'exVersion': 2,
+        'name': {
+            'cn': '天之御柱 1～10层',
+            'de': 'Himmelssäule (Ebenen 1-10)',
+            'en': 'Heaven-on-High  (Floors 1-10)',
+            'fr': 'Le Pilier des Cieux (étages 1-10)',
+            'ja': 'アメノミハシラ 1～10層',
+            'ko': '천궁탑 1~10층',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    771: {
+        'contentType': 21,
+        'exVersion': 2,
+        'name': {
+            'cn': '天之御柱 11～20层',
+            'de': 'Himmelssäule (Ebenen 11-20)',
+            'en': 'Heaven-on-High  (Floors 11-20)',
+            'fr': 'Le Pilier des Cieux (étages 11-20)',
+            'ja': 'アメノミハシラ 11～20層',
+            'ko': '천궁탑 11~20층',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    772: {
+        'contentType': 21,
+        'exVersion': 2,
+        'name': {
+            'cn': '天之御柱 21～30层',
+            'de': 'Himmelssäule (Ebenen 21-30)',
+            'en': 'Heaven-on-High  (Floors 21-30)',
+            'fr': 'Le Pilier des Cieux (étages 21-30)',
+            'ja': 'アメノミハシラ 21～30層',
+            'ko': '천궁탑 21~30층',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    773: {
+        'contentType': 21,
+        'exVersion': 2,
+        'name': {
+            'cn': '天之御柱 41～50层',
+            'de': 'Himmelssäule (Ebenen 41-50)',
+            'en': 'Heaven-on-High  (Floors 41-50)',
+            'fr': 'Le Pilier des Cieux (étages 41-50)',
+            'ja': 'アメノミハシラ 41～50層',
+            'ko': '천궁탑 41~50층',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    774: {
+        'contentType': 21,
+        'exVersion': 2,
+        'name': {
+            'cn': '天之御柱 61～70层',
+            'de': 'Himmelssäule (Ebenen 61-70)',
+            'en': 'Heaven-on-High  (Floors 61-70)',
+            'fr': 'Le Pilier des Cieux (étages 61-70)',
+            'ja': 'アメノミハシラ 61～70層',
+            'ko': '천궁탑 61~70층',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    775: {
+        'contentType': 21,
+        'exVersion': 2,
+        'name': {
+            'cn': '天之御柱 81～90层',
+            'de': 'Himmelssäule (Ebenen 81-90)',
+            'en': 'Heaven-on-High  (Floors 81-90)',
+            'fr': 'Le Pilier des Cieux (étages 81-90)',
+            'ja': 'アメノミハシラ 81～90層',
+            'ko': '천궁탑 81~90층',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    776: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '封闭圣塔黎铎拉纳大灯塔',
+            'de': 'Richtfeuer von Ridorana',
+            'en': 'The Ridorana Lighthouse',
+            'fr': 'Le Phare de Ridorana',
+            'ja': '封じられた聖塔 リドルアナ',
+            'ko': '대등대 리도르아나',
+        },
+        'offsetX': 202,
+        'offsetY': -92,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    777: {
+        'contentType': 28,
+        'exVersion': 2,
+        'name': {
+            'cn': '究极神兵绝境战',
+            'de': 'Heldenlied von Ultima (fatal)',
+            'en': 'The Weapon\'s Refrain (Ultimate)',
+            'fr': 'La Fantasmagorie d\'Ultima (fatal)',
+            'ja': '絶アルテマウェポン破壊作戦',
+            'ko': '절 알테마 웨폰 파괴작전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 26,
+    },
+    778: {
+        'contentType': 4,
+        'exVersion': 2,
+        'name': {
+            'cn': '月读歼灭战',
+            'de': 'Götterdämmerung - Tsukuyomi',
+            'en': 'Castrum Fluminis',
+            'fr': 'Castrum Fluminis',
+            'ja': 'ツクヨミ討滅戦',
+            'ko': '츠쿠요미 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    779: {
+        'contentType': 4,
+        'exVersion': 2,
+        'name': {
+            'cn': '月读幽夜歼灭战',
+            'de': 'Zenit der Götter - Tsukuyomi',
+            'en': 'The Minstrel\'s Ballad: Tsukuyomi\'s Pain',
+            'fr': 'Castrum Fluminis (extrême)',
+            'ja': '極ツクヨミ討滅戦',
+            'ko': '극 츠쿠요미 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    782: {
+        'contentType': 21,
+        'exVersion': 2,
+        'name': {
+            'cn': '天之御柱 31～40层',
+            'de': 'Himmelssäule (Ebenen 31-40)',
+            'en': 'Heaven-on-High  (Floors 31-40)',
+            'fr': 'Le Pilier des Cieux (étages 31-40)',
+            'ja': 'アメノミハシラ 31～40層',
+            'ko': '천궁탑 31~40층',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    783: {
+        'contentType': 21,
+        'exVersion': 2,
+        'name': {
+            'cn': '天之御柱 51～60层',
+            'de': 'Himmelssäule (Ebenen 51-60)',
+            'en': 'Heaven-on-High  (Floors 51-60)',
+            'fr': 'Le Pilier des Cieux (étages 51-60)',
+            'ja': 'アメノミハシラ 51～60層',
+            'ko': '천궁탑 51~60층',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    784: {
+        'contentType': 21,
+        'exVersion': 2,
+        'name': {
+            'cn': '天之御柱 71～80层',
+            'de': 'Himmelssäule (Ebenen 71-80)',
+            'en': 'Heaven-on-High  (Floors 71-80)',
+            'fr': 'Le Pilier des Cieux (étages 71-80)',
+            'ja': 'アメノミハシラ 71～80層',
+            'ko': '천궁탑 71~80층',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    785: {
+        'contentType': 21,
+        'exVersion': 2,
+        'name': {
+            'cn': '天之御柱 91～100层',
+            'de': 'Himmelssäule (Ebenen 91-100)',
+            'en': 'Heaven-on-High  (Floors 91-100)',
+            'fr': 'Le Pilier des Cieux (étages 91-100)',
+            'ja': 'アメノミハシラ 91～100層',
+            'ko': '천궁탑 91~100층',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    788: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '污染庭园圣茉夏娜植物园',
+            'de': 'Sankt Mocianne-Arboretum (schwer)',
+            'en': 'Saint Mocianne\'s Arboretum (Hard)',
+            'fr': 'L\'Arboretum Sainte-Mocianne (brutal)',
+            'ja': '草木汚染 聖モシャーヌ植物園 (Hard)',
+            'ko': '성 모샨 식물원(어려움)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    789: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '(6.4)死亡大地终末焦土',
+            'de': '(6.4)Das Kargland',
+            'en': '(6.4)The Burn',
+            'fr': '(6.4)L\'Escarre',
+            'ja': '(6.4)永久焦土 ザ・バーン',
+            'ko': '(6.4)영구 초토지대',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 97,
+    },
+    790: {
+        'contentType': 22,
+        'exVersion': 0,
+        'name': {
+            'cn': '灾厄重现军事演习',
+            'de': 'Gedenkschlacht der Eorzäischen Allianz',
+            'en': 'The Calamity Retold',
+            'fr': 'Les grandes manœuvres commémoratives',
+            'ja': '新生祭軍事演習',
+            'ko': '신생제 군사훈련',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 95,
+    },
+    791: {
+        'contentType': 6,
+        'exVersion': 0,
+        'name': {
+            'cn': '隐塞（机动战）',
+            'de': 'Verborgene Schlucht',
+            'en': 'Hidden Gorge',
+            'fr': 'Gorge dérobée (machinerie)',
+            'ja': 'ヒドゥンゴージ (機工戦)',
+            'ko': '숨겨진 보루(기공전)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    792: {
+        'contentType': 19,
+        'exVersion': 0,
+        'name': {
+            'cn': '虚景跳跳乐大挑战',
+            'de': 'Kaktor-Kletterwand',
+            'en': 'Leap of Faith',
+            'fr': 'Haute voltige',
+            'ja': '挑戦！ ジャンピングアスレチック',
+            'ko': '뛰어라! 점핑 운동회',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    793: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '(6.4)国境防线基姆利特暗区',
+            'de': '(6.4)Die Ghimlyt-Finsternis',
+            'en': '(6.4)The Ghimlyt Dark',
+            'fr': '(6.4)Les Ténèbres de Ghimlyt',
+            'ja': '(6.4)境界戦線 ギムリトダーク',
+            'ko': '(6.4)김리트 황야',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    794: {
+        'contentType': 9,
+        'exVersion': 2,
+        'name': {
+            'cn': '运河宝物库神殿',
+            'de': 'Glücksaltäre von Uznair',
+            'en': 'The Shifting Altars of Uznair',
+            'fr': 'Le Temple sacré d\'Uznair',
+            'ja': '宝物庫 ウズネアカナル祭殿',
+            'ko': '보물고 우즈네어 운하 제전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    795: {
+        'contentType': 26,
+        'exVersion': 2,
+        'name': {
+            'cn': '禁地优雷卡 涌火之地',
+            'de': 'Eureka Pyros',
+            'en': 'The Forbidden Land, Eureka Pyros',
+            'fr': 'Eurêka Pyros',
+            'ja': '禁断の地 エウレカ：ピューロス編',
+            'ko': '금단의 땅 에우레카: 피로스편',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 96,
+    },
+    796: {
+        'contentType': 27,
+        'exVersion': 0,
+        'name': {
+            'cn': '出道战',
+            'de': 'Debüt in der Himmlischen Arena',
+            'en': 'All\'s Well That Starts Well',
+            'fr': 'Début du spectacle',
+            'ja': 'デビューマッチ',
+            'ko': '데뷔전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    797: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '楔石洞',
+            'de': 'Der Wille der Mondgöttin',
+            'en': 'The Will of the Moon',
+            'fr': 'Ralliement dans la steppe',
+            'ja': '楔石の虚',
+            'ko': '쐐기돌 동굴',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    798: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄时空狭缝 阿尔法幻境1',
+            'de': 'Alphametrie 1.0',
+            'en': 'Alphascape V1.0',
+            'fr': 'Alphastice v1.0',
+            'ja': '次元の狭間オメガ：アルファ編1',
+            'ko': '차원의 틈 오메가: 알파편 1',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 92,
+    },
+    799: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄时空狭缝 阿尔法幻境2',
+            'de': 'Alphametrie 2.0',
+            'en': 'Alphascape V2.0',
+            'fr': 'Alphastice v2.0',
+            'ja': '次元の狭間オメガ：アルファ編2',
+            'ko': '차원의 틈 오메가: 알파편 2',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 92,
+    },
+    800: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄时空狭缝 阿尔法幻境3',
+            'de': 'Alphametrie 3.0',
+            'en': 'Alphascape V3.0',
+            'fr': 'Alphastice v3.0',
+            'ja': '次元の狭間オメガ：アルファ編3',
+            'ko': '차원의 틈 오메가: 알파편 3',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 92,
+    },
+    801: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄时空狭缝 阿尔法幻境4',
+            'de': 'Alphametrie 4.0',
+            'en': 'Alphascape V4.0',
+            'fr': 'Alphastice v4.0',
+            'ja': '次元の狭間オメガ：アルファ編4',
+            'ko': '차원의 틈 오메가: 알파편 4',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 92,
+    },
+    802: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄零式时空狭缝 阿尔法幻境1',
+            'de': 'Alphametrie 1.0 (episch)',
+            'en': 'Alphascape V1.0 (Savage)',
+            'fr': 'Alphastice v1.0 (sadique)',
+            'ja': '次元の狭間オメガ零式：アルファ編1',
+            'ko': '차원의 틈 오메가: 알파편(영웅) 1',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 92,
+    },
+    803: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄零式时空狭缝 阿尔法幻境2',
+            'de': 'Alphametrie 2.0 (episch)',
+            'en': 'Alphascape V2.0 (Savage)',
+            'fr': 'Alphastice v2.0 (sadique)',
+            'ja': '次元の狭間オメガ零式：アルファ編2',
+            'ko': '차원의 틈 오메가: 알파편(영웅) 2',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 92,
+    },
+    804: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄零式时空狭缝 阿尔法幻境3',
+            'de': 'Alphametrie 3.0 (episch)',
+            'en': 'Alphascape V3.0 (Savage)',
+            'fr': 'Alphastice v3.0 (sadique)',
+            'ja': '次元の狭間オメガ零式：アルファ編3',
+            'ko': '차원의 틈 오메가: 알파편(영웅) 3',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 92,
+    },
+    805: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '欧米茄零式时空狭缝 阿尔法幻境4',
+            'de': 'Alphametrie 4.0 (episch)',
+            'en': 'Alphascape V4.0 (Savage)',
+            'fr': 'Alphastice v4.0 (sadique)',
+            'ja': '次元の狭間オメガ零式：アルファ編4',
+            'ko': '차원의 틈 오메가: 알파편(영웅) 4',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 92,
+    },
+    806: {
+        'contentType': 4,
+        'exVersion': 2,
+        'name': {
+            'cn': '保镖歼灭战',
+            'de': 'Duell auf der Kugane-Brücke',
+            'en': 'Kugane Ohashi',
+            'fr': 'Le Pont Ohashi',
+            'ja': '真ヨウジンボウ討滅戦',
+            'ko': '진 요우진보 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    810: {
+        'contentType': 4,
+        'exVersion': 2,
+        'name': {
+            'cn': '朱雀镇魂战',
+            'de': 'Seelentanz - Suzaku',
+            'en': 'Hells\' Kier',
+            'fr': 'Le Nid des Lamentations',
+            'ja': '朱雀征魂戦',
+            'ko': '주작 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 98,
+    },
+    811: {
+        'contentType': 4,
+        'exVersion': 2,
+        'name': {
+            'cn': '朱雀诗魂战',
+            'de': 'Seelensturm - Suzaku',
+            'en': 'Hells\' Kier (Extreme)',
+            'fr': 'Le Nid des Lamentations (extrême)',
+            'ja': '極朱雀征魂戦',
+            'ko': '극 주작 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 98,
+    },
+    813: {
+        'exVersion': 3,
+        'name': {
+            'cn': '雷克兰德',
+            'de': 'Seenland',
+            'en': 'Lakeland',
+            'fr': 'Grand-Lac',
+            'ja': 'レイクランド',
+            'ko': '레이크랜드',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 106,
+    },
+    814: {
+        'exVersion': 3,
+        'name': {
+            'cn': '珂露西亚岛',
+            'de': 'Kholusia',
+            'en': 'Kholusia',
+            'fr': 'Kholusia',
+            'ja': 'コルシア島',
+            'ko': '콜루시아 섬',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 107,
+    },
+    815: {
+        'exVersion': 3,
+        'name': {
+            'cn': '安穆·艾兰',
+            'de': 'Amh Araeng',
+            'en': 'Amh Araeng',
+            'fr': 'Amh Araeng',
+            'ja': 'アム・アレーン',
+            'ko': '아므 아랭',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 108,
+    },
+    816: {
+        'exVersion': 3,
+        'name': {
+            'cn': '伊尔美格',
+            'de': 'Il Mheg',
+            'en': 'Il Mheg',
+            'fr': 'Il Mheg',
+            'ja': 'イル・メグ',
+            'ko': '일 메그',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 109,
+    },
+    817: {
+        'exVersion': 3,
+        'name': {
+            'cn': '拉凯提卡大森林',
+            'de': 'Der Große Wald Rak\'tika',
+            'en': 'The Rak\'tika Greatwood',
+            'fr': 'Rak\'tika',
+            'ja': 'ラケティカ大森林',
+            'ko': '라케티카 대삼림',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 110,
+    },
+    818: {
+        'exVersion': 3,
+        'name': {
+            'cn': '黑风海',
+            'de': 'Tempest',
+            'en': 'The Tempest',
+            'fr': 'La Tempête',
+            'ja': 'テンペスト',
+            'ko': '템페스트',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 111,
+    },
+    819: {
+        'exVersion': 3,
+        'name': {
+            'cn': '水晶都',
+            'de': 'Crystarium',
+            'en': 'The Crystarium',
+            'fr': 'Cristarium',
+            'ja': 'クリスタリウム',
+            'ko': '크리스타리움',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 112,
+    },
+    820: {
+        'exVersion': 3,
+        'name': {
+            'cn': '游末邦',
+            'de': 'Eulmore',
+            'en': 'Eulmore',
+            'fr': 'Eulmore',
+            'ja': 'ユールモア',
+            'ko': '율모어',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 113,
+    },
+    821: {
+        'contentType': 2,
+        'exVersion': 3,
+        'name': {
+            'cn': '水妖幻园多恩美格禁园',
+            'de': 'Dohn Mheg',
+            'en': 'Dohn Mheg',
+            'fr': 'Dohn Mheg',
+            'ja': '水妖幻園 ドォーヌ・メグ',
+            'ko': '도느 메그',
+        },
+        'offsetX': 0,
+        'offsetY': 200,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    822: {
+        'contentType': 2,
+        'exVersion': 3,
+        'name': {
+            'cn': '伪造天界格鲁格火山',
+            'de': 'Der Gulg',
+            'en': 'Mt. Gulg',
+            'fr': 'Mont Gulg',
+            'ja': '偽造天界 グルグ火山',
+            'ko': '굴그 화산',
+        },
+        'offsetX': -188,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 102,
+    },
+    823: {
+        'contentType': 2,
+        'exVersion': 3,
+        'name': {
+            'cn': '文明古迹奇坦那神影洞',
+            'de': 'Irrungen der Qitari',
+            'en': 'The Qitana Ravel',
+            'fr': 'L\'Enchevêtrement des Qitari',
+            'ja': '古跡探索 キタンナ神影洞',
+            'ko': '키타나 신굴',
+        },
+        'offsetX': 0,
+        'offsetY': -274,
+        'sizeFactor': 200,
+        'weatherRate': 102,
+    },
+    824: {
+        'contentType': 4,
+        'exVersion': 2,
+        'name': {
+            'cn': '青龙镇魂战',
+            'de': 'Seelentanz - Seiryu',
+            'en': 'The Wreath of Snakes',
+            'fr': 'L\'Îlot des Amertumes',
+            'ja': '青龍征魂戦',
+            'ko': '청룡 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 99,
+    },
+    825: {
+        'contentType': 4,
+        'exVersion': 2,
+        'name': {
+            'cn': '青龙诗魂战',
+            'de': 'Seelensturm - Seiryu',
+            'en': 'The Wreath of Snakes (Extreme)',
+            'fr': 'L\'Îlot des Amertumes (extrême)',
+            'ja': '極青龍征魂戦',
+            'ko': '극 청룡 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 99,
+    },
+    826: {
+        'contentType': 5,
+        'exVersion': 2,
+        'name': {
+            'cn': '乐欲之所瓯博讷修道院',
+            'de': 'Kloster von Orbonne',
+            'en': 'The Orbonne Monastery',
+            'fr': 'Le Monastère d\'Orbonne',
+            'ja': '楽欲の僧院 オーボンヌ',
+            'ko': '오본느 수도원',
+        },
+        'offsetX': -545,
+        'offsetY': -663,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    827: {
+        'contentType': 26,
+        'exVersion': 2,
+        'name': {
+            'cn': '禁地优雷卡 丰水之地',
+            'de': 'Eureka Hydatos',
+            'en': 'The Forbidden Land, Eureka Hydatos',
+            'fr': 'Eurêka Hydatos',
+            'ja': '禁断の地 エウレカ：ヒュダトス編',
+            'ko': '금단의 땅 에우레카: 히다토스편',
+        },
+        'offsetX': 0,
+        'offsetY': 475,
+        'sizeFactor': 100,
+        'weatherRate': 100,
+    },
+    830: {
+        'contentType': 7,
+        'exVersion': 2,
+        'name': {
+            'cn': '英雄挽歌',
+            'de': 'Requiem der Helden',
+            'en': 'A Requiem for Heroes',
+            'fr': 'Un requiem pour les héros',
+            'ja': '英雄への鎮魂歌',
+            'ko': '영웅을 위한 진혼가',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    831: {
+        'contentType': 19,
+        'exVersion': 0,
+        'name': {
+            'cn': '多玛方城战：东风战4人亲友桌（不带食断）',
+            'de': '4-Spieler-Mahjong (schnelle Partie, Kuitan deaktiviert)',
+            'en': 'Four-player Mahjong (Quick Match, Kuitan Disabled)',
+            'fr': 'Mahjong domien : 4 joueurs (partie rapide sans kuitan)',
+            'ja': 'ドマ式麻雀：東風戦4人セット卓（クイタン無し）',
+            'ko': '작패유희: 동풍전 4인용 탁자(부르기 단요구 없음)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    832: {
+        'contentType': 19,
+        'exVersion': 0,
+        'name': {
+            'cn': '空军装甲驾驶员',
+            'de': 'Luftwaffe, Feuer frei!',
+            'en': 'Air Force One',
+            'fr': 'As de l\'air',
+            'ja': '出撃！ エアフォースパイロット',
+            'ko': '출격! 에어포스 조종사',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    834: {
+        'contentType': 7,
+        'exVersion': 0,
+        'name': {
+            'cn': '风之使者',
+            'de': 'Durch den Sturm und zurück',
+            'en': 'Messenger of the Winds',
+            'fr': 'La Messagère du vent',
+            'ja': '来訪せし風の御使',
+            'ko': '바람의 어사',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 101,
+    },
+    836: {
+        'contentType': 2,
+        'exVersion': 3,
+        'name': {
+            'cn': '避暑离宫马利卡大井',
+            'de': 'Malikahs Brunnen',
+            'en': 'Malikah\'s Well',
+            'fr': 'Le Puits de Malikah',
+            'ja': '爽涼離宮 マリカの大井戸',
+            'ko': '말리카 큰우물',
+        },
+        'offsetX': -65,
+        'offsetY': -30,
+        'sizeFactor': 200,
+        'weatherRate': 102,
+    },
+    837: {
+        'contentType': 2,
+        'exVersion': 3,
+        'name': {
+            'cn': '遇袭集落水滩村',
+            'de': 'Holminster',
+            'en': 'Holminster Switch',
+            'fr': 'Holminster',
+            'ja': '殺戮郷村 ホルミンスター',
+            'ko': '홀민스터',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 102,
+    },
+    838: {
+        'contentType': 2,
+        'exVersion': 3,
+        'name': {
+            'cn': '末日暗影亚马乌罗提',
+            'de': 'Amaurot',
+            'en': 'Amaurot',
+            'fr': 'Amaurote',
+            'ja': '終末幻想 アーモロート',
+            'ko': '아모로트',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 105,
+    },
+    840: {
+        'contentType': 2,
+        'exVersion': 3,
+        'name': {
+            'cn': '异界遗构希尔科斯孪晶塔',
+            'de': 'Der Kristallzwilling',
+            'en': 'The Twinning',
+            'fr': 'La Macle de Syrcus',
+            'ja': '異界遺構 シルクス・ツイニング',
+            'ko': '쌍둥이 시르쿠스',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    841: {
+        'contentType': 2,
+        'exVersion': 3,
+        'name': {
+            'cn': '创造机构阿尼德罗学院',
+            'de': 'Akadaemia Anyder',
+            'en': 'Akadaemia Anyder',
+            'fr': 'Akadaemia Anydre',
+            'ja': '創造機関 アナイダアカデミア',
+            'ko': '애나이더 아카데미아',
+        },
+        'offsetX': 0,
+        'offsetY': 30,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    845: {
+        'contentType': 4,
+        'exVersion': 3,
+        'name': {
+            'cn': '缇坦妮雅歼灭战',
+            'de': 'Offenbarung - Titania',
+            'en': 'The Dancing Plague',
+            'fr': 'La Valse du Monarque',
+            'ja': 'ティターニア討滅戦',
+            'ko': '티타니아 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 103,
+    },
+    846: {
+        'contentType': 4,
+        'exVersion': 3,
+        'name': {
+            'cn': '无瑕灵君歼灭战',
+            'de': 'Offenbarung - Innozenz',
+            'en': 'The Crown of the Immaculate',
+            'fr': 'La Couronne de l\'Immaculé',
+            'ja': 'イノセンス討滅戦',
+            'ko': '이노센스 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 104,
+    },
+    847: {
+        'contentType': 4,
+        'exVersion': 3,
+        'name': {
+            'cn': '哈迪斯歼灭战',
+            'de': 'Offenbarung - Hades',
+            'en': 'The Dying Gasp',
+            'fr': 'Le Râle de l\'Agonie',
+            'ja': 'ハーデス討滅戦',
+            'ko': '하데스 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 105,
+    },
+    848: {
+        'contentType': 4,
+        'exVersion': 3,
+        'name': {
+            'cn': '无瑕灵君歼殛战',
+            'de': 'Letzte Läuterung - Innozenz',
+            'en': 'The Crown of the Immaculate (Extreme)',
+            'fr': 'La Couronne de l\'Immaculé (extrême)',
+            'ja': '極イノセンス討滅戦',
+            'ko': '극 이노센스 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 104,
+    },
+    849: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸希望乐园 觉醒之章1',
+            'de': 'Edens Erwachen - Auferstehung',
+            'en': 'Eden\'s Gate: Resurrection',
+            'fr': 'L\'Éveil d\'Éden - Résurrection',
+            'ja': '希望の園エデン：覚醒編1',
+            'ko': '희망의 낙원 에덴: 각성편 1',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    850: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸希望乐园 觉醒之章2',
+            'de': 'Edens Erwachen - Niederkunft',
+            'en': 'Eden\'s Gate: Descent',
+            'fr': 'L\'Éveil d\'Éden - Descente',
+            'ja': '希望の園エデン：覚醒編2',
+            'ko': '희망의 낙원 에덴: 각성편 2',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    851: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸希望乐园 觉醒之章3',
+            'de': 'Edens Erwachen - Überflutung',
+            'en': 'Eden\'s Gate: Inundation',
+            'fr': 'L\'Éveil d\'Éden - Déluge',
+            'ja': '希望の園エデン：覚醒編3',
+            'ko': '희망의 낙원 에덴: 각성편 3',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 38,
+    },
+    852: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸希望乐园 觉醒之章4',
+            'de': 'Edens Erwachen - Beerdigung',
+            'en': 'Eden\'s Gate: Sepulture',
+            'fr': 'L\'Éveil d\'Éden - Inhumation',
+            'ja': '希望の園エデン：覚醒編4',
+            'ko': '희망의 낙원 에덴: 각성편 4',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 23,
+    },
+    853: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸零式希望乐园 觉醒之章1',
+            'de': 'Edens Erwachen - Auferstehung (episch)',
+            'en': 'Eden\'s Gate: Resurrection (Savage)',
+            'fr': 'L\'Éveil d\'Éden - Résurrection (sadique)',
+            'ja': '希望の園エデン零式：覚醒編1',
+            'ko': '희망의 낙원 에덴: 각성편(영웅) 1',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    854: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸零式希望乐园 觉醒之章2',
+            'de': 'Edens Erwachen - Niederkunft (episch)',
+            'en': 'Eden\'s Gate: Descent (Savage)',
+            'fr': 'L\'Éveil d\'Éden - Descente (sadique)',
+            'ja': '希望の園エデン零式：覚醒編2',
+            'ko': '희망의 낙원 에덴: 각성편(영웅) 2',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    855: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸零式希望乐园 觉醒之章3',
+            'de': 'Edens Erwachen - Überflutung (episch)',
+            'en': 'Eden\'s Gate: Inundation (Savage)',
+            'fr': 'L\'Éveil d\'Éden - Déluge (sadique)',
+            'ja': '希望の園エデン零式：覚醒編3',
+            'ko': '희망의 낙원 에덴: 각성편(영웅) 3',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 38,
+    },
+    856: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸零式希望乐园 觉醒之章4',
+            'de': 'Edens Erwachen - Beerdigung (episch)',
+            'en': 'Eden\'s Gate: Sepulture (Savage)',
+            'fr': 'L\'Éveil d\'Éden - Inhumation (sadique)',
+            'ja': '希望の園エデン零式：覚醒編4',
+            'ko': '희망의 낙원 에덴: 각성편(영웅) 4',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 23,
+    },
+    858: {
+        'contentType': 4,
+        'exVersion': 3,
+        'name': {
+            'cn': '缇坦妮雅歼殛战',
+            'de': 'Letzte Läuterung - Titania',
+            'en': 'The Dancing Plague (Extreme)',
+            'fr': 'La Valse du Monarque (extrême)',
+            'ja': '極ティターニア討滅戦',
+            'ko': '극 티타니아 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 103,
+    },
+    859: {
+        'contentType': 7,
+        'exVersion': 3,
+        'name': {
+            'cn': '机关、诅咒、剧毒与……',
+            'de': 'Der Beichtstuhl von Toupasa dem Älteren',
+            'en': 'Legend of the Not-so-hidden Temple',
+            'fr': 'Le Confessionnal de Toupasa l\'ancien',
+            'ja': '仕掛けと呪いと毒と',
+            'ko': '함정과 저주와 독',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 102,
+    },
+    860: {
+        'contentType': 7,
+        'exVersion': 3,
+        'name': {
+            'cn': '废都拿巴示艾兰',
+            'de': 'Vater und Bruder',
+            'en': 'Coming Clean',
+            'fr': 'Sur les rails de Nabaath Areng',
+            'ja': '廃都ナバスアレン',
+            'ko': '나바스아렝 폐허',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 102,
+    },
+    873: {
+        'contentType': 7,
+        'exVersion': 3,
+        'name': {
+            'cn': '摇摆的天平',
+            'de': 'Ob Mitleid oder Hass',
+            'en': 'The Hardened Heart',
+            'fr': 'Naissance d\'un bourreau',
+            'ja': '揺れる天秤',
+            'ko': '흔들리는 천칭',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    874: {
+        'contentType': 7,
+        'exVersion': 3,
+        'name': {
+            'cn': '古代大再生魔法',
+            'de': 'Alter Zauber',
+            'en': 'The Lost and the Found',
+            'fr': 'Magie ancestrale',
+            'ja': '古の大再生魔法',
+            'ko': '고대의 대재생 마법',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 110,
+    },
+    875: {
+        'contentType': 7,
+        'exVersion': 3,
+        'name': {
+            'cn': '勇敢的猎人',
+            'de': 'Der Legende auf der Spur',
+            'en': 'The Hunter\'s Legacy',
+            'fr': 'La chasseuse de légende',
+            'ja': '勇気の狩人',
+            'ko': '용기 있는 사냥꾼',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 63,
+    },
+    876: {
+        'contentType': 7,
+        'exVersion': 3,
+        'name': {
+            'cn': '奈贝尔特的后悔',
+            'de': 'Ein großes Opfer',
+            'en': 'Nyelbert\'s Lament',
+            'fr': 'Une cupidité bien généreuse',
+            'ja': 'ナイルベルトの後悔',
+            'ko': '나일베르트의 후회',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    879: {
+        'contentType': 9,
+        'exVersion': 3,
+        'name': {
+            'cn': '梦羽宝境',
+            'de': 'Verliese von Lyhe Ghiah',
+            'en': 'The Dungeons of Lyhe Ghiah',
+            'fr': 'Le Donjon hypogéen du Lyhe Ghiah',
+            'ja': '宝物庫 リェー・ギア・ダンジョン',
+            'ko': '보물고 리예 기아 지하미궁',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    882: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '复制工厂废墟',
+            'de': 'Die kopierte Fabrik',
+            'en': 'The Copied Factory',
+            'fr': 'La réplique de l\'usine désaffectée',
+            'ja': '複製サレタ工場廃墟',
+            'ko': '복제된 공장 폐허',
+        },
+        'offsetX': 610,
+        'offsetY': 70,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    884: {
+        'contentType': 2,
+        'exVersion': 3,
+        'name': {
+            'cn': '魔法宫殿宇宙宫',
+            'de': 'Chateau Cosmea',
+            'en': 'The Grand Cosmos',
+            'fr': 'Le Cosmos coruscant',
+            'ja': '魔法宮殿 グラン・コスモス',
+            'ko': '그랑 코스모스',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    885: {
+        'contentType': 4,
+        'exVersion': 3,
+        'name': {
+            'cn': '哈迪斯孤念歼灭战',
+            'de': 'Letzte Läuterung - Hades',
+            'en': 'The Minstrel\'s Ballad: Hades\'s Elegy',
+            'fr': 'Le Râle de l\'Agonie (extrême)',
+            'ja': '極ハーデス討滅戦',
+            'ko': '극 하데스 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 105,
+    },
+    887: {
+        'contentType': 28,
+        'exVersion': 3,
+        'name': {
+            'cn': '亚历山大绝境战',
+            'de': 'Alexander (fatal)',
+            'en': 'The Epic of Alexander (Ultimate)',
+            'fr': 'L\'Odyssée d\'Alexander (fatal)',
+            'ja': '絶アレキサンダー討滅戦',
+            'ko': '절 알렉산더 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    888: {
+        'contentType': 6,
+        'exVersion': 0,
+        'name': {
+            'cn': '昂萨哈凯尔（竞争战）',
+            'de': 'Onsal Hakair (Danshig Naadam)',
+            'en': 'Onsal Hakair (Danshig Naadam)',
+            'fr': 'Onsal Hakair (Danshig Naadam)',
+            'ja': 'オンサル・ハカイル (終節戦)',
+            'ko': '온살 하카이르(계절끝 합전)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 117,
+    },
+    893: {
+        'contentType': 7,
+        'exVersion': 3,
+        'name': {
+            'cn': '纯白誓约、漆黑密约',
+            'de': 'Der Wolf und der Drachenreiter',
+            'en': 'Vows of Virtue, Deeds of Cruelty',
+            'fr': 'Vœux de vertu, actes de cruauté',
+            'ja': '白き誓約、黒き密約',
+            'ko': '하얀 서약, 검은 밀약',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    894: {
+        'contentType': 7,
+        'exVersion': 3,
+        'name': {
+            'cn': '我心依旧',
+            'de': 'Trubel im Traumland',
+            'en': 'As the Heart Bids',
+            'fr': 'À l\'écoute de soi',
+            'ja': 'この心が望むがままに',
+            'ko': '이 마음이 원하는 대로',
+        },
+        'offsetX': -12,
+        'offsetY': 50,
+        'sizeFactor': 400,
+        'weatherRate': 40,
+    },
+    897: {
+        'contentType': 4,
+        'exVersion': 3,
+        'name': {
+            'cn': '红宝石神兵破坏作战',
+            'de': 'Rubinfeuer - Entfesselung',
+            'en': 'Cinder Drift',
+            'fr': 'Les Nuées de Brandons',
+            'ja': 'ルビーウェポン破壊作戦',
+            'ko': '루비 웨폰 파괴작전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 28,
+    },
+    898: {
+        'contentType': 2,
+        'exVersion': 3,
+        'name': {
+            'cn': '黑风海底阿尼德罗追忆馆',
+            'de': 'Anamnesis Anyder',
+            'en': 'Anamnesis Anyder',
+            'fr': 'Anamnesis Anydre',
+            'ja': '黒風海底 アニドラス・アナムネーシス',
+            'ko': '애니드라스 아남네시스',
+        },
+        'offsetX': 100,
+        'offsetY': -390,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    900: {
+        'contentType': 16,
+        'exVersion': 0,
+        'name': {
+            'cn': '出海垂钓',
+            'de': 'Auf großer Fahrt',
+            'en': 'Ocean Fishing',
+            'fr': 'Pêche en mer',
+            'ja': 'オーシャンフィッシング',
+            'ko': '먼바다 낚시',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 14,
+    },
+    902: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸希望乐园 共鸣之章1',
+            'de': 'Edens Resonanz - Entladung',
+            'en': 'Eden\'s Verse: Fulmination',
+            'fr': 'Les Accords d\'Éden - Fulmination',
+            'ja': '希望の園エデン：共鳴編1',
+            'ko': '희망의 낙원 에덴: 공명편 1',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    903: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸希望乐园 共鸣之章2',
+            'de': 'Edens Resonanz - Raserei',
+            'en': 'Eden\'s Verse: Furor',
+            'fr': 'Les Accords d\'Éden - Fureur',
+            'ja': '希望の園エデン：共鳴編2',
+            'ko': '희망의 낙원 에덴: 공명편 2',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    904: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸希望乐园 共鸣之章3',
+            'de': 'Edens Resonanz - Bildersturm',
+            'en': 'Eden\'s Verse: Iconoclasm',
+            'fr': 'Les Accords d\'Éden - Iconoclasme',
+            'ja': '希望の園エデン：共鳴編3',
+            'ko': '희망의 낙원 에덴: 공명편 3',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    905: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸希望乐园 共鸣之章4',
+            'de': 'Edens Resonanz - Erstarrung',
+            'en': 'Eden\'s Verse: Refulgence',
+            'fr': 'Les Accords d\'Éden - Éclat',
+            'ja': '希望の園エデン：共鳴編4',
+            'ko': '희망의 낙원 에덴: 공명편 4',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 46,
+    },
+    906: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸零式希望乐园 共鸣之章1',
+            'de': 'Edens Resonanz - Entladung (episch)',
+            'en': 'Eden\'s Verse: Fulmination (Savage)',
+            'fr': 'Les Accords d\'Éden - Fulmination (sadique)',
+            'ja': '希望の園エデン零式：共鳴編1',
+            'ko': '희망의 낙원 에덴: 공명편(영웅) 1',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    907: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸零式希望乐园 共鸣之章2',
+            'de': 'Edens Resonanz - Raserei (episch)',
+            'en': 'Eden\'s Verse: Furor (Savage)',
+            'fr': 'Les Accords d\'Éden - Fureur (sadique)',
+            'ja': '希望の園エデン零式：共鳴編2',
+            'ko': '희망의 낙원 에덴: 공명편(영웅) 2',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    908: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸零式希望乐园 共鸣之章3',
+            'de': 'Edens Resonanz - Bildersturm (episch)',
+            'en': 'Eden\'s Verse: Iconoclasm (Savage)',
+            'fr': 'Les Accords d\'Éden - Iconoclasme (sadique)',
+            'ja': '希望の園エデン零式：共鳴編3',
+            'ko': '희망의 낙원 에덴: 공명편(영웅) 3',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    909: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸零式希望乐园 共鸣之章4',
+            'de': 'Edens Resonanz - Erstarrung (episch)',
+            'en': 'Eden\'s Verse: Refulgence (Savage)',
+            'fr': 'Les Accords d\'Éden - Éclat (sadique)',
+            'ja': '希望の園エデン零式：共鳴編4',
+            'ko': '희망의 낙원 에덴: 공명편(영웅) 4',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 46,
+    },
+    911: {
+        'contentType': 7,
+        'exVersion': 3,
+        'name': {
+            'cn': '博兹雅堡垒蒸发事件',
+            'de': 'Der Bozja-Vorfall',
+            'en': 'The Bozja Incident',
+            'fr': 'Prélude à la catastrophe',
+            'ja': 'シタデル・ボズヤ蒸発事変',
+            'ko': '보즈야 사건',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 123,
+    },
+    912: {
+        'contentType': 4,
+        'exVersion': 3,
+        'name': {
+            'cn': '红宝石神兵狂想作战',
+            'de': 'Rubinfeuer - Trauma',
+            'en': 'Cinder Drift (Extreme)',
+            'fr': 'Les Nuées de Brandons (extrême)',
+            'ja': '極ルビーウェポン破壊作戦',
+            'ko': '극 루비 웨폰 파괴작전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 28,
+    },
+    913: {
+        'contentType': 4,
+        'exVersion': 3,
+        'name': {
+            'cn': '博兹雅堡垒追忆战',
+            'de': 'Memoria Misera (extrem)',
+            'en': 'Memoria Misera (Extreme)',
+            'fr': 'Memoria Misera (extrême)',
+            'ja': '極シタデル・ボズヤ追憶戦',
+            'ko': '극 보즈야 추억전',
+        },
+        'offsetX': -35,
+        'offsetY': 683,
+        'sizeFactor': 400,
+        'weatherRate': 123,
+    },
+    914: {
+        'contentType': 7,
+        'exVersion': 3,
+        'name': {
+            'cn': '英雄无法安息',
+            'de': 'Von schlafenden Helden',
+            'en': 'A Sleep Disturbed',
+            'fr': 'L\'épreuve ronka',
+            'ja': '汝、英雄の眠り妨げるは',
+            'ko': '그대, 영웅의 잠을 방해하는가',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    916: {
+        'contentType': 2,
+        'exVersion': 3,
+        'name': {
+            'cn': '暗影决战诺弗兰特',
+            'de': 'Schlacht um Norvrandt',
+            'en': 'The Heroes\' Gauntlet',
+            'fr': 'La Traversée de Norvrandt',
+            'ja': '漆黒決戦 ノルヴラント',
+            'ko': '노르브란트',
+        },
+        'offsetX': 626,
+        'offsetY': -611,
+        'sizeFactor': 200,
+        'weatherRate': 125,
+    },
+    917: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '人偶军事基地',
+            'de': 'Die Puppenfestung',
+            'en': 'The Puppets\' Bunker',
+            'fr': 'La base militaire des Pantins',
+            'ja': '人形タチノ軍事基地',
+            'ko': '인형들의 군사 기지',
+        },
+        'offsetX': 290,
+        'offsetY': -190,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    920: {
+        'contentType': 29,
+        'exVersion': 3,
+        'name': {
+            'cn': '南方博兹雅战线',
+            'de': 'Bozja-Südfront',
+            'en': 'The Bozjan Southern Front',
+            'fr': 'Front sud de Bozja',
+            'ja': '南方ボズヤ戦線',
+            'ko': '남부 보즈야 전선',
+        },
+        'offsetX': -127,
+        'offsetY': -424,
+        'sizeFactor': 100,
+        'weatherRate': 124,
+    },
+    922: {
+        'contentType': 4,
+        'exVersion': 3,
+        'name': {
+            'cn': '光之战士歼灭战',
+            'de': 'Krieger des Lichts',
+            'en': 'The Seat of Sacrifice',
+            'fr': 'Le Trône du Sacrifice',
+            'ja': 'ウォーリア・オブ・ライト討滅戦',
+            'ko': '빛의 전사 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 125,
+    },
+    923: {
+        'contentType': 4,
+        'exVersion': 3,
+        'name': {
+            'cn': '光之战士幻耀歼灭战',
+            'de': 'Krieger des Lichts (extrem)',
+            'en': 'The Seat of Sacrifice (Extreme)',
+            'fr': 'Le Trône du Sacrifice (extrême)',
+            'ja': '極ウォーリア・オブ・ライト討滅戦',
+            'ko': '극 빛의 전사 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 126,
+    },
+    924: {
+        'contentType': 9,
+        'exVersion': 3,
+        'name': {
+            'cn': '梦羽宝殿',
+            'de': 'Das Karussell von Lyhe Ghiah',
+            'en': 'The Shifting Oubliettes of Lyhe Ghiah',
+            'fr': 'Le Jardin secret du Lyhe Ghiah',
+            'ja': '宝物庫 リェー・ギア・ダンジョン祭殿',
+            'ko': '보물고 리예 기아 지하미궁 제전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    925: {
+        'contentType': 7,
+        'exVersion': 3,
+        'name': {
+            'cn': '飞翔吧，前往维尔利特！',
+            'de': 'Luftangriff auf Werlyt',
+            'en': 'Sleep Now in Sapphire',
+            'fr': 'Sur la mer de saphir',
+            'ja': '飛べ！ ウェルリトへ ',
+            'ko': '날아라! 웰리트를 향하여',
+        },
+        'offsetX': 15,
+        'offsetY': -610,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    929: {
+        'contentType': 16,
+        'exVersion': 1,
+        'name': {
+            'cn': '天上福地云冠群岛',
+            'de': 'Das Diadem - Erschließung',
+            'en': 'The Diadem',
+            'fr': 'Le Diadème',
+            'ja': '雲海採集 ディアデム諸島',
+            'ko': '디아뎀 제도',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 68,
+    },
+    930: {
+        'contentType': 4,
+        'exVersion': 3,
+        'name': {
+            'cn': '希瓦幻巧战',
+            'de': 'Traumprüfung - Shiva',
+            'en': 'The Akh Afah Amphitheatre (Unreal)',
+            'fr': 'L\'Amphithéâtre d\'Akh Afah (irréel)',
+            'ja': '幻シヴァ討滅戦',
+            'ko': '환 시바 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 46,
+    },
+    932: {
+        'contentType': 7,
+        'exVersion': 3,
+        'name': {
+            'cn': '褪色的记忆',
+            'de': 'Verblasste Erinnerungen',
+            'en': 'Faded Memories',
+            'fr': 'Souvenir périssable',
+            'ja': '色あせた記憶',
+            'ko': '빛바랜 기억',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 114,
+    },
+    933: {
+        'contentType': 2,
+        'exVersion': 3,
+        'name': {
+            'cn': '魔术工房玛托雅工作室',
+            'de': 'Matoyas Atelier',
+            'en': 'Matoya\'s Relict',
+            'fr': 'L\'Atelier abandonné de Matoya',
+            'ja': '魔術工房 マトーヤのアトリエ',
+            'ko': '마토야의 공방',
+        },
+        'offsetX': 0,
+        'offsetY': -75,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    934: {
+        'contentType': 4,
+        'exVersion': 3,
+        'name': {
+            'cn': '绿宝石神兵破坏作战',
+            'de': 'Smaragdsturm - Entfesselung',
+            'en': 'Castrum Marinum',
+            'fr': 'Castrum Marinum',
+            'ja': 'エメラルドウェポン破壊作戦',
+            'ko': '에메랄드 웨폰 파괴작전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    935: {
+        'contentType': 4,
+        'exVersion': 3,
+        'name': {
+            'cn': '绿宝石神兵狂想作战',
+            'de': 'Smaragdsturm - Trauma',
+            'en': 'Castrum Marinum (Extreme)',
+            'fr': 'Castrum Marinum (extrême)',
+            'ja': '極エメラルドウェポン破壊作戦',
+            'ko': '극 에메랄드 웨폰 파괴작전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    936: {
+        'contentType': 29,
+        'exVersion': 3,
+        'name': {
+            'cn': '女王古殿',
+            'de': 'Delubrum Reginae',
+            'en': 'Delubrum Reginae',
+            'fr': 'Delubrum Reginae',
+            'ja': 'グンヒルド・ディルーブラム',
+            'ko': '군힐드 사원',
+        },
+        'offsetX': 0,
+        'offsetY': -378,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    937: {
+        'contentType': 29,
+        'exVersion': 3,
+        'name': {
+            'cn': '零式女王古殿',
+            'de': 'Delubrum Reginae (episch)',
+            'en': 'Delubrum Reginae (Savage)',
+            'fr': 'Delubrum Reginae (sadique)',
+            'ja': 'グンヒルド・ディルーブラム零式',
+            'ko': '군힐드 사원(영웅)',
+        },
+        'offsetX': 0,
+        'offsetY': -378,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    938: {
+        'contentType': 2,
+        'exVersion': 3,
+        'name': {
+            'cn': '黄金平原帕戈尔赞草原',
+            'de': 'Die Goldene Ebene von Paglth\'an',
+            'en': 'Paglth\'an',
+            'fr': 'La grande prairie de Paglth\'an',
+            'ja': '黄金平原 パガルザン',
+            'ko': '파글단',
+        },
+        'offsetX': 415,
+        'offsetY': -110,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    940: {
+        'contentType': 19,
+        'exVersion': 0,
+        'name': {
+            'cn': '九宫幻卡：官方锦标赛',
+            'de': 'Triple Triad: Manderville-Turnier',
+            'en': 'Triple Triad Open Tournament',
+            'fr': 'Tournoi officiel de Triple Triade',
+            'ja': 'トリプルトライアド：オフィシャルトーナメント',
+            'ko': '트리플 트라이어드: 공식 토너먼트',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 800,
+        'weatherRate': 0,
+    },
+    941: {
+        'contentType': 19,
+        'exVersion': 0,
+        'name': {
+            'cn': '九宫幻卡：锦标赛对局室',
+            'de': 'Triple Triad: Privatturnier',
+            'en': 'Triple Triad Invitational Parlor',
+            'fr': 'Salle de tournoi libre de Triple Triade',
+            'ja': 'トリプルトライアド：カスタムトーナメントルーム',
+            'ko': '트리플 트라이어드: 친선 토너먼트',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 800,
+        'weatherRate': 0,
+    },
+    942: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸希望乐园 再生之章1',
+            'de': 'Edens Verheißung - Umbra',
+            'en': 'Eden\'s Promise: Umbra',
+            'fr': 'La Promesse d\'Éden - Nuée',
+            'ja': '希望の園エデン：再生編1',
+            'ko': '희망의 낙원 에덴: 재생편 1',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    943: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸希望乐园 再生之章2',
+            'de': 'Edens Verheißung - Litanei',
+            'en': 'Eden\'s Promise: Litany',
+            'fr': 'La Promesse d\'Éden - Litanie',
+            'ja': '希望の園エデン：再生編2',
+            'ko': '희망의 낙원 에덴: 재생편 2',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    944: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸希望乐园 再生之章3',
+            'de': 'Edens Verheißung - Anamorphose',
+            'en': 'Eden\'s Promise: Anamorphosis',
+            'fr': 'La Promesse d\'Éden - Anamorphose',
+            'ja': '希望の園エデン：再生編3',
+            'ko': '희망의 낙원 에덴: 재생편 3',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    945: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸希望乐园 再生之章4',
+            'de': 'Edens Verheißung - Ewigkeit',
+            'en': 'Eden\'s Promise: Eternity',
+            'fr': 'La Promesse d\'Éden - Éternité',
+            'ja': '希望の園エデン：再生編4',
+            'ko': '희망의 낙원 에덴: 재생편 4',
+        },
+        'offsetX': -71,
+        'offsetY': 23,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    946: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸零式希望乐园 再生之章1',
+            'de': 'Edens Verheißung - Umbra (episch)',
+            'en': 'Eden\'s Promise: Umbra (Savage)',
+            'fr': 'La Promesse d\'Éden - Nuée (sadique)',
+            'ja': '希望の園エデン零式：再生編1',
+            'ko': '희망의 낙원 에덴: 재생편(영웅) 1',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    947: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸零式希望乐园 再生之章2',
+            'de': 'Edens Verheißung - Litanei (episch)',
+            'en': 'Eden\'s Promise: Litany (Savage)',
+            'fr': 'La Promesse d\'Éden - Litanie (sadique)',
+            'ja': '希望の園エデン零式：再生編2',
+            'ko': '희망의 낙원 에덴: 재생편(영웅) 2',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    948: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸零式希望乐园 再生之章3',
+            'de': 'Edens Verheißung - Anamorphose (episch)',
+            'en': 'Eden\'s Promise: Anamorphosis (Savage)',
+            'fr': 'La Promesse d\'Éden - Anamorphose (sadique)',
+            'ja': '希望の園エデン零式：再生編3',
+            'ko': '희망의 낙원 에덴: 재생편(영웅) 3',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    949: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '伊甸零式希望乐园 再生之章4',
+            'de': 'Edens Verheißung - Ewigkeit (episch)',
+            'en': 'Eden\'s Promise: Eternity (Savage)',
+            'fr': 'La Promesse d\'Éden - Éternité (sadique)',
+            'ja': '希望の園エデン零式：再生編4',
+            'ko': '희망의 낙원 에덴: 재생편(영웅) 4',
+        },
+        'offsetX': 0,
+        'offsetY': 75,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    950: {
+        'contentType': 4,
+        'exVersion': 3,
+        'name': {
+            'cn': '钻石神兵捕获作战',
+            'de': 'Diamantblitz - Entfesselung',
+            'en': 'The Cloud Deck',
+            'fr': 'Le Tillac des Cirrus',
+            'ja': 'ダイヤウェポン捕獲作戦',
+            'ko': '다이아몬드 웨폰 포획작전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    951: {
+        'contentType': 4,
+        'exVersion': 3,
+        'name': {
+            'cn': '钻石神兵狂想作战',
+            'de': 'Diamantblitz - Trauma',
+            'en': 'The Cloud Deck (Extreme)',
+            'fr': 'Le Tillac des Cirrus (extrême)',
+            'ja': '極ダイヤウェポン捕獲作戦',
+            'ko': '극 다이아몬드 웨폰 포획작전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    952: {
+        'contentType': 2,
+        'exVersion': 4,
+        'name': {
+            'cn': '异形楼阁佐特塔',
+            'de': 'Der Turm von Zot',
+            'en': 'The Tower of Zot',
+            'fr': 'La tour de Zott',
+            'ja': '異形楼閣 ゾットの塔',
+            'ko': '조트 탑',
+        },
+        'offsetX': -50,
+        'offsetY': -50,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    953: {
+        'contentType': 4,
+        'exVersion': 3,
+        'name': {
+            'cn': '泰坦幻巧战',
+            'de': 'Traumprüfung - Titan',
+            'en': 'The Navel (Unreal)',
+            'fr': 'Le Nombril (irréel)',
+            'ja': '幻タイタン討滅戦',
+            'ko': '환 타이탄 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 23,
+    },
+    954: {
+        'contentType': 7,
+        'exVersion': 3,
+        'name': {
+            'cn': '威尔布兰德扬帆起航',
+            'de': 'Gute Winde für Vylbrand',
+            'en': 'The Great Ship Vylbrand',
+            'fr': 'Un navire nommé Vylbrand',
+            'ja': 'バイルブランドの船出',
+            'ko': '바일브랜드 출항',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 23,
+    },
+    955: {
+        'contentType': 7,
+        'exVersion': 3,
+        'name': {
+            'cn': '神佑女王',
+            'de': 'Hinab in die Ruinen',
+            'en': 'Fit for a Queen',
+            'fr': 'Que les Dieux gardent la Reine',
+            'ja': 'ゴッド・セイブ・ザ・クイーン',
+            'ko': '갓 세이브 더 퀸',
+        },
+        'offsetX': 0,
+        'offsetY': -750,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    956: {
+        'exVersion': 4,
+        'name': {
+            'cn': '迷津',
+            'de': 'Labyrinthos',
+            'en': 'Labyrinthos',
+            'fr': 'Le Labyrinthos',
+            'ja': 'ラヴィリンソス',
+            'ko': '라비린토스',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 131,
+    },
+    957: {
+        'exVersion': 4,
+        'name': {
+            'cn': '萨维奈岛',
+            'de': 'Thavnair',
+            'en': 'Thavnair',
+            'fr': 'Thavnair',
+            'ja': 'サベネア島',
+            'ko': '사베네어 섬',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 132,
+    },
+    958: {
+        'exVersion': 4,
+        'name': {
+            'cn': '加雷马',
+            'de': 'Garlemald',
+            'en': 'Garlemald',
+            'fr': 'Garlemald',
+            'ja': 'ガレマルド',
+            'ko': '갈레말드',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 133,
+    },
+    959: {
+        'exVersion': 4,
+        'name': {
+            'cn': '叹息海',
+            'de': 'Mare Lamentorum',
+            'en': 'Mare Lamentorum',
+            'fr': 'Mare Lamentorum',
+            'ja': '嘆きの海',
+            'ko': '비탄의 바다',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 135,
+    },
+    960: {
+        'exVersion': 4,
+        'name': {
+            'cn': '天外天垓',
+            'de': 'Ultima Thule',
+            'en': 'Ultima Thule',
+            'fr': 'Ultima Thulé',
+            'ja': 'ウルティマ・トゥーレ',
+            'ko': '울티마 툴레',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 136,
+    },
+    961: {
+        'exVersion': 4,
+        'name': {
+            'cn': '厄尔庇斯',
+            'de': 'Elpis',
+            'en': 'Elpis',
+            'fr': 'Elpis',
+            'ja': 'エルピス',
+            'ko': '엘피스',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 134,
+    },
+    962: {
+        'exVersion': 4,
+        'name': {
+            'cn': '旧萨雷安',
+            'de': 'Alt-Sharlayan',
+            'en': 'Old Sharlayan',
+            'fr': 'Vieille Sharlayan',
+            'ja': 'オールド・シャーレアン',
+            'ko': '올드 샬레이안',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 137,
+    },
+    963: {
+        'exVersion': 4,
+        'name': {
+            'cn': '拉札罕',
+            'de': 'Radz-at-Han',
+            'en': 'Radz-at-Han',
+            'fr': 'Radz-at-Han',
+            'ja': 'ラザハン',
+            'ko': '라자한',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 138,
+    },
+    966: {
+        'contentType': 5,
+        'exVersion': 3,
+        'name': {
+            'cn': '希望之炮台：“塔”',
+            'de': 'Der Turm, Paradigmenbrecher',
+            'en': 'The Tower at Paradigm\'s Breach',
+            'fr': 'La tour de la Contingence',
+            'ja': '希望ノ砲台：「塔」',
+            'ko': '희망의 포대: \'탑\'',
+        },
+        'offsetX': 808,
+        'offsetY': -772,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    968: {
+        'contentType': 28,
+        'exVersion': 4,
+        'name': {
+            'cn': '幻想龙诗绝境战',
+            'de': 'Drachenkrieg (fatal)',
+            'en': 'Dragonsong\'s Reprise (Ultimate)',
+            'fr': 'La Guerre du chant des dragons (fatal)',
+            'ja': '絶竜詩戦争',
+            'ko': '절 용시전쟁',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    969: {
+        'contentType': 2,
+        'exVersion': 4,
+        'name': {
+            'cn': '魔导神门巴别塔',
+            'de': 'Der Turm von Babil',
+            'en': 'The Tower of Babil',
+            'fr': 'La tour de Babil',
+            'ja': '魔導神門 バブイルの塔',
+            'ko': '바브일 탑',
+        },
+        'offsetX': 270,
+        'offsetY': -300,
+        'sizeFactor': 200,
+        'weatherRate': 28,
+    },
+    970: {
+        'contentType': 2,
+        'exVersion': 4,
+        'name': {
+            'cn': '末日树海万相森国',
+            'de': 'Vanaspati',
+            'en': 'Vanaspati',
+            'fr': 'Vanaspati',
+            'ja': '終末樹海 ヴァナスパティ',
+            'ko': '바나스파티',
+        },
+        'offsetX': 280,
+        'offsetY': 8,
+        'sizeFactor': 200,
+        'weatherRate': 141,
+    },
+    972: {
+        'contentType': 4,
+        'exVersion': 3,
+        'name': {
+            'cn': '利维亚桑幻巧战',
+            'de': 'Traumprüfung - Leviathan',
+            'en': 'The <Emphasis>Whorleater</Emphasis> (Unreal)',
+            'fr': 'Le Briseur de marées (irréel)',
+            'ja': '幻リヴァイアサン討滅戦',
+            'ko': '환 리바이어선 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 38,
+    },
+    973: {
+        'contentType': 2,
+        'exVersion': 4,
+        'name': {
+            'cn': '最终幻想末世终迹',
+            'de': 'Das Sternengrab',
+            'en': 'The Dead Ends',
+            'fr': 'L\'Issue aux Impasses',
+            'ja': '最終幻想 レムナント',
+            'ko': '잔해별',
+        },
+        'offsetX': -310,
+        'offsetY': 15,
+        'sizeFactor': 200,
+        'weatherRate': 144,
+    },
+    974: {
+        'contentType': 2,
+        'exVersion': 4,
+        'name': {
+            'cn': '创造环境极北造物院',
+            'de': 'Ktisis Hyperboreia',
+            'en': 'Ktisis Hyperboreia',
+            'fr': 'L\'Hyperborée',
+            'ja': '創造環境 ヒュペルボレア造物院',
+            'ko': '휘페르보레아 조물원',
+        },
+        'offsetX': 40,
+        'offsetY': -150,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    975: {
+        'contentType': 29,
+        'exVersion': 3,
+        'name': {
+            'cn': '扎杜诺尔高原',
+            'de': 'Zadnor-Hochebene',
+            'en': 'Zadnor',
+            'fr': 'Hauts plateaux de Zadnor',
+            'ja': 'ザトゥノル高原',
+            'ko': '자트노르 고원',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 130,
+    },
+    976: {
+        'contentType': 2,
+        'exVersion': 4,
+        'name': {
+            'cn': '乐园都市笑笑镇',
+            'de': 'Smileton',
+            'en': 'Smileton',
+            'fr': 'Risette-sur-lune',
+            'ja': '楽園都市 スマイルトン',
+            'ko': '스마일턴',
+        },
+        'offsetX': -22,
+        'offsetY': -42,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    977: {
+        'contentType': 7,
+        'exVersion': 3,
+        'name': {
+            'cn': '死斗至黎明',
+            'de': 'Kampf im Morgengrauen',
+            'en': 'Death Unto Dawn',
+            'fr': 'Aube meurtrière',
+            'ja': '黎明の死闘',
+            'ko': '여명의 사투',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 114,
+    },
+    978: {
+        'contentType': 2,
+        'exVersion': 4,
+        'name': {
+            'cn': '星海深幽寻因星晶镜',
+            'de': 'Das Aitiaskop',
+            'en': 'The Aitiascope',
+            'fr': 'Le Prisme de l\'Aitia',
+            'ja': '星海潜航 アイティオン星晶鏡',
+            'ko': '아이티온 별현미경',
+        },
+        'offsetX': 8,
+        'offsetY': -501,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    986: {
+        'contentType': 2,
+        'exVersion': 4,
+        'name': {
+            'cn': '电脑梦境斯提格玛四',
+            'de': 'Stigma-Holometrie',
+            'en': 'The Stigma Dreamscape',
+            'fr': 'Rêve électrique de Stigma-4',
+            'ja': '電脳夢想 スティグマ・フォー',
+            'ko': '스티그마-4',
+        },
+        'offsetX': 144,
+        'offsetY': -14,
+        'sizeFactor': 200,
+        'weatherRate': 140,
+    },
+    992: {
+        'contentType': 4,
+        'exVersion': 4,
+        'name': {
+            'cn': '佐迪亚克歼灭战',
+            'de': 'Prophetie - Zodiark',
+            'en': 'The Dark Inside',
+            'fr': 'Le Cratère des Martyrs',
+            'ja': 'ゾディアーク討滅戦',
+            'ko': '조디아크 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 139,
+    },
+    993: {
+        'contentType': 4,
+        'exVersion': 4,
+        'name': {
+            'cn': '佐迪亚克暝暗歼灭战',
+            'de': 'Eschatos - Zodiark',
+            'en': 'The Minstrel\'s Ballad: Zodiark\'s Fall',
+            'fr': 'Le Cratère des Martyrs (extrême)',
+            'ja': '極ゾディアーク討滅戦',
+            'ko': '극 조디아크 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 139,
+    },
+    994: {
+        'contentType': 22,
+        'exVersion': 0,
+        'name': {
+            'cn': '滑稽灵殿闹鬼盛宴',
+            'de': 'Lustiges Bankett',
+            'en': 'The Phantoms\' Feast',
+            'fr': 'Le banquet cauchemardesque',
+            'ja': '道化饗宴 ホーンテッドフィースト',
+            'ko': '유령의 연회',
+        },
+        'offsetX': 20,
+        'offsetY': 10,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    995: {
+        'contentType': 4,
+        'exVersion': 4,
+        'name': {
+            'cn': '海德林歼灭战',
+            'de': 'Prophetie - Hydaelyn',
+            'en': 'The Mothercrystal',
+            'fr': 'Le Cristal-mère',
+            'ja': 'ハイデリン討滅戦',
+            'ko': '하이델린 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 139,
+    },
+    996: {
+        'contentType': 4,
+        'exVersion': 4,
+        'name': {
+            'cn': '海德林晖光歼灭战',
+            'de': 'Eschatos - Hydaelyn',
+            'en': 'The Minstrel\'s Ballad: Hydaelyn\'s Call',
+            'fr': 'Le Cristal-mère (extrême)',
+            'ja': '極ハイデリン討滅戦',
+            'ko': '극 하이델린 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 139,
+    },
+    997: {
+        'contentType': 4,
+        'exVersion': 4,
+        'name': {
+            'cn': '终结之战',
+            'de': 'Prophetie - Endsängerin',
+            'en': 'The Final Day',
+            'fr': 'Le Répons final',
+            'ja': '終焉の戦い',
+            'ko': '종언의 결전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 116,
+    },
+    998: {
+        'contentType': 4,
+        'exVersion': 4,
+        'name': {
+            'cn': '终极之战',
+            'de': 'Eschatos - Endsängerin',
+            'en': 'The Minstrel\'s Ballad: Endsinger\'s Aria',
+            'fr': 'Le Répons final (extrême)',
+            'ja': '終極の戦い',
+            'ko': '종극의 결전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 146,
+    },
+    1000: {
+        'contentType': 9,
+        'exVersion': 4,
+        'name': {
+            'cn': '惊奇百宝城',
+            'de': 'Euphoratron',
+            'en': 'The Excitatron 6000',
+            'fr': 'Le Ludodrome',
+            'ja': '宝物庫 エキサイトロン',
+            'ko': '보물고 익사이트론',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    1002: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '万魔殿 边境之狱1',
+            'de': 'Asphodelos - Erster Kreis',
+            'en': 'Asphodelos: The First Circle',
+            'fr': 'Les Limbes du Pandæmonium - Parvis',
+            'ja': '万魔殿パンデモニウム：辺獄編1',
+            'ko': '마의 전당 판데모니움: 변옥편 1',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1003: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '零式万魔殿 边境之狱1',
+            'de': 'Asphodelos - Erster Kreis (episch)',
+            'en': 'Asphodelos: The First Circle (Savage)',
+            'fr': 'Les Limbes du Pandæmonium - Parvis (sadique)',
+            'ja': '万魔殿パンデモニウム零式：辺獄編1',
+            'ko': '마의 전당 판데모니움: 변옥편(영웅) 1',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1004: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '万魔殿 边境之狱2',
+            'de': 'Asphodelos - Zweiter Kreis',
+            'en': 'Asphodelos: The Second Circle',
+            'fr': 'Les Limbes du Pandæmonium - Cloaque',
+            'ja': '万魔殿パンデモニウム：辺獄編2',
+            'ko': '마의 전당 판데모니움: 변옥편 2',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1005: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '零式万魔殿 边境之狱2',
+            'de': 'Asphodelos - Zweiter Kreis (episch)',
+            'en': 'Asphodelos: The Second Circle (Savage)',
+            'fr': 'Les Limbes du Pandæmonium - Cloaque (sadique)',
+            'ja': '万魔殿パンデモニウム零式：辺獄編2',
+            'ko': '마의 전당 판데모니움: 변옥편(영웅) 2',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1006: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '万魔殿 边境之狱3',
+            'de': 'Asphodelos - Dritter Kreis',
+            'en': 'Asphodelos: The Third Circle',
+            'fr': 'Les Limbes du Pandæmonium - Fournaise',
+            'ja': '万魔殿パンデモニウム：辺獄編3',
+            'ko': '마의 전당 판데모니움: 변옥편 3',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1007: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '零式万魔殿 边境之狱3',
+            'de': 'Asphodelos - Dritter Kreis (episch)',
+            'en': 'Asphodelos: The Third Circle (Savage)',
+            'fr': 'Les Limbes du Pandæmonium - Fournaise (sadique)',
+            'ja': '万魔殿パンデモニウム零式：辺獄編3',
+            'ko': '마의 전당 판데모니움: 변옥편(영웅) 3',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1008: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '万魔殿 边境之狱4',
+            'de': 'Asphodelos - Vierter Kreis',
+            'en': 'Asphodelos: The Fourth Circle',
+            'fr': 'Les Limbes du Pandæmonium - Abîme',
+            'ja': '万魔殿パンデモニウム：辺獄編4',
+            'ko': '마의 전당 판데모니움: 변옥편 4',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1009: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '零式万魔殿 边境之狱4',
+            'de': 'Asphodelos - Vierter Kreis (episch)',
+            'en': 'Asphodelos: The Fourth Circle (Savage)',
+            'fr': 'Les Limbes du Pandæmonium - Abîme (sadique)',
+            'ja': '万魔殿パンデモニウム零式：辺獄編4',
+            'ko': '마의 전당 판데모니움: 변옥편(영웅) 4',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1010: {
+        'contentType': 7,
+        'exVersion': 4,
+        'name': {
+            'cn': '踏破风雪',
+            'de': 'Ein frostiger Empfang',
+            'en': 'A Frosty Reception',
+            'fr': 'Un accueil glacial',
+            'ja': '霜雪を踏みしめて',
+            'ko': '눈서리를 밟고',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    1011: {
+        'contentType': 7,
+        'exVersion': 4,
+        'name': {
+            'cn': '无尽寒夜',
+            'de': 'In fremder Haut',
+            'en': 'In from the Cold',
+            'fr': 'Le voleur de corps',
+            'ja': '寒夜のこと',
+            'ko': '어느 추운 밤에',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 27,
+    },
+    1012: {
+        'contentType': 7,
+        'exVersion': 4,
+        'name': {
+            'cn': '扩散的末日',
+            'de': 'Rote Himmel, roter Schnee',
+            'en': 'As the Heavens Burn',
+            'fr': 'L\'arène des neiges',
+            'ja': '拡がる終末',
+            'ko': '퍼져가는 종말',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 141,
+    },
+    1013: {
+        'contentType': 7,
+        'exVersion': 4,
+        'name': {
+            'cn': '晓月之终途',
+            'de': 'Endschreiter',
+            'en': 'Endwalker',
+            'fr': 'Arpenteur des finitudes',
+            'ja': '暁月のフィナーレ',
+            'ko': '효월의 종언',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 100,
+        'weatherRate': 143,
+    },
+    1014: {
+        'contentType': 7,
+        'exVersion': 4,
+        'name': {
+            'cn': '上一任阿谢姆的教导',
+            'de': ' Es reimt sich auf Gebell',
+            'en': 'Worthy of His Back',
+            'fr': 'Le défi de l\'ancienne Azem',
+            'ja': '前代アゼムの手ほどき',
+            'ko': '선대 아젬과의 대련',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 134,
+    },
+    1015: {
+        'contentType': 7,
+        'exVersion': 4,
+        'name': {
+            'cn': '未来之路',
+            'de': 'Offen für neue Wege',
+            'en': 'A Path Unveiled',
+            'fr': 'Des esprits et des hommes',
+            'ja': '開かれた道の先へ',
+            'ko': '열린 길 저편으로',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 3,
+    },
+    1016: {
+        'contentType': 7,
+        'exVersion': 4,
+        'name': {
+            'cn': '驶向融合的巨轮',
+            'de': 'Im Hafen des Friedens',
+            'en': 'To Calmer Seas',
+            'fr': 'Cap sur la paix',
+            'ja': '融和への船出',
+            'ko': '화합을 향한 출항',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1017: {
+        'contentType': 7,
+        'exVersion': 4,
+        'name': {
+            'cn': '英魂安息',
+            'de': 'Domanisches Begräbnis',
+            'en': 'Laid to Rest',
+            'fr': 'Des adieux domiens',
+            'ja': 'ドマの弔い',
+            'ko': '도마의 추도',
+        },
+        'offsetX': 240,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1018: {
+        'contentType': 7,
+        'exVersion': 4,
+        'name': {
+            'cn': '仰望苍穹，不断迈进',
+            'de': 'Der Weg zur Erneuerung',
+            'en': 'Ever March Heavensward',
+            'fr': 'La voie du renouveau',
+            'ja': '蒼天を仰ぎ、歩み続ける',
+            'ko': '창천을 보며 나아가자',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 114,
+    },
+    1019: {
+        'contentType': 7,
+        'exVersion': 4,
+        'name': {
+            'cn': '目送生者前行',
+            'de': 'Trauer und Hoffnung',
+            'en': 'The Gift of Mercy',
+            'fr': 'Acceptation',
+            'ja': '僕たちは還り、君を見送ろう',
+            'ko': '우리는 돌아가 그대를 보내리',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    1020: {
+        'contentType': 7,
+        'exVersion': 4,
+        'name': {
+            'cn': '大镰的意义',
+            'de': 'Die Bedeutung der Sense',
+            'en': 'The Harvest Begins',
+            'fr': 'La vraie puissance de la faux',
+            'ja': '大鎌の意味',
+            'ko': '큰낫의 의미',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1021: {
+        'contentType': 7,
+        'exVersion': 4,
+        'name': {
+            'cn': '暗杀道',
+            'de': 'Die Kunst des Tötens',
+            'en': 'The Killing Art',
+            'fr': 'La voie du néant',
+            'ja': '暗殺道',
+            'ko': '암살의 길',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 42,
+    },
+    1022: {
+        'contentType': 7,
+        'exVersion': 4,
+        'name': {
+            'cn': '贤者的短杖',
+            'de': 'Des Weisen wundersames Werkzeug',
+            'en': 'Sage\'s Focus',
+            'fr': 'Les armes du sage',
+            'ja': '賢者の短杖',
+            'ko': '현자의 짧은 지팡이',
+        },
+        'offsetX': 40,
+        'offsetY': 6,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1023: {
+        'contentType': 7,
+        'exVersion': 4,
+        'name': {
+            'cn': '生命瞬逝，术道恒久',
+            'de': 'Das Leben ist kurz, die Kunst ist lang',
+            'en': 'Life Ephemeral, Path Eternal',
+            'fr': 'Existences éphémères et savoir éternel',
+            'ja': '人命は儚く、術のみちは永久に',
+            'ko': '생명은 덧없으나 기술은 영원하리',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 95,
+        'weatherRate': 50,
+    },
+    1035: {
+        'contentType': 4,
+        'exVersion': 4,
+        'name': {
+            'cn': '究极神兵幻巧战',
+            'de': 'Traumprüfung - Ultima',
+            'en': 'Ultima\'s Bane (Unreal)',
+            'fr': 'Le fléau d\'Ultima (irréel)',
+            'ja': '幻アルテマウェポン破壊作戦',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 31,
+    },
+    1036: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '天然要害沙斯塔夏溶洞',
+            'de': 'Sastasha',
+            'en': 'Sastasha',
+            'fr': 'Sastasha',
+            'ja': '天然要害 サスタシャ浸食洞',
+            'ko': '사스타샤 침식 동굴',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1037: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '地下灵殿塔姆·塔拉墓园',
+            'de': 'Totenacker Tam-Tara',
+            'en': 'The Tam–Tara Deepcroft',
+            'fr': 'L\'Hypogée de Tam-Tara',
+            'ja': '地下霊殿 タムタラの墓所',
+            'ko': '탐타라 묘소',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 300,
+        'weatherRate': 0,
+    },
+    1038: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '封锁坑道铜铃铜山',
+            'de': 'Kupferglocken-Mine',
+            'en': 'Copperbell Mines',
+            'fr': 'Les Mines de Clochecuivre',
+            'ja': '封鎖坑道 カッパーベル銅山',
+            'ko': '구리종 광산',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1039: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '监狱废墟托托·拉克千狱',
+            'de': 'Tausend Löcher von Toto-Rak',
+            'en': 'The Thousand Maws of Toto–Rak',
+            'fr': 'Les Mille Gueules de Toto-Rak',
+            'ja': '監獄廃墟 トトラクの千獄',
+            'ko': '토토라크 감옥',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1040: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '名门府邸静语庄园',
+            'de': 'Haukke-Herrenhaus',
+            'en': 'Haukke Manor',
+            'fr': 'Le Manoir des Haukke',
+            'ja': '名門屋敷 ハウケタ御用邸',
+            'ko': '하우케타 별궁',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1041: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '休养胜地布雷福洛克斯野营地',
+            'de': 'Brüllvolx\' Langrast',
+            'en': 'Brayflox\'s Longstop',
+            'fr': 'Le Bivouac de Brayflox',
+            'ja': '奪還支援 ブレイフロクスの野営地',
+            'ko': '브레이플록스의 야영지',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1042: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '对龙城塞石卫塔',
+            'de': 'Steinerne Wacht',
+            'en': 'The Stone Vigil',
+            'fr': 'Le Vigile de Pierre',
+            'ja': '城塞攻略 ストーンヴィジル',
+            'ko': '돌방패 경계초소',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 27,
+    },
+    1043: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '神兵要塞帝国南方堡',
+            'de': 'Castrum Meridianum - Außenbereich',
+            'en': 'Castrum Meridianum',
+            'fr': 'Castrum Meridianum',
+            'ja': '外郭攻略 カストルム・メリディアヌム',
+            'ko': '카스트룸 메리디아눔',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1044: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '最终决战天幕魔导城',
+            'de': 'Castrum Meridianum - Praetorium',
+            'en': 'The Praetorium',
+            'fr': 'Le Praetorium',
+            'ja': '最終決戦 魔導城プラエトリウム',
+            'ko': '마도성 프라이토리움',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1045: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '伊弗利特讨伐战',
+            'de': 'Das Grab der Lohe',
+            'en': 'The Bowl of Embers',
+            'fr': 'Le Cratère des tisons',
+            'ja': 'イフリート討伐戦',
+            'ko': '이프리트 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 25,
+    },
+    1046: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '泰坦讨伐战',
+            'de': 'Der Nabel',
+            'en': 'The Navel',
+            'fr': 'Le Nombril',
+            'ja': 'タイタン討伐戦',
+            'ko': '타이탄 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 23,
+    },
+    1047: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '迦楼罗讨伐战',
+            'de': 'Das Tosende Auge',
+            'en': 'The Howling Eye',
+            'fr': 'Hurlœil',
+            'ja': 'ガルーダ討伐戦',
+            'ko': '가루다 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 26,
+    },
+    1048: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '究极神兵破坏作战',
+            'de': 'Porta Decumana',
+            'en': 'The Porta Decumana',
+            'fr': 'Porta Decumana',
+            'ja': 'アルテマウェポン破壊作戦',
+            'ko': '알테마 웨폰 파괴작전',
+        },
+        'offsetX': 772,
+        'offsetY': 600,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1049: {
+        'contentType': 7,
+        'exVersion': 0,
+        'name': {
+            'cn': '里塔提恩强攻战',
+            'de': 'Kap Westwind',
+            'en': 'Cape Westwind',
+            'fr': 'Le Cap Vendouest',
+            'ja': 'リットアティン強襲戦',
+            'ko': '리트아틴 강습전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    1050: {
+        'contentType': 2,
+        'exVersion': 4,
+        'name': {
+            'cn': '近东秘宝阿尔扎达尔海底遗迹群',
+            'de': 'Alzadaals Vermächtnis',
+            'en': 'Alzadaal\'s Legacy',
+            'fr': 'Le legs d\'Alzadaal',
+            'ja': '近東秘宝 アルザダール海底遺跡群',
+            'ko': '알자달 해저 유적',
+        },
+        'offsetX': 15,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1051: {
+        'contentType': 7,
+        'exVersion': 4,
+        'name': {
+            'cn': '涅尔瓦的帝国',
+            'de': 'Nervas Reich',
+            'en': 'Forlorn Glory',
+            'fr': 'Nerva, le patriote',
+            'ja': 'ネルウァの帝国',
+            'ko': '네르바의 제국',
+        },
+        'offsetX': -230,
+        'offsetY': -250,
+        'sizeFactor': 200,
+        'weatherRate': 28,
+    },
+    1052: {
+        'contentType': 7,
+        'exVersion': 0,
+        'name': {
+            'cn': '拉哈布雷亚讨伐战',
+            'de': 'Das Antlitz der Kaltblütigkeit',
+            'en': 'Devastation',
+            'fr': 'Le Praetorium en flammes',
+            'ja': 'アシエン・ラハブレア討伐戦',
+            'ko': '아씨엔 라하브레아 토벌전',
+        },
+        'offsetX': 704,
+        'offsetY': -480,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1054: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '灿烂神域阿格莱亚',
+            'de': 'Aglaia',
+            'en': 'Aglaia',
+            'fr': 'Domaine divin - Aglaé',
+            'ja': '輝ける神域 アグライア',
+            'ko': '찬란한 신역 아글라이아',
+        },
+        'offsetX': -80,
+        'offsetY': -550,
+        'sizeFactor': 200,
+        'weatherRate': 147,
+    },
+    1058: {
+        'contentType': 6,
+        'exVersion': 0,
+        'name': {
+            'cn': '水晶冲突（角力学校：自定赛）',
+            'de': 'Crystalline Conflict: Die Palästra (Schaukampf)',
+            'en': 'Crystalline Conflict (Custom Match - The Palaistra)',
+            'fr': 'Crystalline Conflict (partie personnalisée - Le Palestre)',
+            'ja': 'クリスタルコンフリクト(パライストラ：カスタムマッチ)',
+            'ko': '크리스탈라인 컨플릭트(팔라이스트라: 친선 경기)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1059: {
+        'contentType': 6,
+        'exVersion': 0,
+        'name': {
+            'cn': '水晶冲突（火山之心：自定赛）',
+            'de': 'Crystalline Conflict: Das Herz des Vulkans (Schaukampf)',
+            'en': 'Crystalline Conflict (Custom Match - The Volcanic Heart)',
+            'fr': 'Crystalline Conflict (partie personnalisée - Le Cœur volcanique)',
+            'ja': 'クリスタルコンフリクト(ヴォルカニック・ハート：カスタムマッチ)',
+            'ko': '크리스탈라인 컨플릭트(화산심장: 친선 경기)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1060: {
+        'contentType': 6,
+        'exVersion': 0,
+        'name': {
+            'cn': '水晶冲突（九霄云上：自定赛）',
+            'de': 'Crystalline Conflict: Wolke Sieben (Schaukampf)',
+            'en': 'Crystalline Conflict (Custom Match - Cloud Nine)',
+            'fr': 'Crystalline Conflict (partie personnalisée - Le Petit Nuage)',
+            'ja': 'クリスタルコンフリクト(クラウドナイン：カスタムマッチ)',
+            'ko': '크리스탈라인 컨플릭트(절정의 구름: 친선 경기)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1062: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '凛冽洞天披雪大冰壁',
+            'de': 'Das Schneekleid',
+            'en': 'Snowcloak',
+            'fr': 'Manteneige',
+            'ja': '氷結潜窟 スノークローク大氷壁',
+            'ko': '얼음외투 대빙벽',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 42,
+    },
+    1063: {
+        'contentType': 2,
+        'exVersion': 0,
+        'name': {
+            'cn': '幻龙残骸密约之塔',
+            'de': 'Hüter des Sees',
+            'en': 'The Keeper of the Lake',
+            'fr': 'Le Gardien du lac',
+            'ja': '幻龍残骸 黙約の塔',
+            'ko': '묵약의 탑',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 74,
+    },
+    1064: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '天山绝顶索姆阿尔灵峰',
+            'de': 'Sohm Al',
+            'en': 'Sohm Al',
+            'fr': 'Sohm Al',
+            'ja': '霊峰踏破 ソーム・アル',
+            'ko': '솜 알',
+        },
+        'offsetX': 185,
+        'offsetY': 51,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1065: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '邪龙王座龙巢神殿',
+            'de': 'Nest des Drachen',
+            'en': 'The Aery',
+            'fr': 'L\'Aire',
+            'ja': '邪竜血戦 ドラゴンズエアリー',
+            'ko': '용의 둥지',
+        },
+        'offsetX': -40,
+        'offsetY': 55,
+        'sizeFactor': 200,
+        'weatherRate': 28,
+    },
+    1066: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '圣教中枢伊修加德教皇厅',
+            'de': 'Erzbasilika',
+            'en': 'The Vault',
+            'fr': 'La Voûte',
+            'ja': '強硬突入 イシュガルド教皇庁',
+            'ko': '이슈가르드 교황청',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1067: {
+        'contentType': 4,
+        'exVersion': 0,
+        'name': {
+            'cn': '莫古力贤王歼灭战',
+            'de': 'Königliche Konfrontation (schwer)',
+            'en': 'Thornmarch (Hard)',
+            'fr': 'La Lisière de ronces (brutal)',
+            'ja': '善王モグル・モグXII世討滅戦',
+            'ko': '선왕 모그루 모그 XII세 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 30,
+    },
+    1068: {
+        'contentType': 7,
+        'exVersion': 0,
+        'name': {
+            'cn': '皇都伊修加德保卫战',
+            'de': 'Der Schicksalsweg',
+            'en': 'The Steps of Faith',
+            'fr': 'Le Siège de la sainte Cité d\'Ishgard',
+            'ja': '皇都イシュガルド防衛戦',
+            'ko': '성도 이슈가르드 방어전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 28,
+    },
+    1069: {
+        'contentType': 30,
+        'exVersion': 4,
+        'name': {
+            'cn': '多变迷宫 希拉狄哈水道',
+            'de': 'Die Unterstadt von Sil\'dih',
+            'en': 'The Sil\'dihn Subterrane',
+            'fr': 'Les canalisations sildiennes - Donjon à embranchements',
+            'ja': 'ヴァリアントダンジョン シラディハ水道',
+            'ko': '변형 던전: 실디하 지하수도',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1070: {
+        'contentType': 2,
+        'exVersion': 4,
+        'name': {
+            'cn': '异界孤城特罗亚宫廷',
+            'de': 'Der Schwarze Hof von Troia',
+            'en': 'The Fell Court of Troia',
+            'fr': 'Le Château de Troïa',
+            'ja': '異界孤城 トロイアコート',
+            'ko': '트로이아 궁정',
+        },
+        'offsetX': -76,
+        'offsetY': -180,
+        'sizeFactor': 200,
+        'weatherRate': 149,
+    },
+    1071: {
+        'contentType': 4,
+        'exVersion': 4,
+        'name': {
+            'cn': '巴尔巴莉希娅歼灭战',
+            'de': 'Prophetie - Barbarizia',
+            'en': 'Storm\'s Crown',
+            'fr': 'La Toison des tempêtes',
+            'ja': 'バルバリシア討滅戦',
+            'ko': '바르바리차 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 149,
+    },
+    1072: {
+        'contentType': 4,
+        'exVersion': 4,
+        'name': {
+            'cn': '巴尔巴莉希娅歼殛战',
+            'de': 'Eschatos - Barbarizia',
+            'en': 'Storm\'s Crown (Extreme)',
+            'fr': 'La Toison des tempêtes (extrême)',
+            'ja': '極バルバリシア討滅戦',
+            'ko': '극 바르바리차 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 149,
+    },
+    1075: {
+        'contentType': 30,
+        'exVersion': 4,
+        'name': {
+            'cn': '异闻迷宫 异闻希拉狄哈水道',
+            'de': 'Die kuriose Unterstadt von Sil\'dih',
+            'en': 'Another Sil\'dihn Subterrane',
+            'fr': 'Les canalisations sildiennes annexes - Donjon alternatif',
+            'ja': 'アナザーダンジョン 異聞シラディハ水道',
+            'ko': '파생 던전: 번외 실디하 지하수도',
+        },
+        'offsetX': 335,
+        'offsetY': 100,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1076: {
+        'contentType': 30,
+        'exVersion': 4,
+        'name': {
+            'cn': '异闻迷宫 零式异闻希拉狄哈水道',
+            'de': 'Die kuriose Unterstadt von Sil\'dih (episch)',
+            'en': 'Another Sil\'dihn Subterrane (Savage)',
+            'fr': 'Les canalisations sildiennes annexes - Donjon alternatif (sadique)',
+            'ja': 'アナザーダンジョン 異聞シラディハ水道 零式',
+            'ko': '파생 던전: 번외 실디하 지하수도(영웅)',
+        },
+        'offsetX': 335,
+        'offsetY': 100,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1081: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '万魔殿 炼净之狱1',
+            'de': 'Abyssos - Fünfter Kreis',
+            'en': 'Abyssos: The Fifth Circle',
+            'fr': 'Le Purgatoire du Pandæmonium - Cages',
+            'ja': '万魔殿パンデモニウム：煉獄編1',
+            'ko': '마의 전당 판데모니움: 연옥편 1',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1082: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '零式万魔殿 炼净之狱1',
+            'de': 'Abyssos - Fünfter Kreis (episch)',
+            'en': 'Abyssos: The Fifth Circle (Savage)',
+            'fr': 'Le Purgatoire du Pandæmonium - Cages (sadique)',
+            'ja': '万魔殿パンデモニウム零式：煉獄編1',
+            'ko': '마의 전당 판데모니움: 연옥편(영웅) 1',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1083: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '万魔殿 炼净之狱2',
+            'de': 'Abyssos - Sechster Kreis',
+            'en': 'Abyssos: The Sixth Circle',
+            'fr': 'Le Purgatoire du Pandæmonium - Croisements',
+            'ja': '万魔殿パンデモニウム：煉獄編2',
+            'ko': '마의 전당 판데모니움: 연옥편 2',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1084: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '零式万魔殿 炼净之狱2',
+            'de': 'Abyssos - Sechster Kreis (episch)',
+            'en': 'Abyssos: The Sixth Circle (Savage)',
+            'fr': 'Le Purgatoire du Pandæmonium - Croisements (sadique)',
+            'ja': '万魔殿パンデモニウム零式：煉獄編2',
+            'ko': '마의 전당 판데모니움: 연옥편(영웅) 2',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1085: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '万魔殿 炼净之狱3',
+            'de': 'Abyssos - Siebter Kreis',
+            'en': 'Abyssos: The Seventh Circle',
+            'fr': 'Le Purgatoire du Pandæmonium - Racines',
+            'ja': '万魔殿パンデモニウム：煉獄編3',
+            'ko': '마의 전당 판데모니움: 연옥편 3',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1086: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '零式万魔殿 炼净之狱3',
+            'de': 'Abyssos - Siebter Kreis (episch)',
+            'en': 'Abyssos: The Seventh Circle (Savage)',
+            'fr': 'Le Purgatoire du Pandæmonium - Racines (sadique)',
+            'ja': '万魔殿パンデモニウム零式：煉獄編3',
+            'ko': '마의 전당 판데모니움: 연옥편(영웅) 3',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1087: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '万魔殿 炼净之狱4',
+            'de': 'Abyssos - Achter Kreis',
+            'en': 'Abyssos: The Eighth Circle',
+            'fr': 'Le Purgatoire du Pandæmonium - Hérédité',
+            'ja': '万魔殿パンデモニウム：煉獄編4',
+            'ko': '마의 전당 판데모니움: 연옥편 4',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1088: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '零式万魔殿 炼净之狱4',
+            'de': 'Abyssos - Achter Kreis (episch)',
+            'en': 'Abyssos: The Eighth Circle (Savage)',
+            'fr': 'Le Purgatoire du Pandæmonium - Hérédité (sadique)',
+            'ja': '万魔殿パンデモニウム零式：煉獄編4',
+            'ko': '마의 전당 판데모니움: 연옥편(영웅) 4',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1090: {
+        'contentType': 4,
+        'exVersion': 4,
+        'name': {
+            'cn': '萨菲洛特幻巧战',
+            'de': 'Traumprüfung - Sephirot',
+            'en': 'Containment Bay S1T7 (Unreal)',
+            'fr': 'Unité de contention S1P7 (irréel)',
+            'ja': '幻魔神セフィロト討滅戦',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 66,
+    },
+    1091: {
+        'contentType': 7,
+        'exVersion': 4,
+        'name': {
+            'cn': '失传的力量',
+            'de': 'Wo alles seinen Anfang nimmt',
+            'en': 'Where Everything Begins',
+            'fr': 'Au commencement était Zero',
+            'ja': '失われた力',
+            'ko': '잃어버린 힘',
+        },
+        'offsetX': 143,
+        'offsetY': -64,
+        'sizeFactor': 200,
+        'weatherRate': 149,
+    },
+    1095: {
+        'contentType': 4,
+        'exVersion': 4,
+        'name': {
+            'cn': '卢比坎特歼灭战',
+            'de': 'Prophetie - Rubicante',
+            'en': 'Mount Ordeals',
+            'fr': 'Le Mont du Supplice',
+            'ja': 'ルビカンテ討滅戦',
+            'ko': '루비칸테 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1096: {
+        'contentType': 4,
+        'exVersion': 4,
+        'name': {
+            'cn': '卢比坎特歼殛战',
+            'de': 'Eschatos - Rubicante',
+            'en': 'Mount Ordeals (Extreme)',
+            'fr': 'Le Mont du Supplice (extrême)',
+            'ja': '極ルビカンテ討滅戦',
+            'ko': '극 루비칸테 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1097: {
+        'contentType': 2,
+        'exVersion': 4,
+        'name': {
+            'cn': '雪山奥窟冥魂石洞',
+            'de': 'Lapis Manalis',
+            'en': 'Lapis Manalis',
+            'fr': 'Lapis Manalis',
+            'ja': '雪山冥洞 ラピス・マナリス',
+            'ko': '라피스 마날리스',
+        },
+        'offsetX': -46,
+        'offsetY': 570,
+        'sizeFactor': 200,
+        'weatherRate': 42,
+    },
+    1099: {
+        'contentType': 21,
+        'exVersion': 4,
+        'name': {
+            'cn': '正统优雷卡 地下1～10层',
+            'de': 'Eureka Orthos (Ebenen 1-10)',
+            'en': 'Eureka Orthos (Floors 1-10)',
+            'fr': 'Eurêka Orthos (sous-sols 1-10)',
+            'ja': 'オルト・エウレカ B1～B10',
+            'ko': '에우레카 오르토스 B1~B10',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    1100: {
+        'contentType': 21,
+        'exVersion': 4,
+        'name': {
+            'cn': '正统优雷卡 地下11～20层',
+            'de': 'Eureka Orthos (Ebenen 11-20)',
+            'en': 'Eureka Orthos (Floors 11-20)',
+            'fr': 'Eurêka Orthos (sous-sols 11-20)',
+            'ja': 'オルト・エウレカ B11～B20',
+            'ko': '에우레카 오르토스 B11~B20',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    1101: {
+        'contentType': 21,
+        'exVersion': 4,
+        'name': {
+            'cn': '正统优雷卡 地下21～30层',
+            'de': 'Eureka Orthos (Ebenen 21-30)',
+            'en': 'Eureka Orthos (Floors 21-30)',
+            'fr': 'Eurêka Orthos (sous-sols 21-30)',
+            'ja': 'オルト・エウレカ B21～B30',
+            'ko': '에우레카 오르토스 B21~B30',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    1102: {
+        'contentType': 21,
+        'exVersion': 4,
+        'name': {
+            'cn': '正统优雷卡 地下31～40层',
+            'de': 'Eureka Orthos (Ebenen 31-40)',
+            'en': 'Eureka Orthos (Floors 31-40)',
+            'fr': 'Eurêka Orthos (sous-sols 31-40)',
+            'ja': 'オルト・エウレカ B31～B40',
+            'ko': '에우레카 오르토스 B31~B40',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    1103: {
+        'contentType': 21,
+        'exVersion': 4,
+        'name': {
+            'cn': '正统优雷卡 地下41～50层',
+            'de': 'Eureka Orthos (Ebenen 41-50)',
+            'en': 'Eureka Orthos (Floors 41-50)',
+            'fr': 'Eurêka Orthos (sous-sols 41-50)',
+            'ja': 'オルト・エウレカ B41～B50',
+            'ko': '에우레카 오르토스 B41~B50',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    1104: {
+        'contentType': 21,
+        'exVersion': 4,
+        'name': {
+            'cn': '正统优雷卡 地下51～60层',
+            'de': 'Eureka Orthos (Ebenen 51-60)',
+            'en': 'Eureka Orthos (Floors 51-60)',
+            'fr': 'Eurêka Orthos (sous-sols 51-60)',
+            'ja': 'オルト・エウレカ B51～B60',
+            'ko': '에우레카 오르토스 B51~B60',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    1105: {
+        'contentType': 21,
+        'exVersion': 4,
+        'name': {
+            'cn': '正统优雷卡 地下61～70层',
+            'de': 'Eureka Orthos (Ebenen 61-70)',
+            'en': 'Eureka Orthos (Floors 61-70)',
+            'fr': 'Eurêka Orthos (sous-sols 61-70)',
+            'ja': 'オルト・エウレカ B61～B70',
+            'ko': '에우레카 오르토스 B61~B70',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    1106: {
+        'contentType': 21,
+        'exVersion': 4,
+        'name': {
+            'cn': '正统优雷卡 地下71～80层',
+            'de': 'Eureka Orthos (Ebenen 71-80)',
+            'en': 'Eureka Orthos (Floors 71-80)',
+            'fr': 'Eurêka Orthos (sous-sols 71-80)',
+            'ja': 'オルト・エウレカ B71～B80',
+            'ko': '에우레카 오르토스 B71~B80',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    1107: {
+        'contentType': 21,
+        'exVersion': 4,
+        'name': {
+            'cn': '正统优雷卡 地下81～90层',
+            'de': 'Eureka Orthos (Ebenen 81-90)',
+            'en': 'Eureka Orthos (Floors 81-90)',
+            'fr': 'Eurêka Orthos (sous-sols 81-90)',
+            'ja': 'オルト・エウレカ B81～B90',
+            'ko': '에우레카 오르토스 B81~B90',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    1108: {
+        'contentType': 21,
+        'exVersion': 4,
+        'name': {
+            'cn': '正统优雷卡 地下91～100层',
+            'de': 'Eureka Orthos (Ebenen 91-100)',
+            'en': 'Eureka Orthos (Floors 91-100)',
+            'fr': 'Eurêka Orthos (sous-sols 91-100)',
+            'ja': 'オルト・エウレカ B91～B100',
+            'ko': '에우레카 오르토스 B91~B100',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    1109: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '学识宝库迦巴勒幻想图书馆',
+            'de': 'Große Gubal-Bibliothek',
+            'en': 'The Great Gubal Library',
+            'fr': 'La Grande bibliothèque de Gubal',
+            'ja': '禁書回収 グブラ幻想図書館',
+            'ko': '구브라 환상도서관',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1110: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '血战苍穹魔科学研究所',
+            'de': 'Ätherochemisches For­schungs­labor',
+            'en': 'The Aetherochemical Research Facility',
+            'fr': 'Le Laboratoire de magismologie',
+            'ja': '蒼天聖戦 魔科学研究所',
+            'ko': '마과학 연구소',
+        },
+        'offsetX': -18,
+        'offsetY': 149,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1111: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '星海空间颠倒塔',
+            'de': 'Antiturm',
+            'en': 'The Antitower',
+            'fr': 'L\'Antitour',
+            'ja': '星海観測 逆さの塔',
+            'ko': '거꾸로 선 탑',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1112: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '天龙宫殿忆罪宫',
+            'de': 'Sohr Khai',
+            'en': 'Sohr Khai',
+            'fr': 'Sohr Khai',
+            'ja': '天竜宮殿 ソール・カイ',
+            'ko': '소르 카이',
+        },
+        'offsetX': 370,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1113: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '险峻峡谷塞尔法特尔溪谷',
+            'de': 'Xelphatol',
+            'en': 'Xelphatol',
+            'fr': 'Xelphatol',
+            'ja': '峻厳渓谷 ゼルファトル',
+            'ko': '젤파톨',
+        },
+        'offsetX': -148,
+        'offsetY': 35,
+        'sizeFactor': 200,
+        'weatherRate': 40,
+    },
+    1114: {
+        'contentType': 2,
+        'exVersion': 1,
+        'name': {
+            'cn': '坚牢铁壁巴埃萨长城',
+            'de': 'Baelsar-Wall',
+            'en': 'Baelsar\'s Wall',
+            'fr': 'La Muraille de Baelsar',
+            'ja': '巨大防壁 バエサルの長城',
+            'ko': '바일사르 장성',
+        },
+        'offsetX': 182,
+        'offsetY': 32,
+        'sizeFactor': 200,
+        'weatherRate': 40,
+    },
+    1115: {
+        'contentType': 7,
+        'exVersion': 4,
+        'name': {
+            'cn': '充满活力的父子',
+            'de': 'Väterliche Liebe',
+            'en': 'Generational Bonding',
+            'fr': 'Tel gentilhomme, tel gentilhomme',
+            'ja': 'はつらつとした親子',
+            'ko': '은밀한 음모',
+        },
+        'offsetX': -230,
+        'offsetY': -250,
+        'sizeFactor': 200,
+        'weatherRate': 28,
+    },
+    1116: {
+        'contentType': 6,
+        'exVersion': 0,
+        'name': {
+            'cn': '机关大殿',
+            'de': 'Die Mechanische Menagerie',
+            'en': 'The Clockwork Castletown',
+            'fr': 'Le Traquenard oriental',
+            'ja': '東方絡繰御殿',
+            'ko': '동방 꼭두각시 어전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1117: {
+        'contentType': 6,
+        'exVersion': 0,
+        'name': {
+            'cn': '水晶冲突（机关大殿：自定赛）',
+            'de': 'Crystalline Conflict: Die Mechanische Menagerie (Schaukampf)',
+            'en': 'Crystalline Conflict (Custom Match - The Clockwork Castletown)',
+            'fr': 'Crys. Conflict (partie perso. - Le Traquenard oriental)',
+            'ja': 'クリスタルコンフリクト(東方絡繰御殿：カスタムマッチ)',
+            'ko': '크리스탈라인 컨플릭트(동방 꼭두각시 어전: 친선 경기)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1118: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '喜悦神域欧芙洛绪涅',
+            'de': 'Euphrosyne',
+            'en': 'Euphrosyne',
+            'fr': 'Domaine divin - Euphrosyne',
+            'ja': '喜びの神域 エウプロシュネ',
+            'ko': '환희의 신역 에우프로시네',
+        },
+        'offsetX': 0,
+        'offsetY': 480,
+        'sizeFactor': 200,
+        'weatherRate': 147,
+    },
+    1120: {
+        'contentType': 7,
+        'exVersion': 4,
+        'name': {
+            'cn': '未料想过的交易',
+            'de': 'Der Wert einer Buuds',
+            'en': 'An Unforeseen Bargain',
+            'fr': 'Pour une bouchée de pain',
+            'ja': 'パンひとつと引き換えに',
+            'ko': '빵 하나와 바꾸어',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 58,
+    },
+    1121: {
+        'contentType': 4,
+        'exVersion': 4,
+        'name': {
+            'cn': '索菲娅幻巧战',
+            'de': 'Traumprüfung - Sophia',
+            'en': 'Containment Bay P1T6 (Unreal)',
+            'fr': 'Unité de contention P1P6 (irréel)',
+            'ja': '幻女神ソフィア討滅戦',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 69,
+    },
+    1122: {
+        'contentType': 28,
+        'exVersion': 4,
+        'name': {
+            'cn': '欧米茄绝境验证战',
+            'de': 'Omega (fatal)',
+            'en': 'The Omega Protocol (Ultimate)',
+            'fr': 'Le Protocole Oméga (fatal)',
+            'ja': '絶オメガ検証戦',
+            'ko': '절 오메가 검증전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 150,
+    },
+    1123: {
+        'contentType': 9,
+        'exVersion': 4,
+        'name': {
+            'cn': '厄尔庇斯育体宝殿',
+            'de': 'Gymnasion Agonon',
+            'en': 'The Shifting Gymnasion Agonon',
+            'fr': 'Elpis Gymnasion',
+            'ja': '宝物庫 エルピス・ギュムナシオン祭殿',
+            'ko': '보물고 엘피스 김나시온 제전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1126: {
+        'contentType': 2,
+        'exVersion': 4,
+        'name': {
+            'cn': '间歇灵泉哈姆岛',
+            'de': 'Ätherborn',
+            'en': 'The Aetherfont',
+            'fr': 'L\'île de Haam',
+            'ja': '星霊間欠 ハーム島',
+            'ko': '함 섬',
+        },
+        'offsetX': 368,
+        'offsetY': -277,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1136: {
+        'contentType': 4,
+        'exVersion': 4,
+        'name': {
+            'cn': '阿修罗歼灭战',
+            'de': 'Prophetie - Asura',
+            'en': 'The Gilded Araya',
+            'fr': 'Le temple doré d\'Araya',
+            'ja': 'アスラ討滅戦',
+            'ko': '아수라 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 114,
+    },
+    1137: {
+        'contentType': 30,
+        'exVersion': 4,
+        'name': {
+            'cn': '多变迷宫 六根山',
+            'de': 'Der Rokkon',
+            'en': 'Mount Rokkon',
+            'fr': 'Le mont Rokkon - Donjon à embranchements',
+            'ja': 'ヴァリアントダンジョン 六根山',
+            'ko': '변형 던전: 육근산',
+        },
+        'offsetX': -145,
+        'offsetY': -820,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1138: {
+        'contentType': 6,
+        'exVersion': 0,
+        'name': {
+            'cn': '赤土红沙',
+            'de': 'Die Roten Sande',
+            'en': 'The Red Sands',
+            'fr': 'Les Sables sanglants',
+            'ja': 'レッド・サンズ',
+            'ko': '붉은 사막',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1139: {
+        'contentType': 6,
+        'exVersion': 0,
+        'name': {
+            'cn': '水晶冲突（赤土红沙：自定赛）',
+            'de': 'Crystalline Conflict: Die Roten Sande (Schaukampf)',
+            'en': 'Crystalline Conflict (Custom Match - The Red Sands)',
+            'fr': 'Crystalline Conflict (partie personnalisée - Les Sables sanglants)',
+            'ja': 'クリスタルコンフリクト(レッド・サンズ：カスタムマッチ)',
+            'ko': '크리스탈라인 컨플릭트(붉은 사막: 친선 경기)',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1140: {
+        'contentType': 4,
+        'exVersion': 4,
+        'name': {
+            'cn': '高贝扎歼灭战',
+            'de': 'Prophetie - Golbez',
+            'en': 'The Voidcast Dais',
+            'fr': 'La Chaire de l\'Exilée',
+            'ja': 'ゴルベーザ討滅戦',
+            'ko': '골베자 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 149,
+    },
+    1141: {
+        'contentType': 4,
+        'exVersion': 4,
+        'name': {
+            'cn': '高贝扎歼殛战',
+            'de': 'Eschatos - Golbez',
+            'en': 'The Voidcast Dais (Extreme)',
+            'fr': 'La Chaire de l\'Exilée (extrême)',
+            'ja': '極ゴルベーザ討滅戦',
+            'ko': '극 골베자 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 149,
+    },
+    1142: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '漂流海域妖歌海',
+            'de': 'Sirenen-See',
+            'en': 'The Sirensong Sea',
+            'fr': 'La Mer du Chant des sirènes',
+            'ja': '漂流海域 セイレーン海',
+            'ko': '세이렌 해',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 36,
+    },
+    1143: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '试炼行路巴儿达木霸道',
+            'de': 'Bardams Probe',
+            'en': 'Bardam\'s Mettle',
+            'fr': 'La Force de Bardam',
+            'ja': '伝統試練 バルダム覇道',
+            'ko': '바르담 패도',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1144: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '解放决战多玛王城',
+            'de': 'Burg Doma',
+            'en': 'Doma Castle',
+            'fr': 'Le Château de Doma',
+            'ja': '解放決戦 ドマ城',
+            'ko': '도마 성',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1145: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '巨炮要塞帝国白山堡',
+            'de': 'Castrum Abania',
+            'en': 'Castrum Abania',
+            'fr': 'Castrum Abania',
+            'ja': '巨砲要塞 カストルム・アバニア',
+            'ko': '카스트룸 아바니아',
+        },
+        'offsetX': 72,
+        'offsetY': -186,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1146: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '鏖战红莲阿拉米格',
+            'de': 'Ala Mhigo',
+            'en': 'Ala Mhigo',
+            'fr': 'Ala Mhigo',
+            'ja': '紅蓮決戦 アラミゴ',
+            'ko': '알라미고',
+        },
+        'offsetX': 292,
+        'offsetY': -163,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1147: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '万魔殿 荒天之狱1',
+            'de': 'Anabaseios - Neunter Kreis',
+            'en': 'Anabaseios: The Ninth Circle',
+            'fr': 'Le Paradis du Pandæmonium - Métempsycose',
+            'ja': '万魔殿パンデモニウム：天獄編1',
+            'ko': '마의 전당 판데모니움: 천옥편 1',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1148: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '零式万魔殿 荒天之狱1',
+            'de': 'Anabaseios - Neunter Kreis (episch)',
+            'en': 'Anabaseios: The Ninth Circle (Savage)',
+            'fr': 'Le Paradis du Pandæmonium - Métempsycose (sadique)',
+            'ja': '万魔殿パンデモニウム零式：天獄編1',
+            'ko': '마의 전당 판데모니움: 천옥편(영웅) 1',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1149: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '万魔殿 荒天之狱2',
+            'de': 'Anabaseios - Zehnter Kreis',
+            'en': 'Anabaseios: The Tenth Circle',
+            'fr': 'Le Paradis du Pandæmonium - Monochrome',
+            'ja': '万魔殿パンデモニウム：天獄編2',
+            'ko': '마의 전당 판데모니움: 천옥편 2',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1150: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '零式万魔殿 荒天之狱2',
+            'de': 'Anabaseios - Zehnter Kreis (episch)',
+            'en': 'Anabaseios: The Tenth Circle (Savage)',
+            'fr': 'Le Paradis du Pandæmonium - Monochrome (sadique)',
+            'ja': '万魔殿パンデモニウム零式：天獄編2',
+            'ko': '마의 전당 판데모니움: 천옥편(영웅) 2',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1151: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '万魔殿 荒天之狱3',
+            'de': 'Anabaseios - Elfter Kreis',
+            'en': 'Anabaseios: The Eleventh Circle',
+            'fr': 'Le Paradis du Pandæmonium - Tribunal',
+            'ja': '万魔殿パンデモニウム：天獄編3',
+            'ko': '마의 전당 판데모니움: 천옥편 3',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1152: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '零式万魔殿 荒天之狱3',
+            'de': 'Anabaseios - Elfter Kreis (episch)',
+            'en': 'Anabaseios: The Eleventh Circle (Savage)',
+            'fr': 'Le Paradis du Pandæmonium - Tribunal (sadique)',
+            'ja': '万魔殿パンデモニウム零式：天獄編3',
+            'ko': '마의 전당 판데모니움: 천옥편(영웅) 3',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1153: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '万魔殿 荒天之狱4',
+            'de': 'Anabaseios - Zwölfter Kreis',
+            'en': 'Anabaseios: The Twelfth Circle',
+            'fr': 'Le Paradis du Pandæmonium - Apothéose',
+            'ja': '万魔殿パンデモニウム：天獄編4',
+            'ko': '마의 전당 판데모니움: 천옥편 4',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1154: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '零式万魔殿 荒天之狱4',
+            'de': 'Anabaseios - Zwölfter Kreis (episch)',
+            'en': 'Anabaseios: The Twelfth Circle (Savage)',
+            'fr': 'Le Paradis du Pandæmonium - Apothéose (sadique)',
+            'ja': '万魔殿パンデモニウム零式：天獄編4',
+            'ko': '마의 전당 판데모니움: 천옥편(영웅) 4',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 145,
+    },
+    1155: {
+        'contentType': 30,
+        'exVersion': 4,
+        'name': {
+            'cn': '异闻迷宫 异闻六根山',
+            'de': 'Der kuriose Rokkon',
+            'en': 'Another Mount Rokkon',
+            'fr': 'Le mont Rokkon annexe - Donjon alternatif',
+            'ja': 'アナザーダンジョン 異聞六根山',
+            'ko': '파생 던전: 번외 육근산',
+        },
+        'offsetX': 0,
+        'offsetY': 40,
+        'sizeFactor': 200,
+        'weatherRate': 74,
+    },
+    1156: {
+        'contentType': 30,
+        'exVersion': 4,
+        'name': {
+            'cn': '异闻迷宫 零式异闻六根山',
+            'de': 'Der kuriose Rokkon (episch)',
+            'en': 'Another Mount Rokkon (Savage)',
+            'fr': 'Le mont Rokkon annexe - Donjon alternatif (sadique)',
+            'ja': 'アナザーダンジョン 異聞六根山 零式',
+            'ko': '파생 던전: 번외 육근산(영웅)',
+        },
+        'offsetX': 0,
+        'offsetY': 40,
+        'sizeFactor': 200,
+        'weatherRate': 74,
+    },
+    1157: {
+        'contentType': 4,
+        'exVersion': 4,
+        'name': {
+            'cn': '祖尔宛幻巧战',
+            'de': 'Traumprüfung - Zurvan',
+            'en': 'Containment Bay Z1T9 (Unreal)',
+            'fr': 'Unité de contention Z1P9 (irréel)',
+            'ja': '幻鬼神ズルワーン討滅戦',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 75,
+    },
+    1164: {
+        'contentType': 2,
+        'exVersion': 4,
+        'name': {
+            'cn': '异界深渊月面地下溪谷',
+            'de': 'Monduntergrund',
+            'en': 'The Lunar Subterrane',
+            'fr': 'Le Souterrain lunaire',
+            'ja': '深淵潜行 月の地下渓谷',
+            'ko': '달의 지하계곡',
+        },
+        'offsetX': 440,
+        'offsetY': 130,
+        'sizeFactor': 200,
+        'weatherRate': 149,
+    },
+    1165: {
+        'contentType': 19,
+        'exVersion': 0,
+        'name': {
+            'cn': '金碟巨豆中心',
+            'de': 'Stolperville',
+            'en': 'Blunderville',
+            'fr': 'Blunderville',
+            'ja': 'ブランダーヴィル',
+            'ko': '블런더빌',
+        },
+        'offsetX': -200,
+        'offsetY': -133,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1166: {
+        'contentType': 7,
+        'exVersion': 0,
+        'name': {
+            'cn': '纵使前路狱火焰毒',
+            'de': 'Der Pfad der Flammen',
+            'en': 'Memory of Embers',
+            'fr': 'Flammes primordiales',
+            'ja': '炎影の旅路',
+            'ko': '염영의 여로',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 155,
+    },
+    1167: {
+        'contentType': 2,
+        'exVersion': 5,
+        'name': {
+            'cn': '丛林竞流生息河岸',
+            'de': 'Ihuykatumu',
+            'en': 'Ihuykatumu',
+            'fr': 'La Remontée de l\'Ihuykatumu',
+            'ja': '濁流遡上 イフイカ・トゥム',
+        },
+        'offsetX': -44,
+        'offsetY': -88,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1168: {
+        'contentType': 4,
+        'exVersion': 4,
+        'name': {
+            'cn': '泽罗姆斯歼灭战',
+            'de': 'Prophetie - Zeromus',
+            'en': 'The Abyssal Fracture',
+            'fr': 'La Fracture abyssale',
+            'ja': 'ゼロムス討滅戦',
+            'ko': '제로무스 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 149,
+    },
+    1169: {
+        'contentType': 4,
+        'exVersion': 4,
+        'name': {
+            'cn': '泽罗姆斯歼殛战',
+            'de': 'Eschatos - Zeromus',
+            'en': 'The Abyssal Fracture (Extreme)',
+            'fr': 'La Fracture abyssale (extrême)',
+            'ja': '極ゼロムス討滅戦',
+            'ko': '극 제로무스 토벌전',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 149,
+    },
+    1172: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '沉没神殿斯卡拉遗迹',
+            'de': 'Die versunkene Stadt Skalla',
+            'en': 'The Drowned City of Skalla',
+            'fr': 'La Cité engloutie de Skalla',
+            'ja': '水没遺構 スカラ',
+            'ko': '스칼라 유적',
+        },
+        'offsetX': 185,
+        'offsetY': 5,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1173: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '死亡大地终末焦土',
+            'de': 'Das Kargland',
+            'en': 'The Burn',
+            'fr': 'L\'Escarre',
+            'ja': '永久焦土 ザ・バーン',
+            'ko': '영구 초토지대',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 97,
+    },
+    1174: {
+        'contentType': 2,
+        'exVersion': 2,
+        'name': {
+            'cn': '国境防线基姆利特暗区',
+            'de': 'Die Ghimlyt-Finsternis',
+            'en': 'The Ghimlyt Dark',
+            'fr': 'Les Ténèbres de Ghimlyt',
+            'ja': '境界戦線 ギムリトダーク',
+            'ko': '김리트 황야',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1175: {
+        'contentType': 4,
+        'exVersion': 4,
+        'name': {
+            'cn': '圆桌骑士幻巧战',
+            'de': 'Traumprüfung - Singularitäts-Reaktor',
+            'en': 'The Singularity Reactor (Unreal)',
+            'fr': 'Le Réacteur de singularité (irréel)',
+            'ja': '幻ナイツ・オブ・ラウンド討滅戦',
+            'ko': '환 나이츠 오브 라운드 토벌전',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 400,
+        'weatherRate': 56,
+    },
+    1176: {
+        'contentType': 30,
+        'exVersion': 4,
+        'name': {
+            'cn': '多变迷宫 阿罗阿罗岛',
+            'de': 'Aloalo',
+            'en': 'Aloalo Island',
+            'fr': 'L\'île d\'Aloalo - Donjon à embranchements',
+            'ja': 'ヴァリアントダンジョン アロアロ島',
+            'ko': '변형 던전: 알로알로 섬',
+        },
+        'offsetX': 0,
+        'offsetY': -785,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1177: {
+        'contentType': 7,
+        'exVersion': 4,
+        'name': {
+            'cn': '那双眼中映出的是',
+            'de': 'Die Jagd ist eröffnet',
+            'en': 'The Game Is Afoot',
+            'fr': 'Par-delà l\'horizon',
+            'ja': 'その瞳が見据えるもの',
+            'ko': '그 눈동자가 바라보는 것',
+        },
+        'offsetX': 368,
+        'offsetY': -277,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1178: {
+        'contentType': 5,
+        'exVersion': 4,
+        'name': {
+            'cn': '荣华神域塔利亚',
+            'de': 'Thaleia',
+            'en': 'Thaleia',
+            'fr': 'Domaine divin - Thalie',
+            'ja': '華めく神域 タレイア',
+            'ko': '번영의 신역 탈레이아',
+        },
+        'offsetX': 800,
+        'offsetY': 783,
+        'sizeFactor': 200,
+        'weatherRate': 147,
+    },
+    1179: {
+        'contentType': 30,
+        'exVersion': 4,
+        'name': {
+            'cn': '异闻迷宫 异闻阿罗阿罗岛',
+            'de': 'Kurioses Aloalo',
+            'en': 'Another Aloalo Island',
+            'fr': 'L\'île d\'Aloalo annexe - Donjon alternatif',
+            'ja': 'アナザーダンジョン 異聞アロアロ島',
+            'ko': '파생 던전: 번외 알로알로 섬',
+        },
+        'offsetX': 0,
+        'offsetY': -60,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1180: {
+        'contentType': 30,
+        'exVersion': 4,
+        'name': {
+            'cn': '异闻迷宫 零式异闻阿罗阿罗岛',
+            'de': 'Kurioses Aloalo (episch)',
+            'en': 'Another Aloalo Island (Savage)',
+            'fr': 'L\'île d\'Aloalo annexe - Donjon alternatif (sadique)',
+            'ja': 'アナザーダンジョン 異聞アロアロ島 零式',
+            'ko': '파생 던전: 번외 알로알로 섬(영웅)',
+        },
+        'offsetX': 0,
+        'offsetY': -60,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1185: {
+        'exVersion': 5,
+        'name': {
+            'cn': '图莱尤拉',
+            'de': 'Tuliyollal',
+            'en': 'Tuliyollal',
+            'fr': 'Tuliyollal',
+            'ja': 'トライヨラ',
+        },
+        'offsetX': 50,
+        'offsetY': -70,
+        'sizeFactor': 180,
+        'weatherRate': 159,
+    },
+    1186: {
+        'exVersion': 5,
+        'name': {
+            'cn': '九号解决方案',
+            'de': 'Lösung Neun',
+            'en': 'Solution Nine',
+            'fr': 'Solution Neuf',
+            'ja': 'ソリューション・ナイン',
+        },
+        'offsetX': 0,
+        'offsetY': 90,
+        'sizeFactor': 180,
+        'weatherRate': 163,
+    },
+    1187: {
+        'exVersion': 5,
+        'name': {
+            'cn': '奥阔帕恰山',
+            'de': 'Urqopacha',
+            'en': 'Urqopacha',
+            'fr': 'Urqopacha',
+            'ja': 'オルコ・パチャ',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 160,
+    },
+    1188: {
+        'exVersion': 5,
+        'name': {
+            'cn': '克扎玛乌卡湿地',
+            'de': 'Kozama\'uka',
+            'en': 'Kozama\'uka',
+            'fr': 'Kozama\'uka',
+            'ja': 'コザマル・カ',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 161,
+    },
+    1189: {
+        'exVersion': 5,
+        'name': {
+            'cn': '亚克特尔树海',
+            'de': 'Yak T\'el',
+            'en': 'Yak T\'el',
+            'fr': 'Yak T\'el',
+            'ja': 'ヤクテル樹海',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 162,
+    },
+    1190: {
+        'exVersion': 5,
+        'name': {
+            'cn': '夏劳尼荒野',
+            'de': 'Shaaloani',
+            'en': 'Shaaloani',
+            'fr': 'Shaaloani',
+            'ja': 'シャーローニ荒野',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 164,
+    },
+    1191: {
+        'exVersion': 5,
+        'name': {
+            'cn': '遗产之地',
+            'de': 'Ewiges Erbe',
+            'en': 'Heritage Found',
+            'fr': 'L\'Hoirie recouvrée',
+            'ja': 'ヘリテージファウンド',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 165,
+    },
+    1192: {
+        'exVersion': 5,
+        'name': {
+            'cn': '活着的记忆',
+            'de': 'Lebende Erinnerung',
+            'en': 'Living Memory',
+            'fr': 'La Mémoire vivante',
+            'ja': 'リビング・メモリー',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 166,
+    },
+    1193: {
+        'contentType': 2,
+        'exVersion': 5,
+        'name': {
+            'cn': '通天绝壁沃刻佐莫山',
+            'de': 'Worqor Zormor',
+            'en': 'Worqor Zormor',
+            'fr': 'Worqor Zormor',
+            'ja': '山嶺登頂 ウォーコー・ゾーモー',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1194: {
+        'contentType': 2,
+        'exVersion': 5,
+        'name': {
+            'cn': '神圣禁地深空天坑',
+            'de': 'Himmelstiefer Cenote',
+            'en': 'The Skydeep Cenote',
+            'fr': 'Le cénote des Cieux infinis',
+            'ja': '遺産踏査 天深きセノーテ',
+        },
+        'offsetX': 0,
+        'offsetY': 144,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1195: {
+        'contentType': 4,
+        'exVersion': 5,
+        'name': {
+            'cn': '艳翼蛇鸟歼灭战',
+            'de': 'Zel Tajaal - Valigarmanda',
+            'en': 'Worqor Lar Dor',
+            'fr': 'Worqor Lar Dor',
+            'ja': 'ヴァリガルマンダ討滅戦',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1196: {
+        'contentType': 4,
+        'exVersion': 5,
+        'name': {
+            'cn': '艳翼蛇鸟歼殛战',
+            'de': 'Gok Tajaal - Valigarmanda',
+            'en': 'Worqor Lar Dor (Extreme)',
+            'fr': 'Worqor Lar Dor (extrême)',
+            'ja': '極ヴァリガルマンダ討滅戦',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1198: {
+        'contentType': 2,
+        'exVersion': 5,
+        'name': {
+            'cn': '前哨基地先锋营',
+            'de': 'Der Außenposten',
+            'en': 'Vanguard',
+            'fr': 'L\'Avant-garde',
+            'ja': '外征前哨 ヴァンガード',
+        },
+        'offsetX': 0,
+        'offsetY': -20,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1199: {
+        'contentType': 2,
+        'exVersion': 5,
+        'name': {
+            'cn': '忆中金曦亚历山德里亚',
+            'de': 'Alexandria',
+            'en': 'Alexandria',
+            'fr': 'Alexandrie',
+            'ja': '記憶幻想 アレクサンドリア',
+        },
+        'offsetX': 29,
+        'offsetY': -95,
+        'sizeFactor': 200,
+        'weatherRate': 157,
+    },
+    1200: {
+        'contentType': 4,
+        'exVersion': 5,
+        'name': {
+            'cn': '佐拉加歼灭战',
+            'de': 'Zel Tajaal - Zoraal Ja',
+            'en': 'Everkeep',
+            'fr': 'Le Pinacle de l\'Éternité',
+            'ja': 'ゾラージャ討滅戦',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 158,
+    },
+    1201: {
+        'contentType': 4,
+        'exVersion': 5,
+        'name': {
+            'cn': '佐拉加歼殛战',
+            'de': 'Gok Tajaal - Zoraal Ja',
+            'en': 'Everkeep (Extreme)',
+            'fr': 'Le Pinacle de l\'Éternité (extrême)',
+            'ja': '極ゾラージャ討滅戦',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 158,
+    },
+    1202: {
+        'contentType': 4,
+        'exVersion': 5,
+        'name': {
+            'cn': '永恒女王歼灭战',
+            'de': 'Zel Tajaal - Ewige Königin',
+            'en': 'The Interphos',
+            'fr': 'Interphos',
+            'ja': 'エターナルクイーン討滅戦',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 157,
+    },
+    1203: {
+        'contentType': 2,
+        'exVersion': 5,
+        'name': {
+            'cn': '荒野秘境仙人刺谷',
+            'de': 'Kaktorsenke',
+            'en': 'Tender Valley',
+            'fr': 'La Vallée des Pampas',
+            'ja': '荒野秘境 サボテンダーバレー',
+        },
+        'offsetX': 130,
+        'offsetY': -348,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1204: {
+        'contentType': 2,
+        'exVersion': 5,
+        'name': {
+            'cn': '噩梦乐园迷途鬼区',
+            'de': 'Mahrlingen-Promenade',
+            'en': 'The Strayborough Deadwalk',
+            'fr': 'Le Parc-aux-Errants',
+            'ja': '悪夢遊園 ストレイバロー',
+        },
+        'offsetX': 0,
+        'offsetY': -150,
+        'sizeFactor': 200,
+        'weatherRate': 150,
+    },
+    1208: {
+        'contentType': 2,
+        'exVersion': 5,
+        'name': {
+            'cn': '魂魄工厂创生设施',
+            'de': 'Origenik',
+            'en': 'Origenics',
+            'fr': 'L\'Origenèse',
+            'ja': '魂魄工廠 オリジェニクス',
+        },
+        'offsetX': -30,
+        'offsetY': -63,
+        'sizeFactor': 200,
+        'weatherRate': 156,
+    },
+    1209: {
+        'contentType': 9,
+        'exVersion': 5,
+        'name': {
+            'de': 'Cenote Ja Ja Gural',
+            'en': 'Cenote Ja Ja Gural',
+            'fr': 'Cénote Ja Ja Gural',
+            'ja': '宝物庫 セノーテ・ジャジャグラル',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    1210: {
+        'contentType': 7,
+        'exVersion': 5,
+        'name': {
+            'cn': '一位国王，一位父亲',
+            'de': 'Des Vaters viele Sorgen',
+            'en': 'A Father First',
+            'fr': 'L\'Aurarque et le père',
+            'ja': '王として、父として',
+        },
+        'offsetX': 0,
+        'offsetY': -19,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1211: {
+        'contentType': 7,
+        'exVersion': 5,
+        'name': {
+            'cn': '为守护笑容而战',
+            'de': 'Mit scharfer Axt und leichtem Lächeln',
+            'en': 'Taking a Stand',
+            'fr': 'Préserver la paix',
+            'ja': '笑顔を護るための戦い',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    1212: {
+        'contentType': 7,
+        'exVersion': 5,
+        'name': {
+            'cn': '友之试炼',
+            'de': 'Von Schuld und Sühne',
+            'en': 'The Feat of the Brotherhood',
+            'fr': 'L\'épreuve de l\'amitié',
+            'ja': '友の試練',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    1213: {
+        'contentType': 7,
+        'exVersion': 5,
+        'name': {
+            'cn': '守护者还是毁灭者',
+            'de': 'Schützer des Volkes, Schlächter des Volkes',
+            'en': 'The Protector and the Destroyer',
+            'fr': 'Protecteurs et destructeurs',
+            'ja': '護る者、壊す者',
+        },
+        'offsetX': 0,
+        'offsetY': 90,
+        'sizeFactor': 180,
+        'weatherRate': 0,
+    },
+    1214: {
+        'contentType': 7,
+        'exVersion': 5,
+        'name': {
+            'cn': '不论酣睡还是无眠',
+            'de': 'Neue Bande der Freund­schaft',
+            'en': 'Dreams of a New Day',
+            'fr': 'Rêves éveillés',
+            'ja': '寝ても覚めても',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 95,
+        'weatherRate': 0,
+    },
+    1215: {
+        'contentType': 7,
+        'exVersion': 5,
+        'name': {
+            'cn': '剧毒与康复的巅峰对决',
+            'de': 'Heilkunst gegen Hexerei',
+            'en': 'An Antidote for Anarchy',
+            'fr': 'Les deux faces du scorpion',
+            'ja': '毒と癒やしの頂上決戦',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1216: {
+        'contentType': 7,
+        'exVersion': 5,
+        'name': {
+            'cn': '无可指摘的猎人',
+            'de': 'Krönender Abschuss',
+            'en': 'A Hunter True',
+            'fr': 'Chasseuse à lunettes... chasseuse honnête',
+            'ja': '一端の狩人',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1217: {
+        'contentType': 7,
+        'exVersion': 5,
+        'name': {
+            'cn': '打倒！沙尔托菲特盗贼团',
+            'de': 'Der mächtigste Schild',
+            'en': 'The Mightiest Shield',
+            'fr': 'Mauvais cru pour Chalteaufite',
+            'ja': '打倒！ シャルトフィット盗賊団',
+        },
+        'offsetX': -250,
+        'offsetY': 128,
+        'sizeFactor': 200,
+        'weatherRate': 36,
+    },
+    1218: {
+        'contentType': 7,
+        'exVersion': 5,
+        'name': {
+            'cn': '祭器创造的假象',
+            'de': 'Ein Mythos in Trümmern',
+            'en': 'Heroes and Pretenders',
+            'fr': 'Le château de cartes s\'effondre',
+            'ja': '祭器と作られた虚像',
+        },
+        'offsetX': -693,
+        'offsetY': -46,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1225: {
+        'contentType': 5,
+        'exVersion': 5,
+        'name': {
+            'cn': '阿卡狄亚登天斗技场 轻量级1',
+            'de': 'Arkadion - Halbschwergewicht R1',
+            'en': 'AAC Light-heavyweight M1',
+            'fr': 'Poids mi-lourds CCA - match 1',
+            'ja': '至天の座アルカディア：ライトヘビー級1',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1226: {
+        'contentType': 5,
+        'exVersion': 5,
+        'name': {
+            'de': 'Arkadion - Halbschwergewicht R1 (episch)',
+            'en': 'AAC Light-heavyweight M1 (Savage)',
+            'fr': 'Poids mi-lourds CCA - match 1 (sadique)',
+            'ja': '至天の座アルカディア零式：ライトヘビー級1',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1227: {
+        'contentType': 5,
+        'exVersion': 5,
+        'name': {
+            'cn': '阿卡狄亚登天斗技场 轻量级2',
+            'de': 'Arkadion - Halbschwergewicht R2',
+            'en': 'AAC Light-heavyweight M2',
+            'fr': 'Poids mi-lourds CCA - match 2',
+            'ja': '至天の座アルカディア：ライトヘビー級2',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1228: {
+        'contentType': 5,
+        'exVersion': 5,
+        'name': {
+            'de': 'Arkadion - Halbschwergewicht R2 (episch)',
+            'en': 'AAC Light-heavyweight M2 (Savage)',
+            'fr': 'Poids mi-lourds CCA - match 2 (sadique)',
+            'ja': '至天の座アルカディア零式：ライトヘビー級2',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1229: {
+        'contentType': 5,
+        'exVersion': 5,
+        'name': {
+            'cn': '阿卡狄亚登天斗技场 轻量级3',
+            'de': 'Arkadion - Halbschwergewicht R3',
+            'en': 'AAC Light-heavyweight M3',
+            'fr': 'Poids mi-lourds CCA - match 3',
+            'ja': '至天の座アルカディア：ライトヘビー級3',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1230: {
+        'contentType': 5,
+        'exVersion': 5,
+        'name': {
+            'de': 'Arkadion - Halbschwergewicht R3 (episch)',
+            'en': 'AAC Light-heavyweight M3 (Savage)',
+            'fr': 'Poids mi-lourds CCA - match 3 (sadique)',
+            'ja': '至天の座アルカディア零式：ライトヘビー級3',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1231: {
+        'contentType': 5,
+        'exVersion': 5,
+        'name': {
+            'cn': '阿卡狄亚登天斗技场 轻量级4',
+            'de': 'Arkadion - Halbschwergewicht R4',
+            'en': 'AAC Light-heavyweight M4',
+            'fr': 'Poids mi-lourds CCA - match 4',
+            'ja': '至天の座アルカディア：ライトヘビー級4',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1232: {
+        'contentType': 5,
+        'exVersion': 5,
+        'name': {
+            'de': 'Arkadion - Halbschwergewicht R4 (episch)',
+            'en': 'AAC Light-heavyweight M4 (Savage)',
+            'fr': 'Poids mi-lourds CCA - match 4 (sadique)',
+            'ja': '至天の座アルカディア零式：ライトヘビー級4',
+        },
+        'offsetX': -100,
+        'offsetY': -100,
+        'sizeFactor': 400,
+        'weatherRate': 0,
+    },
+    1233: {
+        'contentType': 7,
+        'exVersion': 5,
+        'name': {
+            'cn': '旅行画家的森都旅程',
+            'de': 'Nächtliche Ruhestörung',
+            'en': 'Mind over Manor',
+            'fr': 'Tapage nocturne',
+            'ja': '旅する画家は森都を征く',
+        },
+        'offsetX': 32,
+        'offsetY': 0,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1234: {
+        'contentType': 7,
+        'exVersion': 5,
+        'name': {
+            'cn': '旅行画家的幻想旅程',
+            'de': 'Begegnungen und Abschiede',
+            'en': 'Somewhere Only She Knows',
+            'fr': 'L\'œuvre de la maturité',
+            'ja': '旅する画家は幻想を征く',
+        },
+        'offsetX': 0,
+        'offsetY': 286,
+        'sizeFactor': 200,
+        'weatherRate': 0,
+    },
+    1235: {
+        'contentType': 7,
+        'exVersion': 5,
+        'name': {
+            'cn': '蝰蛇剑士的使命',
+            'de': 'Einführung in die Viperologie',
+            'en': 'Fangs of the Viper',
+            'fr': 'Le devoir des rôdeurs vipère',
+            'ja': 'ヴァイパーの使命',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+    1236: {
+        'contentType': 7,
+        'exVersion': 5,
+        'name': {
+            'cn': '图拉尔威爪猎手',
+            'de': 'Der Wille der Natur',
+            'en': 'Vengeance of the Viper',
+            'fr': 'Le fléau des Tural vidraal',
+            'ja': 'トラルヴィドラールを狩る者',
+        },
+        'offsetX': 0,
+        'offsetY': 0,
+        'sizeFactor': 100,
+        'weatherRate': 0,
+    },
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (data);
+//# sourceMappingURL=zone_info.js.map
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+
+// EXTERNAL MODULE: ./node_modules/cactbot/resources/user_config.js
+var user_config = __webpack_require__(380);
+;// CONCATENATED MODULE: ./src/buff_options.ts
+
+const defaultUserConfig = {
+  Scale: 125,
+  BigBuffNoticeTTSOn: true,
+  DotNoticeLessThanSecond: 7,
+  DotNoticeTTSOn: true,
+  DotNoticeTTS: "续DoT",
+  // 提醒语音
+
+  TTSGoringBlade: false,
+  // 骑士-沥血剑
+  TTSSurgingTempest: true,
+  // 战士-红斩
+  TTSDia: true,
+  // 白魔-天辉
+  TTSBiolysis: true,
+  // 学者-蛊毒法
+  TTSCombustIII: true,
+  // 占星-焚灼
+  TTSEukrasianDosisIii: true,
+  // 贤者-均衡注药
+  TTSDemolish: false,
+  // 武僧-破碎拳
+  TTSChaoticSpring: false,
+  // 龙骑-樱花
+  TTSHiganbana: true,
+  // 武士-彼岸花
+  TTSDeathsDesign: true,
+  // 镰刀-死亡之影
+  TTSStormbite: true,
+  // 诗人-狂风蚀箭
+  TTSThunderIii: true // 黑魔-暴雷
+};
+const defaultJobsNonConfigOptions = {
+  JustBuffTracker: false,
+  LowerOpacityOutOfCombat: true,
+  OpacityOutOfCombat: 0.5,
+  PlayCountdownSound: true,
+  CountdownSoundVolume: 0.3,
+  HideWellFedAboveSeconds: 15 * 60,
+  ShowMPTickerOutOfCombat: false,
+  MidHealthThresholdPercent: 0.8,
+  LowHealthThresholdPercent: 0.2,
+  BigBuffShowCooldownSeconds: 20,
+  Scale: 125,
+  // 缩放
+  PhysicalFontSize: 20,
+  MagicFontSize: 20,
+  BigBuffIconWidth: 32,
+  BigBuffIconHeight: 20,
+  BigBuffBarHeight: 20,
+  BigBuffTextHeight: 0,
+  BigBuffBorderSize: 0,
+  BigBuffBarMaxWidth: 250,
+  // 30秒团辅进度条最大宽度
+  BigBuffNoticeTTSOn: true,
+  DotIconWidth: 32,
+  DotIconHeight: 25,
+  DotBarHeight: 5,
+  DotBorderSize: 1,
+  DotNoticeLessThanSecond: 7,
+  // <0 取消提醒, >0 剩余n秒时提醒
+  DotNoticeTTSOn: true,
+  DotNoticeTTS: "续DoT",
+  // 提醒语音
+
+  GpAlarmPoint: 0,
+  GpAlarmSoundVolume: 0.8,
+  NotifyExpiredProcsInCombat: 5,
+  NotifyExpiredProcsInCombatSound: 'threshold',
+  CompactView: false,
+  TTSGoringBlade: false,
+  // 骑士-沥血剑
+  TTSSurgingTempest: true,
+  // 战士-红斩
+  TTSDia: true,
+  // 白魔-天辉
+  TTSBiolysis: true,
+  // 学者-蛊毒法
+  TTSCombustIII: true,
+  // 占星-焚灼
+  TTSEukrasianDosisIii: true,
+  // 贤者-均衡注药
+  TTSDemolish: false,
+  // 武僧-破碎拳
+  TTSChaoticSpring: false,
+  // 龙骑-樱花
+  TTSHiganbana: true,
+  // 武士-彼岸花
+  TTSDeathsDesign: true,
+  // 镰刀-死亡之影
+  TTSStormbite: true,
+  // 诗人-狂风蚀箭
+  TTSThunderIii: true // 黑魔-暴雷
+};
+// See user/jobs-example.js for documentation.
+const defaultJobsConfigOptions = {
+  ShowHPNumber: ['PLD', 'WAR', 'DRK', 'GNB', 'WHM', 'SCH', 'AST', 'SGE', 'BLU'],
+  ShowMPNumber: ['PLD', 'DRK', 'WHM', 'SCH', 'AST', 'SGE', 'BLM', 'BLU'],
+  ShowMPTicker: ['BLM'],
+  PerBuffOptions: {
+    // This is noisy since it's more or less permanently on you.
+    // Players are unlikely to make different decisions based on this.
+    standardFinish: {
+      hide: true
+    }
+  },
+  FarThresholdOffence: 24,
+  // cannot cast more spell before Requiescat combo.
+  PldMediumMPThreshold: 5399,
+  // cannot complete Requiescat combo.
+  PldLowMPThreshold: 3599,
+  // Only one MP consuming abilities cast allowed.
+  DrkMediumMPThreshold: 5999,
+  // cannot cast MP consuming abilities.
+  DrkLowMPThreshold: 2999,
+  // One more fire IV and then despair.
+  BlmMediumMPThreshold: 3999,
+  // Should cast despair.
+  BlmLowMPThreshold: 2399
+};
+const Options = {
+  ...user_config/* default */.A.getDefaultBaseOptions(),
+  ...defaultJobsNonConfigOptions,
+  ...defaultJobsConfigOptions
+};
+/* harmony default export */ const buff_options = ((/* unused pure expression or super */ null && (Options)));
+// EXTERNAL MODULE: ./node_modules/cactbot/resources/netregexes.js
+var netregexes = __webpack_require__(702);
+// EXTERNAL MODULE: ./node_modules/cactbot/resources/not_reached.js
+var not_reached = __webpack_require__(174);
+;// CONCATENATED MODULE: ./node_modules/cactbot/resources/timerbar.js
+
+class timerbar_TimerBar extends HTMLElement {
+    rootElement;
+    foregroundElement;
+    backgroundElement;
+    leftTextElement;
+    centerTextElement;
+    rightTextElement;
+    _duration;
+    _start;
+    _width;
+    _height;
+    _bg;
+    _fg;
+    _towardRight;
+    _fill;
+    _leftText;
+    _centerText;
+    _rightText;
+    _hideAfter;
+    _loop;
+    _connected;
+    _hideTimer;
+    static get observedAttributes() {
+        return [
+            'duration',
+            'value',
+            'elapsed',
+            'hideafter',
+            'lefttext',
+            'centertext',
+            'righttext',
+            'width',
+            'height',
+            'bg',
+            'fg',
+            'stylefill',
+            'toward',
+            'loop',
+        ];
+    }
+    /** create an instance of TimerBar with attributes */
+    static create(o) {
+        if (!window.customElements.get('timer-bar'))
+            window.customElements.define('timer-bar', timerbar_TimerBar);
+        const element = document.createElement('timer-bar');
+        if (!o)
+            return element;
+        if (typeof o.duration === 'number')
+            element.duration = o.duration;
+        if (typeof o.value === 'number')
+            element.value = o.value;
+        if (typeof o.elapsed === 'number')
+            element.elapsed = o.elapsed;
+        if (typeof o.hideafter === 'number')
+            element.hideafter = o.hideafter;
+        if (typeof o.lefttext === 'string')
+            element.lefttext = o.lefttext;
+        if (typeof o.centertext === 'string')
+            element.centertext = o.centertext;
+        if (typeof o.righttext === 'string')
+            element.righttext = o.righttext;
+        if (typeof o.width === 'string')
+            element.width = o.width;
+        if (typeof o.height === 'string')
+            element.height = o.height;
+        if (typeof o.bg === 'string')
+            element.bg = o.bg;
+        if (typeof o.fg === 'string')
+            element.fg = o.fg;
+        if (typeof o.stylefill === 'string')
+            element.stylefill = o.stylefill;
+        if (typeof o.toward === 'string')
+            element.toward = o.toward;
+        if (typeof o.loop === 'boolean')
+            element.loop = o.loop;
+        return element;
+    }
+    // Background color.
+    set bg(c) {
+        if (c === null)
+            this.removeAttribute('bg');
+        else
+            this.setAttribute('bg', c);
+    }
+    get bg() {
+        return this.getAttribute('bg');
+    }
+    // Foreground color.
+    set fg(c) {
+        if (c === null)
+            this.removeAttribute('fg');
+        else
+            this.setAttribute('fg', c);
+    }
+    get fg() {
+        return this.getAttribute('fg');
+    }
+    // The width of the bar.
+    set width(w) {
+        if (w === null)
+            this.removeAttribute('width');
+        else
+            this.setAttribute('width', w);
+    }
+    get width() {
+        return this.getAttribute('width');
+    }
+    // The height of the bar.
+    set height(w) {
+        if (w === null)
+            this.removeAttribute('height');
+        else
+            this.setAttribute('height', w);
+    }
+    get height() {
+        return this.getAttribute('height');
+    }
+    // The total length of time to count down.
+    set duration(s) {
+        if (s === null)
+            this.removeAttribute('duration');
+        else
+            this.setAttribute('duration', s.toString());
+    }
+    get duration() {
+        const s = this.getAttribute('duration');
+        if (s === null)
+            return null;
+        return parseFloat(s);
+    }
+    // The length remaining in the count down.
+    set value(s) {
+        this.setAttribute('value', s.toString());
+    }
+    get value() {
+        if (!this._start)
+            return this._duration;
+        const elapsedMs = Date.now() - this._start;
+        return Math.max(0, this._duration - elapsedMs / 1000);
+    }
+    // The elapsed time.
+    set elapsed(s) {
+        this.setAttribute('elapsed', s.toString());
+    }
+    get elapsed() {
+        if (!this._start)
+            return 0;
+        return (Date.now() - this._start) / 1000;
+    }
+    // If "right" then animates left-to-right (the default). If "left"
+    // then animates right-to-left.
+    set toward(t) {
+        if (t === null)
+            this.removeAttribute('toward');
+        else
+            this.setAttribute('toward', t);
+    }
+    get toward() {
+        return this.getAttribute('toward');
+    }
+    // If "fill" then the progress goes empty-to-full, if "empty" then the
+    // progress bar starts full and goes to empty.
+    set stylefill(s) {
+        if (s === null)
+            this.removeAttribute('stylefill');
+        else
+            this.setAttribute('stylefill', s);
+    }
+    get stylefill() {
+        return this.getAttribute('stylefill');
+    }
+    // When the bar reaches 0, it is hidden after this many seconds. If null
+    // then it is not hidden.
+    set hideafter(h) {
+        if (h === null)
+            this.removeAttribute('hideafter');
+        else
+            this.setAttribute('hideafter', h.toString());
+    }
+    get hideafter() {
+        const h = this.getAttribute('hideafter');
+        if (h === null)
+            return null;
+        return parseInt(h);
+    }
+    // Chooses what should be shown in the text field in each area of
+    // the bar. Can be one of:
+    // empty - nothing is shown.
+    // "remain" - shows the remaining time.
+    // "duration" - shows the remaining and total duration time
+    //              of the bar.
+    // "percent" - shows the percentage of remaining time to
+    //             the duration.
+    // "elapsed"   - shows the elapsed time
+    // anything else - the given text is shown literally.
+    set lefttext(p) {
+        if (p === null)
+            this.removeAttribute('lefttext');
+        else
+            this.setAttribute('lefttext', p);
+    }
+    get lefttext() {
+        return this.getAttribute('lefttext');
+    }
+    set righttext(p) {
+        if (p === null)
+            this.removeAttribute('righttext');
+        else
+            this.setAttribute('righttext', p);
+    }
+    get righttext() {
+        return this.getAttribute('righttext');
+    }
+    set centertext(p) {
+        if (p === null)
+            this.removeAttribute('centertext');
+        else
+            this.setAttribute('centertext', p);
+    }
+    get centertext() {
+        return this.getAttribute('centertext');
+    }
+    // If this attribute is present, the timer will loop forever.
+    set loop(l) {
+        if (l)
+            this.setAttribute('loop', '');
+        else
+            this.removeAttribute('loop');
+    }
+    get loop() {
+        return this.hasAttribute('loop');
+    }
+    // This would be used with window.customElements.
+    constructor() {
+        super();
+        const root = this.attachShadow({ mode: 'open' });
+        this.init(root);
+        this._connected = false;
+        // Default values.
+        this._start = 0;
+        this._duration = 0;
+        this._width = '100%';
+        this._height = '100%';
+        this._bg = 'black';
+        this._fg = 'yellow';
+        this._towardRight = false;
+        this._fill = false;
+        this._leftText = '';
+        this._centerText = '';
+        this._rightText = '';
+        this._hideAfter = -1;
+        this._loop = false;
+        this._hideTimer = 0;
+        this.rootElement = this.shadowRoot?.getElementById('root');
+        this.foregroundElement = this.shadowRoot?.getElementById('fg');
+        this.backgroundElement = this.shadowRoot?.getElementById('bg');
+        this.leftTextElement = this.shadowRoot?.getElementById('lefttext');
+        this.centerTextElement = this.shadowRoot?.getElementById('centertext');
+        this.rightTextElement = this.shadowRoot?.getElementById('righttext');
+    }
+    init(root) {
+        root.innerHTML = `
+      <style>
+        .timerbar-root {
+          position: relative;
+          border: 1px solid black;
+          box-sizing: border-box;
+        }
+        .timerbar-bg {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          opacity: 0.8;
+        }
+        .timerbar-fg {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          opacity: 1.0;
+        }
+        .text {
+          position: absolute;
+          font-family: arial;
+          font-weight: bold;
+          color: white;
+          text-shadow: -1px 0 3px black, 0 1px 3px black, 1px 0 3px black, 0 -1px 3px black;
+          will-change: content;
+        }
+        .text-container {
+          position: absolute;
+          left: 0px;
+          top: calc(50% - 1.2ex);
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+        }
+        .timerbar-lefttext {
+          position: relative;
+          text-align: left;
+          padding: 0px 0.4em 0px 0.4em;
+        }
+        .timerbar-centertext {
+          position: relative;
+          text-align: center;
+          padding: 0px 0.4em 0px 0.4em;
+        }
+        .timerbar-righttext {
+          position: relative;
+          text-align: right;
+          padding: 0px 0.4em 0px 0.4em;
+        }
+        :host-context(.just-a-number) .timerbar-root {
+          border: none;
+        }
+        :host-context(.just-a-number) .timerbar-bg {
+          display: none;
+        }
+        :host-context(.just-a-number) .timerbar-fg {
+          display: none;
+        }
+        /* Korean better visibility CSS */
+        :lang(ko) .text-container {
+          top: calc(50% - 1.5ex);
+          height: calc(100% + 0.3ex);
+        }
+        :lang(ko) .timerbar-righttext {
+          top: 0.3ex;
+        }
+      </style>
+      <div id="root" class="timerbar-root" part="timerbar-root">
+        <div id="bg" class="timerbar-bg" part="timerbar-bg"></div>
+        <div id="fg" class="timerbar-fg" part="timerbar-fg"></div>
+        <div class="text-container" part="text-container">
+          <div id="lefttext" class="text timerbar-lefttext" part="text timerbar-lefttext"></div>
+        </div>
+        <div class="text-container" part="text-container">
+          <div id="centertext" class="text timerbar-centertext" part="text timerbar-centertext"></div>
+        </div>
+        <div class="text-container" part="text-container">
+          <div id="righttext" class="text timerbar-righttext" part="text timerbar-righttext"></div>
+        </div>
+      </div>
+    `;
+    }
+    connectedCallback() {
+        this._connected = true;
+        this.layout();
+        this.updateText();
+        if (!this._start)
+            this.setvalue(this._duration);
+        else
+            this.advance();
+    }
+    disconnectedCallback() {
+        this._connected = false;
+    }
+    attributeChangedCallback(name, _oldValue, newValue) {
+        if (name === 'duration') {
+            this._duration = Math.max(parseFloat(newValue), 0);
+            this.setvalue(this._duration);
+        }
+        else if (name === 'value') {
+            this.setvalue(Math.max(parseFloat(newValue), 0));
+        }
+        else if (name === 'elapsed') {
+            this.setvalue(this._duration - Math.max(parseFloat(newValue), 0));
+        }
+        else if (name === 'width') {
+            this._width = newValue;
+            this.layout();
+        }
+        else if (name === 'height') {
+            this._height = newValue;
+            this.layout();
+        }
+        else if (name === 'bg') {
+            this._bg = newValue;
+            this.layout();
+        }
+        else if (name === 'fg') {
+            this._fg = newValue;
+            this.layout();
+        }
+        else if (name === 'stylefill') {
+            this._fill = newValue === 'fill';
+            this.layout();
+        }
+        else if (name === 'toward') {
+            this._towardRight = newValue === 'right';
+            this.layout();
+        }
+        else if (name === 'lefttext') {
+            const update = newValue !== this._leftText && this._connected;
+            this._leftText = newValue;
+            if (update)
+                this.updateText();
+        }
+        else if (name === 'centertext') {
+            const update = newValue !== this._centerText && this._connected;
+            this._centerText = newValue;
+            if (update)
+                this.updateText();
+        }
+        else if (name === 'righttext') {
+            const update = newValue !== this._rightText && this._connected;
+            this._rightText = newValue;
+            if (update)
+                this.updateText();
+        }
+        else if (name === 'hideafter') {
+            this._hideAfter = Math.max(this.hideafter ?? 0, 0);
+            if (this.value === 0) {
+                if (this._hideAfter >= 0)
+                    this.hide();
+                else
+                    this.show();
+            }
+        }
+        else if (name === 'loop') {
+            this._loop = newValue !== null;
+        }
+        if (this._connected)
+            this.draw();
+    }
+    layout() {
+        if (!this._connected)
+            return;
+        this.backgroundElement.style.background = this._bg;
+        this.foregroundElement.style.background = this._fg;
+        this.rootElement.style.width = this._width;
+        this.rootElement.style.height = this._height;
+        // To start full and animate to empty, we animate backwards and flip
+        // the direction.
+        if (this._towardRight !== this._fill) {
+            this.foregroundElement.style.left = '';
+            this.foregroundElement.style.right = '0px';
+            this.foregroundElement.style.transformOrigin = 'right center';
+        }
+        else {
+            this.foregroundElement.style.left = '0px';
+            this.foregroundElement.style.right = '';
+            this.foregroundElement.style.transformOrigin = 'left center';
+        }
+    }
+    updateText() {
+        const varyingTexts = ['elapsed', 'duration', 'percent', 'remain'];
+        // These values are filled in during draw() when the values change.
+        if (!varyingTexts.includes(this._leftText)) {
+            // Otherwise the value is fixed so it can be set here.
+            this.leftTextElement.innerHTML = this._leftText;
+        }
+        if (!varyingTexts.includes(this._centerText))
+            this.centerTextElement.innerHTML = this._centerText;
+        if (!varyingTexts.includes(this._rightText))
+            this.rightTextElement.innerHTML = this._rightText;
+    }
+    draw() {
+        const elapsedSec = (Date.now() - this._start) / 1000;
+        const remainSec = Math.max(0, this._duration - elapsedSec);
+        let percent = this._duration <= 0 ? 0 : remainSec / this._duration;
+        // Keep it between 0 and 1.
+        percent = Math.min(1, Math.max(0, percent));
+        const displayRemain = remainSec ? remainSec.toFixed(1) : '';
+        const displayElapsed = elapsedSec.toFixed(1);
+        if (this._fill)
+            percent = 1.0 - percent;
+        this.foregroundElement.style.transform = `scaleX(${percent.toFixed(3)})`;
+        if (this._leftText !== '') {
+            if (this._leftText === 'remain')
+                this.leftTextElement.innerText = displayRemain;
+            else if (this._leftText === 'duration')
+                this.leftTextElement.innerText = `${displayRemain} / ${this._duration}`;
+            else if (this._leftText === 'percent')
+                this.leftTextElement.innerText = `${(percent * 100).toFixed(1)} %`;
+            else if (this._leftText === 'elapsed')
+                this.leftTextElement.innerText = displayElapsed;
+        }
+        if (this._centerText !== '') {
+            if (this._centerText === 'remain')
+                this.centerTextElement.innerText = displayRemain;
+            else if (this._centerText === 'duration')
+                this.centerTextElement.innerText = `${displayRemain} / ${this._duration}`;
+            else if (this._centerText === 'percent')
+                this.centerTextElement.innerText = `${(percent * 100).toFixed(1)} %`;
+            else if (this._centerText === 'elapsed')
+                this.centerTextElement.innerText = displayElapsed;
+        }
+        if (this._rightText !== '') {
+            if (this._rightText === 'remain')
+                this.rightTextElement.innerText = displayRemain;
+            else if (this._rightText === 'duration')
+                this.rightTextElement.innerText = `${displayRemain} / ${this._duration}`;
+            else if (this._rightText === 'percent')
+                this.rightTextElement.innerText = `${(percent * 100).toFixed(1)} %`;
+            else if (this._rightText === 'elapsed')
+                this.rightTextElement.innerText = displayElapsed;
+        }
+    }
+    // Apply all styles from an object where keys are CSS properties
+    applyStyles(styles) {
+        const s = Object.keys(styles).map((k) => {
+            return `${k}:${styles?.[k] ?? ''};`;
+        }).join('');
+        const left = this.shadowRoot?.getElementById('lefttext');
+        const center = this.shadowRoot?.getElementById('centertext');
+        const right = this.shadowRoot?.getElementById('righttext');
+        if (!left || !center || !right)
+            throw new not_reached/* UnreachableCode */.O();
+        left.style.cssText += s;
+        center.style.cssText += s;
+        right.style.cssText += s;
+    }
+    setvalue(remainSec) {
+        const elapsedSec = Math.max(0, this._duration - remainSec);
+        this._start = Date.now() - elapsedSec * 1000;
+        if (!this._connected)
+            return;
+        this.show();
+        clearTimeout(this._hideTimer ?? 0);
+        this._hideTimer = null;
+        this.advance();
+    }
+    advance() {
+        // If the element has been disconnected from the DOM, stop requesting animation frames
+        if (!this._connected)
+            return;
+        const elapsedSec = (Date.now() - this._start) / 1000;
+        if (elapsedSec >= this._duration) {
+            // Timer completed
+            if (this._loop && this._duration > 0) {
+                // Sets the remaining time to include any extra elapsed seconds past the duration
+                this.setvalue(this._duration + (this._duration - elapsedSec) % this._duration);
+                return;
+            }
+            // Sets the attribute to 0 so users can see the counter is done, and
+            // if they set the same duration again it will count.
+            this._duration = 0;
+            if (this._hideAfter > 0)
+                this._hideTimer = window.setTimeout(this.hide.bind(this), this._hideAfter * 1000);
+            else if (this._hideAfter === 0)
+                this.hide();
+        }
+        else {
+            // Timer not completed, request another animation frame
+            window.requestAnimationFrame(this.advance.bind(this));
+        }
+        this.draw();
+    }
+    show() {
+        if (this._connected)
+            this.rootElement.style.display = 'block';
+    }
+    hide() {
+        if (this._connected)
+            this.rootElement.style.display = 'none';
+    }
+}
+window.customElements.define('timer-bar', timerbar_TimerBar);
+//# sourceMappingURL=timerbar.js.map
+;// CONCATENATED MODULE: ./node_modules/cactbot/resources/timericon.js
+class timericon_TimerIcon extends HTMLElement {
+    rootElement;
+    borderBackgroundElement;
+    borderForegroundElement;
+    iconElement;
+    textElement;
+    kBackgroundOpacity;
+    kOuterBorderSize;
+    kAnimateMs;
+    _value;
+    _duration;
+    _width;
+    _height;
+    _borderBg;
+    _borderFg;
+    _scale;
+    _hideAfter;
+    _icon;
+    _zoom;
+    _text;
+    _textColor;
+    _colorBorderSize;
+    _connected;
+    _timer;
+    _hideTimer;
+    startTimeMs;
+    static get observedAttributes() {
+        return [
+            'icon',
+            'zoom',
+            'duration',
+            'width',
+            'height',
+            'bordercolor',
+            'bordersize',
+            'text',
+            'textcolor',
+        ];
+    }
+    /** create an instance of TimerIcon with attributes */
+    static create(o) {
+        if (!window.customElements.get('timer-icon'))
+            window.customElements.define('timer-icon', timericon_TimerIcon);
+        const element = document.createElement('timer-icon');
+        if (!o)
+            return element;
+        if (typeof o.icon === 'string')
+            element.icon = o.icon;
+        if (typeof o.zoom === 'number')
+            element.zoom = o.zoom;
+        if (typeof o.duration === 'number')
+            element.duration = o.duration;
+        if (typeof o.width === 'string')
+            element.width = o.width;
+        if (typeof o.height === 'string')
+            element.height = o.height;
+        if (typeof o.bordercolor === 'string')
+            element.bordercolor = o.bordercolor;
+        if (typeof o.bordersize === 'string')
+            element.bordersize = o.bordersize;
+        if (typeof o.text === 'string')
+            element.text = o.text;
+        if (typeof o.textcolor === 'string')
+            element.textcolor = o.textcolor;
+        return element;
+    }
+    // All visual dimensions are scaled by this.
+    set scale(s) {
+        if (s === null)
+            this.removeAttribute('scale');
+        else
+            this.setAttribute('scale', s.toString());
+    }
+    get scale() {
+        const s = this.getAttribute('scale');
+        if (s === null)
+            return null;
+        return parseFloat(s);
+    }
+    // Border color.
+    set bordercolor(c) {
+        if (c === null)
+            this.removeAttribute('bordercolor');
+        else
+            this.setAttribute('bordercolor', c);
+    }
+    get bordercolor() {
+        return this.getAttribute('bordercolor');
+    }
+    // Border size for the inner colored border.
+    set bordersize(c) {
+        if (c === null)
+            this.removeAttribute('bordersize');
+        else
+            this.setAttribute('bordersize', c);
+    }
+    get bordersize() {
+        return this.getAttribute('bordersize');
+    }
+    // The width of the icon, in pixels (before |scale|).
+    set width(w) {
+        if (w === null)
+            this.removeAttribute('width');
+        else
+            this.setAttribute('width', w);
+    }
+    get width() {
+        return this.getAttribute('width');
+    }
+    // The height of the icon, in pixels (before |scale|).
+    set height(h) {
+        if (h === null)
+            this.removeAttribute('height');
+        else
+            this.setAttribute('height', h);
+    }
+    get height() {
+        return this.getAttribute('height');
+    }
+    // The length of time to count down.
+    set duration(s) {
+        if (s === null)
+            this.removeAttribute('duration');
+        else
+            this.setAttribute('duration', s.toString());
+    }
+    get duration() {
+        const s = this.getAttribute('duration');
+        if (s === null)
+            return null;
+        return parseFloat(s);
+    }
+    // When the timer reaches 0, it is hidden after this many seconds. If null
+    // then it is not hidden.
+    set hideafter(h) {
+        if (h === null)
+            this.removeAttribute('hideafter');
+        else
+            this.setAttribute('hideafter', h.toString());
+    }
+    get hideafter() {
+        const s = this.getAttribute('hideafter');
+        if (s === null)
+            return null;
+        return parseFloat(s);
+    }
+    // Sets the path to the image to show in the icon.
+    set icon(p) {
+        if (p === null)
+            this.removeAttribute('icon');
+        else
+            this.setAttribute('icon', p);
+    }
+    get icon() {
+        return this.getAttribute('icon');
+    }
+    // Sets the number of pixels to zoom the icon. The image will be
+    // grown by this amount and cropped to the widget.
+    set zoom(p) {
+        if (p === null)
+            this.removeAttribute('zoom');
+        else
+            this.setAttribute('zoom', p.toString());
+    }
+    get zoom() {
+        const s = this.getAttribute('zoom');
+        if (s === null)
+            return null;
+        return parseFloat(s);
+    }
+    // Sets what text should be shown in the icon. If empty, no text.
+    // If 'remain', the number of seconds left, if 'elapsed', the number
+    // of seconds active. If 'percent', the percentage of time remaining.
+    // Otherwise, the literal text is shown.
+    set text(p) {
+        if (p === null)
+            this.removeAttribute('text');
+        else
+            this.setAttribute('text', p);
+    }
+    get text() {
+        return this.getAttribute('text');
+    }
+    set textcolor(p) {
+        if (p === null)
+            this.removeAttribute('textcolor');
+        else
+            this.setAttribute('textcolor', p);
+    }
+    get textcolor() {
+        return this.getAttribute('textcolor');
+    }
+    // This would be used with window.customElements.
+    constructor() {
+        super();
+        const root = this.attachShadow({ mode: 'open' });
+        this.init(root);
+        this._connected = false;
+        this.rootElement = this.shadowRoot?.getElementById('root');
+        this.borderBackgroundElement = this.shadowRoot?.getElementById('border-bg');
+        this.borderForegroundElement = this.shadowRoot?.getElementById('border-fg');
+        this.iconElement = this.shadowRoot?.getElementById('icon');
+        this.textElement = this.shadowRoot?.getElementById('text');
+        // Constants.
+        this.kBackgroundOpacity = 0.8;
+        this.kOuterBorderSize = 1;
+        this.kAnimateMs = 100;
+        // Default values.
+        this._value = 0;
+        this._duration = 0;
+        this._width = 64;
+        this._height = 64;
+        this._borderBg = 'black';
+        this._borderFg = 'grey';
+        this._scale = 1;
+        this._hideAfter = -1;
+        this._icon = '';
+        this._zoom = 20;
+        this._text = 'remain';
+        this._textColor = 'white';
+        this._colorBorderSize = 2;
+        this.startTimeMs = 0;
+        this._timer = 0;
+        this._hideTimer = 0;
+        if (this.duration !== null)
+            this._duration = Math.max(this.duration, 0);
+        if (this.width !== null)
+            this._width = Math.max(parseInt(this.width), 1);
+        if (this.height !== null)
+            this._height = Math.max(parseInt(this.height), 1);
+        if (this.bordercolor !== null)
+            this._borderFg = this.bordercolor;
+        if (this.bordersize !== null)
+            this._colorBorderSize = Math.max(parseInt(this.bordersize), 0);
+        if (this.scale !== null)
+            this._scale = Math.max(this.scale, 0.01);
+        if (this.hideafter !== null)
+            this._hideAfter = Math.max(this.hideafter, 0);
+        if (this.icon !== null)
+            this._icon = this.icon;
+        if (this.zoom !== null)
+            this._zoom = Math.max(this.zoom, 0);
+        if (this.text !== null)
+            this._text = this.text;
+        if (this.textcolor !== null)
+            this._textColor = this.textcolor;
+    }
+    init(root) {
+        root.innerHTML = `
+      <style>
+        .text {
+          position: absolute;
+          font-family: arial;
+          text-shadow: -1px 0 3px black, 0 1px 3px black, 1px 0 3px black, 0 -1px 3px black;
+          will-change: content;
+        }
+        #border-bg {
+          position: absolute;
+        }
+        #border-fg {
+          position: absolute;
+        }
+        #icon {
+          position: absolute;
+          will-change: content;
+        }
+        #text {
+          position: absolute;
+          overflow: hidden;
+          word-break: break-all;
+        }
+      </style>
+      <div id="root" style="position: relative">
+        <div id="border-bg"></div>
+        <div id="border-fg"></div>
+        <div id="icon"></div>
+        <div id="text" class="text"></div>
+      </div>
+    `;
+    }
+    connectedCallback() {
+        this._connected = true;
+        this.layout();
+        this.reset();
+    }
+    disconnectedCallback() {
+        this._connected = false;
+    }
+    attributeChangedCallback(name, _oldValue, newValue) {
+        if (name === 'duration') {
+            this._duration = Math.max(parseFloat(newValue), 0);
+            this.reset();
+        }
+        else if (name === 'width') {
+            this._width = Math.max(parseInt(newValue), 1);
+            this.layout();
+        }
+        else if (name === 'height') {
+            this._height = Math.max(parseInt(newValue), 1);
+            this.layout();
+        }
+        else if (name === 'bordercolor') {
+            this._borderFg = newValue;
+            this.layout();
+        }
+        else if (name === 'bordersize') {
+            this._colorBorderSize = Math.max(parseInt(newValue), 0);
+            this.layout();
+        }
+        else if (name === 'icon') {
+            this._icon = newValue;
+            this.layout();
+        }
+        else if (name === 'zoom') {
+            this._zoom = Math.max(parseInt(newValue), 0);
+            this.layout();
+        }
+        else if (name === 'text') {
+            this._text = newValue;
+        }
+        else if (name === 'textcolor') {
+            this._textColor = newValue;
+        }
+        if (this._connected)
+            this.draw();
+    }
+    layout() {
+        if (!this._connected)
+            return;
+        const borderBackgroundStyle = this.borderBackgroundElement.style;
+        const borderForegroundStyle = this.borderForegroundElement.style;
+        const iconStyle = this.iconElement.style;
+        const textStyle = this.textElement.style;
+        borderBackgroundStyle.backgroundColor = this._borderBg;
+        borderBackgroundStyle.opacity = this.kBackgroundOpacity.toString();
+        borderBackgroundStyle.width = (this._width * this._scale).toString();
+        borderBackgroundStyle.height = (this._height * this._scale).toString();
+        const borderPadding = this.kOuterBorderSize * 2 + this._colorBorderSize * 2;
+        borderForegroundStyle.width = ((this._width - borderPadding) * this._scale).toString();
+        borderForegroundStyle.height = ((this._height - borderPadding) * this._scale).toString();
+        borderForegroundStyle.borderWidth = (this._colorBorderSize * this._scale).toString();
+        borderForegroundStyle.borderColor = this._borderFg;
+        borderForegroundStyle.borderStyle = 'solid';
+        borderForegroundStyle.left = (this.kOuterBorderSize * this._scale).toString();
+        borderForegroundStyle.top = (this.kOuterBorderSize * this._scale).toString();
+        const iconLeft = (this.kOuterBorderSize * 2 + this._colorBorderSize) * this._scale;
+        const iconTop = (this.kOuterBorderSize * 2 + this._colorBorderSize) * this._scale;
+        const iconPadding = this.kOuterBorderSize * 4 + this._colorBorderSize * 2;
+        const iconWidth = (this._width - iconPadding) * this._scale;
+        const iconHeight = (this._height - iconPadding) * this._scale;
+        const textHeight = Math.ceil(Math.min(iconWidth, iconHeight) / 1.8);
+        iconStyle.width = iconWidth.toString();
+        iconStyle.height = iconHeight.toString();
+        iconStyle.left = iconLeft.toString();
+        iconStyle.top = iconTop.toString();
+        iconStyle.backgroundImage = `url('${this._icon}')`;
+        iconStyle.backgroundSize = `${Math.min(iconWidth, iconHeight) + this._zoom * this._scale}px`;
+        iconStyle.backgroundPosition = 'center center';
+        textStyle.top = (iconTop + (iconHeight - textHeight) / 2).toString();
+        textStyle.left = iconLeft.toString();
+        textStyle.width = iconWidth.toString();
+        // Other languages' character can be higher, +5 to make them display completely.
+        textStyle.height = (textHeight + 5).toString();
+        textStyle.fontSize = textHeight.toString();
+        textStyle.textAlign = 'center';
+        textStyle.fontWeight = 'bold';
+        textStyle.color = this._textColor;
+    }
+    draw() {
+        if (this._text === 'remain') {
+            const intRemain = Math.ceil(this._value);
+            if (intRemain > 0)
+                this.textElement.innerText = intRemain.toString();
+            else
+                this.textElement.innerText = '';
+        }
+        else if (this._text === 'percent') {
+            let percent = this._duration <= 0 ? 1 : this._value / this._duration;
+            // Keep it between 0 and 1.
+            percent = Math.min(1, Math.max(0, percent));
+            this.textElement.innerText = (percent * 100).toFixed(0);
+        }
+        else if (this._text === 'elapsed') {
+            const intelapsed = (this._duration - this._value).toFixed(0);
+            this.textElement.innerText = intelapsed;
+        }
+        else {
+            this.textElement.innerHTML = this._text;
+        }
+    }
+    reset() {
+        if (!this._connected)
+            return;
+        this.startTimeMs = Date.now();
+        this.rootElement.style.display = 'block';
+        clearTimeout(this._hideTimer ?? 0);
+        this._hideTimer = null;
+        clearTimeout(this._timer ?? 0);
+        this._timer = null;
+        this._value = this._duration;
+        this.advance();
+    }
+    advance() {
+        this._value = this._duration + (this.startTimeMs - Date.now()) / 1000;
+        if (this._value <= 0) {
+            this._value = 0;
+            if (this._hideAfter >= 0) {
+                this._hideTimer = window.setTimeout(() => {
+                    this.rootElement.style.display = 'none';
+                }, this._hideAfter);
+            }
+        }
+        else {
+            this._timer = window.setTimeout(() => {
+                this.advance();
+            }, this.kAnimateMs);
+        }
+        this.draw();
+    }
+}
+window.customElements.define('timer-icon', timericon_TimerIcon);
+//# sourceMappingURL=timericon.js.map
+;// CONCATENATED MODULE: ./node_modules/cactbot/ui/raidboss/common_replacement.js
+// TODO: maybe this should be structured identically to a timelineReplace section.
+// The seal key is kind of a hack because we use it in a lot of different
+// contexts and need to correctly grab the name of the zone that is sealed.
+// These are some various lookbehinds for those different contexts:
+// Regexes for a parsed ACT log line
+const parsedLB = '00:0839::';
+// Regexes for a network log line
+const networkLB = '00\\|[^|]*\\|0839\\|\\|';
+// Regex for a regex for a network log line.  <_<
+const netRegexLB = '\\\\\\|0839\\\\\\|\\[\\^\\|\\]\\*\\\\\\|';
+// A bare parameter (e.g. `X will be sealed off` via `netRegex: { line: 'X will be sealed off' },`)
+const paramLB = '^';
+// It's awkward to refer to these string keys, so name them as replaceSync[keys.sealKey].
+const syncKeys = {
+    // Seal is trying to match these types of lines, and is more complicated because it's
+    // trying to also capture the area name:
+    //   parsed log lines: 00:0839::Something will be sealed off
+    //   network log lines: 00|timestamp|0839||Something will be sealed off
+    //   NetRegexes: ^^00\|[^|]*\|0839\|[^|]*\|Something will be sealed off.*?\|
+    seal: `(?<=${parsedLB}|${networkLB}|${netRegexLB}|${paramLB})([^|:]*) will be sealed off(?: in (?:[0-9]+ seconds)?)?`,
+    unseal: 'is no longer sealed',
+    engage: 'Engage!',
+};
+const textKeys = {
+    // Match directions in replaceText
+    // eg: `(N)`, `(SW)`, `(NE/NW)`, etc.
+    E: '(?<= \\(|\\/)E(?=\\)|\\/)',
+    N: '(?<= \\(|\\/)N(?=\\)|\\/)',
+    S: '(?<= \\(|\\/)S(?=\\)|\\/)',
+    W: '(?<= \\(|\\/)W(?=\\)|\\/)',
+    NE: '(?<= \\(|\\/)NE(?=\\)|\\/)',
+    NW: '(?<= \\(|\\/)NW(?=\\)|\\/)',
+    SE: '(?<= \\(|\\/)SE(?=\\)|\\/)',
+    SW: '(?<= \\(|\\/)SW(?=\\)|\\/)',
+    // Match Roles in replaceText
+    // eg: `(Tank)`, `(Healer)`, `(DPS)`, etc
+    Tank: '(?<= \\(|\\/)Tanks?(?=\\)|\\/)',
+    Healer: '(?<= \\(|\\/)Healers?(?=\\)|\\/)',
+    DPS: '(?<= \\(|\\/)DPS(?=\\)|\\/)',
+    // Match `--1--` style text.
+    Number: '--(\\s*\\d+\\s*)--',
+};
+const common_replacement_commonReplacement = {
+    replaceSync: {
+        [syncKeys.seal]: {
+            en: '$1 will be sealed off',
+            de: 'Noch 15 Sekunden, bis sich (?:(?:der|die|das) )?(?:Zugang zu(?:[rm]| den)? )?$1 schließt',
+            fr: 'Fermeture d(?:e|u|es) (?:l\'|la |les? )?$1 dans',
+            ja: '$1の封鎖まであと',
+            cn: '距$1被封锁还有',
+            ko: '15초 후에 $1[이가] 봉쇄됩니다',
+        },
+        [syncKeys.unseal]: {
+            en: 'is no longer sealed',
+            de: 'öffnet sich (?:wieder|erneut)',
+            fr: 'Ouverture ',
+            ja: 'の封鎖が解かれた',
+            cn: '的封锁解除了',
+            ko: '의 봉쇄가 해제되었습니다',
+        },
+        [syncKeys.engage]: {
+            en: 'Engage!',
+            de: 'Start!',
+            fr: 'À l\'attaque',
+            ja: '戦闘開始！',
+            cn: '战斗开始！',
+            ko: '전투 시작!',
+        },
+    },
+    replaceText: {
+        '--adds spawn--': {
+            de: '--Adds erscheinen--',
+            fr: '--Apparition d\'adds--',
+            ja: '--雑魚出現--',
+            cn: '--小怪出现--',
+            ko: '--쫄 소환--',
+        },
+        '--adds targetable--': {
+            de: '--Adds anvisierbar--',
+            fr: '--Adds ciblables--',
+            ja: '--雑魚ターゲット可能--',
+            cn: '--小怪可选中--',
+            ko: '--쫄 타겟 가능--',
+        },
+        '--center--': {
+            de: '--Mitte--',
+            fr: '--Centre--',
+            ja: '--センター--',
+            cn: '--中央--',
+            ko: '--중앙--',
+        },
+        '\\(center\\)': {
+            de: '(Mitte)',
+            fr: '(Centre)',
+            ja: '(センター)',
+            cn: '(中央)',
+            ko: '(중앙)',
+        },
+        '--clones appear--': {
+            de: '--Klone erscheinen--',
+            fr: '--Apparition des clones--',
+            ja: '--幻影出現--',
+            cn: '--幻影出现--',
+            ko: '--분신 소환--',
+        },
+        '--corner--': {
+            de: '--Ecke--',
+            fr: '--Coin--',
+            ja: '--コーナー--',
+            cn: '--角落--',
+            ko: '--구석--',
+        },
+        '--dps burn--': {
+            de: '--DPS burn--',
+            fr: '--Burn dps--',
+            ja: '--火力出せ--',
+            cn: '--转火--',
+            ko: '--딜 체크--',
+        },
+        '--east--': {
+            de: '--Osten--',
+            fr: '--Est--',
+            ja: '--東--',
+            cn: '--东--',
+            ko: '--동쪽--',
+        },
+        '\\(east\\)': {
+            de: '(Osten)',
+            fr: '(Est)',
+            ja: '(東)',
+            cn: '(东)',
+            ko: '(동쪽)',
+        },
+        'Enrage': {
+            de: 'Finalangriff',
+            fr: 'Enrage',
+            ja: '時間切れ',
+            cn: '狂暴',
+            ko: '전멸기',
+        },
+        '--frozen--': {
+            de: '--eingefroren--',
+            fr: '--Gelé--',
+            ja: '--凍結--',
+            cn: '--冻结--',
+            ko: '--빙결--',
+        },
+        '--in--': {
+            de: '--Rein--',
+            fr: '--Intérieur--',
+            ja: '--中--',
+            cn: '--内--',
+            ko: '--안--',
+        },
+        '\\(In\\)': {
+            de: '(Rein)',
+            fr: '(Intérieur)',
+            ja: '(中)',
+            cn: '(内)',
+            ko: '(안)',
+        },
+        '\\(inner\\)': {
+            de: '(innen)',
+            fr: '(intérieur)',
+            ja: '(中)',
+            cn: '(内)',
+            ko: '(안)',
+        },
+        '--jump--': {
+            de: '--Sprung--',
+            fr: '--Saut--',
+            ja: '--ジャンプ--',
+            cn: '--跳--',
+            ko: '--점프--',
+        },
+        '--knockback--': {
+            de: '--Rückstoß--',
+            fr: '--Poussée--',
+            ja: '--ノックバック--',
+            cn: '--击退--',
+            ko: '--넉백--',
+        },
+        '--middle--': {
+            de: '--Mitte--',
+            fr: '--Milieu--',
+            ja: '--中央--',
+            cn: '--中间--',
+            ko: '--중앙--',
+        },
+        '\\(middle\\)': {
+            de: '(Mitte)',
+            fr: '(Milieu)',
+            ja: '(中央)',
+            cn: '(中间)',
+            ko: '(중앙)',
+        },
+        '--north--': {
+            de: '--Norden--',
+            fr: '--Nord--',
+            ja: '--北--',
+            cn: '--北--',
+            ko: '--북쪽--',
+        },
+        '\\(north\\)': {
+            de: '(Norden)',
+            fr: '(Nord)',
+            ja: '(北)',
+            cn: '(北)',
+            ko: '(북쪽)',
+        },
+        '--northeast--': {
+            de: '--Nordosten--',
+            fr: '--Nord-Est--',
+            ja: '--北東--',
+            cn: '--东北--',
+            ko: '--북동--',
+        },
+        '--northwest--': {
+            de: '--Nordwesten--',
+            fr: '--Nord-Ouest--',
+            ja: '--北西--',
+            cn: '--西北--',
+            ko: '--북서--',
+        },
+        '--out--': {
+            de: '--Raus--',
+            fr: '--Extérieur--',
+            ja: '--外--',
+            cn: '--外--',
+            ko: '--밖--',
+        },
+        '\\(Out\\)': {
+            de: '(Raus)',
+            fr: '(Extérieur)',
+            ja: '(外)',
+            cn: '(外)',
+            ko: '(밖)',
+        },
+        '\\(outer\\)': {
+            de: '(außen)',
+            fr: '(extérieur)',
+            ja: '(外)',
+            cn: '(外)',
+            ko: '(밖)',
+        },
+        '\\(outside\\)': {
+            de: '(Draußen)',
+            fr: '(À l\'extérieur)',
+            ja: '(外)',
+            cn: '(外面)',
+            ko: '(바깥)',
+        },
+        '--rotate--': {
+            de: '--rotieren--',
+            fr: '--rotation--',
+            ja: '--回転--',
+            cn: '--旋转--',
+            ko: '--회전--',
+        },
+        '--south--': {
+            de: '--Süden--',
+            fr: '--Sud--',
+            ja: '--南--',
+            cn: '--南--',
+            ko: '--남쪽--',
+        },
+        '\\(south\\)': {
+            de: '(Süden)',
+            fr: '(Sud)',
+            ja: '(南)',
+            cn: '(南)',
+            ko: '(남쪽)',
+        },
+        '--southeast--': {
+            de: '--Südosten--',
+            fr: '--Sud-Est--',
+            ja: '--南東--',
+            cn: '--东南--',
+            ko: '--남동--',
+        },
+        '--southwest--': {
+            de: '--Südwesten--',
+            fr: '--Sud-Ouest--',
+            ja: '--南西--',
+            cn: '--西南--',
+            ko: '--남서--',
+        },
+        '--split--': {
+            de: '--teilen--',
+            fr: '--division--',
+            ja: '--分裂--',
+            cn: '--分裂--',
+            ko: '--분열--',
+        },
+        '--stun--': {
+            de: '--Betäubung--',
+            fr: '--Étourdissement--',
+            ja: '--スタン--',
+            cn: '--击晕--',
+            ko: '--기절--',
+        },
+        '--sync--': {
+            de: '--synchronisation--',
+            fr: '--synchronisation--',
+            ja: '--シンク--',
+            cn: '--同步化--',
+            ko: '--동기화--',
+        },
+        '--([0-9]+x )?targetable--': {
+            de: '--$1anvisierbar--',
+            fr: '--$1ciblable--',
+            ja: '--$1ターゲット可能--',
+            cn: '--$1可选中--',
+            ko: '--$1타겟 가능--',
+        },
+        '--teleport--': {
+            de: '--teleportation--',
+            fr: '--téléportation--',
+            ja: '--テレポート--',
+            cn: '--传送--',
+            ko: '--순간 이동--',
+        },
+        '--untargetable--': {
+            de: '--nich anvisierbar--',
+            fr: '--non ciblable--',
+            ja: '--ターゲット不可--',
+            cn: '--无法选中--',
+            ko: '--타겟 불가능--',
+        },
+        '--west--': {
+            de: '--Westen--',
+            fr: '--Ouest--',
+            ja: '--西--',
+            cn: '--西--',
+            ko: '--서쪽--',
+        },
+        [textKeys.E]: {
+            de: 'O',
+            fr: 'E',
+            ja: '東',
+            cn: '东',
+            ko: '동',
+        },
+        [textKeys.N]: {
+            de: 'N',
+            fr: 'N',
+            ja: '北',
+            cn: '北',
+            ko: '북',
+        },
+        [textKeys.S]: {
+            de: 'S',
+            fr: 'S',
+            ja: '南',
+            cn: '南',
+            ko: '남',
+        },
+        [textKeys.W]: {
+            de: 'W',
+            fr: 'O',
+            ja: '西',
+            cn: '西',
+            ko: '서',
+        },
+        [textKeys.NE]: {
+            de: 'NO',
+            fr: 'NE',
+            ja: '北東',
+            cn: '东北',
+            ko: '북동',
+        },
+        [textKeys.NW]: {
+            de: 'NW',
+            fr: 'NO',
+            ja: '北西',
+            cn: '西北',
+            ko: '북서',
+        },
+        [textKeys.SE]: {
+            de: 'SO',
+            fr: 'SE',
+            ja: '南東',
+            cn: '东南',
+            ko: '남동',
+        },
+        [textKeys.SW]: {
+            de: 'SW',
+            fr: 'SO',
+            ja: '南西',
+            cn: '西南',
+            ko: '남서',
+        },
+        [textKeys.Tank]: {
+            de: 'Tank',
+            fr: 'Tank',
+            ja: 'タンク',
+            cn: '坦克',
+            ko: '탱커',
+        },
+        [textKeys.Healer]: {
+            de: 'Heiler',
+            fr: 'Healer',
+            ja: 'ヒーラー',
+            cn: '治疗',
+            ko: '힐러',
+        },
+        [textKeys.DPS]: {
+            de: 'DPS',
+            fr: 'DPS',
+            ja: 'DPS',
+            cn: 'DPS',
+            ko: '딜러',
+        },
+        [textKeys.Number]: {
+            de: '--$1--',
+            fr: '--$1--',
+            ja: '--$1--',
+            cn: '--$1--',
+            ko: '--$1--',
+        },
+    },
+};
+// Keys into commonReplacement objects that represent "partial" translations,
+// in the sense that even if it applies, there still needs to be another
+// translation for it to be complete.  These keys should be exactly the same
+// as the keys from the commonReplacement block above.  These are used for
+// timeline regexes only.
+const common_replacement_partialCommonTimelineReplacementKeys = [
+    // Because the zone name needs to be translated here, this is partial.
+    syncKeys.seal,
+    // Directions
+    textKeys.E,
+    textKeys.N,
+    textKeys.S,
+    textKeys.W,
+    textKeys.NE,
+    textKeys.NW,
+    textKeys.SE,
+    textKeys.SW,
+    // Roles
+    textKeys.Tank,
+    textKeys.Healer,
+    textKeys.DPS,
+];
+// Same as the timeline version above, but only for trigger regexes.
+const common_replacement_partialCommonTriggerReplacementKeys = [
+    // Because the zone name needs to be translated here, this is partial.
+    syncKeys.seal,
+];
+//# sourceMappingURL=common_replacement.js.map
+// EXTERNAL MODULE: ./node_modules/cactbot/resources/regexes.js
+var regexes = __webpack_require__(605);
+;// CONCATENATED MODULE: ./node_modules/cactbot/resources/translations.js
+
+
+
+// Fill in LocaleRegex so that things like LocaleRegex.countdownStart.de is a valid regex.
+const localeLines = {
+    countdownStart: {
+        en: 'Battle commencing in (?<time>\\y{Float}) seconds! \\((?<player>.*?)\\)',
+        de: 'Noch (?<time>\\y{Float}) Sekunden bis Kampfbeginn! \\((?<player>.*?)\\)',
+        fr: 'Début du combat dans (?<time>\\y{Float}) secondes[ ]?! \\((?<player>.*?)\\)',
+        ja: '戦闘開始まで(?<time>\\y{Float})秒！ （(?<player>.*?)）',
+        cn: '距离战斗开始还有(?<time>\\y{Float})秒！ （(?<player>.*?)）',
+        ko: '전투 시작 (?<time>\\y{Float})초 전! \\((?<player>.*?)\\)',
+    },
+    countdownEngage: {
+        en: 'Engage!',
+        de: 'Start!',
+        fr: 'À l\'attaque[ ]?!',
+        ja: '戦闘開始！',
+        cn: '战斗开始！',
+        ko: '전투 시작!',
+    },
+    countdownCancel: {
+        en: 'Countdown canceled by (?<player>\\y{Name})',
+        de: '(?<player>\\y{Name}) hat den Countdown abgebrochen',
+        fr: 'Le compte à rebours a été interrompu par (?<player>\\y{Name})[ ]?\\.',
+        ja: '(?<player>\\y{Name})により、戦闘開始カウントがキャンセルされました。',
+        cn: '(?<player>\\y{Name})取消了战斗开始倒计时。',
+        ko: '(?<player>\\y{Name}) 님이 초읽기를 취소했습니다\\.',
+    },
+    areaSeal: {
+        en: '(?<area>.*?) will be sealed off in (?<time>\\y{Float}) seconds!',
+        de: 'Noch (?<time>\\y{Float}) Sekunden, bis sich (?<area>.*?) schließt',
+        fr: 'Fermeture (?<area>.*?) dans (?<time>\\y{Float}) secondes[ ]?\\.',
+        ja: '(?<area>.*?)の封鎖まであと(?<time>\\y{Float})秒',
+        cn: '距(?<area>.*?)被封锁还有(?<time>\\y{Float})秒',
+        ko: '(?<time>\\y{Float})초 후에 (?<area>.*?)(이|가) 봉쇄됩니다\\.',
+    },
+    areaUnseal: {
+        en: '(?<area>.*?) is no longer sealed.',
+        de: '(?<area>.*?) öffnet sich erneut.',
+        fr: 'Ouverture (?<area>.*?)[ ]?!',
+        ja: '(?<area>.*?)の封鎖が解かれた……',
+        cn: '(?<area>.*?)的封锁解除了',
+        ko: '(?<area>.*?)의 봉쇄가 해제되었습니다\\.',
+    },
+    // Recipe name always start with \ue0bb
+    // HQ icon is \ue03c
+    craftingStart: {
+        en: 'You begin synthesizing (?<count>(an?|\\d+) )?\ue0bb(?<recipe>.*)\\.',
+        de: 'Du hast begonnen, durch Synthese (?<count>(ein(e|es|em|er)?|\\d+) )?\ue0bb(?<recipe>.*) herzustellen\\.',
+        fr: 'Vous commencez à fabriquer (?<count>(une?|\\d+) )?\ue0bb(?<recipe>.*)\\.',
+        ja: '(?<player>\\y{Name})は\ue0bb(?<recipe>.*)(×(?<count>\\d+))?の製作を開始した。',
+        cn: '(?<player>\\y{Name})开始制作“\ue0bb(?<recipe>.*)”(×(?<count>\\d+))?。',
+        ko: '\ue0bb(?<recipe>.*)(×(?<count>\\d+)개)? 제작을 시작합니다\\.',
+    },
+    trialCraftingStart: {
+        en: 'You begin trial synthesis of \ue0bb(?<recipe>.*)\\.',
+        de: 'Du hast mit der Testsynthese von \ue0bb(?<recipe>.*) begonnen\\.',
+        fr: 'Vous commencez une synthèse d\'essai pour une? \ue0bb(?<recipe>.*)\\.',
+        ja: '(?<player>\\y{Name})は\ue0bb(?<recipe>.*)の製作練習を開始した。',
+        cn: '(?<player>\\y{Name})开始练习制作\ue0bb(?<recipe>.*)。',
+        ko: '\ue0bb(?<recipe>.*) 제작 연습을 시작합니다\\.',
+    },
+    craftingFinish: {
+        en: 'You synthesize (?<count>(an?|\\d+) )?\ue0bb(?<recipe>.*)(\ue03c)?\\.',
+        de: 'Du hast erfolgreich (?<count>(ein(e|es|em|er)?|\\d+) )?(?<recipe>.*)(\ue03c)? hergestellt\\.',
+        fr: 'Vous fabriquez (?<count>(une?|\\d+) )?\ue0bb(?<recipe>.*)(\ue03c)?\\.',
+        ja: '(?<player>\\y{Name})は\ue0bb(?<recipe>.*)(\ue03c)?(×(?<count>\\d+))?を完成させた！',
+        cn: '(?<player>\\y{Name})制作“\ue0bb(?<recipe>.*)(\ue03c)?”(×(?<count>\\d+))?成功！',
+        ko: '(?<player>\\y{Name}) 님이 \ue0bb(?<recipe>.*)(\ue03c)?(×(?<count>\\d+)개)?(을|를) 완성했습니다!',
+    },
+    trialCraftingFinish: {
+        en: 'Your trial synthesis of \ue0bb(?<recipe>.*) proved a success!',
+        de: 'Die Testsynthese von \ue0bb(?<recipe>.*) war erfolgreich!',
+        fr: 'Votre synthèse d\'essai pour fabriquer \ue0bb(?<recipe>.*) a été couronnée de succès!',
+        ja: '(?<player>\\y{Name})は\ue0bb(?<recipe>.*)の製作練習に成功した！',
+        cn: '(?<player>\\y{Name})练习制作\ue0bb(?<recipe>.*)成功了！',
+        ko: '\ue0bb(?<recipe>.*) 제작 연습에 성공했습니다!',
+    },
+    craftingFail: {
+        en: 'Your synthesis fails!',
+        de: 'Deine Synthese ist fehlgeschlagen!',
+        fr: 'La synthèse échoue\\.{3}',
+        ja: '(?<player>\\y{Name})は製作に失敗した……',
+        cn: '(?<player>\\y{Name})制作失败了……',
+        ko: '제작에 실패했습니다……\\.',
+    },
+    trialCraftingFail: {
+        en: 'Your trial synthesis of \ue0bb(?<recipe>.*) failed\\.{3}',
+        de: 'Die Testsynthese von \ue0bb(?<recipe>.*) ist fehlgeschlagen\\.{3}',
+        fr: 'Votre synthèse d\'essai pour fabriquer \ue0bb(?<recipe>.*) s\'est soldée par un échec\\.{3}',
+        ja: '(?<player>\\y{Name})は\ue0bb(?<recipe>.*)の製作練習に失敗した……',
+        cn: '(?<player>\\y{Name})练习制作\ue0bb(?<recipe>.*)失败了……',
+        ko: '\ue0bb(?<recipe>.*) 제작 연습에 실패했습니다……\\.',
+    },
+    craftingCancel: {
+        en: 'You cancel the synthesis\\.',
+        de: 'Du hast die Synthese abgebrochen\\.',
+        fr: 'La synthèse est annulée\\.',
+        ja: '(?<player>\\y{Name})は製作を中止した。',
+        cn: '(?<player>\\y{Name})中止了制作作业。',
+        ko: '제작을 중지했습니다\\.',
+    },
+    trialCraftingCancel: {
+        en: 'You abandoned trial synthesis\\.',
+        de: 'Testsynthese abgebrochen\\.',
+        fr: 'Vous avez interrompu la synthèse d\'essai\\.',
+        ja: '(?<player>\\y{Name})は製作練習を中止した。',
+        cn: '(?<player>\\y{Name})停止了练习。',
+        ko: '제작 연습을 중지했습니다\\.',
+    },
+};
+class RegexSet {
+    regexes;
+    netRegexes;
+    get localeRegex() {
+        if (this.regexes)
+            return this.regexes;
+        this.regexes = this.buildLocaleRegexes(localeLines, (s) => regexes/* default */.A.gameLog({ line: `${s}.*?` }));
+        return this.regexes;
+    }
+    get localeNetRegex() {
+        if (this.netRegexes)
+            return this.netRegexes;
+        this.netRegexes = this.buildLocaleRegexes(localeLines, (s) => netregexes/* default */.Ay.gameLog({ line: `${s}[^|]*?` }));
+        return this.netRegexes;
+    }
+    buildLocaleRegexes(locales, builder) {
+        return Object.fromEntries(Object
+            .entries(locales)
+            .map(([key, lines]) => [key, this.buildLocaleRegex(lines, builder)]));
+    }
+    buildLocaleRegex(lines, builder) {
+        const regexEn = builder(lines.en);
+        return {
+            en: regexEn,
+            de: lines.de !== undefined ? builder(lines.de) : regexEn,
+            fr: lines.fr !== undefined ? builder(lines.fr) : regexEn,
+            ja: lines.ja !== undefined ? builder(lines.ja) : regexEn,
+            cn: lines.cn !== undefined ? builder(lines.cn) : regexEn,
+            ko: lines.ko !== undefined ? builder(lines.ko) : regexEn,
+        };
+    }
+}
+const regexSet = new RegexSet();
+const LocaleRegex = regexSet.localeRegex;
+const translations_LocaleNetRegex = regexSet.localeNetRegex;
+// Translate a trigger or timeline regex (replaceSync) or timeline text (replaceText),
+// returning the text and whether or not it can be considered "translated".
+// Note, this won't catch anything that needs multiple translations, but will catch
+// anything from common translations that are partial (e.g. a seal regex needs
+// a zone name to be considered a full translation.
+const translateWithReplacements = (text, replaceKey, replaceLang, replacements) => {
+    // Special cases for empty and "not empty".
+    if (text === '' || text === '[^:]+' || text === '[^|]+')
+        return { text: text, wasTranslated: true };
+    // All regex replacements are always global.
+    const isGlobal = replaceKey === 'replaceSync';
+    let wasTranslated = false;
+    for (const r of replacements ?? []) {
+        if (r.locale && r.locale !== replaceLang)
+            continue;
+        const reps = r[replaceKey];
+        if (!reps)
+            continue;
+        for (const [key, value] of Object.entries(reps)) {
+            const regex = isGlobal ? Regexes.parseGlobal(key) : Regexes.parse(key);
+            if (text.match(regex))
+                wasTranslated = true;
+            text = text.replace(regex, value);
+        }
+    }
+    // Common Replacements
+    const replacement = commonReplacement[replaceKey];
+    for (const [key, value] of Object.entries(replacement ?? {})) {
+        const repl = value[replaceLang];
+        if (repl === undefined)
+            continue;
+        const regex = isGlobal ? Regexes.parseGlobal(key) : Regexes.parse(key);
+        const partialKeys = replaceKey === 'replaceSync'
+            ? partialCommonTriggerReplacementKeys
+            : partialCommonTimelineReplacementKeys;
+        if (text.match(regex)) {
+            // Consider any partial translations as "not found" (e.g. a seal
+            // message that still needs the zone name to be translated to be
+            // considered fully translated).
+            let isPartial = false;
+            for (const partialKey of partialKeys) {
+                if (Regexes.parseGlobal(partialKey).test(key)) {
+                    isPartial = true;
+                    break;
+                }
+            }
+            if (!isPartial)
+                wasTranslated = true;
+        }
+        text = text.replace(regex, repl);
+    }
+    return { text, wasTranslated };
+};
+// Translates a timeline or trigger regex for a given language.
+const translateRegex = (text, replaceLang, replacements) => {
+    if (typeof text === 'string')
+        return translateWithReplacements(text, 'replaceSync', replaceLang, replacements).text;
+    return translateWithReplacements(text.source, 'replaceSync', replaceLang, replacements).text;
+};
+// Translates a timeline text for a given language.
+const translateText = (text, replaceLang, replacements) => translateWithReplacements(text, 'replaceText', replaceLang, replacements).text;
+const translateRegexBuildParam = (params, replaceLang, replacements) => {
+    return translateRegexBuildParamAnon(params, replaceLang, replacements);
+};
+const translateRegexBuildParamAnon = (anonParams, replaceLang, replacements) => {
+    let missingFields = undefined;
+    let wasTranslated = true;
+    // TODO: it's probably ok that this isn't a deep copy because we don't
+    // modify string[] directly, but it probably should be anyway.
+    const params = { ...anonParams };
+    for (const key of keysThatRequireTranslation) {
+        const value = anonParams[key];
+        if (typeof value === 'boolean' || value === undefined)
+            continue;
+        // TODO: ideally, it'd be nice to assign directly back to params[key] instead of
+        // cheating and assigning back through anonParams.  The reason this is mostly
+        // ok is that if params[key] is a string it only gets assigned a string,
+        // and if it is a string[] it only gets assigned a string[], so the type can't
+        // change.  It might be possible to assign to params[key] if we make
+        // timestamp a string | string[]?
+        if (typeof value === 'string') {
+            const result = translateWithReplacements(value, 'replaceSync', replaceLang, replacements);
+            params[key] = result.text;
+            wasTranslated = wasTranslated && result.wasTranslated;
+            if (!result.wasTranslated)
+                (missingFields ??= []).push(key);
+        }
+        else {
+            params[key] = value.map((x) => {
+                if (typeof x !== 'string')
+                    return x;
+                const result = translateWithReplacements(x, 'replaceSync', replaceLang, replacements);
+                wasTranslated = wasTranslated && result.wasTranslated;
+                if (!result.wasTranslated)
+                    (missingFields ??= []).push(key);
+                return result.text;
+            });
+        }
+    }
+    return { params, wasTranslated, missingFields };
+};
+//# sourceMappingURL=translations.js.map
+// EXTERNAL MODULE: ./node_modules/cactbot/resources/util.js
+var util = __webpack_require__(268);
+// EXTERNAL MODULE: ./node_modules/cactbot/resources/content_type.js
+var content_type = __webpack_require__(946);
+;// CONCATENATED MODULE: ./src/constants.ts
+
+const constants_kMeleeWithMpJobs = (/* unused pure expression or super */ null && (['PLD', 'DRK']));
+const kMPNormalRate = 0.06;
+const kMPCombatRate = 0.02;
+const kMPUI1Rate = 0.30;
+const kMPUI2Rate = 0.45;
+const kMPUI3Rate = 0.60;
+const kMPTickInterval = 3.0;
+const kComboDelay = 30;
+const kComboDelay5x = 15;
+const kWellFedContentTypes = [content_type/* default */.A.Dungeons, content_type/* default */.A.Trials, content_type/* default */.A.Raids, content_type/* default */.A.UltimateRaids];
+const kAbility = {
+  // LB
+  ShieldWall: 'C5',
+  // T LB1
+  Stronghold: 'C6',
+  // T LB2
+  LastBastion: 'C7',
+  // PLD LB3
+  LandWaker: '1090',
+  // WAR LB3
+  DarkForce: '1091',
+  // DRK LB3
+  GunmetalSoul: '42D1',
+  // GNB LB3
+  HealingWind: 'CE',
+  // H LB1
+  BreathoftheEarth: 'CF',
+  // H LB2
+  PulseofLife: 'D0',
+  // WHM LB3
+  AngelFeathers: '1097',
+  // SCH LB3
+  AstralStasis: '1098',
+  // AST LB3
+  Braver: 'C8',
+  // meleeDPS LB1
+  Bladedance: 'C9',
+  // meleeDPS LB2
+  FinalHeaven: 'CA',
+  // MNK LB3
+  Chimatsuri: '1093',
+  // NIN LB3
+  DragonsongDive: '1092',
+  // DRG LB3
+  DoomoftheLiving: '1EB5',
+  // SAM LB3
+  BigShot: '108E',
+  // rangeDPS LB1
+  Desperado: '108F',
+  // rangeDPS LB2
+  SagittariusArrow: '1094',
+  // BRD LB3
+  SatelliteBeam: '1095',
+  // MCH LB3
+  CrimsonLotus: '42D2',
+  // DNC LB3
+  Skyshard: 'CB',
+  // magicDPS LB1
+  Starstorm: 'CC',
+  // magicDPS LB2
+  Meteor: 'CD',
+  // BLM LB3
+  Teraflare: '1096',
+  // SMN LB3
+  VermilionScourge: '1EB6',
+  // RDM LB3
+  // PLD
+  FastBlade: '09',
+  RiotBlade: '0F',
+  GoringBlade: 'DD2',
+  RoyalAuthority: 'DD3',
+  RageOfHalone: '15',
+  TotalEclipse: '1CD5',
+  Prominence: '4049',
+  ShieldLob: '18',
+  ShieldBash: '10',
+  Requiescat: '1CD7',
+  Imperator: '9039',
+  HolySpirit: '1CD8',
+  HolyCircle: '404A',
+  Confiteor: '404B',
+  Clemency: 'DD5',
+  FightOrFlight: '14',
+  SpiritsWithin: '1D',
+  Expiacion: '6493',
+  BladeofFaith: '6494',
+  BladeofTruth: '6495',
+  BladeOfValor: '6496',
+  Atonement: '404C',
+  CircleOfScorn: '17',
+  // WAR
+  HeavySwing: '1F',
+  Maim: '25',
+  StormsEye: '2D',
+  StormsPath: '2A',
+  Overpower: '29',
+  MythrilTempest: '404E',
+  Tomahawk: '2E',
+  Berserk: '26',
+  InnerRelease: '1CDD',
+  Upheaval: '1CDB',
+  Orogeny: '6498',
+  // DRK
+  HardSlash: 'E21',
+  SyphonStrike: 'E27',
+  Souleater: 'E30',
+  Unleash: 'E25',
+  StalwartSoul: '4054',
+  Unmend: 'E28',
+  CarveAndSpit: 'E3B',
+  Plunge: 'E38',
+  AbyssalDrain: 'E39',
+  TheBlackestNight: '1CE1',
+  BloodWeapon: 'E29',
+  Delirium: '1CDE',
+  LivingShadow: '4058',
+  SaltedEarth: 'E37',
+  // GNB
+  KeenEdge: '3F09',
+  BrutalShell: '3F0B',
+  SolidBarrel: '3F11',
+  GnashingFang: '3F12',
+  SavageClaw: '3F13',
+  WickedTalon: '3F16',
+  DemonSlice: '3F0D',
+  DemonSlaughter: '3F15',
+  LightningShot: '3F0F',
+  Bloodfest: '3F24',
+  NoMercy: '3F0A',
+  ReignOfBeasts: '9049',
+  NobleBlood: '904A',
+  LionHeart: '904B',
+  // WHM
+  Aero: '79',
+  Aero2: '84',
+  Dia: '4094',
+  Assize: 'DF3',
+  PresenceOfMind: '88',
+  // SCH
+  Bio: '45C8',
+  Bio2: '45C9',
+  Biolysis: '409C',
+  Adloquium: 'B9',
+  ChainStratagem: '1D0C',
+  Aetherflow: 'A6',
+  // AST
+  Combust: 'E0F',
+  Combust2: 'E18',
+  Combust3: '40AA',
+  AspectedBenefic: 'E0B',
+  AspectedHelios: 'E11',
+  Draw: 'E06',
+  MinorArcana: '1D13',
+  Divination: '40A8',
+  AstralDraw: '9099',
+  UmbralDraw: '909A',
+  // SGE
+  Rhizomata: '5EF5',
+  Phlegma: '5EE1',
+  Phlegma2: '5EF3',
+  Phlegma3: '5EF9',
+  // MNK
+  DragonKick: '4A',
+  TwinSnakes: '3D',
+  Demolish: '42',
+  Bootshine: '35',
+  FourPointFury: '4059',
+  Brotherhood: '1CE4',
+  PerfectBalance: '45',
+  RiddleOfFire: '1CE3',
+  RiddleOfWind: '64A6',
+  // DRG
+  TrueThrust: '4B',
+  RaidenThrust: '405F',
+  VorpalThrust: '4E',
+  FullThrust: '54',
+  Disembowel: '57',
+  ChaosThrust: '58',
+  FangAndClaw: 'DE2',
+  WheelingThrust: 'DE4',
+  DoomSpike: '56',
+  SonicThrust: '1CE5',
+  CoerthanTorment: '405D',
+  PiercingTalon: '5A',
+  HighJump: '405E',
+  Jump: '5C',
+  LanceCharge: '55',
+  DragonSight: '1CE6',
+  BattleLitany: 'DE5',
+  DraconianFury: '64AA',
+  Drakesbane: '9058',
+  ChaoticSpring: '64AC',
+  HeavensThrust: '64AB',
+  SpiralBlow: '905B',
+  LanceBarrage: '905A',
+  Geirskogul: 'DE3',
+  // NIN
+  SpinningEdge: '8C0',
+  GustSlash: '8C2',
+  AeolianEdge: '8CF',
+  ArmorCrush: 'DEB',
+  DeathBlossom: '8CE',
+  HakkeMujinsatsu: '4068',
+  ThrowingDagger: '8C7',
+  TrickAttack: '8D2',
+  RabbitMedium: '8E0',
+  Bunshin: '406D',
+  Hide: '8C5',
+  Mug: '8C8',
+  Dokumori: '905D',
+  KunaisBane: '905E',
+  // SAM
+  Hakaze: '1D35',
+  Jinpu: '1D36',
+  Shifu: '1D37',
+  Gekko: '1D39',
+  Kasha: '1D3A',
+  Yukikaze: '1D38',
+  Fuga: '1D3B',
+  Mangetsu: '1D3C',
+  Oka: '1D3D',
+  Enpi: '1D3E',
+  MeikyoShisui: '1D4B',
+  KaeshiHiganbana: '4064',
+  KaeshiGoken: '4065',
+  KaeshiSetsugekka: '4066',
+  HissatsuGuren: '1D48',
+  HissatsuSenei: '4061',
+  Fuko: '64B4',
+  Gyofu: '9063',
+  Ikishoten: '4062',
+  // RPR
+  Slice: '5F35',
+  WaxingSlice: '5F36',
+  InfernalSlice: '5F37',
+  SpinningScythe: '5F38',
+  NightmareScythe: '5F39',
+  Gluttony: '5F49',
+  SoulSlice: '5F3C',
+  SoulScythe: '5F3D',
+  ArcaneCircle: '5F55',
+  // VPR
+  SteelFangs: '872E',
+  DreadFangs: '872F',
+  HuntersSting: '8730',
+  SwiftskinsSting: '8731',
+  FlankstingStrike: '8732',
+  FlanksbaneFang: '8733',
+  HindstingStrike: '8734',
+  HindsbaneFang: '8735',
+  SteelMaw: '8736',
+  DreadMaw: '8737',
+  HuntersBite: '8738',
+  SwiftskinsBite: '8739',
+  JaggedMaw: '873A',
+  BloodiedMaw: '873B',
+  Vicewinder: '873C',
+  Vicepit: '873F',
+  // BRD
+  BattleVoice: '76',
+  MagesBallad: '72',
+  ArmysPaeon: '74',
+  theWanderersMinuet: 'DE7',
+  EmpyrealArrow: 'DE6',
+  RadiantFinale: '64B9',
+  // MCH
+  SplitShot: 'B32',
+  SlugShot: 'B34',
+  CleanShot: 'B39',
+  HeatedSplitShot: '1CF3',
+  HeatedSlugShot: '1CF4',
+  HeatedCleanShot: '1CF5',
+  SpreadShot: 'B36',
+  Drill: '4072',
+  Bioblaster: '4073',
+  HotShot: 'B38',
+  AirAnchor: '4074',
+  WildFire: 'B3E',
+  HeatBlast: '1CF2',
+  AutoCrossbow: '4071',
+  ChainSaw: '64BC',
+  Scattergun: '64BA',
+  // DNC
+  Cascade: '3E75',
+  Fountain: '3E76',
+  Windmill: '3E79',
+  Bladeshower: '3E7A',
+  QuadrupleTechnicalFinish: '3F44',
+  TripleTechnicalFinish: '3F43',
+  DoubleTechnicalFinish: '3F42',
+  SingleTechnicalFinish: '3F41',
+  TechnicalFinish: '3E84',
+  StandardStep: '3E7D',
+  TechnicalStep: '3E7E',
+  Flourish: '3E8D',
+  FinishingMove: '9078',
+  // BLM
+  Thunder1: '90',
+  Thunder2: '1D17',
+  Thunder3: '99',
+  Thunder4: '1CFC',
+  Manafont: '9E',
+  HighThunder1: '907A',
+  HighThunder2: '907B',
+  // SMN
+  EnergyDrain: '407C',
+  EnergySiphon: '407E',
+  SearingLight60: '64F2',
+  SearingLight: '64F2',
+  // 64C9
+  Aethercharge: '64C8',
+  DreadwyrmTrance: 'DFD',
+  SummonBahamut: '1D03',
+  SummonPhoenix: '64E7',
+  SummonSolarBahamut: '9080',
+  // RDM
+  Verstone: '1D57',
+  Verfire: '1D56',
+  Veraero: '1D53',
+  Verthunder: '1D51',
+  Verholy: '1D66',
+  Verflare: '1D65',
+  Jolt2: '1D64',
+  Jolt: '1D4F',
+  Impact: '1D62',
+  Scatter: '1D55',
+  Verthunder2: '408C',
+  Veraero2: '408D',
+  Vercure: '1D5A',
+  Verraise: '1D63',
+  Riposte: '1D50',
+  Zwerchhau: '1D58',
+  Redoublement: '1D5C',
+  Moulinet: '1D59',
+  Reprise: '4091',
+  EnchantedRiposte: '1D67',
+  EnchantedZwerchhau: '1D68',
+  EnchantedRedoublement: '1D69',
+  EnchantedMoulinet: '1D6A',
+  EnchantedReprise: '4090',
+  Embolden: '1D60',
+  Manafication: '1D61',
+  Fleche: '1D5D',
+  ContreSixte: '1D5F',
+  // PCT
+  PomMuse: '876E',
+  WingedMuse: '876F',
+  ClawedMuse: '8770',
+  FangedMuse: '8771',
+  StrikingMuse: '8772',
+  StarryMuse: '8773',
+  // BLU
+  SongOfTorment: '2C7A',
+  OffGuard: '2C93',
+  PeculiarLight: '2C9D',
+  AetherialSpark: '5AF1',
+  Nightbloom: '5AFA',
+  // Role Action
+  LucidDreaming: '1D8A'
+};
+
+// Combo actions for every jobs, this would apply to ComboTracker when
+// it is initialized, for determining whether the current action is in combo.
+// For upgradable skill actions, use array to represent the combo action chain.
+// (Can also be used on only last skill different combo)
+// For example, PLD's Fast Blade -> Riot Blade -> Royal Authority / Rage of Halone
+// combo chain would be represented as
+// ['Fast Blade', 'Riot Blade', ['Royal Authority', 'Rage of Halone']].
+const kComboActions = [
+// PLD
+[kAbility.FastBlade, kAbility.RiotBlade, [kAbility.RoyalAuthority, kAbility.RageOfHalone]], [kAbility.TotalEclipse, kAbility.Prominence],
+// WAR
+[kAbility.HeavySwing, kAbility.Maim, [kAbility.StormsEye, kAbility.StormsPath]], [kAbility.Overpower, kAbility.MythrilTempest],
+// DRK
+[kAbility.HardSlash, kAbility.SyphonStrike, kAbility.Souleater], [kAbility.Unleash, kAbility.StalwartSoul],
+// GNB
+[kAbility.KeenEdge, kAbility.BrutalShell, kAbility.SolidBarrel], [kAbility.DemonSlice, kAbility.DemonSlaughter],
+// DRG
+[[kAbility.TrueThrust, kAbility.RaidenThrust], [kAbility.Disembowel, kAbility.SpiralBlow], [kAbility.ChaosThrust, kAbility.ChaoticSpring], kAbility.WheelingThrust, kAbility.Drakesbane], [[kAbility.TrueThrust, kAbility.RaidenThrust], [kAbility.VorpalThrust, kAbility.LanceBarrage], [kAbility.FullThrust, kAbility.HeavensThrust], kAbility.FangAndClaw, kAbility.Drakesbane], [[kAbility.DoomSpike, kAbility.DraconianFury], kAbility.SonicThrust, kAbility.CoerthanTorment],
+// NIN
+[kAbility.SpinningEdge, kAbility.GustSlash, [kAbility.AeolianEdge, kAbility.ArmorCrush]], [kAbility.DeathBlossom, kAbility.HakkeMujinsatsu],
+// SAM
+[[kAbility.Hakaze, kAbility.Gyofu], kAbility.Jinpu, kAbility.Gekko], [[kAbility.Hakaze, kAbility.Gyofu], kAbility.Shifu, kAbility.Kasha], [[kAbility.Hakaze, kAbility.Gyofu], kAbility.Yukikaze], [[kAbility.Fuga, kAbility.Fuko], [kAbility.Mangetsu, kAbility.Oka]],
+// RPR
+[kAbility.Slice, kAbility.WaxingSlice, kAbility.InfernalSlice], [kAbility.SpinningScythe, kAbility.NightmareScythe],
+// MCH
+[[kAbility.SplitShot, kAbility.HeatedSplitShot], [kAbility.SlugShot, kAbility.HeatedSlugShot], [kAbility.CleanShot, kAbility.HeatedCleanShot]],
+// DNC
+[kAbility.Cascade, kAbility.Fountain], [kAbility.Windmill, kAbility.Bladeshower]];
+
+// Full skill names of abilities that break combos.
+// TODO: it's sad to have to duplicate combo abilities here to catch out-of-order usage.
+const kComboBreakers = [
+// PLD
+kAbility.FastBlade, kAbility.RiotBlade, kAbility.RageOfHalone, kAbility.RoyalAuthority, kAbility.TotalEclipse, kAbility.Prominence, kAbility.ShieldBash,
+// WAR
+kAbility.HeavySwing, kAbility.Maim, kAbility.StormsEye, kAbility.StormsPath, kAbility.Overpower, kAbility.MythrilTempest,
+// DRK
+kAbility.HardSlash, kAbility.SyphonStrike, kAbility.Souleater, kAbility.Unleash, kAbility.StalwartSoul,
+// GNB
+kAbility.KeenEdge, kAbility.BrutalShell, kAbility.SolidBarrel, kAbility.DemonSlice, kAbility.DemonSlaughter,
+// DRG
+kAbility.TrueThrust, kAbility.RaidenThrust, kAbility.VorpalThrust, kAbility.LanceBarrage, kAbility.FullThrust, kAbility.HeavensThrust, kAbility.Disembowel, kAbility.SpiralBlow, kAbility.ChaosThrust, kAbility.ChaoticSpring, kAbility.WheelingThrust, kAbility.FangAndClaw, kAbility.Drakesbane, kAbility.DoomSpike, kAbility.DraconianFury, kAbility.SonicThrust, kAbility.CoerthanTorment,
+// NIN
+kAbility.SpinningEdge, kAbility.GustSlash, kAbility.AeolianEdge, kAbility.ArmorCrush, kAbility.DeathBlossom, kAbility.HakkeMujinsatsu,
+// SAM
+kAbility.Hakaze, kAbility.Gyofu, kAbility.Jinpu, kAbility.Gekko, kAbility.Shifu, kAbility.Kasha, kAbility.Yukikaze, kAbility.Fuga, kAbility.Mangetsu, kAbility.Oka, kAbility.MeikyoShisui, kAbility.Fuko,
+// RPR
+kAbility.Slice, kAbility.WaxingSlice, kAbility.InfernalSlice, kAbility.SpinningScythe, kAbility.NightmareScythe,
+// MCH
+kAbility.SplitShot, kAbility.SlugShot, kAbility.CleanShot, kAbility.HeatedSplitShot, kAbility.HeatedSlugShot, kAbility.HeatedCleanShot, kAbility.SpreadShot, kAbility.Scattergun,
+// DNC
+kAbility.Cascade, kAbility.Fountain, kAbility.Windmill, kAbility.Bladeshower];
+const kComboBreakers630 = [...kComboBreakers];
+const kComboBreakers620 = [...kComboBreakers630];
+
+// (level = index) [Sub, Div]
+// Reference: https://www.akhmorning.com/allagan-studies/modifiers/levelmods/
+const constants_kLevelMod = (/* unused pure expression or super */ null && ([[0, 0], [56, 56], [57, 57], [60, 60], [62, 62], [65, 65], [68, 68], [70, 70], [73, 73], [76, 76], [78, 78], [82, 82], [85, 85], [89, 89], [93, 93], [96, 96], [100, 100], [104, 104], [109, 109], [113, 113], [116, 116], [122, 122], [127, 127], [133, 133], [138, 138], [144, 144], [150, 150], [155, 155], [162, 162], [168, 168], [173, 173], [181, 181], [188, 188], [194, 194], [202, 202], [209, 209], [215, 215], [223, 223], [229, 229], [236, 236], [244, 244], [253, 253], [263, 263], [272, 272], [283, 283], [292, 292], [302, 302], [311, 311], [322, 322], [331, 331], [341, 341],
+// lv50
+[342, 366], [344, 392], [345, 418], [346, 444], [347, 470], [349, 496], [350, 522], [351, 548], [352, 574], [354, 600],
+// lv60
+[355, 630], [356, 660], [357, 690], [358, 720], [359, 750], [360, 780], [361, 810], [362, 840], [363, 870], [364, 900],
+// lv70
+[365, 940], [366, 980], [367, 1020], [368, 1060], [370, 1100], [372, 1140], [374, 1180], [376, 1220], [378, 1260], [380, 1300],
+// lv80
+[382, 1360], [384, 1420], [386, 1480], [388, 1540], [390, 1600], [392, 1660], [394, 1720], [396, 1780], [398, 1840], [400, 1900],
+// lv90
+[402, 1988], [404, 2076], [406, 2164], [408, 2252], [410, 2340], [412, 2428], [414, 2516], [416, 2604], [418, 2692], [420, 2780] // lv100
+]));
+;// CONCATENATED MODULE: ./src/utils.ts
+
+
+
+
+
+
+
+
+const getLocaleRegex = (locale, regexes) => regexes[locale] ?? regexes['en'];
+class RegexesHolder {
+  constructor(lang, playerName) {
+    this.StatsRegex = NetRegexes.statChange();
+    this.YouGainEffectRegex = NetRegexes.gainsEffect({
+      target: playerName
+    });
+    this.YouLoseEffectRegex = NetRegexes.losesEffect({
+      target: playerName
+    });
+    this.YouUseAbilityRegex = NetRegexes.ability({
+      source: playerName
+    });
+    this.AnybodyAbilityRegex = NetRegexes.ability();
+    this.MobGainsEffectRegex = NetRegexes.gainsEffect({
+      targetId: '4.{7}'
+    });
+    this.MobLosesEffectRegex = NetRegexes.losesEffect({
+      targetId: '4.{7}'
+    });
+    this.MobGainsEffectFromYouRegex = NetRegexes.gainsEffect({
+      targetId: '4.{7}',
+      source: playerName
+    });
+    this.MobLosesEffectFromYouRegex = NetRegexes.losesEffect({
+      targetId: '4.{7}',
+      source: playerName
+    });
+    // use of GP Potion
+    this.cordialRegex = /20(017FD|F5A3D|F844F|0420F|0317D)/;
+    const getCurrentRegex = getLocaleRegex.bind(this, lang);
+    this.countdownStartRegex = getCurrentRegex(LocaleNetRegex.countdownStart);
+    this.countdownCancelRegex = getCurrentRegex(LocaleNetRegex.countdownCancel);
+    this.craftingStartRegexes = [LocaleNetRegex.craftingStart, LocaleNetRegex.trialCraftingStart].map(getCurrentRegex);
+    this.craftingFinishRegexes = [LocaleNetRegex.craftingFinish, LocaleNetRegex.trialCraftingFinish].map(getCurrentRegex);
+    this.craftingStopRegexes = [LocaleNetRegex.craftingFail, LocaleNetRegex.craftingCancel, LocaleNetRegex.trialCraftingFail, LocaleNetRegex.trialCraftingCancel].map(getCurrentRegex);
+  }
+}
+const isPhysicalJob = job => Util.isTankJob(job) || Util.isMeleeDpsJob(job) || Util.isRangedDpsJob(job);
+const doesJobNeedMPBar = job => Util.isCasterDpsJob(job) || Util.isHealerJob(job) || kMeleeWithMpJobs.includes(job);
+
+/** compute greased lightning stacks by player's level */
+const getLightningStacksByLevel = level => level < 20 ? 1 : level < 40 ? 2 : level < 76 ? 3 : 4;
+// Source: http://theoryjerks.akhmorning.com/guide/speed/
+const calcGCDFromStat = (player, stat, ffxivVersion, actionDelay = 2500) => {
+  let type1Buffs = 0;
+  let type2Buffs = 0;
+  if (player.job === 'BLM') {
+    type1Buffs += player.speedBuffs.circleOfPower ? 15 : 0;
+  } else if (player.job === 'WHM') {
+    type1Buffs += player.speedBuffs.presenceOfMind ? 20 : 0;
+  } else if (player.job === 'SAM') {
+    if (player.speedBuffs.fuka) {
+      if (player.level > 77) type1Buffs += 13;else type1Buffs += 10;
+    }
+  } else if (player.job === 'VPR') {
+    // FIXME: not sure whether it is type1
+    type1Buffs += player.speedBuffs.swiftscaled ? 15 : 0;
+  }
+  if (player.job === 'NIN') {
+    if (ffxivVersion < 700) type2Buffs += player.speedBuffs.huton ? 15 : 0;else type2Buffs += player.level >= 45 ? 15 : 0;
+  } else if (player.job === 'MNK') {
+    type2Buffs += 5 * getLightningStacksByLevel(player.level);
+  } else if (player.job === 'BRD') {
+    type2Buffs += 4 * player.speedBuffs.paeonStacks;
+    switch (player.speedBuffs.museStacks) {
+      case 1:
+        type2Buffs += 1;
+        break;
+      case 2:
+        type2Buffs += 2;
+        break;
+      case 3:
+        type2Buffs += 4;
+        break;
+      case 4:
+        type2Buffs += 12;
+        break;
+    }
+  }
+  // TODO: this probably isn't useful to track
+  const astralUmbralMod = 100;
+
+  // If stats haven't been updated, use a reasonable default value.
+  let gcdMs = actionDelay;
+  if (stat !== 0 && player.level > 0) {
+    const mod = kLevelMod[player.level];
+    if (!mod) throw new UnreachableCode();
+    gcdMs = Math.floor(1000 - Math.floor(130 * (stat - mod[0]) / mod[1])) * actionDelay / 1000;
+  }
+  const a = (100 - type1Buffs) / 100;
+  const b = (100 - type2Buffs) / 100;
+  const gcdC = Math.floor(Math.floor(a * b * gcdMs / 10) * astralUmbralMod / 100);
+  return gcdC / 100;
+};
+const computeBackgroundColorFrom = (element, classList) => {
+  const div = document.createElement('div');
+  classList.split('.').forEach(item => {
+    div.classList.add(item);
+  });
+  element.appendChild(div);
+  const color = window.getComputedStyle(div).backgroundColor;
+  element.removeChild(div);
+  return color;
+};
+const findCountBuff = (dom, tname) => {
+  let tgs = dom.rootElement.getElementsByClassName('buffs');
+  for (let i = 0; i < tgs.length; i++) {
+    // @ts-ignore
+    if (tgs[i].getAttribute('buffs-name') == tname) {
+      return tgs[i];
+    }
+  }
+  return null;
+};
+const updateCountBuff = (dom, physical, magic) => {
+  if (!dom) {
+    return;
+  }
+  if (physical) {
+    dom.setAttribute('buffs-incr-physical', physical.toString()); // 作用物理
+  }
+  if (magic) {
+    dom.setAttribute('buffs-incr-magic', magic.toString()); // 作用魔法
+  }
+};
+
+// 计算buff, 展示剩余多少时间刷buff是值得
+const buffsCalculation = dom => {
+  let tgs = dom.rootElement.getElementsByClassName('buffs');
+  let toip = 0; // 自己的物理增伤 (换算成攻击) (1 + a)(1 + b) = 1 + a + b + ab
+  let toim = 0; // 自己的魔法增伤 (换算成攻击)
+  let tbip = 0; // 对boss的物理增伤
+  let tbim = 0; // 对boss的魔法增伤
+
+  for (let i = 0; i < tgs.length; i++) {
+    // @ts-ignore
+    let bio = tgs[i].getAttribute('buffs-target'); // 作用自己
+    // @ts-ignore
+    let bipStr = tgs[i].getAttribute('buffs-incr-physical'); // 作用物理
+    // @ts-ignore
+    let bimStr = tgs[i].getAttribute('buffs-incr-magic'); // 作用魔法
+
+    if (bio === undefined || bipStr === undefined || bimStr === undefined) {
+      continue;
+    }
+    let bip = Number(bipStr);
+    let bim = Number(bimStr);
+    if (bio === 'you') {
+      // 作用自己, 乘法公式
+      if (bip > 0) {
+        if (toip <= 0) {
+          toip = bip;
+        } else {
+          toip = toip + bip + toip * bip / 100;
+        }
+      }
+      if (bim > 0) {
+        if (toim <= 0) {
+          toim = bim;
+        } else {
+          toim = toim + bim + toim * bim / 100;
+        }
+      }
+    } else {
+      // 对boss增伤
+      if (bip > 0) {
+        tbip += bip;
+      }
+      if (bim > 0) {
+        tbim += bim;
+      }
+    }
+  }
+  let showip = Math.floor((toip + tbip) * 10) / 10;
+  let showim = Math.floor((toim + tbim) * 10) / 10;
+  let statp = document.getElementById('damage-up-physical');
+  if (statp != null) {
+    statp.setAttribute('value', showip.toString());
+    if (showip <= 0) {
+      statp.innerText = '';
+    } else {
+      statp.innerText = '物: ' + showip + '%';
+    }
+  }
+  let statm = document.getElementById('damage-up-magic');
+  if (statm != null) {
+    statm.setAttribute('value', showim.toString());
+    if (showim <= 0) {
+      statm.innerText = '';
+    } else {
+      statm.innerText = '魔: ' + showim + '%';
+    }
+  }
+
+  // 诗人计算秒数
+  // if (job === 'BRD' && options.TextBrdSec === true) {
+  //   let statSec = document.getElementById('jobs-stat-buff-sec');
+  //   if (Number(showip) > 0) {
+  //     statSec.innerText = Math.floor((30 * 900 * (Number(showip) / 100)) / ((1 + (Number(showip) / 100)) * (240 - 100))) + 's';
+  //   } else {
+  //     statSec.innerText = '';
+  //   }
+  // }
+};
+const makeAuraDotTimerIcon = (name, seconds, opacity, iconWidth, iconHeight, iconText, barHeight, textHeight, textColor, borderSize, borderColor, barColor, auraIcon, info) => {
+  const div = document.createElement('div');
+  div.style.opacity = opacity.toString();
+  div.className = 'dots';
+  const icon = TimerIcon.create({
+    width: iconWidth.toString(),
+    height: iconHeight.toString(),
+    bordersize: borderSize.toString(),
+    textcolor: textColor
+  });
+  div.appendChild(icon);
+  const barDiv = document.createElement('div');
+  barDiv.style.position = 'relative';
+  barDiv.style.top = iconHeight.toString();
+  div.appendChild(barDiv);
+  if (seconds >= 0) {
+    const bar = TimerBar.create();
+    bar.width = iconWidth.toString();
+    bar.height = barHeight.toString();
+    bar.fg = barColor;
+    bar.duration = seconds;
+    barDiv.appendChild(bar);
+  }
+
+  // 根据物理计算还是魔法计算
+  if (info.attackType === 'physical') {
+    const statp = document.getElementById('damage-up-physical');
+    if (statp != null) {
+      const v = statp?.getAttribute('value');
+      if (v !== undefined && Number(v) > 0) {
+        icon.text = v;
+      }
+    }
+  }
+  if (info.attackType === 'magic') {
+    const statm = document.getElementById('damage-up-magic');
+    if (statm != null) {
+      const v = statm?.getAttribute('value');
+      if (v !== undefined && Number(v) > 0) {
+        icon.text = v;
+      }
+    }
+  }
+  icon.bordercolor = borderColor;
+  icon.icon = auraIcon;
+  return div;
+};
+const makeAuraTimerIcon = (name, seconds, opacity, iconWidth, iconHeight, iconText, barHeight, textHeight, textColor, borderSize, borderColor, barColor, barWidth, auraIcon, info) => {
+  const div = document.createElement('div');
+  div.style.opacity = opacity.toString();
+  div.className = 'buffs';
+  // 设置buff详细信息
+  div.setAttribute('buffs-name', name);
+  let target = info.target != null ? info.target : 'you';
+  let physical = info.physicalUp != null ? info.physicalUp : 0;
+  let magic = info.magicUp != null ? info.magicUp : 0;
+  div.setAttribute('buffs-target', target); // 作用自己
+  div.setAttribute('buffs-incr-physical', physical.toString()); // 作用物理
+  div.setAttribute('buffs-incr-magic', magic.toString()); // 作用魔法
+
+  const icon = TimerIcon.create({
+    width: iconWidth.toString(),
+    height: iconHeight.toString(),
+    bordersize: borderSize.toString(),
+    textcolor: textColor
+  });
+  div.appendChild(icon);
+  const barDiv = document.createElement('div');
+  barDiv.style.position = 'absolute'; //绝对位置
+  barDiv.style.left = iconWidth.toString(); // 图标位置
+  barDiv.style.fontSize = '50%'; // 字体大小
+  div.appendChild(barDiv);
+  if (seconds >= 0) {
+    const bar = TimerBar.create();
+    bar.width = barWidth.toString(); // 动态长度
+    bar.height = barHeight.toString();
+    bar.fg = barColor;
+    bar.duration = seconds;
+    bar.lefttext = 'remain';
+    barDiv.appendChild(bar);
+  }
+  if (textHeight > 0) {
+    const text = document.createElement('div');
+    text.classList.add('text');
+    text.style.width = iconWidth.toString();
+    text.style.height = textHeight.toString();
+    text.style.overflow = 'hidden';
+    text.style.fontSize = (textHeight - 1).toString();
+    text.style.whiteSpace = 'pre';
+    text.style.position = 'relative';
+    text.style.top = iconHeight.toString();
+    text.style.fontFamily = 'arial';
+    text.style.fontWeight = 'bold';
+    text.style.color = textColor;
+    text.style.textShadow = '-1px 0 3px black, 0 1px 3px black, 1px 0 3px black, 0 -1px 3px black';
+    text.style.paddingBottom = (textHeight / 4).toString();
+    text.innerText = name;
+    div.appendChild(text);
+  }
+  if (iconText) icon.text = iconText;
+  icon.bordercolor = borderColor;
+  icon.icon = auraIcon;
+  // icon.duration = seconds;
+
+  return div;
+};
+const normalizeLogLine = (line, fields) => {
+  return new Proxy({}, {
+    get(_target, property) {
+      if (typeof property === 'string' && property in fields) {
+        const looseFields = fields;
+        const fieldKey = looseFields[property];
+        if (fieldKey) return line[fieldKey];
+      }
+    }
+  });
+};
+const isPvPZone = zoneId => {
+  return false;
+  // const zoneInfo = ZoneInfo[zoneId];
+  // if (!zoneInfo)
+  //   return false;
+  // if (zoneInfo.contentType === ContentType.Pvp || zoneId === ZoneId.WolvesDenPier)
+  //   return true;
+  // return false;
+};
+const getQueryVariable = variable => {
+  const query = window.location.search.substring(1);
+  for (const v of query.split("&")) {
+    const pair = v.split("=");
+    if (pair[0] == variable) {
+      return pair[1] ? pair[1] : '';
+    }
+  }
+  return '';
+};
+const configNameSpace = "buffsConfig";
+const loadConfig = () => {
+  const c = localStorage.getItem(configNameSpace);
+  if (c) return JSON.parse(c);
+  return defaultUserConfig;
+};
+const setConfig = obj => {
+  localStorage.setItem(configNameSpace, JSON.stringify(obj));
+};
+const showDuration = o => {
+  o.timerbox.duration = o.duration;
+  o.timerbox.threshold = o.duration;
+  o.timerbox.fg = computeBackgroundColorFrom(o.timerbox, o.activecolor);
+  o.tid = window.setTimeout(() => {
+    o.timerbox.duration = o.cooldown - o.duration;
+    o.timerbox.threshold = o.threshold;
+    o.timerbox.fg = computeBackgroundColorFrom(o.timerbox, o.deactivecolor);
+  }, o.duration * 1000);
+  return o.tid;
+};
+;// CONCATENATED MODULE: ./src/settings.ts
+
+
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+// 绑定事件
+let btnDefault = document.getElementById("saveToDefault");
+if (btnDefault) {
+  btnDefault.addEventListener("click", function () {
+    if (confirm("确定要还原设置?")) {
+      setConfig(defaultUserConfig);
+    }
+    window.opener?.location?.reload();
+    location.reload();
+  });
+}
+let btnSave = document.getElementById("save");
+if (btnSave) {
+  btnSave.addEventListener("click", save);
+}
+
+// 初始化
+const config = loadConfig();
+document.getElementById("scale").value = config.Scale.toString();
+if (config.BigBuffNoticeTTSOn) {
+  document.getElementById("bigBuffNoticeTTSOn").checked = true;
+}
+if (config.DotNoticeTTSOn) {
+  document.getElementById("dotNoticeTTSOn").checked = true;
+}
+document.getElementById("dotNoticeLessThanSecond").value = config.DotNoticeLessThanSecond.toString();
+document.getElementById("dotNoticeTTS").value = config.DotNoticeTTS;
+if (config.TTSGoringBlade) {
+  document.getElementById("TTSGoringBlade").checked = true;
+}
+if (config.TTSSurgingTempest) {
+  document.getElementById("TTSSurgingTempest").checked = true;
+}
+if (config.TTSDia) {
+  document.getElementById("TTSDia").checked = true;
+}
+if (config.TTSBiolysis) {
+  document.getElementById("TTSBiolysis").checked = true;
+}
+if (config.TTSCombustIII) {
+  document.getElementById("TTSCombustIII").checked = true;
+}
+if (config.TTSEukrasianDosisIii) {
+  document.getElementById("TTSEukrasianDosisIii").checked = true;
+}
+if (config.TTSDemolish) {
+  document.getElementById("TTSDemolish").checked = true;
+}
+if (config.TTSChaoticSpring) {
+  document.getElementById("TTSChaoticSpring").checked = true;
+}
+if (config.TTSHiganbana) {
+  document.getElementById("TTSHiganbana").checked = true;
+}
+if (config.TTSDeathsDesign) {
+  document.getElementById("TTSDeathsDesign").checked = true;
+}
+if (config.TTSStormbite) {
+  document.getElementById("TTSStormbite").checked = true;
+}
+if (config.TTSThunderIii) {
+  document.getElementById("TTSThunderIii").checked = true;
+}
+function save() {
+  let options = defaultUserConfig;
+  const scale = Number(document.getElementById("scale").value);
+  if (scale >= 100) {
+    options.Scale = scale;
+  }
+  options.BigBuffNoticeTTSOn = document.getElementById("bigBuffNoticeTTSOn").checked;
+  options.DotNoticeTTSOn = document.getElementById("dotNoticeTTSOn").checked;
+  const dls = Number(document.getElementById("dotNoticeLessThanSecond").value);
+  if (dls > 0) {
+    options.DotNoticeLessThanSecond = dls;
+  }
+  const dlt = document.getElementById("dotNoticeTTS").value;
+  if (dlt && dlt != '') {
+    options.DotNoticeTTS = dlt;
+  }
+
+  // options.TTSGoringBlade = (document.getElementById("TTSGoringBlade") as HTMLInputElement).checked;
+  options.TTSGoringBlade = false;
+  options.TTSSurgingTempest = document.getElementById("TTSSurgingTempest").checked;
+  options.TTSDia = document.getElementById("TTSDia").checked;
+  options.TTSBiolysis = document.getElementById("TTSBiolysis").checked;
+  options.TTSCombustIII = document.getElementById("TTSCombustIII").checked;
+  options.TTSEukrasianDosisIii = document.getElementById("TTSEukrasianDosisIii").checked;
+  // options.TTSDemolish = (document.getElementById("TTSDemolish") as HTMLInputElement).checked;
+  options.TTSDemolish = false;
+  options.TTSChaoticSpring = document.getElementById("TTSChaoticSpring").checked;
+  options.TTSHiganbana = document.getElementById("TTSHiganbana").checked;
+  options.TTSDeathsDesign = document.getElementById("TTSDeathsDesign").checked;
+  options.TTSStormbite = document.getElementById("TTSStormbite").checked;
+  options.TTSThunderIii = document.getElementById("TTSThunderIii").checked;
+  try {
+    setConfig(options);
+    alert("保存成功");
+  } catch (e) {
+    alert(e);
+  }
+  window.opener?.location?.reload();
+  location.reload();
+}
+/******/ })()
+;
