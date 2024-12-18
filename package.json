@@ -5,8 +5,8 @@
   "type": "module",
   "types": "./cactbot/types",
   "scripts": {
-    "build": "webpack --progress --config webpack/webpack.prod.ts",
-    "start": "webpack serve --config webpack/webpack.dev.ts"
+    "build": "cross-env TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack --progress --config webpack/webpack.prod.ts",
+    "start": "cross-env TS_NODE_PROJECT=\"tsconfig.webpack.json\" webpack serve --config webpack/webpack.dev.ts"
   },
   "author": "Jiacheng",
   "license": "ISC",

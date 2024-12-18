@@ -42,7 +42,6 @@ const cssMinifyConfigOverride = {
   },
 };
 
-// @ts-ignore
 export default mergeWithRules({
   optimization: 'merge',
   module: {

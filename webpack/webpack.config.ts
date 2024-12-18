@@ -185,6 +185,12 @@ export default (
           test: /data[\\\/](?!\w*_manifest\.txt).*\.txt$/,
           type: 'asset/source',
         },
+        {
+          test: /\.m?js$/,
+          resolve: {
+            fullySpecified: false, // disable the behaviour
+          },
+        },
       ],
     },
     plugins: plugins,
