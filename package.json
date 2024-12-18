@@ -1,0 +1,56 @@
+{
+  "name": "buffs",
+  "version": "1.0.1",
+  "description": "buff tts base on cactbot",
+  "type": "module",
+  "types": "./cactbot/types",
+  "scripts": {
+    "build": "webpack --progress --config webpack/webpack.prod.ts",
+    "start": "webpack serve --config webpack/webpack.dev.ts"
+  },
+  "author": "Jiacheng",
+  "license": "ISC",
+  "dependencies": {
+    "@fast-csv/parse": "^4.3.6",
+    "bootstrap": "^5.3.3",
+    "cactbot": "^0.32.8",
+    "eventemitter3": "^4.0.7",
+    "lodash": "^4.17.21",
+    "terser-webpack-plugin": "^5.3.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-typescript": "^7.24.7",
+    "@babel/types": "^7.25.4",
+    "@types/copy-webpack-plugin": "^8.0.1",
+    "@types/css-minimizer-webpack-plugin": "^3.2.1",
+    "@types/is-ci": "^3.0.4",
+    "@types/lodash": "^4.17.6",
+    "@types/mini-css-extract-plugin": "^1.4.3",
+    "@types/node": "^15.14.9",
+    "@types/webpack": "^5.28.5",
+    "@types/webpack-dev-server": "^4.7.2",
+    "@zoltu/typescript-transformer-append-js-extension": "^1.0.1",
+    "babel-loader": "^9.1.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^7.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^3.4.1",
+    "fork-ts-checker-webpack-plugin": "^6.5.3",
+    "html-webpack-plugin": "^5.6.0",
+    "is-ci": "^3.0.1",
+    "mini-css-extract-plugin": "^1.6.2",
+    "ts-node": "^10.9.2",
+    "ttypescript": "^1.5.15",
+    "typescript": "^4.9.5",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.2",
+    "webpack-merge": "^5.10.0"
+  },
+  "engines": {
+    "node": ">=20.10.0"
+  }
+}
