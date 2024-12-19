@@ -66,6 +66,7 @@ export interface BuffInfo {
     meleeUp?: number; // 近战增伤比
     rangedUp?: number; // 远程增伤
     tts?: string; // tts播报
+    aoeEffect?: boolean; // 是否群体判定
 }
 
 export class BuffInfoList {
@@ -241,6 +242,7 @@ export class BuffInfoList {
             physicalUp: 5,
             magicUp: 5,
             tts: '夺取',
+            aoeEffect: true, // aoe判定
         },
         // 钐镰客
         arcaneCircle: { // 秘环

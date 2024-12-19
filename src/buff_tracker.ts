@@ -351,7 +351,10 @@ export class BuffTracker {
       if ('stack' in b && b.stack !== parseInt(matches?.count ?? '0'))
         return;
 
-      this.onBigBuff(matches?.targetId, b.name, seconds, b, matches?.source, 'active');
+      // 针对aoe判定的团辅，只需要提醒一次
+      const target = b.aoeEffect === true ? matches?.sourceId : matches?.targetId;
+
+      this.onBigBuff(target, b.name, seconds, b, matches?.source, 'active');
     }
   }
 
