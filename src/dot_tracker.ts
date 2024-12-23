@@ -205,6 +205,7 @@ export class DotTracker {
           dot.tts = this.options.TTSCombustIII
           break
         case 'eukrasianDosisIii':
+        case 'eukrasianDyskrasia':
           dot.tts = this.options.TTSEukrasianDosisIii
           break
         case 'demolish':
@@ -328,7 +329,8 @@ export class DotTracker {
   ): void {
     if (!dots) return
     for (const b of dots) {
-      const target = b.aoeEffect === true ? matches?.sourceId : matches?.targetId;
+      const target =
+        b.aoeEffect === true ? matches?.sourceId : matches?.targetId
       this.onLoseBigBuff(target, b.name)
     }
   }
