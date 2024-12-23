@@ -34,6 +34,8 @@ export class Buff {
   ready: { [s: string]: Aura };
   readySortKeyBase: number;
   cooldownSortKeyBase: number;
+  // 控制防止重复播报
+  ttsBuffList: { [s: string]: boolean | undefined };
 
   constructor(name: string, info: BuffInfo, list: WidgetList, options: BuffOptions) {
     this.name = name;
@@ -54,6 +56,9 @@ export class Buff {
     // Hacky numbers to sort active > ready > cooldowns by adjusting sort keys.
     this.readySortKeyBase = 1000;
     this.cooldownSortKeyBase = 2000;
+
+    // 初始化tts数组
+    this.ttsBuffList = {};
   }
 
   addCooldown(source: string, effectSeconds: number): void {
@@ -162,6 +167,7 @@ export class Buff {
           window.clearTimeout(aura.removeTimeout);
           aura.removeTimeout = null;
         }
+        this.ttsBuffList[this.name] = undefined;
         buffsCalculation(list)
       },
 
@@ -189,7 +195,16 @@ export class Buff {
 
         // 语音播报
         if (this.options.BigBuffNoticeTTSOn == true && this.info.tts != null && this.info.tts != '') {
-          callOverlayHandler({call: 'cactbotSay',text: this.info.tts});
+          // 对于具有范围的团辅，计算是否发过tts
+          if (this.info.aoeEffect === true) {
+            const isExist = this.ttsBuffList[this.name] === true;
+            if (!isExist) {
+              this.ttsBuffList[this.name] = true;
+              callOverlayHandler({call: 'cactbotSay',text: this.info.tts});
+            }
+          } else {
+            callOverlayHandler({call: 'cactbotSay',text: this.info.tts});
+          }
         }
 
         if (seconds > 0) {
