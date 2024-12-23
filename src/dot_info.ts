@@ -34,6 +34,7 @@ export interface DotInfo {
   sortKey: number
   attackType: 'none' | 'physical' | 'magic'
   tts: boolean
+  aoeEffect?: boolean // 是否群体判定
 }
 
 export class DotInfoList {
@@ -113,6 +114,16 @@ export class DotInfoList {
       sortKey: 0,
       attackType: 'magic',
       tts: true,
+    },
+    eukrasianDyskrasia: {
+      gainEffect: [Effect_id.EukrasianDyskrasia],
+      loseEffect: [Effect_id.EukrasianDyskrasia],
+      icon: eukrasianDosisIiiImage,
+      borderColor: '#c4acf6',
+      sortKey: 0,
+      attackType: 'magic',
+      tts: true,
+      aoeEffect: true, // aoe判定
     },
     // 龙骑
     chaosThrust: {

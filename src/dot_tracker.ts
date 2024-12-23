@@ -315,7 +315,10 @@ export class DotTracker {
         // case: 可能由于buff的计算方式不同，战士的倒计时多2秒
         seconds += 2
       }
-      this.onBigDot(matches?.targetId, b.name, seconds, b, matches?.source)
+      // 针对aoe判定的团辅，只需要提醒一次
+      const target =
+        b.aoeEffect === true ? matches?.sourceId : matches?.targetId
+      this.onBigDot(target, b.name, seconds, b, matches?.source)
     }
   }
 
@@ -324,7 +327,10 @@ export class DotTracker {
     matches: Partial<NetMatches['LosesEffect']>,
   ): void {
     if (!dots) return
-    for (const b of dots) this.onLoseBigBuff(matches?.targetId, b.name)
+    for (const b of dots) {
+      const target = b.aoeEffect === true ? matches?.sourceId : matches?.targetId;
+      this.onLoseBigBuff(target, b.name)
+    }
   }
 
   onBigDot(
@@ -332,7 +338,7 @@ export class DotTracker {
     name: string,
     seconds = 0,
     info: DotInfo,
-    source = '',
+    _source = '',
   ): void {
     if (seconds <= 0) return
 
