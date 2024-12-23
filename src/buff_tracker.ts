@@ -38,8 +38,6 @@ export class Buff {
   ready: { [s: string]: Aura }
   readySortKeyBase: number
   cooldownSortKeyBase: number
-  // 控制防止重复播报
-  ttsBuffList: { [s: string]: boolean | undefined }
 
   constructor(
     name: string,
@@ -65,9 +63,6 @@ export class Buff {
     // Hacky numbers to sort active > ready > cooldowns by adjusting sort keys.
     this.readySortKeyBase = 1000
     this.cooldownSortKeyBase = 2000
-
-    // 初始化tts数组
-    this.ttsBuffList = {}
   }
 
   addCooldown(source: string, effectSeconds: number): void {
@@ -186,7 +181,6 @@ export class Buff {
           window.clearTimeout(aura.removeTimeout)
           aura.removeTimeout = null
         }
-        this.ttsBuffList[this.name] = undefined
         buffsCalculation(list)
       },
 
@@ -211,24 +205,6 @@ export class Buff {
         list.addElement(key, elem, Math.floor(seconds) + adjustSort)
         aura.addTimeout = null
         buffsCalculation(list)
-
-        // 语音播报
-        if (
-          this.options.BigBuffNoticeTTSOn == true &&
-          this.info.tts != null &&
-          this.info.tts != ''
-        ) {
-          // 对于具有范围的团辅，计算是否发过tts
-          if (this.info.aoeEffect === true) {
-            const isExist = this.ttsBuffList[this.name] === true
-            if (!isExist) {
-              this.ttsBuffList[this.name] = true
-              callOverlayHandler({ call: 'cactbotSay', text: this.info.tts })
-            }
-          } else {
-            callOverlayHandler({ call: 'cactbotSay', text: this.info.tts })
-          }
-        }
 
         if (seconds > 0) {
           aura.removeTimeout = window.setTimeout(() => {
@@ -499,8 +475,17 @@ export class BuffTracker {
 
     let list = this.buffsListDiv
     let buff = this.buffs[name]
-    if (!buff)
+    if (!buff) {
       buff = this.buffs[name] = new Buff(name, info, list, this.options)
+      // 语音播报
+      if (
+        this.options.BigBuffNoticeTTSOn == true &&
+        buff.info.tts != null &&
+        buff.info.tts != ''
+      ) {
+        callOverlayHandler({ call: 'cactbotSay', text: buff.info.tts })
+      }
+    }
 
     if (option === 'active' && seconds > 0) buff.onGain(seconds)
     else if (option === 'cooldown') buff.onCooldown(seconds, source)
