@@ -117,6 +117,7 @@ export class BuffInfoList {
     chain: {
       // 连环计
       activeAbility: [kAbility.ChainStratagem],
+      loseEffect: [EffectId.ChainStratagem_4C5, EffectId.ChainStratagem_57E],
       partyOnly: true,
       durationSeconds: 20,
       icon: chainStratagemImage,
@@ -229,6 +230,7 @@ export class BuffInfoList {
     mug: {
       // 夺取
       activeAbility: [kAbility.Mug],
+      loseEffect: [EffectId.Mug],
       partyOnly: true,
       durationSeconds: 20,
       icon: mugImage,
@@ -243,6 +245,7 @@ export class BuffInfoList {
     dokumori: {
       // 介毒之术
       activeAbility: [kAbility.Dokumori],
+      loseEffect: [EffectId.Dokumori_10CF, EffectId.Dokumori_F09],
       partyOnly: true,
       durationSeconds: 20,
       icon: dokumoriImage,

@@ -281,6 +281,8 @@ export class BuffTracker {
   loseEffectMap: { [s: string]: BuffInfo[] }
   activeAbilityMap: { [s: string]: BuffInfo[] }
   cooldownAbilityMap: { [s: string]: BuffInfo[] }
+  // 控制防止重复播报
+  ttsBuffList: { [s: string]: boolean | undefined }
 
   constructor(
     private options: BuffOptions,
@@ -310,6 +312,8 @@ export class BuffTracker {
     this.loseEffectMap = {}
     this.activeAbilityMap = {}
     this.cooldownAbilityMap = {}
+
+    this.ttsBuffList = {}
 
     const propToMapMap = {
       gainEffect: this.gainEffectMap,
@@ -441,10 +445,15 @@ export class BuffTracker {
 
   onLoseEffect(
     buffs: BuffInfo[] | undefined,
-    _matches: Partial<NetMatches['LosesEffect']>,
+    matches: Partial<NetMatches['LosesEffect']>,
   ): void {
     if (!buffs) return
-    for (const b of buffs) this.onLoseBigBuff(_matches?.targetId, b.name)
+    for (const b of buffs) {
+      // 针对aoe判定的团辅，只需要提醒一次
+      const target =
+        b.aoeEffect === true ? matches?.sourceId : matches?.targetId
+      this.onLoseBigBuff(target, b.name)
+    }
   }
 
   onYouGainEffect(
@@ -477,13 +486,25 @@ export class BuffTracker {
     let buff = this.buffs[name]
     if (!buff) {
       buff = this.buffs[name] = new Buff(name, info, list, this.options)
+    }
+
+    if (buff) {
       // 语音播报
       if (
-        this.options.BigBuffNoticeTTSOn == true &&
+        buff.options.BigBuffNoticeTTSOn == true &&
         buff.info.tts != null &&
-        buff.info.tts != ''
+        buff.info.tts !== ''
       ) {
-        callOverlayHandler({ call: 'cactbotSay', text: buff.info.tts })
+        // 对于具有范围的团辅，计算是否发过tts
+        if (buff.info.aoeEffect === true) {
+          const isExist = this.ttsBuffList[name] === true
+          if (!isExist) {
+            this.ttsBuffList[name] = true
+            callOverlayHandler({ call: 'cactbotSay', text: buff.info.tts })
+          }
+        } else {
+          callOverlayHandler({ call: 'cactbotSay', text: buff.info.tts })
+        }
       }
     }
 
@@ -493,7 +514,9 @@ export class BuffTracker {
 
   onLoseBigBuff(target = 'unknown', name: string): void {
     name = target + '=>' + name // 针对对boss技能. 保证不同boss分开倒计时.
+    // console.log(name, this.ttsBuffList, this.buffs, this.buffs[name] ?? 'null')
     this.buffs[name]?.onLose()
+    this.ttsBuffList[name] = undefined
   }
 
   clear(): void {
