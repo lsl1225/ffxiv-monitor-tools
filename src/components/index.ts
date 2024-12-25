@@ -120,8 +120,10 @@ export class ComponentManager {
         });
         this.player.on('effect/lose', (id, matches) => {
             // mob id starts with '4'
-            if (matches.targetId?.startsWith('4'))
+            if (matches.targetId?.startsWith('4')) {
+                this.buffTracker?.onYouLoseEffect(id, matches);
                 this.dotTracker?.onYouLoseEffect(id, matches);
+            }
         });
 
         this.ee.on('zone/change', (id, _name, info) => {
