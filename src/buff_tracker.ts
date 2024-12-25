@@ -520,6 +520,7 @@ export class BuffTracker {
   }
 
   clear(): void {
+    this.ttsBuffList = {}
     Object.values(this.buffs).forEach((buff) => buff.clear())
   }
 }
