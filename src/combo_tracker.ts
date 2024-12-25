@@ -133,7 +133,7 @@ export class ComboTracker extends EventEmitter<{ combo: ComboCallback }> {
 
     const normalise = (raw: (string | string[])[][]): string[][] => {
       const queue = [...raw];
-      const result = [];
+      const result: string[][] = [];
       while (queue.length) {
         const item = queue.shift();
         if (typeof item === 'undefined')

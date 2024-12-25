@@ -298,7 +298,7 @@ export default class WidgetList extends HTMLElement {
     if (!id)
       return;
     const container = this.shadowRoot?.getElementById(`child${id}`);
-    let element = undefined;
+    let element: ChildNode | undefined = undefined;
     if (container) {
       element = container.childNodes[0];
       this.rootElement.removeChild(container);
