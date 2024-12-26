@@ -9,6 +9,7 @@ const biolysisImage = '../resources/images/002820.png' // 蛊毒法
 const combustIIIImage = '../resources/images/003554.png' // 焚灼
 // 贤者
 const eukrasianDosisIiiImage = '../resources/images/003682.png' // 焚灼
+const eukrasianDyskrasiaImage = '../resources/images/003687.png'
 // 龙骑
 const chaosThrustIiiImage = '../resources/images/000308.png' // 樱花怒放
 const chaoticSpringImage = '../resources/images/chaotic_spring.png' // 樱花2
@@ -21,6 +22,7 @@ const stormbiteImage = '../resources/images/002614.png'
 const causticBiteImage = '../resources/images/002613.png'
 // 黑魔
 const thunderIiiImage = '../resources/images/000459.png'
+const thunderAoeImage = '../resources/images/064879.png'
 const highThunderImage = '../resources/images/high_thunder.png'
 
 // https://xivapi.com/docs/Icons 图标来源
@@ -118,7 +120,7 @@ export class DotInfoList {
     eukrasianDyskrasia: {
       gainEffect: [Effect_id.EukrasianDyskrasia],
       loseEffect: [Effect_id.EukrasianDyskrasia],
-      icon: eukrasianDosisIiiImage,
+      icon: eukrasianDyskrasiaImage,
       borderColor: '#c4acf6',
       sortKey: 0,
       attackType: 'magic',
@@ -184,16 +186,34 @@ export class DotInfoList {
       tts: false,
     },
     // 黑魔
-    thunderIII: {
+    thunderAoe: {
       gainEffect: [
         Effect_id.ThunderIi_A2,
-        Effect_id.ThunderIii,
+        Effect_id.ThunderIi_81B,
         Effect_id.ThunderIv,
       ],
       loseEffect: [
         Effect_id.ThunderIi_A2,
-        Effect_id.ThunderIii,
+        Effect_id.ThunderIi_81B,
         Effect_id.ThunderIv,
+      ],
+      icon: thunderAoeImage,
+      borderColor: '#93d5fd',
+      sortKey: 0,
+      attackType: 'magic',
+      tts: true,
+      aoeEffect: true,
+    },
+    thunderIII: {
+      gainEffect: [
+        Effect_id.Thunder_A1,
+        Effect_id.Thunder_52C,
+        Effect_id.ThunderIii,
+      ],
+      loseEffect: [
+        Effect_id.Thunder_A1,
+        Effect_id.Thunder_52C,
+        Effect_id.ThunderIii,
       ],
       icon: thunderIiiImage,
       borderColor: '#93d5fd',
