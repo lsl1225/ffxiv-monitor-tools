@@ -36920,20 +36920,22 @@ class JobsEventEmitter extends (eventemitter3_default()) {
     (0,overlay_plugin_api/* addOverlayListener */.M9)('onPlayerChangedEvent', ev => {
       this.emit('player', ev);
     });
-    (0,overlay_plugin_api/* addOverlayListener */.M9)('EnmityTargetData', ev => {
-      // this.processEnmityTargetData(ev);
-    });
+
+    // addOverlayListener('EnmityTargetData', (ev) => {
+    //   this.processEnmityTargetData(ev);
+    // });
 
     // addOverlayListener('onPartyWipe', () => {
     //   this.emit('battle/wipe');
     // });
 
-    (0,overlay_plugin_api/* addOverlayListener */.M9)('onInCombatChangedEvent', ev => {
-      // this.emit('battle/in-combat', {
-      //   game: ev.detail.inGameCombat,
-      //   act: ev.detail.inACTCombat,
-      // });
-    });
+    // addOverlayListener('onInCombatChangedEvent', (ev) => {
+    //   this.emit('battle/in-combat', {
+    //     game: ev.detail.inGameCombat,
+    //     act: ev.detail.inACTCombat,
+    //   });
+    // });
+
     (0,overlay_plugin_api/* addOverlayListener */.M9)('ChangeZone', ev => {
       this.emit('zone/change', ev.zoneID, ev.zoneName, zone_info/* default */.A[ev.zoneID]);
     });
@@ -42874,41 +42876,41 @@ const data = {
 ;// CONCATENATED MODULE: ./src/buff_info.ts
 
 
-const potionImage = "../resources/images/000000.png";
+const potionImage = '../resources/images/000000.png';
 // 骑士
-const fightOrFlightImage = "../resources/images/000166.png"; // 战逃反应
+const fightOrFlightImage = '../resources/images/000166.png'; // 战逃反应
 // 枪刃
-const noMercyImage = "../resources/images/003402.png"; // 无情
+const noMercyImage = '../resources/images/003402.png'; // 无情
 // 学者
-const chainStratagemImage = "../resources/images/002815.png"; // 连环计
+const chainStratagemImage = '../resources/images/002815.png'; // 连环计
 // 占星
-const divinationImage = "../resources/images/003553.png"; // 占卜
-const theBalanceImage = "../resources/images/003110.png"; // 太阳神
-const theSpearImage = "../resources/images/003111.png"; // 战争神
+const divinationImage = '../resources/images/003553.png'; // 占卜
+const theBalanceImage = '../resources/images/003110.png'; // 太阳神
+const theSpearImage = '../resources/images/003111.png'; // 战争神
 // 武僧
-const riddleOfFireImage = "../resources/images/002541.png"; // 红莲
-const brotherhoodImage = "../resources/images/002542.png"; // 义结金兰
+const riddleOfFireImage = '../resources/images/002541.png'; // 红莲
+const brotherhoodImage = '../resources/images/002542.png'; // 义结金兰
 // 龙骑
-const lanceChargeImage = "../resources/images/000309.png"; // 猛枪
-const battleLitanyImage = "../resources/images/002585.png"; // 战斗连祷
+const lanceChargeImage = '../resources/images/000309.png'; // 猛枪
+const battleLitanyImage = '../resources/images/002585.png'; // 战斗连祷
 //忍者
-const mugImage = "../resources/images/000613.png"; // 夺取
-const dokumoriImage = "../resources/images/dokumori.png"; // 夺取
+const mugImage = '../resources/images/000613.png'; // 夺取
+const dokumoriImage = '../resources/images/dokumori.png'; // 夺取
 
 // 钐镰客
-const arcaneCircleImage = "../resources/images/003633.png"; // 秘环
+const arcaneCircleImage = '../resources/images/003633.png'; // 秘环
 // 诗人
-const ragingStrikesImage = "../resources/images/000352.png"; // 猛者强击
-const battleVoiceImage = "../resources/images/002601.png"; // 战斗之声
-const radiantFinaleImage = "../resources/images/002622.png"; // 最终乐章
+const ragingStrikesImage = '../resources/images/000352.png'; // 猛者强击
+const battleVoiceImage = '../resources/images/002601.png'; // 战斗之声
+const radiantFinaleImage = '../resources/images/002622.png'; // 最终乐章
 // 舞娘
-const devilmentImage = "../resources/images/003471.png"; // 探戈
-const technicalFinishImage = "../resources/images/003474.png"; // 技巧舞步
+const devilmentImage = '../resources/images/003471.png'; // 探戈
+const technicalFinishImage = '../resources/images/003474.png'; // 技巧舞步
 // 召唤
-const searingLightImage = "../resources/images/002752.png"; // 灼热之光
+const searingLightImage = '../resources/images/002752.png'; // 灼热之光
 // 赤魔
-const emboldenImage = "../resources/images/003218.png"; // 鼓励
-const starryMuseImage = "../resources/images/starry_muse.png"; // 星空构想
+const emboldenImage = '../resources/images/003218.png'; // 鼓励
+const starryMuseImage = '../resources/images/starry_muse.png'; // 星空构想
 
 class BuffInfoList {
   static buffInfo = {
@@ -42959,6 +42961,7 @@ class BuffInfoList {
     chain: {
       // 连环计
       activeAbility: [kAbility.ChainStratagem],
+      loseEffect: [effect_id.ChainStratagem_4C5, effect_id.ChainStratagem_57E],
       partyOnly: true,
       durationSeconds: 20,
       icon: chainStratagemImage,
@@ -43071,6 +43074,7 @@ class BuffInfoList {
     mug: {
       // 夺取
       activeAbility: [kAbility.Mug],
+      loseEffect: [effect_id.Mug],
       partyOnly: true,
       durationSeconds: 20,
       icon: mugImage,
@@ -43085,6 +43089,7 @@ class BuffInfoList {
     dokumori: {
       // 介毒之术
       activeAbility: [kAbility.Dokumori],
+      loseEffect: [effect_id.Dokumori_10CF, effect_id.Dokumori_F09],
       partyOnly: true,
       durationSeconds: 20,
       icon: dokumoriImage,
@@ -43094,7 +43099,8 @@ class BuffInfoList {
       target: 'boss',
       physicalUp: 5,
       magicUp: 5,
-      tts: '夺取'
+      tts: '夺取',
+      aoeEffect: true // aoe判定
     },
     // 钐镰客
     arcaneCircle: {
@@ -43341,14 +43347,6 @@ class Buff {
         list.addElement(key, elem, Math.floor(seconds) + adjustSort);
         aura.addTimeout = null;
         buffsCalculation(list);
-
-        // 语音播报
-        if (this.options.BigBuffNoticeTTSOn == true && this.info.tts != null && this.info.tts != '') {
-          (0,overlay_plugin_api/* callOverlayHandler */.tK)({
-            call: 'cactbotSay',
-            text: this.info.tts
-          });
-        }
         if (seconds > 0) {
           aura.removeTimeout = window.setTimeout(() => {
             aura.removeCallback();
@@ -43392,6 +43390,8 @@ class Buff {
   }
 }
 class BuffTracker {
+  // 控制防止重复播报
+
   constructor(options, playerName, playerJob, buffsListDiv, partyTracker, ffxivVersion) {
     this.options = options;
     this.playerName = playerName;
@@ -43415,6 +43415,7 @@ class BuffTracker {
     this.loseEffectMap = {};
     this.activeAbilityMap = {};
     this.cooldownAbilityMap = {};
+    this.ttsBuffList = {};
     const propToMapMap = {
       gainEffect: this.gainEffectMap,
       loseEffect: this.loseEffectMap,
@@ -43461,7 +43462,10 @@ class BuffTracker {
       let seconds = -1;
       if (b.useEffectDuration) seconds = parseFloat(matches?.duration ?? '0');else if ('durationSeconds' in b) seconds = b.durationSeconds ?? seconds;
       if ('stack' in b && b.stack !== parseInt(matches?.count ?? '0')) return;
-      this.onBigBuff(matches?.targetId, b.name, seconds, b, matches?.source, 'active');
+
+      // 针对aoe判定的团辅，只需要提醒一次
+      const target = b.aoeEffect === true ? matches?.sourceId : matches?.targetId;
+      this.onBigBuff(target, b.name, seconds, b, matches?.source, 'active');
     }
   }
   onGainEffect(buffs, matches) {
@@ -43479,7 +43483,7 @@ class BuffTracker {
         if (b.magicUpCount != null && b.magicUpCount[matches.count] != null) {
           b.magicUp = b.magicUpCount[matches.count];
         }
-        let dom = findCountBuff(this.buffsListDiv, matches?.targetId + "=>" + b.name);
+        let dom = findCountBuff(this.buffsListDiv, matches?.targetId + '=>' + b.name);
         if (dom !== null) {
           updateCountBuff(dom, b.physicalUp, b.magicUp);
           buffsCalculation(this.buffsListDiv);
@@ -43501,9 +43505,13 @@ class BuffTracker {
       //   this.onBigBuff(b.name, seconds, b, matches?.source, 'cooldown');
     }
   }
-  onLoseEffect(buffs, _matches) {
+  onLoseEffect(buffs, matches) {
     if (!buffs) return;
-    for (const b of buffs) this.onLoseBigBuff(_matches?.targetId, b.name);
+    for (const b of buffs) {
+      // 针对aoe判定的团辅，只需要提醒一次
+      const target = b.aoeEffect === true ? matches?.sourceId : matches?.targetId;
+      this.onLoseBigBuff(target, b.name);
+    }
   }
   onYouGainEffect(name, matches) {
     this.onGainEffect(this.gainEffectMap[name], matches);
@@ -43513,18 +43521,44 @@ class BuffTracker {
   }
   onBigBuff(target = 'unknown', name, seconds = 0, info, source = '', option) {
     if (seconds <= 0) return;
-    name = target + "=>" + name; // 针对对boss技能. 保证不同boss分开倒计时.
+    name = target + '=>' + name; // 针对对boss技能. 保证不同boss分开倒计时.
 
     let list = this.buffsListDiv;
     let buff = this.buffs[name];
-    if (!buff) buff = this.buffs[name] = new Buff(name, info, list, this.options);
+    if (!buff) {
+      buff = this.buffs[name] = new Buff(name, info, list, this.options);
+    }
+    if (buff) {
+      // 语音播报
+      if (buff.options.BigBuffNoticeTTSOn == true && buff.info.tts != null && buff.info.tts !== '') {
+        // 对于具有范围的团辅，计算是否发过tts
+        if (buff.info.aoeEffect === true) {
+          const isExist = this.ttsBuffList[name] === true;
+          if (!isExist) {
+            this.ttsBuffList[name] = true;
+            (0,overlay_plugin_api/* callOverlayHandler */.tK)({
+              call: 'cactbotSay',
+              text: buff.info.tts
+            });
+          }
+        } else {
+          (0,overlay_plugin_api/* callOverlayHandler */.tK)({
+            call: 'cactbotSay',
+            text: buff.info.tts
+          });
+        }
+      }
+    }
     if (option === 'active' && seconds > 0) buff.onGain(seconds);else if (option === 'cooldown') buff.onCooldown(seconds, source);
   }
   onLoseBigBuff(target = 'unknown', name) {
-    name = target + "=>" + name; // 针对对boss技能. 保证不同boss分开倒计时.
+    name = target + '=>' + name; // 针对对boss技能. 保证不同boss分开倒计时.
+    // console.log(name, this.ttsBuffList, this.buffs, this.buffs[name] ?? 'null')
     this.buffs[name]?.onLose();
+    this.ttsBuffList[name] = undefined;
   }
   clear() {
+    this.ttsBuffList = {};
     Object.values(this.buffs).forEach(buff => buff.clear());
   }
 }
@@ -43540,6 +43574,7 @@ const biolysisImage = '../resources/images/002820.png'; // 蛊毒法
 const combustIIIImage = '../resources/images/003554.png'; // 焚灼
 // 贤者
 const eukrasianDosisIiiImage = '../resources/images/003682.png'; // 焚灼
+const eukrasianDyskrasiaImage = '../resources/images/003687.png';
 // 龙骑
 const chaosThrustIiiImage = '../resources/images/000308.png'; // 樱花怒放
 const chaoticSpringImage = '../resources/images/chaotic_spring.png'; // 樱花2
@@ -43552,6 +43587,7 @@ const stormbiteImage = '../resources/images/002614.png';
 const causticBiteImage = '../resources/images/002613.png';
 // 黑魔
 const thunderIiiImage = '../resources/images/000459.png';
+const thunderAoeImage = '../resources/images/064879.png';
 const highThunderImage = '../resources/images/high_thunder.png';
 
 // https://xivapi.com/docs/Icons 图标来源
@@ -43607,6 +43643,16 @@ class DotInfoList {
       sortKey: 0,
       attackType: 'magic',
       tts: true
+    },
+    eukrasianDyskrasia: {
+      gainEffect: [effect_id.EukrasianDyskrasia],
+      loseEffect: [effect_id.EukrasianDyskrasia],
+      icon: eukrasianDyskrasiaImage,
+      borderColor: '#c4acf6',
+      sortKey: 0,
+      attackType: 'magic',
+      tts: true,
+      aoeEffect: true // aoe判定
     },
     // 龙骑
     chaosThrust: {
@@ -43667,9 +43713,19 @@ class DotInfoList {
       tts: false
     },
     // 黑魔
+    thunderAoe: {
+      gainEffect: [effect_id.ThunderIi_A2, effect_id.ThunderIi_81B, effect_id.ThunderIv],
+      loseEffect: [effect_id.ThunderIi_A2, effect_id.ThunderIi_81B, effect_id.ThunderIv],
+      icon: thunderAoeImage,
+      borderColor: '#93d5fd',
+      sortKey: 0,
+      attackType: 'magic',
+      tts: true,
+      aoeEffect: true
+    },
     thunderIII: {
-      gainEffect: [effect_id.ThunderIi_A2, effect_id.ThunderIii, effect_id.ThunderIv],
-      loseEffect: [effect_id.ThunderIi_A2, effect_id.ThunderIii, effect_id.ThunderIv],
+      gainEffect: [effect_id.Thunder_A1, effect_id.Thunder_52C, effect_id.ThunderIii],
+      loseEffect: [effect_id.Thunder_A1, effect_id.Thunder_52C, effect_id.ThunderIii],
       icon: thunderIiiImage,
       borderColor: '#93d5fd',
       sortKey: 0,
@@ -43730,7 +43786,7 @@ class Dot {
         aura.addTimeout = null;
         if (seconds > 0) {
           // 设置定时通知
-          if (this.options.DotNoticeTTSOn && this.info.tts && this.options.DotNoticeLessThanSecond > 0 && this.options.DotNoticeTTS !== "") {
+          if (this.options.DotNoticeTTSOn && this.info.tts && this.options.DotNoticeLessThanSecond > 0 && this.options.DotNoticeTTS !== '') {
             aura.noticeTimeout = window.setTimeout(() => {
               aura.noticeCallback();
             }, (Math.floor(seconds) - (this.options.DotNoticeLessThanSecond + 1)) * 1000);
@@ -43805,6 +43861,7 @@ class DotTracker {
           dot.tts = this.options.TTSCombustIII;
           break;
         case 'eukrasianDosisIii':
+        case 'eukrasianDyskrasia':
           dot.tts = this.options.TTSEukrasianDosisIii;
           break;
         case 'demolish':
@@ -43878,18 +43935,23 @@ class DotTracker {
         // case: 可能由于buff的计算方式不同，战士的倒计时多2秒
         seconds += 2;
       }
-      this.onBigDot(matches?.targetId, b.name, seconds, b, matches?.source);
+      // 针对aoe判定的团辅，只需要提醒一次
+      const target = b.aoeEffect === true ? matches?.sourceId : matches?.targetId;
+      this.onBigDot(target, b.name, seconds, b, matches?.source);
     }
   }
   onLoseEffect(dots, matches) {
     if (!dots) return;
-    for (const b of dots) this.onLoseBigBuff(matches?.targetId, b.name);
+    for (const b of dots) {
+      const target = b.aoeEffect === true ? matches?.sourceId : matches?.targetId;
+      this.onLoseBigBuff(target, b.name);
+    }
   }
-  onBigDot(target = 'unknown', name, seconds = 0, info, source = '') {
+  onBigDot(target = 'unknown', name, seconds = 0, info, _source = '') {
     if (seconds <= 0) return;
     if (name != 'deathsDesign') {
       // 镰刀的dot可能会给boss上多个
-      name = target + "=>" + name; // 针对对boss技能. 保证不同boss分开倒计时.
+      name = target + '=>' + name; // 针对对boss技能. 保证不同boss分开倒计时.
     }
     let list = this.dotListDiv;
     let dot = this.dots[name];
@@ -43897,7 +43959,7 @@ class DotTracker {
     if (seconds > 0) dot.onGain(seconds);
   }
   onLoseBigBuff(target = 'unknown', name) {
-    name = target + "=>" + name; // 针对对boss技能. 保证不同boss分开倒计时.
+    name = target + '=>' + name; // 针对对boss技能. 保证不同boss分开倒计时.
     this.dots[name]?.onLose();
   }
   clear() {
@@ -43990,7 +44052,10 @@ class ComponentManager {
     });
     this.player.on('effect/lose', (id, matches) => {
       // mob id starts with '4'
-      if (matches.targetId?.startsWith('4')) this.dotTracker?.onYouLoseEffect(id, matches);
+      if (matches.targetId?.startsWith('4')) {
+        this.buffTracker?.onYouLoseEffect(id, matches);
+        this.dotTracker?.onYouLoseEffect(id, matches);
+      }
     });
     this.ee.on('zone/change', (id, _name, info) => {
       this.inPvPZone = isPvPZone(id);
