@@ -165,6 +165,7 @@ export class DotInfoList {
       sortKey: 0,
       attackType: 'none',
       tts: true,
+      aoeEffect: true,
     },
     // 诗人
     stormbite: {
