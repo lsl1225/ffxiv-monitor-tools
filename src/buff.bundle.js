@@ -43691,7 +43691,8 @@ class DotInfoList {
       borderColor: '#49298c',
       sortKey: 0,
       attackType: 'none',
-      tts: true
+      tts: true,
+      aoeEffect: true
     },
     // 诗人
     stormbite: {
@@ -43931,10 +43932,6 @@ class DotTracker {
     if (!dots) return;
     for (const b of dots) {
       let seconds = parseFloat(matches?.duration ?? '0');
-      if (b.name == 'surgingTempest') {
-        // case: 可能由于buff的计算方式不同，战士的倒计时多2秒
-        seconds += 2;
-      }
       // 针对aoe判定的团辅，只需要提醒一次
       const target = b.aoeEffect === true ? matches?.sourceId : matches?.targetId;
       this.onBigDot(target, b.name, seconds, b, matches?.source);
@@ -43949,10 +43946,8 @@ class DotTracker {
   }
   onBigDot(target = 'unknown', name, seconds = 0, info, _source = '') {
     if (seconds <= 0) return;
-    if (name != 'deathsDesign') {
-      // 镰刀的dot可能会给boss上多个
-      name = target + '=>' + name; // 针对对boss技能. 保证不同boss分开倒计时.
-    }
+    name = target + '=>' + name; // 针对对boss技能. 保证不同boss分开倒计时.
+
     let list = this.dotListDiv;
     let dot = this.dots[name];
     if (!dot) dot = this.dots[name] = new Dot(name, info, list, this.options);
